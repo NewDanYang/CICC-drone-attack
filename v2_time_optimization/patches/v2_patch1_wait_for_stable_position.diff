@@ -1,0 +1,204 @@
+diff --git a/v2_time_optimization/working_source/src/mission_pkg/include/nodes/action/wait_for_stable_position.h b/v2_time_optimization/working_source/src/mission_pkg/include/nodes/action/wait_for_stable_position.h
+new file mode 100644
+index 0000000..7d97958
+--- /dev/null
++++ b/v2_time_optimization/working_source/src/mission_pkg/include/nodes/action/wait_for_stable_position.h
+@@ -0,0 +1,35 @@
++#ifndef WAIT_FOR_STABLE_POSITION_H
++#define WAIT_FOR_STABLE_POSITION_H
++
++#include "base/drone_action_node.h"
++
++/**
++ * @brief Wait until the vehicle is close to a target and its speed is stable.
++ *
++ * This node is a passive gate. It does not publish a new flight command. The
++ * preceding GoTo command remains the active command while the gate observes
++ * odometry. If the conservative timeout is reached, the node succeeds so the
++ * mission keeps the same failure semantics as the former fixed Delay.
++ */
++class WaitForStablePosition : public DroneActionNode {
++public:
++    WaitForStablePosition(const std::string& name, const BT::NodeConfig& config);
++
++    static BT::PortsList providedPorts();
++
++    BT::NodeStatus onStart() override;
++    BT::NodeStatus onRunning() override;
++
++private:
++    BT::Position3D target_;
++    double position_threshold_{0.15};
++    double velocity_threshold_{0.08};
++    double stable_confirm_time_{0.50};
++    double timeout_{2.00};
++    ros::Time start_time_;
++    ros::Time stable_since_;
++    bool confirmation_active_{false};
++    bool completed_{false};
++};
++
++#endif  // WAIT_FOR_STABLE_POSITION_H
+diff --git a/v2_time_optimization/backups/v1_input/src/mission_pkg/launch/llm_mission.launch b/v2_time_optimization/working_source/src/mission_pkg/launch/llm_mission.launch
+index f33aeee..4e797cf 100644
+--- a/v2_time_optimization/backups/v1_input/src/mission_pkg/launch/llm_mission.launch
++++ b/v2_time_optimization/working_source/src/mission_pkg/launch/llm_mission.launch
+@@ -42,6 +42,11 @@
+     <!-- 穿越方框 -->
+     <param name="cross_frame/observe_pos"        value="0.0;-1.0;1.0"  type="str"/>    <!-- 观察位置 -->
+     <param name="cross_frame/observe_delay_ms"    value="2000"          type="double"/> <!-- 到达后等待时间(ms) -->
++    <!-- V2 Patch 1：用位置/速度稳定事件替代固定等待；保守上限仍为 2 s -->
++    <param name="optimization/position_threshold"   value="0.15" type="double"/> <!-- 位置误差(m) -->
++    <param name="optimization/velocity_threshold"   value="0.08" type="double"/> <!-- 速度(m/s) -->
++    <param name="optimization/stable_confirm_time"  value="0.50" type="double"/> <!-- 连续确认(s) -->
++    <param name="optimization/settle_timeout"      value="2.00" type="double"/> <!-- 最大等待(s) -->
+     <param name="cross_frame/object_width"        value="1.3"          type="double"/> <!-- 方框物理宽度(m) -->
+     <param name="cross_frame/object_height"       value="1.3"          type="double"/> <!-- 方框物理高度(m) -->
+     <param name="cross_frame/occlusion_direction" value="right"         type="str"/>    <!-- 遮挡方向 -->
+diff --git a/v2_time_optimization/backups/v1_input/src/mission_pkg/src/bt_ros.cpp b/v2_time_optimization/working_source/src/mission_pkg/src/bt_ros.cpp
+index dc4d173..d7bae33 100644
+--- a/v2_time_optimization/backups/v1_input/src/mission_pkg/src/bt_ros.cpp
++++ b/v2_time_optimization/working_source/src/mission_pkg/src/bt_ros.cpp
+@@ -241,7 +241,15 @@ std::string commandToXmlNode(const std::string& command) {
+     // ---- cross_frame: 识别方框 + 穿越 ----
+     if (cmd == "cross_frame") {
+         std::string observe   = getStr("cross_frame/observe_pos",   "0.0;-1.0;1.0");
+-        std::string delay     = std::to_string((int)getDbl("cross_frame/observe_delay_ms", 2000));
++        std::string stable_pos_threshold =
++            std::to_string(getDbl("optimization/position_threshold", 0.15));
++        std::string stable_vel_threshold =
++            std::to_string(getDbl("optimization/velocity_threshold", 0.08));
++        std::string stable_confirm_time =
++            std::to_string(getDbl("optimization/stable_confirm_time", 0.50));
++        std::string stable_timeout =
++            std::to_string(getDbl("optimization/settle_timeout",
++                                  getDbl("cross_frame/observe_delay_ms", 2000) / 1000.0));
+         std::string obj_w     = std::to_string(getDbl("cross_frame/object_width",  1.25));
+         std::string obj_h     = std::to_string(getDbl("cross_frame/object_height", 1.25));
+         std::string occ_dir   = getStr("cross_frame/occlusion_direction", "right");
+@@ -253,9 +261,12 @@ std::string commandToXmlNode(const std::string& command) {
+         return 
+             "      <!-- 移动到观察位置 -->\n"
+             "      <GoTo goal=\"" + observe + "\"/>\n"
+-            "      <Delay delay_msec=\"" + delay + "\">\n"
+-            "        <AlwaysSuccess/>\n"
+-            "      </Delay>\n"
++            "      <!-- 等待位置和速度稳定；超时保持原有 2 s 上限 -->\n"
++            "      <WaitForStablePosition goal=\"" + observe + "\" "
++            "position_threshold=\"" + stable_pos_threshold + "\" "
++            "velocity_threshold=\"" + stable_vel_threshold + "\" "
++            "stable_confirm_time=\"" + stable_confirm_time + "\" "
++            "timeout=\"" + stable_timeout + "\"/>\n"
+             "      <!-- 识别方框位置 -->\n"
+             "      <TargetLocator object_name=\"square_frame\" object_width=\"" + obj_w + "\" object_height=\"" + obj_h + "\" "
+             "occlusion_direction=\"" + occ_dir + "\" expected_pos=\"" + exp_pos + "\" "
+diff --git a/v2_time_optimization/working_source/src/mission_pkg/src/nodes/action/wait_for_stable_position.cpp b/v2_time_optimization/working_source/src/mission_pkg/src/nodes/action/wait_for_stable_position.cpp
+new file mode 100644
+index 0000000..9874910
+--- /dev/null
++++ b/v2_time_optimization/working_source/src/mission_pkg/src/nodes/action/wait_for_stable_position.cpp
+@@ -0,0 +1,104 @@
++#include "nodes/action/wait_for_stable_position.h"
++
++#include <cmath>
++
++WaitForStablePosition::WaitForStablePosition(const std::string& name,
++                                             const NodeConfig& config)
++    : DroneActionNode(name, config) {}
++
++PortsList WaitForStablePosition::providedPorts() {
++    return {
++        InputPort<Position3D>("goal", "目标位置 (x, y, z)"),
++        InputPort<double>("position_threshold", 0.15, "位置误差阈值 (m)"),
++        InputPort<double>("velocity_threshold", 0.08, "速度阈值 (m/s)"),
++        InputPort<double>("stable_confirm_time", 0.50, "连续稳定确认时间 (s)"),
++        InputPort<double>("timeout", 2.00, "最大等待时间 (s)")};
++}
++
++NodeStatus WaitForStablePosition::onStart() {
++    auto goal_res = getInput<Position3D>("goal");
++    if (!goal_res) {
++        throw RuntimeError("Missing goal");
++    }
++    target_ = goal_res.value();
++
++    position_threshold_ = getInput<double>("position_threshold").value();
++    velocity_threshold_ = getInput<double>("velocity_threshold").value();
++    stable_confirm_time_ = getInput<double>("stable_confirm_time").value();
++    timeout_ = getInput<double>("timeout").value();
++
++    if (position_threshold_ < 0.0 || velocity_threshold_ < 0.0 ||
++        stable_confirm_time_ < 0.0 || timeout_ < 0.0) {
++        throw RuntimeError("WaitForStablePosition parameters must be non-negative");
++    }
++
++    start_time_ = ros::Time::now();
++    stable_since_ = ros::Time(0);
++    confirmation_active_ = false;
++    completed_ = false;
++
++    ROS_INFO("[%s]: Waiting for stable position at (%.2f, %.2f, %.2f) "
++             "pos<=%.2fm vel<=%.2fm/s confirm=%.2fs timeout=%.2fs",
++             name().c_str(), target_.x, target_.y, target_.z,
++             position_threshold_, velocity_threshold_, stable_confirm_time_,
++             timeout_);
++    return NodeStatus::RUNNING;
++}
++
++NodeStatus WaitForStablePosition::onRunning() {
++    if (completed_) {
++        return NodeStatus::SUCCESS;
++    }
++
++    const ros::Time now = ros::Time::now();
++    const double elapsed = (now - start_time_).toSec();
++
++    const auto& position = fcu_odom_ptr->pose.pose.position;
++    const auto& velocity = fcu_odom_ptr->twist.twist.linear;
++    const double dx = position.x - target_.x;
++    const double dy = position.y - target_.y;
++    const double dz = position.z - target_.z;
++    const double position_error = std::sqrt(dx * dx + dy * dy + dz * dz);
++    const double speed = std::sqrt(velocity.x * velocity.x +
++                                   velocity.y * velocity.y +
++                                   velocity.z * velocity.z);
++    const bool stable = position_error <= position_threshold_ &&
++                        speed <= velocity_threshold_;
++
++    if (stable) {
++        if (!confirmation_active_) {
++            confirmation_active_ = true;
++            stable_since_ = now;
++            ROS_INFO("[%s]: stable condition met; confirmation started",
++                     name().c_str());
++        }
++
++        const double confirmed_for = (now - stable_since_).toSec();
++        if (confirmed_for >= stable_confirm_time_) {
++            completed_ = true;
++            ROS_INFO("[%s]: stable position confirmed after %.3fs", name().c_str(),
++                     elapsed);
++            return NodeStatus::SUCCESS;
++        }
++    } else if (confirmation_active_) {
++        confirmation_active_ = false;
++        stable_since_ = ros::Time(0);
++        ROS_WARN("[%s]: stable confirmation reset", name().c_str());
++    }
++
++    // Preserve the old Delay's success behavior at its conservative upper
++    // bound. This gate never turns a transient instability into a mission
++    // failure and never waits longer than the configured former delay.
++    if (elapsed >= timeout_) {
++        completed_ = true;
++        ROS_WARN("[%s]: stable wait timeout after %.3fs; proceeding",
++                 name().c_str(), elapsed);
++        return NodeStatus::SUCCESS;
++    }
++
++    return NodeStatus::RUNNING;
++}
++
++BT_REGISTER_NODES(factory) {
++    factory.registerNodeType<WaitForStablePosition>("WaitForStablePosition");
++}
