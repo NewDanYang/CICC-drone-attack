@@ -28,7 +28,8 @@
     <param name="safety/y_max" value="3.0" type="double"/>
     <param name="safety/z_min" value="-0.1" type="double"/>
     <param name="safety/z_max" value="2.5" type="double"/>
-    <param name="safety/recovery_margin" value="0.20" type="double"/>
+    <param name="safety/recovery_target_margin" value="0.30" type="double"/>
+    <param name="safety/release_margin" value="0.15" type="double"/>
     <param name="safety/recovery_confirm_time" value="0.50" type="double"/>
 
     <!-- ============================================ -->

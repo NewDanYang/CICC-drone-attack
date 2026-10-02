@@ -41,7 +41,8 @@ class MavRosConnect
     double y_max = 10.0;
     double z_min = 0.0;
     double z_max = 5.0;
-    double recovery_margin = 0.20;
+    double recovery_target_margin = 0.30;
+    double release_margin = 0.15;
     double recovery_confirm_time = 0.50;
   };
 
@@ -76,7 +77,7 @@ public:
 
   // 安全边界检查
   bool isWithinBoundary() const;
-  bool isWithinInnerBoundary() const;
+  bool isWithinReleaseBoundary() const;
 
   static int count_;
   static std::mutex pose_mtx;

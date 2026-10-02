@@ -9,6 +9,7 @@
  *****************************************************************************/
 #include "mavros_cnt.h"
 #include <algorithm>
+#include <stdexcept>
 #include <tf2/LinearMath/Quaternion.h>
 #include <tf2_geometry_msgs/tf2_geometry_msgs.h>
 
@@ -72,16 +73,31 @@ void MavRosConnect::InitMavRosConnect()
   nh_->param<double>("safety/y_max", safety_boundary_.y_max, 10.0);
   nh_->param<double>("safety/z_min", safety_boundary_.z_min, 0.0);
   nh_->param<double>("safety/z_max", safety_boundary_.z_max, 5.0);
-  nh_->param<double>("safety/recovery_margin", safety_boundary_.recovery_margin, 0.20);
+  nh_->param<double>("safety/recovery_target_margin", safety_boundary_.recovery_target_margin, 0.30);
+  nh_->param<double>("safety/release_margin", safety_boundary_.release_margin, 0.15);
   nh_->param<double>("safety/recovery_confirm_time", safety_boundary_.recovery_confirm_time, 0.50);
-  safety_boundary_.recovery_margin = std::max(0.0, safety_boundary_.recovery_margin);
+  safety_boundary_.recovery_target_margin = std::max(0.0, safety_boundary_.recovery_target_margin);
+  safety_boundary_.release_margin = std::max(0.0, safety_boundary_.release_margin);
   safety_boundary_.recovery_confirm_time = std::max(0.0, safety_boundary_.recovery_confirm_time);
+
+  if (safety_boundary_.enabled &&
+      (safety_boundary_.recovery_target_margin <= safety_boundary_.release_margin ||
+       2.0 * safety_boundary_.recovery_target_margin >= safety_boundary_.x_max - safety_boundary_.x_min ||
+       2.0 * safety_boundary_.recovery_target_margin >= safety_boundary_.y_max - safety_boundary_.y_min ||
+       2.0 * safety_boundary_.recovery_target_margin >= safety_boundary_.z_max - safety_boundary_.z_min)) {
+    ROS_FATAL("Invalid SafetyRecovery margins: target margin must exceed release margin "
+              "and fit inside every safety axis");
+    throw std::invalid_argument("Invalid SafetyRecovery margins");
+  }
 
   if (safety_boundary_.enabled) {
     ROS_INFO("Safety boundary enabled: X[%.1f, %.1f] Y[%.1f, %.1f] Z[%.1f, %.1f]",
              safety_boundary_.x_min, safety_boundary_.x_max,
              safety_boundary_.y_min, safety_boundary_.y_max,
              safety_boundary_.z_min, safety_boundary_.z_max);
+    ROS_INFO("[SafetyRecovery] target_margin=%.2f m release_margin=%.2f m confirm_time=%.2f s",
+             safety_boundary_.recovery_target_margin, safety_boundary_.release_margin,
+             safety_boundary_.recovery_confirm_time);
   }
 
   // 初始化定时发布 (50Hz)
@@ -193,14 +209,14 @@ void MavRosConnect::cmdPublishLoop(const ros::TimerEvent &event)
         if (safety_state_ == SafetyState::NORMAL && !isWithinBoundary()) {
             recovery_pos_ = fcu_odom.pose.pose.position;
             recovery_pos_.x = std::min(std::max(recovery_pos_.x,
-                                                 safety_boundary_.x_min + safety_boundary_.recovery_margin),
-                                       safety_boundary_.x_max - safety_boundary_.recovery_margin);
+                                                 safety_boundary_.x_min + safety_boundary_.recovery_target_margin),
+                                       safety_boundary_.x_max - safety_boundary_.recovery_target_margin);
             recovery_pos_.y = std::min(std::max(recovery_pos_.y,
-                                                 safety_boundary_.y_min + safety_boundary_.recovery_margin),
-                                       safety_boundary_.y_max - safety_boundary_.recovery_margin);
+                                                 safety_boundary_.y_min + safety_boundary_.recovery_target_margin),
+                                       safety_boundary_.y_max - safety_boundary_.recovery_target_margin);
             recovery_pos_.z = std::min(std::max(recovery_pos_.z,
-                                                 safety_boundary_.z_min + safety_boundary_.recovery_margin),
-                                       safety_boundary_.z_max - safety_boundary_.recovery_margin);
+                                                 safety_boundary_.z_min + safety_boundary_.recovery_target_margin),
+                                       safety_boundary_.z_max - safety_boundary_.recovery_target_margin);
 
             tf2::Quaternion q;
             tf2::fromMsg(fcu_odom.pose.pose.orientation, q);
@@ -216,15 +232,18 @@ void MavRosConnect::cmdPublishLoop(const ros::TimerEvent &event)
                       fcu_odom.pose.pose.position.x,
                       fcu_odom.pose.pose.position.y,
                       fcu_odom.pose.pose.position.z);
-            ROS_ERROR("[SafetyRecovery] recovery target = (%.2f, %.2f, %.2f)",
-                      recovery_pos_.x, recovery_pos_.y, recovery_pos_.z);
+            ROS_ERROR("[SafetyRecovery] target = (%.2f, %.2f, %.2f), target_margin=%.2f m",
+                      recovery_pos_.x, recovery_pos_.y, recovery_pos_.z,
+                      safety_boundary_.recovery_target_margin);
         }
 
         if (safety_state_ == SafetyState::RECOVERING) {
-            if (isWithinInnerBoundary()) {
+            if (isWithinReleaseBoundary()) {
                 if (recovery_inside_since_.isZero()) {
                     recovery_inside_since_ = now;
-                    ROS_INFO("[SafetyRecovery] INSIDE INNER BOUNDARY confirmation started");
+                    ROS_INFO("[SafetyRecovery] RELEASE confirmation started: margin=%.2f m, duration=%.2f s",
+                             safety_boundary_.release_margin,
+                             safety_boundary_.recovery_confirm_time);
                 } else if ((now - recovery_inside_since_).toSec() >=
                            safety_boundary_.recovery_confirm_time) {
                     const double recovery_duration = (now - recovery_enter_time_).toSec();
@@ -236,7 +255,7 @@ void MavRosConnect::cmdPublishLoop(const ros::TimerEvent &event)
                 }
             } else if (!recovery_inside_since_.isZero()) {
                 recovery_inside_since_ = ros::Time(0);
-                ROS_WARN("[SafetyRecovery] confirmation reset");
+                ROS_WARN("[SafetyRecovery] RELEASE confirmation reset: outside release boundary");
             }
         }
     } else if (safety_state_ == SafetyState::RECOVERING) {
@@ -266,12 +285,12 @@ bool MavRosConnect::isWithinBoundary() const
             z >= safety_boundary_.z_min && z <= safety_boundary_.z_max);
 }
 
-bool MavRosConnect::isWithinInnerBoundary() const
+bool MavRosConnect::isWithinReleaseBoundary() const
 {
     double x = fcu_odom.pose.pose.position.x;
     double y = fcu_odom.pose.pose.position.y;
     double z = fcu_odom.pose.pose.position.z;
-    const double margin = safety_boundary_.recovery_margin;
+    const double margin = safety_boundary_.release_margin;
     return (x >= safety_boundary_.x_min + margin && x <= safety_boundary_.x_max - margin &&
             y >= safety_boundary_.y_min + margin && y <= safety_boundary_.y_max - margin &&
             z >= safety_boundary_.z_min + margin && z <= safety_boundary_.z_max - margin);
