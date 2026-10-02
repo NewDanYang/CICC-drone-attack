@@ -1,62 +1,87 @@
-# CICC Drone Attack
+# CICC 无人机搜索打击
 
-This repository preserves the TCEI drone search-and-strike project in three separate layers.
+本仓库将 TCEI 无人机搜索打击项目按三个独立层级进行保存。
 
-## Contents
+## 目录结构
 
 ### `official_baseline/`
 
-Original official ROS1 / PX4 / MAVROS / RflySim workspace snapshot used for the baseline runs. It includes the original `src/` tree and the official startup scripts:
+保存用于 baseline 测试的原始官方 ROS1 / PX4 / MAVROS / RflySim 工作空间快照。其中包含原始 `src/` 源码树以及官方启动脚本：
 
 - `official_baseline/catkin_ws/src/`
 - `official_baseline/catkin_ws/sim_env_start.sh`
 - `official_baseline/catkin_ws/kill_ros_pid.sh`
 
-This copy is kept unchanged as the reference baseline.
+该副本保持不变，作为后续开发和实验的官方基准参考。
 
 ### `baseline_tools/`
 
-Independent observer-only baseline recorder:
+独立的、仅用于观察和记录的 baseline 测试工具：
 
 - `run_baseline.py`
 - `results/baseline_runs.csv`
-- `results/logs/` with selected red, purple, blue baseline JSONL logs and the V1 purple formal-run log
+- `results/logs/`：保存选取的红球、紫球、蓝球 baseline JSONL 日志，以及 V1 紫球正式测试日志
 - `results/formal_purple_v1_report.md`
 
-The observer listens to ROS evidence and does not publish flight-control commands. Natural-language mission input remains on the official `mission_once.py` path.
+该观察工具仅监听 ROS 中的相关证据，不会发布任何飞行控制指令。自然语言任务输入仍然完全通过官方 `mission_once.py` 链路执行。
 
 ### `v1_safety_recovery/`
 
-V1 Safety Boundary Recovery overlay. Only these official source paths are changed by the overlay:
+V1 Safety Boundary Recovery（安全边界恢复）覆盖层。
+
+该覆盖层仅修改以下官方源码路径：
 
 - `src/mission_pkg/src/mavros_cnt.cpp`
 - `src/mission_pkg/include/mavros_cnt.h`
 - `src/mission_pkg/launch/llm_mission.launch`
 
-The overlay adds a `NORMAL` / `RECOVERING` state, an inward recovery point, and inner-boundary confirmation. The shared Behavior Tree command remains writable during recovery and is resumed after confirmation.
+该版本新增了：
 
-See `v1_safety_recovery/patches/safety_recovery_v1.0.diff` and the verification report for details.
+- `NORMAL` / `RECOVERING` 状态
+- 向安全区域内部移动的恢复目标点
+- 内部安全边界持续确认机制
 
-## V1 parameters
+在恢复过程中，共享的 Behavior Tree 控制命令仍可正常更新；完成安全确认后，系统会恢复执行最新的行为树控制命令。
+
+详细修改内容请参阅：
+
+- `v1_safety_recovery/patches/safety_recovery_v1.0.diff`
+- 对应的验证报告
+
+## V1 参数
 
 ```yaml
 safety/recovery_margin: 0.20
 safety/recovery_confirm_time: 0.50
 ```
 
-The original safety bounds remain unchanged.
+原始安全边界参数保持不变。
 
-## Recorded V1 purple result
+## 已记录的 V1 紫球测试结果
 
-The first formal purple run after compiling `mission_pkg` completed successfully:
+在重新编译 `mission_pkg` 后进行的第一次正式紫球测试已完整成功：
 
 - `bt_success=true`
 - `mission_success=true`
-- total time: `113.702 s`
-- safety boundary triggered: `false`
+- 总耗时：`113.702 s`
+- 未触发安全边界
 
-The run did not enter `RECOVERING`, so it confirms no regression and full-task completion but does not independently exercise the recovery branch.
+该次运行并未进入 `RECOVERING` 状态，因此它只能确认：
 
-## Restoration
+- V1 修改未对正常任务流程造成回归
+- 完整任务可以正常完成
 
-The original V1 source files are preserved in `v1_safety_recovery/SHA256SUMS.original.txt` and the backup record. The local restoration helper is `v1_safety_recovery/restore_safety_recovery_v1.0.ps1`.
+但该次测试**尚未独立验证 Recovery 恢复分支本身是否能够正常工作**。
+
+## 恢复原版
+
+V1 修改前的原始源码校验信息保存在：
+
+- `v1_safety_recovery/SHA256SUMS.original.txt`
+- 对应的备份记录中
+
+本地恢复辅助脚本为：
+
+```text
+v1_safety_recovery/restore_safety_recovery_v1.0.ps1
+```
