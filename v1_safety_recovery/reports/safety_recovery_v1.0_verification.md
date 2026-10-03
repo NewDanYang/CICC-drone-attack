@@ -11,7 +11,7 @@ Modified only:
 ## Static checks
 
 - `llm_mission.launch` parsed successfully with Python XML parser.
-- Parameters verified: safety enabled, original bounds unchanged, recovery margin `0.20`, confirmation time `0.50`.
+- Parameters verified: safety enabled, original bounds unchanged, recovery target margin `0.30`, release margin `0.15`, confirmation time `0.50`.
 - No references remain to the old `hover_locked_`, `hover_pos_`, `hover_yaw_`, or `last_safety_log_time_` implementation.
 - `current_cmd` is only updated by `updateCommand()`; the recovery path copies it to a local `output_cmd` and overrides only the current publish value.
 - Recovery clamp and confirmation reset unit-level logic check passed.

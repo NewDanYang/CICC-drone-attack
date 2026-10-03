@@ -17,9 +17,15 @@ Then run exactly one experiment:
     python3 /home/ubuntu/tcei_baseline_tools/run_baseline.py --color blue
 
 The default mode starts the official /home/ubuntu/model/mission_once.py with
-the natural-language sentence for the selected color. It does not publish a
-prebuilt command. If the official mission_once terminal is already running,
-use --no-launch-llm; observer starts immediately and records the first /mission_command receipt as mission_start_time.
+the natural-language sentence for the selected color with argv input and
+stdin closed. It does not publish a prebuilt command. If the official
+mission_once terminal is already running, use --no-launch-llm; observer starts
+immediately and records the first /mission_command receipt as
+mission_start_time.
+
+`--pre-mission-timeout` (default 900 seconds) and `--mission-timeout` (default
+300 seconds) are separate. The latter starts only after the first
+`/mission_command`; a pre-mission timeout does not create a CSV result.
 
 Output:
 - results/baseline_runs.csv
@@ -67,3 +73,47 @@ kill_ros_pid.sh, starts roscore, then:
 It waits for /objects before starting llm_mission. The helper examples at the end
 of the script publish prebuilt JSON commands; the baseline tool deliberately
 does not use those examples because they bypass the official LLM path.
+
+## Formal trial orchestration
+
+Start the shared simulation environment once after a server reboot or a full
+environment reset:
+
+    bash ./start_sim_environment.sh
+
+The startup helper launches `/home/ubuntu/PX4PSP/SITLRun.sh` first, keeps its
+interactive lifetime open, waits 20 seconds, and then launches
+`/home/ubuntu/catkin_ws/sim_env_start.sh`. It keeps a lock and logs under
+`/tmp/tcei_sim_environment`; do not run it again for each color. Override paths
+and startup delay with `TCEI_PX4_ROOT`, `TCEI_WS_ROOT`,
+`TCEI_SITL_STARTUP_DELAY`, or
+the other `TCEI_*` variables documented in the script.
+
+Because the official `sim_env_start.sh` has its MAVROS launch line commented
+out, the helper first waits only for the ROS graph and live RflySim odometry.
+It then checks for `/mavros`; if it is absent, it starts the existing bridge
+with `roslaunch mavros px4.launch fcu_url:=udp://:20101@` and waits for
+`/mavros/state` to report `connected: true`. This ordering avoids waiting for
+a topic that the official startup script does not create. MAVROS output is
+saved as `/tmp/tcei_sim_environment/mavros.out`.
+
+The startup helper does not submit a mission. The official `sim_env_start.sh`
+may open its own legacy LLM terminal while initializing the graph; the formal
+trial helper removes stale mission processes before starting the one argv-based
+mission for that trial.
+
+Use `run_formal_trial.sh` for one non-interactive official trial:
+
+    bash ./run_formal_trial.sh red
+
+It checks ROS/MAVROS/LLM/object/planner readiness, takes an exclusive trial
+lock, removes stale `mission_once.py` processes, starts the observer, then runs
+exactly:
+
+    python3 mission_once.py "<natural-language task>"
+
+The observer has two independent windows: `--pre-mission-timeout` waits for the
+first `/mission_command`, while `--mission-timeout` starts only after that
+message and waits for `/mission_result`. The formal script keeps one trial
+lock until the observer and `mission_once.py` have both ended. It does not
+restart ROS/SITL/RflySim.

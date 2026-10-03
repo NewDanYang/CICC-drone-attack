@@ -22,6 +22,8 @@
 - `results/baseline_runs.csv`
 - `results/logs/`：保存选取的红球、紫球、蓝球 baseline JSONL 日志，以及 V1 紫球正式测试日志
 - `results/formal_purple_v1_report.md`
+- `run_formal_trial.sh`：单局、非交互、带 readiness/cleanup 的正式任务编排
+- `start_sim_environment.sh`：服务器重启后只执行一次的 SITL + sim_env 启动器
 
 该观察工具仅监听 ROS 中的相关证据，不会发布任何飞行控制指令。自然语言任务输入仍然完全通过官方 `mission_once.py` 链路执行。
 
@@ -43,15 +45,17 @@ V1 Safety Boundary Recovery（安全边界恢复）覆盖层。
 
 在恢复过程中，共享的 Behavior Tree 控制命令仍可正常更新；完成安全确认后，系统会恢复执行最新的行为树控制命令。
 
-详细修改内容请参阅：
+详细修改内容和使用步骤请参阅：
 
 - `v1_safety_recovery/patches/safety_recovery_v1.0.diff`
 - 对应的验证报告
+- `v1_safety_recovery/README.md`
 
 ## V1 参数
 
 ```yaml
-safety/recovery_margin: 0.20
+safety/recovery_target_margin: 0.30
+safety/release_margin: 0.15
 safety/recovery_confirm_time: 0.50
 ```
 

@@ -10,6 +10,7 @@ import argparse
 import csv
 import datetime as dt
 import json
+import math
 import os
 import queue
 import re
@@ -47,6 +48,18 @@ STAGE_FIELDS = (
     "return_cross_frame_status", "hit_balloon_status", "land_status",
 )
 
+V21_PLANNING_FIELDS = [
+    "run_id", "target_color", "config", "max_vel", "stage_name", "stage_index",
+    "start_time", "end_time", "duration", "goal_xyz", "start_xyz", "end_xyz",
+    "odom_source", "path_length", "odom_mean_speed", "odom_peak_speed",
+    "planner_cmd_mean_speed", "planner_cmd_peak_speed",
+    "setpoint_mean_speed", "setpoint_peak_speed", "final_position_error",
+    "safety_boundary_triggered", "recovery_triggered", "recovery_completed",
+    "recovery_duration",
+    "replan_count", "collision", "mission_success", "bt_success",
+    "total_mission_time", "notes",
+]
+
 
 def now_iso():
     return dt.datetime.now(dt.timezone.utc).isoformat(timespec="milliseconds")
@@ -80,7 +93,8 @@ def make_task(color):
 
 
 class RunObserver:
-    def __init__(self, args, log_path=None, run_id=None, record=True):
+    def __init__(self, args, log_path=None, run_id=None, record=True,
+                 v21_log_path=None, v21_summary_path=None):
         self.args = args
         self.run_id = run_id or (dt.datetime.now().strftime("%Y%m%dT%H%M%S") + "_" + uuid.uuid4().hex[:6])
         self.target_color = args.color
@@ -102,6 +116,13 @@ class RunObserver:
         self.command_seen = ""
         self.log_path = Path(log_path) if log_path else None
         self.log_fp = self.log_path.open("w", encoding="utf-8") if self.record and self.log_path else None
+        self.v21_enabled = bool(getattr(args, "v21_telemetry", False))
+        self.v21_log_path = Path(v21_log_path) if v21_log_path else None
+        self.v21_summary_path = Path(v21_summary_path) if v21_summary_path else None
+        self.v21_log_fp = None
+        if self.v21_enabled and self.record and self.v21_log_path:
+            self.v21_log_path.parent.mkdir(parents=True, exist_ok=True)
+            self.v21_log_fp = self.v21_log_path.open("w", encoding="utf-8")
         self.stages = {name: "" for name in STAGE_FIELDS}
         self.stage_times = {}
         self.aruco_start = None
@@ -129,15 +150,51 @@ class RunObserver:
         self.arrival_last_progress = None
         self.stuck_detected = False
         self.stuck_reason = ""
+        self.latest_odom = None
+        self.latest_odom_by_topic = {}
+        self.primary_odom_topic = "/rflysim/uav1/local/odom"
+        self.recovery_triggered = False
+        self.recovery_completed = False
+        self.recovery_start = None
+        self.recovery_end = None
+        self.collision = ""
+        self.v21_summary_written = False
+        if self.v21_enabled:
+            self._write_v21_event("v21_run_start", {
+                "config": str(getattr(args, "v21_config", "")),
+                "max_vel": str(getattr(args, "v21_max_vel", "")),
+                "topics": [
+                    "/mavros/local_position/odom",
+                    "/rflysim/uav1/local/odom",
+                    "/planning/pos_cmd",
+                    "/mavros/setpoint_raw/local",
+                ],
+            })
         self._write_event("run_start", {"task_text": self.task_text, "target_color": self.target_color})
 
     def _write_event(self, event, data):
-        if not self.record or self.log_fp is None:
+        if not self.record:
             return
         record = {"wall_time": now_iso(), "event": event, **data}
         with self.lock:
+            if self.log_fp is None:
+                return
             self.log_fp.write(json.dumps(record, ensure_ascii=False, default=str) + "\n")
             self.log_fp.flush()
+
+    def _write_v21_event(self, event, data):
+        if not self.v21_enabled:
+            return
+        record = {"wall_time": now_iso(), "event": event, **data}
+        with self.lock:
+            if self.v21_log_fp is None:
+                return
+            self.v21_log_fp.write(json.dumps(record, ensure_ascii=False, default=str) + "\n")
+            self.v21_log_fp.flush()
+
+    def _write_telemetry_event(self, event, data):
+        self._write_event(event, data)
+        self._write_v21_event(event, data)
 
     def add_note(self, text):
         with self.lock:
@@ -208,6 +265,12 @@ class RunObserver:
         text = "[%s] %s" % (getattr(msg, "name", ""), getattr(msg, "msg", ""))
         level = getattr(msg, "level", 0)
         self._write_event("rosout", {"level": level, "name": getattr(msg, "name", ""), "message": getattr(msg, "msg", "")})
+        if self.v21_enabled:
+            self._write_v21_event("rosout", {
+                "level": level,
+                "name": getattr(msg, "name", ""),
+                "message": getattr(msg, "msg", ""),
+            })
         self._parse_log(text)
 
     @staticmethod
@@ -245,6 +308,161 @@ class RunObserver:
             return ""
         return "(%s, %s, %s)" % match.groups()
 
+    @staticmethod
+    def _vector3(value):
+        if value is None:
+            return None
+        try:
+            return {
+                "x": float(getattr(value, "x")),
+                "y": float(getattr(value, "y")),
+                "z": float(getattr(value, "z")),
+            }
+        except (AttributeError, TypeError, ValueError):
+            return None
+
+    @staticmethod
+    def _speed(vector):
+        if not vector:
+            return None
+        return math.sqrt(vector["x"] ** 2 + vector["y"] ** 2 + vector["z"] ** 2)
+
+    @staticmethod
+    def _stamp_seconds(msg):
+        header = getattr(msg, "header", None)
+        stamp = getattr(header, "stamp", None) if header else None
+        try:
+            value = stamp.to_sec()
+            return float(value) if value else None
+        except (AttributeError, TypeError, ValueError):
+            return None
+
+    @staticmethod
+    def _parse_xyz(text):
+        if not text:
+            return None
+        values = re.findall(r"[-+0-9.eE]+", str(text))
+        if len(values) != 3:
+            return None
+        try:
+            return tuple(float(value) for value in values)
+        except ValueError:
+            return None
+
+    @staticmethod
+    def _format_xyz(value):
+        if value is None:
+            return ""
+        return "(%.4f, %.4f, %.4f)" % tuple(value)
+
+    @staticmethod
+    def _mean(values):
+        return sum(values) / len(values) if values else None
+
+    @staticmethod
+    def _stage_name(control, index):
+        if control:
+            kind = control.get("kind")
+            if kind == "frame_outbound":
+                return "first_cross_frame_planning"
+            if kind == "frame_return":
+                return "return_cross_frame_planning"
+            if kind == "other":
+                return "balloon_positioning_planning"
+        return "planning_control_%d" % (index + 1)
+
+    def _active_planning(self):
+        return self.planning_open[-1] if self.planning_open else None
+
+    def _record_odom_metric(self, sample):
+        if sample.get("topic") != self.primary_odom_topic:
+            return
+        stage = self._active_planning()
+        if stage is None or sample["when"] < stage["start"]:
+            return
+        previous = stage.get("last_odom")
+        if previous is not None and sample["when"] >= previous["when"]:
+            stage["path_length"] += math.dist(sample["position"], previous["position"])
+        elif previous is None and stage.get("start_xyz") is not None:
+            # Include the short segment between the PlanningControl event and
+            # the first odometry sample in the stage path estimate.
+            stage["path_length"] += math.dist(sample["position"], stage["start_xyz"])
+        if sample.get("speed") is not None:
+            stage["odom_speeds"].append(sample["speed"])
+        stage["last_odom"] = sample
+
+    def _record_command_metric(self, stream_name, sample):
+        stage = self._active_planning()
+        if stage is None or sample["when"] < stage["start"]:
+            return
+        speed = sample.get("speed")
+        if speed is not None:
+            stage[stream_name].append(speed)
+
+    def on_odom(self, topic, msg):
+        timestamp = time.time()
+        pose = getattr(getattr(msg, "pose", None), "pose", None)
+        twist = getattr(getattr(msg, "twist", None), "twist", None)
+        position = self._vector3(getattr(pose, "position", None))
+        velocity = self._vector3(getattr(twist, "linear", None))
+        if position is None or velocity is None:
+            return
+        sample = {
+            "topic": topic,
+            "sample_wall_time": epoch_iso(timestamp),
+            "header_stamp": self._stamp_seconds(msg),
+            "position": position,
+            "velocity": velocity,
+            "speed": self._speed(velocity),
+        }
+        with self.lock:
+            state = {"when": timestamp, "topic": topic,
+                     "position": tuple(position.values()),
+                     "velocity": velocity, "speed": sample["speed"]}
+            self.latest_odom_by_topic[topic] = state
+            if topic == self.primary_odom_topic:
+                self.latest_odom = state
+            self._record_odom_metric(state)
+        self._write_telemetry_event("odom_sample", sample)
+
+    def _planner_sample(self, msg):
+        timestamp = time.time()
+        position = self._vector3(getattr(msg, "position", None))
+        velocity = self._vector3(getattr(msg, "velocity", None))
+        acceleration = self._vector3(getattr(msg, "acceleration", None))
+        return {
+            "topic": "/planning/pos_cmd",
+            "when": timestamp,
+            "sample_wall_time": epoch_iso(timestamp),
+            "header_stamp": self._stamp_seconds(msg),
+            "position": position,
+            "velocity": velocity,
+            "speed": self._speed(velocity),
+            "acceleration": acceleration,
+            "yaw": getattr(msg, "yaw", None),
+            "yaw_dot": getattr(msg, "yaw_dot", None),
+        }
+
+    def _setpoint_sample(self, msg):
+        timestamp = time.time()
+        position = self._vector3(getattr(msg, "position", None))
+        velocity = self._vector3(getattr(msg, "velocity", None))
+        acceleration = self._vector3(getattr(msg, "acceleration_or_force", None))
+        return {
+            "topic": "/mavros/setpoint_raw/local",
+            "when": timestamp,
+            "sample_wall_time": epoch_iso(timestamp),
+            "header_stamp": self._stamp_seconds(msg),
+            "coordinate_frame": getattr(msg, "coordinate_frame", None),
+            "type_mask": getattr(msg, "type_mask", None),
+            "position": position,
+            "velocity": velocity,
+            "speed": self._speed(velocity),
+            "acceleration_or_force": acceleration,
+            "yaw": getattr(msg, "yaw", None),
+            "yaw_rate": getattr(msg, "yaw_rate", None),
+        }
+
     def _parse_check_arrival(self, text, when):
         match = re.search(
             r"odom=\(([-+0-9.eE]+),\s*([-+0-9.eE]+),\s*([-+0-9.eE]+)\).*?"
@@ -277,26 +495,111 @@ class RunObserver:
 
     def _planning_start(self, text, when):
         match = re.search(r"Planning navigation start ->\s*\(([^)]*)\)", text)
-        self.planning_open.append({"when": when if when is not None else time.time(),
-                                   "goal": match.group(1) if match else ""})
+        start = when if when is not None else time.time()
+        control_index = len(self.planning_runs) + len(self.planning_open)
+        control = self.bt_plan_controls[control_index] if control_index < len(self.bt_plan_controls) else None
+        goal_text = match.group(1) if match else ""
+        self.planning_open.append({
+            "when": start,
+            "start": start,
+            "index": control_index,
+            "goal": goal_text,
+            "goal_xyz": self._parse_xyz(goal_text),
+            "stage_name": self._stage_name(control, control_index),
+            "start_xyz": (
+                self.latest_odom["position"] if self.latest_odom else
+                self.latest_odom_by_topic.get("/mavros/local_position/odom", {}).get("position")
+            ),
+            "odom_source": self.primary_odom_topic,
+            "path_length": 0.0,
+            "odom_speeds": [],
+            "planner_speeds": [],
+            "setpoint_speeds": [],
+            "replan_count": 0,
+            "last_odom": None,
+        })
+
+    def _finalize_planning(self, stage, end, success):
+        last_odom = stage.get("last_odom")
+        start_xyz = stage.get("start_xyz")
+        end_xyz = last_odom["position"] if last_odom else None
+        goal_xyz = stage.get("goal_xyz")
+        final_error = math.dist(end_xyz, goal_xyz) if end_xyz and goal_xyz else None
+        return {
+            "index": stage["index"],
+            "stage_name": stage["stage_name"],
+            "start": stage["start"],
+            "end": end,
+            "duration": max(0.0, end - stage["start"]),
+            "goal_xyz": goal_xyz,
+            "start_xyz": start_xyz,
+            "end_xyz": end_xyz,
+            "path_length": stage["path_length"],
+            "odom_mean_speed": self._mean(stage["odom_speeds"]),
+            "odom_peak_speed": max(stage["odom_speeds"], default=None),
+            "planner_cmd_mean_speed": self._mean(stage["planner_speeds"]),
+            "planner_cmd_peak_speed": max(stage["planner_speeds"], default=None),
+            "setpoint_mean_speed": self._mean(stage["setpoint_speeds"]),
+            "setpoint_peak_speed": max(stage["setpoint_speeds"], default=None),
+            "final_position_error": final_error,
+            "success": success,
+            "replan_count": stage["replan_count"],
+        }
 
     def _planning_complete(self, text, when, success=True):
         if not self.planning_open:
             return
         started = self.planning_open.pop(0)
-        control_index = len(self.planning_runs)
+        completed_at = when if when is not None else time.time()
+        control_index = started["index"]
         control = self.bt_plan_controls[control_index] if control_index < len(self.bt_plan_controls) else None
-        run = {"index": control_index, "start": started["when"],
-               "end": when if when is not None else time.time(),
-               "goal": started["goal"], "control": control, "success": success}
+        run = self._finalize_planning(started, completed_at, success)
+        run.update({"goal": started["goal"], "control": control})
         self.planning_runs.append(run)
+        if self.v21_enabled:
+            self._write_telemetry_event("planning_stage", self._planning_event(run))
         if not success or control is None:
             return
-        completed_at = run["end"]
         if control["kind"] == "frame_outbound" and self.frame_locator_success is not None:
             self.mark("cross_frame_status", "success", text, completed_at)
         elif control["kind"] == "frame_return" and self.stages["detect_aruco_status"] == "success":
             self.mark("return_cross_frame_status", "success", text, completed_at)
+
+    def _finalize_open_planning(self, end):
+        """Record a partial PlanningControl when a run ends without completion."""
+        while self.planning_open:
+            started = self.planning_open.pop(0)
+            control = (
+                self.bt_plan_controls[started["index"]]
+                if started["index"] < len(self.bt_plan_controls) else None
+            )
+            run = self._finalize_planning(started, end, success=False)
+            run.update({"goal": started["goal"], "control": control, "incomplete": True})
+            self.planning_runs.append(run)
+            if self.v21_enabled:
+                self._write_telemetry_event("planning_stage_incomplete", self._planning_event(run))
+
+    def _planning_event(self, run):
+        return {
+            "stage_name": run["stage_name"],
+            "stage_index": run["index"],
+            "start_time": epoch_iso(run["start"]),
+            "end_time": epoch_iso(run["end"]),
+            "duration": run["duration"],
+            "goal_xyz": run["goal_xyz"],
+            "start_xyz": run["start_xyz"],
+            "end_xyz": run["end_xyz"],
+            "path_length": run["path_length"],
+            "odom_mean_speed": run["odom_mean_speed"],
+            "odom_peak_speed": run["odom_peak_speed"],
+            "planner_cmd_mean_speed": run["planner_cmd_mean_speed"],
+            "planner_cmd_peak_speed": run["planner_cmd_peak_speed"],
+            "setpoint_mean_speed": run["setpoint_mean_speed"],
+            "setpoint_peak_speed": run["setpoint_peak_speed"],
+            "final_position_error": run["final_position_error"],
+            "success": run["success"],
+            "replan_count": run["replan_count"],
+        }
 
     def _parse_log(self, text, when=None):
         low = text.lower()
@@ -325,6 +628,24 @@ class RunObserver:
         if "drone returned to safe area" in low:
             self.boundary_recovered = True
             self._write_event("safety_recovered", {"time": epoch_iso(timestamp)})
+        if "safetyrecovery" in low and "enter" in low:
+            self.recovery_triggered = True
+            self.recovery_start = self.recovery_start or timestamp
+        if "safetyrecovery" in low and "complete" in low:
+            self.recovery_completed = True
+            self.recovery_end = timestamp
+
+        if (
+            "collision detected" in low
+            or "collision!" in low
+            or "penetrat" in low
+            or "crash" in low
+        ):
+            self.collision = "true"
+            self._write_event("collision_evidence", {"time": epoch_iso(timestamp), "message": text})
+
+        if self._active_planning() is not None and "replan" in low:
+            self._active_planning()["replan_count"] += 1
 
         if "checkarrival" in low:
             self._parse_check_arrival(text, timestamp)
@@ -424,8 +745,13 @@ class RunObserver:
         elif event == "objects_target":
             self.target_detections += len(record.get("classes", []))
 
-    def on_setpoint(self, _msg):
+    def on_setpoint(self, msg):
         self.setpoint_count += 1
+        sample = self._setpoint_sample(msg)
+        with self.lock:
+            self._record_command_metric("setpoint_speeds", sample)
+        if self.v21_enabled:
+            self._write_telemetry_event("setpoint_sample", sample)
 
     def on_state(self, msg):
         state = "connected=%s armed=%s mode=%s" % (
@@ -435,12 +761,88 @@ class RunObserver:
             self._write_event("mavros_state", {"state": state})
 
     def on_generic(self, topic, msg):
-        self._write_event("topic_sample", {"topic": topic, "type": type(msg).__name__})
+        if topic == "/planning/pos_cmd" and self.v21_enabled:
+            sample = self._planner_sample(msg)
+            with self.lock:
+                self._record_command_metric("planner_speeds", sample)
+            self._write_telemetry_event("planner_sample", sample)
+        else:
+            self._write_event("topic_sample", {"topic": topic, "type": type(msg).__name__})
+
+    def _v21_row(self, run, mission):
+        def number(value):
+            return "" if value is None else "%.6f" % value
+
+        def xyz(value):
+            return self._format_xyz(value)
+
+        return {
+            "run_id": self.run_id,
+            "target_color": self.target_color,
+            "config": str(getattr(self.args, "v21_config", "")),
+            "max_vel": str(getattr(self.args, "v21_max_vel", "")),
+            "stage_name": run["stage_name"],
+            "stage_index": str(run["index"]),
+            "start_time": epoch_iso(run["start"]),
+            "end_time": epoch_iso(run["end"]),
+            "duration": number(run["duration"]),
+            "goal_xyz": xyz(run["goal_xyz"]),
+            "start_xyz": xyz(run["start_xyz"]),
+            "end_xyz": xyz(run["end_xyz"]),
+            "odom_source": self.primary_odom_topic,
+            "path_length": number(run["path_length"]),
+            "odom_mean_speed": number(run["odom_mean_speed"]),
+            "odom_peak_speed": number(run["odom_peak_speed"]),
+            "planner_cmd_mean_speed": number(run["planner_cmd_mean_speed"]),
+            "planner_cmd_peak_speed": number(run["planner_cmd_peak_speed"]),
+            "setpoint_mean_speed": number(run["setpoint_mean_speed"]),
+            "setpoint_peak_speed": number(run["setpoint_peak_speed"]),
+            "final_position_error": number(run["final_position_error"]),
+            "safety_boundary_triggered": "true" if self.safety_boundary_triggered else "false",
+            "recovery_triggered": "true" if self.recovery_triggered else "false",
+            "recovery_completed": "true" if self.recovery_completed else "false",
+            "recovery_duration": (
+                "%.6f" % (self.recovery_end - self.recovery_start)
+                if self.recovery_start is not None and self.recovery_end is not None else ""
+            ),
+            "replan_count": str(run["replan_count"]),
+            "collision": self.collision or "false",
+            "mission_success": mission.get("mission_success", ""),
+            "bt_success": mission.get("bt_success", ""),
+            "total_mission_time": mission.get("total_time", ""),
+            "notes": "; ".join(self.notes),
+        }
+
+    def _append_v21_summary(self):
+        if (
+            not self.v21_enabled
+            or self.v21_summary_written
+            or self.v21_summary_path is None
+            or not self.planning_runs
+        ):
+            return
+        self.v21_summary_path.parent.mkdir(parents=True, exist_ok=True)
+        mission = self.result_row()
+        rows = [self._v21_row(run, mission) for run in self.planning_runs]
+        exists = self.v21_summary_path.exists() and self.v21_summary_path.stat().st_size > 0
+        if exists:
+            with self.v21_summary_path.open("r", newline="", encoding="utf-8") as fp:
+                old_header = next(csv.reader(fp), [])
+            if old_header != V21_PLANNING_FIELDS:
+                raise RuntimeError("V2.1 summary CSV schema mismatch: %s" % self.v21_summary_path)
+        with self.v21_summary_path.open("a", newline="", encoding="utf-8") as fp:
+            writer = csv.DictWriter(fp, fieldnames=V21_PLANNING_FIELDS)
+            if not exists:
+                writer.writeheader()
+            writer.writerows(rows)
+        self._write_v21_event("v21_summary", {"planning_runs": rows})
+        self.v21_summary_written = True
 
     def finish(self, reason, when=None):
         if self.finished.is_set():
             return
         timestamp = when if when is not None else time.time()
+        finalize_open = False
         with self.lock:
             if self.finished.is_set():
                 return
@@ -454,17 +856,22 @@ class RunObserver:
                 self.end_status = "interrupted"
             elif self.stuck_detected:
                 self.end_status = "stuck"
-            elif reason in ("timeout", "replay_eof", "shutdown"):
+            elif reason in ("timeout", "pre_mission_timeout", "mission_timeout", "replay_eof", "shutdown"):
                 self.end_status = "timeout"
             else:
                 self.end_status = reason
             self.finished.set()
+            finalize_open = self.v21_enabled and bool(self.planning_open)
+        if finalize_open:
+            self._finalize_open_planning(timestamp)
         self._write_event("run_end", {
             "reason": reason,
             "mission_result": self.terminal_result,
             "mission_start_time": self.start_iso,
             "mission_end_time": self.end_iso,
         })
+        if self.v21_enabled:
+            self._append_v21_summary()
 
     def close(self):
         if not self.finished.is_set():
@@ -477,6 +884,10 @@ class RunObserver:
         with self.lock:
             if self.log_fp is not None:
                 self.log_fp.close()
+                self.log_fp = None
+            if self.v21_log_fp is not None:
+                self.v21_log_fp.close()
+                self.v21_log_fp = None
 
     def _failure_stage(self):
         for key in STAGE_FIELDS:
@@ -504,6 +915,10 @@ class RunObserver:
         mission_success = "true" if bt_success == "true" and all_stages_success else "false" if self.command_seen else ""
         failure_stage = "" if mission_success == "true" else self._failure_stage() if self.command_seen else ""
         failure_reason = self.failure_reason
+        if not failure_reason and self.finish_reason == "pre_mission_timeout":
+            failure_reason = "pre_mission_timeout: no /mission_command received"
+        if not failure_reason and self.finish_reason == "mission_timeout":
+            failure_reason = "mission_timeout: no /mission_result received"
         if not failure_reason and self.end_status in ("timeout", "stuck", "interrupted"):
             failure_reason = self.stuck_reason if self.stuck_detected else "no /mission_result received"
         if result and result != "SUCCESS" and not failure_reason:
@@ -550,7 +965,11 @@ def build_parser():
     p.add_argument("--color", choices=COLORS, default=None)
     p.add_argument("--output", default="/home/ubuntu/tcei_baseline_tools/results/baseline_runs.csv")
     p.add_argument("--logs-dir", default="/home/ubuntu/tcei_baseline_tools/results/logs")
-    p.add_argument("--timeout", type=float, default=900.0)
+    p.add_argument("--pre-mission-timeout", type=float, default=900.0,
+                   help="Maximum seconds to wait for the first /mission_command.")
+    p.add_argument("--mission-timeout", type=float, default=300.0,
+                   help="Maximum seconds from the first /mission_command to /mission_result.")
+    p.add_argument("--timeout", type=float, default=None, help=argparse.SUPPRESS)
     p.add_argument("--llm-script", default="/home/ubuntu/model/mission_once.py")
     p.add_argument("--no-launch-llm", action="store_true",
                    help="Do not start a process; observe immediately and start timing on the first /mission_command.")
@@ -560,6 +979,16 @@ def build_parser():
                    help="Replay existing JSONL logs offline; ROS and simulation are not started.")
     p.add_argument("--replay-output", default="",
                    help="CSV path for offline replay rows. Defaults to stdout only.")
+    p.add_argument("--v21-telemetry", action="store_true",
+                   help="Subscribe to odom/planner/setpoint topics and write independent V2.1 telemetry.")
+    p.add_argument("--v21-log-dir", default="",
+                   help="Directory for independent V2.1 telemetry JSONL and planning summary CSV.")
+    p.add_argument("--v21-summary", default="",
+                   help="Independent V2.1 planning summary CSV path.")
+    p.add_argument("--v21-config", default="",
+                   help="Experiment config label, for example A0.")
+    p.add_argument("--v21-max-vel", default="",
+                   help="Experiment max_vel label/value, for example 0.30.")
     return p
 
 
@@ -630,6 +1059,9 @@ def write_rows_csv(path, rows):
 
 def main():
     args = build_parser().parse_args()
+    # Keep older invocations usable while making the two lifecycle windows explicit.
+    if args.timeout is not None:
+        args.mission_timeout = args.timeout
     if args.replay_jsonl:
         rows = [replay_jsonl(path) for path in args.replay_jsonl]
         if args.replay_output:
@@ -652,7 +1084,21 @@ def main():
     results_dir.mkdir(parents=True, exist_ok=True)
     provisional_id = dt.datetime.now().strftime("%Y%m%dT%H%M%S") + "_" + uuid.uuid4().hex[:6]
     log_path = results_dir / (provisional_id + "_" + args.color + ".jsonl")
-    observer = RunObserver(args, log_path)
+    v21_log_path = None
+    v21_summary_path = None
+    if args.v21_telemetry:
+        v21_dir = Path(args.v21_log_dir) if args.v21_log_dir else (
+            results_dir.parent / "v2_1_ego_velocity" / "experiments"
+        )
+        v21_dir.mkdir(parents=True, exist_ok=True)
+        v21_log_path = v21_dir / (provisional_id + "_" + args.color + "_telemetry.jsonl")
+        v21_summary_path = Path(args.v21_summary) if args.v21_summary else (v21_dir / "planning_runs.csv")
+    observer = RunObserver(
+        args,
+        log_path,
+        v21_log_path=v21_log_path,
+        v21_summary_path=v21_summary_path,
+    )
     rospy.init_node("tcei_baseline_observer", anonymous=True, disable_signals=True)
 
     rospy.Subscriber("/mission_command", String, observer.on_mission_command, queue_size=10)
@@ -676,9 +1122,27 @@ def main():
                          lambda msg: observer.on_generic("/planning/pos_cmd", msg), queue_size=10)
     except Exception as exc:
         observer.add_note("quadrotor_msgs unavailable: " + str(exc))
+    if args.v21_telemetry:
+        try:
+            from nav_msgs.msg import Odometry
+            rospy.Subscriber(
+                "/mavros/local_position/odom", Odometry,
+                lambda msg: observer.on_odom("/mavros/local_position/odom", msg),
+                queue_size=100,
+            )
+            rospy.Subscriber(
+                "/rflysim/uav1/local/odom", Odometry,
+                lambda msg: observer.on_odom("/rflysim/uav1/local/odom", msg),
+                queue_size=100,
+            )
+        except Exception as exc:
+            observer.add_note("nav_msgs/Odometry unavailable: " + str(exc))
 
     print("run_id=%s" % observer.run_id)
     print("natural_language_task=%s" % task)
+    if args.v21_telemetry:
+        print("v21_telemetry_log=%s" % v21_log_path)
+        print("v21_planning_summary=%s" % v21_summary_path)
     if args.no_launch_llm:
         print("Observer ready: waiting for first /mission_command; timing starts automatically.")
         observer._write_event("observer_ready", {
@@ -694,20 +1158,36 @@ def main():
             observer._write_event("launch_official_llm", {"argv": cmd})
             observer.process = subprocess.Popen(
                 cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-                text=True, bufsize=1
+                stdin=subprocess.DEVNULL, text=True, bufsize=1
             )
             def read_llm_output():
                 for line in observer.process.stdout:
                     observer._write_event("mission_once_stdout", {"line": line.rstrip("\n")})
             threading.Thread(target=read_llm_output, daemon=True).start()
 
-    deadline = observer.monitor_start_wall + args.timeout
+    pre_mission_deadline = observer.monitor_start_wall + args.pre_mission_timeout
+    mission_deadline = None
     try:
         while not rospy.is_shutdown() and not observer.finished.is_set():
-            if time.time() >= deadline:
-                observer.add_note("observer timeout after %.1f seconds" % args.timeout)
-                observer.finish("timeout")
-                break
+            now = time.time()
+            if not observer.command_seen:
+                if now >= pre_mission_deadline:
+                    observer.add_note(
+                        "pre-mission timeout after %.1f seconds; no /mission_command received"
+                        % args.pre_mission_timeout
+                    )
+                    observer.finish("pre_mission_timeout")
+                    break
+            else:
+                if mission_deadline is None:
+                    mission_deadline = observer.start_wall + args.mission_timeout
+                if now >= mission_deadline:
+                    observer.add_note(
+                        "mission timeout after %.1f seconds; no terminal /mission_result received"
+                        % args.mission_timeout
+                    )
+                    observer.finish("mission_timeout")
+                    break
             time.sleep(0.2)
     except KeyboardInterrupt:
         observer.add_note("interrupted by user")
@@ -716,8 +1196,8 @@ def main():
         if not observer.command_seen:
             observer.close()
             print(
-                "TIMEOUT: no /mission_command received within %.1f seconds; "
-                "no CSV result was generated." % args.timeout,
+                "PRE_MISSION_TIMEOUT: no /mission_command received within %.1f seconds; "
+                "no CSV result was generated." % args.pre_mission_timeout,
                 file=sys.stderr,
             )
         else:
@@ -726,6 +1206,12 @@ def main():
             observer.close()
             print(json.dumps(row, ensure_ascii=False, indent=2))
             print("csv=%s" % args.output)
+            if observer.end_status == "timeout":
+                print(
+                    "MISSION_TIMEOUT: no terminal /mission_result received within %.1f seconds."
+                    % args.mission_timeout,
+                    file=sys.stderr,
+                )
         print("raw_log=%s" % log_path)
     return 0
 
