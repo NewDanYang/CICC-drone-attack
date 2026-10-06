@@ -1,0 +1,138 @@
+﻿case,rel_time_s,abs_time,kind,node,level,message
+A0,-1.999,2026-10-03T05:02:57.672+00:00,other,/llm_mission_node,2,[PlanningControl]: Planning navigation completed.
+A0,-1.998,2026-10-03T05:02:57.673+00:00,other,/llm_mission_node,2,"[PlanningControl]: Final position: (4.14, -1.17, 0.88)"
+A0,-1.998,2026-10-03T05:02:57.673+00:00,hover,/llm_mission_node,2,"[PlanningControl]: Maintaining hover at (4.14, -1.17, 0.88) yaw: -0.02"
+A0,-1.998,2026-10-03T05:02:57.673+00:00,goto_start,/llm_mission_node,2,"[GoTo]: GoTo start -> target: (4.50, 0.50, 1.20), yaw: -0.02, frame: 0, tol: 0.15, yaw_tol: 0.15, yaw_rate: 0.50"
+A0,-1.701,2026-10-03T05:02:57.970+00:00,other,/object_detection_node,2,[ColorClassify] red=0 blue=5029 purple=0 -> blue
+A0,-0.663,2026-10-03T05:02:59.008+00:00,checkArrival,/llm_mission_node,2,"[checkArrival] odom=(4.47,-0.22,1.11) target=(4.50,0.50,1.20) dist=0.723 tol=0.15"
+A0,-0.005,2026-10-03T05:02:59.666+00:00,goto_completed,/llm_mission_node,2,[GoTo]: GoTo completed (pos & yaw).
+A0,-0.005,2026-10-03T05:02:59.666+00:00,hover,/llm_mission_node,2,"[GoTo]: Maintaining hover at (4.54, 0.45, 1.13) yaw: -0.03"
+A0,-0.004,2026-10-03T05:02:59.667+00:00,goto_start,/llm_mission_node,2,"[GoTo]: GoTo start -> target: (4.50, 0.50, 1.20), yaw: -0.03, frame: 0, tol: 0.15, yaw_tol: 0.15, yaw_rate: 0.50"
+A0,-0.001,2026-10-03T05:02:59.670+00:00,other,/aruco_detect_node,2,[ArucoDetectNode] Subscribed to /rflysim/sensor2/img_rgb
+A0,0.0,2026-10-03T05:02:59.671+00:00,detection_enabled,/aruco_detect_node,2,[ArucoDetectNode] >>> Detection ENABLED <<<
+A0,0.0,2026-10-03T05:02:59.671+00:00,other,/llm_mission_node,2,[ArucoDetector]: ?????? ArUco ?????? -> ??????
+A0,0.0,2026-10-03T05:02:59.671+00:00,other,/llm_mission_node,2,[ArucoDetector]: ArUco ??????????????????????????????... (??????: 20.0s)
+A0,0.01,2026-10-03T05:02:59.681+00:00,goto_completed,/llm_mission_node,2,[GoTo]: GoTo completed (pos & yaw).
+A0,0.01,2026-10-03T05:02:59.681+00:00,hover,/llm_mission_node,2,"[GoTo]: Maintaining hover at (4.54, 0.45, 1.13) yaw: -0.03"
+A0,0.01,2026-10-03T05:02:59.681+00:00,hover,/llm_mission_node,2,"[ArucoDetector]: Maintaining hover at (4.54, 0.45, 1.13) yaw: -0.03"
+A0,0.01,2026-10-03T05:02:59.681+00:00,other,/llm_mission_node,2,[ArucoDetector]: ?????? ArUco ????????????... (0.0/20.0s)
+A0,0.135,2026-10-03T05:02:59.806+00:00,other,/llm_mission_node,2,[ArucoDetector]: ?????? ArUco ID: 35
+A0,0.136,2026-10-03T05:02:59.807+00:00,other,/aruco_detect_node,2,[1;33m+==========================================+[0m
+A0,0.137,2026-10-03T05:02:59.808+00:00,other,/aruco_detect_node,2,[1;33m|  [1;32m*** ArUco Marker Detected! ***[1;33m        |[0m
+A0,0.137,2026-10-03T05:02:59.808+00:00,other,/aruco_detect_node,2,[1;33m|                                          |[0m
+A0,0.138,2026-10-03T05:02:59.809+00:00,other,/aruco_detect_node,2,[1;33m|    [1;37mDetected ID: [1;36m35  [1;33m                    |[0m
+A0,0.139,2026-10-03T05:02:59.810+00:00,other,/aruco_detect_node,2,[1;33m+==========================================+[0m
+A0,0.142,2026-10-03T05:02:59.813+00:00,other,/llm_mission_node,2,[ArucoDetector]: ================================
+A0,0.142,2026-10-03T05:02:59.813+00:00,other,/llm_mission_node,2,[ArucoDetector]:   ARUCO ID DETECTED: 35
+A0,0.142,2026-10-03T05:02:59.813+00:00,other,/llm_mission_node,2,[ArucoDetector]: ================================
+A0,0.144,2026-10-03T05:02:59.815+00:00,other,/aruco_detect_node,2,[ArucoDetectNode] Unsubscribed (saving CPU)
+A0,0.145,2026-10-03T05:02:59.816+00:00,detection_disabled,/aruco_detect_node,2,[ArucoDetectNode] >>> Detection DISABLED <<<
+A0,0.145,2026-10-03T05:02:59.816+00:00,other,/llm_mission_node,2,[ArucoDetector]: ?????? ArUco ?????? -> ??????
+A0,0.146,2026-10-03T05:02:59.817+00:00,goto_start,/llm_mission_node,2,"[GoTo]: GoTo start -> target: (4.50, 0.50, 1.80), yaw: 3.14, frame: 0, tol: 0.15, yaw_tol: 0.15, yaw_rate: 0.50"
+A0,0.191,2026-10-03T05:02:59.862+00:00,other,/aruco_detect_node,2,[ArucoDetectNode] Detection auto-disabled after success (saving CPU)
+A0,1.339,2026-10-03T05:03:01.010+00:00,checkArrival,/llm_mission_node,2,"[checkArrival] odom=(4.45,0.42,1.59) target=(4.50,0.50,1.80) dist=0.232 tol=0.15"
+A0,1.418,2026-10-03T05:03:01.089+00:00,other,/object_detection_node,2,[ColorClassify] red=0 blue=1777 purple=0 -> blue
+A1,-2.2,2026-10-03T05:23:55.069+00:00,other,/llm_mission_node,2,[PlanningControl]: Planning navigation completed.
+A1,-2.199,2026-10-03T05:23:55.070+00:00,other,/llm_mission_node,2,"[PlanningControl]: Final position: (4.01, -1.14, 0.97)"
+A1,-2.199,2026-10-03T05:23:55.070+00:00,hover,/llm_mission_node,2,"[PlanningControl]: Maintaining hover at (4.01, -1.14, 0.97) yaw: -0.02"
+A1,-2.199,2026-10-03T05:23:55.070+00:00,goto_start,/llm_mission_node,2,"[GoTo]: GoTo start -> target: (4.50, 0.50, 1.20), yaw: -0.02, frame: 0, tol: 0.15, yaw_tol: 0.15, yaw_rate: 0.50"
+A1,-1.464,2026-10-03T05:23:55.805+00:00,other,/object_detection_node,2,[ColorClassify] red=0 blue=564 purple=0 -> blue
+A1,-0.632,2026-10-03T05:23:56.637+00:00,checkArrival,/llm_mission_node,2,"[checkArrival] odom=(4.45,0.00,1.23) target=(4.50,0.50,1.20) dist=0.501 tol=0.15"
+A1,-0.005,2026-10-03T05:23:57.264+00:00,goto_completed,/llm_mission_node,2,[GoTo]: GoTo completed (pos & yaw).
+A1,-0.005,2026-10-03T05:23:57.264+00:00,hover,/llm_mission_node,2,"[GoTo]: Maintaining hover at (4.48, 0.36, 1.23) yaw: -0.02"
+A1,-0.004,2026-10-03T05:23:57.265+00:00,goto_start,/llm_mission_node,2,"[GoTo]: GoTo start -> target: (4.50, 0.50, 1.20), yaw: -0.02, frame: 0, tol: 0.15, yaw_tol: 0.15, yaw_rate: 0.50"
+A1,-0.001,2026-10-03T05:23:57.268+00:00,other,/aruco_detect_node,2,[ArucoDetectNode] Subscribed to /rflysim/sensor2/img_rgb
+A1,0.0,2026-10-03T05:23:57.269+00:00,detection_enabled,/aruco_detect_node,2,[ArucoDetectNode] >>> Detection ENABLED <<<
+A1,0.0,2026-10-03T05:23:57.269+00:00,other,/llm_mission_node,2,[ArucoDetector]: ?????? ArUco ?????? -> ??????
+A1,0.001,2026-10-03T05:23:57.270+00:00,other,/llm_mission_node,2,[ArucoDetector]: ArUco ??????????????????????????????... (??????: 20.0s)
+A1,0.011,2026-10-03T05:23:57.280+00:00,goto_completed,/llm_mission_node,2,[GoTo]: GoTo completed (pos & yaw).
+A1,0.011,2026-10-03T05:23:57.280+00:00,hover,/llm_mission_node,2,"[GoTo]: Maintaining hover at (4.48, 0.36, 1.23) yaw: -0.02"
+A1,0.011,2026-10-03T05:23:57.280+00:00,hover,/llm_mission_node,2,"[ArucoDetector]: Maintaining hover at (4.48, 0.36, 1.23) yaw: -0.02"
+A1,0.011,2026-10-03T05:23:57.280+00:00,other,/llm_mission_node,2,[ArucoDetector]: ?????? ArUco ????????????... (0.0/20.0s)
+A1,0.169,2026-10-03T05:23:57.438+00:00,rejected,/aruco_detect_node,2,[ArucoDetectNode] Searching... no marker found (rejected: 4)
+A1,0.618,2026-10-03T05:23:57.887+00:00,other,/object_detection_node,2,[ColorClassify] red=0 blue=774 purple=0 -> blue
+A1,1.328,2026-10-03T05:23:58.597+00:00,other,/llm_mission_node,2,[ArucoDetector]: ?????? ArUco ID: 35
+A1,1.329,2026-10-03T05:23:58.598+00:00,other,/aruco_detect_node,2,[1;33m+==========================================+[0m
+A1,1.33,2026-10-03T05:23:58.599+00:00,other,/aruco_detect_node,2,[1;33m|  [1;32m*** ArUco Marker Detected! ***[1;33m        |[0m
+A1,1.33,2026-10-03T05:23:58.599+00:00,other,/aruco_detect_node,2,[1;33m|                                          |[0m
+A1,1.331,2026-10-03T05:23:58.600+00:00,other,/aruco_detect_node,2,[1;33m|    [1;37mDetected ID: [1;36m35  [1;33m                    |[0m
+A1,1.331,2026-10-03T05:23:58.600+00:00,other,/aruco_detect_node,2,[1;33m+==========================================+[0m
+A1,1.335,2026-10-03T05:23:58.604+00:00,other,/llm_mission_node,2,[ArucoDetector]: ================================
+A1,1.335,2026-10-03T05:23:58.604+00:00,other,/llm_mission_node,2,[ArucoDetector]:   ARUCO ID DETECTED: 35
+A1,1.335,2026-10-03T05:23:58.604+00:00,other,/llm_mission_node,2,[ArucoDetector]: ================================
+A1,1.338,2026-10-03T05:23:58.607+00:00,other,/aruco_detect_node,2,[ArucoDetectNode] Unsubscribed (saving CPU)
+A1,1.338,2026-10-03T05:23:58.607+00:00,detection_disabled,/aruco_detect_node,2,[ArucoDetectNode] >>> Detection DISABLED <<<
+A1,1.339,2026-10-03T05:23:58.608+00:00,other,/llm_mission_node,2,[ArucoDetector]: ?????? ArUco ?????? -> ??????
+A1,1.339,2026-10-03T05:23:58.608+00:00,goto_start,/llm_mission_node,2,"[GoTo]: GoTo start -> target: (4.50, 0.50, 1.80), yaw: 3.14, frame: 0, tol: 0.15, yaw_tol: 0.15, yaw_rate: 0.50"
+A1,1.37,2026-10-03T05:23:58.639+00:00,checkArrival,/llm_mission_node,2,"[checkArrival] odom=(4.36,-0.12,1.21) target=(4.50,0.50,1.80) dist=0.865 tol=0.15"
+A1,1.383,2026-10-03T05:23:58.652+00:00,other,/aruco_detect_node,2,[ArucoDetectNode] Detection auto-disabled after success (saving CPU)
+A2 #1,-1.887,2026-10-03T05:38:16.102+00:00,other,/llm_mission_node,2,[PlanningControl]: Planning navigation completed.
+A2 #1,-1.887,2026-10-03T05:38:16.102+00:00,other,/llm_mission_node,2,"[PlanningControl]: Final position: (4.03, -1.16, 0.96)"
+A2 #1,-1.886,2026-10-03T05:38:16.103+00:00,hover,/llm_mission_node,2,"[PlanningControl]: Maintaining hover at (4.03, -1.16, 0.96) yaw: -0.03"
+A2 #1,-1.886,2026-10-03T05:38:16.103+00:00,goto_start,/llm_mission_node,2,"[GoTo]: GoTo start -> target: (4.50, 0.50, 1.20), yaw: -0.03, frame: 0, tol: 0.15, yaw_tol: 0.15, yaw_rate: 0.50"
+A2 #1,-0.561,2026-10-03T05:38:17.428+00:00,checkArrival,/llm_mission_node,2,"[checkArrival] odom=(4.43,-0.19,1.21) target=(4.50,0.50,1.20) dist=0.695 tol=0.15"
+A2 #1,-0.005,2026-10-03T05:38:17.984+00:00,goto_completed,/llm_mission_node,2,[GoTo]: GoTo completed (pos & yaw).
+A2 #1,-0.005,2026-10-03T05:38:17.984+00:00,hover,/llm_mission_node,2,"[GoTo]: Maintaining hover at (4.55, 0.42, 1.25) yaw: -0.05"
+A2 #1,-0.004,2026-10-03T05:38:17.985+00:00,goto_start,/llm_mission_node,2,"[GoTo]: GoTo start -> target: (4.50, 0.50, 1.20), yaw: -0.05, frame: 0, tol: 0.15, yaw_tol: 0.15, yaw_rate: 0.50"
+A2 #1,-0.001,2026-10-03T05:38:17.988+00:00,other,/aruco_detect_node,2,[ArucoDetectNode] Subscribed to /rflysim/sensor2/img_rgb
+A2 #1,0.0,2026-10-03T05:38:17.989+00:00,detection_enabled,/aruco_detect_node,2,[ArucoDetectNode] >>> Detection ENABLED <<<
+A2 #1,0.0,2026-10-03T05:38:17.989+00:00,other,/llm_mission_node,2,[ArucoDetector]: ?????? ArUco ?????? -> ??????
+A2 #1,0.0,2026-10-03T05:38:17.989+00:00,other,/llm_mission_node,2,[ArucoDetector]: ArUco ??????????????????????????????... (??????: 20.0s)
+A2 #1,0.01,2026-10-03T05:38:17.999+00:00,goto_completed,/llm_mission_node,2,[GoTo]: GoTo completed (pos & yaw).
+A2 #1,0.01,2026-10-03T05:38:17.999+00:00,hover,/llm_mission_node,2,"[GoTo]: Maintaining hover at (4.55, 0.42, 1.25) yaw: -0.05"
+A2 #1,0.01,2026-10-03T05:38:17.999+00:00,hover,/llm_mission_node,2,"[ArucoDetector]: Maintaining hover at (4.55, 0.42, 1.25) yaw: -0.05"
+A2 #1,0.01,2026-10-03T05:38:17.999+00:00,other,/llm_mission_node,2,[ArucoDetector]: ?????? ArUco ????????????... (0.0/20.0s)
+A2 #1,2.012,2026-10-03T05:38:20.001+00:00,other,/llm_mission_node,2,[ArucoDetector]: ?????? ArUco ????????????... (2.0/20.0s)
+A2 retry,-1.917,2026-10-03T05:49:57.466+00:00,other,/llm_mission_node,2,[PlanningControl]: Planning navigation completed.
+A2 retry,-1.917,2026-10-03T05:49:57.466+00:00,other,/llm_mission_node,2,"[PlanningControl]: Final position: (4.01, -1.09, 0.88)"
+A2 retry,-1.917,2026-10-03T05:49:57.466+00:00,hover,/llm_mission_node,2,"[PlanningControl]: Maintaining hover at (4.01, -1.09, 0.88) yaw: -0.01"
+A2 retry,-1.916,2026-10-03T05:49:57.467+00:00,goto_start,/llm_mission_node,2,"[GoTo]: GoTo start -> target: (4.50, 0.50, 1.20), yaw: -0.01, frame: 0, tol: 0.15, yaw_tol: 0.15, yaw_rate: 0.50"
+A2 retry,-1.36,2026-10-03T05:49:58.023+00:00,checkArrival,/llm_mission_node,2,"[checkArrival] odom=(4.18,-0.96,1.02) target=(4.50,0.50,1.20) dist=1.505 tol=0.15"
+A2 retry,-1.304,2026-10-03T05:49:58.079+00:00,other,/object_detection_node,2,[ColorClassify] red=0 blue=4846 purple=0 -> blue
+A2 retry,-0.006,2026-10-03T05:49:59.377+00:00,goto_completed,/llm_mission_node,2,[GoTo]: GoTo completed (pos & yaw).
+A2 retry,-0.005,2026-10-03T05:49:59.378+00:00,hover,/llm_mission_node,2,"[GoTo]: Maintaining hover at (4.60, 0.47, 1.15) yaw: -0.02"
+A2 retry,-0.005,2026-10-03T05:49:59.378+00:00,goto_start,/llm_mission_node,2,"[GoTo]: GoTo start -> target: (4.50, 0.50, 1.20), yaw: -0.02, frame: 0, tol: 0.15, yaw_tol: 0.15, yaw_rate: 0.50"
+A2 retry,-0.001,2026-10-03T05:49:59.382+00:00,other,/aruco_detect_node,2,[ArucoDetectNode] Subscribed to /rflysim/sensor2/img_rgb
+A2 retry,0.0,2026-10-03T05:49:59.383+00:00,detection_enabled,/aruco_detect_node,2,[ArucoDetectNode] >>> Detection ENABLED <<<
+A2 retry,0.001,2026-10-03T05:49:59.384+00:00,other,/llm_mission_node,2,[ArucoDetector]: ?????? ArUco ?????? -> ??????
+A2 retry,0.001,2026-10-03T05:49:59.384+00:00,other,/llm_mission_node,2,[ArucoDetector]: ArUco ??????????????????????????????... (??????: 20.0s)
+A2 retry,0.011,2026-10-03T05:49:59.394+00:00,goto_completed,/llm_mission_node,2,[GoTo]: GoTo completed (pos & yaw).
+A2 retry,0.011,2026-10-03T05:49:59.394+00:00,hover,/llm_mission_node,2,"[GoTo]: Maintaining hover at (4.60, 0.47, 1.15) yaw: -0.02"
+A2 retry,0.011,2026-10-03T05:49:59.394+00:00,hover,/llm_mission_node,2,"[ArucoDetector]: Maintaining hover at (4.60, 0.47, 1.15) yaw: -0.02"
+A2 retry,0.011,2026-10-03T05:49:59.394+00:00,other,/llm_mission_node,2,[ArucoDetector]: ?????? ArUco ????????????... (0.0/20.0s)
+A2 retry,0.131,2026-10-03T05:49:59.514+00:00,rejected,/aruco_detect_node,2,[ArucoDetectNode] Searching... no marker found (rejected: 5)
+A2 retry,2.013,2026-10-03T05:50:01.396+00:00,other,/llm_mission_node,2,[ArucoDetector]: ?????? ArUco ????????????... (2.0/20.0s)
+A2 retry,2.209,2026-10-03T05:50:01.592+00:00,rejected,/aruco_detect_node,2,[ArucoDetectNode] Searching... no marker found (rejected: 2)
+A1 retest,-1.808,2026-10-03T06:40:36.859+00:00,other,/llm_mission_node,2,[PlanningControl]: Planning navigation completed.
+A1 retest,-1.808,2026-10-03T06:40:36.859+00:00,other,/llm_mission_node,2,"[PlanningControl]: Final position: (4.01, -1.04, 0.85)"
+A1 retest,-1.808,2026-10-03T06:40:36.859+00:00,hover,/llm_mission_node,2,"[PlanningControl]: Maintaining hover at (4.01, -1.04, 0.85) yaw: -0.04"
+A1 retest,-1.807,2026-10-03T06:40:36.860+00:00,goto_start,/llm_mission_node,2,"[GoTo]: GoTo start -> target: (4.50, 0.50, 1.20), yaw: -0.04, frame: 0, tol: 0.15, yaw_tol: 0.15, yaw_rate: 0.50"
+A1 retest,-0.351,2026-10-03T06:40:38.316+00:00,checkArrival,/llm_mission_node,2,"[checkArrival] odom=(4.40,0.03,1.11) target=(4.50,0.50,1.20) dist=0.486 tol=0.15"
+A1 retest,-0.007,2026-10-03T06:40:38.660+00:00,goto_completed,/llm_mission_node,2,[GoTo]: GoTo completed (pos & yaw).
+A1 retest,-0.007,2026-10-03T06:40:38.660+00:00,hover,/llm_mission_node,2,"[GoTo]: Maintaining hover at (4.47, 0.39, 1.14) yaw: -0.06"
+A1 retest,-0.006,2026-10-03T06:40:38.661+00:00,goto_start,/llm_mission_node,2,"[GoTo]: GoTo start -> target: (4.50, 0.50, 1.20), yaw: -0.06, frame: 0, tol: 0.15, yaw_tol: 0.15, yaw_rate: 0.50"
+A1 retest,-0.002,2026-10-03T06:40:38.665+00:00,other,/aruco_detect_node,2,[ArucoDetectNode] Subscribed to /rflysim/sensor2/img_rgb
+A1 retest,0.0,2026-10-03T06:40:38.667+00:00,detection_enabled,/aruco_detect_node,2,[ArucoDetectNode] >>> Detection ENABLED <<<
+A1 retest,0.0,2026-10-03T06:40:38.667+00:00,other,/llm_mission_node,2,[ArucoDetector]: ?????? ArUco ?????? -> ??????
+A1 retest,0.0,2026-10-03T06:40:38.667+00:00,other,/llm_mission_node,2,[ArucoDetector]: ArUco ??????????????????????????????... (??????: 20.0s)
+A1 retest,0.011,2026-10-03T06:40:38.678+00:00,goto_completed,/llm_mission_node,2,[GoTo]: GoTo completed (pos & yaw).
+A1 retest,0.011,2026-10-03T06:40:38.678+00:00,hover,/llm_mission_node,2,"[GoTo]: Maintaining hover at (4.47, 0.39, 1.14) yaw: -0.06"
+A1 retest,0.011,2026-10-03T06:40:38.678+00:00,hover,/llm_mission_node,2,"[ArucoDetector]: Maintaining hover at (4.47, 0.39, 1.14) yaw: -0.06"
+A1 retest,0.011,2026-10-03T06:40:38.678+00:00,other,/llm_mission_node,2,[ArucoDetector]: ?????? ArUco ????????????... (0.0/20.0s)
+A1 retest,0.173,2026-10-03T06:40:38.840+00:00,rejected,/aruco_detect_node,2,[ArucoDetectNode] Searching... no marker found (rejected: 5)
+A1 retest,0.21,2026-10-03T06:40:38.877+00:00,other,/llm_mission_node,2,[ArucoDetector]: ?????? ArUco ID: 35
+A1 retest,0.211,2026-10-03T06:40:38.878+00:00,other,/aruco_detect_node,2,[1;33m+==========================================+[0m
+A1 retest,0.211,2026-10-03T06:40:38.878+00:00,other,/aruco_detect_node,2,[1;33m|  [1;32m*** ArUco Marker Detected! ***[1;33m        |[0m
+A1 retest,0.212,2026-10-03T06:40:38.879+00:00,other,/aruco_detect_node,2,[1;33m|                                          |[0m
+A1 retest,0.213,2026-10-03T06:40:38.880+00:00,other,/aruco_detect_node,2,[1;33m|    [1;37mDetected ID: [1;36m35  [1;33m                    |[0m
+A1 retest,0.213,2026-10-03T06:40:38.880+00:00,other,/llm_mission_node,2,[ArucoDetector]: ================================
+A1 retest,0.213,2026-10-03T06:40:38.880+00:00,other,/llm_mission_node,2,[ArucoDetector]:   ARUCO ID DETECTED: 35
+A1 retest,0.213,2026-10-03T06:40:38.880+00:00,other,/llm_mission_node,2,[ArucoDetector]: ================================
+A1 retest,0.213,2026-10-03T06:40:38.880+00:00,other,/aruco_detect_node,2,[1;33m+==========================================+[0m
+A1 retest,0.216,2026-10-03T06:40:38.883+00:00,other,/aruco_detect_node,2,[ArucoDetectNode] Unsubscribed (saving CPU)
+A1 retest,0.216,2026-10-03T06:40:38.883+00:00,detection_disabled,/aruco_detect_node,2,[ArucoDetectNode] >>> Detection DISABLED <<<
+A1 retest,0.216,2026-10-03T06:40:38.883+00:00,other,/llm_mission_node,2,[ArucoDetector]: ?????? ArUco ?????? -> ??????
+A1 retest,0.217,2026-10-03T06:40:38.884+00:00,goto_start,/llm_mission_node,2,"[GoTo]: GoTo start -> target: (4.50, 0.50, 1.80), yaw: 3.14, frame: 0, tol: 0.15, yaw_tol: 0.15, yaw_rate: 0.50"
+A1 retest,0.265,2026-10-03T06:40:38.932+00:00,other,/aruco_detect_node,2,[ArucoDetectNode] Detection auto-disabled after success (saving CPU)
+A1 retest,1.612,2026-10-03T06:40:40.279+00:00,other,/object_detection_node,2,[ColorClassify] red=0 blue=1900 purple=0 -> blue
+A1 retest,1.654,2026-10-03T06:40:40.321+00:00,checkArrival,/llm_mission_node,2,"[checkArrival] odom=(4.77,2.03,1.72) target=(4.50,0.50,1.80) dist=1.553 tol=0.15"

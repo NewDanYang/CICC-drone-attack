@@ -1,0 +1,515 @@
+[0m[INFO] [1791266789.282766194]: === Behavior Tree Mission Node Started ===[0m
+in initail ...
+[0m[INFO] [1791266789.288719146]: Safety boundary enabled: X[-1.0, 6.0] Y[-3.0, 1.5] Z[-0.1, 2.5][0m
+[0m[INFO] [1791266789.288730756]: [SafetyRecovery] target_margin=0.30 m release_margin=0.15 m confirm_time=0.50 s[0m
+[0m[INFO] [1791266789.289565472]: Behavior Tree Config Path: /home/zy/ws/src/mission_pkg/config/hitballon.xml[0m
+[0m[INFO] [1791266789.289572895]: Mode: llm[0m
+[0m[INFO] [1791266789.289720654]: Loaded 12 plugin(s) from: /home/ubuntu/catkin_ws/devel/lib[0m
+[0m[INFO] [1791266789.292942571]: === Running in LLM mode ===[0m
+[0m[INFO] [1791266789.294939373]: Listening on /mission_command for LLM commands...[0m
+[0m[INFO] [1791266789.294948960]: Send abort to /mission_abort to cancel running mission.[0m
+[0m[INFO] [1791266789.294954534]: Results published to /mission_result[0m
+[0m[INFO] [1791266789.572029826]: [MavRosConnect] Flight controller state connected (mavros/state)[0m
+[0m[INFO] [1791266789.616930783]: [MavRosConnect] Drone localization connected (odom)[0m
+[0m[INFO] [1791266828.185438471]: === Received LLM Command ===[0m
+[0m[INFO] [1791266828.185477641]: Raw: takeoff
+cross_frame
+detect_aruco
+return_cross_frame
+hit_balloon:red
+land[0m
+[0m[INFO] [1791266828.185558408]: Parsed 6 command(s):[0m
+[0m[INFO] [1791266828.185566329]:   [0] takeoff[0m
+[0m[INFO] [1791266828.185572467]:   [1] cross_frame[0m
+[0m[INFO] [1791266828.185578907]:   [2] detect_aruco[0m
+[0m[INFO] [1791266828.185583899]:   [3] return_cross_frame[0m
+[0m[INFO] [1791266828.185588607]:   [4] hit_balloon:red[0m
+[0m[INFO] [1791266828.185593084]:   [5] land[0m
+[0m[INFO] [1791266828.190571231]: Hit balloon: color=red -> zone=A, approach=5.3;1.0;1.0, goto=5.3;1.0;1.0, yaw=1.570800, target=red_balloon[0m
+[0m[INFO] [1791266828.190916782]: Generated BT XML:
+<?xml version="1.0" encoding="UTF-8"?>
+<root BTCPP_format="4" main_tree_to_execute="LLMTask">
+  <BehaviorTree ID="LLMTask">
+    <Sequence name="LLMSequence">
+      <Takeoff goal="0.0;0.0;1.0"/>
+      <!-- ????????????????????? -->
+      <GoTo goal="0.0;-1.0;1.0"/>
+      <!-- ???????????????????????????????????????????????? 2 s ?????? -->
+      <WaitForStablePosition goal="0.0;-1.0;1.0" position_threshold="0.150000" velocity_threshold="0.080000" stable_confirm_time="0.500000" timeout="2.000000"/>
+      <!-- ?????????????????? -->
+      <TargetLocator object_name="square_frame" object_width="1.300000" object_height="1.300000" occlusion_direction="right" expected_pos="3.25;-0.4;1.0" xy_tolerance="1.0" z_tolerance="0.500000" confidence_threshold="0.7" position_3d="{frame_center}" filter_window_size="20"/>
+      <!-- ?????????????????? -->
+      <PlanningControl goal="{frame_center}" offset_z="1.000000" final_position="{planning_end_pos}"/>
+      <GoTo goal="4.5;0.5;1.2"/>
+      <Parallel success_count="2" failure_count="1">
+        <GoTo goal="4.5;0.5;1.2"/>
+        <ArucoDetector aruco_id="{detected_aruco_id}"/>
+      </Parallel>
+      <!-- ??????180??? -->
+      <GoTo goal="4.5;0.5;1.8" yaw="3.141590"/>
+      <!-- ?????????????????? -->
+      <GoTo goal="{planning_end_pos}"/>
+      <!-- ?????????????????? -->
+      <PlanningControl goal="{frame_center}"/>
+      <!-- ??????????????? -->
+      <GoTo goal="0.5;0.0;0.0" frame="1"/>
+      <!-- ???????????????????????? -->
+      <GoTo goal="0.5;0.0;0.0" frame="1" yaw="0.000000"/>
+      <!-- ??????????????????????????????A -->
+      <PlanningControl goal="5.3;1.0;1.0"/>
+      <!-- ????????????A?????????(red) -->
+      <GoTo goal="5.3;1.0;1.0" yaw="1.570800"/>
+      <!-- ????????????????????? -->
+      <ForceSuccess>
+        <Timeout msec="50000">
+          <Parallel success_count="1" failure_count="1">
+            <TargetTracker object_name="red_balloon" confidence_threshold="0.8" pixel_target="{balloon_pixel}"/>
+            <VisualServo pixel_target="{balloon_pixel}" k_p_yaw_rate="0.003000" k_d_yaw_rate="0.001000" k_p_vz="0.010000" k_d_vz="0.006000" approach_area_threshold="0.080000" forward_velocity="1.000000" sprint_velocity="1.500000" sprint_time="1.200000"/>
+          </Parallel>
+        </Timeout>
+      </ForceSuccess>
+      <!-- ???????????? -->
+      <GoTo goal="0.0;0.0;0.5" yaw="0.000000"/>
+      <!-- ?????? -->
+      <Land/>
+    </Sequence>
+  </BehaviorTree>
+</root>[0m
+[0m[INFO] [1791266828.201688361]: === Starting LLM Mission Execution ===[0m
+detected_aruco_id (int)
+balloon_pixel (BT::PixelTarget)
+planning_end_pos (BT::Position3D)
+frame_center (BT::Position3D)
+[1791266828.202]: LLMSequence               [36mIDLE[0m -> [33mRUNNING[0m
+[0m[INFO] [1791266828.201786583]: [Takeoff]: Takeoff start -> (0.00, 0.00, 1.00), yaw: 0.00, tolerance: 0.20, auto arm enabled[0m
+[1791266828.202]: Takeoff                   [36mIDLE[0m -> [33mRUNNING[0m
+[0m[INFO] [1791266828.212910074]: [Takeoff]: Requesting mode OFFBOARD[0m
+[0m[INFO] [1791266833.217968472]: [Takeoff]: Requesting mode OFFBOARD[0m
+[0m[INFO] [1791266838.235099260]: [Takeoff]: Requesting ARM[0m
+[0m[INFO] [1791266838.853794686]: [checkArrival] odom=(0.00,-0.00,-0.00) target=(0.00,0.00,1.00) dist=1.000 tol=0.20[0m
+[0m[INFO] [1791266840.855655254]: [checkArrival] odom=(-0.00,0.00,-0.00) target=(0.00,0.00,1.00) dist=1.000 tol=0.20[0m
+[0m[INFO] [1791266842.857349079]: [checkArrival] odom=(-0.05,0.06,0.23) target=(0.00,0.00,1.00) dist=0.775 tol=0.20[0m
+[0m[INFO] [1791266844.861257971]: [checkArrival] odom=(-0.05,0.05,0.70) target=(0.00,0.00,1.00) dist=0.303 tol=0.20[0m
+[0m[INFO] [1791266845.740914910]: [Takeoff]: Takeoff completed.[0m
+[1791266845.741]: Takeoff                   [33mRUNNING[0m -> [32mSUCCESS[0m
+[0m[INFO] [1791266845.741896181]: [GoTo]: GoTo start -> target: (0.00, -1.00, 1.00), yaw: -0.00, frame: 0, tol: 0.15, yaw_tol: 0.15, yaw_rate: 0.50[0m
+[1791266845.742]: GoTo                      [36mIDLE[0m -> [33mRUNNING[0m
+[0m[INFO] [1791266846.864191391]: [checkArrival] odom=(-0.03,-0.42,0.89) target=(0.00,-1.00,1.00) dist=0.595 tol=0.15[0m
+[0m[INFO] [1791266847.541602699]: [GoTo]: GoTo completed (pos & yaw).[0m
+[0m[INFO] [1791266847.541636723]: [GoTo]: Maintaining hover at (-0.03, -0.92, 0.91) yaw: -0.01[0m
+[1791266847.542]: GoTo                      [33mRUNNING[0m -> [32mSUCCESS[0m
+[0m[INFO] [1791266847.541693614]: [WaitForStablePosition]: Waiting for stable position at (0.00, -1.00, 1.00) pos<=0.15m vel<=0.08m/s confirm=0.50s timeout=2.00s[0m
+[1791266847.542]: WaitForStablePosition     [36mIDLE[0m -> [33mRUNNING[0m
+[0m[INFO] [1791266847.551824303]: [WaitForStablePosition]: stable condition met; confirmation started[0m
+[0m[INFO] [1791266848.057392236]: [WaitForStablePosition]: stable position confirmed after 0.516s[0m
+[1791266848.057]: WaitForStablePosition     [33mRUNNING[0m -> [32mSUCCESS[0m
+[0m[INFO] [1791266848.057466929]: [TargetLocator]: Detecting target: square_frame, conf_th: 0.70[0m
+[0m[INFO] [1791266848.057484467]: [TargetLocator]: 3D Locator - size: 1.30 x 1.30, ratio: 1.00, filter: 20[0m
+[1791266848.057]: TargetLocator             [36mIDLE[0m -> [33mRUNNING[0m
+[0m[INFO] [1791266848.360861999]: [TargetLocator]: cameraToWorld -> (3.01, -1.12, 0.89)[0m
+[0m[INFO] [1791266848.360889587]: [TargetLocator]: Collecting frames: 1/10[0m
+[0m[INFO] [1791266849.361819550]: [TargetLocator]: cameraToWorld -> (3.13, -1.10, 0.88)[0m
+[0m[INFO] [1791266849.361859734]: [TargetLocator]: Target located at (3.09, -1.11, 0.89)[0m
+[0m[INFO] [1791266849.361869485]: [TargetLocator]: Target located at (3.09, -1.11, 0.89) - SUCCESS![0m
+[1791266849.362]: TargetLocator             [33mRUNNING[0m -> [32mSUCCESS[0m
+[31m[ERROR] [1791266849.362510923]: [PlanningControl]: >>> NED goal to ego=(4.09, -1.12, 0.89), yaw=-0.01, offset=1.00 <<<[0m
+[0m[INFO] [1791266849.362486693]: [PlanningControl]: Initialized with offset_z=1.00, tolerance=0.15, control_yaw=0[0m
+[0m[INFO] [1791266849.362534024]: [PlanningControl]: Target acquired! Planning navigation start -> (4.09, -1.12, 0.89), offset: 1.00[0m
+[1791266849.363]: PlanningControl           [36mIDLE[0m -> [33mRUNNING[0m
+[0m[INFO] [1791266849.372669372]: [checkArrival] odom=(-0.09,-0.82,0.86) target=(4.09,-1.12,0.89) dist=4.189 tol=0.15[0m
+[0m[INFO] [1791266851.374578025]: [checkArrival] odom=(-0.04,-0.63,0.91) target=(4.09,-1.12,0.89) dist=4.157 tol=0.15[0m
+[0m[INFO] [1791266853.376360949]: [checkArrival] odom=(0.78,-0.83,0.90) target=(4.09,-1.12,0.89) dist=3.325 tol=0.15[0m
+[0m[INFO] [1791266855.378149303]: [checkArrival] odom=(1.36,-0.88,0.89) target=(4.09,-1.12,0.89) dist=2.743 tol=0.15[0m
+[0m[INFO] [1791266857.379987531]: [checkArrival] odom=(1.93,-0.93,0.89) target=(4.09,-1.12,0.89) dist=2.173 tol=0.15[0m
+[0m[INFO] [1791266859.382369396]: [checkArrival] odom=(2.39,-0.96,0.90) target=(4.09,-1.12,0.89) dist=1.704 tol=0.15[0m
+[0m[INFO] [1791266861.385073582]: [checkArrival] odom=(2.79,-0.97,0.91) target=(4.09,-1.12,0.89) dist=1.309 tol=0.15[0m
+[0m[INFO] [1791266863.387659855]: [checkArrival] odom=(3.19,-0.99,0.91) target=(4.09,-1.12,0.89) dist=0.909 tol=0.15[0m
+[0m[INFO] [1791266865.390302993]: [checkArrival] odom=(3.73,-1.05,0.90) target=(4.09,-1.12,0.89) dist=0.365 tol=0.15[0m
+[0m[INFO] [1791266866.138863403]: [PlanningControl]: Planning navigation completed.[0m
+[0m[INFO] [1791266866.138900038]: [PlanningControl]: Final position: (3.95, -1.07, 0.91)[0m
+[0m[INFO] [1791266866.138911419]: [PlanningControl]: Maintaining hover at (3.95, -1.07, 0.91) yaw: -0.01[0m
+[1791266866.139]: PlanningControl           [33mRUNNING[0m -> [32mSUCCESS[0m
+[0m[INFO] [1791266866.139932126]: [GoTo]: GoTo start -> target: (4.50, 0.50, 1.20), yaw: -0.01, frame: 0, tol: 0.15, yaw_tol: 0.15, yaw_rate: 0.50[0m
+[1791266866.140]: GoTo                      [36mIDLE[0m -> [33mRUNNING[0m
+[0m[INFO] [1791266867.394200817]: [checkArrival] odom=(4.29,-0.24,1.11) target=(4.50,0.50,1.20) dist=0.772 tol=0.15[0m
+[0m[INFO] [1791266868.142779767]: [GoTo]: GoTo completed (pos & yaw).[0m
+[0m[INFO] [1791266868.142815300]: [GoTo]: Maintaining hover at (4.44, 0.42, 1.12) yaw: -0.01[0m
+[1791266868.143]: GoTo                      [33mRUNNING[0m -> [32mSUCCESS[0m
+[1791266868.143]: Parallel                  [36mIDLE[0m -> [33mRUNNING[0m
+[0m[INFO] [1791266868.143796655]: [GoTo]: GoTo start -> target: (4.50, 0.50, 1.20), yaw: -0.01, frame: 0, tol: 0.15, yaw_tol: 0.15, yaw_rate: 0.50[0m
+[1791266868.144]: GoTo                      [36mIDLE[0m -> [33mRUNNING[0m
+[0m[INFO] [1791266868.148153777]: [ArucoDetector]: ?????? ArUco ?????? -> ??????[0m
+[0m[INFO] [1791266868.148177840]: [ArucoDetector]: ArUco ??????????????????????????????... (??????: 20.0s)[0m
+[1791266868.148]: ArucoDetector             [36mIDLE[0m -> [33mRUNNING[0m
+[0m[INFO] [1791266868.158317371]: [GoTo]: GoTo completed (pos & yaw).[0m
+[0m[INFO] [1791266868.158333195]: [GoTo]: Maintaining hover at (4.44, 0.42, 1.12) yaw: -0.01[0m
+[1791266868.158]: GoTo                      [33mRUNNING[0m -> [32mSUCCESS[0m
+[0m[INFO] [1791266868.158354415]: [ArucoDetector]: Maintaining hover at (4.44, 0.42, 1.12) yaw: -0.01[0m
+[0m[INFO] [1791266868.158368184]: [ArucoDetector]: ?????? ArUco ????????????... (0.0/20.0s)[0m
+[0m[INFO] [1791266868.247473449]: [ArucoDetector]: ?????? ArUco ID: 35[0m
+[0m[INFO] [1791266868.249431913]: [ArucoDetector]: ================================[0m
+[0m[INFO] [1791266868.249462752]: [ArucoDetector]:   ARUCO ID DETECTED: 35[0m
+[0m[INFO] [1791266868.249475511]: [ArucoDetector]: ================================[0m
+[0m[INFO] [1791266868.253833751]: [ArucoDetector]: ?????? ArUco ?????? -> ??????[0m
+[1791266868.254]: ArucoDetector             [33mRUNNING[0m -> [32mSUCCESS[0m
+[1791266868.254]: GoTo                      [32mSUCCESS[0m -> [36mIDLE[0m
+[1791266868.254]: ArucoDetector             [32mSUCCESS[0m -> [36mIDLE[0m
+[1791266868.254]: Parallel                  [33mRUNNING[0m -> [32mSUCCESS[0m
+[0m[INFO] [1791266868.254610986]: [GoTo]: GoTo start -> target: (4.50, 0.50, 1.80), yaw: 3.14, frame: 0, tol: 0.15, yaw_tol: 0.15, yaw_rate: 0.50[0m
+[1791266868.255]: GoTo                      [36mIDLE[0m -> [33mRUNNING[0m
+[0m[INFO] [1791266869.397596608]: [checkArrival] odom=(4.41,0.38,1.71) target=(4.50,0.50,1.80) dist=0.172 tol=0.15[0m
+[0m[INFO] [1791266871.400113561]: [checkArrival] odom=(4.50,0.21,1.99) target=(4.50,0.50,1.80) dist=0.348 tol=0.15[0m
+[0m[INFO] [1791266872.825660570]: [checkArrival] yaw_diff=(5.44) target=(3.14) current=(-2.30) yaw_tolerance=(0.15)    [0m
+[0m[INFO] [1791266873.402073878]: [checkArrival] odom=(4.54,0.53,1.91) target=(4.50,0.50,1.80) dist=0.115 tol=0.15[0m
+[0m[INFO] [1791266874.221024558]: [GoTo]: GoTo completed (pos & yaw).[0m
+[0m[INFO] [1791266874.221057450]: [GoTo]: Maintaining hover at (4.48, 0.60, 1.87) yaw: -3.03[0m
+[1791266874.221]: GoTo                      [33mRUNNING[0m -> [32mSUCCESS[0m
+[0m[INFO] [1791266874.222202499]: [GoTo]: GoTo start -> target: (3.95, -1.07, 0.91), yaw: -3.03, frame: 0, tol: 0.15, yaw_tol: 0.15, yaw_rate: 0.50[0m
+[1791266874.222]: GoTo                      [36mIDLE[0m -> [33mRUNNING[0m
+[0m[INFO] [1791266875.405316269]: [checkArrival] odom=(4.07,-0.12,1.20) target=(3.95,-1.07,0.91) dist=0.998 tol=0.15[0m
+[0m[INFO] [1791266877.407369850]: [checkArrival] odom=(3.85,-1.36,0.93) target=(3.95,-1.07,0.91) dist=0.307 tol=0.15[0m
+[0m[INFO] [1791266878.347660699]: [GoTo]: GoTo completed (pos & yaw).[0m
+[0m[INFO] [1791266878.347700177]: [GoTo]: Maintaining hover at (4.04, -1.18, 0.93) yaw: -3.10[0m
+[1791266878.348]: GoTo                      [33mRUNNING[0m -> [32mSUCCESS[0m
+[31m[ERROR] [1791266878.348399143]: [PlanningControl]: >>> NED goal to ego=(3.09, -1.11, 0.89), yaw=-3.10, offset=0.00 <<<[0m
+[0m[INFO] [1791266878.348377296]: [PlanningControl]: Initialized with offset_z=0.00, tolerance=0.15, control_yaw=0[0m
+[0m[INFO] [1791266878.348412921]: [PlanningControl]: Target acquired! Planning navigation start -> (3.09, -1.11, 0.89), offset: 0.00[0m
+[1791266878.348]: PlanningControl           [36mIDLE[0m -> [33mRUNNING[0m
+[0m[INFO] [1791266879.410075827]: [checkArrival] odom=(4.07,-1.07,0.95) target=(3.09,-1.11,0.89) dist=0.986 tol=0.15[0m
+[0m[INFO] [1791266881.411976608]: [checkArrival] odom=(3.51,-1.23,0.93) target=(3.09,-1.11,0.89) dist=0.436 tol=0.15[0m
+[0m[INFO] [1791266882.220938270]: [PlanningControl]: Planning navigation completed.[0m
+[0m[INFO] [1791266882.220972299]: [PlanningControl]: Final position: (3.19, -1.21, 0.91)[0m
+[0m[INFO] [1791266882.220985169]: [PlanningControl]: Maintaining hover at (3.19, -1.21, 0.91) yaw: 3.10[0m
+[1791266882.221]: PlanningControl           [33mRUNNING[0m -> [32mSUCCESS[0m
+[0m[INFO] [1791266882.222283345]: [GoTo]: GoTo start -> target: (2.69, -1.19, 0.91), yaw: 3.10, frame: 1, tol: 0.15, yaw_tol: 0.15, yaw_rate: 0.50[0m
+[1791266882.222]: GoTo                      [36mIDLE[0m -> [33mRUNNING[0m
+[0m[INFO] [1791266883.344872928]: [GoTo]: GoTo completed (pos & yaw).[0m
+[0m[INFO] [1791266883.344908927]: [GoTo]: Maintaining hover at (2.80, -1.21, 0.94) yaw: 2.99[0m
+[1791266883.345]: GoTo                      [33mRUNNING[0m -> [32mSUCCESS[0m
+[0m[INFO] [1791266883.346269755]: [GoTo]: GoTo start -> target: (2.30, -1.13, 0.94), yaw: 0.00, frame: 1, tol: 0.15, yaw_tol: 0.15, yaw_rate: 0.50[0m
+[1791266883.346]: GoTo                      [36mIDLE[0m -> [33mRUNNING[0m
+[0m[INFO] [1791266883.417106519]: [checkArrival] odom=(2.80,-1.21,0.94) target=(2.30,-1.13,0.94) dist=0.500 tol=0.15[0m
+[0m[INFO] [1791266884.539385161]: [checkArrival] yaw_diff=(-2.47) target=(0.00) current=(2.47) yaw_tolerance=(0.15)    [0m
+[0m[INFO] [1791266885.419188356]: [checkArrival] odom=(2.24,-1.13,0.98) target=(2.30,-1.13,0.94) dist=0.076 tol=0.15[0m
+[0m[INFO] [1791266886.541616685]: [checkArrival] yaw_diff=(-1.46) target=(0.00) current=(1.46) yaw_tolerance=(0.15)    [0m
+[0m[INFO] [1791266887.421256831]: [checkArrival] odom=(2.31,-1.07,0.96) target=(2.30,-1.13,0.94) dist=0.070 tol=0.15[0m
+[0m[INFO] [1791266888.543639436]: [checkArrival] yaw_diff=(-0.45) target=(0.00) current=(0.45) yaw_tolerance=(0.15)    [0m
+[0m[INFO] [1791266889.140266365]: [GoTo]: GoTo completed (pos & yaw).[0m
+[0m[INFO] [1791266889.140300040]: [GoTo]: Maintaining hover at (2.31, -1.09, 0.96) yaw: 0.15[0m
+[1791266889.140]: GoTo                      [33mRUNNING[0m -> [32mSUCCESS[0m
+[31m[ERROR] [1791266889.141216130]: [PlanningControl]: >>> NED goal to ego=(5.30, 1.00, 1.00), yaw=0.15, offset=0.00 <<<[0m
+[0m[INFO] [1791266889.141181650]: [PlanningControl]: Initialized with offset_z=0.00, tolerance=0.15, control_yaw=0[0m
+[0m[INFO] [1791266889.141229843]: [PlanningControl]: Target acquired! Planning navigation start -> (5.30, 1.00, 1.00), offset: 0.00[0m
+[1791266889.141]: PlanningControl           [36mIDLE[0m -> [33mRUNNING[0m
+[0m[INFO] [1791266889.424364206]: [checkArrival] odom=(2.29,-1.09,0.96) target=(5.30,1.00,1.00) dist=3.663 tol=0.15[0m
+[0m[INFO] [1791266891.426135545]: [checkArrival] odom=(2.35,-1.06,0.98) target=(5.30,1.00,1.00) dist=3.600 tol=0.15[0m
+[0m[INFO] [1791266893.427975851]: [checkArrival] odom=(2.86,-0.55,0.99) target=(5.30,1.00,1.00) dist=2.887 tol=0.15[0m
+[0m[INFO] [1791266895.429798112]: [checkArrival] odom=(3.16,-0.03,1.00) target=(5.30,1.00,1.00) dist=2.376 tol=0.15[0m
+[0m[INFO] [1791266897.431621402]: [checkArrival] odom=(3.76,0.07,1.01) target=(5.30,1.00,1.00) dist=1.795 tol=0.15[0m
+[0m[INFO] [1791266899.433545698]: [checkArrival] odom=(4.27,0.43,1.00) target=(5.30,1.00,1.00) dist=1.177 tol=0.15[0m
+[0m[INFO] [1791266901.435552953]: [checkArrival] odom=(4.71,0.73,1.02) target=(5.30,1.00,1.00) dist=0.647 tol=0.15[0m
+[0m[INFO] [1791266903.144361934]: [PlanningControl]: Planning navigation completed.[0m
+[0m[INFO] [1791266903.144396887]: [PlanningControl]: Final position: (5.18, 0.97, 1.05)[0m
+[0m[INFO] [1791266903.144410206]: [PlanningControl]: Maintaining hover at (5.18, 0.97, 1.05) yaw: 0.08[0m
+[1791266903.144]: PlanningControl           [33mRUNNING[0m -> [32mSUCCESS[0m
+[0m[INFO] [1791266903.145401468]: [GoTo]: GoTo start -> target: (5.30, 1.00, 1.00), yaw: 1.57, frame: 0, tol: 0.15, yaw_tol: 0.15, yaw_rate: 0.50[0m
+[1791266903.145]: GoTo                      [36mIDLE[0m -> [33mRUNNING[0m
+[0m[INFO] [1791266903.155535218]: [checkArrival] yaw_diff=(1.49) target=(1.57) current=(0.08) yaw_tolerance=(0.15)    [0m
+[0m[INFO] [1791266903.438688420]: [checkArrival] odom=(5.22,0.98,1.05) target=(5.30,1.00,1.00) dist=0.093 tol=0.15[0m
+[0m[INFO] [1791266905.157495983]: [checkArrival] yaw_diff=(0.71) target=(1.57) current=(0.86) yaw_tolerance=(0.15)    [0m
+[0m[INFO] [1791266905.440692539]: [checkArrival] odom=(5.32,1.14,1.05) target=(5.30,1.00,1.00) dist=0.154 tol=0.15[0m
+[0m[INFO] [1791266907.442509785]: [checkArrival] odom=(5.43,1.29,1.03) target=(5.30,1.00,1.00) dist=0.318 tol=0.15[0m
+[0m[INFO] [1791266909.444249038]: [checkArrival] odom=(5.29,1.16,1.01) target=(5.30,1.00,1.00) dist=0.162 tol=0.15[0m
+[0m[INFO] [1791266909.626267680]: [checkArrival] yaw_diff=(0.02) target=(1.57) current=(1.55) yaw_tolerance=(0.15)    [0m
+[0m[INFO] [1791266909.626287646]: [GoTo]: GoTo completed (pos & yaw).[0m
+[0m[INFO] [1791266909.626297298]: [GoTo]: Maintaining hover at (5.29, 1.15, 1.01) yaw: 1.55[0m
+[1791266909.626]: GoTo                      [33mRUNNING[0m -> [32mSUCCESS[0m
+[1791266909.626]: ForceSuccess              [36mIDLE[0m -> [33mRUNNING[0m
+[1791266909.626]: Timeout                   [36mIDLE[0m -> [33mRUNNING[0m
+[1791266909.626]: Parallel                  [36mIDLE[0m -> [33mRUNNING[0m
+[0m[INFO] [1791266909.626377929]: [TargetTracker]: Detecting target: red_balloon, conf_th: 0.80[0m
+[0m[INFO] [1791266909.626393818]: [TargetTracker]: Pixel tracking filter window: 10[0m
+[1791266909.626]: TargetTracker             [36mIDLE[0m -> [33mRUNNING[0m
+[0m[INFO] [1791266909.626427793]: [VisualServo]: Visual Servo Started (VX+VZ+yaw_rate)[0m
+[0m[INFO] [1791266909.626436626]: [VisualServo]: k_p_yaw_rate=0.0030 k_d=0.0010 max_rate=0.50 deadzone=8.0[0m
+[0m[INFO] [1791266909.626445087]: [VisualServo]: forward_vel=1.00 sprint_vel=1.50 sprint_time=1.2 area_thresh=0.080[0m
+[1791266909.626]: VisualServo               [36mIDLE[0m -> [33mRUNNING[0m
+[33m[WARN] [1791266909.636574471]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266909.636604554]: [VisualServo]: Target lost. Searching (yaw_rate=0.30)...[0m
+[33m[WARN] [1791266910.637787546]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266910.637848046]: [VisualServo]: Target lost. Searching (yaw_rate=0.30)...[0m
+[33m[WARN] [1791266911.639089343]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266911.640612343]: [VisualServo]: Target lost. Searching (yaw_rate=0.30)...[0m
+[33m[WARN] [1791266912.641872831]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266912.641931150]: [VisualServo]: Target lost. Searching (yaw_rate=0.30)...[0m
+[33m[WARN] [1791266913.643138604]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266913.643192381]: [VisualServo]: Target lost. Searching (yaw_rate=0.30)...[0m
+[33m[WARN] [1791266914.644298425]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266914.644352442]: [VisualServo]: Target lost. Searching (yaw_rate=0.30)...[0m
+[33m[WARN] [1791266915.645596532]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266915.645651288]: [VisualServo]: Target lost. Searching (yaw_rate=0.30)...[0m
+[33m[WARN] [1791266916.646895322]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266916.646947192]: [VisualServo]: Target lost. Searching (yaw_rate=0.30)...[0m
+[33m[WARN] [1791266917.648126444]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266917.648184529]: [VisualServo]: Target lost. Searching (yaw_rate=0.30)...[0m
+[33m[WARN] [1791266918.649318951]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266918.649375734]: [VisualServo]: Target lost. Searching (yaw_rate=0.30)...[0m
+[33m[WARN] [1791266919.650553799]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266919.650606472]: [VisualServo]: Target lost. Searching (yaw_rate=0.30)...[0m
+[33m[WARN] [1791266920.651726444]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266920.651777912]: [VisualServo]: Target lost. Searching (yaw_rate=0.30)...[0m
+[33m[WARN] [1791266921.653329021]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266921.653382730]: [VisualServo]: Target lost. Searching (yaw_rate=0.30)...[0m
+[33m[WARN] [1791266922.654763608]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266922.654823354]: [VisualServo]: Target lost. Searching (yaw_rate=0.30)...[0m
+[31m[ERROR] [1791266923.349432650]: [SafetyRecovery] ENTER DRONE OUT OF BOUNDARY[0m
+[31m[ERROR] [1791266923.349482559]: [SafetyRecovery] current position = (5.48, 1.51, 0.97)[0m
+[31m[ERROR] [1791266923.349494425]: [SafetyRecovery] target = (5.48, 1.20, 0.97), target_margin=0.30 m[0m
+[33m[WARN] [1791266923.656473008]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266923.656529654]: [VisualServo]: Target lost. Searching (yaw_rate=0.30)...[0m
+[33m[WARN] [1791266924.657952192]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266924.658009655]: [VisualServo]: Target lost. Searching (yaw_rate=0.30)...[0m
+[33m[WARN] [1791266925.659540562]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266925.659596599]: [VisualServo]: Target lost. Searching (yaw_rate=0.30)...[0m
+[33m[WARN] [1791266926.661144531]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266926.661200477]: [VisualServo]: Target lost. Searching (yaw_rate=0.30)...[0m
+[33m[WARN] [1791266927.662686456]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266927.662745723]: [VisualServo]: Target lost. Searching (yaw_rate=0.30)...[0m
+[33m[WARN] [1791266928.664027896]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266928.664095465]: [VisualServo]: Target lost. Searching (yaw_rate=0.30)...[0m
+[33m[WARN] [1791266929.665208782]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266929.665260449]: [VisualServo]: Target lost. Searching (yaw_rate=0.30)...[0m
+[33m[WARN] [1791266930.666511850]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266930.666565851]: [VisualServo]: Target lost. Searching (yaw_rate=0.30)...[0m
+[33m[WARN] [1791266931.667807460]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266931.667856888]: [VisualServo]: Target lost. Searching (yaw_rate=0.30)...[0m
+[33m[WARN] [1791266932.669058040]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266932.669110162]: [VisualServo]: Target lost. Searching (yaw_rate=0.30)...[0m
+[33m[WARN] [1791266933.670205257]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266933.670257977]: [VisualServo]: Target lost. Searching (yaw_rate=0.30)...[0m
+[31m[ERROR] [1791266933.949415411]: [SafetyRecovery] ENTER DRONE OUT OF BOUNDARY[0m
+[31m[ERROR] [1791266933.949450144]: [SafetyRecovery] current position = (5.50, 1.51, 0.99)[0m
+[31m[ERROR] [1791266933.949461514]: [SafetyRecovery] target = (5.50, 1.20, 0.99), target_margin=0.30 m[0m
+[33m[WARN] [1791266934.671309050]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266934.671361754]: [VisualServo]: Target lost. Searching (yaw_rate=0.30)...[0m
+[33m[WARN] [1791266935.673148375]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266935.673209758]: [VisualServo]: Target lost. Searching (yaw_rate=0.30)...[0m
+[33m[WARN] [1791266936.675150004]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266936.675201859]: [VisualServo]: Target lost. Searching (yaw_rate=0.30)...[0m
+[33m[WARN] [1791266937.677207875]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266937.677261368]: [VisualServo]: Target lost. Searching (yaw_rate=0.30)...[0m
+[33m[WARN] [1791266938.679283980]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266938.679335401]: [VisualServo]: Target lost. Searching (yaw_rate=0.30)...[0m
+[33m[WARN] [1791266939.681146668]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266939.681204947]: [VisualServo]: Target lost. Searching (yaw_rate=0.30)...[0m
+[33m[WARN] [1791266940.682991232]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266940.683046457]: [VisualServo]: Target lost. Searching (yaw_rate=0.30)...[0m
+[33m[WARN] [1791266941.684191390]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266941.684240411]: [VisualServo]: Target lost. Searching (yaw_rate=0.30)...[0m
+[33m[WARN] [1791266941.765178888]: [VisualServo]: Alignment lost (err_x=-311), back to ALIGN[0m
+[33m[WARN] [1791266942.685639731]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266943.687197825]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266944.688668053]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266945.690033267]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266946.640596155]: [VisualServo]: Target lost. Searching (yaw_rate=0.30)...[0m
+[33m[WARN] [1791266946.691198286]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266947.642093644]: [VisualServo]: Target lost. Searching (yaw_rate=0.30)...[0m
+[33m[WARN] [1791266947.692711238]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266948.643369243]: [VisualServo]: Target lost. Searching (yaw_rate=0.30)...[0m
+[33m[WARN] [1791266948.694009428]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266949.695300458]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266950.696641098]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266951.698165759]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266952.699692238]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266953.701169466]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266954.702606164]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[33m[WARN] [1791266955.703922955]: [TargetTracker]: No target detected, publishing INVALID target[0m
+[0m[INFO] [1791266927.749447379]: [SafetyRecovery] RELEASE confirmation started: margin=0.15 m, duration=0.50 s[0m
+[0m[INFO] [1791266928.269390308]: [SafetyRecovery] COMPLETE recovery duration = 4.920 s; latest command control resumed; Drone returned to safe area.[0m
+[0m[INFO] [1791266935.949413226]: [SafetyRecovery] RELEASE confirmation started: margin=0.15 m, duration=0.50 s[0m
+[0m[INFO] [1791266936.469410223]: [SafetyRecovery] COMPLETE recovery duration = 2.520 s; latest command control resumed; Drone returned to safe area.[0m
+[0m[INFO] [1791266941.765159839]: [TargetTracker]: Tracking at pixel (9.0, 362.0)[0m
+[0m[INFO] [1791266941.775275171]: [VisualServo]: ALIGN - err:(-311,122) yaw_rate:0.500 vz:-0.300 stable:0[0m
+[0m[INFO] [1791266942.361849413]: [TargetTracker]: Tracking at pixel (82.0, 337.0)[0m
+[0m[INFO] [1791266942.776748218]: [VisualServo]: ALIGN - err:(-184,71) yaw_rate:0.500 vz:-0.300 stable:0[0m
+[0m[INFO] [1791266942.968968228]: [TargetTracker]: Tracking at pixel (163.0, 305.0)[0m
+[0m[INFO] [1791266943.565756552]: [TargetTracker]: Tracking at pixel (200.0, 284.0)[0m
+[0m[INFO] [1791266943.778294016]: [VisualServo]: ALIGN - err:(-99,41) yaw_rate:0.273 vz:-0.300 stable:0[0m
+[0m[INFO] [1791266944.162712947]: [TargetTracker]: Tracking at pixel (250.0, 270.0)[0m
+[0m[INFO] [1791266944.759541239]: [TargetTracker]: Tracking at pixel (260.0, 261.0)[0m
+[0m[INFO] [1791266944.779796702]: [VisualServo]: ALIGN - err:(-60,21) yaw_rate:0.156 vz:-0.110 stable:0[0m
+[0m[INFO] [1791266945.366402792]: [TargetTracker]: Tracking at pixel (279.0, 254.0)[0m
+[0m[INFO] [1791266945.781088890]: [VisualServo]: ALIGN - err:(-33,12) yaw_rate:0.075 vz:-0.020 stable:0[0m
+[0m[INFO] [1791266948.845764762]: [TargetTracker]: Tracking at pixel (516.0, 244.0)[0m
+[0m[INFO] [1791266948.845788751]: [VisualServo]: ALIGN - err:(196,4) yaw_rate:-0.500 vz:0.005 stable:0[0m
+[0m[INFO] [1791266949.361588283]: [TargetTracker]: Tracking at pixel (515.0, 245.0)[0m
+[0m[INFO] [1791266949.847048152]: [VisualServo]: ALIGN - err:(177,7) yaw_rate:-0.500 vz:-0.000 stable:0[0m
+[0m[INFO] [1791266950.049231086]: [TargetTracker]: Tracking at pixel (397.0, 246.0)[0m
+[0m[INFO] [1791266950.565093588]: [TargetTracker]: Tracking at pixel (348.0, 246.0)[0m
+[0m[INFO] [1791266950.848442127]: [VisualServo]: ALIGN - err:(31,7) yaw_rate:-0.069 vz:-0.000 stable:0[0m
+[0m[INFO] [1791266951.162064202]: [TargetTracker]: Tracking at pixel (347.0, 245.0)[0m
+[0m[INFO] [1791266951.769044120]: [TargetTracker]: Tracking at pixel (348.0, 245.0)[0m
+[0m[INFO] [1791266951.850054133]: [VisualServo]: ALIGN - err:(28,5) yaw_rate:-0.060 vz:-0.000 stable:0[0m
+[0m[INFO] [1791266952.365927890]: [TargetTracker]: Tracking at pixel (353.0, 245.0)[0m
+[0m[INFO] [1791266952.851522271]: [VisualServo]: ALIGN - err:(36,6) yaw_rate:-0.084 vz:-0.000 stable:0[0m
+[0m[INFO] [1791266952.962845801]: [TargetTracker]: Tracking at pixel (360.0, 247.0)[0m
+[0m[INFO] [1791266953.569698421]: [TargetTracker]: Tracking at pixel (374.0, 248.0)[0m
+[0m[INFO] [1791266953.852886069]: [VisualServo]: ALIGN - err:(60,9) yaw_rate:-0.156 vz:-0.000 stable:0[0m
+[0m[INFO] [1791266954.166539519]: [TargetTracker]: Tracking at pixel (398.0, 249.0)[0m
+[0m[INFO] [1791266954.763334880]: [TargetTracker]: Tracking at pixel (424.0, 249.0)[0m
+[0m[INFO] [1791266954.854364772]: [VisualServo]: ALIGN - err:(97,9) yaw_rate:-0.267 vz:-0.000 stable:0[0m
+[0m[INFO] [1791266955.370174513]: [TargetTracker]: Tracking at pixel (488.0, 242.0)[0m
+[0m[INFO] [1791266955.855724775]: [VisualServo]: ALIGN - err:(181,-12) yaw_rate:-0.500 vz:0.020 stable:0[0m
+[0m[INFO] [1791266955.967014127]: [TargetTracker]: Tracking at pixel (511.0, 226.0)[0m
+[0m[INFO] [1791266956.412116961]: [VisualServo]: Aligned! err:(19,18) -> APPROACHING[0m
+[0m[INFO] [1791266956.422279392]: [VisualServo]: Area 19.4% >= 8.0% -> SPRINT! (sprint_vel=1.50, time=1.2s)[0m
+[0m[INFO] [1791266956.422296412]: [VisualServo]: APPROACH - vx:0.90(90%) yaw_rate:-0.033 vz:-0.080 err:(19,18) area:19.4%[0m
+[0m[INFO] [1791266956.4324273[33m[WARN] [1791266956.705534409]: [TargetTracker]: No target detected, publishing INVALID target[0m
+62]: [VisualServo]: SPRINT - vx:1.50 yaw_rate:-0.033 vz:-0.080 (0.0/1.2s)[0m
+[0m[INFO] [1791266956.563934150]: [TargetTracker]: Tracking at pixel (279.0, 244.0)[0m
+[0m[INFO] [1791266956.634732666]: [VisualServo]: SPRINT - vx:1.50 yaw_rate:0.099 vz:-0.000 (0.2/1.2s)[0m
+[0m[INFO] [1791266956.837019650]: [VisualServo]: SPRINT - vx:1.50 yaw_rate:0.213 vz:0.300 (0.4/1.2s)[0m
+[0m[INFO] [1791266957.039277491]: [VisualServo]: SPRINT - vx:1.50 yaw_rate:0.282 vz:0.300 (0.6/1.2s)[0m
+[0m[INFO] [1791266957.170799708]: [TargetTracker]: Tracking at pixel (174.0, 258.0)[0m
+[0m[INFO] [1791266957.241655008]: [VisualServo]: SPRINT - vx:1.50 yaw_rate:0.414 vz:-0.080 (0.8/1.2s)[0m
+[0m[INFO] [1791266957.443989641]: [VisualServo]: SPRINT - vx:1.50 yaw_rate:0.498 vz:-0.300 (1.0/1.2s)[0m
+[0m[INFO] [1791266957.626096582]: [VisualServo]: Maintaining hover at (4.72, 1.42, 0.36) yaw: 2.41[0m
+[0m[INFO] [1791266957.626129397]: [VisualServo]: Sprint completed (1.2s). SUCCESS.[0m
+[1791266957.626]: VisualServo               [33mRUNNING[0m -> [32mSUCCESS[0m
+[0m[INFO] [1791266957.626166668]: [TargetTracker]: Halted, entering hover mode.[0m
+[0m[INFO] [1791266957.626175001]: [TargetTracker]: Maintaining hover at (4.72, 1.42, 0.36) yaw: 2.41[0m
+[1791266957.626]: TargetTracker             [33mRUNNING[0m -> [36mIDLE[0m
+[1791266957.626]: VisualServo               [32mSUCCESS[0m -> [36mIDLE[0m
+[1791266957.626]: Parallel                  [33mRUNNING[0m -> [32mSUCCESS[0m
+[1791266957.626]: Parallel                  [32mSUCCESS[0m -> [36mIDLE[0m
+[1791266957.626]: Timeout                   [33mRUNNING[0m -> [32mSUCCESS[0m
+[1791266957.626]: Timeout                   [32mSUCCESS[0m -> [36mIDLE[0m
+[1791266957.626]: ForceSuccess              [33mRUNNING[0m -> [32mSUCCESS[0m
+[0m[INFO] [1791266957.627184420]: [GoTo]: GoTo start -> target: (0.00, 0.00, 0.50), yaw: 0.00, frame: 0, tol: 0.15, yaw_tol: 0.15, yaw_rate: 0.50[0m
+[1791266957.627]: GoTo                      [36mIDLE[0m -> [33mRUNNING[0m
+[31m[ERROR] [1791266957.749420017]: [SafetyRecovery] ENTER DRONE OUT OF BOUNDARY[0m
+[31m[ERROR] [1791266957.749454940]: [SafetyRecovery] current position = (4.61, 1.53, 0.32)[0m
+[31m[ERROR] [1791266957.749468767]: [SafetyRecovery] target = (4.61, 1.20, 0.32), target_margin=0.30 m[0m
+[0m[INFO] [1791266957.637316191]: [checkArrival] odom=(4.72,1.42,0.36) target=(0.00,0.00,0.50) dist=4.929 tol=0.15[0m
+[0m[INFO] [1791266959.229414453]: [SafetyRecovery] RELEASE confirmation started: margin=0.15 m, duration=0.50 s[0m
+[0m[INFO] [1791266959.639118896]: [checkArrival] odom=(4.01,1.17,0.34) target=(0.00,0.00,0.50) dist=4.180 tol=0.15[0m
+[0m[INFO] [1791266959.749408955]: [SafetyRecovery] COMPLETE recovery duration = 2.000 s; latest command control resumed; Drone returned to safe area.[0m
+[0m[INFO] [1791266961.640929922]: [checkArrival] odom=(0.64,0.24,0.50) target=(0.00,0.00,0.50) dist=0.685 tol=0.15[0m
+[0m[INFO] [1791266962.025205982]: [checkArrival] yaw_diff=(-0.35) target=(0.00) current=(0.35) yaw_tolerance=(0.15)    [0m
+[0m[INFO] [1791266963.642957855]: [checkArrival] odom=(-0.18,-0.27,0.51) target=(0.00,0.00,0.50) dist=0.325 tol=0.15[0m
+[0m[INFO] [1791266965.422302549]: [checkArrival] yaw_diff=(0.06) target=(0.00) current=(-0.06) yaw_tolerance=(0.15)    [0m
+[0m[INFO] [1791266965.422330360]: [GoTo]: GoTo completed (pos & yaw).[0m
+[0m[INFO] [1791266965.422341056]: [GoTo]: Maintaining hover at (0.11, -0.09, 0.52) yaw: -0.06[0m
+[1791266965.422]: GoTo                      [33mRUNNING[0m -> [32mSUCCESS[0m
+[1791266965.422]: Land                      [36mIDLE[0m -> [33mRUNNING[0m
+[0m[INFO] [1791266965.433542591]: [Land]: Requesting mode AUTO.LAND[0m
+[0m[INFO] [1791266970.852428508]: [Land]: Landed and disarmed.[0m
+[1791266970.852]: Land                      [33mRUNNING[0m -> [32mSUCCESS[0m
+[1791266970.852]: Takeoff                   [32mSUCCESS[0m -> [36mIDLE[0m
+[1791266970.852]: GoTo                      [32mSUCCESS[0m -> [36mIDLE[0m
+[1791266970.852]: WaitForStablePosition     [32mSUCCESS[0m -> [36mIDLE[0m
+[1791266970.852]: TargetLocator             [32mSUCCESS[0m -> [36mIDLE[0m
+[1791266970.852]: PlanningControl           [32mSUCCESS[0m -> [36mIDLE[0m
+[1791266970.853]: GoTo                      [32mSUCCESS[0m -> [36mIDLE[0m
+[1791266970.853]: Parallel                  [32mSUCCESS[0m -> [36mIDLE[0m
+[1791266970.853]: GoTo                      [32mSUCCESS[0m -> [36mIDLE[0m
+[1791266970.853]: GoTo                      [32mSUCCESS[0m -> [36mIDLE[0m
+[1791266970.853]: PlanningControl           [32mSUCCESS[0m -> [36mIDLE[0m
+[1791266970.853]: GoTo                      [32mSUCCESS[0m -> [36mIDLE[0m
+[1791266970.853]: GoTo                      [32mSUCCESS[0m -> [36mIDLE[0m
+[1791266970.853]: PlanningControl           [32mSUCCESS[0m -> [36mIDLE[0m
+[1791266970.853]: GoTo                      [32mSUCCESS[0m -> [36mIDLE[0m
+[1791266970.853]: ForceSuccess              [32mSUCCESS[0m -> [36mIDLE[0m
+[1791266970.853]: GoTo                      [32mSUCCESS[0m -> [36mIDLE[0m
+[1791266970.853]: Land                      [32mSUCCESS[0m -> [36mIDLE[0m
+[1791266970.853]: LLMSequence               [33mRUNNING[0m -> [32mSUCCESS[0m
+[1791266970.853]: LLMSequence               [32mSUCCESS[0m -> [36mIDLE[0m
+[0m[INFO] [1791266970.862595775]: === LLM Mission Completed (status: SUCCESS) ===[0m
+... logging to /root/.ros/log/7af5e946-c14b-11f1-a5ac-4a59ded2f075/roslaunch-gpufree-container-15157.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;/home/ubuntu/catkin_ws/src/mission_pkg/launch/llm_mission_boundarytest.launch
+[1mstarted roslaunch server http://gpufree-container:36235/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /aruco/hover_pos: 4.5;0.5;1.2
+ * /balloon_color_blue: C
+ * /balloon_color_purple: B
+ * /balloon_color_red: A
+ * /balloon_zone_A/approach_pos: 5.3;1.0;1.0
+ * /balloon_zone_A/goal: 5.3;1.0;1.0
+ * /balloon_zone_A/yaw: 1.5708
+ * /balloon_zone_B/approach_pos: 5.3;-2.0;0.7
+ * /balloon_zone_B/goal: 5.3;-2.0;0.7
+ * /balloon_zone_B/yaw: 3.14159
+ * /balloon_zone_C/approach_pos: 5.3;1.0;0.7
+ * /balloon_zone_C/goal: 5.3;1.0;0.7
+ * /balloon_zone_C/yaw: -1.5708
+ * /cam2body_R: [0, 0, 1, -1, 0, ...
+ * /cam2body_T: [0.1, 0.04, 0.05]
+ * /cross_frame/expected_pos: 3.25;-0.4;1.0
+ * /cross_frame/filter_window_size: 20.0
+ * /cross_frame/object_height: 1.3
+ * /cross_frame/object_width: 1.3
+ * /cross_frame/observe_delay_ms: 2000.0
+ * /cross_frame/observe_pos: 0.0;-1.0;1.0
+ * /cross_frame/occlusion_direction: right
+ * /cross_frame/offset_z: 1.0
+ * /cross_frame/z_tolerance: 0.5
+ * /cx: 320.0
+ * /cy: 240.0
+ * /detect_result_topic: /objects
+ * /fx: 320.0
+ * /fy: 320.0
+ * /goal_topic: /move_base_simple...
+ * /land/return_pos: 0.0;0.0;0.5
+ * /land/return_yaw: 0.0
+ * /llm_mission_node/mode: llm
+ * /optimization/position_threshold: 0.15
+ * /optimization/settle_timeout: 2.0
+ * /optimization/stable_confirm_time: 0.5
+ * /optimization/velocity_threshold: 0.08
+ * /planner_cmd_topic: /planning/pos_cmd
+ * /return_cross_frame/body_forward: 0.5;0.0;0.0
+ * /return_cross_frame/exit_yaw: 0.0
+ * /return_cross_frame/turn_pos: 4.5;0.5;1.8
+ * /return_cross_frame/turn_yaw: 3.14159
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+ * /safety/enabled: True
+ * /safety/recovery_confirm_time: 0.5
+ * /safety/recovery_target_margin: 0.3
+ * /safety/release_margin: 0.15
+ * /safety/x_max: 6.0
+ * /safety/x_min: -1.0
+ * /safety/y_max: 1.5
+ * /safety/y_min: -3.0
+ * /safety/z_max: 2.5
+ * /safety/z_min: -0.1
+ * /takeoff/goal: 0.0;0.0;1.0
+ * /tolerance: 0.15
+ * /visual_servo/approach_area_threshold: 0.08
+ * /visual_servo/forward_velocity: 1.0
+ * /visual_servo/k_d_vz: 0.006
+ * /visual_servo/k_d_yaw_rate: 0.001
+ * /visual_servo/k_p_vz: 0.01
+ * /visual_servo/k_p_yaw_rate: 0.003
+ * /visual_servo/sprint_time: 1.2
+ * /visual_servo/sprint_velocity: 1.5
+ * /yaw_tolerance: 0.15
+
+NODES
+  /
+    llm_mission_node (mission_pkg/bt_ros)
+
+[1mROS_MASTER_URI=http://localhost:11311[0m
+]2;/home/ubuntu/catkin_ws/src/mission_pkg/launch/llm_mission_boundarytest.launch http://localhost:11311
+[1mprocess[llm_mission_node-1]: started with pid [15314][0m
+[llm_mission_node-1] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m

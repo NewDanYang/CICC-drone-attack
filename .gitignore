@@ -1,0 +1,8 @@
+# Local working scratch: SSH helpers, fetch/sweep scripts, captured frames and
+# backups. Contains host credentials -- never commit.
+.scratch/
+*_v2.b64
+aruco_v2.b64
+srv_src/
+srv_*.launch
+srv_start_sim.sh
