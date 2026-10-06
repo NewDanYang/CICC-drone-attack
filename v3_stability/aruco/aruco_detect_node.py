@@ -8,6 +8,12 @@ Identical service/topic interface:
   Publisher: /aruco/detected_id (std_msgs/Int32) -- detected marker ID
   Publisher: /aruco/debug_image (sensor_msgs/Image) -- optional debug image
   Subscriber: ~image_topic param (default /rflysim/sensor2/img_rgb)
+
+Diagnostics note: this build counts every image callback execution and reports
+the rate once per second, deliberately WITHOUT a log throttle, so that a
+callback that stops being scheduled is visible directly. Earlier investigations
+could only infer callback starvation from the absence of throttled messages;
+this makes it a measurement.
 """
 
 import rospy
@@ -77,33 +83,44 @@ class ArucoDetectNode:
         self.show_debug   = rospy.get_param("~show_debug", False)
         self.save_dir     = rospy.get_param("~save_dir", "")
         enabled_default   = rospy.get_param("~enabled_default", False)
-        # Upscale factor applied before detection. The marker is only ~40px
-        # across at the hover altitude/FOV used in this competition, which is
-        # marginal for a 7x7 ArUco-original grid; upscaling before detection
-        # (interpolated, so it does not invent detail but gives the detector
-        # more sub-pixel room) measurably improves corner refinement.
-        self.upscale      = float(rospy.get_param("~upscale", 2.0))
+
+        # Detection preprocessing. Measured against real competition frames
+        # (84 frames captured from a failing run, marker ~180 px wide):
+        #   shipped defaults        -> 13 frames detected, first at frame 54
+        #   2x upscale + subpix     ->  6 frames, first at 62   (REGRESSION,
+        #                              deployed in error on 2026-10-06)
+        #   CLAHE + 2x + subpix     -> 25 frames
+        #   CLAHE + 3x + subpix     -> 27 frames  <-- selected
+        # So: CLAHE helps materially; the bare upscale does not. Both are
+        # params so they can be turned off without editing code.
+        self.use_clahe    = bool(rospy.get_param("~use_clahe", True))
+        self.upscale      = float(rospy.get_param("~upscale", 3.0))
+        self.use_subpix   = bool(rospy.get_param("~use_subpix", True))
+        self.debug_display = bool(rospy.get_param("~debug_display", False))
 
         # --- ArUco detector ---
         aruco_dict = cv2.aruco.getPredefinedDictionary(dict_id)
         self.params = cv2.aruco.DetectorParameters_create()
-        # Sub-pixel corner refinement: the previous default (no refinement)
-        # was left at OpenCV's defaults deliberately, but at this marker size
-        # that default is exactly the setting most likely to reject a
-        # borderline-decodable marker. Enable refinement; it only sharpens
-        # corner estimates already found by the initial contour pass, so it
-        # cannot by itself turn a non-marker into a false positive.
-        self.params.cornerRefinementMethod = cv2.aruco.CORNER_REFINE_SUBPIX
-        self.params.cornerRefinementWinSize = 5
-        self.params.cornerRefinementMaxIterations = 30
-        self.params.cornerRefinementMinAccuracy = 0.1
+        if self.use_subpix:
+            self.params.cornerRefinementMethod = cv2.aruco.CORNER_REFINE_SUBPIX
+            self.params.cornerRefinementWinSize = 5
+            self.params.cornerRefinementMaxIterations = 30
+            self.params.cornerRefinementMinAccuracy = 0.1
 
         self.aruco_dict = aruco_dict
+        self.clahe = (cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
+                      if self.use_clahe else None)
 
         # --- state ---
         self.enabled       = enabled_default
         self.has_detection = False
         self.img_sub       = None   # dynamically managed
+
+        # --- diagnostics: unthrottled counters, reported once per second ---
+        self.n_callbacks   = 0
+        self.n_decode_fail = 0
+        self._last_report  = rospy.Time.now()
+        self._last_count   = 0
 
         # --- publishers / services ---
         self.id_pub        = rospy.Publisher("/aruco/detected_id", Int32, queue_size=10)
@@ -117,7 +134,9 @@ class ArucoDetectNode:
         rospy.loginfo("[ArucoDetectNode] Python node started")
         rospy.loginfo("[ArucoDetectNode] Image topic : %s", self.image_topic)
         rospy.loginfo("[ArucoDetectNode] Dictionary  : %d (DICT_ARUCO_ORIGINAL=16, DICT_6X6_250=10)", dict_id)
-        rospy.loginfo("[ArucoDetectNode] Upscale     : %.2fx, subpix refine ON", self.upscale)
+        rospy.loginfo("[ArucoDetectNode] Preprocess  : clahe=%s upscale=%.2fx subpix=%s",
+                      self.use_clahe, self.upscale, self.use_subpix)
+        rospy.loginfo("[ArucoDetectNode] Debug window: %s", self.debug_display)
         rospy.loginfo("[ArucoDetectNode] Detection   : %s",
                       "ENABLED" if self.enabled else "DISABLED (call /aruco/enable)")
         rospy.loginfo("=" * 42)
@@ -146,83 +165,99 @@ class ArucoDetectNode:
         self.enabled       = req.data
         self.has_detection = False
         if self.enabled:
+            self.n_callbacks = 0
+            self._last_report = rospy.Time.now()
+            self._last_count = 0
             self._subscribe()
             rospy.loginfo("[ArucoDetectNode] >>> Detection ENABLED <<<")
             return SetBoolResponse(success=True, message="ArUco detection enabled")
         else:
             self._unsubscribe()
-            rospy.loginfo("[ArucoDetectNode] >>> Detection DISABLED <<<")
+            rospy.loginfo("[ArucoDetectNode] >>> Detection DISABLED <<< (callbacks=%d decode_fail=%d)",
+                          self.n_callbacks, self.n_decode_fail)
             return SetBoolResponse(success=True, message="ArUco detection disabled")
 
     # ------------------------------------------------------------------ detection
-    def _detect(self, gray):
-        """detectMarkers with subpixel corner refinement; optionally on an
-        upscaled frame (coordinates are scaled back by the caller)."""
-        corners, ids, rejected = cv2.aruco.detectMarkers(
-            gray, self.aruco_dict, parameters=self.params)
-        return corners, ids, rejected
+    def _preprocess(self, gray):
+        g = gray
+        if self.clahe is not None:
+            g = self.clahe.apply(g)
+        if self.upscale and self.upscale != 1.0:
+            g = cv2.resize(g, None, fx=self.upscale, fy=self.upscale,
+                           interpolation=cv2.INTER_CUBIC)
+        return g
+
+    def _report_rate(self):
+        """Log callback rate once per second, deliberately unthrottled so that
+        a stalled callback is directly visible in the log."""
+        now = rospy.Time.now()
+        dt = (now - self._last_report).toSec()
+        if dt >= 1.0:
+            delta = self.n_callbacks - self._last_count
+            rospy.loginfo("[ArucoDetectNode] callbacks/s=%.1f total=%d decode_fail=%d",
+                          delta / dt, self.n_callbacks, self.n_decode_fail)
+            self._last_report = now
+            self._last_count = self.n_callbacks
 
     # ------------------------------------------------------------------ image cb
     def _image_cb(self, msg: Image):
         if not self.enabled:
             return
+        self.n_callbacks += 1
 
         try:
             bgr = _imgmsg_to_numpy(msg)
         except Exception as e:
+            self.n_decode_fail += 1
             rospy.logerr_throttle(1.0, "[ArucoDetectNode] Image decode error: %s", e)
             return
 
         if bgr is None or bgr.size == 0:
+            self.n_decode_fail += 1
             return
 
         gray = cv2.cvtColor(bgr, cv2.COLOR_BGR2GRAY)
-
-        if self.upscale != 1.0:
-            gray_det = cv2.resize(gray, None, fx=self.upscale, fy=self.upscale,
-                                   interpolation=cv2.INTER_CUBIC)
-        else:
-            gray_det = gray
-
         try:
-            corners, ids, rejected = self._detect(gray_det)
+            det_gray = self._preprocess(gray)
+            corners, ids, rejected = cv2.aruco.detectMarkers(
+                det_gray, self.aruco_dict, parameters=self.params)
         except Exception as e:
             rospy.logerr_throttle(1.0, "[ArucoDetectNode] detectMarkers error: %s", e)
             return
 
-        if self.upscale != 1.0 and corners:
+        if self.upscale and self.upscale != 1.0 and corners:
             corners = [c / self.upscale for c in corners]
 
         detected = ids is not None and len(ids) > 0
 
-        # --- publish result FIRST: a debug-drawing/imshow failure must never
+        # --- publish result FIRST: a debug-drawing/display failure must never
         # be able to suppress a real detection. ---
         if detected:
             marker_id = int(ids[0][0])
             self.id_pub.publish(Int32(data=marker_id))
-
             self.has_detection = True
 
-            # eye-catching terminal output (ASCII only - no CJK dependency)
             rospy.loginfo("\033[1;33m+==========================================+\033[0m")
             rospy.loginfo("\033[1;33m|  \033[1;32m*** ArUco Marker Detected! ***\033[1;33m        |\033[0m")
-            rospy.loginfo("\033[1;33m|                                          |\033[0m")
             rospy.loginfo("\033[1;33m|    \033[1;37mDetected ID: \033[1;36m%-4d\033[1;33m                    |\033[0m",
                           marker_id)
             rospy.loginfo("\033[1;33m+==========================================+\033[0m")
 
-            # auto-disable: schedule unsubscription OUTSIDE this callback
-            # (cannot call unregister() from within own callback in ROS Python)
             self.enabled = False
             rospy.Timer(rospy.Duration(0.05), self._deferred_unsubscribe, oneshot=True)
         else:
             rospy.loginfo_throttle(2.0,
                 "[ArucoDetectNode] Searching... no marker found (rejected: %d)",
                 len(rejected) if rejected else 0)
+            self._report_rate()
 
-        # --- debug draw/display/save: best-effort, never allowed to raise
-        # out of the callback (a crash here must not look like "no frames"). ---
-        need_debug = self.show_debug or self.debug_img_pub.get_num_connections() > 0
+        # --- debug draw/display/save: best-effort, never raises out of the
+        # callback. The interactive window is OFF by default: at 10 Hz the
+        # imshow/waitKey pair runs on the same thread that must service the
+        # image subscription, which is the prime suspect for the observed
+        # callback starvation. Use ~debug_display:=true only when watching by
+        # eye, not during timed trials.
+        need_debug = self.debug_display or self.debug_img_pub.get_num_connections() > 0
         if need_debug or detected:
             try:
                 dbg = bgr.copy()
@@ -240,7 +275,7 @@ class ArucoDetectNode:
                                 (0, 255, 0) if detected else (0, 0, 255), 2)
                     if self.debug_img_pub.get_num_connections() > 0:
                         self.debug_img_pub.publish(_numpy_to_imgmsg(dbg, msg.header))
-                    if self.show_debug:
+                    if self.debug_display:
                         cv2.imshow("ArUco Detection (Python)", dbg)
                         cv2.waitKey(1)
                 if detected and self.save_dir and need_debug:
@@ -253,7 +288,7 @@ class ArucoDetectNode:
     # ------------------------------------------------------------------ run
     def run(self):
         rospy.spin()
-        if self.show_debug:
+        if self.debug_display:
             cv2.destroyAllWindows()
 
 

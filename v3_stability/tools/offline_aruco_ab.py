@@ -1,9 +1,21 @@
 #!/usr/bin/env python3
-"""Offline A/B of ArUco detection params at the real in-sim marker scale.
+"""Offline A/B of ArUco detection params on SYNTHETIC marker images.
 
-Reproduces the geometry of the competition: 0.15 m marker, 640x480 frame,
-90 deg FOV, viewed from the hover altitude, then compares detection with the
-shipped defaults vs the upscale+subpixel-refine settings.
+!! NOT VALID FOR DRAWING CONCLUSIONS ABOUT THE COMPETITION !!
+
+This renders a clean synthetic marker and blurs/rotates it. It was used once to
+"verify" an upscale+subpix change; that verification was wrong -- the change
+turned out to be a regression when measured against real captured frames
+(13/21 -> 6/21 inside the real ArUco window). Synthetic imagery does not
+reproduce the sim's rendering, motion blur, or the lighting/aliasing that
+actually decides detection.
+
+Use it only for quick parameter sanity checks. For any claim about real
+behaviour use `replay_aruco.py` against frames captured from
+/rflysim/sensor2/img_rgb by `capture_mission_frames.sh`.
+
+It also assumes a marker scale derived from a 0.15 m marker; the real marker
+measures ~180 px on screen, so the synthetic scale here is not the real one.
 """
 import cv2
 import numpy as np
