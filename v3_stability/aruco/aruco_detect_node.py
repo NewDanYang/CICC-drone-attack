@@ -97,6 +97,7 @@ class ArucoDetectNode:
         self.upscale      = float(rospy.get_param("~upscale", 3.0))
         self.use_subpix   = bool(rospy.get_param("~use_subpix", True))
         self.debug_display = bool(rospy.get_param("~debug_display", False))
+        self.queue_size   = max(1, int(rospy.get_param("~queue_size", 1)))
 
         # --- ArUco detector ---
         aruco_dict = cv2.aruco.getPredefinedDictionary(dict_id)
@@ -121,6 +122,10 @@ class ArucoDetectNode:
         self.n_decode_fail = 0
         self._last_report  = rospy.Time.now()
         self._last_count   = 0
+        # A Timer reports even when the image callback is not being scheduled.
+        # This turns the previously indirect "no Searching lines" symptom into
+        # an explicit callbacks/s=0 measurement.
+        self._rate_timer = rospy.Timer(rospy.Duration(1.0), self._rate_timer_cb)
 
         # --- publishers / services ---
         self.id_pub        = rospy.Publisher("/aruco/detected_id", Int32, queue_size=10)
@@ -137,6 +142,7 @@ class ArucoDetectNode:
         rospy.loginfo("[ArucoDetectNode] Preprocess  : clahe=%s upscale=%.2fx subpix=%s",
                       self.use_clahe, self.upscale, self.use_subpix)
         rospy.loginfo("[ArucoDetectNode] Debug window: %s", self.debug_display)
+        rospy.loginfo("[ArucoDetectNode] Queue size  : %d", self.queue_size)
         rospy.loginfo("[ArucoDetectNode] Detection   : %s",
                       "ENABLED" if self.enabled else "DISABLED (call /aruco/enable)")
         rospy.loginfo("=" * 42)
@@ -145,7 +151,7 @@ class ArucoDetectNode:
     def _subscribe(self):
         if self.img_sub is None:
             self.img_sub = rospy.Subscriber(
-                self.image_topic, Image, self._image_cb, queue_size=1)
+                self.image_topic, Image, self._image_cb, queue_size=self.queue_size)
             rospy.loginfo("[ArucoDetectNode] Subscribed to %s", self.image_topic)
 
     def _unsubscribe(self):
@@ -166,6 +172,7 @@ class ArucoDetectNode:
         self.has_detection = False
         if self.enabled:
             self.n_callbacks = 0
+            self.n_decode_fail = 0
             self._last_report = rospy.Time.now()
             self._last_count = 0
             self._subscribe()
@@ -191,13 +198,19 @@ class ArucoDetectNode:
         """Log callback rate once per second, deliberately unthrottled so that
         a stalled callback is directly visible in the log."""
         now = rospy.Time.now()
-        dt = (now - self._last_report).toSec()
-        if dt >= 1.0:
-            delta = self.n_callbacks - self._last_count
-            rospy.loginfo("[ArucoDetectNode] callbacks/s=%.1f total=%d decode_fail=%d",
-                          delta / dt, self.n_callbacks, self.n_decode_fail)
-            self._last_report = now
-            self._last_count = self.n_callbacks
+        dt = (now - self._last_report).to_sec()
+        if dt <= 0.0:
+            return
+        delta = self.n_callbacks - self._last_count
+        rospy.loginfo("[ArucoDetectNode] callbacks/s=%.1f total=%d decode_fail=%d enabled=%s",
+                      delta / dt, self.n_callbacks, self.n_decode_fail, self.enabled)
+        self._last_report = now
+        self._last_count = self.n_callbacks
+
+    def _rate_timer_cb(self, _event=None):
+        """Report from a Timer thread so callback starvation is observable."""
+        if self.enabled:
+            self._report_rate()
 
     # ------------------------------------------------------------------ image cb
     def _image_cb(self, msg: Image):
@@ -249,7 +262,6 @@ class ArucoDetectNode:
             rospy.loginfo_throttle(2.0,
                 "[ArucoDetectNode] Searching... no marker found (rejected: %d)",
                 len(rejected) if rejected else 0)
-            self._report_rate()
 
         # --- debug draw/display/save: best-effort, never raises out of the
         # callback. The interactive window is OFF by default: at 10 Hz the
