@@ -265,3 +265,30 @@ v3_stability/             当前工作目录：ArUco + 安全恢复部署产物
 
 **禁止的表述**："应该可以"、"看起来正常"、"理论上没问题"。
 **要求的表述**：给出数字、样本数、以及反例（哪些情况仍会失败）。
+
+---
+
+## 9. 多人协作（服务器是唯一共享资源）
+
+仿真服务器是单实例、**全组共用**。两人同时跑正式试验会互相破坏对方的锁与数据。
+当前的目录划分（见各自的交接文档 `docs/team-brief-*.md`）：
+
+| 负责方向 | 拥有的目录（改前无需问，改后互相同步） |
+|---|---|
+| 稳定性（hit_balloon、ArUco 停摆） | `v1_safety_recovery/`、`v3_stability/aruco/`、`v3_stability/reports/` |
+| 评分优化（多模态加分、创新规划、用时） | `v2_time_optimization/`、`v2_1_ego_velocity/`、新建的多模态/规划目录 |
+
+**用服务器前**，检查是否有人正在用：
+
+```bash
+MSYS_NO_PATHCONV=1 python v3_stability/tools/srvctl.py sh \
+  'ls -d /tmp/tcei_formal_trial.lock 2>/dev/null; tail -1 /home/ubuntu/tcei_baseline_tools/results/baseline_runs.csv'
+```
+
+若存在锁目录、或 CSV 最后一行时间戳在最近 10 分钟内，先在团队沟通渠道确认再动手，
+不要直接清锁抢占。若服务器端口（30316）连接被拒绝，说明云主机实例已关机，这**不能**
+用 SSH 解决，需要有 gpufree.cn 控制台权限的人去重新开机。
+
+**Git 分支**：各自在自己的 feature 分支工作（见交接文档里指定的分支名），
+改完发 PR 到 `main`，不要直接推 `main`。合并前互相过一遍对方有没有动到自己目录外的文件。
+
