@@ -1,0 +1,109 @@
+{
+  "hit": "true",
+  "color": "purple",
+  "reason": "calibrated actor for requested color removed during single-color trial with target tracking; actor color inferred from same-instance visual sequence",
+  "evidence": {
+    "telemetry": "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261012T233628_purple_A0/20261012T233632_064f7f_purple_telemetry.jsonl",
+    "scene_events": null,
+    "decisive_event": null,
+    "scene_snapshots": {
+      "path": "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261012T233628_purple_A0/scene_snapshots.jsonl",
+      "error": null,
+      "sim_pid": 22370,
+      "log_inode": 131452,
+      "before": [
+        "BP_Balloon_C_2147481416",
+        "BP_Balloon_C_2147481418",
+        "BP_Balloon_C_2147481421"
+      ],
+      "after": [
+        "BP_Balloon_C_2147481418",
+        "BP_Balloon_C_2147481421"
+      ],
+      "removed": [
+        "BP_Balloon_C_2147481416"
+      ],
+      "added": [],
+      "before_time": "2026-10-12T15:36:26.601700+00:00",
+      "after_time": "2026-10-12T15:40:55.502642+00:00",
+      "after_phase": "settled",
+      "after_observations": [
+        {
+          "phase": "after",
+          "wall_time": "2026-10-12T15:38:48.300983+00:00",
+          "actor_ids": [
+            "BP_Balloon_C_2147481416",
+            "BP_Balloon_C_2147481418",
+            "BP_Balloon_C_2147481421"
+          ]
+        },
+        {
+          "phase": "late",
+          "wall_time": "2026-10-12T15:39:03.817645+00:00",
+          "actor_ids": [
+            "BP_Balloon_C_2147481416",
+            "BP_Balloon_C_2147481418",
+            "BP_Balloon_C_2147481421"
+          ]
+        },
+        {
+          "phase": "late",
+          "wall_time": "2026-10-12T15:39:34.401516+00:00",
+          "actor_ids": [
+            "BP_Balloon_C_2147481418",
+            "BP_Balloon_C_2147481421"
+          ]
+        },
+        {
+          "phase": "late",
+          "wall_time": "2026-10-12T15:40:19.917182+00:00",
+          "actor_ids": [
+            "BP_Balloon_C_2147481418",
+            "BP_Balloon_C_2147481421"
+          ]
+        },
+        {
+          "phase": "settled",
+          "wall_time": "2026-10-12T15:40:55.502642+00:00",
+          "actor_ids": [
+            "BP_Balloon_C_2147481418",
+            "BP_Balloon_C_2147481421"
+          ]
+        }
+      ]
+    },
+    "actor_color_calibration": {
+      "error": null,
+      "method": "per_ue_instance_actor_mapping",
+      "limitation": "Unreal obj list does not expose balloon color. Mappings combine same-instance actor-set differences with color-classified camera observations. They are not direct actor color properties and must never be transferred between UE instances.",
+      "calibration_file": "/home/ubuntu/tcei_hit_balloon_v2_tools/actor_scene_calibrations.json",
+      "roster_source": "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261012T233628_purple_A0/scene_snapshots.jsonl",
+      "roster": [
+        "BP_Balloon_C_2147481416",
+        "BP_Balloon_C_2147481418",
+        "BP_Balloon_C_2147481421"
+      ],
+      "actor_to_color": {
+        "BP_Balloon_C_2147481416": "purple",
+        "BP_Balloon_C_2147481418": "blue",
+        "BP_Balloon_C_2147481421": "red"
+      },
+      "calibration_evidence": [
+        "20261012T233628_purple_A0: camera 15:38:25.790Z shows the purple balloon immediately before approach/sprint; lowest actor alone disappears between 15 s and 45 s post-trial",
+        "20261012T234149_blue_A0: camera 15:43:35.208Z and 15:43:38.288Z shows the blue balloon during approach; middle actor alone is absent at the immediate post-trial snapshot",
+        "20261012T234717_red_A0: only highest actor remains before trial; camera 15:49:22.906Z shows the red balloon during target tracking; last actor disappears by 15 s post-trial"
+      ]
+    },
+    "sprint_starts": [
+      "2026-10-12T15:38:26.007+00:00"
+    ],
+    "sprint_ends": [
+      "2026-10-12T15:38:27.211+00:00"
+    ],
+    "tracked_pixels": 14,
+    "bt_targets": [
+      "purple_balloon"
+    ],
+    "telemetry_error": null
+  }
+}

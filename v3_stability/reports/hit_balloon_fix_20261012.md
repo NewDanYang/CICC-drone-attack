@@ -4,7 +4,7 @@
 
 `mission_success`、observer 的 `hit_balloon_status=success` 和 `Sprint completed` 均**不证明气球破裂**：生成的击球 BT 有 `ForceSuccess`，observer 又把冲刺完成当作该阶段成功。本文的 `true` 是更强但仍属**代理判据**：同一 Unreal 进程的完整三球名单经真实相机/颜色日志逐实例校准，单色 BT 目标正确且有有效跟踪像素，任务前后恰有对应 Actor 消失，延迟观察至少 125 s。判读程序为 [`judge_hit.py`](../hit_balloon_v2/tools/judge_hit.py)，校准表为 [`actor_scene_calibrations.json`](../hit_balloon_v2/tools/actor_scene_calibrations.json)。没有比赛裁判的击破事件 API 或 Actor 自带颜色字段，因此不能称为官方得分回执，也不能把 `true` 精确归因于冲刺时刻。
 
-截至本报告所记已完成的试验，跨不同增量版本且有同场景校准的正式样本：**红 4/7、紫 3/3、蓝 3/3**；红色分母包含三局明确失败 `170422/171054/171720`，不含无法归色的局。另有蓝色模型错色 1 局、目标已不存在的紫色 2 局，均标 `unknown` 并单列。蓝色末局是延迟删除判据；第 3 个独立场景尚未回归。**当前最终部署组合尚无三色各三局同版本、独立新场景的证据，不能宣称已“稳定成功”。** 这里的比率只覆盖列出的场景、参数和 2026-10-12 的试验，不可外推到赛事现场。
+截至 2026-10-13 00:33（北京），**相同控制源码、launch 和模型颜色校验版本**在三个独立 UE 场景（PID `22370/53102/82946`）完成 9 局正式试验：红、紫、蓝各 **3/3** 在逐实例校准后的 Actor 删除代理判据下为 `true`。9 局均成功降落；其中 7 局触发边界恢复且均完成恢复；observer 全局 `mission_success=true` 仅 **2/9**，因为其击球阶段状态依赖冲刺完成，不能代替气球状态。另一个复机后场景 PID `2773` 有红、紫两局：红局单个 Actor 延迟消失但无法完成三色映射，紫局两个 Actor 在同一观察区间消失，均保留 `unknown`，**未计入 3/3 分母**。所以相同部署总尝试为红 `3 true + 1 unknown`、紫 `3 true + 1 unknown`、蓝 `3 true`，并非无条件 11/11。此前跨增量版本有校准的红 4/7、紫 3/3、蓝 3/3 仅作历史对照。上述 3/3 是三个场景内的代理判据，小样本且无官方裁判得分事件，不外推为赛事现场必得 25 分。
 
 ## 部署盘点与对照
 
@@ -62,12 +62,34 @@
 | `20261012T184356_blue_A0` | 蓝 | 1→1→1 | unknown | LLM 把蓝写成紫；属于模型语义输出异常 |
 | `20261012T185145_blue_A0` | 蓝 | 1→1→0 | true | 加颜色校验后正确蓝 BT；延迟删球、墙面误检同时存在 |
 
-按颜色的可比口径：红球在 `170422/171054/171720` 三个逐步补丁版本中 **0/3**，在后续 `173621/175348/183325` 三个版本中 **3/3**；版本、场景和剩余气球集合同时变化，**不能**把 0→3/3 全部归因于任一单独补丁。紫球三组已校准局 **3/3**，蓝球三组已校准局 **3/3**，但均跨增量版本。PR #2 紫球 0/4 是操作员记录且服务器原件缺失，不与代理判据相加。最早数局以及多球同局消失、无校准/无目标的样本均为 `unknown`，不能从分母中悄悄当成功。
+按颜色的历史可比口径：红球在 `170422/171054/171720` 三个逐步补丁版本中 **0/3**，在后续 `173621/175348/183325` 三个版本中 **3/3**；版本、场景和剩余气球集合同时变化，**不能**把 0→3/3 全部归因于任一单独补丁。紫球三组已校准局 **3/3**，蓝球三组已校准局 **3/3**，但均跨增量版本。PR #2 紫球 0/4 是操作员记录且服务器原件缺失，不与代理判据相加。最早数局以及多球同局消失、无校准/无目标的样本均为 `unknown`，不能从分母中悄悄当成功。
+
+## 复机后同版本独立场景回归
+
+云主机于 2026-10-12 23:22（北京）恢复。检查原模拟锁中的进程均已死亡后，仅清除失效锁并重启官方环境；`environment_started=1`、MAVROS 连接且未解锁。此后控制源码 `visual_servo.cpp=e440050ecfc06657d5ac4b472411fef6`，插件 `visual_servo.so=1991d332fb6a8e28ca98d16b479de466`，launch `3fdc18d0f61052da1e93456078370926`，模型入口 `4b0ae381b683b7c38d30baf808ed1346` 均保持不变。正式 BT 实录仍为 `forward_velocity=1.0`、`sprint_velocity=1.5`、`sprint_time=1.2`；没有通过改速度筛掉失败样本。三个新场景分别先跑紫、蓝、红，覆盖每种颜色面对完整三球名单的情形。
+
+原始正式目录均在服务器 `/home/ubuntu/tcei_baseline_tools/results/formal_trials/<目录>/`；每局的 `*telemetry.jsonl`、`observer.out`、`mission_once.out`、`scene_snapshots.jsonl`、`judgement.json` 和真实相机 `real_frames/` 留在该目录。仓库索引与抽样画面见 [`evidence/README.md`](../hit_balloon_v2/evidence/README.md)，机器可读汇总见 [`formal_regression_summary_20261013.csv`](../hit_balloon_v2/evidence/formal_regression_summary_20261013.csv)。下表的 Actor 数为试验前→任务结束即刻→结束后 125 s；`true` 仍限于同 UE 实例颜色映射后的代理判据。
+
+| UE PID | 正式目录 | 色 | Actor 数 | 代理判读 | observer 全局 | 边界次数 | 降落 |
+|---:|---|---|---|---|---|---:|---|
+| 22370 | `20261012T233628_purple_A0` | 紫 | 3→3→2 | true | true | 1 | success |
+| 22370 | `20261012T234149_blue_A0` | 蓝 | 2→1→1 | true | false | 1 | success |
+| 22370 | `20261012T234717_red_A0` | 红 | 1→1→0 | true | false | 1 | success |
+| 53102 | `20261012T235510_blue_A0` | 蓝 | 3→2→2 | true | false | 2 | success |
+| 53102 | `20261013T000043_red_A0` | 红 | 2→2→1 | true | true | 1 | success |
+| 53102 | `20261013T000608_purple_A0` | 紫 | 1→0→0 | true | false | 0 | success |
+| 82946 | `20261013T001446_red_A0` | 红 | 3→3→2 | true | false | 0 | success |
+| 82946 | `20261013T002201_purple_A0` | 紫 | 2→1→1 | true | false | 3 | success |
+| 82946 | `20261013T002730_blue_A0` | 蓝 | 1→0→0 | true | false | 4 | success |
+
+这 9 局逐色均 **3/3**、降落 **9/9**，7 局合计 13 次边界触发均记录恢复完成；说明代理击破与安全返航可以同时出现，也说明击球轨迹仍常碰到边界。`mission_success` 仅 **2/9** 是官方观测器定义下的另一指标，不能隐去。每局 125 s 观察时 UE PID 和日志 inode 未变。Actor 不携带原生颜色属性，映射由**本场景**相机颜色、单色 BT 跟踪、每局唯一消失的 Actor 集合串联得到，见 [`actor_scene_calibrations.json`](../hit_balloon_v2/tools/actor_scene_calibrations.json)；该证据比 `Sprint completed` 强，但仍不能确定精确碰撞时刻、接触部位或官方 25 分回执。
+
+反例 PID `2773` 的 `20261012T232400_red_A0` 为 3→3→2，`20261012T232932_purple_A0` 为 2→2→0：紫局两个对象在同一 125 s 观察区间消失，无法将剩余编号分别赋给紫和蓝，故这两局均 `unknown`，没有据目标画面猜色后计为成功。此场景未启动蓝局，因为稳定快照为 0 个气球。先前的蓝色模型错色局 `184356` 也仍单列 `unknown`。这些异常说明 3/3 仅适用于完成单球逐实例校准的三个场景，不代表所有尝试无歧义。
 
 ## ArUco 与安全结果
 
 已审阅 `180225`、`181001`、`181709`、`182513`、`183325`、`183848`、`184356`、`185145` 八局的真实遥测：二维码检测窗口均在 **0.036–0.149 s** 内由 ENABLED 到 DISABLED，结束日志每局回调数 **1 或 2**、`decode_fail=0`，均识别成功，观察到 **0 次停摆**。这些窗口均短于 1 s，故没有 `callbacks/s=` 每秒计数行；“没有 0/s 行”**不能**当作对长窗口回调停摆假设的证伪。工具 [`summarize_aruco.py`](../hit_balloon_v2/tools/summarize_aruco.py) 可从每局原始 telemetry 复算窗口、回调数和 0/s 次数。此前 10-06 正式批次 ArUco 13/13 通过，与本次短窗口观察一致，但同样不能证明偶发问题彻底消失。
-逐局数字另存 [`aruco_window_summary_20261012.csv`](../hit_balloon_v2/evidence/aruco_window_summary_20261012.csv)，原始日志仍以服务器正式目录为准。
+复机后另审阅 `232400/232932/233628/234149/234717/235510/000043/000608/001446/002201/002730` 共 **11 局**：11/11 完成 ArUco 阶段，窗口 `0.105–0.217 s`，10 局回调 1 次、1 局回调 2 次，`decode_fail=0`；只有 `234149` 蓝局落入一次 `callbacks/s=6.9` 采样，未观察到 `0/s`。其余 10 局窗口太短，没有每秒速率样本，因此不能据 0 次复现排除长窗口停摆。逐局数字另存 [`aruco_window_summary_20261012.csv`](../hit_balloon_v2/evidence/aruco_window_summary_20261012.csv)，原始日志仍以服务器正式目录为准。
 
 明确反例：`173621` 红、`180225` 紫、`183325` 红虽有目标 Actor 删除，但全局 `mission_success=false`；三局 observer 均显示最终降落成功（以各局 `observer.out`/CSV 为准）。`170422/171054/171720` 三局红明确未中；其中 `171720` 是误删蓝球。新位置保持前的 `181001` 紫局在目标已不存在的场景搜索漂移并触发安全恢复，后续 `181709` 在相同剩余场景未再出现同等搜索漂移。`ForceSuccess` 仍可能掩盖击球失败，需由场景判据独立审核。
 
@@ -88,4 +110,14 @@ bash /home/ubuntu/sprint_observability_backup_20261012T1529/restore.sh
 bash /home/ubuntu/mission_color_guard_backup_20261012T1850/restore.sh
 ```
 
-2026-10-12 18:58 左右在启动下一个独立场景后，SSH 端口 `120.209.70.195:30316` 拒绝连接；独立 TCP `connect_ex` 返回 Windows `10061`。按仓库 `AGENTS.md`，需 gpufree.cn 控制台恢复实例。已请求项目负责人协助；因此报告目前不含该新场景的正式回归结果、启动状态或其安全检查。上述三色样本数已经达到各三局，但**最后的稳定性复核仍未完成**。
+2026-10-12 18:58 左右的云主机断电已由项目负责人恢复；上述三个独立场景在复机后重启并完成，不再受该中断影响。最后一次正式试验结束后共享正式锁不存在，MAVROS `connected=True`、`armed=False`；当前控制源码、插件、launch 和模型 MD5 如复机回归段所列。正式证据仍保留在服务器原目录，回滚不应删除它们。
+
+复机后仅对取证工具增加 15/45/90 s 中间快照，没有改飞行控制；该工具原版备份与 MD5 在 `/home/ubuntu/hit_scene_observer_backup_20261012T2336/`。如需撤销额外快照与新增场景颜色映射，在无人机落地且无正式锁时执行：
+
+```bash
+cp /home/ubuntu/hit_scene_observer_backup_20261012T2336/run_with_scene_snapshots.sh /home/ubuntu/tcei_hit_balloon_v2_tools/run_with_scene_snapshots.sh
+cp /home/ubuntu/hit_scene_observer_backup_20261012T2336/scene_snapshot.py /home/ubuntu/tcei_hit_balloon_v2_tools/scene_snapshot.py
+cp /home/ubuntu/tcei_hit_balloon_v2_tools/actor_scene_calibrations.json.bak_20261012T2353 /home/ubuntu/tcei_hit_balloon_v2_tools/actor_scene_calibrations.json
+```
+
+局限：Unreal Actor 名单是删除代理证据，非官方裁判事件；没有对实际赛事现场、其他速度档或不同模拟场景资源做外推。9 局中边界恢复发生频繁，且 observer 对击球阶段的记录与 Actor 删除不一致；正式计分必须由赛事裁判系统核验。

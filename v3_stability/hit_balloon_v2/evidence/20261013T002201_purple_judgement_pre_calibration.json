@@ -1,0 +1,83 @@
+{
+  "hit": "unknown",
+  "color": "purple",
+  "reason": "no unique color calibration for this UE instance and roster",
+  "evidence": {
+    "telemetry": "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261013T002201_purple_A0/20261013T002205_cfbf1a_purple_telemetry.jsonl",
+    "scene_events": null,
+    "decisive_event": null,
+    "scene_snapshots": {
+      "path": "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261013T002201_purple_A0/scene_snapshots.jsonl",
+      "error": null,
+      "sim_pid": 82946,
+      "log_inode": 131452,
+      "before": [
+        "BP_Balloon_C_2147481415",
+        "BP_Balloon_C_2147481417"
+      ],
+      "after": [
+        "BP_Balloon_C_2147481417"
+      ],
+      "removed": [
+        "BP_Balloon_C_2147481415"
+      ],
+      "added": [],
+      "before_time": "2026-10-12T16:21:59.301071+00:00",
+      "after_time": "2026-10-12T16:26:54.707042+00:00",
+      "after_phase": "settled",
+      "after_observations": [
+        {
+          "phase": "after",
+          "wall_time": "2026-10-12T16:24:47.306981+00:00",
+          "actor_ids": [
+            "BP_Balloon_C_2147481417"
+          ]
+        },
+        {
+          "phase": "late",
+          "wall_time": "2026-10-12T16:25:02.810288+00:00",
+          "actor_ids": [
+            "BP_Balloon_C_2147481417"
+          ]
+        },
+        {
+          "phase": "late",
+          "wall_time": "2026-10-12T16:25:33.401584+00:00",
+          "actor_ids": [
+            "BP_Balloon_C_2147481417"
+          ]
+        },
+        {
+          "phase": "late",
+          "wall_time": "2026-10-12T16:26:18.916789+00:00",
+          "actor_ids": [
+            "BP_Balloon_C_2147481417"
+          ]
+        },
+        {
+          "phase": "settled",
+          "wall_time": "2026-10-12T16:26:54.707042+00:00",
+          "actor_ids": [
+            "BP_Balloon_C_2147481417"
+          ]
+        }
+      ]
+    },
+    "actor_color_calibration": {
+      "error": "no unique color calibration for this UE instance and roster",
+      "roster": [
+        "BP_Balloon_C_2147481415",
+        "BP_Balloon_C_2147481417",
+        "BP_Balloon_C_2147481420"
+      ],
+      "sim_pid": 82946
+    },
+    "sprint_starts": [],
+    "sprint_ends": [],
+    "tracked_pixels": 8,
+    "bt_targets": [
+      "purple_balloon"
+    ],
+    "telemetry_error": null
+  }
+}
