@@ -76,7 +76,19 @@ python3 "$tools/scene_snapshot.py" after "$session" || {
   echo "post-trial scene snapshot failed; raw session retained at $session" >&2
   exit 5
 }
-sleep "${TCEI_SCENE_SETTLE_SECONDS:-125}"
+settle_seconds="${TCEI_SCENE_SETTLE_SECONDS:-125}"
+elapsed=0
+for checkpoint in 15 45 90; do
+  if (( checkpoint < settle_seconds )); then
+    sleep "$((checkpoint - elapsed))"
+    python3 "$tools/scene_snapshot.py" late "$session" || {
+      echo "intermediate scene snapshot failed; raw session retained at $session" >&2
+      exit 5
+    }
+    elapsed="$checkpoint"
+  fi
+done
+sleep "$((settle_seconds - elapsed))"
 python3 "$tools/scene_snapshot.py" settled "$session" || {
   echo "settled scene snapshot failed; raw session retained at $session" >&2
   exit 5

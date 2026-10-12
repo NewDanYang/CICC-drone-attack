@@ -1,0 +1,10 @@
+trial_dir,ue_pid,color,before,after_immediate,after_125s,removed,proxy_hit,tracked_pixels,sprint_starts,observer_hit,mission_success,land_status,boundary_violations,boundary_recovered
+20261012T233628_purple_A0,22370,purple,3,3,2,BP_Balloon_C_2147481416,true,14,1,success,true,success,1,true
+20261012T234149_blue_A0,22370,blue,2,1,1,BP_Balloon_C_2147481418,true,28,0,unobserved,false,success,1,true
+20261012T234717_red_A0,22370,red,1,1,0,BP_Balloon_C_2147481421,true,11,0,unobserved,false,success,1,true
+20261012T235510_blue_A0,53102,blue,3,2,2,BP_Balloon_C_2147481417,true,35,0,unobserved,false,success,2,true
+20261013T000043_red_A0,53102,red,2,2,1,BP_Balloon_C_2147481420,true,37,1,success,true,success,1,true
+20261013T000608_purple_A0,53102,purple,1,0,0,BP_Balloon_C_2147481415,true,9,0,unobserved,false,success,0,
+20261013T001446_red_A0,82946,red,3,3,2,BP_Balloon_C_2147481420,true,14,0,unobserved,false,success,0,
+20261013T002201_purple_A0,82946,purple,2,1,1,BP_Balloon_C_2147481415,true,8,0,unobserved,false,success,3,true
+20261013T002730_blue_A0,82946,blue,1,0,0,BP_Balloon_C_2147481417,true,11,0,unobserved,false,success,4,true

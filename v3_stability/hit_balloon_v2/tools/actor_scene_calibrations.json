@@ -58,6 +58,48 @@
         "20261012T183848_purple_A0: purple TargetTracker sprint, lowest actor removed and mission marked success",
         "20261012T185145_blue_A0: only middle actor remains; real sensor1 20261012T105336_654366Z_0108.jpg visibly shows blue balloon before failed blue sprint; same actor remains after 125 s"
       ]
+    },
+    {
+      "sim_pid": 22370,
+      "roster": ["BP_Balloon_C_2147481416", "BP_Balloon_C_2147481418", "BP_Balloon_C_2147481421"],
+      "actor_to_color": {
+        "BP_Balloon_C_2147481416": "purple",
+        "BP_Balloon_C_2147481418": "blue",
+        "BP_Balloon_C_2147481421": "red"
+      },
+      "evidence": [
+        "20261012T233628_purple_A0: camera 15:38:25.790Z shows the purple balloon immediately before approach/sprint; lowest actor alone disappears between 15 s and 45 s post-trial",
+        "20261012T234149_blue_A0: camera 15:43:35.208Z and 15:43:38.288Z shows the blue balloon during approach; middle actor alone is absent at the immediate post-trial snapshot",
+        "20261012T234717_red_A0: only highest actor remains before trial; camera 15:49:22.906Z shows the red balloon during target tracking; last actor disappears by 15 s post-trial"
+      ]
+    },
+    {
+      "sim_pid": 53102,
+      "roster": ["BP_Balloon_C_2147481415", "BP_Balloon_C_2147481417", "BP_Balloon_C_2147481420"],
+      "actor_to_color": {
+        "BP_Balloon_C_2147481415": "purple",
+        "BP_Balloon_C_2147481417": "blue",
+        "BP_Balloon_C_2147481420": "red"
+      },
+      "evidence": [
+        "20261012T235510_blue_A0: fresh three-balloon scene; camera 15:56:47.044Z shows blue balloon during tracking; middle actor alone removed by immediate post-trial snapshot",
+        "20261013T000043_red_A0: camera 16:02:52.526Z shows red balloon at sprint; highest actor alone removed by 15 s post-trial snapshot",
+        "20261013T000608_purple_A0: sole remaining lowest actor; camera 16:08:03.132Z and 16:08:05.132Z shows purple balloon during tracking; actor absent immediately after trial"
+      ]
+    },
+    {
+      "sim_pid": 82946,
+      "roster": ["BP_Balloon_C_2147481415", "BP_Balloon_C_2147481417", "BP_Balloon_C_2147481420"],
+      "actor_to_color": {
+        "BP_Balloon_C_2147481415": "purple",
+        "BP_Balloon_C_2147481417": "blue",
+        "BP_Balloon_C_2147481420": "red"
+      },
+      "evidence": [
+        "20261013T001446_red_A0: fresh three-balloon scene; camera 16:16:36.019Z and 16:16:38.141Z shows red balloon during tracking; highest actor alone removed by 15 s post-trial snapshot",
+        "20261013T002201_purple_A0: camera 16:23:49.324Z and 16:23:50.325Z shows purple balloon during tracking; lowest actor alone absent immediately after trial",
+        "20261013T002730_blue_A0: sole remaining middle actor; camera 16:29:11.929Z and 16:29:13.007Z shows blue balloon during tracking; actor absent immediately after trial"
+      ]
     }
   ]
 }

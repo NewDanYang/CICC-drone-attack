@@ -78,7 +78,7 @@ def snapshot():
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("phase", choices=["before", "after", "settled"])
+    parser.add_argument("phase", choices=["before", "after", "late", "settled"])
     parser.add_argument("trial_dir", type=Path)
     args = parser.parse_args()
     if not args.trial_dir.is_dir():

@@ -41,4 +41,24 @@
 
 `20261012T185145_blue_before_2.jpg` 是正式场景真实 `/rflysim/sensor1/img_rgb` 在冲刺前约 1 s 的蓝球画面；`20261012T185145_blue_sprint_start.jpg` 与 `..._sprint_end.jpg` 是同局蓝墙画面。日志中目标面积从 3.0% 跳到 37.7%、59.4%，提示 YOLO/HSV 在墙面产生大框；Actor 删除只在 125 s 稳定快照出现，因此本局 `true` 限于场景删除代理判据，不表示冲刺画面证明了碰撞。校准配置 `tools/actor_scene_calibrations.json` 针对 UE PID 267731 单独记录映射，没有沿用其他 UE 的编号排序。
 
-`aruco_window_summary_20261012.csv` 是 `tools/summarize_aruco.py` 对八局服务器原始 `*telemetry.jsonl` 的逐局提取。八个 ENABLED→DISABLED 窗口均短于 1 秒，`rate_samples=0` 表示计时器尚未到每秒采样点；它不能当作 `callbacks/s=0` 的反证。
+`aruco_window_summary_20261012.csv` 是 `tools/summarize_aruco.py` 对 19 局服务器原始 `*telemetry.jsonl` 的逐局提取。19 个 ENABLED→DISABLED 窗口均短于 1 秒；其中一局出现一次 `callbacks/s=6.9`，其他 18 局 `rate_samples=0` 表示计时器尚未到每秒采样点，不能当作长窗口不会出现 `callbacks/s=0` 的反证。
+
+## 复机后独立场景回归（2026-10-13 北京）
+
+逐局机器可读汇总见 [`formal_regression_summary_20261013.csv`](formal_regression_summary_20261013.csv)。该表来自正式 CSV、每局 `judgement.json` 和 `scene_snapshots.jsonl`，保留 observer 全局结果、降落及边界次数，不把它们混同于击破代理判据。服务端原始目录均在 `/home/ubuntu/tcei_baseline_tools/results/formal_trials/<目录>/`，仍包含完整 `*telemetry.jsonl`、`mission_once.out`、`observer.out`、`real_frames/`。本仓库的 `*_frames.jsonl` 记录取回 JPEG 对应的真实 `/rflysim/sensor1/img_rgb` 帧名、UTC 时间及位置。
+
+| UE PID | 局序与正式目录 | Actor 数前→即刻→125 s | 逐实例判读 | 实景相机校准样例 |
+|---:|---|---|---|---|
+| 2773 | `20261012T232400_red_A0` | 3→3→2 | unknown | `red_sprint_start/end.jpg` 见红球；未得到另两色完整映射 |
+| 2773 | `20261012T232932_purple_A0` | 2→2→0 | unknown | `purple_sprint_before/mid/end.jpg` 见紫球；同一观察区间少两个 Actor |
+| 22370 | `20261012T233628_purple_A0` | 3→3→2 | true | `purple_pre_sprint_1s.jpg`、`purple_sprint_before.jpg`；仅最低编号消失 |
+| 22370 | `20261012T234149_blue_A0` | 2→1→1 | true | `blue_approach.jpg`、`blue_late.jpg`；仅中间编号消失 |
+| 22370 | `20261012T234717_red_A0` | 1→1→0 | true | `red_approach.jpg`；最高编号最终消失 |
+| 53102 | `20261012T235510_blue_A0` | 3→2→2 | true | `blue_first_track.jpg`、`blue_late_approach.jpg`；仅中间编号消失 |
+| 53102 | `20261013T000043_red_A0` | 2→2→1 | true | `red_sprint_start/end.jpg`；仅最高编号消失 |
+| 53102 | `20261013T000608_purple_A0` | 1→0→0 | true | `purple_approach.jpg`、`purple_close.jpg`；最低编号最终消失 |
+| 82946 | `20261013T001446_red_A0` | 3→3→2 | true | `red_approach.jpg`、`red_late.jpg`；仅最高编号消失 |
+| 82946 | `20261013T002201_purple_A0` | 2→1→1 | true | `purple_approach.jpg`、`purple_close.jpg`；仅最低编号消失 |
+| 82946 | `20261013T002730_blue_A0` | 1→0→0 | true | `blue_approach.jpg`、`blue_close.jpg`；中间编号最终消失 |
+
+上表的图片均带对应目录时间戳前缀（例如 `20261013T002730_blue_close.jpg`），防止不同场景同名混淆。三套可校准新场景共红、紫、蓝各 3/3；PID 2773 两局无法唯一归色，保留各自的 `*_judgement_pre_calibration.json`，没有补猜。PID `22370/53102/82946` 的旧 `judgement_pre_calibration.json` 留在服务器原始目录，新 `*_judgement.json` 是补入本 UE 实例映射后重判的结果。映射见 `../tools/actor_scene_calibrations.json`，不复用其他 UE 实例编号顺序。
