@@ -40,3 +40,5 @@
 `20261012T165314_red_A0` 的 `red_visual_start.jpg` 采自 `08:55:14.036Z`，其 `red_frames.jsonl` 记录原始文件名与当时 z≈1.50 m。画面未见红球且整局无红色有效像素；单个 Actor 延迟消失的原因、时间与颜色无直接事件日志，判 `unknown`。`20261012T1753_yaw_probe.log` 记录固定角速度两段各 2 s 的像素与偏航；`20261012T1747_idle_scene_snapshots.jsonl` 是无飞行空白对照。
 
 `20261012T185145_blue_before_2.jpg` 是正式场景真实 `/rflysim/sensor1/img_rgb` 在冲刺前约 1 s 的蓝球画面；`20261012T185145_blue_sprint_start.jpg` 与 `..._sprint_end.jpg` 是同局蓝墙画面。日志中目标面积从 3.0% 跳到 37.7%、59.4%，提示 YOLO/HSV 在墙面产生大框；Actor 删除只在 125 s 稳定快照出现，因此本局 `true` 限于场景删除代理判据，不表示冲刺画面证明了碰撞。校准配置 `tools/actor_scene_calibrations.json` 针对 UE PID 267731 单独记录映射，没有沿用其他 UE 的编号排序。
+
+`aruco_window_summary_20261012.csv` 是 `tools/summarize_aruco.py` 对八局服务器原始 `*telemetry.jsonl` 的逐局提取。八个 ENABLED→DISABLED 窗口均短于 1 秒，`rate_samples=0` 表示计时器尚未到每秒采样点；它不能当作 `callbacks/s=0` 的反证。
