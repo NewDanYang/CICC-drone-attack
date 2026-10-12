@@ -1,0 +1,15 @@
+{
+  "method": "empirical_actor_rank_across_fresh_scenes",
+  "rank_to_color": ["purple", "blue", "red"],
+  "supporting_complete_sequence": [
+    "20261012T162215_red_A0",
+    "20261012T162655_purple_A0",
+    "20261012T163138_blue_A0"
+  ],
+  "supporting_partial_sequence": [
+    "20261012T155603_purple_A0",
+    "20261012T160158_blue_A0",
+    "20261012T161302_red_A0"
+  ],
+  "limitation": "Actor color is inferred from stable rank across independent fresh scenes and one-color trials; the simulator object list has no direct color property."
+}

@@ -1,0 +1,4 @@
+# Preserve exact server snapshots and raw evidence bytes for MD5 audit.
+deployed_source/** -text
+evidence/** -text
+*.sh text eol=lf
