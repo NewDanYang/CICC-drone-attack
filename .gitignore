@@ -6,3 +6,6 @@ aruco_v2.b64
 srv_src/
 srv_*.launch
 srv_start_sim.sh
+
+# Python bytecode
+__pycache__/

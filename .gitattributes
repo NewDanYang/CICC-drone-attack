@@ -1,0 +1,2 @@
+# Deploy payloads are MD5-checked byte for byte on the server: never convert line endings.
+v3_stability/rule_compliance/deploy/** -text

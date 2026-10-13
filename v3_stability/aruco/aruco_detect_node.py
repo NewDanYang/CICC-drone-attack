@@ -16,12 +16,16 @@ could only infer callback starvation from the absence of throttled messages;
 this makes it a measurement.
 """
 
+import time
+
 import rospy
 import cv2
 import numpy as np
 from sensor_msgs.msg import Image
 from std_msgs.msg import Int32
 from std_srvs.srv import SetBool, SetBoolResponse
+
+WINDOW_NAME = "ArUco Detection (Python)"
 
 # --- cv_bridge: pure-numpy fallback (Boost.Python conflict on Python 3.9+) ---
 try:
@@ -96,7 +100,11 @@ class ArucoDetectNode:
         self.use_clahe    = bool(rospy.get_param("~use_clahe", True))
         self.upscale      = float(rospy.get_param("~upscale", 3.0))
         self.use_subpix   = bool(rospy.get_param("~use_subpix", True))
-        self.debug_display = bool(rospy.get_param("~debug_display", False))
+        # Rule 4.4(5): a perception-result window is mandatory (5 points per
+        # stage). The window is ON unless explicitly disabled; the launch's
+        # show_debug arg (sim_env_start.sh passes true) also controls it.
+        self.debug_display = bool(rospy.get_param("~debug_display",
+                                                  rospy.get_param("~show_debug", True)))
         self.queue_size   = max(1, int(rospy.get_param("~queue_size", 1)))
 
         # --- ArUco detector ---
@@ -116,6 +124,7 @@ class ArucoDetectNode:
         self.enabled       = enabled_default
         self.has_detection = False
         self.img_sub       = None   # dynamically managed
+        self._display_frame = None  # latest annotated frame, shown by run()
 
         # --- diagnostics: unthrottled counters, reported once per second ---
         self.n_callbacks   = 0
@@ -264,11 +273,9 @@ class ArucoDetectNode:
                 len(rejected) if rejected else 0)
 
         # --- debug draw/display/save: best-effort, never raises out of the
-        # callback. The interactive window is OFF by default: at 10 Hz the
-        # imshow/waitKey pair runs on the same thread that must service the
-        # image subscription, which is the prime suspect for the observed
-        # callback starvation. Use ~debug_display:=true only when watching by
-        # eye, not during timed trials.
+        # callback. The callback only hands the annotated frame to run(),
+        # which owns the window on the main thread, so imshow/waitKey can no
+        # longer delay image callbacks (the suspected starvation cause).
         need_debug = self.debug_display or self.debug_img_pub.get_num_connections() > 0
         if need_debug or detected:
             try:
@@ -288,8 +295,7 @@ class ArucoDetectNode:
                     if self.debug_img_pub.get_num_connections() > 0:
                         self.debug_img_pub.publish(_numpy_to_imgmsg(dbg, msg.header))
                     if self.debug_display:
-                        cv2.imshow("ArUco Detection (Python)", dbg)
-                        cv2.waitKey(1)
+                        self._display_frame = dbg
                 if detected and self.save_dir and need_debug:
                     path = f"{self.save_dir}/aruco_id_{marker_id}.jpg"
                     cv2.imwrite(path, dbg)
@@ -299,8 +305,29 @@ class ArucoDetectNode:
 
     # ------------------------------------------------------------------ run
     def run(self):
-        rospy.spin()
-        if self.debug_display:
+        if not self.debug_display:
+            rospy.spin()
+            return
+        # Main-thread display loop. After a detection the node unsubscribes,
+        # so the last frame (marker outline + "ID: n") stays on screen for the
+        # judges instead of flashing for the ~0.2 s detection window.
+        shown = None
+        try:
+            while not rospy.is_shutdown():
+                frame = self._display_frame
+                if frame is not None and frame is not shown:
+                    cv2.imshow(WINDOW_NAME, frame)
+                    shown = frame
+                if shown is None:
+                    time.sleep(0.03)   # no window yet; waitKey would not block
+                else:
+                    cv2.waitKey(30)
+        except Exception as e:
+            # A broken display must never take detection down with it.
+            rospy.logerr("[ArucoDetectNode] display loop failed, detection continues without window: %s", e)
+            self.debug_display = False
+            rospy.spin()
+        finally:
             cv2.destroyAllWindows()
 
 
