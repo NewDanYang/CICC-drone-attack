@@ -1,0 +1,61 @@
+{
+  "hit": "true",
+  "color": "red",
+  "reason": "one simulator balloon actor destroyed during isolated single-color trial with target tracking; color inferred",
+  "evidence": {
+    "telemetry": "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261012T171720_red_A0/20261012T171724_91827a_red_telemetry.jsonl",
+    "scene_events": null,
+    "decisive_event": null,
+    "scene_snapshots": {
+      "path": "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261012T171720_red_A0/scene_snapshots.jsonl",
+      "error": null,
+      "sim_pid": 161918,
+      "before": [
+        "BP_Balloon_C_2147481415",
+        "BP_Balloon_C_2147481417",
+        "BP_Balloon_C_2147481420"
+      ],
+      "after": [
+        "BP_Balloon_C_2147481415",
+        "BP_Balloon_C_2147481420"
+      ],
+      "removed": [
+        "BP_Balloon_C_2147481417"
+      ],
+      "added": [],
+      "before_time": "2026-10-12T09:17:18.599473+00:00",
+      "after_time": "2026-10-12T09:21:29.322143+00:00",
+      "after_phase": "settled",
+      "after_observations": [
+        {
+          "phase": "after",
+          "wall_time": "2026-10-12T09:19:23.602644+00:00",
+          "actor_ids": [
+            "BP_Balloon_C_2147481415",
+            "BP_Balloon_C_2147481417",
+            "BP_Balloon_C_2147481420"
+          ]
+        },
+        {
+          "phase": "settled",
+          "wall_time": "2026-10-12T09:21:29.322143+00:00",
+          "actor_ids": [
+            "BP_Balloon_C_2147481415",
+            "BP_Balloon_C_2147481420"
+          ]
+        }
+      ]
+    },
+    "sprint_starts": [
+      "2026-10-12T09:19:07.937+00:00"
+    ],
+    "sprint_ends": [
+      "2026-10-12T09:19:09.141+00:00"
+    ],
+    "tracked_pixels": 13,
+    "bt_targets": [
+      "red_balloon"
+    ],
+    "telemetry_error": null
+  }
+}

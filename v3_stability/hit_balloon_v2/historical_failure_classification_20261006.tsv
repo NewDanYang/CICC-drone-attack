@@ -1,0 +1,11 @@
+trial_dir	color	class	valid_target_logs	pixel_x_range	first_safety_enter_s	classify_color_logs	basis
+20261006T163350_red_A0	red	E	0		24.6	purple=5;blue=2	No red target; safety recovery entered during 50 s hit window
+20261006T163935_red_A0	red	E	0		38.6	purple=12;blue=2	No red target; safety recovery entered during 50 s hit window
+20261006T165423_red_A0	red	A	0			purple=7;blue=2	No valid target pixel; no safety entry in hit window
+20261006T165940_red_A0	red	E	0		44.2	purple=7;blue=1	No red target; safety recovery entered during 50 s hit window
+20261006T170355_red_A0	red	E	0		32.1	purple=7;blue=1	No red target; safety recovery entered during 50 s hit window
+20261006T171034_red_A0	red	E	0		45.9	purple=13;blue=4	No red target; safety recovery entered during 50 s hit window
+20261006T171559_red_A0	red	E	0		46.0	purple=10;blue=2	No red target; safety recovery entered during 50 s hit window
+20261006T182214_purple_A0	purple	A	0			blue=10;red=7	No valid target pixel; first safety entry 52.7 s after stage start, during return
+20261006T182814_blue_A0	blue	B	5	509..632		red=5;blue=3	Target detected at image edge, no APPROACH or sprint, then lost
+20261006T183211_red_A0	red	A	0				No valid target pixel; first safety entry 53.1 s after stage start, during return

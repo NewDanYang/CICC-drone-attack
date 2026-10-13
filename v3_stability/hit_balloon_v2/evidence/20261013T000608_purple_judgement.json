@@ -1,0 +1,83 @@
+{
+  "hit": "true",
+  "color": "purple",
+  "reason": "calibrated actor for requested color removed during single-color trial with target tracking; actor color inferred from same-instance visual sequence",
+  "evidence": {
+    "telemetry": "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261013T000608_purple_A0/20261013T000613_415597_purple_telemetry.jsonl",
+    "scene_events": null,
+    "decisive_event": null,
+    "scene_snapshots": {
+      "path": "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261013T000608_purple_A0/scene_snapshots.jsonl",
+      "error": null,
+      "sim_pid": 53102,
+      "log_inode": 131452,
+      "before": [
+        "BP_Balloon_C_2147481415"
+      ],
+      "after": [],
+      "removed": [
+        "BP_Balloon_C_2147481415"
+      ],
+      "added": [],
+      "before_time": "2026-10-12T16:06:06.699154+00:00",
+      "after_time": "2026-10-12T16:11:11.313159+00:00",
+      "after_phase": "settled",
+      "after_observations": [
+        {
+          "phase": "after",
+          "wall_time": "2026-10-12T16:09:03.895274+00:00",
+          "actor_ids": []
+        },
+        {
+          "phase": "late",
+          "wall_time": "2026-10-12T16:09:19.415161+00:00",
+          "actor_ids": []
+        },
+        {
+          "phase": "late",
+          "wall_time": "2026-10-12T16:09:50.008528+00:00",
+          "actor_ids": []
+        },
+        {
+          "phase": "late",
+          "wall_time": "2026-10-12T16:10:35.582334+00:00",
+          "actor_ids": []
+        },
+        {
+          "phase": "settled",
+          "wall_time": "2026-10-12T16:11:11.313159+00:00",
+          "actor_ids": []
+        }
+      ]
+    },
+    "actor_color_calibration": {
+      "error": null,
+      "method": "per_ue_instance_actor_mapping",
+      "limitation": "Unreal obj list does not expose balloon color. Mappings combine same-instance actor-set differences with color-classified camera observations. They are not direct actor color properties and must never be transferred between UE instances.",
+      "calibration_file": "/home/ubuntu/tcei_hit_balloon_v2_tools/actor_scene_calibrations.json",
+      "roster_source": "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261012T235510_blue_A0/scene_snapshots.jsonl",
+      "roster": [
+        "BP_Balloon_C_2147481415",
+        "BP_Balloon_C_2147481417",
+        "BP_Balloon_C_2147481420"
+      ],
+      "actor_to_color": {
+        "BP_Balloon_C_2147481415": "purple",
+        "BP_Balloon_C_2147481417": "blue",
+        "BP_Balloon_C_2147481420": "red"
+      },
+      "calibration_evidence": [
+        "20261012T235510_blue_A0: fresh three-balloon scene; camera 15:56:47.044Z shows blue balloon during tracking; middle actor alone removed by immediate post-trial snapshot",
+        "20261013T000043_red_A0: camera 16:02:52.526Z shows red balloon at sprint; highest actor alone removed by 15 s post-trial snapshot",
+        "20261013T000608_purple_A0: sole remaining lowest actor; camera 16:08:03.132Z and 16:08:05.132Z shows purple balloon during tracking; actor absent immediately after trial"
+      ]
+    },
+    "sprint_starts": [],
+    "sprint_ends": [],
+    "tracked_pixels": 9,
+    "bt_targets": [
+      "purple_balloon"
+    ],
+    "telemetry_error": null
+  }
+}
