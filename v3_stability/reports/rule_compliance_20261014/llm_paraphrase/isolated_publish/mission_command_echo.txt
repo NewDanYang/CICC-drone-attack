@@ -1,0 +1,3 @@
+data: "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:blue\nland"
+---
+WARNING: topic [/mission_command] does not appear to be published yet

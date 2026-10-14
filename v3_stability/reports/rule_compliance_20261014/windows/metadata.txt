@@ -1,0 +1,9 @@
+Source: /tmp/rule_compliance/windows_red/ on simulation server, UE PID 5253
+Trial: /home/ubuntu/tcei_baseline_tools/results/formal_trials/20261014T231142_red_A0/
+ArUco ENABLED: 2026-10-14T15:12:40.734+00:00
+ArUco DISABLED: 2026-10-14T15:12:41.295+00:00
+Trial end: 2026-10-14T15:14:23.790+00:00
+Server stat with TZ=UTC:
+aruco_037.png       2026-10-14 15:12:56.376873135 +0000  109924 bytes
+detection_067.png   2026-10-14 15:14:01.949513554 +0000  188690 bytes
+root_in_flight.png  2026-10-14 15:12:58.364892525 +0000  1075709 bytes
