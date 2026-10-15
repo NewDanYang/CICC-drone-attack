@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Run one deployed-model probe on the simulation server; does not publish commands.
 set -euo pipefail
-mode="${1:?usage: run_llm_probe_server.sh targeted|full}"
+mode="${1:?usage: run_llm_probe_server.sh targeted|full|distractor8|distractor16}"
 root=/tmp/rule_compliance
 output="$root/$mode"
 mkdir -p "$output"
@@ -16,6 +16,10 @@ if [ "$mode" = targeted ]; then
   exec_args=(--samples 5 --case-ids blue_ball,red_yanse,distractor_color,step_land)
 elif [ "$mode" = full ]; then
   exec_args=(--samples 3)
+elif [ "$mode" = distractor8 ]; then
+  exec_args=(--samples 8 --case-ids distractor_color)
+elif [ "$mode" = distractor16 ]; then
+  exec_args=(--samples 16 --case-ids distractor_color)
 else
   echo "unknown probe mode: $mode" >&2
   exit 2
