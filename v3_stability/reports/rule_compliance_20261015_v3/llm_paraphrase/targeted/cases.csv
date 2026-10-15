@@ -1,0 +1,5 @@
+case_id,category,samples,passed,accuracy,p50_s,p95_s,failure_classes
+step_land,single_step,5,5,1.0,2.106,2.1486,{}
+red_yanse,color_wording,5,5,1.0,2.387,2.4078,{}
+blue_ball,color_wording,5,5,1.0,3.57,3.8012,{}
+distractor_color,distractor,5,4,0.8,3.427,5.575199999999999,"{""steps_missing_or_extra"": 1}"

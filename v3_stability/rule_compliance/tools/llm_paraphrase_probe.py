@@ -97,10 +97,22 @@ def main():
     parser.add_argument("--resource-dir", help="directory containing prompts/ and FM9G4B-V/ when probing a staged copy")
     parser.add_argument("--output", required=True)
     parser.add_argument("--samples", type=int, default=3)
+    parser.add_argument("--case-ids", help="comma-separated case IDs to sample; default is all cases")
     parser.add_argument("--list-cases", action="store_true")
     args = parser.parse_args()
+    cases = CASES
+    if args.case_ids is not None:
+        requested = [case_id.strip() for case_id in args.case_ids.split(",")]
+        known = {case[0] for case in CASES}
+        if not requested or any(not case_id for case_id in requested):
+            parser.error("--case-ids requires one or more nonempty case IDs")
+        unknown = sorted(set(requested) - known)
+        if unknown:
+            parser.error("unknown case IDs: " + ", ".join(unknown))
+        selected = set(requested)
+        cases = [case for case in CASES if case[0] in selected]
     if args.list_cases:
-        for case in CASES:
+        for case in cases:
             print(case[0], case[1], case[2])
         return
     if args.samples < 3:
@@ -118,7 +130,7 @@ def main():
     output.mkdir(parents=True, exist_ok=True)
     records = []
     with (output / "samples.jsonl").open("w", encoding="utf-8") as handle:
-        for case_id, category, prompt, expected in CASES:
+        for case_id, category, prompt, expected in cases:
             for repetition in range(1, args.samples + 1):
                 attempts = []
 
@@ -176,7 +188,7 @@ def main():
     with (output / "cases.csv").open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=["case_id", "category", "samples", "passed", "accuracy", "p50_s", "p95_s", "failure_classes"])
         writer.writeheader()
-        for case_id, category, _, _ in CASES:
+        for case_id, category, _, _ in cases:
             rows = [r for r in records if r["case_id"] == case_id]
             writer.writerow({
                 "case_id": case_id, "category": category, "samples": len(rows),

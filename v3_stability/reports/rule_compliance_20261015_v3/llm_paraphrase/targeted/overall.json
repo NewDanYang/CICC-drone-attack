@@ -1,0 +1,17 @@
+{
+  "tested_module": "/home/ubuntu/model/mission_once.py",
+  "tested_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+  "model_resource_dir": "/home/ubuntu/model",
+  "sample_count": 20,
+  "evaluable_count": 20,
+  "passed_count": 19,
+  "accuracy": 0.95,
+  "meets_95_percent": true,
+  "failure_class_counts": {
+    "steps_missing_or_extra": 1
+  },
+  "latency_p50_s": 2.4059999999999997,
+  "latency_p95_s": 3.9221000000000017,
+  "latency_definition": "wall time for generate_validated_commands, including retries",
+  "accuracy_definition": "exact ordered command sequence, valid labeled command block, valid command names and target color; area-only cases excluded"
+}
