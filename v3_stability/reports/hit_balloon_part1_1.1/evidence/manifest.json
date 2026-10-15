@@ -1,0 +1,74 @@
+[
+  {
+    "label": "batch1/r1_red_a1",
+    "trial_dir": "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261015T233808_red_A0",
+    "telemetry": [
+      "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261015T233808_red_A0/20261015T233812_a2a3ff_red_telemetry.jsonl"
+    ],
+    "valid": "1"
+  },
+  {
+    "label": "batch1/r1_purple_a1",
+    "trial_dir": "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261015T234422_purple_A0",
+    "telemetry": [
+      "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261015T234422_purple_A0/20261015T234426_78d129_purple_telemetry.jsonl"
+    ],
+    "valid": "1"
+  },
+  {
+    "label": "batch1/r1_blue_a1",
+    "trial_dir": "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261015T234957_blue_A0",
+    "telemetry": [
+      "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261015T234957_blue_A0/20261015T235001_d87074_blue_telemetry.jsonl"
+    ],
+    "valid": "1"
+  },
+  {
+    "label": "batch1/r2_red_a1",
+    "trial_dir": "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261015T235559_red_A0",
+    "telemetry": [
+      "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261015T235559_red_A0/20261015T235604_8f73b5_red_telemetry.jsonl"
+    ],
+    "valid": "1"
+  },
+  {
+    "label": "batch1/r2_purple_a1",
+    "trial_dir": "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261016T000320_purple_A0",
+    "telemetry": [
+      "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261016T000320_purple_A0/20261016T000326_efd41c_purple_telemetry.jsonl"
+    ],
+    "valid": "1"
+  },
+  {
+    "label": "batch1/r2_blue_a1",
+    "trial_dir": "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261016T000923_blue_A0",
+    "telemetry": [
+      "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261016T000923_blue_A0/20261016T000929_f5f40f_blue_telemetry.jsonl"
+    ],
+    "valid": "1"
+  },
+  {
+    "label": "batch2/r1_red_a1",
+    "trial_dir": "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261016T002420_red_A0",
+    "telemetry": [
+      "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261016T002420_red_A0/20261016T002424_013160_red_telemetry.jsonl"
+    ],
+    "valid": "1"
+  },
+  {
+    "label": "batch2/r1_purple_a1",
+    "trial_dir": "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261016T003037_purple_A0",
+    "telemetry": [
+      "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261016T003037_purple_A0/20261016T003041_87341f_purple_telemetry.jsonl"
+    ],
+    "valid": "1"
+  },
+  {
+    "label": "batch2/r1_blue_a1",
+    "trial_dir": "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261016T003638_blue_A0",
+    "telemetry": [
+      "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261016T003638_blue_A0/20261016T003642_bb4815_blue_telemetry.jsonl"
+    ],
+    "valid": "1"
+  }
+]

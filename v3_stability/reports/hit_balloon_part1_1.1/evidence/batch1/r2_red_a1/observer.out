@@ -1,0 +1,34 @@
+run_id=20261015T235604_12748f
+natural_language_task=飞机起飞，然后穿过框，再去识别二维码，然后再穿回框，接着去打击红色气球，完成后就回到起点并降落；
+v21_telemetry_log=/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261015T235559_red_A0/20261015T235604_8f73b5_red_telemetry.jsonl
+v21_planning_summary=/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261015T235559_red_A0/planning_runs.csv
+Observer ready: waiting for first /mission_command; timing starts automatically.
+{
+  "run_id": "20261015T235604_12748f",
+  "target_color": "red",
+  "start_time": "2026-10-15T15:56:23.132+00:00",
+  "end_time": "2026-10-15T15:59:55.802+00:00",
+  "total_time": "212.670",
+  "elapsed_time": "212.670",
+  "bt_success": "true",
+  "mission_success": "true",
+  "end_status": "completed",
+  "takeoff_status": "success",
+  "cross_frame_status": "success",
+  "detect_aruco_status": "success",
+  "return_cross_frame_status": "success",
+  "hit_balloon_status": "success",
+  "land_status": "success",
+  "aruco_detect_time": "0.415",
+  "balloon_search_time": "7.952",
+  "failure_stage": "",
+  "failure_reason": "",
+  "safety_boundary_triggered": "true",
+  "boundary_first_time": "2026-10-15T15:57:44.750+00:00",
+  "boundary_first_position": "",
+  "boundary_violation_count": "2",
+  "boundary_recovered": "true",
+  "notes": "mission_command received as text; checkArrival made no progress for 20.0s at target (5.3, 1.0, 1.5); bt_planning_controls=[{\"goal\":\"{frame_center}\",\"offset_z\":\"1.000000\",\"kind\":\"frame_outbound\"},{\"goal\":\"{frame_center}\",\"offset_z\":\"\",\"kind\":\"frame_return\"},{\"goal\":\"5.3;1.0;1.5\",\"offset_z\":\"\",\"kind\":\"other\"}]; rosout_events_logged; setpoint_samples=10589; target_detection_messages=991"
+}
+csv=/home/ubuntu/tcei_baseline_tools/results/baseline_runs.csv
+raw_log=/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261015T235559_red_A0/logs/20261015T235604_8f73b5_red.jsonl

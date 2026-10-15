@@ -1,0 +1,27 @@
+1_red_1: trial starting; actors=3 sim_pid=199818
+1_red_1: trial_dir=/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261016T011108_red_A0 runner_rc=1 before=3 settled=2 frames=162 valid=1
+1_purple_1: found 2 actors; resetting scene
+1_purple_1: trial starting; actors=3 sim_pid=215117
+1_purple_1: trial_dir=/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261016T011721_purple_A0 runner_rc=1 before=3 settled=2 frames=118 valid=1
+1_blue_1: found 2 actors; resetting scene
+1_blue_1: trial starting; actors=3 sim_pid=229288
+1_blue_1: trial_dir=/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261016T012249_blue_A0 runner_rc=1 before=3 settled=2 frames=121 valid=1
+2_red_1: found 2 actors; resetting scene
+2_red_1: trial starting; actors=3 sim_pid=244487
+2_red_1: trial_dir=/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261016T012819_red_A0 runner_rc=1 before=3 settled=2 frames=165 valid=1
+2_purple_1: found 2 actors; resetting scene
+2_purple_1: trial starting; actors=3 sim_pid=260240
+2_purple_1: trial_dir=/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261016T013436_purple_A0 runner_rc=1 before=3 settled=1 frames=145 valid=1
+2_blue_1: found 1 actors; resetting scene
+2_blue_1: trial starting; actors=3 sim_pid=273738
+2_blue_1: trial_dir=/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261016T014032_blue_A0 runner_rc=1 before=3 settled=1 frames=160 valid=1
+3_red_1: found 1 actors; resetting scene
+3_red_1: trial starting; actors=3 sim_pid=286781
+3_red_1: trial_dir=/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261016T014644_red_A0 runner_rc=1 before=3 settled=2 frames=166 valid=1
+3_purple_1: found 2 actors; resetting scene
+3_purple_1: trial starting; actors=3 sim_pid=299459
+3_purple_1: trial_dir=/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261016T015301_purple_A0 runner_rc=1 before=3 settled=2 frames=169 valid=1
+3_blue_1: found 2 actors; resetting scene
+3_blue_1: trial starting; actors=3 sim_pid=312228
+3_blue_1: trial_dir=/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261016T015921_blue_A0 runner_rc=0 before=3 settled=1 frames=127 valid=1
+complete: three valid three-actor trials per color

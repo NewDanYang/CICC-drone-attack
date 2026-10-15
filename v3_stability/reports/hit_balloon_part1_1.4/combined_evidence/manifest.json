@@ -1,0 +1,26 @@
+[
+  {
+    "label": "batch1/r1_red_a1",
+    "trial_dir": "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261016T021247_red_A0",
+    "telemetry": [
+      "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261016T021247_red_A0/20261016T021251_5b358a_red_telemetry.jsonl"
+    ],
+    "valid": "1"
+  },
+  {
+    "label": "batch1/r2_red_a1",
+    "trial_dir": "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261016T021851_red_A0",
+    "telemetry": [
+      "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261016T021851_red_A0/20261016T021855_7318a5_red_telemetry.jsonl"
+    ],
+    "valid": "1"
+  },
+  {
+    "label": "batch1/r3_red_a1",
+    "trial_dir": "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261016T022448_red_A0",
+    "telemetry": [
+      "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261016T022448_red_A0/20261016T022452_4b8571_red_telemetry.jsonl"
+    ],
+    "valid": "1"
+  }
+]

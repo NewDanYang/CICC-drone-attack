@@ -1,0 +1,32 @@
+--- src/mission_pkg/src/nodes/action/visual_servo.cpp
++++ src/mission_pkg/src/nodes/action/visual_servo.cpp.patched
+@@ -240,6 +240,29 @@
+             // 阶段3：冲刺 — 全速前进，保持 yaw_rate 和 VZ 修正
+             double sprint_dt = (ros::Time::now() - sprint_start_time_).toSec();
+             
++            // max_area_ratio_ is refreshed before this switch, so comparing
++            // current_ratio to it cannot detect growth here. A 25% image area
++            // is a near-contact cue in the real three-balloon frames. The
++            // passed-target cue handles a balloon sliding off to one side.
++            const double near_area = std::max(0.12, approach_area_threshold_ * 1.5);
++            const bool area_close = sprint_dt >= 0.4 && sprint_dt < sprint_time_ &&
++                                    !isTargetLost() && current_ratio >= 0.25;
++            const bool passed_target = sprint_dt >= 0.8 && sprint_dt < sprint_time_ &&
++                                       !isTargetLost() && current_ratio >= near_area &&
++                                       std::abs(err_x) >= img_w_ * 0.35;
++            const bool lost_close = sprint_dt < sprint_time_ && isTargetLost() &&
++                                    max_area_ratio_ >= near_area;
++            if (area_close || passed_target || lost_close) {
++                const auto& pose = fcu_odom_ptr->pose.pose;
++                const char* reason = area_close ? "area" : (passed_target ? "passed_target" : "lost");
++                ROS_WARN("[%s]: SPRINT_ABORT_NEAR_TARGET reason=%s dt=%.3f area=%.4f max_area=%.4f err_x=%.1f near_area=%.4f pos=(%.3f,%.3f,%.3f)",
++                         name().c_str(), reason, sprint_dt,
++                         current_ratio, max_area_ratio_, err_x, near_area,
++                         pose.position.x, pose.position.y, pose.position.z);
++                sendHoverCommand();
++                return NodeStatus::SUCCESS;
++            }
++
+             // 超时 → 完成
+             if (sprint_dt >= sprint_time_) {
+                 const auto& sprint_pose = fcu_odom_ptr->pose.pose;
