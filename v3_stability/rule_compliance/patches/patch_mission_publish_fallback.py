@@ -1,4 +1,5 @@
-"""Make mission_once.py never end a match by publishing nothing.
+"""Make mission_once.py never end a match by publishing nothing, and catch the
+LLM silently expanding one requested action into extra, unrequested stages.
 
 Rule 4.2(1): if the drone has not moved 5 min after the start signal the
 round is over.  The 2026-10-12 color guard (md5 4b0ae381) returns None after
@@ -6,11 +7,29 @@ two mismatched answers, and a reply without a ```command block was always
 dropped, so one bad LLM sample could cost the whole round (0 points) instead
 of only the balloon stage (25 points).
 
+v2 (2026-10-15): the 2026-10-14 on-server paraphrase test (20 phrasings x 3
+samples, see v3_stability/reports/rule_compliance_20261014/) found the v1
+color/unknown-command checks blind to a second failure mode: a single-action
+instruction ("撞破蓝色球。", "不要碰蓝色气球，扎破红色的气球。") made the model
+emit the FULL six-step mission instead of the one requested command, 9/9
+times across three phrasings -- and because the color inside that six-step
+answer happened to be correct, v1's color check passed it as-is. Similarly
+"返回起点并降落。" got a spurious return_cross_frame prepended to land, 3/3
+times. v2 adds a narrow heuristic (single_action_problems) that only fires
+when the instruction mentions a balloon (or landing) and none of the other
+stage keywords, and demands exactly the one matching command in that case.
+This is paired with v3_stability/rule_compliance/patches/
+patch_mission_prompt_paraphrase_examples.py, which adds few-shot examples for
+exactly these phrasings -- the prompt fix should mean this check rarely has
+to intervene; it exists as a backstop for phrasings the new examples don't
+cover.
+
 This patch keeps the LLM as the only source of commands (rule: 九格 semantic
 parsing is mandatory; no hand-written composite interface) and only changes
 how its answers are checked and retried:
-  * every answer is checked for a command block, known command names, and the
-    balloon color named in the instruction;
+  * every answer is checked for a command block, known command names, the
+    balloon color named in the instruction, and (new in v2) whether it adds
+    stages the instruction never asked for;
   * up to MISSION_MAX_ATTEMPTS answers (default 3) within
     MISSION_RETRY_BUDGET_S seconds (default 60) are tried;
   * if none is fully valid, the closest answer is published verbatim instead of
@@ -50,7 +69,34 @@ def command_balloon_colors(commands):
     return re.findall(r"(?m)^\\s*hit_balloon\\s*:\\s*([a-zA-Z]+)\\s*$", commands or "")
 
 
-def command_problems(commands, expected):
+# Catches the LLM expanding one requested action into the full six-step
+# mission. Deliberately narrow: each rule only fires when the instruction
+# mentions ONE family of stage keywords and none of the others, so a genuine
+# multi-step instruction (which will mention more than one family) is never
+# second-guessed. Evaluated against the ORIGINAL instruction text, never the
+# retry-augmented prompt (which lists every command name, including the
+# substring "aruco", and would otherwise always look like a multi-stage ask).
+_BALLOON_MENTION = re.compile(r"(red|purple|blue|红|紫|蓝).{0,4}(balloon|气球|球)", re.IGNORECASE)
+_OTHER_STAGE_FOR_BALLOON_ONLY = re.compile(
+    r"起飞|升空|take\\s*off|框|二维码|aruco|降落|land|穿|逆序|反向|原路", re.IGNORECASE)
+_LAND_MENTION = re.compile(r"降落|land", re.IGNORECASE)
+_OTHER_STAGE_FOR_LAND_ONLY = re.compile(
+    r"起飞|升空|take\\s*off|框|二维码|aruco|气球|balloon|球|穿|逆序|反向|原路", re.IGNORECASE)
+
+
+def single_action_problems(commands, task):
+    actual = [line.strip() for line in (commands or "").splitlines() if line.strip()]
+    problems = []
+    if _BALLOON_MENTION.search(task) and not _OTHER_STAGE_FOR_BALLOON_ONLY.search(task):
+        if len(actual) != 1 or not actual[0].startswith("hit_balloon"):
+            problems.append("steps_likely_extra: instruction names only the balloon stage")
+    if _LAND_MENTION.search(task) and not _OTHER_STAGE_FOR_LAND_ONLY.search(task):
+        if actual != ["land"]:
+            problems.append("steps_likely_extra: instruction names only the landing stage")
+    return problems
+
+
+def command_problems(commands, expected, task=""):
     """List what is wrong with one answer; an empty list means publishable as-is."""
     if not commands:
         return ["no ```command block"]
@@ -66,13 +112,15 @@ def command_problems(commands, expected):
         targets = command_balloon_colors(commands)
         if targets != [expected]:
             problems.append(f"color mismatch: task={expected}, commands={targets}")
+    problems.extend(single_action_problems(commands, task))
     return problems
 
 
 def retry_prompt(task, expected):
     hint = ("\\n请重新生成完整命令，放在一个 ```command 代码块中，每行一条，只能使用："
             "takeoff、cross_frame、detect_aruco、return_cross_frame、"
-            "hit_balloon:red/purple/blue、land。")
+            "hit_balloon:red/purple/blue、land。只输出用户在这句话里明确要求的动作，"
+            "不要自行补充没有提到的步骤。")
     if expected is not None:
         hint += ("任务明确要求打击" + COLOR_NAMES[expected] +
                  "色气球，命令必须且只能包含 hit_balloon:" + expected + "。")
@@ -86,7 +134,7 @@ def generate_validated_commands(model, tokenizer, base_msgs, task):
     for attempt in range(MAX_ATTEMPTS):
         prompt = task if attempt == 0 else retry_prompt(task, expected)
         commands = generate_commands(model, tokenizer, base_msgs, prompt)
-        problems = command_problems(commands, expected)
+        problems = command_problems(commands, expected, task)
         if not problems:
             return commands
         print(f"[命令校验] 第{attempt + 1}次生成不合格：{'; '.join(problems)}", flush=True)

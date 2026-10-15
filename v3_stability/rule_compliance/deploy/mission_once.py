@@ -93,7 +93,34 @@ def command_balloon_colors(commands):
     return re.findall(r"(?m)^\s*hit_balloon\s*:\s*([a-zA-Z]+)\s*$", commands or "")
 
 
-def command_problems(commands, expected):
+# Catches the LLM expanding one requested action into the full six-step
+# mission. Deliberately narrow: each rule only fires when the instruction
+# mentions ONE family of stage keywords and none of the others, so a genuine
+# multi-step instruction (which will mention more than one family) is never
+# second-guessed. Evaluated against the ORIGINAL instruction text, never the
+# retry-augmented prompt (which lists every command name, including the
+# substring "aruco", and would otherwise always look like a multi-stage ask).
+_BALLOON_MENTION = re.compile(r"(red|purple|blue|红|紫|蓝).{0,4}(balloon|气球|球)", re.IGNORECASE)
+_OTHER_STAGE_FOR_BALLOON_ONLY = re.compile(
+    r"起飞|升空|take\s*off|框|二维码|aruco|降落|land|穿|逆序|反向|原路", re.IGNORECASE)
+_LAND_MENTION = re.compile(r"降落|land", re.IGNORECASE)
+_OTHER_STAGE_FOR_LAND_ONLY = re.compile(
+    r"起飞|升空|take\s*off|框|二维码|aruco|气球|balloon|球|穿|逆序|反向|原路", re.IGNORECASE)
+
+
+def single_action_problems(commands, task):
+    actual = [line.strip() for line in (commands or "").splitlines() if line.strip()]
+    problems = []
+    if _BALLOON_MENTION.search(task) and not _OTHER_STAGE_FOR_BALLOON_ONLY.search(task):
+        if len(actual) != 1 or not actual[0].startswith("hit_balloon"):
+            problems.append("steps_likely_extra: instruction names only the balloon stage")
+    if _LAND_MENTION.search(task) and not _OTHER_STAGE_FOR_LAND_ONLY.search(task):
+        if actual != ["land"]:
+            problems.append("steps_likely_extra: instruction names only the landing stage")
+    return problems
+
+
+def command_problems(commands, expected, task=""):
     """List what is wrong with one answer; an empty list means publishable as-is."""
     if not commands:
         return ["no ```command block"]
@@ -109,13 +136,15 @@ def command_problems(commands, expected):
         targets = command_balloon_colors(commands)
         if targets != [expected]:
             problems.append(f"color mismatch: task={expected}, commands={targets}")
+    problems.extend(single_action_problems(commands, task))
     return problems
 
 
 def retry_prompt(task, expected):
     hint = ("\n请重新生成完整命令，放在一个 ```command 代码块中，每行一条，只能使用："
             "takeoff、cross_frame、detect_aruco、return_cross_frame、"
-            "hit_balloon:red/purple/blue、land。")
+            "hit_balloon:red/purple/blue、land。只输出用户在这句话里明确要求的动作，"
+            "不要自行补充没有提到的步骤。")
     if expected is not None:
         hint += ("任务明确要求打击" + COLOR_NAMES[expected] +
                  "色气球，命令必须且只能包含 hit_balloon:" + expected + "。")
@@ -129,7 +158,7 @@ def generate_validated_commands(model, tokenizer, base_msgs, task):
     for attempt in range(MAX_ATTEMPTS):
         prompt = task if attempt == 0 else retry_prompt(task, expected)
         commands = generate_commands(model, tokenizer, base_msgs, prompt)
-        problems = command_problems(commands, expected)
+        problems = command_problems(commands, expected, task)
         if not problems:
             return commands
         print(f"[命令校验] 第{attempt + 1}次生成不合格：{'; '.join(problems)}", flush=True)
