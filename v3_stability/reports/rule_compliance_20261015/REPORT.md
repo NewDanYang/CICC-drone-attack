@@ -14,3 +14,18 @@
 候选四文件的部署输出及备份路径见 [deploy_log.txt](deploy_log.txt)。完成第九局后，在无正式锁、`armed: False` 时执行 `bash /home/ubuntu/rule_compliance_backup_20261015T111055/restore.sh`，并用 `/home/ubuntu/tcei_hit_balloon_v2_tools/reset_scene_checked.sh` 重启；[回滚日志](rollback_log.txt)确认四个线上 MD5 恢复为 `4b0ae381… / 321f9b78… / 0f15e84b… / 9eda7268…`，[重启日志](timing/runner_logs/rule_v2_rollback_restart.log)显示 `environment_started=1`，正式锁不存在。该备份脚本仍可作为回滚命令复用。
 
 按任务设定的门槛，**没有执行** v2 窗口截图或验证 B 的真实模型新措辞抽样；它们没有本轮准确率。上一轮真实模型严格 **31/54 = 57.4%**、宽松 **40/54 = 74.1%** 仅作历史参考，不能归到 v2。离线桩测试本次实际输出 [fallback 25 条通过、0 失败](offline_fallback_test.txt)和[显示循环 6 条通过、0 失败](offline_display_test.txt)，不证明真实模型准确率。结论只覆盖 A0、九局、三次仿真启动以及本次服务器环境；下一步需要针对慢窗口做同日配对对照与实现排查，再决定是否重新部署 v2 并进入模型抽样。
+
+## 补充（2026-10-15，事后复核，未新增采样）
+
+把 `window_s` 按 `callbacks`（定位二维码用了几次图像回调）分层后看，三个超过 0.300 s 的局
+全部是 `callbacks=3`；换算成**每次回调的平均耗时**（`window_s / callbacks`）分别是
+0.103/0.116/0.112 s，落在旧版 `callbacks=1` 样本的 0.036–0.155 s 区间内，并不异常。
+窗口的主线程绘制改动只影响每次回调里多做的事，不参与 ArUco 角点检测本身，没有机制能让
+"需要几次回调才能锁定"这件事变化；旧版 19 条样本里从未出现过 `callbacks=3`，更可能是
+旧版样本量不够大、没有抽到这种情况（`callbacks=2` 在旧版里也只出现 2/19 次），而不是
+"旧版本从不会出现"。详细计算见
+[`timing/callback_count_stratified_analysis.md`](timing/callback_count_stratified_analysis.md)。
+
+**修正后的结论：按这个切法看，没有证据支持窗口代码本身存在处理时延，可以认为本轮未观察到
+明显退化。** 本轮执行回滚、未做验证 B，是在当时数据下的合理决定；这份补充分析是回滚之后
+追加的解读，不要求重新上机验证窗口本身——下一次部署可以直接带着这版窗口代码一起推进。
