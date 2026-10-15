@@ -24,16 +24,39 @@ exactly these phrasings -- the prompt fix should mean this check rarely has
 to intervene; it exists as a backstop for phrasings the new examples don't
 cover.
 
+v3 (2026-10-15, real-model verification): live testing of v2 (20 phrasings x
+3-5 samples, see v3_stability/reports/rule_compliance_20261015_v3/) found
+the fallback ranking itself had a bug. "distractor_color" ("不要碰蓝色气球，
+扎破红色的气球。") retried three times, each flagged with exactly one
+problem (steps_likely_extra) -- but one of those three answers was
+"detect_aruco\nland" with NO hit_balloon line at all, while the other two
+did contain the correct "hit_balloon:red" alongside extra steps. The old
+rank (unknown_count, problem_count) scored all three as tied, so the
+fallback kept whichever came first regardless of whether it actually
+contained the requested balloon command -- in this run that meant publishing
+the one answer that would have scored zero on the 25-point balloon stage,
+while two strictly better answers sat right next to it. v3 adds
+balloon_command_missing() as the first ranking key: for an instruction that
+is clearly about hitting a balloon, an answer with zero hit_balloon lines
+now always loses to one that has any (or, when a specific color is known,
+the right one), no matter how many extra steps the latter has around it
+(extra steps risk re-running an earlier stage; a missing balloon command
+guarantees losing the stage outright). This is keyed on the instruction
+text itself, not on `expected`, because expected_balloon_color() returns
+None on purpose for a distractor instruction naming two colors -- exactly
+the case this bug was found in.
+
 This patch keeps the LLM as the only source of commands (rule: 九格 semantic
 parsing is mandatory; no hand-written composite interface) and only changes
 how its answers are checked and retried:
   * every answer is checked for a command block, known command names, the
-    balloon color named in the instruction, and (new in v2) whether it adds
+    balloon color named in the instruction, and (v2) whether it adds
     stages the instruction never asked for;
   * up to MISSION_MAX_ATTEMPTS answers (default 3) within
     MISSION_RETRY_BUDGET_S seconds (default 60) are tried;
-  * if none is fully valid, the closest answer is published verbatim instead of
-    nothing, with a log line saying why.
+  * if none is fully valid, the closest answer is published verbatim instead
+    of nothing, with a log line saying why -- preferring (v3) one that still
+    contains the requested balloon command over one that does not.
 
 Usage: python patch_mission_publish_fallback.py SOURCE OUTPUT [BACKUP_DIR]
 """
@@ -96,6 +119,28 @@ def single_action_problems(commands, task):
     return problems
 
 
+def balloon_command_missing(commands, task, expected):
+    """1 when the task is clearly about hitting a balloon but the answer has
+    no hit_balloon line at all (or, when a specific color IS known, the
+    wrong one); 0 otherwise, including tasks that are not about a balloon.
+
+    Deliberately keyed on _BALLOON_MENTION (any color word near "balloon"),
+    not on `expected`: a distractor instruction like "不要碰蓝色气球，扎破
+    红色的气球。" names two colors, so expected_balloon_color() returns None
+    by design (ambiguous -> don't enforce a specific color) -- but the
+    instruction is still unambiguously about hitting SOME balloon, and an
+    answer with zero hit_balloon lines is strictly worse than one with any.
+    """
+    if not _BALLOON_MENTION.search(task):
+        return 0
+    targets = command_balloon_colors(commands)
+    if not targets:
+        return 1
+    if expected is not None and expected not in targets:
+        return 1
+    return 0
+
+
 def command_problems(commands, expected, task=""):
     """List what is wrong with one answer; an empty list means publishable as-is."""
     if not commands:
@@ -139,9 +184,23 @@ def generate_validated_commands(model, tokenizer, base_msgs, task):
             return commands
         print(f"[命令校验] 第{attempt + 1}次生成不合格：{'; '.join(problems)}", flush=True)
         if commands:
+            # v3 (2026-10-15 real-model verification, distractor_color case):
+            # rank by whether a balloon command is present FIRST, when the
+            # task is about hitting a balloon at all. Before this, three
+            # retries that all had exactly one problem ("steps_likely_extra")
+            # ranked as ties, so the fallback kept whichever came first --
+            # even when it was "detect_aruco; land" with no hit_balloon line
+            # at all, while a later retry that merely had extra steps around
+            # a correct "hit_balloon:red" lost the tie-break. Missing the
+            # balloon command entirely costs the full 25-point stage; extra
+            # steps around a correct one do not. balloon_command_missing()
+            # keys on the task text itself (not on `expected`, which is
+            # deliberately None for distractor instructions that name two
+            # colors), so it still fires for exactly that case.
             # Unknown commands are skipped by bt_ros, a wrong color only loses
             # the balloon stage: prefer the answer with fewer unknown commands.
-            rank = (sum(p.startswith("unknown") for p in problems), len(problems))
+            rank = (balloon_command_missing(commands, task, expected),
+                    sum(p.startswith("unknown") for p in problems), len(problems))
             if best_rank is None or rank < best_rank:
                 best, best_rank = commands, rank
         if time.monotonic() >= deadline:

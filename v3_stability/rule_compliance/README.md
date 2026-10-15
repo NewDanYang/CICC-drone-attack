@@ -36,6 +36,17 @@
 > 红、紫、蓝各一局端到端冒烟中，非击球五阶段均 3/3 成功；击球 observer 仅蓝色
 > 标为成功，红紫未观测。候选可进入合并评估，但否定颜色句的兜底仍有漏掉击球的反例。
 > [第三轮报告及原始样本](../reports/rule_compliance_20261015_v3/REPORT.md)。
+>
+> **2026-10-15 补丁：修复上面那条"漏掉击球"的反例，尚未上机。** 问题出在
+> `generate_validated_commands` 的兜底排序只比较未知命令数和问题总数，三次重试若打平
+> （如 `distractor_color` 第 1 次：三次都只有一个"疑似多余步骤"的问题），就保留**先出现**
+> 的那次——哪怕它完全没有 `hit_balloon` 行，旁边明明有带着正确颜色的答案。新加的
+> `balloon_command_missing()` 把"有没有打气球命令"排进第一优先级，键在指令文本本身而不是
+> `expected`（`不要碰蓝色气球，扎破红色的气球。`这类指令会让 `expected_balloon_color()`
+> 故意返回 None，因为同时点了两种颜色——这正是触发这个 bug 的真实样本）。
+> 用 Astra 这次采到的真实失败样本做了回归测试，离线 28/28 通过；`mission_once.py` 新 MD5
+> `fca24bf1`（服务器当前应处于 v2 候选状态 `1597c5c1`，部署脚本的"旧 MD5"已相应更新）。
+> **未上机验证**——下一步需要真实模型重跑一次 `distractor_color`，确认兜底不再丢掉气球命令。
 
 ## 规则逐条状态
 
@@ -61,7 +72,7 @@
 
 | 文件 | 原 MD5 → 新 MD5 | 生成方式 |
 |---|---|---|
-| `/home/ubuntu/model/mission_once.py` | `4b0ae381` → `1597c5c1`（第二版；2026-10-14 曾试过 `e7bb1627`，已回滚） | `patches/patch_mission_publish_fallback.py`（v2，源 MD5 不符时拒绝修改） |
+| `/home/ubuntu/model/mission_once.py` | `1597c5c1` → `fca24bf1`（第三版，未上机；`1597c5c1` 是当前线上版本，`4b0ae381` 是最初基线，2026-10-14 曾试过的 `e7bb1627` 已回滚） | `patches/patch_mission_publish_fallback.py`（v3，源 MD5 不符时拒绝修改） |
 | `/home/ubuntu/model/prompts/mission_prompt.txt` | `321f9b78` → `204b9124`（新增，2026-10-15） | `patches/patch_mission_prompt_paraphrase_examples.py`（源 MD5 不符时拒绝修改；保留原文件的 CRLF 字节） |
 | `catkin_ws/src/mission_pkg/scripts/aruco_detect_node.py` | `0f15e84b` → `43c3bc40` | 本 PR 以 `deploy/aruco_detect_node.py` 作为已核对的候选 payload；旧版由服务器回滚备份保存；**这版没有改动** |
 | `catkin_ws/src/object_det/scripts/det_color.py` | `9eda7268` → `348dd7d0` | `patches/patch_det_color_window.py`（源 MD5 不符时拒绝修改）；**这版没有改动** |
@@ -96,6 +107,26 @@
 兜底选择了不含击球的命令，另有两次无 `command` 标签代码块被线上校验接受、在严格判据下失败。
 详见[第三轮报告](../reports/rule_compliance_20261015_v3/REPORT.md)。
 
+### v3 新增：兜底排序会丢掉本来存在的正确击球命令（2026-10-15，未上机）
+第三轮真实模型抽样里，`distractor_color`（"不要碰蓝色气球，扎破红色的气球。"）第 1 次采样
+三次重试依次是：
+1. `detect_aruco\nland`（**完全没有 `hit_balloon`**）
+2. `takeoff\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland`
+3. `takeoff\nhit_balloon:red\nland`
+
+三次都被 `single_action_problems()` 判定"疑似多余步骤"，问题个数打平，旧版排序 `(未知命令数,
+问题总数)` 全部是 `(0, 1)`，三者相等时保留**先出现**的一次——于是发布了完全没打气球的第 1 次，
+第 2、3 次明明带着正确颜色却被扔掉。这个指令点了两种颜色，`expected_balloon_color()` 按设计
+返回 `None`（不强行指定颜色），所以这个 bug 和 `expected` 是不是已知颜色无关。
+
+新加的 `balloon_command_missing()` 直接查**指令文本本身**（不依赖 `expected`）是不是在说打气球，
+是的话把"有没有打气球命令"排进排序的第一位：没有任何 `hit_balloon` 行的答案，一定排在有的
+后面，不管后者还带着多少多余步骤——多余步骤顶多让飞机多绕几步，完全没打气球命令则是确定丢掉
+整个 25 分阶段。离线回归测试直接用了上面这组真实失败样本，确认新排序会选中第 2 或第 3 次答案。
+
+**这处修复完全没有上机验证过。** 下一步要用真实模型重跑一次 `distractor_color`（≥5 次采样），
+确认线上行为和离线回归测试预期的一致。
+
 ### 窗口的行为变化
 - 图像回调只负责把标注好的画面交给主线程，`imshow/waitKey` 只在主线程调用，避免窗口拖住回调。这也正是 ArUco 回调停摆假设 1 怀疑的机制。
 - 显示出错时记录错误，检测照常运行，不会因为窗口拖垮识别。
@@ -105,17 +136,17 @@
 
 ```bash
 cd v3_stability/rule_compliance
-PYTHONIOENCODING=utf-8 python tests/test_mission_once_fallback.py   # 25 条 PASS、0 失败（2026-10-15 实跑）
+PYTHONIOENCODING=utf-8 python tests/test_mission_once_fallback.py   # 28 条 PASS、0 失败（2026-10-15 实跑，含 v3 回归）
 PYTHONIOENCODING=utf-8 python tests/test_aruco_display_loop.py      # 6/6 通过
 ```
 
-`test_mission_once_fallback.py` 里新增的 7 条用例直接取自 2026-10-14 上机测试里真实失败的
-那几种措辞（"撞破蓝色球。"等），用桩重放"模型仍然扩写成六步"和"模型已经改好只输出一条"
-两种场景，确认新校验逻辑在两种情况下都按预期工作。
+`test_mission_once_fallback.py` 里有两批取自真实上机失败样本的回归用例：7 条来自
+2026-10-14 的措辞过度生成问题，3 条来自 2026-10-15 真实模型抽样时发现的兜底排序
+bug（直接用 `distractor_color` 第 1 次的三次真实重试内容构造，见上面的 v3 小节）。
 
-测试范围有限：大模型、ROS、OpenCV 窗口都用桩替代。**不能**证明真实大模型配上新范例之后
-正确率会不会真的提升，也不能证明窗口开着时 ArUco 和检测的时延不变。这两点必须上机验证。
-`det_color.py` 只做了编译检查和 diff 审阅，它的显示循环与 ArUco 的同构，但没有单独测试。
+测试范围有限：大模型、ROS、OpenCV 窗口都用桩替代，**不能**替代真实上机结果。
+窗口计时和 v2 新措辞修复已经分别经过上机验证（见下方"下一步"）；v3 这次的兜底排序
+修复**完全没有**上机验证过。`det_color.py` 只做了编译检查和 diff 审阅。
 
 ## 部署（服务器开机、确认无人使用后）
 
@@ -130,29 +161,32 @@ MSYS_NO_PATHCONV=1 python v3_stability/tools/srvctl.py sh 'bash /tmp/rule_compli
 ```
 
 脚本会做这些检查：有正式试验锁时拒绝；四个线上文件的 MD5 必须与上表"原 MD5"一致，否则一个都不改——
-**这里特别要注意**：服务器现在应该处于 2026-10-14 回滚后的状态（`mission_once.py` 是 `4b0ae381`），
-如果服务器上还是当时试过的候选版（`e7bb1627`），脚本会直接拒绝，这是预期行为，不要放宽 MD5 检查去
-强行覆盖，而是确认回滚是否真的做完整了。备份到 `/home/ubuntu/rule_compliance_backup_<ts>/` 并生成
-`restore.sh`；复制后再校验一次 MD5。本地已在沙盒中用四文件版本重新演练过部署、重复部署被拒、回滚三种情况。
+**这里特别要注意**：服务器现在应该处于 2026-10-15 第三轮验证后的 v2 候选状态
+（`mission_once.py` 是 `1597c5c1`，其余三文件和候选值一致），因为那一轮的处理决定是
+"保留候选部署"，没有回滚。如果服务器状态和预期不符，脚本会直接拒绝，这是预期行为，
+不要放宽 MD5 检查去强行覆盖，而是先确认服务器实际处于哪个状态。备份到
+`/home/ubuntu/rule_compliance_backup_<ts>/` 并生成 `restore.sh`（会退回到 v2 候选状态，
+不是最初的基线）；复制后再校验一次 MD5。本地已在沙盒中用"v2 候选 + v3 更新"的组合
+重新演练过部署、重复部署被拒、回滚三种情况。
 
 **回滚**：`bash /home/ubuntu/rule_compliance_backup_<ts>/restore.sh`，然后重启仿真环境。
 
-## 上机验证
+## 上机验证进度
 
-**这次的教训：测量工具不能和被测的东西抢资源。** 2026-10-14 的退化判定（ArUco 窗口 0.561 s）
-是在抓图脚本每 2 秒对同一个 X display 做一次 `xwd+ffmpeg` 的情况下测出来的，这个工具本身很可能
-拖慢了被测的东西，Astra 的报告里也承认了这一点。这次改成**先用干净的计时跑完整轮回归，确认没有
-退化之后，再单独补截图**，两件事不要同时做。
+| 验证项 | 状态 | 证据 |
+|---|---|---|
+| ArUco/检测窗口是否退化 | **已解决（无明显退化）** | [2026-10-15 事后复核](../reports/rule_compliance_20261015/timing/callback_count_stratified_analysis.md)，按回调数分层后 3 局偏慢样本落在正常区间 |
+| 大模型新措辞（v2 修复：prompt 范例 + 单动作校验） | **已上机验证通过** | [第三轮报告](../reports/rule_compliance_20261015_v3/REPORT.md)：专项 19/20，全量 52/54=96.3% |
+| 兜底排序修复（v3：`balloon_command_missing`） | **未上机验证** | 只有离线回归测试（28/28），用的是真实失败样本构造，但没有真实模型重新采样确认 |
+| 端到端冒烟（3 色各 1 局） | 部分完成 | 非击球五阶段 3/3 成功；击球 observer 判据本身有局限（缺场景 Actor 颜色校准），红、紫两局未观测 |
 
-1. `rosparam get /object_detection/visualization/show_window` 必须是 `true`。如果是 false，说明启动用了 headless yaml，要改回官方 `detection_params.yaml`。
-2. **先跑 3 色 × 3 局（9 局，不启动任何截图脚本）**，与 2026-10-13 那 9 局基线对比：ArUco 窗口时长（0.105–0.217 s）、`callbacks/s`、击球结果、总用时。样本量比上次的 1 局大，结论更可信。窗口开启后任何一项明显变差都要回滚并报告，不要现场调参掩盖。
-3. 确认计时没有退化之后，**再单独补窗口截图**（固定时间点截一两张即可，不要用轮询脚本）：
-   - `Detection + Color`：穿框和击球阶段有方框、气球的 bbox；
-   - `ArUco Detection (Python)`：二维码阶段之后停留在"ID: 35"。
-4. 大模型兜底：用一句故意不点名颜色、措辞陌生的指令跑一次，确认 `[命令校验]` 日志和发布行为符合预期。
-5. **新措辞回归**：至少重跑 2026-10-14 失败的那几类措辞（"撞破蓝色球。""撞破红颜色的气球。""不要碰蓝色气球，
-   扎破红色的气球。""返回起点并降落。"），每种 ≥5 次采样，确认新范例+新校验组合后这几类不再 9/9 或 3/3 失败。
-   再跑一遍 `llm_paraphrase_probe.py` 全部 20 套，看整体正确率是否过 95%。
+**下一步（v3 修复尚未做的事）**：
+1. 部署这版 `mission_once.py`（其余三文件 MD5 不变，不需要重新上传或可以一并上传确认一致）。
+2. 用真实模型重跑 `distractor_color`（"不要碰蓝色气球，扎破红色的气球。"）≥5 次，
+   确认兜底不再出现"三次重试全部打平、选中完全没打气球的那次"的情况。
+3. 复查上一轮报告里两个 `no_command_block` 的"失败"是不是真的需要处理——目前的解读是
+   探针判据比线上真实逻辑更严（真实 `generate_commands()` 不要求 ```command 标签），
+   如果认同这个解读，这两个不需要再修代码，但探针本身的判据可以考虑放松，使其更贴近线上行为。
 
 ## 比赛当天检查单（初稿）
 

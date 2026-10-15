@@ -6,13 +6,16 @@
 # Refuses to touch anything unless every live file has the reviewed MD5 and
 # no formal trial is running. Restart the simulation environment afterwards.
 #
-# 2026-10-15: adds mission_prompt.txt (few-shot examples for phrasings that
-# caused the LLM to over-generate; see patches/patch_mission_prompt_paraphrase_examples.py)
-# and a new mission_once.py build with the matching single_action_problems()
-# check (patches/patch_mission_publish_fallback.py v2). The server is expected
-# to be at the rolled-back 2026-10-14 state (md5 4b0ae381...) for mission_once.py;
-# if it is still at the previously-tried candidate (e7bb1627...) this script
-# will refuse and tell you so -- do not loosen the expected-md5 check to force it.
+# 2026-10-15 (v3): mission_once.py only, fixing the fallback-ranking bug the
+# real-model verification found (patches/patch_mission_publish_fallback.py
+# v3 -- see its docstring for the distractor_color repro). mission_prompt.txt,
+# aruco_detect_node.py and det_color.py have NO changes this round; the
+# server is expected to already have them at the v2 candidate MD5s below
+# (Astra's 2026-10-15 "Verify rule compliance v2 paraphrases" run left the
+# v2 candidate deployed rather than rolling back). If the live mission_once.py
+# is still at the pre-v2 rolled-back state (4b0ae381...) instead, this script
+# will refuse and tell you so -- do not loosen the expected-md5 check to
+# force it; confirm which state the server is actually in first.
 set -euo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 TS="$(date +%Y%m%dT%H%M%S)"
@@ -20,10 +23,10 @@ BACKUP="/home/ubuntu/rule_compliance_backup_${TS}"
 
 # name | live path | expected live md5 | new md5
 FILES=(
-  "mission_once.py|/home/ubuntu/model/mission_once.py|4b0ae381b683b7c38d30baf808ed1346|1597c5c139632fff4823e8b4d7cadd28"
-  "mission_prompt.txt|/home/ubuntu/model/prompts/mission_prompt.txt|321f9b78eb3ad477172f37c70d8b921f|204b91245046f3d11ac342a5b229cc20"
-  "aruco_detect_node.py|/home/ubuntu/catkin_ws/src/mission_pkg/scripts/aruco_detect_node.py|0f15e84bdaed68c85d3b6b6ee5e33788|43c3bc40fc5c7de29730f5f1ce32574f"
-  "det_color.py|/home/ubuntu/catkin_ws/src/object_det/scripts/det_color.py|9eda726899abaf4f951f6b03a08c11ad|348dd7d0ed3c66ce972c1e8158b3a07a"
+  "mission_once.py|/home/ubuntu/model/mission_once.py|1597c5c139632fff4823e8b4d7cadd28|fca24bf1142ca8cddfb9e8d39c387a43"
+  "mission_prompt.txt|/home/ubuntu/model/prompts/mission_prompt.txt|204b91245046f3d11ac342a5b229cc20|204b91245046f3d11ac342a5b229cc20"
+  "aruco_detect_node.py|/home/ubuntu/catkin_ws/src/mission_pkg/scripts/aruco_detect_node.py|43c3bc40fc5c7de29730f5f1ce32574f|43c3bc40fc5c7de29730f5f1ce32574f"
+  "det_color.py|/home/ubuntu/catkin_ws/src/object_det/scripts/det_color.py|348dd7d0ed3c66ce972c1e8158b3a07a|348dd7d0ed3c66ce972c1e8158b3a07a"
 )
 
 if [ -d /tmp/tcei_formal_trial.lock ]; then

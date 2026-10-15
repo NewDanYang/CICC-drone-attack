@@ -144,5 +144,51 @@ out, p = run("起飞，然后降落。", ["takeoff\nland"])
 check("multi-step instruction ending in landing is not flagged as landing-only",
       out == "takeoff\nland" and len(p) == 1)
 
+# --- v3: fallback-ranking regression, from the 2026-10-15 real-model
+# verification (v3_stability/reports/rule_compliance_20261015_v3/
+# llm_paraphrase/targeted/samples.jsonl, case distractor_color, repetition 1).
+# Three retries each had exactly one problem (steps_likely_extra), so the old
+# rank (unknown_count, problem_count) treated them as tied and kept whichever
+# came first -- which on the live model was the one answer with NO
+# hit_balloon line at all, even though the other two did contain the correct
+# color. This is the exact sequence of attempts the live model produced.
+
+# 14. Reproduces the real failure: without the missing_target ranking key,
+# this would publish "detect_aruco\nland" (zero balloon points). With it,
+# an answer that actually contains hit_balloon:red must win the tie-break
+# even though it also has extra steps around it.
+out, p = run(
+    "不要碰蓝色气球，扎破红色的气球。",
+    [
+        "detect_aruco\nland",
+        "takeoff\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+        "takeoff\nhit_balloon:red\nland",
+    ],
+)
+check("fallback prefers an answer with the requested balloon command over one with none",
+      out is not None and "hit_balloon:red" in out.splitlines())
+check("fallback does not publish the balloon-less answer from this sequence",
+      out != "detect_aruco\nland")
+
+# 15. Order independence: swapping which "has the balloon" answer comes first
+# must not change the outcome -- missing_target should always lose, by rank.
+out, p = run(
+    "不要碰蓝色气球，扎破红色的气球。",
+    [
+        "takeoff\nhit_balloon:red\nland",
+        "detect_aruco\nland",
+        "takeoff\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+    ],
+)
+check("fallback still prefers the balloon command when the balloon-less answer comes second",
+      out is not None and "hit_balloon:red" in out.splitlines())
+
+# 16. If EVERY attempt is missing the target balloon command, there is nothing
+# better to fall back to -- still publish the closest (non-empty) answer
+# rather than nothing, consistent with the rest of the fallback philosophy.
+out, p = run("不要碰蓝色气球，扎破红色的气球。", ["detect_aruco\nland"] * 3)
+check("all attempts missing the balloon command still publish something, not None",
+      out == "detect_aruco\nland" and len(p) == 3)
+
 print(f"\n{len(failures)} failure(s)")
 sys.exit(1 if failures else 0)
