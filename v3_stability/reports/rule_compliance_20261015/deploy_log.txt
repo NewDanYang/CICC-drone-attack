@@ -1,0 +1,6 @@
+deployed /home/ubuntu/model/mission_once.py (4b0ae381b683b7c38d30baf808ed1346 -> 1597c5c139632fff4823e8b4d7cadd28)
+deployed /home/ubuntu/model/prompts/mission_prompt.txt (321f9b78eb3ad477172f37c70d8b921f -> 204b91245046f3d11ac342a5b229cc20)
+deployed /home/ubuntu/catkin_ws/src/mission_pkg/scripts/aruco_detect_node.py (0f15e84bdaed68c85d3b6b6ee5e33788 -> 43c3bc40fc5c7de29730f5f1ce32574f)
+deployed /home/ubuntu/catkin_ws/src/object_det/scripts/det_color.py (9eda726899abaf4f951f6b03a08c11ad -> 348dd7d0ed3c66ce972c1e8158b3a07a)
+backup + restore.sh: /home/ubuntu/rule_compliance_backup_20261015T111055
+next: restart the simulation environment, then run the checks in v3_stability/rule_compliance/README.md
