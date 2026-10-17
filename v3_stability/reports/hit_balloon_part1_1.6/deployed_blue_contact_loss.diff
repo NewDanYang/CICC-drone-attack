@@ -1,0 +1,28 @@
+--- src/mission_pkg/src/nodes/action/visual_servo.cpp
++++ src/mission_pkg/src/nodes/action/visual_servo.cpp.patched
+@@ -110,6 +110,25 @@
+     
+     // 目标丢失处理（冲刺阶段不检查）
+     if (current_state_ != SPRINTING && isTargetLost()) {
++        // A blue balloon can pop while ALIGN is still active. The old 50 s
++        // position-held search stays in the nearby red balloon's travel lane.
++        // Finish only when the last blue detection was near and then vanished.
++        const double last_ratio = last_target_.area() /
++            (static_cast<double>(img_w_) * img_h_);
++        const double lost_seconds = (now - last_valid_detection_time_).toSec();
++        if (target_color_ == "blue" && has_ever_received_data_) {
++            ROS_INFO_THROTTLE(1.0, "[%s]: BLUE_LOSS_SAMPLE area=%.4f max_area=%.4f lost_s=%.3f",
++                              name().c_str(), last_ratio, max_area_ratio_, lost_seconds);
++        }
++        if (target_color_ == "blue" && has_ever_received_data_ &&
++            max_area_ratio_ >= 0.75 * approach_area_threshold_ &&
++            last_ratio >= 0.50 * approach_area_threshold_ &&
++            lost_seconds <= data_timeout_ + 0.25) {
++            sendHoverCommand();
++            ROS_INFO("[%s]: BLUE_NEAR_CONTACT_LOSS_COMPLETE area=%.4f max_area=%.4f lost_s=%.3f",
++                     name().c_str(), last_ratio, max_area_ratio_, lost_seconds);
++            return NodeStatus::SUCCESS;
++        }
+         if (current_state_ != ALIGN) {
+             current_state_ = ALIGN;
+             align_stable_frames_ = 0;

@@ -1,0 +1,10 @@
+round,color,trial_dir,valid,runner_rc,before_count,settled_count,gc_samples,gc_commands,gc_errors,gc_first_count,gc_last_count,gc_transitions,boundary_violations,bt_success,mission_success
+1,red,/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261018T013601_red_A0,1,1,3,2,85,85,0,3,2,3->2@2026-10-17T17:38:18.317184+00:00,0,true,false
+1,purple,/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261018T014203_purple_A0,1,1,3,2,97,97,0,3,2,3->2@2026-10-17T17:44:05.034125+00:00,1,true,false
+1,blue,/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261018T014827_blue_A0,1,1,3,2,68,68,0,3,2,3->2@2026-10-17T17:50:17.061444+00:00,0,true,false
+2,red,/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261018T015358_red_A0,1,0,3,2,77,77,0,3,2,3->2@2026-10-17T17:56:00.644782+00:00,0,true,true
+2,purple,/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261018T015945_purple_A0,1,1,3,2,89,89,0,3,2,3->2@2026-10-17T18:01:45.399139+00:00,3,true,false
+2,blue,/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261018T020553_blue_A0,1,0,3,2,78,78,0,3,2,3->2@2026-10-17T18:07:48.241403+00:00,0,true,true
+3,red,/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261018T021141_red_A0,1,0,3,1,83,83,0,3,1,3->2@2026-10-17T18:13:46.150208+00:00|2->1@2026-10-17T18:13:57.121732+00:00,0,true,true
+3,purple,/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261018T021738_purple_A0,1,1,3,2,93,93,0,3,2,3->2@2026-10-17T18:19:29.916847+00:00,2,true,false
+3,blue,/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261018T022355_blue_A0,1,0,3,2,69,69,0,3,2,3->2@2026-10-17T18:25:44.725744+00:00,0,true,true

@@ -1,0 +1,13 @@
+--- src/mission_pkg/launch/llm_mission.launch
++++ src/mission_pkg/launch/llm_mission.launch.patched
+@@ -87,8 +87,8 @@
+     <!-- yaw:  到达位置时的机头朝向 (rad)                -->
+     <!-- ============================================ -->
+     <!-- A区 (红色气球) -->
+-    <param name="balloon_zone_A/approach_pos" value="5.3;2.1;0.7"  type="str"/>
+-    <param name="balloon_zone_A/goal"         value="5.3;2.1;1.0"  type="str"/>
++    <param name="balloon_zone_A/approach_pos" value="4.3;2.1;0.7"  type="str"/>
++    <param name="balloon_zone_A/goal"         value="4.3;2.1;1.0"  type="str"/>
+     <!-- B区 (紫色气球) -->
+     <param name="balloon_zone_B/approach_pos" value="4.3;-2.0;0.7" type="str"/>
+     <param name="balloon_zone_B/goal"         value="4.3;-2.0;0.7" type="str"/>

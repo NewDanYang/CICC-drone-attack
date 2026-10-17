@@ -1,0 +1,13 @@
+--- src/mission_pkg/launch/llm_mission.launch
++++ src/mission_pkg/launch/llm_mission.launch.patched
+@@ -90,8 +90,8 @@
+     <param name="balloon_zone_A/approach_pos" value="5.3;1.0;0.7"  type="str"/>
+     <param name="balloon_zone_A/goal"         value="5.3;1.0;1.0"  type="str"/>
+     <!-- B区 (紫色气球) -->
+-    <param name="balloon_zone_B/approach_pos" value="5.3;-2.0;0.7" type="str"/>
+-    <param name="balloon_zone_B/goal"         value="5.3;-2.0;0.7" type="str"/>
++    <param name="balloon_zone_B/approach_pos" value="3.5;-2.4;0.7" type="str"/>
++    <param name="balloon_zone_B/goal"         value="3.5;-2.4;0.7" type="str"/>
+     <param name="balloon_zone_B/yaw"          value="3.14159"       type="double"/>
+     <!-- C区 (蓝色气球) -->
+     <param name="balloon_zone_C/approach_pos" value="5.3;1.0;0.7"  type="str"/>
