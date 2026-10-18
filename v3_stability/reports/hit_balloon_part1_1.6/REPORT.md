@@ -116,6 +116,22 @@
 
 独立三局远端 `/home/ubuntu/tcei_baseline_tools/results/hit_balloon_purple_extra_margin_20261018/`，循环 `exit_code=0`，[逐局汇总](purple_extra_margin_summary.csv)和[原始证据包](purple_extra_margin_evidence.tar.gz)已封存。均三球开局、`valid=1`；连续 GC `91、94、83` 次，合计 **268 次、0 错误**；结局 **`3→2、3→3、3→2`**，边界 **`0、1、2`**。第 2 局在逆序穿框规划阶段 13:23:45 UTC 已到 `(3.00,-3.11,0.51)`，比视觉舵机启动早约 34 秒，不能归因于 B 入场；之后追踪到约 `(3.00,-2.47,0.00)`、目标丢失，正式结束仍 3 只。第 3 局视觉追踪在 13:29:23 UTC 到 `(4.99,-3.01,0.00)`，再于 13:29:48 UTC 到 `(3.87,-3.05,0.00)`，两次触发 y 下界；GC 仅一次 `3→2`，不能用删一球掩盖越界。此候选既有 **1/3 漏击**又有 **2/3 局越界**，明确失败；B 入口移至 `-1.5` 并不能限制后续视觉舵机向外追踪。按备份 `restore.sh` 回滚后，线上 launch MD5 已回到 `5550c580a4822e773a331bcef11f0c47`，下一批不得再使用本候选。旧 B-v3 独立紫球三局 `3/3` 删一球且 0 边界，是下一次组合验收的入口基线；其九局组合中仍有紫球追踪越界反例，须如实记录。
 
+## 单变量 L：紫球接近速度降至 0.6 m/s
+
+[第四批九局验收](../hit_balloon_part1_1.7/REPORT.md#第四批蓝球返航航点与冲刺后可见目标重对准)中紫球第三轮尚在 `APPROACHING` 就从 `y=-2.32` 逐步飞到 `-3.02`，随后搜索锚点又靠近边界。因此先只把**紫球**生成行为树中的 `forward_velocity` 默认值从 1.0 降到 0.6 m/s，红/蓝的前进速度、紫球冲刺速度 1.5 m/s、B 入场点和安全边界保持不变。用[MD5 锁定脚本](../../hit_balloon_v2/patches/patch_purple_approach_speed.py)对线上源码副本 dry-run 后部署，`bt_ros.cpp` 从 `9b1cefe9dfa431418435f7f8f63a60ed` 变为 `e9c266de8fc5d4d8a5df896788cdf3ee`；[实际 diff](deployed_purple_forward.diff)、[编译日志](purple_forward_build.log)、[重启日志](purple_forward_restart.log)和服务器备份 `/home/ubuntu/hit_balloon_purple_forward_backup_20261018T223228/` 保留。编译日志含 `bt_ros.cpp.o` 重建和可执行文件重新链接，首局生成树实读 `forward_velocity="0.600000"`。部署前第四批 `exit_code=0`、无正式锁、PX4 未武装；重启后场景 3 Actor。
+
+独立紫球三局 `/home/ubuntu/tcei_baseline_tools/results/hit_balloon_purple_forward_speed_20261018/` 的循环 `exit_code=0`，[逐局汇总](purple_forward_summary.csv)与[原始证据包](purple_forward_evidence.tar.gz)保留每局连续 GC、真实帧窗口和 ROS 日志。三局均三球开局、`valid=1`，连续 GC 分别 107、87、68 次，共 **262 次、0 错误**；结局 **`3→2、3→2、3→3`**，边界 **0、0、1**。前两局物理删一球但未进入冲刺，也未记录独立气球阶段事件，不能据此证明冲刺安全。
+
+第三局是明确反例：14:48:55.104 UTC 紫球在 `(4.234,-2.308,0.238)`、yaw `-1.363`、画面面积比 0.2565 时，以**仍为 1.5 m/s** 的速度冲刺；14:48:56.229 UTC 机体在 `(4.31,-3.05,0.48)` 触发 y 下界，冲刺结束于 `y=-3.158`，目标仍新鲜且在画面侧边（`err_x=304 px`）。[冲刺前紫球近景](evidence_purple_forward_r3/purple_near.jpg)与[冲刺后天空画面](evidence_purple_forward_r3/after_sprint_sky.jpg)及[连续帧包](purple_forward_r3_miss_frames.tar.gz)可以复核；连续 GC 与任务后、稳定快照始终是 3 只，**没有击破任何球**。正式观察器却给出 `mission_success=true`，是本局的假阳性，不能用其替代物理证据。
+
+因此接近速度 0.6 m/s **单独不能通过**：三局仅 2/3 物理删球，1/3 边界。与第四批紫球 3/3 删一球、3/3 边界相比，样本和目标轨迹均不同，不能把边界数量变化直接归因于速度；新发现的是仍然独立存在的高速度冲刺漏击和越界。当前先保留此版本作为下一项紫球**冲刺速度**单变量试验的起点，若累计候选失败，按 `/home/ubuntu/hit_balloon_purple_forward_backup_20261018T223228/restore.sh` 恢复并重新编译。
+
+## 单变量 M：紫球冲刺速度降至 0.6 m/s（验证中）
+
+L 批第三局从 `(4.234,-2.308,0.238)` 以 1.5 m/s 冲刺，目标仍在视野侧边时到 `y=-3.158`，物理零删球且曾触发边界。因此只把紫球 `sprint_velocity` 默认值从 1.5 降至 0.6 m/s，保留 L 的紫球接近速度 0.6、红/蓝参数、入场坐标及安全边界不变。[MD5 锁定脚本](../../hit_balloon_v2/patches/patch_purple_sprint_speed.py)对 L 的 `bt_ros.cpp` `e9c266de8fc5d4d8a5df896788cdf3ee` 做字节校验，新值 `e15853ebe9f0c5136fff718558635814`；[线上 diff](deployed_purple_sprint.diff)、[编译日志](purple_sprint_build.log)、[重启日志](purple_sprint_restart.log)与备份 `/home/ubuntu/hit_balloon_purple_sprint_backup_20261018T225331/` 保留。编译重新链接 `bt_ros`，首局生成树实读 `forward_velocity="0.600000" sprint_velocity="0.600000"`。
+
+远端独立批次 `/home/ubuntu/tcei_baseline_tools/results/hit_balloon_purple_sprint_06_20261018/` 的前两局已在三球开局、连续 GC 下记录各一次 `3→2`，各一次 y 边界；第一局 14:57:46.228 UTC 从 `y=-2.804` 开始冲刺，[破裂光点真实帧](evidence_purple_sprint_r1/purple_flash.jpg)在约 0.38 秒后出现，[后续画面](evidence_purple_sprint_r1/after_boundary.jpg)已无紫球，14:57:47.409 UTC 才触边 `y=-3.01`。第二局的边界在 15:04:17.649 UTC，**早于** 15:04:23.268 UTC 的冲刺启动，故单独缩短冲刺也不能消除全部越界。第三局开始后 SSH 端口不可达，批次完成状态与有效性须恢复连接后核验，**此处不报三局结论**。如果这个累计候选仍不满足物理击球和边界指标，下一项待测的是紫球专用的内侧 y 控制限位，而不是改比赛安全边界默认值。
+
 ## 回滚
 
 先确认没有正式试验运行且机体已解除武装，再分别执行：
