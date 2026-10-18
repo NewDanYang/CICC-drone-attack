@@ -1,0 +1,11 @@
+--- src/mission_pkg/src/nodes/action/visual_servo.cpp
++++ src/mission_pkg/src/nodes/action/visual_servo.cpp.patched
+@@ -121,7 +121,7 @@
+                               name().c_str(), last_ratio, max_area_ratio_, lost_seconds);
+         }
+         if (target_color_ == "blue" && has_ever_received_data_ &&
+-            max_area_ratio_ >= 0.75 * approach_area_threshold_ &&
++            max_area_ratio_ >= 0.30 &&
+             last_ratio >= 0.50 * approach_area_threshold_ &&
+             lost_seconds <= data_timeout_ + 0.25) {
+             sendHoverCommand();
