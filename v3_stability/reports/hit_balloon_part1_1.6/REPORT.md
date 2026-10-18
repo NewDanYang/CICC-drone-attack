@@ -90,13 +90,40 @@
 
 先只改 C 的一组入场位置：`approach_pos`、`goal` 从 `5.3;1.0;0.7` 同时移到 `4.3;1.0;0.7`，C yaw、A/B、全部 C++、返航路线与安全边界保持不变。[MD5 锁定脚本](../../hit_balloon_v2/patches/patch_blue_entry_interior_lane.py)以线上原字节 MD5 `5550c580a4822e773a331bcef11f0c47` 为前置条件；本地对服务器字节副本 dry-run 后 MD5 `d95b449a8477b6077dd9bcbcc6a69048` 且 XML 可解析。正式部署前第三批循环退出码 0、无正式锁、PX4 `armed: False`。[实际 diff](deployed_C_interior_lane.diff)和备份 `/home/ubuntu/hit_balloon_blue_entry_interior_backup_20261018T1400/` 保存原文件、MD5 与 `restore.sh`。重启日志出现 `environment_started=1`，ROS 实读 `/balloon_zone_C/approach_pos=4.3;1.0;0.7`，然后启动独立蓝球三局 `/home/ubuntu/tcei_baseline_tools/results/hit_balloon_C_interior_blue_20261018/`。
 
-该批首局运行期间，SSH 端口 30316 连续六次连接失败，随后 TCP 检测仍为拒绝连接。断线前**没有收到任何完成局的 CSV 或正式汇总**；因此 C 区调参的真实成功率和边界结果截至此刻均为 **未验证**。待服务器恢复，须先只读核查批次 `trials.csv`、`exit_code`、试验锁和 PX4 武装状态；中断局不能当成有效样本，若不足三局则在完整三球新场景重跑。返航绕开红球另列单变量，不与这批混合。
+该批首局运行期间，SSH 端口 30316 连续六次连接失败，随后 TCP 检测仍为拒绝连接。服务器恢复后核查发现原批 `exit_code=1`、仅一行 `valid=0`：正式任务虽有日志，但仿真进程在结束后场景快照前消失，连续 GC 和帧证据不完整；该局**不计入候选样本**。核查旧锁 PID 均已死亡、ROS master 不在线后清理残锁并启动环境，重新核实 `environment_started=1`、MAVROS `connected: True, armed: False`、线上 launch MD5 未变。
+
+全新独立三局在 `/home/ubuntu/tcei_baseline_tools/results/hit_balloon_C_interior_blue_recover_20261018/` 完成，循环 `exit_code=0`；[逐局汇总](C_interior_recover_summary.csv)及[原始证据包](C_interior_recover_evidence.tar.gz)保存完整 `trials.csv`、连续 GC 事件、场景快照和变化时窗真实帧。三局开局均 3 Actor、`valid=1`，GC 分别 **`3→2、3→2→1→0、3→2`**，采样 `64、97、89` 次共 250 次，GC 错误 0；边界 `0、1、0` 次。第二局三个删球分别在 12:21:29、12:22:04、12:22:06 UTC；第一删时机体约在 `(4.49,1.02,0.36)` 的 C 入场附近，蓝球冲刺直到 12:22:01 才开始。第一次删球后一秒的[真实帧](evidence_C_recover_r2/20261018T122130_195758Z_0118.jpg)中蓝球、紫球都仍在，因此同局第一只被误击的是**红球**；先前的[两球同框](evidence_C_recover_r2/20261018T122127_114913Z_0115.jpg)可作对照。第二局又在蓝球冲刺末尾到 `y=-3.05` 触发一次下界，安全恢复期间两次额外删球，最终三球全部消失。第三局虽 `3→2` 且无边界，但正式 `runner_rc=1`、观察器整局未成功，不可视为全任务通过。
+
+因此 C 向内移 1 m 的候选被明确否定：三局中 1 局误击并同局连删三球，1 局正式运行失败，不能进入九局验收。这里的颜色判断仅适用于第二局同一 UE 实例的前后帧，不跨场景复用 Actor ID。先回滚 C 的 `approach_pos/goal` 至 `5.3;1.0;0.7`，再独立处理蓝球返航误击；其余已部署代码保持原状。
+
+## 单变量 I：蓝球返航绕开红球行进带
+
+在 C 批次完整退出、无正式锁且 PX4 未武装后，运行 C 备份的 `restore.sh`；线上 launch MD5 回到 `5550c580a4822e773a331bcef11f0c47`，重启后 ROS 实读 C 入场 `5.3;1.0;0.7`。本项只改蓝球指令后、`land` 前的返航路线：在原点返航和降落之前插入内侧航点 `(1.0,-1.0,0.5)`，保留既有原点返航、其他颜色、视觉舵机及安全边界。[MD5 锁定脚本](../../hit_balloon_v2/patches/patch_blue_return_via.py)要求原 `bt_ros.cpp` MD5 `6ba77aa30eb4c42588d064820bcf852d`；对线上源码副本 dry-run 的 XML 构建片段 diff 与最终线上 [diff](deployed_blue_return_via.diff)一致，新 MD5 `9b1cefe9dfa431418435f7f8f63a60ed`。备份 `/home/ubuntu/hit_balloon_blue_return_via_backup_20261018T2040/` 含原文件、MD5、diff 和 `restore.sh`；[编译日志](blue_return_via_build.log)退出码 0，重启日志 `environment_started=1` 后开始独立蓝球三局 `/home/ubuntu/tcei_baseline_tools/results/hit_balloon_blue_return_via_20261018/`。
+
+第一次生成的补丁误在 `buildXmlFromCommands` 使用仅在 `commandToXmlNode` 局部可见的 `getStr`，编译器报 `bt_ros.cpp:406 getStr was not declared`。失败源码**未重启、未跑试验**；先从 `/home/ubuntu/hit_balloon_blue_return_via_backup_20261018T2032/` 恢复原源码并单独重新编译成功，再从该干净 MD5 重新生成上述正式补丁。第一次备份的 `restore.sh` 因 `set -u` 与 ROS 环境脚本冲突，只完成复制；随后手工 `source /opt/ros/noetic/setup.bash && catkin_make --pkg mission_pkg -j2` 编译成功。正式备份脚本已在 source 前临时 `set +u`，可直接回滚并编译。
+
+独立蓝球三局循环 `exit_code=0`，[逐局汇总](blue_return_via_summary.csv)和[原始证据包](blue_return_via_evidence.tar.gz)均已封存。三局均 3 Actor 开局、`valid=1`，连续 GC 采样 `79、70、68` 次，共 **217 次、0 错误**；结局为 **`3→3、3→2、3→2`**，没有同局第二次删球。第一局正式观察器 `mission_success=true`，但 GC 和稳定快照始终 3 只，属于物理漏击：冲刺结束日志 `pos=(5.551,1.137,0.393)`、`err_x=270 px`、`area=0.0636`、`target_fresh=1`，目标仍在画面右侧，旧代码却立刻 `SUCCESS` 并返航。第二局 `3→2`，但冲刺**前**追踪到 `(6.02,-1.50,0.30)` 触发一次 x 上界；第三局 `3→2`、边界 0，观察器因气球阶段事件未观测到而整局失败。与无航点的第三批蓝球三局（`3→3、3→2、3→2→1`）相比，本批未复现返航额外删红，但每组仅 3 局，不能宣称航点已消除误击；漏击和追踪越界仍是反例。先单独修正“明显可见仍判冲刺成功”，再测追踪边界。
+
+## 单变量 J：蓝球冲刺后目标仍明显可见则重对准
+
+[MD5 锁定脚本](../../hit_balloon_v2/patches/patch_blue_visible_after_sprint.py)只在蓝球冲刺达到固定 1.2 秒时新增判断：目标检测仍新鲜、画面面积比至少 0.03、水平偏差大于画面宽度的 20% 时，先悬停并返回 ALIGN，而不直接报告成功。其他颜色、追踪速度、冲刺时长、C 入场、返航航点、安全边界均不变。线上 `visual_servo.cpp` MD5 `ae8e6172e4ddbfc851bcfdf080dc2aec` → `a63b57fa127a23cd8bb8e647f078ff21`；[实际 diff](deployed_blue_visible_retry.diff)、[编译日志](blue_visible_retry_build.log)和备份 `/home/ubuntu/hit_balloon_blue_visible_retry_backup_20261018T2053/` 可复核。先对线上原字节 dry-run，再部署、编译退出码 0、重启 `environment_started=1` 后跑独立蓝球三局。
+
+远端批次 `/home/ubuntu/tcei_baseline_tools/results/hit_balloon_blue_visible_retry_20261018/`，循环 `exit_code=0`；[逐局汇总](blue_visible_retry_summary.csv)与[原始证据包](blue_visible_retry_evidence.tar.gz)保存 3 局连续 GC 和真实帧。三局各 3 Actor 开局、有效，GC 分别 **`3→2、3→2、3→2`**，采样 `75、71、77` 次共 **223 次、0 错误**，边界 `0、0、0`，无同局第二次删球。三次变化时窗均有蓝球近景，例如[第 1 局蓝球近景](evidence_blue_visible_retry/r1_blue_near.jpg)、[第 2 局近景](evidence_blue_visible_retry/r2_blue_near.jpg)与[空车帧](evidence_blue_visible_retry/r2_empty_rover.jpg)、[第 3 局近景](evidence_blue_visible_retry/r3_blue_near.jpg)，GC 唯一删球与蓝球接触或丢失时段一致。三局均未出现 `BLUE_SPRINT_VISIBLE_RETRY`，所以这批只证明部署后未退化，**不能证明新分支救回了此前的漏击**。三局 BT 均成功；正式 `runner_rc=1` 和观察器 `mission_success=false` 均为独立气球阶段事件未观测到，需与物理击球分开。与上一批蓝球 `2/3` 删一球、`1/3` 边界相比，本批为 `3/3`、`0/3`，样本不足以断言长期成功率提升。
+
+## 单变量 K：B 区紫球入场再向内 0.5 m
+
+第三批九局的紫球第 3 轮在追踪时到 `y=-3.01`，B-v3 独立三局虽 0 边界但组合批 2/3 紫局越界。只把 B 的 `approach_pos`、`goal` 同一入场点从 `(4.3,-2.0,0.7)` 改为 `(4.3,-1.5,0.7)`；这是为追踪留空间的候选，不推定目标必可达。[字节级 MD5 锁定脚本](../../hit_balloon_v2/patches/patch_purple_entry_extra_margin.py)要求回滚 C 后 launch MD5 `5550c580a4822e773a331bcef11f0c47`，线上新 MD5 `54aa833a1d8dcf26f6564064329376e2`；先对线上原字节 dry-run、XML 解析通过，再在蓝球 J 批退出码 0、无正式锁、PX4 未武装后部署。[实际 diff](deployed_purple_extra_margin.diff)和备份 `/home/ubuntu/hit_balloon_purple_extra_margin_backup_20261018T2115/` 可回滚。重启与独立紫球三局结果另记于下，不把未测候选写成有效修复。
+
+独立三局远端 `/home/ubuntu/tcei_baseline_tools/results/hit_balloon_purple_extra_margin_20261018/`，循环 `exit_code=0`，[逐局汇总](purple_extra_margin_summary.csv)和[原始证据包](purple_extra_margin_evidence.tar.gz)已封存。均三球开局、`valid=1`；连续 GC `91、94、83` 次，合计 **268 次、0 错误**；结局 **`3→2、3→3、3→2`**，边界 **`0、1、2`**。第 2 局在逆序穿框规划阶段 13:23:45 UTC 已到 `(3.00,-3.11,0.51)`，比视觉舵机启动早约 34 秒，不能归因于 B 入场；之后追踪到约 `(3.00,-2.47,0.00)`、目标丢失，正式结束仍 3 只。第 3 局视觉追踪在 13:29:23 UTC 到 `(4.99,-3.01,0.00)`，再于 13:29:48 UTC 到 `(3.87,-3.05,0.00)`，两次触发 y 下界；GC 仅一次 `3→2`，不能用删一球掩盖越界。此候选既有 **1/3 漏击**又有 **2/3 局越界**，明确失败；B 入口移至 `-1.5` 并不能限制后续视觉舵机向外追踪。按备份 `restore.sh` 回滚后，线上 launch MD5 已回到 `5550c580a4822e773a331bcef11f0c47`，下一批不得再使用本候选。旧 B-v3 独立紫球三局 `3/3` 删一球且 0 边界，是下一次组合验收的入口基线；其九局组合中仍有紫球追踪越界反例，须如实记录。
 
 ## 回滚
 
 先确认没有正式试验运行且机体已解除武装，再分别执行：
 
 ```bash
+bash /home/ubuntu/hit_balloon_purple_extra_margin_backup_20261018T2115/restore.sh
+bash /home/ubuntu/hit_balloon_blue_visible_retry_backup_20261018T2053/restore.sh
+bash /home/ubuntu/hit_balloon_blue_return_via_backup_20261018T2040/restore.sh
 bash /home/ubuntu/hit_balloon_blue_entry_interior_backup_20261018T1400/restore.sh
 bash /home/ubuntu/hit_balloon_blue_contact_threshold_backup_20261018T1230/restore.sh
 bash /home/ubuntu/hit_balloon_blue_sprint_speed_backup_20261018T115816/restore.sh
@@ -111,4 +138,4 @@ bash /home/ubuntu/hit_balloon_purple_entry_tuned_backup_20261018T0113/restore.sh
 bash /home/ubuntu/hit_balloon_purple_entry_backup_20261018T0052/restore.sh
 ```
 
-先撤 C 区入场位置，再撤蓝球近距阈值和冲刺速度，然后撤返航 GoTo；这些 C++ 回滚脚本会 `touch` 源码并重新编译。随后按逆序撤四版 A 走廊、恢复原视觉舵机 C++，最后三个脚本按逆序恢复 B 区 launch 到 1.4 版本。重启仿真后核对视觉舵机 MD5 `e440050ecfc06657d5ac4b472411fef6`、`bt_ros.cpp` MD5 `0ce0f6ec147d516d20e1a89d612792a6` 和 launch MD5 `cff7ff38bf7ac9ef98ee890a1c8644e8`。备份和全部原始试验目录保留。
+先撤最新 B 余量、蓝球冲刺重试及蓝球返航航点，再按列表逆序恢复旧候选。C 向内入场在失败批次后已经撤回，重复执行其 restore 只会恢复同一 C 原坐标。每个 C++ 回滚都要确认 `touch` 后重新编译成功；若旧脚本在 `source /opt/ros/noetic/setup.bash` 时因 `set -u` 停止，应先核对已复制源码的 MD5，再以普通 shell 手工执行 `source /opt/ros/noetic/setup.bash && cd /home/ubuntu/catkin_ws && catkin_make --pkg mission_pkg -j2`。随后重启仿真，核对视觉舵机 MD5 `e440050ecfc06657d5ac4b472411fef6`、`bt_ros.cpp` MD5 `0ce0f6ec147d516d20e1a89d612792a6` 和 launch MD5 `cff7ff38bf7ac9ef98ee890a1c8644e8`。备份和全部原始试验目录保留。

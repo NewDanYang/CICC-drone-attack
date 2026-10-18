@@ -1,0 +1,19 @@
+--- src/mission_pkg/src/bt_ros.cpp
++++ src/mission_pkg/src/bt_ros.cpp.patched
+@@ -397,7 +397,16 @@
+   <BehaviorTree ID="LLMTask">
+     <Sequence name="LLMSequence">
+ )";
++    bool blue_balloon_command = false;
+     for (const auto& cmd : commands) {
++        if (cmd.rfind("hit_balloon:", 0) == 0) {
++            blue_balloon_command = (cmd == "hit_balloon:blue");
++        }
++        if (cmd == "land" && blue_balloon_command) {
++            const std::string via = "1.0;-1.0;0.5";
++            xml += "      <!-- Blue return via an interior lane -->\n"
++                   "      <GoTo goal=\"" + via + "\" setpoint_lookahead=\"0.6\"/>\n";
++        }
+         std::string node_xml = commandToXmlNode(cmd);
+         if (!node_xml.empty()) {
+             xml += node_xml;

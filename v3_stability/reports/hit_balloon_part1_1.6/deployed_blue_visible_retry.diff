@@ -1,0 +1,21 @@
+--- src/mission_pkg/src/nodes/action/visual_servo.cpp
++++ src/mission_pkg/src/nodes/action/visual_servo.cpp.patched
+@@ -266,6 +266,18 @@
+                          name().c_str(), sprint_pose.position.x, sprint_pose.position.y,
+                          sprint_pose.position.z, PoseUtils::getYawFromQuat(sprint_pose.orientation),
+                          err_x, err_y, current_ratio, !isTargetLost(), sprint_velocity_, sprint_time_);
++                // A visible, far-off-center blue balloon is direct evidence
++                // that the fixed-time sprint missed. Stop and realign rather
++                // than reporting a hit and flying the landing return route.
++                if (target_color_ == "blue" && !isTargetLost() &&
++                    current_ratio >= 0.03 && std::abs(err_x) > 0.20 * img_w_) {
++                    sendHoverCommand();
++                    current_state_ = ALIGN;
++                    align_stable_frames_ = 0;
++                    ROS_WARN("[%s]: BLUE_SPRINT_VISIBLE_RETRY err_x=%.1f area=%.4f",
++                             name().c_str(), err_x, current_ratio);
++                    break;
++                }
+                 sendHoverCommand();
+                 ROS_INFO("[%s]: Sprint completed (%.1fs). SUCCESS.", name().c_str(), sprint_dt);
+                 return NodeStatus::SUCCESS;
