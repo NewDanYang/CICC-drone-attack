@@ -126,11 +126,13 @@
 
 因此接近速度 0.6 m/s **单独不能通过**：三局仅 2/3 物理删球，1/3 边界。与第四批紫球 3/3 删一球、3/3 边界相比，样本和目标轨迹均不同，不能把边界数量变化直接归因于速度；新发现的是仍然独立存在的高速度冲刺漏击和越界。当前先保留此版本作为下一项紫球**冲刺速度**单变量试验的起点，若累计候选失败，按 `/home/ubuntu/hit_balloon_purple_forward_backup_20261018T223228/restore.sh` 恢复并重新编译。
 
-## 单变量 M：紫球冲刺速度降至 0.6 m/s（验证中）
+## 单变量 M：紫球冲刺速度降至 0.6 m/s（两局有效，第三局环境中断；已回滚）
 
 L 批第三局从 `(4.234,-2.308,0.238)` 以 1.5 m/s 冲刺，目标仍在视野侧边时到 `y=-3.158`，物理零删球且曾触发边界。因此只把紫球 `sprint_velocity` 默认值从 1.5 降至 0.6 m/s，保留 L 的紫球接近速度 0.6、红/蓝参数、入场坐标及安全边界不变。[MD5 锁定脚本](../../hit_balloon_v2/patches/patch_purple_sprint_speed.py)对 L 的 `bt_ros.cpp` `e9c266de8fc5d4d8a5df896788cdf3ee` 做字节校验，新值 `e15853ebe9f0c5136fff718558635814`；[线上 diff](deployed_purple_sprint.diff)、[编译日志](purple_sprint_build.log)、[重启日志](purple_sprint_restart.log)与备份 `/home/ubuntu/hit_balloon_purple_sprint_backup_20261018T225331/` 保留。编译重新链接 `bt_ros`，首局生成树实读 `forward_velocity="0.600000" sprint_velocity="0.600000"`。
 
-远端独立批次 `/home/ubuntu/tcei_baseline_tools/results/hit_balloon_purple_sprint_06_20261018/` 的前两局已在三球开局、连续 GC 下记录各一次 `3→2`，各一次 y 边界；第一局 14:57:46.228 UTC 从 `y=-2.804` 开始冲刺，[破裂光点真实帧](evidence_purple_sprint_r1/purple_flash.jpg)在约 0.38 秒后出现，[后续画面](evidence_purple_sprint_r1/after_boundary.jpg)已无紫球，14:57:47.409 UTC 才触边 `y=-3.01`。第二局的边界在 15:04:17.649 UTC，**早于** 15:04:23.268 UTC 的冲刺启动，故单独缩短冲刺也不能消除全部越界。第三局开始后 SSH 端口不可达，批次完成状态与有效性须恢复连接后核验，**此处不报三局结论**。如果这个累计候选仍不满足物理击球和边界指标，下一项待测的是紫球专用的内侧 y 控制限位，而不是改比赛安全边界默认值。
+远端独立批次 `/home/ubuntu/tcei_baseline_tools/results/hit_balloon_purple_sprint_06_20261018/` 的前两局已在三球开局、连续 GC 下记录各一次 `3→2`，各一次 y 边界；第一局 14:57:46.228 UTC 从 `y=-2.804` 开始冲刺，[破裂光点真实帧](evidence_purple_sprint_r1/purple_flash.jpg)在约 0.38 秒后出现，[后续画面](evidence_purple_sprint_r1/after_boundary.jpg)已无紫球，14:57:47.409 UTC 才触边 `y=-3.01`。第二局的边界在 15:04:17.649 UTC，**早于** 15:04:23.268 UTC 的冲刺启动。第三局 15:08 UTC 三球开局后服务器实例中断；恢复时 `trial_3_purple_1.log` 停在 `mission_once.py` 启动，旧 PID 均不存在，`trials.csv` 只有前两行且无循环 `exit_code`。第三局没有正式结局，**不得算入三局样本**；M 只有 2 局有效数据，不能判定优于第四批。
+
+2026-10-19 世界坐标调查测得紫侧墙实体 `y=-2.801…-2.501`，软件下界 `-3.0` 已在墙外，详见[边界调查](../hit_balloon_part1_boundary_survey/REPORT.md)。本轮遵新验收口径不再增加紫色候选。确认无正式锁、PX4 未武装后，将线上 M 源码 MD5 `e15853ebe9f0c5136fff718558635814` 备份到 `/home/ubuntu/catkin_ws/src/mission_pkg/src/bt_ros.cpp.bak_20261019T0112`，从 `/home/ubuntu/hit_balloon_purple_forward_backup_20261018T223228/bt_ros.cpp` 恢复第四批源码，`touch`、`catkin_make --pkg mission_pkg -j2` 成功并重启；线上 MD5 回到 `9b1cefe9dfa431418435f7f8f63a60ed`。L/M 均不纳入最终九局。
 
 ## 回滚
 

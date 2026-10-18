@@ -1,0 +1,348 @@
+{"utc": "2026-10-18T17:02:23.276995+00:00", "sample": 0, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:24.128117+00:00", "sample": 1, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:24.979214+00:00", "sample": 2, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:25.830296+00:00", "sample": 3, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:26.681392+00:00", "sample": 4, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:27.532458+00:00", "sample": 5, "actor_id": "BP_Balloon_C_2147481416", "response": {"name": "BP_Balloon_C_2147481416", "pos_ue": [0.3866633474826813, 2.0999999046325684, -0.25382930040359497], "box_origin_ue": [-0.009691160172224045, 0.0032299798913300037, -0.19452764093875885], "box_extent_ue": [0.19200000166893005, 0.19200000166893005, 0.20747235417366028], "angle_euler": [-0.0, 0.0, 0.0], "ue_timestamp": 369.6496276855469}}
+{"utc": "2026-10-18T17:02:28.383611+00:00", "sample": 6, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:29.234689+00:00", "sample": 7, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:30.085441+00:00", "sample": 8, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:30.936517+00:00", "sample": 9, "actor_id": "BP_Balloon_C_2147481416", "response": {"name": "BP_Balloon_C_2147481416", "pos_ue": [2.4044599533081055, 2.0999999046325684, -0.25382930040359497], "box_origin_ue": [-0.009691160172224045, 0.0032299798913300037, -0.19452764093875885], "box_extent_ue": [0.19200000166893005, 0.19200000166893005, 0.20747235417366028], "angle_euler": [8.556803299409617e-31, -0.0, -3.1415927410125732], "ue_timestamp": 373.0496520996094}}
+{"utc": "2026-10-18T17:02:31.787638+00:00", "sample": 10, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:32.638730+00:00", "sample": 11, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:33.489448+00:00", "sample": 12, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:34.340521+00:00", "sample": 13, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:35.191610+00:00", "sample": 14, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:36.042690+00:00", "sample": 15, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:36.893434+00:00", "sample": 16, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:37.744514+00:00", "sample": 17, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:38.595614+00:00", "sample": 18, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:39.446729+00:00", "sample": 19, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:40.297483+00:00", "sample": 20, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:41.148599+00:00", "sample": 21, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:41.999696+00:00", "sample": 22, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:42.850776+00:00", "sample": 23, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:43.701425+00:00", "sample": 24, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:44.552500+00:00", "sample": 25, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:45.403595+00:00", "sample": 26, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:46.254687+00:00", "sample": 27, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:47.105419+00:00", "sample": 28, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:47.956413+00:00", "sample": 29, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:48.807550+00:00", "sample": 30, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:49.658640+00:00", "sample": 31, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:50.509430+00:00", "sample": 32, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:51.360507+00:00", "sample": 33, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:52.211620+00:00", "sample": 34, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:53.062746+00:00", "sample": 35, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:53.913449+00:00", "sample": 36, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:54.764545+00:00", "sample": 37, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:55.615614+00:00", "sample": 38, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:56.466693+00:00", "sample": 39, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:57.317427+00:00", "sample": 40, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:58.168518+00:00", "sample": 41, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:59.019606+00:00", "sample": 42, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:02:59.873878+00:00", "sample": 43, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:00.724968+00:00", "sample": 44, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:01.576055+00:00", "sample": 45, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:02.427149+00:00", "sample": 46, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:03.278279+00:00", "sample": 47, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:04.129401+00:00", "sample": 48, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:04.980482+00:00", "sample": 49, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:05.831569+00:00", "sample": 50, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:06.682657+00:00", "sample": 51, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:07.533451+00:00", "sample": 52, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:08.384532+00:00", "sample": 53, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:09.235635+00:00", "sample": 54, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:10.086710+00:00", "sample": 55, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:10.937439+00:00", "sample": 56, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:11.788528+00:00", "sample": 57, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:12.639629+00:00", "sample": 58, "actor_id": "BP_Balloon_C_2147481416", "response": {"name": "BP_Balloon_C_2147481416", "pos_ue": [0.04530501738190651, 2.0999999046325684, -0.25382930040359497], "box_origin_ue": [-0.009691160172224045, 0.0032299798913300037, -0.19452764093875885], "box_extent_ue": [0.19200000166893005, 0.19200000166893005, 0.20747235417366028], "angle_euler": [-0.0, 0.0, 0.0], "ue_timestamp": 414.7452087402344}}
+{"utc": "2026-10-18T17:03:13.490755+00:00", "sample": 59, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:14.341460+00:00", "sample": 60, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:15.192551+00:00", "sample": 61, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:16.043607+00:00", "sample": 62, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:16.894686+00:00", "sample": 63, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:17.745447+00:00", "sample": 64, "actor_id": "BP_Balloon_C_2147481416", "response": {"name": "BP_Balloon_C_2147481416", "pos_ue": [3.7574572563171387, 2.0999999046325684, -0.25382930040359497], "box_origin_ue": [-0.009691160172224045, 0.0032299798913300037, -0.19452764093875885], "box_extent_ue": [0.19200000166893005, 0.19200000166893005, 0.20747235417366028], "angle_euler": [8.556803299409617e-31, -0.0, -3.1415927410125732], "ue_timestamp": 419.1452331542969}}
+{"utc": "2026-10-18T17:03:18.596578+00:00", "sample": 65, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:19.447011+00:00", "sample": 66, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:20.297472+00:00", "sample": 67, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:21.148632+00:00", "sample": 68, "actor_id": "BP_Balloon_C_2147481416", "response": {"name": "BP_Balloon_C_2147481416", "pos_ue": [3.506387948989868, 2.0999999046325684, -0.25382930040359497], "box_origin_ue": [-0.009691160172224045, 0.0032299798913300037, -0.19452764093875885], "box_extent_ue": [0.19200000166893005, 0.19200000166893005, 0.20747235417366028], "angle_euler": [-0.0, 0.0, 0.0], "ue_timestamp": 422.5452575683594}}
+{"utc": "2026-10-18T17:03:21.999839+00:00", "sample": 69, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:22.850871+00:00", "sample": 70, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:23.701465+00:00", "sample": 71, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:24.552606+00:00", "sample": 72, "actor_id": "BP_Balloon_C_2147481416", "response": {"name": "BP_Balloon_C_2147481416", "pos_ue": [0.7549622654914856, 2.0999999046325684, -0.25382930040359497], "box_origin_ue": [-0.009691160172224045, 0.0032299798913300037, -0.19452764093875885], "box_extent_ue": [0.19200000166893005, 0.19200000166893005, 0.20747235417366028], "angle_euler": [-0.0, 0.0, 0.0], "ue_timestamp": 425.94525146484375}}
+{"utc": "2026-10-18T17:03:25.403733+00:00", "sample": 73, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:26.254852+00:00", "sample": 74, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:27.105438+00:00", "sample": 75, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:27.956548+00:00", "sample": 76, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:28.807637+00:00", "sample": 77, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:29.658731+00:00", "sample": 78, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:30.509464+00:00", "sample": 79, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:31.360599+00:00", "sample": 80, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:32.211738+00:00", "sample": 81, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:33.062872+00:00", "sample": 82, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:33.913433+00:00", "sample": 83, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:34.764539+00:00", "sample": 84, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:35.615662+00:00", "sample": 85, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:36.466809+00:00", "sample": 86, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:37.317442+00:00", "sample": 87, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:38.168526+00:00", "sample": 88, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:39.018840+00:00", "sample": 89, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:39.869453+00:00", "sample": 90, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:40.720569+00:00", "sample": 91, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:41.571481+00:00", "sample": 92, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:42.421885+00:00", "sample": 93, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:43.273022+00:00", "sample": 94, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:44.124106+00:00", "sample": 95, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:44.975229+00:00", "sample": 96, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:45.826324+00:00", "sample": 97, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:46.677444+00:00", "sample": 98, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:47.528557+00:00", "sample": 99, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:48.379649+00:00", "sample": 100, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:49.230746+00:00", "sample": 101, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:50.081451+00:00", "sample": 102, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:50.932536+00:00", "sample": 103, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:51.783636+00:00", "sample": 104, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:52.634728+00:00", "sample": 105, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:53.485449+00:00", "sample": 106, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:54.336546+00:00", "sample": 107, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:55.187605+00:00", "sample": 108, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:56.038738+00:00", "sample": 109, "actor_id": "BP_Balloon_C_2147481416", "response": {"name": "BP_Balloon_C_2147481416", "pos_ue": [2.602410078048706, 2.0999999046325684, -0.25382930040359497], "box_origin_ue": [-0.009691160172224045, 0.0032299798913300037, -0.19452764093875885], "box_extent_ue": [0.19200000166893005, 0.19200000166893005, 0.20747235417366028], "angle_euler": [-0.0, 0.0, 0.0], "ue_timestamp": 457.4325256347656}}
+{"utc": "2026-10-18T17:03:56.889457+00:00", "sample": 110, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:57.739869+00:00", "sample": 111, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:58.590914+00:00", "sample": 112, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:03:59.441437+00:00", "sample": 113, "actor_id": "BP_Balloon_C_2147481416", "response": {"name": "BP_Balloon_C_2147481416", "pos_ue": [1.9660204648971558, 2.0999999046325684, -0.25382930040359497], "box_origin_ue": [-0.009691160172224045, 0.0032299798913300037, -0.19452764093875885], "box_extent_ue": [0.19200000166893005, 0.19200000166893005, 0.20747235417366028], "angle_euler": [-0.0, 0.0, 0.0], "ue_timestamp": 460.8325500488281}}
+{"utc": "2026-10-18T17:04:00.292545+00:00", "sample": 114, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:01.143642+00:00", "sample": 115, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:01.994737+00:00", "sample": 116, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:02.845473+00:00", "sample": 117, "actor_id": "BP_Balloon_C_2147481416", "response": {"name": "BP_Balloon_C_2147481416", "pos_ue": [0.773813784122467, 2.0999999046325684, -0.25382930040359497], "box_origin_ue": [-0.009691160172224045, 0.0032299798913300037, -0.19452764093875885], "box_extent_ue": [0.19200000166893005, 0.19200000166893005, 0.20747235417366028], "angle_euler": [-0.0, 0.0, 0.0], "ue_timestamp": 464.2325744628906}}
+{"utc": "2026-10-18T17:04:03.696643+00:00", "sample": 118, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:04.547737+00:00", "sample": 119, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:05.398855+00:00", "sample": 120, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:06.249431+00:00", "sample": 121, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:07.100541+00:00", "sample": 122, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:07.951633+00:00", "sample": 123, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:08.802742+00:00", "sample": 124, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:09.653458+00:00", "sample": 125, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:10.504593+00:00", "sample": 126, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:11.355684+00:00", "sample": 127, "actor_id": "BP_Balloon_C_2147481416", "response": {"name": "BP_Balloon_C_2147481416", "pos_ue": [4.856943130493164, 2.0999999046325684, -0.25382930040359497], "box_origin_ue": [-0.009691160172224045, 0.0032299798913300037, -0.19452764093875885], "box_extent_ue": [0.19200000166893005, 0.19200000166893005, 0.20747235417366028], "angle_euler": [-0.0, 0.0, 0.0], "ue_timestamp": 472.7526550292969}}
+{"utc": "2026-10-18T17:04:12.206071+00:00", "sample": 128, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:13.057162+00:00", "sample": 129, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:13.908273+00:00", "sample": 130, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:14.759273+00:00", "sample": 131, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:15.610377+00:00", "sample": 132, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:16.461439+00:00", "sample": 133, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:17.312547+00:00", "sample": 134, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:18.163639+00:00", "sample": 135, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:19.014746+00:00", "sample": 136, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:19.865447+00:00", "sample": 137, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:20.716541+00:00", "sample": 138, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:21.567644+00:00", "sample": 139, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:22.418645+00:00", "sample": 140, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:23.269463+00:00", "sample": 141, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:24.119837+00:00", "sample": 142, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:24.970949+00:00", "sample": 143, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:25.821434+00:00", "sample": 144, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:26.671836+00:00", "sample": 145, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:27.522922+00:00", "sample": 146, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:28.373446+00:00", "sample": 147, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:29.224550+00:00", "sample": 148, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:30.075665+00:00", "sample": 149, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:30.926777+00:00", "sample": 150, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:31.777466+00:00", "sample": 151, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:32.628600+00:00", "sample": 152, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:33.479691+00:00", "sample": 153, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:34.330792+00:00", "sample": 154, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:35.181446+00:00", "sample": 155, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:36.032549+00:00", "sample": 156, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:36.883683+00:00", "sample": 157, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:37.734813+00:00", "sample": 158, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:38.585490+00:00", "sample": 159, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:39.436617+00:00", "sample": 160, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:40.287644+00:00", "sample": 161, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:41.138773+00:00", "sample": 162, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:41.989439+00:00", "sample": 163, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:42.840536+00:00", "sample": 164, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:43.691638+00:00", "sample": 165, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:44.542734+00:00", "sample": 166, "actor_id": "BP_Balloon_C_2147481416", "response": {"name": "BP_Balloon_C_2147481416", "pos_ue": [0.5316915512084961, 2.0999999046325684, -0.25382930040359497], "box_origin_ue": [-0.009691160172224045, 0.0032299798913300037, -0.19452764093875885], "box_extent_ue": [0.19200000166893005, 0.19200000166893005, 0.20747235417366028], "angle_euler": [-0.0, 0.0, 0.0], "ue_timestamp": 505.9443054199219}}
+{"utc": "2026-10-18T17:04:45.393454+00:00", "sample": 167, "actor_id": "BP_Balloon_C_2147481416", "response": null}
+{"utc": "2026-10-18T17:04:46.344795+00:00", "sample": 0, "actor_id": "BP_Balloon_C_2147481418", "response": {"name": "BP_Balloon_C_2147481418", "pos_ue": [5.599999904632568, -0.8173081874847412, -0.25382930040359497], "box_origin_ue": [-0.009691160172224045, 0.0032299798913300037, -0.19452764093875885], "box_extent_ue": [0.19200000166893005, 0.19200000166893005, 0.20747235417366028], "angle_euler": [-0.0, 0.0, 0.0], "ue_timestamp": 507.74432373046875}}
+{"utc": "2026-10-18T17:04:47.195925+00:00", "sample": 1, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:04:48.047015+00:00", "sample": 2, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:04:48.897440+00:00", "sample": 3, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:04:49.748534+00:00", "sample": 4, "actor_id": "BP_Balloon_C_2147481418", "response": {"name": "BP_Balloon_C_2147481418", "pos_ue": [5.599999904632568, 0.33373701572418213, -0.25382930040359497], "box_origin_ue": [-0.009691160172224045, 0.0032299798913300037, -0.19452764093875885], "box_extent_ue": [0.19200000166893005, 0.19200000166893005, 0.20747235417366028], "angle_euler": [-0.0, 0.0, 0.0], "ue_timestamp": 511.14434814453125}}
+{"utc": "2026-10-18T17:04:50.599650+00:00", "sample": 5, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:04:51.450640+00:00", "sample": 6, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:04:52.301429+00:00", "sample": 7, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:04:53.152526+00:00", "sample": 8, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:04:54.003631+00:00", "sample": 9, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:04:54.854731+00:00", "sample": 10, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:04:55.705450+00:00", "sample": 11, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:04:56.556595+00:00", "sample": 12, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:04:57.407691+00:00", "sample": 13, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:04:58.258097+00:00", "sample": 14, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:04:59.109222+00:00", "sample": 15, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:04:59.959616+00:00", "sample": 16, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:00.810719+00:00", "sample": 17, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:01.661452+00:00", "sample": 18, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:02.512592+00:00", "sample": 19, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:03.363719+00:00", "sample": 20, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:04.214823+00:00", "sample": 21, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:05.065445+00:00", "sample": 22, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:05.916539+00:00", "sample": 23, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:06.767654+00:00", "sample": 24, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:07.618602+00:00", "sample": 25, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:08.469493+00:00", "sample": 26, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:09.320604+00:00", "sample": 27, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:10.171713+00:00", "sample": 28, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:11.022801+00:00", "sample": 29, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:11.873455+00:00", "sample": 30, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:12.724524+00:00", "sample": 31, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:13.575626+00:00", "sample": 32, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:14.426720+00:00", "sample": 33, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:15.277438+00:00", "sample": 34, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:16.128280+00:00", "sample": 35, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:16.979372+00:00", "sample": 36, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:17.830476+00:00", "sample": 37, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:18.681471+00:00", "sample": 38, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:19.532567+00:00", "sample": 39, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:20.383614+00:00", "sample": 40, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:21.234715+00:00", "sample": 41, "actor_id": "BP_Balloon_C_2147481418", "response": {"name": "BP_Balloon_C_2147481418", "pos_ue": [5.599999904632568, -0.9191746115684509, -0.25382930040359497], "box_origin_ue": [-0.009691160172224045, 0.0032299798913300037, -0.19452764093875885], "box_extent_ue": [0.19200000166893005, 0.19200000166893005, 0.20747235417366028], "angle_euler": [5.510129769479473e-40, 3.308722450212111e-24, -3.1415927410125732], "ue_timestamp": 542.6245727539062}}
+{"utc": "2026-10-18T17:05:22.085462+00:00", "sample": 42, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:22.936554+00:00", "sample": 43, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:23.787645+00:00", "sample": 44, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:24.638738+00:00", "sample": 45, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:25.489455+00:00", "sample": 46, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:26.340534+00:00", "sample": 47, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:27.191638+00:00", "sample": 48, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:28.042741+00:00", "sample": 49, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:28.893451+00:00", "sample": 50, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:29.744540+00:00", "sample": 51, "actor_id": "BP_Balloon_C_2147481418", "response": {"name": "BP_Balloon_C_2147481418", "pos_ue": [5.599999904632568, -0.37011468410491943, -0.25382930040359497], "box_origin_ue": [-0.009691160172224045, 0.0032299798913300037, -0.19452764093875885], "box_extent_ue": [0.19200000166893005, 0.19200000166893005, 0.20747235417366028], "angle_euler": [-0.0, 0.0, 0.0], "ue_timestamp": 551.1445922851562}}
+{"utc": "2026-10-18T17:05:30.595666+00:00", "sample": 52, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:31.446748+00:00", "sample": 53, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:32.297459+00:00", "sample": 54, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:33.148561+00:00", "sample": 55, "actor_id": "BP_Balloon_C_2147481418", "response": {"name": "BP_Balloon_C_2147481418", "pos_ue": [5.599999904632568, 0.7255856394767761, -0.25382930040359497], "box_origin_ue": [-0.009691160172224045, 0.0032299798913300037, -0.19452764093875885], "box_extent_ue": [0.19200000166893005, 0.19200000166893005, 0.20747235417366028], "angle_euler": [-0.0, 0.0, 0.0], "ue_timestamp": 554.5446166992188}}
+{"utc": "2026-10-18T17:05:33.999749+00:00", "sample": 56, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:34.850881+00:00", "sample": 57, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:35.701465+00:00", "sample": 58, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:36.552580+00:00", "sample": 59, "actor_id": "BP_Balloon_C_2147481418", "response": {"name": "BP_Balloon_C_2147481418", "pos_ue": [5.599999904632568, 1.689021348953247, -0.25382930040359497], "box_origin_ue": [-0.009691160172224045, 0.0032299798913300037, -0.19452764093875885], "box_extent_ue": [0.19200000166893005, 0.19200000166893005, 0.20747235417366028], "angle_euler": [-0.0, 0.0, 0.0], "ue_timestamp": 557.9446411132812}}
+{"utc": "2026-10-18T17:05:37.403714+00:00", "sample": 60, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:38.254646+00:00", "sample": 61, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:39.105447+00:00", "sample": 62, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:39.956535+00:00", "sample": 63, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:40.807653+00:00", "sample": 64, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:41.658757+00:00", "sample": 65, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:42.509460+00:00", "sample": 66, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:43.360290+00:00", "sample": 67, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:44.211371+00:00", "sample": 68, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:45.062472+00:00", "sample": 69, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:45.913438+00:00", "sample": 70, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:46.763830+00:00", "sample": 71, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:47.614928+00:00", "sample": 72, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:48.465455+00:00", "sample": 73, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:49.316556+00:00", "sample": 74, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:50.167649+00:00", "sample": 75, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:51.018757+00:00", "sample": 76, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:51.869439+00:00", "sample": 77, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:52.720537+00:00", "sample": 78, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:53.571605+00:00", "sample": 79, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:54.422670+00:00", "sample": 80, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:55.273437+00:00", "sample": 81, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:56.124515+00:00", "sample": 82, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:56.975600+00:00", "sample": 83, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:57.826688+00:00", "sample": 84, "actor_id": "BP_Balloon_C_2147481418", "response": {"name": "BP_Balloon_C_2147481418", "pos_ue": [5.599999904632568, 1.5500718355178833, -0.25382930040359497], "box_origin_ue": [-0.009691160172224045, 0.0032299798913300037, -0.19452764093875885], "box_extent_ue": [0.19200000166893005, 0.19200000166893005, 0.20747235417366028], "angle_euler": [5.510129769479473e-40, 3.308722450212111e-24, -3.1415927410125732], "ue_timestamp": 579.144775390625}}
+{"utc": "2026-10-18T17:05:58.677762+00:00", "sample": 85, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:05:59.528845+00:00", "sample": 86, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:06:00.379931+00:00", "sample": 87, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:06:01.231006+00:00", "sample": 88, "actor_id": "BP_Balloon_C_2147481418", "response": {"name": "BP_Balloon_C_2147481418", "pos_ue": [5.599999904632568, 0.24371981620788574, -0.25382930040359497], "box_origin_ue": [-0.009691160172224045, 0.0032299798913300037, -0.19452764093875885], "box_extent_ue": [0.19200000166893005, 0.19200000166893005, 0.20747235417366028], "angle_euler": [5.510129769479473e-40, 3.308722450212111e-24, -3.1415927410125732], "ue_timestamp": 582.5450439453125}}
+{"utc": "2026-10-18T17:06:02.081450+00:00", "sample": 89, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:06:02.932525+00:00", "sample": 90, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:06:03.783594+00:00", "sample": 91, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:06:04.634673+00:00", "sample": 92, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:06:05.485434+00:00", "sample": 93, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:06:06.336519+00:00", "sample": 94, "actor_id": "BP_Balloon_C_2147481418", "response": {"name": "BP_Balloon_C_2147481418", "pos_ue": [5.599999904632568, -1.631826400756836, -0.25382930040359497], "box_origin_ue": [-0.009691160172224045, 0.0032299798913300037, -0.19452764093875885], "box_extent_ue": [0.19200000166893005, 0.19200000166893005, 0.20747235417366028], "angle_euler": [5.510129769479473e-40, 3.308722450212111e-24, -3.1415927410125732], "ue_timestamp": 587.6651611328125}}
+{"utc": "2026-10-18T17:06:07.187642+00:00", "sample": 95, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:06:08.038740+00:00", "sample": 96, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:06:08.889443+00:00", "sample": 97, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:06:09.740531+00:00", "sample": 98, "actor_id": "BP_Balloon_C_2147481418", "response": {"name": "BP_Balloon_C_2147481418", "pos_ue": [5.599999904632568, -1.6186208724975586, -0.25382930040359497], "box_origin_ue": [-0.009691160172224045, 0.0032299798913300037, -0.19452764093875885], "box_extent_ue": [0.19200000166893005, 0.19200000166893005, 0.20747235417366028], "angle_euler": [-0.0, 0.0, 0.0], "ue_timestamp": 591.065185546875}}
+{"utc": "2026-10-18T17:06:10.591651+00:00", "sample": 99, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:06:11.442731+00:00", "sample": 100, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:06:12.293440+00:00", "sample": 101, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:06:13.144524+00:00", "sample": 102, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:06:13.995630+00:00", "sample": 103, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:06:14.846712+00:00", "sample": 104, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:06:15.697417+00:00", "sample": 105, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:06:16.548490+00:00", "sample": 106, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:06:17.398999+00:00", "sample": 107, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:06:18.250107+00:00", "sample": 108, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:06:19.101225+00:00", "sample": 109, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:06:19.952326+00:00", "sample": 110, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:06:20.803434+00:00", "sample": 111, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:06:21.654506+00:00", "sample": 112, "actor_id": "BP_Balloon_C_2147481418", "response": {"name": "BP_Balloon_C_2147481418", "pos_ue": [5.599999904632568, 0.23675988614559174, -0.25382930040359497], "box_origin_ue": [-0.009691160172224045, 0.0032299798913300037, -0.19452764093875885], "box_extent_ue": [0.19200000166893005, 0.19200000166893005, 0.20747235417366028], "angle_euler": [5.510129769479473e-40, 3.308722450212111e-24, -3.1415927410125732], "ue_timestamp": 602.9852905273438}}
+{"utc": "2026-10-18T17:06:22.505442+00:00", "sample": 113, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:06:23.356518+00:00", "sample": 114, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:06:24.207599+00:00", "sample": 115, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:06:25.058699+00:00", "sample": 116, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:06:25.909776+00:00", "sample": 117, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:06:26.760861+00:00", "sample": 118, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:06:27.611914+00:00", "sample": 119, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:06:28.462993+00:00", "sample": 120, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:06:29.313445+00:00", "sample": 121, "actor_id": "BP_Balloon_C_2147481418", "response": null}
+{"utc": "2026-10-18T17:06:30.164531+00:00", "sample": 122, "actor_id": "BP_Balloon_C_2147481418", "response": {"name": "BP_Balloon_C_2147481418", "pos_ue": [5.599999904632568, 0.23652192950248718, -0.25382930040359497], "box_origin_ue": [-0.009691160172224045, 0.0032299798913300037, -0.19452764093875885], "box_extent_ue": [0.19200000166893005, 0.19200000166893005, 0.20747235417366028], "angle_euler": [-0.0, 0.0, 0.0], "ue_timestamp": 611.5053100585938}}
+{"utc": "2026-10-18T17:06:31.115839+00:00", "sample": 0, "actor_id": "BP_Balloon_C_2147481421", "response": {"name": "BP_Balloon_C_2147481421", "pos_ue": [0.6545674800872803, -2.0999999046325684, -0.25382930040359497], "box_origin_ue": [-0.009691160172224045, 0.0032299798913300037, -0.19452764093875885], "box_extent_ue": [0.19200000166893005, 0.19200000166893005, 0.20747235417366028], "angle_euler": [-0.0, 0.0, 0.0], "ue_timestamp": 612.46533203125}}
+{"utc": "2026-10-18T17:06:31.966963+00:00", "sample": 1, "actor_id": "BP_Balloon_C_2147481421", "response": {"name": "BP_Balloon_C_2147481421", "pos_ue": [1.2030647993087769, -2.0999999046325684, -0.25382930040359497], "box_origin_ue": [-0.009691160172224045, 0.0032299798913300037, -0.19452764093875885], "box_extent_ue": [0.19200000166893005, 0.19200000166893005, 0.20747235417366028], "angle_euler": [-0.0, 0.0, 0.0], "ue_timestamp": 613.3052978515625}}
+{"utc": "2026-10-18T17:06:32.817423+00:00", "sample": 2, "actor_id": "BP_Balloon_C_2147481421", "response": {"name": "BP_Balloon_C_2147481421", "pos_ue": [1.8421248197555542, -2.0999999046325684, -0.25382930040359497], "box_origin_ue": [-0.009691160172224045, 0.0032299798913300037, -0.19452764093875885], "box_extent_ue": [0.19200000166893005, 0.19200000166893005, 0.20747235417366028], "angle_euler": [-0.0, 0.0, 0.0], "ue_timestamp": 614.185302734375}}
+{"utc": "2026-10-18T17:06:33.668531+00:00", "sample": 3, "actor_id": "BP_Balloon_C_2147481421", "response": null}
+{"utc": "2026-10-18T17:06:34.519610+00:00", "sample": 4, "actor_id": "BP_Balloon_C_2147481421", "response": {"name": "BP_Balloon_C_2147481421", "pos_ue": [3.099961996078491, -2.0999999046325684, -0.25382930040359497], "box_origin_ue": [-0.009691160172224045, 0.0032299798913300037, -0.19452764093875885], "box_extent_ue": [0.19200000166893005, 0.19200000166893005, 0.20747235417366028], "angle_euler": [-0.0, 0.0, 0.0], "ue_timestamp": 615.9053344726562}}
+{"utc": "2026-10-18T17:06:35.370729+00:00", "sample": 5, "actor_id": "BP_Balloon_C_2147481421", "response": {"name": "BP_Balloon_C_2147481421", "pos_ue": [3.7101354598999023, -2.0999999046325684, -0.25382930040359497], "box_origin_ue": [-0.009691160172224045, 0.0032299798913300037, -0.19452764093875885], "box_extent_ue": [0.19200000166893005, 0.19200000166893005, 0.20747235417366028], "angle_euler": [-0.0, 0.0, 0.0], "ue_timestamp": 616.705322265625}}
+{"utc": "2026-10-18T17:06:36.221423+00:00", "sample": 6, "actor_id": "BP_Balloon_C_2147481421", "response": {"name": "BP_Balloon_C_2147481421", "pos_ue": [4.407649993896484, -2.0999999046325684, -0.25382930040359497], "box_origin_ue": [-0.009691160172224045, 0.0032299798913300037, -0.19452764093875885], "box_extent_ue": [0.19200000166893005, 0.19200000166893005, 0.20747235417366028], "angle_euler": [-0.0, 0.0, 0.0], "ue_timestamp": 617.5853271484375}}
+{"utc": "2026-10-18T17:06:37.072552+00:00", "sample": 7, "actor_id": "BP_Balloon_C_2147481421", "response": {"name": "BP_Balloon_C_2147481421", "pos_ue": [4.921517372131348, -2.0999999046325684, -0.25382930040359497], "box_origin_ue": [-0.009691160172224045, 0.0032299798913300037, -0.19452764093875885], "box_extent_ue": [0.19200000166893005, 0.19200000166893005, 0.20747235417366028], "angle_euler": [-0.0, 0.0, 3.1415927410125732], "ue_timestamp": 618.3853759765625}}
+{"utc": "2026-10-18T17:06:37.923677+00:00", "sample": 8, "actor_id": "BP_Balloon_C_2147481421", "response": {"name": "BP_Balloon_C_2147481421", "pos_ue": [4.2199177742004395, -2.0999999046325684, -0.25382930040359497], "box_origin_ue": [-0.009691160172224045, 0.0032299798913300037, -0.19452764093875885], "box_extent_ue": [0.19200000166893005, 0.19200000166893005, 0.20747235417366028], "angle_euler": [-0.0, 0.0, 3.1415927410125732], "ue_timestamp": 619.3053588867188}}
+{"utc": "2026-10-18T17:06:38.774798+00:00", "sample": 9, "actor_id": "BP_Balloon_C_2147481421", "response": {"name": "BP_Balloon_C_2147481421", "pos_ue": [3.602635383605957, -2.0999999046325684, -0.25382930040359497], "box_origin_ue": [-0.009691160172224045, 0.0032299798913300037, -0.19452764093875885], "box_extent_ue": [0.19200000166893005, 0.19200000166893005, 0.20747235417366028], "angle_euler": [-0.0, 0.0, 3.1415927410125732], "ue_timestamp": 620.1053466796875}}
+{"utc": "2026-10-18T17:06:39.625936+00:00", "sample": 10, "actor_id": "BP_Balloon_C_2147481421", "response": {"name": "BP_Balloon_C_2147481421", "pos_ue": [2.9142000675201416, -2.0999999046325684, -0.25382930040359497], "box_origin_ue": [-0.009691160172224045, 0.0032299798913300037, -0.19452764093875885], "box_extent_ue": [0.19200000166893005, 0.19200000166893005, 0.20747235417366028], "angle_euler": [-0.0, 0.0, 3.1415927410125732], "ue_timestamp": 620.9853515625}}
+{"utc": "2026-10-18T17:06:40.477045+00:00", "sample": 11, "actor_id": "BP_Balloon_C_2147481421", "response": {"name": "BP_Balloon_C_2147481421", "pos_ue": [2.306770086288452, -2.0999999046325684, -0.25382930040359497], "box_origin_ue": [-0.009691160172224045, 0.0032299798913300037, -0.19452764093875885], "box_extent_ue": [0.19200000166893005, 0.19200000166893005, 0.20747235417366028], "angle_euler": [-0.0, 0.0, 3.1415927410125732], "ue_timestamp": 621.785400390625}}
+{"utc": "2026-10-18T17:06:41.328162+00:00", "sample": 12, "actor_id": "BP_Balloon_C_2147481421", "response": {"name": "BP_Balloon_C_2147481421", "pos_ue": [1.627672553062439, -2.0999999046325684, -0.25382930040359497], "box_origin_ue": [-0.009691160172224045, 0.0032299798913300037, -0.19452764093875885], "box_extent_ue": [0.19200000166893005, 0.19200000166893005, 0.20747235417366028], "angle_euler": [-0.0, 0.0, 3.1415927410125732], "ue_timestamp": 622.7053833007812}}
+{"utc": "2026-10-18T17:06:42.279486+00:00", "sample": 0, "actor_id": "BP_FloorEX_C_2147481607", "response": {"name": "BP_FloorEX_C_2147481607", "pos_ue": [4.0, 0.0, -0.0], "box_origin_ue": [-1.162500023841858, 0.0, -1.5874998569488525], "box_extent_ue": [3.372499942779541, 2.5250000953674316, 1.5875000953674316], "angle_euler": [0.0, 0.0, 0.0], "ue_timestamp": 623.5853881835938}}
+{"utc": "2026-10-18T17:06:43.130601+00:00", "sample": 1, "actor_id": "BP_FloorEX_C_2147481607", "response": null}
+{"utc": "2026-10-18T17:06:43.981429+00:00", "sample": 2, "actor_id": "BP_FloorEX_C_2147481607", "response": {"name": "BP_FloorEX_C_2147481607", "pos_ue": [4.0, 0.0, -0.0], "box_origin_ue": [-1.162500023841858, 0.0, -1.5874998569488525], "box_extent_ue": [3.372499942779541, 2.5250000953674316, 1.5875000953674316], "angle_euler": [0.0, 0.0, 0.0], "ue_timestamp": 625.3453979492188}}
+{"utc": "2026-10-18T17:06:44.832526+00:00", "sample": 3, "actor_id": "BP_FloorEX_C_2147481607", "response": null}
+{"utc": "2026-10-18T17:06:45.683594+00:00", "sample": 4, "actor_id": "BP_FloorEX_C_2147481607", "response": {"name": "BP_FloorEX_C_2147481607", "pos_ue": [4.0, 0.0, -0.0], "box_origin_ue": [-1.162500023841858, 0.0, -1.5874998569488525], "box_extent_ue": [3.372499942779541, 2.5250000953674316, 1.5875000953674316], "angle_euler": [0.0, 0.0, 0.0], "ue_timestamp": 627.025390625}}
+{"utc": "2026-10-18T17:06:46.634888+00:00", "sample": 0, "actor_id": "BP_Floor_2", "response": null}
+{"utc": "2026-10-18T17:06:47.485414+00:00", "sample": 1, "actor_id": "BP_Floor_2", "response": {"name": "BP_Floor_2", "pos_ue": [-0.5, 2.5, -0.0], "box_origin_ue": [4.5, -2.5, 0.15000000596046448], "box_extent_ue": [4.5, 2.5, 0.15000000596046448], "angle_euler": [0.0, 0.0, 0.0], "ue_timestamp": 628.825439453125}}
+{"utc": "2026-10-18T17:06:48.336490+00:00", "sample": 2, "actor_id": "BP_Floor_2", "response": null}
+{"utc": "2026-10-18T17:06:49.187550+00:00", "sample": 3, "actor_id": "BP_Floor_2", "response": {"name": "BP_Floor_2", "pos_ue": [-0.5, 2.5, -0.0], "box_origin_ue": [4.5, -2.5, 0.15000000596046448], "box_extent_ue": [4.5, 2.5, 0.15000000596046448], "angle_euler": [0.0, 0.0, 0.0], "ue_timestamp": 630.5054321289062}}
+{"utc": "2026-10-18T17:06:50.038629+00:00", "sample": 4, "actor_id": "BP_Floor_2", "response": null}
+{"utc": "2026-10-18T17:06:50.889705+00:00", "sample": 5, "actor_id": "BP_Floor_2", "response": {"name": "BP_Floor_2", "pos_ue": [-0.5, 2.5, -0.0], "box_origin_ue": [4.5, -2.5, 0.15000000596046448], "box_extent_ue": [4.5, 2.5, 0.15000000596046448], "angle_euler": [0.0, 0.0, 0.0], "ue_timestamp": 632.2254638671875}}
+{"utc": "2026-10-18T17:06:51.840993+00:00", "sample": 0, "actor_id": "BP_Wall1_2", "response": null}
+{"utc": "2026-10-18T17:06:52.692074+00:00", "sample": 1, "actor_id": "BP_Wall1_2", "response": {"name": "BP_Wall1_2", "pos_ue": [-0.5, -2.501000165939331, -0.0], "box_origin_ue": [4.5, -0.15000000596046448, -1.350000023841858], "box_extent_ue": [4.800000190734863, 0.15000000596046448, 1.649999976158142], "angle_euler": [0.0, 0.0, 0.0], "ue_timestamp": 634.0254516601562}}
+{"utc": "2026-10-18T17:06:53.543173+00:00", "sample": 2, "actor_id": "BP_Wall1_2", "response": {"name": "BP_Wall1_2", "pos_ue": [-0.5, -2.501000165939331, -0.0], "box_origin_ue": [4.5, -0.15000000596046448, -1.350000023841858], "box_extent_ue": [4.800000190734863, 0.15000000596046448, 1.649999976158142], "angle_euler": [0.0, 0.0, 0.0], "ue_timestamp": 634.865478515625}}
+{"utc": "2026-10-18T17:06:54.394277+00:00", "sample": 3, "actor_id": "BP_Wall1_2", "response": null}
+{"utc": "2026-10-18T17:06:55.245352+00:00", "sample": 4, "actor_id": "BP_Wall1_2", "response": null}
+{"utc": "2026-10-18T17:06:56.096443+00:00", "sample": 5, "actor_id": "BP_Wall1_2", "response": {"name": "BP_Wall1_2", "pos_ue": [-0.5, -2.501000165939331, -0.0], "box_origin_ue": [4.5, -0.15000000596046448, -1.350000023841858], "box_extent_ue": [4.800000190734863, 0.15000000596046448, 1.649999976158142], "angle_euler": [0.0, 0.0, 0.0], "ue_timestamp": 637.4254760742188}}
+{"utc": "2026-10-18T17:06:57.047743+00:00", "sample": 0, "actor_id": "BP_Wall2_2", "response": null}
+{"utc": "2026-10-18T17:06:57.898846+00:00", "sample": 1, "actor_id": "BP_Wall2_2", "response": {"name": "BP_Wall2_2", "pos_ue": [-0.8009999990463257, 2.5, -0.0], "box_origin_ue": [0.15000000596046448, -2.5, -1.350000023841858], "box_extent_ue": [0.15000000596046448, 2.5, 1.649999976158142], "angle_euler": [0.0, 0.0, 0.0], "ue_timestamp": 639.2254638671875}}
+{"utc": "2026-10-18T17:06:58.749445+00:00", "sample": 2, "actor_id": "BP_Wall2_2", "response": {"name": "BP_Wall2_2", "pos_ue": [-0.8009999990463257, 2.5, -0.0], "box_origin_ue": [0.15000000596046448, -2.5, -1.350000023841858], "box_extent_ue": [0.15000000596046448, 2.5, 1.649999976158142], "angle_euler": [0.0, 0.0, 0.0], "ue_timestamp": 640.0654907226562}}
+{"utc": "2026-10-18T17:06:59.600261+00:00", "sample": 3, "actor_id": "BP_Wall2_2", "response": null}
+{"utc": "2026-10-18T17:07:00.451350+00:00", "sample": 4, "actor_id": "BP_Wall2_2", "response": null}
+{"utc": "2026-10-18T17:07:01.302443+00:00", "sample": 5, "actor_id": "BP_Wall2_2", "response": null}
+{"utc": "2026-10-18T17:07:02.153445+00:00", "sample": 6, "actor_id": "BP_Wall2_2", "response": null}
+{"utc": "2026-10-18T17:07:03.004532+00:00", "sample": 7, "actor_id": "BP_Wall2_2", "response": {"name": "BP_Wall2_2", "pos_ue": [-0.8009999990463257, 2.5, -0.0], "box_origin_ue": [0.15000000596046448, -2.5, -1.350000023841858], "box_extent_ue": [0.15000000596046448, 2.5, 1.649999976158142], "angle_euler": [0.0, 0.0, 0.0], "ue_timestamp": 644.3455200195312}}
+{"utc": "2026-10-18T17:07:03.955847+00:00", "sample": 0, "actor_id": "BP_Wall3", "response": null}
+{"utc": "2026-10-18T17:07:04.806936+00:00", "sample": 1, "actor_id": "BP_Wall3", "response": {"name": "BP_Wall3", "pos_ue": [-0.5, 2.8010001182556152, -0.0], "box_origin_ue": [4.5, -0.15000000596046448, -1.350000023841858], "box_extent_ue": [4.800000190734863, 0.15000000596046448, 1.649999976158142], "angle_euler": [0.0, 0.0, 0.0], "ue_timestamp": 646.1455078125}}
+{"utc": "2026-10-18T17:07:05.657429+00:00", "sample": 2, "actor_id": "BP_Wall3", "response": {"name": "BP_Wall3", "pos_ue": [-0.5, 2.8010001182556152, -0.0], "box_origin_ue": [4.5, -0.15000000596046448, -1.350000023841858], "box_extent_ue": [4.800000190734863, 0.15000000596046448, 1.649999976158142], "angle_euler": [0.0, 0.0, 0.0], "ue_timestamp": 646.9855346679688}}
+{"utc": "2026-10-18T17:07:06.508599+00:00", "sample": 3, "actor_id": "BP_Wall3", "response": null}
+{"utc": "2026-10-18T17:07:07.358929+00:00", "sample": 4, "actor_id": "BP_Wall3", "response": null}
+{"utc": "2026-10-18T17:07:08.209449+00:00", "sample": 5, "actor_id": "BP_Wall3", "response": {"name": "BP_Wall3", "pos_ue": [-0.5, 2.8010001182556152, -0.0], "box_origin_ue": [4.5, -0.15000000596046448, -1.350000023841858], "box_extent_ue": [4.800000190734863, 0.15000000596046448, 1.649999976158142], "angle_euler": [0.0, 0.0, 0.0], "ue_timestamp": 649.5455322265625}}
+{"utc": "2026-10-18T17:07:09.160757+00:00", "sample": 0, "actor_id": "BP_Wall4", "response": null}
+{"utc": "2026-10-18T17:07:10.011822+00:00", "sample": 1, "actor_id": "BP_Wall4", "response": null}
+{"utc": "2026-10-18T17:07:10.862892+00:00", "sample": 2, "actor_id": "BP_Wall4", "response": null}
+{"utc": "2026-10-18T17:07:11.713404+00:00", "sample": 3, "actor_id": "BP_Wall4", "response": null}
+{"utc": "2026-10-18T17:07:12.564459+00:00", "sample": 4, "actor_id": "BP_Wall4", "response": {"name": "BP_Wall4", "pos_ue": [8.500999450683594, 2.5, -0.0], "box_origin_ue": [0.15000000596046448, -2.5, -1.350000023841858], "box_extent_ue": [0.15000000596046448, 2.5, 1.649999976158142], "angle_euler": [0.0, 0.0, 0.0], "ue_timestamp": 653.9055786132812}}
+{"utc": "2026-10-18T17:07:13.414885+00:00", "sample": 5, "actor_id": "BP_Wall4", "response": null}
+{"utc": "2026-10-18T17:07:14.265424+00:00", "sample": 6, "actor_id": "BP_Wall4", "response": null}
+{"utc": "2026-10-18T17:07:15.116517+00:00", "sample": 7, "actor_id": "BP_Wall4", "response": null}
+{"utc": "2026-10-18T17:07:15.967594+00:00", "sample": 8, "actor_id": "BP_Wall4", "response": {"name": "BP_Wall4", "pos_ue": [8.500999450683594, 2.5, -0.0], "box_origin_ue": [0.15000000596046448, -2.5, -1.350000023841858], "box_extent_ue": [0.15000000596046448, 2.5, 1.649999976158142], "angle_euler": [0.0, 0.0, 0.0], "ue_timestamp": 657.3056030273438}}
+{"utc": "2026-10-18T17:07:16.818703+00:00", "sample": 9, "actor_id": "BP_Wall4", "response": null}
+{"utc": "2026-10-18T17:07:17.669416+00:00", "sample": 10, "actor_id": "BP_Wall4", "response": null}
+{"utc": "2026-10-18T17:07:18.520475+00:00", "sample": 11, "actor_id": "BP_Wall4", "response": null}
+{"utc": "2026-10-18T17:07:19.371545+00:00", "sample": 12, "actor_id": "BP_Wall4", "response": {"name": "BP_Wall4", "pos_ue": [8.500999450683594, 2.5, -0.0], "box_origin_ue": [0.15000000596046448, -2.5, -1.350000023841858], "box_extent_ue": [0.15000000596046448, 2.5, 1.649999976158142], "angle_euler": [0.0, 0.0, 0.0], "ue_timestamp": 660.7056274414062}}

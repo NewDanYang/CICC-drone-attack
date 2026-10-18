@@ -1,0 +1,1 @@
+Stopped own loop after r1 blue same-UE 3->2->1; acceptance impossible. r2 red child completed while parent was suspended; formal directory preserved but not counted in loop CSV. No further retry.
