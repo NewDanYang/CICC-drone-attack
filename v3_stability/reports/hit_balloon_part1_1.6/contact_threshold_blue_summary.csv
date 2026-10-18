@@ -1,0 +1,4 @@
+round,color,trial_dir,valid,runner_rc,before_count,settled_count,gc_samples,gc_commands,gc_errors,gc_first_count,gc_last_count,gc_transitions,boundary_violations,bt_success,mission_success
+1,blue,/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261018T124206_blue_A0,1,1,3,2,70,70,0,3,2,3->2@2026-10-18T04:43:54.206750+00:00,0,true,false
+2,blue,/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261018T124741_blue_A0,1,1,3,2,77,77,0,3,2,3->2@2026-10-18T04:49:40.259395+00:00,0,true,false
+3,blue,/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261018T125329_blue_A0,1,1,3,2,70,70,0,3,2,3->2@2026-10-18T04:55:18.302351+00:00,0,true,false

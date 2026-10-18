@@ -1,0 +1,70 @@
+--- src/mission_pkg/src/nodes/action/goto.cpp
++++ src/mission_pkg/src/nodes/action/goto.cpp.patched
+@@ -17,7 +17,8 @@
+              InputPort<int>("frame", 0, "坐标系: 0=世界系(默认), 1=机体系"),
+              InputPort<double>("tolerance", "到达容差"),
+              InputPort<double>("yaw_tolerance", "偏航到达容差(rad)"),
+-             InputPort<double>("yaw_rate", 0.5, "最大偏航角速度 (rad/s)") };
++             InputPort<double>("yaw_rate", 0.5, "最大偏航角速度 (rad/s)"),
++             InputPort<double>("setpoint_lookahead", 0.0, "最大位置设定点前视距离 (m); 0=禁用") };
+ }
+ 
+ NodeStatus GoTo::onStart() {
+@@ -77,6 +78,11 @@
+ 
+     auto yaw_rate_res = getInput<double>("yaw_rate");
+     yaw_rate_limit = yaw_rate_res.value();
++    setpoint_lookahead_ = getInput<double>("setpoint_lookahead").value();
++    if (setpoint_lookahead_ < 0.0) {
++        ROS_ERROR("[%s]: negative setpoint_lookahead", name().c_str());
++        return NodeStatus::FAILURE;
++    }
+ 
+     // 初始化偏航设定点为当前实际航向
+     current_yaw_sp = current_yaw;
+@@ -114,7 +120,23 @@
+     while (current_yaw_sp < -M_PI) current_yaw_sp += 2 * M_PI;
+ 
+     // 发布位置指令 (使用平滑后的 current_yaw_sp)
+-    publishPosition(target_pos, current_yaw_sp);
++    // The long return flight can overshoot x_min when PX4 sees a setpoint
++    // several metres away. Keep the commanded point near the measured pose.
++    geometry_msgs::Point commanded_pos = target_pos;
++    if (setpoint_lookahead_ > 0.0) {
++        const geometry_msgs::Point& current_pos = fcu_odom_ptr->pose.pose.position;
++        const double dx = target_pos.x - current_pos.x;
++        const double dy = target_pos.y - current_pos.y;
++        const double dz = target_pos.z - current_pos.z;
++        const double distance = std::sqrt(dx * dx + dy * dy + dz * dz);
++        if (distance > setpoint_lookahead_) {
++            const double ratio = setpoint_lookahead_ / distance;
++            commanded_pos.x = current_pos.x + ratio * dx;
++            commanded_pos.y = current_pos.y + ratio * dy;
++            commanded_pos.z = current_pos.z + ratio * dz;
++        }
++    }
++    publishPosition(commanded_pos, current_yaw_sp);
+ 
+     // 到达判断 (只有在明确传入了yaw参数时，才检查yaw是否到达)
+     double arrival_yaw = check_yaw ? target_yaw : std::numeric_limits<double>::quiet_NaN();
+--- src/mission_pkg/include/nodes/action/goto.h
++++ src/mission_pkg/include/nodes/action/goto.h.patched
+@@ -27,6 +27,7 @@
+ 
+     // 偏航控制相关
+     double yaw_rate_limit;
++    double setpoint_lookahead_;
+     double current_yaw_sp;
+     ros::Time last_loop_time;
+     bool check_yaw;
+--- src/mission_pkg/src/bt_ros.cpp
++++ src/mission_pkg/src/bt_ros.cpp.patched
+@@ -377,7 +377,7 @@
+         double ret_yaw = getDbl("land/return_yaw", 0.0);
+         return
+             "      <!-- 返回起点 -->\n"
+-            "      <GoTo goal=\"" + ret_pos + "\" yaw=\"" + std::to_string(ret_yaw) + "\"/>\n"
++            "      <GoTo goal=\"" + ret_pos + "\" yaw=\"" + std::to_string(ret_yaw) + "\" setpoint_lookahead=\"0.6\"/>\n"
+             "      <!-- 降落 -->\n"
+             "      <Land/>\n";
+     }
