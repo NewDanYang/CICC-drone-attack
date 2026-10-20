@@ -1,0 +1,65 @@
+[  0%] Built target geometry_msgs_generate_messages_lisp
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target geometry_msgs_generate_messages_cpp
+[  0%] Built target _ego_planner_generate_messages_check_deps_DataDisp
+[  0%] Built target _ego_planner_generate_messages_check_deps_Bspline
+[  0%] Built target _quadrotor_msgs_generate_messages_check_deps_Serial
+[  0%] Built target nav_msgs_generate_messages_cpp
+[  0%] Built target _quadrotor_msgs_generate_messages_check_deps_Odometry
+[  0%] Built target _quadrotor_msgs_generate_messages_check_deps_TRPYCommand
+[  0%] Built target _quadrotor_msgs_generate_messages_check_deps_LQRTrajectory
+[  0%] Built target _quadrotor_msgs_generate_messages_check_deps_Corrections
+[  0%] Built target _quadrotor_msgs_generate_messages_check_deps_StatusData
+[  0%] Built target _quadrotor_msgs_generate_messages_check_deps_OutputData
+[  0%] Built target _quadrotor_msgs_generate_messages_check_deps_SO3Command
+[  0%] Built target _quadrotor_msgs_generate_messages_check_deps_PositionCommand
+[  0%] Built target _quadrotor_msgs_generate_messages_check_deps_AuxCommand
+[  0%] Built target _quadrotor_msgs_generate_messages_check_deps_Gains
+[  0%] Built target _quadrotor_msgs_generate_messages_check_deps_PolynomialTrajectory
+[  0%] Built target sensor_msgs_generate_messages_py
+[  0%] Built target geometry_msgs_generate_messages_nodejs
+[  0%] Built target plan_env
+[  0%] Built target _quadrotor_msgs_generate_messages_check_deps_PPROutputData
+[  0%] Built target geometry_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target geometry_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target sensor_msgs_generate_messages_cpp
+[  0%] Built target sensor_msgs_generate_messages_eus
+[  0%] Built target sensor_msgs_generate_messages_lisp
+[  0%] Built target sensor_msgs_generate_messages_nodejs
+[ 10%] Built target ego_planner_generate_messages_nodejs
+[ 20%] Built target ego_planner_generate_messages_cpp
+[ 30%] Built target ego_planner_generate_messages_py
+[ 40%] Built target ego_planner_generate_messages_eus
+[ 40%] Built target ego_planner_generate_messages_lisp
+[ 70%] Built target quadrotor_msgs_generate_messages_cpp
+[ 70%] Built target ego_planner_generate_messages
+[ 70%] Built target cv_bridge
+[ 70%] Built target decode_msgs
+[ 70%] Built target path_searching
+[ 70%] Built target encode_msgs
+[ 80%] Built target bspline_opt
+[ 80%] Linking CXX shared library /home/ubuntu/catkin_ws/devel/lib/libtraj_utils.so
+[ 90%] Built target traj_utils
+[ 90%] Linking CXX executable /home/ubuntu/catkin_ws/devel/lib/ego_planner/traj_server
+Scanning dependencies of target ego_planner_node
+[ 90%] Building CXX object ego-planner/src/planner/plan_manage/CMakeFiles/ego_planner_node.dir/src/ego_replan_fsm.cpp.o
+[ 90%] Building CXX object ego-planner/src/planner/plan_manage/CMakeFiles/ego_planner_node.dir/src/planner_manager.cpp.o
+[ 90%] Building CXX object ego-planner/src/planner/plan_manage/CMakeFiles/ego_planner_node.dir/src/ego_planner_node.cpp.o
+[ 90%] Built target traj_server
+[100%] Linking CXX executable /home/ubuntu/catkin_ws/devel/lib/ego_planner/ego_planner_node
+[100%] Built target ego_planner_node
+Base path: /home/ubuntu/catkin_ws
+Source space: /home/ubuntu/catkin_ws/src
+Build space: /home/ubuntu/catkin_ws/build
+Devel space: /home/ubuntu/catkin_ws/devel
+Install space: /home/ubuntu/catkin_ws/install
+####
+#### Running command: "make cmake_check_build_system" in "/home/ubuntu/catkin_ws/build"
+####
+####
+#### Running command: "make -j4" in "/home/ubuntu/catkin_ws/build/ego-planner/src/planner/plan_manage"
+####

@@ -1,5 +1,7 @@
 #include "bspline_opt/bspline_optimizer.h"
 #include "bspline_opt/gradient_descent_optimizer.h"
+#include <cmath>
+#include <utility>
 // using namespace std;
 
 namespace ego_planner
@@ -11,6 +13,11 @@ namespace ego_planner
     nh.param("optimization/lambda_collision", lambda2_, -1.0);
     nh.param("optimization/lambda_feasibility", lambda3_, -1.0);
     nh.param("optimization/lambda_fitness", lambda4_, -1.0);
+    balloon_nh_ = nh;
+    nh.param("optimization/lambda_balloon_clearance", lambda_balloon_clearance_, 0.0);
+    nh.param("optimization/balloon_clearance", balloon_clearance_, 0.8);
+    balloon_sub_ = nh.subscribe("/planning/poc_non_target_balloons", 1,
+                                &BsplineOptimizer::balloonCallback, this);
 
     nh.param("optimization/dist0", dist0_, -1.0);
     nh.param("optimization/max_vel", max_vel_, -1.0);
@@ -22,6 +29,22 @@ namespace ego_planner
   void BsplineOptimizer::setEnvironment(const GridMap::Ptr &env)
   {
     this->grid_map_ = env;
+  }
+
+  void BsplineOptimizer::balloonCallback(const geometry_msgs::PoseArray::ConstPtr &msg)
+  {
+    if (msg->header.frame_id != "world")
+      return;
+    std::vector<Eigen::Vector3d> points;
+    for (const auto &pose : msg->poses)
+    {
+      const auto &p = pose.position;
+      if (std::isfinite(p.x) && std::isfinite(p.y) && std::isfinite(p.z))
+        points.emplace_back(p.x, p.y, p.z);
+    }
+    std::lock_guard<std::mutex> lock(balloon_mutex_);
+    latest_balloons_ = std::move(points);
+    latest_balloon_stamp_ = msg->header.stamp;
   }
 
   void BsplineOptimizer::setControlPoints(const Eigen::MatrixXd &points)
@@ -378,6 +401,29 @@ namespace ego_planner
         }
       }
     }
+  }
+
+  void BsplineOptimizer::calcBalloonClearanceCost(const Eigen::MatrixXd &q, double &cost,
+                                                  Eigen::MatrixXd &gradient)
+  {
+    cost = 0.0;
+    if (lambda_balloon_clearance_ <= 0.0 || balloon_clearance_ <= 0.0)
+      return;
+    const int end_idx = q.cols() - order_;
+    for (int i = order_; i < end_idx; ++i)
+      for (const auto &balloon : active_balloons_)
+      {
+        const Eigen::Vector3d delta = q.col(i) - balloon;
+        const double distance = delta.norm();
+        const double error = balloon_clearance_ - distance;
+        if (error <= 0.0)
+          continue;
+        cost += error * error * error;
+        Eigen::Vector3d direction = Eigen::Vector3d::UnitX();
+        if (distance > 1e-6)
+          direction = delta / distance;
+        gradient.col(i) -= 3.0 * error * error * direction;
+      }
   }
 
   void BsplineOptimizer::calcFitnessCost(const Eigen::MatrixXd &q, double &cost, Eigen::MatrixXd &gradient)
@@ -868,6 +914,15 @@ namespace ego_planner
 
   bool BsplineOptimizer::rebound_optimize()
   {
+    balloon_nh_.param("optimization/lambda_balloon_clearance", lambda_balloon_clearance_, 0.0);
+    balloon_nh_.param("optimization/balloon_clearance", balloon_clearance_, 0.8);
+    {
+      std::lock_guard<std::mutex> lock(balloon_mutex_);
+      const double age = (ros::Time::now() - latest_balloon_stamp_).toSec();
+      active_balloons_ = (age >= 0.0 && age <= 2.0) ? latest_balloons_
+                                                      : std::vector<Eigen::Vector3d>();
+    }
+    balloon_cost_nonzero_evals_ = 0;
     iter_num_ = 0;
     int start_id = order_;
     int end_id = this->cps_.size - order_;
@@ -968,6 +1023,9 @@ namespace ego_planner
     } while ((flag_occ && restart_nums < MAX_RESART_NUMS_SET) ||
              (flag_force_return && force_stop_type_ == STOP_FOR_REBOUND && rebound_times <= 20));
 
+    if (lambda_balloon_clearance_ > 0.0)
+      ROS_INFO_THROTTLE(2.0, "[balloon_clearance_poc] active=%zu nonzero_evals=%d success=%d",
+                        active_balloons_.size(), balloon_cost_nonzero_evals_, success);
     return success;
   }
 
@@ -1047,20 +1105,26 @@ namespace ego_planner
     memcpy(cps_.points.data() + 3 * order_, x, n * sizeof(x[0]));
 
     /* ---------- evaluate cost and gradient ---------- */
-    double f_smoothness, f_distance, f_feasibility;
+    double f_smoothness, f_distance, f_feasibility, f_balloon;
 
     Eigen::MatrixXd g_smoothness = Eigen::MatrixXd::Zero(3, cps_.size);
     Eigen::MatrixXd g_distance = Eigen::MatrixXd::Zero(3, cps_.size);
     Eigen::MatrixXd g_feasibility = Eigen::MatrixXd::Zero(3, cps_.size);
+    Eigen::MatrixXd g_balloon = Eigen::MatrixXd::Zero(3, cps_.size);
 
     calcSmoothnessCost(cps_.points, f_smoothness, g_smoothness);
     calcDistanceCostRebound(cps_.points, f_distance, g_distance, iter_num_, f_smoothness);
     calcFeasibilityCost(cps_.points, f_feasibility, g_feasibility);
+    calcBalloonClearanceCost(cps_.points, f_balloon, g_balloon);
+    if (f_balloon > 0.0)
+      ++balloon_cost_nonzero_evals_;
 
-    f_combine = lambda1_ * f_smoothness + new_lambda2_ * f_distance + lambda3_ * f_feasibility;
+    f_combine = lambda1_ * f_smoothness + new_lambda2_ * f_distance + lambda3_ * f_feasibility
+                + lambda_balloon_clearance_ * f_balloon;
     //printf("origin %f %f %f %f\n", f_smoothness, f_distance, f_feasibility, f_combine);
 
-    Eigen::MatrixXd grad_3D = lambda1_ * g_smoothness + new_lambda2_ * g_distance + lambda3_ * g_feasibility;
+    Eigen::MatrixXd grad_3D = lambda1_ * g_smoothness + new_lambda2_ * g_distance
+                              + lambda3_ * g_feasibility + lambda_balloon_clearance_ * g_balloon;
     memcpy(grad, grad_3D.data() + 3 * order_, n * sizeof(grad[0]));
   }
 

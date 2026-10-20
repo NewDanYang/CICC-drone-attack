@@ -1,0 +1,28 @@
+{
+  "files": [
+    {
+      "relative": "src/planner/bspline_opt/src/bspline_optimizer.cpp",
+      "original_md5": "a968a5e81b3799c2ed68d75b582f5fc4",
+      "deployed_md5": "c48a58affe333bfef509deba6b7ba43d",
+      "backup": "/home/ubuntu/catkin_ws/src/ego-planner/src/planner/bspline_opt/src/bspline_optimizer.cpp.bak_20261020_balloon_v1"
+    },
+    {
+      "relative": "src/planner/bspline_opt/include/bspline_opt/bspline_optimizer.h",
+      "original_md5": "2d2615f01a3834ac24104360e43426b6",
+      "deployed_md5": "25846f16c76c3cdc16c17a91d3b14b5a",
+      "backup": "/home/ubuntu/catkin_ws/src/ego-planner/src/planner/bspline_opt/include/bspline_opt/bspline_optimizer.h.bak_20261020_balloon_v1"
+    },
+    {
+      "relative": "src/planner/bspline_opt/CMakeLists.txt",
+      "original_md5": "0fc1056df778674f1571a427bab78562",
+      "deployed_md5": "214b8bb4e48f4f40086e2f81900ed4cd",
+      "backup": "/home/ubuntu/catkin_ws/src/ego-planner/src/planner/bspline_opt/CMakeLists.txt.bak_20261020_balloon_v1"
+    },
+    {
+      "relative": "src/planner/bspline_opt/package.xml",
+      "original_md5": "da5f06411d24160a919de5ba17d4c4f2",
+      "deployed_md5": "90c848a6d25554959f320f8ee9ff6f7b",
+      "backup": "/home/ubuntu/catkin_ws/src/ego-planner/src/planner/bspline_opt/package.xml.bak_20261020_balloon_v1"
+    }
+  ]
+}
