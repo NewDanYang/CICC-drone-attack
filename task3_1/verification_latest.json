@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "runs": [
+    {
+      "run": "blue_shift_eval_20261019T180649_916285Z",
+      "rows": 20,
+      "image_hashes": "PASS",
+      "raw_parse_and_row_scores": "PASS",
+      "summary_metrics_and_percentiles": "PASS"
+    },
+    {
+      "run": "eval_3_1_v2_20261019T171803_989477Z",
+      "rows": 60,
+      "image_hashes": "PASS",
+      "raw_parse_and_row_scores": "PASS",
+      "summary_metrics_and_percentiles": "PASS"
+    }
+  ],
+  "same_prompt": true,
+  "unique_image_hashes": 80,
+  "total_image_records": 80,
+  "annotation_status": "Provisional visual labels; metrics verification does not independently validate labels."
+}
