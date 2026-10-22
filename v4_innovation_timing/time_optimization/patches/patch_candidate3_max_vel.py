@@ -21,6 +21,8 @@ def main() -> None:
     parser.add_argument("--source", type=Path, default=Path("/home/ubuntu/catkin_ws/src/ego-planner/src/planner/plan_manage/launch/FS-J310/FS-J310_ego-planner.launch"))
     parser.add_argument("--manifest", type=Path, default=Path("/home/ubuntu/tcei_baseline_tools/time_optimization/candidate3_manifest.json"))
     parser.add_argument("--value", type=float, default=0.40)
+    parser.add_argument("--from-value", type=float, default=None,
+                        help="max_vel value currently present in the measured launch file")
     parser.add_argument("--expected-md5", default=EXPECTED_A0_MD5)
     parser.add_argument("--rollback", action="store_true")
     args = parser.parse_args()
@@ -34,6 +36,8 @@ def main() -> None:
         return
     if not 0.35 <= args.value <= 0.50:
         raise SystemExit("candidate 3 value must be one of the approved A1..A4 values")
+    if args.from_value is None:
+        raise SystemExit("pass --from-value matching the measured launch anchor")
     if not args.expected_md5:
         raise SystemExit("pass the measured official A0 launch MD5 before deploying")
     if args.manifest.exists() or backup.exists():
@@ -42,7 +46,9 @@ def main() -> None:
     if hashlib.md5(before).hexdigest() != args.expected_md5.lower():
         raise SystemExit("source MD5 differs from the measured official A0 launch")
     text = before.decode("utf-8")
-    old = '<arg name="max_vel" value="0.3" />'
+    if not 0.30 <= args.from_value <= 0.50:
+        raise SystemExit("candidate 3 source value must be between 0.30 and 0.50")
+    old = f'<arg name="max_vel" value="{args.from_value:g}" />'
     new = f'<arg name="max_vel" value="{args.value:g}" />'
     if text.count(old) != 1:
         raise SystemExit("official max_vel anchor is not unique")
@@ -54,6 +60,7 @@ def main() -> None:
     temp.replace(args.source)
     record = {
         "candidate": 3,
+        "from_max_vel": args.from_value,
         "max_vel": args.value,
         "source": str(args.source),
         "before_md5": hashlib.md5(before).hexdigest(),

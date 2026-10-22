@@ -1,199 +1,114 @@
-# 用时优化候选离线准备报告
+# 用时优化候选验证报告
 
-日期：2026-10-21  
-当前状态：**仅完成本地离线分析和可回滚补丁准备，未部署、未重启服务器、未跑新正式局。**
+日期：2026-10-22
 
-用户反馈仿真服务器当前已满，因此本轮先停在离线阶段。服务器恢复且确认没有其他人占用后，
-再按候选 1 → 候选 2 → 候选 3 的顺序逐项实测。当前正式部署状态不变，没有触碰
-`v3_stability/hit_balloon_v2/` 及其他已封存气球代码。
+最终状态：候选 1（起飞重试间隔 1.5 s）与候选 2（WaitForStablePosition）保留；候选 3（Ego-Planner 0.40 m/s）已回滚到 0.35 m/s。候选 1+2 做了红、紫、蓝各 1 局合并确认。
 
-## 1. 证据边界
+## 结论
 
-- 历史计时基线：[`timing_baseline.md`](../timing_baseline.md)。其中 24 局的起飞均值为
-  16.0 s（中位数 17.9 s，范围 12.6–18.9 s），第一次穿框均值 15.9 s。
-- 本报告的候选结果不是“修复有效”的结论。没有当前服务器的 3 色 × 3 局实测，就不能
-  推断可靠性或最终用时收益。
-- 击球阶段不在本任务的改动范围内；任何气球命中结论继续沿用 Part 1 的封存报告，不能
-  用本报告的离线结果包装成整体成功。
-- 历史握手延迟的可复核摘要见
-  [`evidence_offline/handshake_latency_summary.md`](evidence_offline/handshake_latency_summary.md)。
+候选 1 是本轮最明确的时间收益。在候选 2 基线之上，红、紫、蓝各 3 局的起飞均值分别为 9.531 s、7.817 s、8.525 s，9 局的起飞、第一次穿框、识码、逆穿框和降落全部成功。两次红色 300 s 超时是 PX4 停在 AUTO.LAND、模式请求持续 TEMPORARILY_REJECTED 的环境故障，未计为算法失败。
 
-## 2. 候选 1：起飞 OFFBOARD/ARM 固定重试间隔
+候选 2 已经在服务器当前源码中。本轮观测 3 色 × 3 局，9 局前置阶段全部成功；7/9 局在 0.516 s 稳定确认后继续，2/9 局到 2.002 s 上限后继续。没有把旧工作副本覆盖到服务器，因此不能宣称严格的同日 A/B 时间因果。
 
-### 离线方法
+候选 3 的 0.40 m/s 版本 9 局前置阶段全部成功，第一次穿框均值比当前 0.35 m/s 观测低约 2.5–3.1 s，但逆穿框没有一致收益（紫色一局 26.609 s），并有 4 次安全边界事件。它已回滚，不部署。
 
-目标是只把 `drone_action_node.h` 中两个默认参数从 5.0 s 改为 1.5 s：
+## 证据范围
 
-```cpp
+结论覆盖起飞、第一次穿框、识码、逆穿框、降落。hit_balloon 的成功率原样保留，不作为用时候选的成功判定。每个独立候选红、紫、蓝各 3 局，合并确认各 1 局；阶段成功按观测器 stage 事件判定。
+
+正式试验目录已迁移到服务器数据盘 /root/gpufree-data/time_opt_formal_trials_archive_20261022，原路径保留符号链接。原始 JSONL 和 baseline_runs.csv 均保留。
+
+## 候选 1：起飞重试间隔 5.0→1.5 s
+
+只改 drone_action_node.h：
+
+~~~
 throttledSetMode(..., interval_sec = 1.5);
 throttledArm(..., interval_sec = 1.5);
-```
+~~~
 
-本地官方输入文件 MD5：
+历史真实日志 n=11：OFFBOARD 均值 0.434 s、P95 0.957 s、最大 0.993 s；ARM 均值 0.406 s、P95 0.879 s、最大 0.975 s。部署前 MD5 7334b435faceae983f46f3dd185da172，部署后 c415ddd8243afcc64c181be45bdac5e3；catkin_make --pkg mission_pkg -j4 返回 0。
 
-```text
-official_baseline/catkin_ws/src/mission_pkg/include/base/drone_action_node.h
-7334b435faceae983f46f3dd185da172
-```
+| 颜色 | 三次起飞时间（s） | 均值 | 前置成功 | 原始目录 |
+|---|---:|---:|---|---|
+| 红 | 9.104 / 8.373 / 11.115 | 9.531 | 3/3 | 20261021T231131_red_A0；20261021T233844_red_A0；20261022T002356_red_A0 |
+| 紫 | 6.951 / 8.041 / 8.458 | 7.817 | 3/3 | 20261021T232522_purple_A0；20261021T234324_purple_A0；20261022T002913_purple_A0 |
+| 蓝 | 8.838 / 8.347 / 8.391 | 8.525 | 3/3 | 20261021T233327_blue_A0；20261021T234939_blue_A0；20261022T003326_blue_A0 |
 
-用历史真实 JSONL 配对得到的确认延迟（n=11）：
+时间从 mission_start 到 takeoff_status=success。候选 1 前的同服务器红色对照 20261021T225149_f1aae0 为 12.930 s；历史 24 局均值为 16.0 s，后者跨越多个部署状态，仅作背景。
 
-| 事件 | 均值 | 中位数 | P95 | 最大 |
-|---|---:|---:|---:|---:|
-| OFFBOARD | 0.434 s | 0.350 s | 0.957 s | 0.993 s |
-| ARM | 0.406 s | 0.339 s | 0.879 s | 0.975 s |
+20261021T235526_red_A0 和 20261022T000808_red_A0 为环境超时：起飞阶段没有 OFFBOARD 确认，日志反复出现 SET_MODE TEMPORARILY_REJECTED。两次均清理残留任务并重启仿真，不能证明候选 1 造成失败。
 
-历史数据支持“5 s 退避明显长于确认延迟”这一假设，但它不是当前服务器的实时测量。
-因此候选 1 的离线结论为：**有空间，暂不采用**。只有当前实时 P95 在目标间隔下仍留出
-安全余量，且红、紫、蓝各至少 3 局都没有起飞失败，才能采用。
+结论：采用候选 1，与候选 2 合并确认；收益声明仅限起飞阶段。
 
-### 本地补丁验证
+## 候选 2：WaitForStablePosition
 
-`patches/patch_candidate1_throttle.py` 在临时副本上完成：
+本轮前服务器已经包含该节点。bt_ros.cpp MD5 9b1cefe9dfa431418435f7f8f63a60ed，llm_mission.launch MD5 5550c580a4822e773a331bcef11f0c47。参数为位置阈值 0.15 m、速度阈值 0.08 m/s、连续确认 0.5 s、上限 2.0 s。
 
-1. MD5 门禁通过；
-2. 只替换两个声明，应用后 MD5 为 `c415ddd8243afcc64c181be45bdac5e3`；
-3. 读取到两个 `1.5` 声明；
-4. 按 manifest 回滚后恢复 `7334b435faceae983f46f3dd185da172`。
+| 颜色 | 三次起飞时间（s） | 稳定等待结果 | 前置成功 |
+|---|---:|---|---|
+| 红 | 10.192 / 8.003 / 7.715 | 确认 / 确认 / 上限 | 3/3 |
+| 紫 | 8.332 / 8.450 / 7.744 | 确认 / 确认 / 确认 | 3/3 |
+| 蓝 | 8.477 / 7.935 / 8.162 | 上限 / 确认 / 确认 | 3/3 |
 
-补丁脚本自身 MD5：`ceb181672cb50f97c720ec9cd7bb5e13`。
+有效目录：红 20261022T004604_red_A0、20261022T011011_red_A0、20261022T012735_red_A0；紫 20261022T005355_purple_A0、20261022T011935_purple_A0、20261022T014501_purple_A0；蓝 20261022T005832_blue_A0、20261022T012258_blue_A0、20261022T014832_blue_A0。
 
-### 服务器恢复后的实测门槛
+紫色 20261022T013110_purple_A0 因根分区写满产生 OSError: [Errno 28] No space left on device，只有不完整日志，已排除并由 20261022T014501_purple_A0 补测。7/9 次确认耗时 0.516 s，2/9 次达到 2.002 s 上限。结论：保留；数据证明不会阻塞前置阶段，但不能把潜在 1.484 s 节省写成严格 A/B 因果收益。
 
-先用只读观察器记录每次请求到 `/mavros/state` 确认的延迟，不能以历史数据代替。若当前
-分布仍远小于 5 s，再应用 1.5 s 候选，分别跑红、紫、蓝各 ≥3 局，记录：起飞耗时、起飞
-是否成功、失败阶段、总耗时。任一颜色出现新的起飞失败，立即回滚并判定不采用。
+## 候选 3：Ego-Planner max_vel=0.40
 
-## 3. 候选 2：`WaitForStablePosition` 事件等待
+现场原值 0.35 m/s，先核对三个 ROS 参数均为 0.35，再将 launch 单行改为 0.40。部署前 MD5 1d9a148929c850c529f17fa3d421959f，部署后 c25f1f6587f5ed516efd5c49a5c76aad；9 局运行时三个参数均为 0.40。回滚后当前 MD5 恢复 1d9a148929c850c529f17fa3d421959f，三个参数均为 0.35。
 
-### 离线静态检查
+| 颜色 | 第一次穿框（s，均值） | 逆穿框（s，均值） | 前置成功 | 边界事件 |
+|---|---:|---:|---|---:|
+| 红 | 17.608 / 15.591 / 17.910（17.036） | 12.892 / 15.386 / 12.981（13.753） | 3/3 | 0 |
+| 紫 | 16.001 / 17.486 / 15.977（16.488） | 16.161 / 26.609 / 16.601（19.790） | 3/3 | 3 |
+| 蓝 | 15.593 / 17.692 / 18.022（17.102） | 11.582 / 14.352 / 12.161（12.698） | 3/3 | 1 |
 
-旧候选的设计是用“位置误差 ≤0.15 m、速度 ≤0.08 m/s，连续确认 0.50 s，最多 2.00 s”
-替换穿框观察点的固定 2 s `Delay`。节点只读里程计，不发布新的飞行指令；超时仍返回
-成功，保持原固定等待的失败语义。
+当前 0.35 m/s 观测下第一次穿框均值为红 19.562 s、紫 19.255 s、蓝 20.189 s。0.40 m/s 的第一次穿框收益存在，但逆穿框没有一致收益，紫色 26.609 s 是反例。4 次边界记录来自 20261022T020633_dd3f0b、20261022T022059_13950e、20261022T184718_6edfe1、20261022T185416_d426bd，均位于气球搜索/视觉伺服时段或其邻近时刻，未伴随前置阶段失败。结论：不采用 0.40 m/s，已回滚，不继续测 A1/A3/A4。
 
-候选 payload 来自：
+## 合并确认：候选 1 + 候选 2
 
-- `v2_time_optimization/working_source/src/mission_pkg/include/nodes/action/wait_for_stable_position.h`
-  - MD5 `c90e547a9fe65331bf49c23753c26abd`
-- `v2_time_optimization/working_source/src/mission_pkg/src/nodes/action/wait_for_stable_position.cpp`
-  - MD5 `ef785b83fdf04d176e78c41f3c060cdc`
+候选 3 回滚并重启环境确认 0.35 m/s 后，重新编译部署候选 1，候选 2 保持原状态：
 
-在本地官方副本上，`patch_candidate2_wait_stable.py` 完成了应用和回滚检查：
+| 颜色 | 起飞（s） | 第一次穿框（s） | 逆穿框（s） | 前置成功 | 原始 JSONL |
+|---|---:|---:|---:|---|---|
+| 红 | 10.624 | 20.919 | 14.052 | 是 | /home/ubuntu/tcei_baseline_tools/results/formal_trials/20261022T213514_red_A0/logs/20261022T213518_7c88b9_red.jsonl |
+| 紫 | 9.192 | 22.879 | 13.300 | 是 | /home/ubuntu/tcei_baseline_tools/results/formal_trials/20261022T214043_purple_A0/logs/20261022T214047_a48541_purple.jsonl |
+| 蓝 | 9.237 | 21.513 | 14.378 | 是 | /home/ubuntu/tcei_baseline_tools/results/formal_trials/20261022T214549_blue_A0/logs/20261022T214553_ac2364_blue.jsonl |
 
-- `bt_ros.cpp` 输入 MD5 `f3883b30c69f3bdc248d50ac9fc0ad9e`，应用后
-  `4c23ef9a943f38868ac878e2c06b04f8`；
-- `llm_mission.launch` 输入 MD5 `7ebdb609e86fcf664bf58f6d2e587ea3`，应用后
-  `37723e4ddfaef24f16ba3fcfefafbb72`；
-- XML 中四个 `optimization/*` 参数和 `WaitForStablePosition` 节点文本均出现；
-- 回滚后两个输入文件恢复原 MD5，新增节点文件被删除。
+合并确认 3/3 前置成功；紫、蓝各 1 次边界事件在气球视觉伺服时段，红色无边界事件。
 
-补丁脚本 MD5：`54bd17249aeb3207d593cafe71044f95`。脚本已加上全量预检：只有两个源文件
-的锚点、payload 和目标文件状态全部通过后，才创建备份并写入，避免过期源码留下半套
-修改。
+## 当前部署、回滚和校验
 
-### 现有历史试验为何不能作为今天的结论
+当前服务器 MD5：
 
-`v2_time_optimization/experiments/formal_v2_patch1_red/` 的 2026-10-01 两次红色试跑
-不能作为当前稳定基线上的公平验证：一次在 `checkArrival` 无进展 20 s 后卡住，另一次
-在 ArUco 20 s 超时后失败；两次都早于后续死锁修复和 ArUco CLAHE 修复。历史文件仍保留
-为反例证据，但不能据此宣称候选 2 快或可靠。
+~~~
+drone_action_node.h  c415ddd8243afcc64c181be45bdac5e3  # 候选 1，1.5 s
+bt_ros.cpp            9b1cefe9dfa431418435f7f8f63a60ed  # 候选 2
+llm_mission.launch    5550c580a4822e773a331bcef11f0c47  # 候选 2
+FS-J310_ego-planner.launch  1d9a148929c850c529f17fa3d421959f  # 候选 3 已回滚，0.35 s
+~~~
 
-候选 2 的离线结论：**补丁结构可回滚，但性能和可靠性未验证，不采用。** 服务器恢复后
-必须先核对当前 `bt_ros.cpp` 的 MD5/锚点，确认没有已经存在的 `WaitForStablePosition`，
-再移植、`catkin_make --pkg mission_pkg`，并在当前稳定基线上红、紫、蓝各 ≥3 局。每局
-要同时记录穿框等待时间、后续 ArUco、整体失败阶段和总耗时。
+候选 1 回滚后需重新编译并重启 llm_mission_node：
 
-## 4. 候选 3：Ego-Planner `max_vel` A2
-
-### 离线静态检查
-
-候选档位为 A0=0.30、A1=0.35、A2=0.40、A3=0.45、A4=0.50 m/s。按任务要求先只准备
-A2；A0 与 A2 launch 的差异只有一行 `max_vel`，其余规划参数不变。A0 本地输入 MD5：
-
-```text
-v2_1_ego_velocity/configs/A0/FS-J310_ego-planner.launch
-e6806d41207404427860e0f90713d14d
-```
-
-临时副本应用 A2 后 MD5 为 `eced1e92648e01153f2a1b15618f9582`，回滚恢复 A0 MD5。
-补丁脚本 MD5：`c8d2008e70dd813634ee7468a9b1d71f`。
-
-配置说明确认这个 launch 参数会传给：
-
-```text
-/ego_planner_node/manager/max_vel
-/ego_planner_node/optimization/max_vel
-/ego_planner_node/bspline/limit_vel
-```
-
-离线结论：**A2 的改动边界清晰，但没有任何当前基线的速度收益或可靠性证据，暂不采用。**
-
-服务器恢复后先部署 A2，启动后必须用 `rosparam get` 核对以上三个参数都等于 0.40，再跑
-红、紫、蓝各 ≥3 局；只有穿框/逆穿框时间改善且没有新失败，才考虑 A1/A3。A2 失败则停止
-该方向，不继续提高速度档位。
-
-## 5. 当前决定与后续顺序
-
-| 候选 | 离线结果 | 当前决定 | 当前是否改变正式部署 |
-|---|---|---|---|
-| 1：重试间隔 5.0→1.5 s | 历史握手延迟支持有空间；缺当前实时测量 | 等服务器后先测 | 否 |
-| 2：事件稳定等待 | 静态补丁可应用/回滚；旧试跑被环境和旧 ArUco 混淆 | 等当前源码核对后再测 | 否 |
-| 3：A2 `max_vel=0.40` | 仅一行配置差异；未测用时/可靠性 | 候选 1、2 结束后再测 | 否 |
-
-每个候选完成后都先回滚到当时最佳已验证状态，再开始下一个；不合并候选，除非三项独立
-结果都支持且额外合并确认不超过半天。若任一候选的 3 色数据不能同时证明用时收益和
-可靠性不下降，结论就是不采用。没有服务器数据前，不创建“最终部署状态”或整体成功率
-结论。
-
-## 6. 补丁、备份和回滚命令
-
-三个脚本都要求 MD5 门禁，并在目标文件旁写入 `.bak_time_opt_candidate*` 备份和 manifest。
-服务器端实际路径以当次检查结果为准；下面是回滚形式：
-
-```bash
-# 候选 1
-python3 patch_candidate1_throttle.py \
+~~~
+python3 /tmp/patch_candidate1_throttle.py \
   --source /home/ubuntu/catkin_ws/src/mission_pkg/include/base/drone_action_node.h \
   --manifest /home/ubuntu/tcei_baseline_tools/time_optimization/candidate1_manifest.json \
   --rollback
+cd /home/ubuntu/catkin_ws && catkin_make --pkg mission_pkg -j4
+~~~
 
-# 候选 2
-python3 patch_candidate2_wait_stable.py \
-  --bt /home/ubuntu/catkin_ws/src/mission_pkg/src/bt_ros.cpp \
-  --launch /home/ubuntu/catkin_ws/src/mission_pkg/launch/llm_mission.launch \
-  --node-header /home/ubuntu/catkin_ws/src/mission_pkg/include/nodes/action/wait_for_stable_position.h \
-  --node-source /home/ubuntu/catkin_ws/src/mission_pkg/src/nodes/action/wait_for_stable_position.cpp \
-  --header-payload <payload.h> --source-payload <payload.cpp> \
-  --manifest /home/ubuntu/tcei_baseline_tools/time_optimization/candidate2_manifest.json \
-  --rollback
+候选 3 回滚命令（已执行）：
 
-# 候选 3
-python3 patch_candidate3_max_vel.py \
+~~~
+python3 /tmp/patch_candidate3_max_vel.py \
   --source /home/ubuntu/catkin_ws/src/ego-planner/src/planner/plan_manage/launch/FS-J310/FS-J310_ego-planner.launch \
   --manifest /home/ubuntu/tcei_baseline_tools/time_optimization/candidate3_manifest.json \
-  --expected-md5 <部署前现场读取的 A0 MD5> --rollback
-```
+  --rollback
+~~~
 
-候选 2 回滚前还要确认新增 `.cpp/.h` 没有被其他改动覆盖；脚本发现 MD5 不匹配会拒绝
-回滚，避免覆盖他人工作。
+本地补丁 MD5：patch_candidate1_throttle.py ceb181672cb50f97c720ec9cd7bb5e13；patch_candidate2_wait_stable.py 54bd17249aeb3207d593cafe71044f95；patch_candidate3_max_vel.py a1b9201794af1b0b7da9c8745b77123b。候选 2 本轮没有覆盖服务器源码，因此没有新增候选 2 manifest。
 
-## 7. 服务器恢复后的前置检查
-
-按 `AGENTS.md` 先确认 `/tmp/tcei_formal_trial.lock`、`/tmp/tcei_sim_environment.lock`
-及最近 10 分钟的 `baseline_runs.csv` 没有他人活动；当前服务器爆满，本轮没有执行这些
-操作，也没有建立锁、重启节点或上传补丁。
-
-## 8. 文件完整性摘要
-
-| 文件 | MD5 |
-|---|---|
-| `patches/patch_candidate1_throttle.py` | `ceb181672cb50f97c720ec9cd7bb5e13` |
-| `patches/patch_candidate2_wait_stable.py` | `54bd17249aeb3207d593cafe71044f95` |
-| `patches/patch_candidate3_max_vel.py` | `c8d2008e70dd813634ee7468a9b1d71f` |
-| 官方起飞头文件输入 | `7334b435faceae983f46f3dd185da172` |
-| 官方 `bt_ros.cpp` 离线输入 | `f3883b30c69f3bdc248d50ac9fc0ad9e` |
-| 官方 `llm_mission.launch` 离线输入 | `7ebdb609e86fcf664bf58f6d2e587ea3` |
-| A0 Ego-Planner launch 输入 | `e6806d41207404427860e0f90713d14d` |
-
-本报告和三个补丁是离线准备产物；在完成服务器实测前，不能把它们当成已部署修复。
+最终建议：保留候选 1+2，停止现场试验；候选 3 的 0.40 m/s 只作为有边界的速度证据，不部署。
