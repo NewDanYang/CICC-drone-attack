@@ -1,0 +1,65 @@
+2026-10-20T10:19:30+08:00
+TOPIC /rflysim/sensor1/img_rgb
+Type: sensor_msgs/Image
+
+Publishers: 
+ * /RecvRFlySim3DData_74310_1792462555974 (http://gpufree-container:37327/)
+
+Subscribers: 
+ * /object_detection_node (http://gpufree-container:40579/)
+
+
+TOPIC /rflysim/sensor1
+Type: sensor_msgs/Image
+
+Publishers: None
+
+Subscribers: 
+ * /ego_planner_node (http://gpufree-container:45599/)
+
+
+TOPIC /rflysim/sensor0/Depth_Cloud
+Type: sensor_msgs/PointCloud2
+
+Publishers: 
+ * /RecvRFlySim3DData_74310_1792462555974 (http://gpufree-container:37327/)
+
+Subscribers: 
+ * /cloud_transform_node (http://gpufree-container:37827/)
+
+
+TOPIC /cloud_registered
+Type: sensor_msgs/PointCloud2
+
+Publishers: 
+ * /cloud_transform_node (http://gpufree-container:37827/)
+
+Subscribers: 
+ * /ego_planner_node (http://gpufree-container:45599/)
+
+
+TOPIC /objects
+Type: common_msgs/Objects
+
+Publishers: 
+ * /object_detection_node (http://gpufree-container:40579/)
+
+Subscribers: None
+
+
+TOPIC /grid_map/occupancy_inflate
+Type: sensor_msgs/PointCloud2
+
+Publishers: 
+ * /ego_planner_node (http://gpufree-container:45599/)
+
+Subscribers: 
+ * /rviz (http://gpufree-container:40483/)
+
+
+TOPIC /planning/poc_non_target_balloons
+ERROR: Unknown topic /planning/poc_non_target_balloons
+EGO_DIST0
+0.1
+POC_PARAM
+ERROR: Parameter [/ego_planner_node/optimization/lambda_balloon_clearance] is not set

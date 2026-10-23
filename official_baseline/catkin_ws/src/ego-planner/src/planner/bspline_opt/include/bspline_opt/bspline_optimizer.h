@@ -6,6 +6,8 @@
 #include <bspline_opt/uniform_bspline.h>
 #include <plan_env/grid_map.h>
 #include <ros/ros.h>
+#include <geometry_msgs/PoseArray.h>
+#include <mutex>
 #include "bspline_opt/lbfgs.hpp"
 
 // Gradient and elasitc band optimization
@@ -113,6 +115,16 @@ namespace ego_planner
     double lambda2_, new_lambda2_; // distance weight
     double lambda3_;               // feasibility weight
     double lambda4_;               // curve fitting
+    double lambda_balloon_clearance_; // extra clearance around non-target balloons
+    double balloon_clearance_;
+    ros::NodeHandle balloon_nh_;
+    ros::Subscriber balloon_sub_;
+    ros::Time latest_balloon_stamp_;
+    std::mutex balloon_mutex_;
+    std::vector<Eigen::Vector3d> latest_balloons_;
+    std::vector<Eigen::Vector3d> active_balloons_;
+    int balloon_cost_nonzero_evals_ = 0;
+    void balloonCallback(const geometry_msgs::PoseArray::ConstPtr &msg);
 
     int a;
     //
@@ -138,6 +150,7 @@ namespace ego_planner
     void calcFeasibilityCost(const Eigen::MatrixXd &q, double &cost,
                              Eigen::MatrixXd &gradient);
     void calcDistanceCostRebound(const Eigen::MatrixXd &q, double &cost, Eigen::MatrixXd &gradient, int iter_num, double smoothness_cost);
+    void calcBalloonClearanceCost(const Eigen::MatrixXd &q, double &cost, Eigen::MatrixXd &gradient);
     void calcFitnessCost(const Eigen::MatrixXd &q, double &cost, Eigen::MatrixXd &gradient);
     bool check_collision_and_rebound(void);
 

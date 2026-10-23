@@ -12,6 +12,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  geometry_msgs
   visualization_msgs
   plan_env
   cv_bridge
@@ -21,7 +22,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
  INCLUDE_DIRS include
  LIBRARIES bspline_opt
- CATKIN_DEPENDS plan_env
+ CATKIN_DEPENDS plan_env geometry_msgs
 #  DEPENDS system_lib
 )
 
