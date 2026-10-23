@@ -1,0 +1,13 @@
+--- src/mission_pkg/src/bt_ros.cpp
++++ src/mission_pkg/src/bt_ros.cpp.patched
+@@ -344,7 +344,9 @@
+         std::string vs_k_d_vz   = std::to_string(getDbl("visual_servo/k_d_vz", 0.006));
+         std::string vs_area_th  = std::to_string(getDbl("visual_servo/approach_area_threshold", 0.08));
+         std::string vs_fwd_vel  = std::to_string(getDbl("visual_servo/forward_velocity", 1.0));
+-        std::string vs_sprint_v = std::to_string(getDbl("visual_servo/sprint_velocity", 1.5));
++        std::string vs_sprint_v = std::to_string(color == "blue" ?
++            getDbl("visual_servo/blue_sprint_velocity", 1.0) :
++            getDbl("visual_servo/sprint_velocity", 1.5));
+         std::string vs_sprint_t = std::to_string(getDbl("visual_servo/sprint_time", 1.2));
+         
+         ROS_INFO("Hit balloon: color=%s -> zone=%s, approach=%s, goto=%s, yaw=%s, target=%s", 

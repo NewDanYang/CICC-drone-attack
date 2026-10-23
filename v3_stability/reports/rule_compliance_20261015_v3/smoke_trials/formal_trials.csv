@@ -1,0 +1,4 @@
+"trial_dir","color","run_id","window_s","callbacks","decode_fail","total_time_s","takeoff","cross_frame","detect_aruco","return_cross_frame","hit_balloon","land","mission_success","boundary_violation_count","proxy_hit","removed_count"
+"20261015T152112_red_A0","red","20261015T152116_3a253b","0.117","1","0","140.899","success","success","success","success","","success","false","0","",""
+"20261015T152716_purple_A0","purple","20261015T152720_51a104","0.106","1","0","135.019","success","success","success","success","","success","false","0","",""
+"20261015T153321_blue_A0","blue","20261015T153326_9fda6b","0.148","1","0","107.996","success","success","success","success","success","success","true","1","",""

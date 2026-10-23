@@ -1,0 +1,371 @@
+2026-10-14T23:11:40+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+2026-10-14T23:11:42+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+2026-10-14T23:11:44+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+2026-10-14T23:11:46+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+2026-10-14T23:11:48+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+2026-10-14T23:11:50+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+2026-10-14T23:11:52+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+2026-10-14T23:11:54+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+2026-10-14T23:11:56+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+2026-10-14T23:11:59+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+2026-10-14T23:12:01+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+2026-10-14T23:12:03+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+2026-10-14T23:12:05+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+2026-10-14T23:12:07+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+2026-10-14T23:12:09+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+2026-10-14T23:12:11+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+2026-10-14T23:12:13+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+2026-10-14T23:12:15+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+2026-10-14T23:12:17+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+2026-10-14T23:12:20+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+2026-10-14T23:12:22+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+2026-10-14T23:12:24+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+2026-10-14T23:12:26+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+2026-10-14T23:12:28+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+2026-10-14T23:12:30+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+2026-10-14T23:12:32+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+2026-10-14T23:12:34+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+2026-10-14T23:12:36+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+2026-10-14T23:12:38+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+2026-10-14T23:12:41+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+2026-10-14T23:12:43+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:12:45+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:12:47+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:12:49+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:12:51+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:12:54+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:12:56+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:12:58+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:13:00+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:13:02+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:13:04+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:13:07+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:13:09+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:13:11+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:13:13+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:13:15+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:13:18+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:13:20+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:13:22+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:13:24+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:13:26+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:13:29+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:13:31+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:13:33+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:13:35+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:13:37+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:13:39+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:13:42+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:13:44+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:13:46+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:13:48+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:13:50+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:13:53+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:13:55+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:13:57+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:13:59+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:14:01+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:14:04+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:14:06+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:14:08+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:14:10+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:14:12+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:14:14+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:14:17+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:14:19+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:14:21+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:14:23+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:14:25+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:14:28+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:14:30+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:14:32+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:14:34+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:14:37+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:14:39+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:14:41+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:14:43+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:14:45+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:14:48+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:14:50+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:14:52+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:14:54+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:14:56+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:14:59+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:15:01+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:15:03+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:15:05+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:15:07+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:15:10+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:15:12+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+2026-10-14T23:15:14+08:00 0x0360000d  0 gpufree-container YOLO Detection
+0x03800005  0 gpufree-container Detection + Color
+0x03a0000d  0 gpufree-container ArUco Detect
+0x03400005  0 gpufree-container ArUco Detection (Python)
+capture_complete=2026-10-14T23:15:16+08:00

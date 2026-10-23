@@ -1,0 +1,4 @@
+round,color,attempt,trial_dir,runner_rc,pre_count,before_count,settled_count,frame_count,sim_pid,valid
+1,red,1,/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261016T002420_red_A0,1,3,3,2,166,104614,1
+1,purple,1,/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261016T003037_purple_A0,1,3,3,1,152,119670,1
+1,blue,1,/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261016T003638_blue_A0,1,3,3,2,170,133437,1

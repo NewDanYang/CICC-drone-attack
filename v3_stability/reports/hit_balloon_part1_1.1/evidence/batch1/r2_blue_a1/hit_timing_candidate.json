@@ -1,0 +1,22 @@
+{
+  "status": "candidate_only",
+  "color": "blue",
+  "frame_count": 309,
+  "last_visible": "2026-10-15T16:11:16.272+00:00",
+  "first_absent": "2026-10-15T16:11:17.350+00:00",
+  "midpoint_estimate": "2026-10-15T16:11:16.811+00:00",
+  "half_interval_seconds": 0.539,
+  "largest_blob_before": 14373,
+  "last_visible_blob": 14373,
+  "first_absent_blob": 0,
+  "phase_from_log": "approaching",
+  "sprint_start": "",
+  "servo_start": "2026-10-15T16:11:10.073+00:00",
+  "sprint_end": "",
+  "first_boundary": "2026-10-15T16:12:11.069+00:00",
+  "boundary_order": "boundary_after_disappearance",
+  "last_visible_image": "20261015T161116_272983Z_0108.jpg",
+  "first_absent_image": "20261015T161117_350833Z_0109.jpg",
+  "candidate_count": 5,
+  "lasting_absence": true
+}

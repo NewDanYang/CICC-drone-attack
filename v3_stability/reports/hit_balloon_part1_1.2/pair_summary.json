@@ -1,0 +1,49 @@
+[
+  {
+    "mode": "control",
+    "trial_dir": "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261016T004420_purple_A0",
+    "sample_count": 155,
+    "sample_error_count": 0,
+    "median_sample_interval_seconds": 1.732,
+    "sprint_start": "2026-10-15T16:46:24.215+00:00",
+    "gc_command_count": 0,
+    "gc_command_times": [],
+    "first_count_below_three": "2026-10-15T16:46:44.196+00:00",
+    "first_count_below_three_value": 2,
+    "seconds_from_sprint_to_first_lower": 19.981,
+    "first_count": 3,
+    "last_count": 2,
+    "formal_snapshots": {
+      "before": 3,
+      "after": 3,
+      "late": 2,
+      "settled": 2
+    }
+  },
+  {
+    "mode": "gc",
+    "trial_dir": "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261016T005006_purple_A0",
+    "sample_count": 159,
+    "sample_error_count": 0,
+    "median_sample_interval_seconds": 1.731,
+    "sprint_start": "2026-10-15T16:52:03.073+00:00",
+    "gc_command_count": 4,
+    "gc_command_times": [
+      "2026-10-15T16:52:03.510057+00:00",
+      "2026-10-15T16:52:04.539907+00:00",
+      "2026-10-15T16:52:06.171230+00:00",
+      "2026-10-15T16:52:08.432363+00:00"
+    ],
+    "first_count_below_three": "2026-10-15T16:52:03.938+00:00",
+    "first_count_below_three_value": 2,
+    "seconds_from_sprint_to_first_lower": 0.865,
+    "first_count": 3,
+    "last_count": 2,
+    "formal_snapshots": {
+      "before": 3,
+      "after": 2,
+      "late": 2,
+      "settled": 2
+    }
+  }
+]

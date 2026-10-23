@@ -1,0 +1,45 @@
+[1/3] 加载模型...
+self.grid_size:  8
+self.num_queries:  64
+self.embed_dim:  2560
+self.num_heads:  16
+self.adaptive:  True
+self.max_size:  (70, 70)
+self.kv_dim:  1152
+[2/3] 注入提示词...
+/opt/conda/envs/demo/lib/python3.10/site-packages/transformers/models/auto/image_processing_auto.py:513: FutureWarning: The image_processor_class argument is deprecated and will be removed in v4.42. Please use `slow_image_processor_class`, or `fast_image_processor_class` instead
+  warnings.warn(
+The `seen_tokens` attribute is deprecated and will be removed in v4.41. Use the `cache_position` model input instead.
+[3/3] 模型就绪。
+
+
+[任务] 飞机起飞，然后穿过框，再去识别二维码，然后再穿回框，接着去打击红色气球，完成后就回到起点并降落；
+============================================================
+用户: 起飞，穿过框，识别二维码，再穿回来，去A区打红色气球，降落
+回答:
+{1. 解释思路
+任务分为六步：首先起飞到预设高度，然后识别方框并穿越，接着飞到二维码上方识别，再反向穿越方框返回，之后前往A区寻找红色气球并打击，最后返航降落。
+2. 控制命令
+```command
+takeoff
+cross_frame
+detect_aruco
+return_cross_frame
+hit_balloon:red
+land
+```}
+
+[生成的指令序列]
+takeoff
+cross_frame
+detect_aruco
+return_cross_frame
+hit_balloon:red
+land
+
+[INFO] [1792087996.172133]: 指令已发送到 /mission_command
+
+============================================================
+请输入任务描述（输入 quit 退出）：
+> 
+退出。

@@ -1,0 +1,42 @@
+--- src/mission_pkg/src/bt_ros.cpp
++++ src/mission_pkg/src/bt_ros.cpp.patched
+@@ -328,8 +328,13 @@
+         std::string param_prefix = "balloon_zone_" + zone;
+         std::string approach_pos = getStr(param_prefix + "/approach_pos", "5.3;1.0;0.7");
+         std::string goto_pos = getStr(param_prefix + "/goal", "0.0;-0.8;0.5");
+-        double yaw_val = getDbl(param_prefix + "/yaw", -1.570796);
+-        std::string yaw = std::to_string(yaw_val);
++        // Zone A preserves arrival heading. VisualServo scans and aligns
++        // from the arrival pose; B/C keep their audited entry yaw commands.
++        std::string yaw = zone == "A" ? "visual_servo" :
++            std::to_string(getDbl(param_prefix + "/yaw", -1.570796));
++        std::string entry_goto = zone == "A" ?
++            "      <GoTo goal=\"" + goto_pos + "\"/>\n" :
++            "      <GoTo goal=\"" + goto_pos + "\" yaw=\"" + yaw + "\"/>\n";
+         std::string balloon_name = color + "_balloon";
+         
+         // VisualServo 参数（从参数服务器读取，与手调 XML 一致）
+@@ -348,8 +353,8 @@
+         return
+             "      <!-- 规划飞到气球打击区域" + zone + " -->\n"
+             "      <PlanningControl goal=\"" + approach_pos + "\"/>\n"
+-            "      <!-- 转向朝向" + zone + "区气球(" + color + ") -->\n"
+-            "      <GoTo goal=\"" + goto_pos + "\" yaw=\"" + yaw + "\"/>\n"
++            "      <!-- 进入" + zone + "区气球(" + color + ")观察位置 -->\n"
++            + entry_goto +
+             "      <!-- 跟踪并撞击气球 -->\n"
+             "      <ForceSuccess>\n"
+             "        <Timeout msec=\"50000\">\n"
+--- src/mission_pkg/launch/llm_mission.launch
++++ src/mission_pkg/launch/llm_mission.launch.patched
+@@ -87,9 +87,8 @@
+     <!-- yaw:  到达位置时的机头朝向 (rad)                -->
+     <!-- ============================================ -->
+     <!-- A区 (红色气球) -->
+-    <param name="balloon_zone_A/approach_pos" value="5.3;1.0;1.5"  type="str"/>
++    <param name="balloon_zone_A/approach_pos" value="5.3;1.0;0.7"  type="str"/>
+     <param name="balloon_zone_A/goal"         value="5.3;1.0;1.0"  type="str"/>
+-    <param name="balloon_zone_A/yaw"          value="3.14159"       type="double"/>
+     <!-- B区 (紫色气球) -->
+     <param name="balloon_zone_B/approach_pos" value="5.3;-2.0;0.7" type="str"/>
+     <param name="balloon_zone_B/goal"         value="5.3;-2.0;0.7" type="str"/>

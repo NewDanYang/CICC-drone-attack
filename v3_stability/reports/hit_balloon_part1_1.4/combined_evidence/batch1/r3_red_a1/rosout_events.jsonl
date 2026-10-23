@@ -1,0 +1,303 @@
+{"wall_time": "2026-10-15T18:24:52.576+00:00", "event": "rosout", "level": 2, "name": "/aruco_detect_node", "message": "=========================================="}
+{"wall_time": "2026-10-15T18:24:52.576+00:00", "event": "rosout", "level": 2, "name": "/object_detection_node", "message": "[ColorClassify] red=3087 blue=70 purple=210 -> red"}
+{"wall_time": "2026-10-15T18:24:52.578+00:00", "event": "rosout", "level": 2, "name": "/cloud_transform_node", "message": "[CloudTransform]   cloud_in_sensor_frame: True"}
+{"wall_time": "2026-10-15T18:24:54.358+00:00", "event": "rosout", "level": 2, "name": "/object_detection_node", "message": "[ColorClassify] red=0 blue=26 purple=233 -> purple"}
+{"wall_time": "2026-10-15T18:24:56.584+00:00", "event": "rosout", "level": 2, "name": "/object_detection_node", "message": "[ColorClassify] red=0 blue=21 purple=609 -> purple"}
+{"wall_time": "2026-10-15T18:24:58.678+00:00", "event": "rosout", "level": 2, "name": "/object_detection_node", "message": "[ColorClassify] red=0 blue=17 purple=579 -> purple"}
+{"wall_time": "2026-10-15T18:25:00.761+00:00", "event": "rosout", "level": 2, "name": "/object_detection_node", "message": "[ColorClassify] red=3356 blue=5 purple=237 -> red"}
+{"wall_time": "2026-10-15T18:25:02.778+00:00", "event": "rosout", "level": 2, "name": "/object_detection_node", "message": "[ColorClassify] red=1179 blue=0 purple=90 -> red"}
+{"wall_time": "2026-10-15T18:25:04.873+00:00", "event": "rosout", "level": 2, "name": "/object_detection_node", "message": "[ColorClassify] red=458 blue=0 purple=38 -> red"}
+{"wall_time": "2026-10-15T18:25:06.873+00:00", "event": "rosout", "level": 2, "name": "/object_detection_node", "message": "[ColorClassify] red=351 blue=0 purple=32 -> red"}
+{"wall_time": "2026-10-15T18:25:08.876+00:00", "event": "rosout", "level": 2, "name": "/object_detection_node", "message": "[ColorClassify] red=1043 blue=0 purple=72 -> red"}
+{"wall_time": "2026-10-15T18:25:09.263+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "=== Received LLM Command ==="}
+{"wall_time": "2026-10-15T18:25:09.263+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "Raw: takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland"}
+{"wall_time": "2026-10-15T18:25:09.263+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "Parsed 6 command(s):"}
+{"wall_time": "2026-10-15T18:25:09.263+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "  [0] takeoff"}
+{"wall_time": "2026-10-15T18:25:09.263+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "  [1] cross_frame"}
+{"wall_time": "2026-10-15T18:25:09.263+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "  [2] detect_aruco"}
+{"wall_time": "2026-10-15T18:25:09.263+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "  [3] return_cross_frame"}
+{"wall_time": "2026-10-15T18:25:09.263+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "  [4] hit_balloon:red"}
+{"wall_time": "2026-10-15T18:25:09.263+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "  [5] land"}
+{"wall_time": "2026-10-15T18:25:09.264+00:00", "event": "rosout", "level": 2, "name": "/mission_once_362356_1792088693975", "message": "指令已发送到 /mission_command"}
+{"wall_time": "2026-10-15T18:25:09.268+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "Hit balloon: color=red -> zone=A, approach=5.3;1.0;0.7, goto=5.3;1.0;1.0, yaw=visual_servo, target=red_balloon"}
+{"wall_time": "2026-10-15T18:25:09.269+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "Generated BT XML:\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<root BTCPP_format=\"4\" main_tree_to_execute=\"LLMTask\">\n  <BehaviorTree ID=\"LLMTask\">\n    <Sequence name=\"LLMSequence\">\n      <Takeoff goal=\"0.0;0.0;1.0\"/>\n      <!-- ????????????????????? -->\n      <GoTo goal=\"0.0;-1.0;1.0\"/>\n      <!-- ???????????????????????????????????????????????? 2 s ?????? -->\n      <WaitForStablePosition goal=\"0.0;-1.0;1.0\" position_threshold=\"0.150000\" velocity_threshold=\"0.080000\" stable_confirm_time=\"0.500000\" timeout=\"2.000000\"/>\n      <!-- ?????????????????? -->\n      <TargetLocator object_name=\"square_frame\" object_width=\"1.300000\" object_height=\"1.300000\" occlusion_direction=\"right\" expected_pos=\"3.25;-0.4;1.0\" xy_tolerance=\"1.0\" z_tolerance=\"0.500000\" confidence_threshold=\"0.7\" position_3d=\"{frame_center}\" filter_window_size=\"20\"/>\n      <!-- ?????????????????? -->\n      <PlanningControl goal=\"{frame_center}\" offset_z=\"1.000000\" final_position=\"{planning_end_pos}\"/>\n      <GoTo goal=\"4.5;0.5;1.2\"/>\n      <Parallel success_count=\"2\" failure_count=\"1\">\n        <GoTo goal=\"4.5;0.5;1.2\"/>\n        <ArucoDetector aruco_id=\"{detected_aruco_id}\"/>\n      </Parallel>\n      <!-- ??????180??? -->\n      <GoTo goal=\"4.5;0.5;1.8\" yaw=\"3.141590\"/>\n      <!-- ?????????????????? -->\n      <GoTo goal=\"{planning_end_pos}\"/>\n      <!-- ?????????????????? -->\n      <PlanningControl goal=\"{frame_center}\"/>\n      <!-- ??????????????? -->\n      <GoTo goal=\"0.5;0.0;0.0\" frame=\"1\"/>\n      <!-- ???????????????????????? -->\n      <GoTo goal=\"0.5;0.0;0.0\" frame=\"1\" yaw=\"0.000000\"/>\n      <!-- ??????????????????????????????A -->\n      <PlanningControl goal=\"5.3;1.0;0.7\"/>\n      <!-- ??????A?????????(red)???????????? -->\n      <GoTo goal=\"5.3;1.0;1.0\"/>\n      <!-- ????????????????????? -->\n      <ForceSuccess>\n        <Timeout msec=\"50000\">\n          <Parallel success_count=\"1\" failure_count=\"1\">\n            <TargetTracker object_name=\"red_balloon\" confidence_threshold=\"0.8\" pixel_target=\"{balloon_pixel}\"/>\n            <VisualServo pixel_target=\"{balloon_pixel}\" target_color=\"red\" k_p_yaw_rate=\"0.003000\" k_d_yaw_rate=\"0.001000\" k_p_vz=\"0.010000\" k_d_vz=\"0.006000\" approach_area_threshold=\"0.080000\" forward_velocity=\"1.000000\" sprint_velocity=\"1.500000\" sprint_time=\"1.200000\"/>\n          </Parallel>\n        </Timeout>\n      </ForceSuccess>\n      <!-- ???????????? -->\n      <GoTo goal=\"0.0;0.0;0.5\" yaw=\"0.000000\"/>\n      <!-- ?????? -->\n      <Land/>\n    </Sequence>\n  </BehaviorTree>\n</root>"}
+{"wall_time": "2026-10-15T18:25:09.281+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "=== Starting LLM Mission Execution ==="}
+{"wall_time": "2026-10-15T18:25:09.281+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[Takeoff]: Takeoff start -> (0.00, 0.00, 1.00), yaw: 0.00, tolerance: 0.20, auto arm enabled"}
+{"wall_time": "2026-10-15T18:25:09.292+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[Takeoff]: Requesting mode OFFBOARD"}
+{"wall_time": "2026-10-15T18:25:09.321+00:00", "event": "rosout", "level": 4, "name": "/mavros", "message": "CMD: Unexpected command 176, result 0"}
+{"wall_time": "2026-10-15T18:25:13.673+00:00", "event": "rosout", "level": 2, "name": "/object_detection_node", "message": "[ColorClassify] red=174 blue=29 purple=172 -> red"}
+{"wall_time": "2026-10-15T18:25:14.322+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[Takeoff]: Requesting ARM"}
+{"wall_time": "2026-10-15T18:25:14.575+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] odom=(0.00,-0.00,-0.00) target=(0.00,0.00,1.00) dist=1.000 tol=0.20"}
+{"wall_time": "2026-10-15T18:25:15.673+00:00", "event": "rosout", "level": 2, "name": "/object_detection_node", "message": "[ColorClassify] red=1365 blue=0 purple=100 -> red"}
+{"wall_time": "2026-10-15T18:25:16.577+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] odom=(0.00,-0.00,-0.00) target=(0.00,0.00,1.00) dist=1.000 tol=0.20"}
+{"wall_time": "2026-10-15T18:25:17.673+00:00", "event": "rosout", "level": 2, "name": "/object_detection_node", "message": "[ColorClassify] red=573 blue=0 purple=55 -> red"}
+{"wall_time": "2026-10-15T18:25:18.578+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] odom=(0.08,-0.06,0.11) target=(0.00,0.00,1.00) dist=0.900 tol=0.20"}
+{"wall_time": "2026-10-15T18:25:19.675+00:00", "event": "rosout", "level": 2, "name": "/object_detection_node", "message": "[ColorClassify] red=0 blue=33 purple=553 -> purple"}
+{"wall_time": "2026-10-15T18:25:20.580+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] odom=(0.11,-0.08,0.58) target=(0.00,0.00,1.00) dist=0.444 tol=0.20"}
+{"wall_time": "2026-10-15T18:25:21.676+00:00", "event": "rosout", "level": 2, "name": "/object_detection_node", "message": "[ColorClassify] red=0 blue=128 purple=672 -> purple"}
+{"wall_time": "2026-10-15T18:25:22.451+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[Takeoff]: Takeoff completed."}
+{"wall_time": "2026-10-15T18:25:22.452+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[GoTo]: GoTo start -> target: (0.00, -1.00, 1.00), yaw: -0.00, frame: 0, tol: 0.15, yaw_tol: 0.15, yaw_rate: 0.50"}
+{"wall_time": "2026-10-15T18:25:22.584+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] odom=(0.07,-0.04,0.82) target=(0.00,-1.00,1.00) dist=0.979 tol=0.15"}
+{"wall_time": "2026-10-15T18:25:24.060+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[GoTo]: GoTo completed (pos & yaw)."}
+{"wall_time": "2026-10-15T18:25:24.060+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[GoTo]: Maintaining hover at (0.07, -0.96, 0.90) yaw: -0.01"}
+{"wall_time": "2026-10-15T18:25:24.060+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[WaitForStablePosition]: Waiting for stable position at (0.00, -1.00, 1.00) pos<=0.15m vel<=0.08m/s confirm=0.50s timeout=2.00s"}
+{"wall_time": "2026-10-15T18:25:24.070+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[WaitForStablePosition]: stable condition met; confirmation started"}
+{"wall_time": "2026-10-15T18:25:24.333+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[WaitForStablePosition]: stable confirmation reset"}
+{"wall_time": "2026-10-15T18:25:26.062+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[WaitForStablePosition]: stable wait timeout after 2.002s; proceeding"}
+{"wall_time": "2026-10-15T18:25:26.062+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[TargetLocator]: Detecting target: square_frame, conf_th: 0.70"}
+{"wall_time": "2026-10-15T18:25:26.062+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[TargetLocator]: 3D Locator - size: 1.30 x 1.30, ratio: 1.00, filter: 20"}
+{"wall_time": "2026-10-15T18:25:26.082+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[TargetLocator]: cameraToWorld -> (3.06, -1.13, 0.88)"}
+{"wall_time": "2026-10-15T18:25:26.082+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[TargetLocator]: Collecting frames: 1/10"}
+{"wall_time": "2026-10-15T18:25:26.962+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[TargetLocator]: Target located at (3.06, -1.13, 0.89)"}
+{"wall_time": "2026-10-15T18:25:26.962+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[TargetLocator]: Target located at (3.06, -1.13, 0.89) - SUCCESS!"}
+{"wall_time": "2026-10-15T18:25:26.962+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[PlanningControl]: Initialized with offset_z=1.00, tolerance=0.15, control_yaw=0"}
+{"wall_time": "2026-10-15T18:25:26.963+00:00", "event": "rosout", "level": 8, "name": "/llm_mission_node", "message": "[PlanningControl]: >>> NED goal to ego=(4.06, -1.14, 0.89), yaw=-0.01, offset=1.00 <<<"}
+{"wall_time": "2026-10-15T18:25:26.963+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[PlanningControl]: Target acquired! Planning navigation start -> (4.06, -1.14, 0.89), offset: 1.00"}
+{"wall_time": "2026-10-15T18:25:26.973+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] odom=(0.15,-0.91,0.89) target=(4.06,-1.14,0.89) dist=3.911 tol=0.15"}
+{"wall_time": "2026-10-15T18:25:28.975+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] odom=(0.40,-0.95,0.90) target=(4.06,-1.14,0.89) dist=3.661 tol=0.15"}
+{"wall_time": "2026-10-15T18:25:30.976+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] odom=(1.13,-1.00,0.90) target=(4.06,-1.14,0.89) dist=2.928 tol=0.15"}
+{"wall_time": "2026-10-15T18:25:32.978+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] odom=(1.70,-1.06,0.90) target=(4.06,-1.14,0.89) dist=2.361 tol=0.15"}
+{"wall_time": "2026-10-15T18:25:34.272+00:00", "event": "rosout", "level": 2, "name": "/object_detection_node", "message": "[ColorClassify] red=0 blue=684 purple=0 -> blue"}
+{"wall_time": "2026-10-15T18:25:34.980+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] odom=(2.30,-1.12,0.89) target=(4.06,-1.14,0.89) dist=1.763 tol=0.15"}
+{"wall_time": "2026-10-15T18:25:36.274+00:00", "event": "rosout", "level": 2, "name": "/object_detection_node", "message": "[ColorClassify] red=0 blue=1201 purple=0 -> blue"}
+{"wall_time": "2026-10-15T18:25:36.981+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] odom=(2.87,-1.16,0.89) target=(4.06,-1.14,0.89) dist=1.186 tol=0.15"}
+{"wall_time": "2026-10-15T18:25:38.352+00:00", "event": "rosout", "level": 2, "name": "/object_detection_node", "message": "[ColorClassify] red=0 blue=1896 purple=1 -> blue"}
+{"wall_time": "2026-10-15T18:25:38.983+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] odom=(3.40,-1.19,0.89) target=(4.06,-1.14,0.89) dist=0.660 tol=0.15"}
+{"wall_time": "2026-10-15T18:25:40.354+00:00", "event": "rosout", "level": 2, "name": "/object_detection_node", "message": "[ColorClassify] red=0 blue=3202 purple=0 -> blue"}
+{"wall_time": "2026-10-15T18:25:40.651+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[PlanningControl]: Planning navigation completed."}
+{"wall_time": "2026-10-15T18:25:40.651+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[PlanningControl]: Final position: (3.95, -1.21, 0.88)"}
+{"wall_time": "2026-10-15T18:25:40.651+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[PlanningControl]: Maintaining hover at (3.95, -1.21, 0.88) yaw: -0.02"}
+{"wall_time": "2026-10-15T18:25:40.652+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[GoTo]: GoTo start -> target: (4.50, 0.50, 1.20), yaw: -0.02, frame: 0, tol: 0.15, yaw_tol: 0.15, yaw_rate: 0.50"}
+{"wall_time": "2026-10-15T18:25:40.986+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] odom=(4.04,-1.19,0.94) target=(4.50,0.50,1.20) dist=1.770 tol=0.15"}
+{"wall_time": "2026-10-15T18:25:42.856+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[GoTo]: GoTo completed (pos & yaw)."}
+{"wall_time": "2026-10-15T18:25:42.856+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[GoTo]: Maintaining hover at (4.58, 0.44, 1.13) yaw: -0.02"}
+{"wall_time": "2026-10-15T18:25:42.858+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[GoTo]: GoTo start -> target: (4.50, 0.50, 1.20), yaw: -0.02, frame: 0, tol: 0.15, yaw_tol: 0.15, yaw_rate: 0.50"}
+{"wall_time": "2026-10-15T18:25:42.861+00:00", "event": "rosout", "level": 2, "name": "/aruco_detect_node", "message": "[ArucoDetectNode] Subscribed to /rflysim/sensor2/img_rgb"}
+{"wall_time": "2026-10-15T18:25:42.862+00:00", "event": "rosout", "level": 2, "name": "/aruco_detect_node", "message": "[ArucoDetectNode] >>> Detection ENABLED <<<"}
+{"wall_time": "2026-10-15T18:25:42.862+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[ArucoDetector]: ?????? ArUco ?????? -> ??????"}
+{"wall_time": "2026-10-15T18:25:42.862+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[ArucoDetector]: ArUco ??????????????????????????????... (??????: 20.0s)"}
+{"wall_time": "2026-10-15T18:25:42.872+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[GoTo]: GoTo completed (pos & yaw)."}
+{"wall_time": "2026-10-15T18:25:42.872+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[GoTo]: Maintaining hover at (4.58, 0.44, 1.13) yaw: -0.02"}
+{"wall_time": "2026-10-15T18:25:42.872+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[ArucoDetector]: Maintaining hover at (4.58, 0.44, 1.13) yaw: -0.02"}
+{"wall_time": "2026-10-15T18:25:42.872+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[ArucoDetector]: ?????? ArUco ????????????... (0.0/20.0s)"}
+{"wall_time": "2026-10-15T18:25:42.962+00:00", "event": "rosout", "level": 2, "name": "/aruco_detect_node", "message": "[ArucoDetectNode] Searching... no marker found (rejected: 3)"}
+{"wall_time": "2026-10-15T18:25:43.152+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[ArucoDetector]: ?????? ArUco ID: 35"}
+{"wall_time": "2026-10-15T18:25:43.153+00:00", "event": "rosout", "level": 2, "name": "/aruco_detect_node", "message": "\u001b[1;33m+==========================================+\u001b[0m"}
+{"wall_time": "2026-10-15T18:25:43.154+00:00", "event": "rosout", "level": 2, "name": "/aruco_detect_node", "message": "\u001b[1;33m|  \u001b[1;32m*** ArUco Marker Detected! ***\u001b[1;33m        |\u001b[0m"}
+{"wall_time": "2026-10-15T18:25:43.154+00:00", "event": "rosout", "level": 2, "name": "/aruco_detect_node", "message": "\u001b[1;33m|    \u001b[1;37mDetected ID: \u001b[1;36m35  \u001b[1;33m                    |\u001b[0m"}
+{"wall_time": "2026-10-15T18:25:43.155+00:00", "event": "rosout", "level": 2, "name": "/aruco_detect_node", "message": "\u001b[1;33m+==========================================+\u001b[0m"}
+{"wall_time": "2026-10-15T18:25:43.155+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[ArucoDetector]: ================================"}
+{"wall_time": "2026-10-15T18:25:43.155+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[ArucoDetector]:   ARUCO ID DETECTED: 35"}
+{"wall_time": "2026-10-15T18:25:43.155+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[ArucoDetector]: ================================"}
+{"wall_time": "2026-10-15T18:25:43.159+00:00", "event": "rosout", "level": 2, "name": "/aruco_detect_node", "message": "[ArucoDetectNode] Unsubscribed (saving CPU)"}
+{"wall_time": "2026-10-15T18:25:43.160+00:00", "event": "rosout", "level": 2, "name": "/aruco_detect_node", "message": "[ArucoDetectNode] >>> Detection DISABLED <<< (callbacks=3 decode_fail=0)"}
+{"wall_time": "2026-10-15T18:25:43.160+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[ArucoDetector]: ?????? ArUco ?????? -> ??????"}
+{"wall_time": "2026-10-15T18:25:43.161+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[GoTo]: GoTo start -> target: (4.50, 0.50, 1.80), yaw: 3.14, frame: 0, tol: 0.15, yaw_tol: 0.15, yaw_rate: 0.50"}
+{"wall_time": "2026-10-15T18:25:43.171+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] odom=(4.59,0.51,1.12) target=(4.50,0.50,1.80) dist=0.684 tol=0.15"}
+{"wall_time": "2026-10-15T18:25:43.206+00:00", "event": "rosout", "level": 2, "name": "/aruco_detect_node", "message": "[ArucoDetectNode] Detection auto-disabled after success (saving CPU)"}
+{"wall_time": "2026-10-15T18:25:44.353+00:00", "event": "rosout", "level": 2, "name": "/object_detection_node", "message": "[ColorClassify] red=0 blue=1298 purple=0 -> blue"}
+{"wall_time": "2026-10-15T18:25:45.173+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] odom=(4.53,0.27,1.66) target=(4.50,0.50,1.80) dist=0.275 tol=0.15"}
+{"wall_time": "2026-10-15T18:25:46.353+00:00", "event": "rosout", "level": 2, "name": "/object_detection_node", "message": "[ColorClassify] red=0 blue=1257 purple=0 -> blue"}
+{"wall_time": "2026-10-15T18:25:47.175+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] odom=(4.63,0.44,1.71) target=(4.50,0.50,1.80) dist=0.167 tol=0.15"}
+{"wall_time": "2026-10-15T18:25:47.660+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] yaw_diff=(5.38) target=(3.14) current=(-2.24) yaw_tolerance=(0.15)    "}
+{"wall_time": "2026-10-15T18:25:49.137+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[GoTo]: GoTo completed (pos & yaw)."}
+{"wall_time": "2026-10-15T18:25:49.137+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[GoTo]: Maintaining hover at (4.56, 0.47, 1.74) yaw: -3.01"}
+{"wall_time": "2026-10-15T18:25:49.138+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[GoTo]: GoTo start -> target: (3.95, -1.21, 0.88), yaw: -3.01, frame: 0, tol: 0.15, yaw_tol: 0.15, yaw_rate: 0.50"}
+{"wall_time": "2026-10-15T18:25:49.179+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] odom=(4.56,0.47,1.74) target=(3.95,-1.21,0.88) dist=1.982 tol=0.15"}
+{"wall_time": "2026-10-15T18:25:50.073+00:00", "event": "rosout", "level": 2, "name": "/object_detection_node", "message": "[ColorClassify] red=0 blue=201 purple=1012 -> purple"}
+{"wall_time": "2026-10-15T18:25:50.932+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[GoTo]: GoTo completed (pos & yaw)."}
+{"wall_time": "2026-10-15T18:25:50.932+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[GoTo]: Maintaining hover at (3.89, -1.12, 0.94) yaw: -3.07"}
+{"wall_time": "2026-10-15T18:25:50.932+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[PlanningControl]: Initialized with offset_z=0.00, tolerance=0.15, control_yaw=0"}
+{"wall_time": "2026-10-15T18:25:50.933+00:00", "event": "rosout", "level": 8, "name": "/llm_mission_node", "message": "[PlanningControl]: >>> NED goal to ego=(3.06, -1.13, 0.89), yaw=-3.07, offset=0.00 <<<"}
+{"wall_time": "2026-10-15T18:25:50.933+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[PlanningControl]: Target acquired! Planning navigation start -> (3.06, -1.13, 0.89), offset: 0.00"}
+{"wall_time": "2026-10-15T18:25:51.185+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] odom=(3.87,-1.29,0.92) target=(3.06,-1.13,0.89) dist=0.821 tol=0.15"}
+{"wall_time": "2026-10-15T18:25:53.188+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] odom=(3.88,-1.36,0.90) target=(3.06,-1.13,0.89) dist=0.850 tol=0.15"}
+{"wall_time": "2026-10-15T18:25:54.856+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[PlanningControl]: Planning navigation completed."}
+{"wall_time": "2026-10-15T18:25:54.856+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[PlanningControl]: Final position: (3.20, -1.17, 0.88)"}
+{"wall_time": "2026-10-15T18:25:54.856+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[PlanningControl]: Maintaining hover at (3.20, -1.17, 0.88) yaw: -3.14"}
+{"wall_time": "2026-10-15T18:25:54.857+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[GoTo]: GoTo start -> target: (2.70, -1.18, 0.88), yaw: -3.14, frame: 1, tol: 0.15, yaw_tol: 0.15, yaw_rate: 0.50"}
+{"wall_time": "2026-10-15T18:25:55.191+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] odom=(3.11,-1.19,0.88) target=(2.70,-1.18,0.88) dist=0.414 tol=0.15"}
+{"wall_time": "2026-10-15T18:25:57.193+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] odom=(2.77,-1.33,0.87) target=(2.70,-1.18,0.88) dist=0.167 tol=0.15"}
+{"wall_time": "2026-10-15T18:25:59.194+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] odom=(2.89,-1.25,0.86) target=(2.70,-1.18,0.88) dist=0.208 tol=0.15"}
+{"wall_time": "2026-10-15T18:25:59.674+00:00", "event": "rosout", "level": 2, "name": "/object_detection_node", "message": "[ColorClassify] red=0 blue=22 purple=573 -> purple"}
+{"wall_time": "2026-10-15T18:26:00.256+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[GoTo]: GoTo completed (pos & yaw)."}
+{"wall_time": "2026-10-15T18:26:00.256+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[GoTo]: Maintaining hover at (2.84, -1.21, 0.86) yaw: 3.08"}
+{"wall_time": "2026-10-15T18:26:00.257+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[GoTo]: GoTo start -> target: (2.34, -1.18, 0.86), yaw: 0.00, frame: 1, tol: 0.15, yaw_tol: 0.15, yaw_rate: 0.50"}
+{"wall_time": "2026-10-15T18:26:01.197+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] odom=(2.69,-1.19,0.86) target=(2.34,-1.18,0.86) dist=0.344 tol=0.15"}
+{"wall_time": "2026-10-15T18:26:01.675+00:00", "event": "rosout", "level": 2, "name": "/object_detection_node", "message": "[ColorClassify] red=1247 blue=8 purple=147 -> red"}
+{"wall_time": "2026-10-15T18:26:01.854+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] yaw_diff=(-2.38) target=(0.00) current=(2.38) yaw_tolerance=(0.15)    "}
+{"wall_time": "2026-10-15T18:26:03.199+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] odom=(2.38,-1.26,0.85) target=(2.34,-1.18,0.86) dist=0.086 tol=0.15"}
+{"wall_time": "2026-10-15T18:26:03.856+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] yaw_diff=(-1.38) target=(0.00) current=(1.38) yaw_tolerance=(0.15)    "}
+{"wall_time": "2026-10-15T18:26:04.873+00:00", "event": "rosout", "level": 2, "name": "/object_detection_node", "message": "[ColorClassify] red=0 blue=2023 purple=2 -> blue"}
+{"wall_time": "2026-10-15T18:26:05.200+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] odom=(2.49,-1.30,0.85) target=(2.34,-1.18,0.86) dist=0.188 tol=0.15"}
+{"wall_time": "2026-10-15T18:26:06.060+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] yaw_diff=(-0.26) target=(0.00) current=(0.26) yaw_tolerance=(0.15)    "}
+{"wall_time": "2026-10-15T18:26:06.333+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[GoTo]: GoTo completed (pos & yaw)."}
+{"wall_time": "2026-10-15T18:26:06.333+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[GoTo]: Maintaining hover at (2.43, -1.25, 0.85) yaw: 0.12"}
+{"wall_time": "2026-10-15T18:26:06.334+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[PlanningControl]: Initialized with offset_z=0.00, tolerance=0.15, control_yaw=0"}
+{"wall_time": "2026-10-15T18:26:06.334+00:00", "event": "rosout", "level": 8, "name": "/llm_mission_node", "message": "[PlanningControl]: >>> NED goal to ego=(5.30, 1.00, 0.70), yaw=0.12, offset=0.00 <<<"}
+{"wall_time": "2026-10-15T18:26:06.334+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[PlanningControl]: Target acquired! Planning navigation start -> (5.30, 1.00, 0.70), offset: 0.00"}
+{"wall_time": "2026-10-15T18:26:06.873+00:00", "event": "rosout", "level": 2, "name": "/object_detection_node", "message": "[ColorClassify] red=0 blue=792 purple=0 -> blue"}
+{"wall_time": "2026-10-15T18:26:07.203+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] odom=(2.38,-1.22,0.85) target=(5.30,1.00,0.70) dist=3.669 tol=0.15"}
+{"wall_time": "2026-10-15T18:26:08.874+00:00", "event": "rosout", "level": 2, "name": "/object_detection_node", "message": "[ColorClassify] red=0 blue=921 purple=0 -> blue"}
+{"wall_time": "2026-10-15T18:26:09.206+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] odom=(2.61,-0.93,0.83) target=(5.30,1.00,0.70) dist=3.314 tol=0.15"}
+{"wall_time": "2026-10-15T18:26:10.875+00:00", "event": "rosout", "level": 2, "name": "/object_detection_node", "message": "[ColorClassify] red=0 blue=1610 purple=0 -> blue"}
+{"wall_time": "2026-10-15T18:26:11.208+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] odom=(3.04,-0.19,0.79) target=(5.30,1.00,0.70) dist=2.552 tol=0.15"}
+{"wall_time": "2026-10-15T18:26:13.209+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] odom=(3.43,-0.05,0.75) target=(5.30,1.00,0.70) dist=2.142 tol=0.15"}
+{"wall_time": "2026-10-15T18:26:15.211+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] odom=(4.02,0.07,0.74) target=(5.30,1.00,0.70) dist=1.583 tol=0.15"}
+{"wall_time": "2026-10-15T18:26:17.213+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] odom=(4.49,0.51,0.71) target=(5.30,1.00,0.70) dist=0.949 tol=0.15"}
+{"wall_time": "2026-10-15T18:26:19.214+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] odom=(4.94,0.81,0.68) target=(5.30,1.00,0.70) dist=0.410 tol=0.15"}
+{"wall_time": "2026-10-15T18:26:20.054+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[PlanningControl]: Planning navigation completed."}
+{"wall_time": "2026-10-15T18:26:20.054+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[PlanningControl]: Final position: (5.20, 0.94, 0.68)"}
+{"wall_time": "2026-10-15T18:26:20.054+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[PlanningControl]: Maintaining hover at (5.20, 0.94, 0.68) yaw: 0.05"}
+{"wall_time": "2026-10-15T18:26:20.055+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[GoTo]: GoTo start -> target: (5.30, 1.00, 1.00), yaw: 0.05, frame: 0, tol: 0.15, yaw_tol: 0.15, yaw_rate: 0.50"}
+{"wall_time": "2026-10-15T18:26:20.853+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[GoTo]: GoTo completed (pos & yaw)."}
+{"wall_time": "2026-10-15T18:26:20.853+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[GoTo]: Maintaining hover at (5.30, 1.01, 0.86) yaw: -0.04"}
+{"wall_time": "2026-10-15T18:26:20.854+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[TargetTracker]: Detecting target: red_balloon, conf_th: 0.80"}
+{"wall_time": "2026-10-15T18:26:20.854+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[TargetTracker]: Pixel tracking filter window: 10"}
+{"wall_time": "2026-10-15T18:26:20.854+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[VisualServo]: Visual Servo Started (VX+VZ+yaw_rate)"}
+{"wall_time": "2026-10-15T18:26:20.854+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[VisualServo]: k_p_yaw_rate=0.0030 k_d=0.0010 max_rate=0.50 deadzone=8.0"}
+{"wall_time": "2026-10-15T18:26:20.854+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[VisualServo]: forward_vel=1.00 sprint_vel=1.50 sprint_time=1.2 area_thresh=0.080"}
+{"wall_time": "2026-10-15T18:26:20.864+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:20.864+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Off-center target lost after approach; return to ALIGN and search."}
+{"wall_time": "2026-10-15T18:26:20.864+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[VisualServo]: SEARCH_ANCHOR pos=(5.302,1.011,0.859) yaw=-0.040"}
+{"wall_time": "2026-10-15T18:26:20.864+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=-0.040 anchor=(5.30,1.01,0.86)"}
+{"wall_time": "2026-10-15T18:26:21.865+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:21.865+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=0.261 anchor=(5.30,1.01,0.86)"}
+{"wall_time": "2026-10-15T18:26:22.866+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:22.866+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=0.561 anchor=(5.30,1.01,0.86)"}
+{"wall_time": "2026-10-15T18:26:23.867+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:23.867+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=0.861 anchor=(5.30,1.01,0.86)"}
+{"wall_time": "2026-10-15T18:26:24.868+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:24.868+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=1.162 anchor=(5.30,1.01,0.86)"}
+{"wall_time": "2026-10-15T18:26:25.869+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:25.869+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=1.462 anchor=(5.30,1.01,0.86)"}
+{"wall_time": "2026-10-15T18:26:26.870+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:26.870+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=1.762 anchor=(5.30,1.01,0.86)"}
+{"wall_time": "2026-10-15T18:26:27.871+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:27.871+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=2.063 anchor=(5.30,1.01,0.86)"}
+{"wall_time": "2026-10-15T18:26:28.872+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:28.872+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=2.363 anchor=(5.30,1.01,0.86)"}
+{"wall_time": "2026-10-15T18:26:29.154+00:00", "event": "rosout", "level": 2, "name": "/object_detection_node", "message": "[ColorClassify] red=0 blue=147 purple=39 -> blue"}
+{"wall_time": "2026-10-15T18:26:29.681+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[TargetTracker]: Tracking at pixel (97.0, 287.0)"}
+{"wall_time": "2026-10-15T18:26:29.681+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[VisualServo]: ALIGN - err:(-223,47) yaw_rate:0.500 vz:-0.300 stable:0"}
+{"wall_time": "2026-10-15T18:26:29.883+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:30.278+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[TargetTracker]: Tracking at pixel (199.0, 276.0)"}
+{"wall_time": "2026-10-15T18:26:30.683+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[VisualServo]: ALIGN - err:(-54,28) yaw_rate:0.138 vz:-0.180 stable:0"}
+{"wall_time": "2026-10-15T18:26:30.875+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[TargetTracker]: Tracking at pixel (287.0, 265.0)"}
+{"wall_time": "2026-10-15T18:26:30.885+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:31.155+00:00", "event": "rosout", "level": 2, "name": "/object_detection_node", "message": "[ColorClassify] red=617 blue=178 purple=139 -> red"}
+{"wall_time": "2026-10-15T18:26:31.472+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[TargetTracker]: Tracking at pixel (313.0, 259.0)"}
+{"wall_time": "2026-10-15T18:26:31.684+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[VisualServo]: ALIGN - err:(-4,18) yaw_rate:-0.000 vz:-0.080 stable:0"}
+{"wall_time": "2026-10-15T18:26:31.887+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:32.079+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[TargetTracker]: Tracking at pixel (319.0, 257.0)"}
+{"wall_time": "2026-10-15T18:26:32.676+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[TargetTracker]: Tracking at pixel (330.0, 259.0)"}
+{"wall_time": "2026-10-15T18:26:32.686+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[VisualServo]: ALIGN - err:(10,19) yaw_rate:-0.006 vz:-0.090 stable:0"}
+{"wall_time": "2026-10-15T18:26:32.888+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:33.155+00:00", "event": "rosout", "level": 2, "name": "/object_detection_node", "message": "[ColorClassify] red=5919 blue=174 purple=854 -> red"}
+{"wall_time": "2026-10-15T18:26:33.273+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[TargetTracker]: Tracking at pixel (353.0, 253.0)"}
+{"wall_time": "2026-10-15T18:26:33.687+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[VisualServo]: ALIGN - err:(73,18) yaw_rate:-0.195 vz:-0.080 stable:0"}
+{"wall_time": "2026-10-15T18:26:33.880+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[TargetTracker]: Tracking at pixel (456.0, 246.0)"}
+{"wall_time": "2026-10-15T18:26:33.890+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:34.689+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[VisualServo]: ALIGN - err:(158,-12) yaw_rate:-0.450 vz:0.020 stable:0"}
+{"wall_time": "2026-10-15T18:26:34.891+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:34.962+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[VisualServo]: SEARCH_ANCHOR pos=(5.034,1.035,0.321) yaw=2.452"}
+{"wall_time": "2026-10-15T18:26:34.962+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=2.452 anchor=(5.03,1.03,0.32)"}
+{"wall_time": "2026-10-15T18:26:35.893+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:35.963+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=2.752 anchor=(5.03,1.03,0.32)"}
+{"wall_time": "2026-10-15T18:26:36.894+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:36.965+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=3.053 anchor=(5.03,1.03,0.32)"}
+{"wall_time": "2026-10-15T18:26:37.896+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:37.966+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=3.353 anchor=(5.03,1.03,0.32)"}
+{"wall_time": "2026-10-15T18:26:38.897+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:38.968+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=3.654 anchor=(5.03,1.03,0.32)"}
+{"wall_time": "2026-10-15T18:26:39.899+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:39.970+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=3.954 anchor=(5.03,1.03,0.32)"}
+{"wall_time": "2026-10-15T18:26:40.153+00:00", "event": "rosout", "level": 2, "name": "/object_detection_node", "message": "[ColorClassify] red=0 blue=226 purple=436 -> purple"}
+{"wall_time": "2026-10-15T18:26:40.900+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:40.971+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=4.255 anchor=(5.03,1.03,0.32)"}
+{"wall_time": "2026-10-15T18:26:41.901+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:41.972+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=4.555 anchor=(5.03,1.03,0.32)"}
+{"wall_time": "2026-10-15T18:26:42.154+00:00", "event": "rosout", "level": 2, "name": "/object_detection_node", "message": "[ColorClassify] red=0 blue=122 purple=516 -> purple"}
+{"wall_time": "2026-10-15T18:26:42.902+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:42.973+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=4.855 anchor=(5.03,1.03,0.32)"}
+{"wall_time": "2026-10-15T18:26:43.903+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:43.974+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=5.156 anchor=(5.03,1.03,0.32)"}
+{"wall_time": "2026-10-15T18:26:44.155+00:00", "event": "rosout", "level": 2, "name": "/object_detection_node", "message": "[ColorClassify] red=0 blue=1299 purple=0 -> blue"}
+{"wall_time": "2026-10-15T18:26:44.904+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:44.975+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=5.456 anchor=(5.03,1.03,0.32)"}
+{"wall_time": "2026-10-15T18:26:45.906+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:45.976+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=5.756 anchor=(5.03,1.03,0.32)"}
+{"wall_time": "2026-10-15T18:26:46.907+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:46.977+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=6.057 anchor=(5.03,1.03,0.32)"}
+{"wall_time": "2026-10-15T18:26:47.908+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:47.978+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=6.357 anchor=(5.03,1.03,0.32)"}
+{"wall_time": "2026-10-15T18:26:48.909+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:48.979+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=6.657 anchor=(5.03,1.03,0.32)"}
+{"wall_time": "2026-10-15T18:26:49.910+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:49.980+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=6.958 anchor=(5.03,1.03,0.32)"}
+{"wall_time": "2026-10-15T18:26:50.911+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:50.982+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=7.258 anchor=(5.03,1.03,0.32)"}
+{"wall_time": "2026-10-15T18:26:51.912+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:51.983+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=7.558 anchor=(5.03,1.03,0.32)"}
+{"wall_time": "2026-10-15T18:26:52.913+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:52.984+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=7.858 anchor=(5.03,1.03,0.32)"}
+{"wall_time": "2026-10-15T18:26:53.914+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:53.985+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=8.159 anchor=(5.03,1.03,0.32)"}
+{"wall_time": "2026-10-15T18:26:54.915+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:54.986+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=8.459 anchor=(5.03,1.03,0.32)"}
+{"wall_time": "2026-10-15T18:26:55.916+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:55.987+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=8.759 anchor=(5.03,1.03,0.32)"}
+{"wall_time": "2026-10-15T18:26:56.917+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:56.988+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=9.060 anchor=(5.03,1.03,0.32)"}
+{"wall_time": "2026-10-15T18:26:57.918+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:57.989+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=9.360 anchor=(5.03,1.03,0.32)"}
+{"wall_time": "2026-10-15T18:26:58.919+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:58.990+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=9.660 anchor=(5.03,1.03,0.32)"}
+{"wall_time": "2026-10-15T18:26:59.920+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:26:59.991+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=9.961 anchor=(5.03,1.03,0.32)"}
+{"wall_time": "2026-10-15T18:27:00.921+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:27:00.992+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=10.261 anchor=(5.03,1.03,0.32)"}
+{"wall_time": "2026-10-15T18:27:01.922+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:27:01.954+00:00", "event": "rosout", "level": 2, "name": "/object_detection_node", "message": "[ColorClassify] red=0 blue=1032 purple=0 -> blue"}
+{"wall_time": "2026-10-15T18:27:01.993+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=10.561 anchor=(5.03,1.03,0.32)"}
+{"wall_time": "2026-10-15T18:27:02.923+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:27:02.994+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=10.862 anchor=(5.03,1.03,0.32)"}
+{"wall_time": "2026-10-15T18:27:03.925+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:27:03.954+00:00", "event": "rosout", "level": 2, "name": "/object_detection_node", "message": "[ColorClassify] red=0 blue=203 purple=588 -> purple"}
+{"wall_time": "2026-10-15T18:27:03.995+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=11.162 anchor=(5.03,1.03,0.32)"}
+{"wall_time": "2026-10-15T18:27:04.926+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:27:04.997+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=11.462 anchor=(5.03,1.03,0.32)"}
+{"wall_time": "2026-10-15T18:27:05.927+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:27:05.955+00:00", "event": "rosout", "level": 2, "name": "/object_detection_node", "message": "[ColorClassify] red=0 blue=223 purple=898 -> purple"}
+{"wall_time": "2026-10-15T18:27:05.998+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=11.763 anchor=(5.03,1.03,0.32)"}
+{"wall_time": "2026-10-15T18:27:06.928+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:27:06.999+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=12.063 anchor=(5.03,1.03,0.32)"}
+{"wall_time": "2026-10-15T18:27:07.929+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:27:08.000+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=12.363 anchor=(5.03,1.03,0.32)"}
+{"wall_time": "2026-10-15T18:27:08.930+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:27:09.001+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=12.664 anchor=(5.03,1.03,0.32)"}
+{"wall_time": "2026-10-15T18:27:09.932+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[TargetTracker]: No target detected, publishing INVALID target"}
+{"wall_time": "2026-10-15T18:27:10.002+00:00", "event": "rosout", "level": 4, "name": "/llm_mission_node", "message": "[VisualServo]: Target lost. Position-held search yaw=12.964 anchor=(5.03,1.03,0.32)"}
+{"wall_time": "2026-10-15T18:27:10.853+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[TargetTracker]: Halted, entering hover mode."}
+{"wall_time": "2026-10-15T18:27:10.854+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[TargetTracker]: Maintaining hover at (5.04, 1.14, 0.30) yaw: 0.57"}
+{"wall_time": "2026-10-15T18:27:10.854+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[VisualServo]: Halted, entering hover mode."}
+{"wall_time": "2026-10-15T18:27:10.854+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[VisualServo]: Maintaining hover at (5.04, 1.14, 0.30) yaw: 0.57"}
+{"wall_time": "2026-10-15T18:27:10.863+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[GoTo]: GoTo start -> target: (0.00, 0.00, 0.50), yaw: 0.00, frame: 0, tol: 0.15, yaw_tol: 0.15, yaw_rate: 0.50"}
+{"wall_time": "2026-10-15T18:27:10.863+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] odom=(5.04,1.14,0.30) target=(0.00,0.00,0.50) dist=5.168 tol=0.15"}
+{"wall_time": "2026-10-15T18:27:12.274+00:00", "event": "rosout", "level": 2, "name": "/object_detection_node", "message": "[ColorClassify] red=0 blue=663 purple=0 -> blue"}
+{"wall_time": "2026-10-15T18:27:12.864+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] odom=(-0.42,-0.02,0.30) target=(0.00,0.00,0.50) dist=0.468 tol=0.15"}
+{"wall_time": "2026-10-15T18:27:13.269+00:00", "event": "rosout", "level": 8, "name": "/llm_mission_node", "message": "[SafetyRecovery] ENTER DRONE OUT OF BOUNDARY"}
+{"wall_time": "2026-10-15T18:27:13.270+00:00", "event": "rosout", "level": 8, "name": "/llm_mission_node", "message": "[SafetyRecovery] current position = (-1.12, -0.19, 0.33)"}
+{"wall_time": "2026-10-15T18:27:13.270+00:00", "event": "rosout", "level": 8, "name": "/llm_mission_node", "message": "[SafetyRecovery] target = (-0.70, -0.19, 0.33), target_margin=0.30 m"}
+{"wall_time": "2026-10-15T18:27:14.866+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] odom=(-1.30,-0.32,0.22) target=(0.00,0.00,0.50) dist=1.365 tol=0.15"}
+{"wall_time": "2026-10-15T18:27:15.949+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[SafetyRecovery] RELEASE confirmation started: margin=0.15 m, duration=0.50 s"}
+{"wall_time": "2026-10-15T18:27:16.469+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[SafetyRecovery] COMPLETE recovery duration = 3.200 s; latest command control resumed; Drone returned to safe area."}
+{"wall_time": "2026-10-15T18:27:16.867+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] odom=(-0.71,-0.10,0.33) target=(0.00,0.00,0.50) dist=0.737 tol=0.15"}
+{"wall_time": "2026-10-15T18:27:18.454+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[checkArrival] yaw_diff=(0.06) target=(0.00) current=(-0.06) yaw_tolerance=(0.15)    "}
+{"wall_time": "2026-10-15T18:27:18.454+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[GoTo]: GoTo completed (pos & yaw)."}
+{"wall_time": "2026-10-15T18:27:18.454+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[GoTo]: Maintaining hover at (-0.11, 0.06, 0.47) yaw: -0.06"}
+{"wall_time": "2026-10-15T18:27:18.466+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[Land]: Requesting mode AUTO.LAND"}
+{"wall_time": "2026-10-15T18:27:18.478+00:00", "event": "rosout", "level": 4, "name": "/mavros", "message": "CMD: Unexpected command 176, result 0"}
+{"wall_time": "2026-10-15T18:27:22.474+00:00", "event": "rosout", "level": 2, "name": "/object_detection_node", "message": "[ColorClassify] red=0 blue=39 purple=211 -> purple"}
+{"wall_time": "2026-10-15T18:27:23.570+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "[Land]: Landed and disarmed."}
+{"wall_time": "2026-10-15T18:27:23.580+00:00", "event": "rosout", "level": 2, "name": "/llm_mission_node", "message": "=== LLM Mission Completed (status: SUCCESS) ==="}

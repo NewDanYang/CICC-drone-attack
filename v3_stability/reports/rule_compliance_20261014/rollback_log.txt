@@ -1,0 +1,8 @@
+armed: False
+4b0ae381b683b7c38d30baf808ed1346  /home/ubuntu/model/mission_once.py
+0f15e84bdaed68c85d3b6b6ee5e33788  /home/ubuntu/catkin_ws/src/mission_pkg/scripts/aruco_detect_node.py
+9eda726899abaf4f951f6b03a08c11ad  /home/ubuntu/catkin_ws/src/object_det/scripts/det_color.py
+restored; restart the simulation environment
+4b0ae381b683b7c38d30baf808ed1346  /home/ubuntu/model/mission_once.py
+0f15e84bdaed68c85d3b6b6ee5e33788  /home/ubuntu/catkin_ws/src/mission_pkg/scripts/aruco_detect_node.py
+9eda726899abaf4f951f6b03a08c11ad  /home/ubuntu/catkin_ws/src/object_det/scripts/det_color.py

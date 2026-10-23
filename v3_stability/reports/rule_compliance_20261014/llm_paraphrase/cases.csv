@@ -1,0 +1,21 @@
+case_id,category,samples,passed,accuracy,p50_s,p95_s,failure_classes
+full_red,full,3,3,1.0,6.066,6.0975,{}
+full_purple,full,3,3,1.0,6.15,6.2373,{}
+step_takeoff,single_step,3,1,0.3333333333333333,0.816,2.6898,"{""no_command_block"": 2}"
+step_cross,single_step,3,0,0.0,0.717,0.8358,"{""no_command_block"": 3}"
+step_aruco,single_step,3,3,1.0,2.413,2.4337,{}
+step_return,single_step,3,2,0.6666666666666666,3.547,3.6541,"{""steps_missing_or_extra"": 1}"
+step_hit,single_step,3,3,1.0,2.906,3.1346000000000003,{}
+step_land,single_step,3,0,0.0,2.791,2.8801,"{""steps_missing_or_extra"": 3}"
+red_short,color_wording,3,2,0.6666666666666666,2.368,2.7937000000000003,"{""no_command_block"": 1}"
+red_de,color_wording,3,3,1.0,2.858,2.9228,{}
+red_yanse,color_wording,3,0,0.0,5.722,5.8687,"{""steps_missing_or_extra"": 3}"
+purple_verb,color_wording,3,2,0.6666666666666666,2.869,5.5123,"{""steps_missing_or_extra"": 1}"
+blue_ball,color_wording,3,0,0.0,5.751,5.9742,"{""steps_missing_or_extra"": 3}"
+red_context,color_wording,3,3,1.0,1.186,3.0571,{}
+area_a_only,area_no_color,3,0,design_unresolved,3.249,3.3308999999999997,"{""area_no_color"": 3}"
+area_b_only,area_no_color,3,0,design_unresolved,3.106,3.7765,"{""area_no_color"": 3}"
+distractor_color,distractor,3,0,0.0,6.505,6.7462,"{""steps_missing_or_extra"": 3}"
+negative_takeoff,distractor,3,3,1.0,2.442,2.532,{}
+english_blue,english,3,1,0.3333333333333333,0.898,0.961,"{""no_command_block"": 2}"
+mixed_purple,english,3,2,0.6666666666666666,5.75,5.7635,"{""no_command_block"": 1}"

@@ -1,0 +1,11 @@
+--- src/mission_pkg/src/bt_ros.cpp
++++ src/mission_pkg/src/bt_ros.cpp.patched
+@@ -348,6 +348,8 @@
+             getDbl("visual_servo/forward_velocity", 1.0));
+         std::string vs_sprint_v = std::to_string(color == "blue" ?
+             getDbl("visual_servo/blue_sprint_velocity", 1.0) :
++            color == "purple" ?
++            getDbl("visual_servo/purple_sprint_velocity", 0.6) :
+             getDbl("visual_servo/sprint_velocity", 1.5));
+         std::string vs_sprint_t = std::to_string(getDbl("visual_servo/sprint_time", 1.2));
+         

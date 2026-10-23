@@ -1,0 +1,54 @@
+{
+  "utc": "2026-10-18T16:57:55.158323+00:00",
+  "before": {
+    "wall_time": "2026-10-18T16:57:39.410724+00:00",
+    "source": "ue_console_obj_list",
+    "sim_pid": 3171,
+    "log_path": "/home/ubuntu/PX4PSP/RflySimUE5/RflySim3D/Saved/Logs/RflySim3D.log",
+    "log_inode": 131452,
+    "log_byte_range": [
+      205551,
+      207461
+    ],
+    "actor_ids": [
+      "BP_Balloon_C_2147481416",
+      "BP_Balloon_C_2147481418",
+      "BP_Balloon_C_2147481421"
+    ],
+    "reported_count": 3,
+    "raw_lines": [
+      "Obj List: class=BP_Balloon_C",
+      "[2026.10.18-16.57.39:224][916]                              BP_Balloon_C /Game/RobotMissionChallenge/Map/ChallengeMap.ChallengeMap:PersistentLevel.BP_Balloon_C_2147481418       0.76       0.76       0.00            0.00            0.00            0.00",
+      "[2026.10.18-16.57.39:224][916]                              BP_Balloon_C /Game/RobotMissionChallenge/Map/ChallengeMap.ChallengeMap:PersistentLevel.BP_Balloon_C_2147481416       0.76       0.76       0.00            0.00            0.00            0.00",
+      "[2026.10.18-16.57.39:224][916]                              BP_Balloon_C /Game/RobotMissionChallenge/Map/ChallengeMap.ChallengeMap:PersistentLevel.BP_Balloon_C_2147481421       0.76       0.76       0.00            0.00            0.00            0.00",
+      "[2026.10.18-16.57.39:224][916]                                                                                         BP_Balloon_C        3       2.27       2.27       0.00            0.00            0.00            0.00"
+    ]
+  },
+  "after": {
+    "wall_time": "2026-10-18T16:57:55.158230+00:00",
+    "source": "ue_console_obj_list",
+    "sim_pid": 3171,
+    "log_path": "/home/ubuntu/PX4PSP/RflySimUE5/RflySim3D/Saved/Logs/RflySim3D.log",
+    "log_inode": 131452,
+    "log_byte_range": [
+      298588,
+      300613
+    ],
+    "actor_ids": [
+      "BP_Balloon_C_2147481416",
+      "BP_Balloon_C_2147481418",
+      "BP_Balloon_C_2147481421"
+    ],
+    "reported_count": 3,
+    "raw_lines": [
+      "Obj List: class=BP_Balloon_C",
+      "[2026.10.18-16.57.54:779][301]                              BP_Balloon_C /Game/RobotMissionChallenge/Map/ChallengeMap.ChallengeMap:PersistentLevel.BP_Balloon_C_2147481418       0.76       0.76       0.00            0.00            0.00            0.00",
+      "[2026.10.18-16.57.54:779][301]                              BP_Balloon_C /Game/RobotMissionChallenge/Map/ChallengeMap.ChallengeMap:PersistentLevel.BP_Balloon_C_2147481416       0.76       0.76       0.00            0.00            0.00            0.00",
+      "[2026.10.18-16.57.54:779][301]                              BP_Balloon_C /Game/RobotMissionChallenge/Map/ChallengeMap.ChallengeMap:PersistentLevel.BP_Balloon_C_2147481421       0.76       0.76       0.00            0.00            0.00            0.00",
+      "[2026.10.18-16.57.54:779][301]                                                                                         BP_Balloon_C        3       2.27       2.27       0.00            0.00            0.00            0.00"
+    ]
+  },
+  "samples": 12,
+  "interval_s": 0.75,
+  "scene_unchanged": true
+}

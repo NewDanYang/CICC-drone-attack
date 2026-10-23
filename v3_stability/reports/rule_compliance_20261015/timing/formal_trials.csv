@@ -1,0 +1,10 @@
+trial_dir,color,run_id,window_s,callbacks,decode_fail,total_time_s,takeoff,cross_frame,detect_aruco,return_cross_frame,hit_balloon,land,mission_success,boundary_violation_count,proxy_hit,removed_count
+20261015T111300_red_A0,red,20261015T111305_b69697,0.156,1,0,137.905,success,success,success,success,,success,false,0,,
+20261015T111645_purple_A0,purple,20261015T111649_6052de,0.146,1,0,139.502,success,success,success,success,,success,false,1,,
+20261015T112020_blue_A0,blue,20261015T112024_654787,0.096,1,0,144.839,success,success,success,success,,success,false,1,,
+20261015T112535_red_A0,red,20261015T112539_dea38c,0.309,3,0,94.801,success,success,success,success,success,success,true,0,,
+20261015T113449_purple_A0,purple,20261015T113453_e02daa,0.146,1,0,116.628,success,success,success,success,success,success,true,2,,
+20261015T113904_blue_A0,blue,20261015T113908_4a32ed,0.349,3,0,114.969,success,success,success,success,success,success,true,1,,
+20261015T114855_red_A0,red,20261015T114900_b0db7f,0.116,2,0,141.731,success,success,success,success,,success,false,0,,
+20261015T115200_purple_A0,purple,20261015T115205_a9973c,0.337,3,0,96.335,success,success,success,success,success,success,true,2,,
+20261015T115511_blue_A0,blue,20261015T115516_993c66,0.147,1,0,138.894,success,success,success,success,,success,false,2,,

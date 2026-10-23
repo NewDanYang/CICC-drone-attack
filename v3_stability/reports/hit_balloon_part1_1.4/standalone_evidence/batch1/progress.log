@@ -1,0 +1,9 @@
+1_red_1: trial starting; actors=3 sim_pid=381876
+1_red_1: trial_dir=/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261016T023625_red_A0 runner_rc=1 before=3 settled=2 frames=155 valid=1
+2_red_1: found 2 actors; resetting scene
+2_red_1: trial starting; actors=3 sim_pid=397085
+2_red_1: trial_dir=/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261016T024230_red_A0 runner_rc=1 before=3 settled=2 frames=150 valid=1
+3_red_1: found 2 actors; resetting scene
+3_red_1: trial starting; actors=3 sim_pid=412253
+3_red_1: trial_dir=/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261016T024830_red_A0 runner_rc=1 before=3 settled=2 frames=160 valid=1
+complete: 3 valid three-actor trials per requested color

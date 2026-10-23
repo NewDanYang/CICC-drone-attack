@@ -42,10 +42,39 @@ if [[ "${TCEI_CAPTURE_REAL_FRAMES:-0}" == 1 ]]; then
   fi
 fi
 
+gc_session=""
+gc_pid=""
+if [[ "${TCEI_GC_CONTINUOUS:-0}" == 1 ]]; then
+  gc_session="$session/gc_continuous"
+  mkdir -p "$gc_session"
+  /usr/bin/python3 "$tools/gc_timing_probe.py" "$gc_session" \
+    --mode continuous --interval 1.5 --duration 600 \
+    --stop-file "$gc_session/stop" > "$gc_session/monitor.log" 2>&1 &
+  gc_pid="$!"
+  for ((i=0; i<60; i++)); do
+    [[ -e "$gc_session/ready" ]] && break
+    kill -0 "$gc_pid" 2>/dev/null || break
+    sleep 0.5
+  done
+  if [[ ! -e "$gc_session/ready" ]]; then
+    echo "continuous GC monitor failed; see $gc_session/monitor.log" >&2
+    [[ -n "$capture_pid" ]] && kill -TERM "$capture_pid" 2>/dev/null || true
+    exit 8
+  fi
+fi
+
 set +e
 bash "$runner" "$color" 2>&1 | tee "$session/formal_runner.out"
 trial_rc="${PIPESTATUS[0]}"
 set -e
+if [[ -n "$gc_pid" ]]; then
+  # Allow the last collision to be collected before the ordinary `after`
+  # snapshot. Both control and treatment use this identical measurement path.
+  sleep 3
+  touch "$gc_session/stop"
+  wait "$gc_pid" || { echo "continuous GC monitor exited with error" >&2; exit 8; }
+  [[ "$(cat "$gc_session/exit_code")" == 0 ]] || exit 8
+fi
 if [[ -n "$capture_pid" ]]; then
   kill -TERM "$capture_pid" 2>/dev/null || true
   wait "$capture_pid" 2>/dev/null || true
@@ -98,6 +127,9 @@ cp "$session/formal_runner.out" "$trial_dir/scene_runner.out"
 if [[ -d "$session/real_frames" ]]; then
   mv "$session/real_frames" "$trial_dir/real_frames"
   cp "$session/frame_capture.out" "$trial_dir/frame_capture.out"
+fi
+if [[ -n "$gc_session" ]]; then
+  cp -r "$gc_session" "$trial_dir/gc_continuous"
 fi
 python3 "$tools/judge_hit.py" "$trial_dir" | tee "$session/judgement.json"
 cp "$session/judgement.json" "$trial_dir/judgement.json"

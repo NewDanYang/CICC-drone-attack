@@ -1,0 +1,2 @@
+case_id,category,samples,passed,accuracy,p50_s,p95_s,failure_classes
+distractor_color,distractor,8,8,1.0,2.8754999999999997,3.43815,{}

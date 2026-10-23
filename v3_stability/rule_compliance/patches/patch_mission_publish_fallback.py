@@ -1,0 +1,250 @@
+"""Make mission_once.py never end a match by publishing nothing, and catch the
+LLM silently expanding one requested action into extra, unrequested stages.
+
+Rule 4.2(1): if the drone has not moved 5 min after the start signal the
+round is over.  The 2026-10-12 color guard (md5 4b0ae381) returns None after
+two mismatched answers, and a reply without a ```command block was always
+dropped, so one bad LLM sample could cost the whole round (0 points) instead
+of only the balloon stage (25 points).
+
+v2 (2026-10-15): the 2026-10-14 on-server paraphrase test (20 phrasings x 3
+samples, see v3_stability/reports/rule_compliance_20261014/) found the v1
+color/unknown-command checks blind to a second failure mode: a single-action
+instruction ("撞破蓝色球。", "不要碰蓝色气球，扎破红色的气球。") made the model
+emit the FULL six-step mission instead of the one requested command, 9/9
+times across three phrasings -- and because the color inside that six-step
+answer happened to be correct, v1's color check passed it as-is. Similarly
+"返回起点并降落。" got a spurious return_cross_frame prepended to land, 3/3
+times. v2 adds a narrow heuristic (single_action_problems) that only fires
+when the instruction mentions a balloon (or landing) and none of the other
+stage keywords, and demands exactly the one matching command in that case.
+This is paired with v3_stability/rule_compliance/patches/
+patch_mission_prompt_paraphrase_examples.py, which adds few-shot examples for
+exactly these phrasings -- the prompt fix should mean this check rarely has
+to intervene; it exists as a backstop for phrasings the new examples don't
+cover.
+
+v3 (2026-10-15, real-model verification): live testing of v2 (20 phrasings x
+3-5 samples, see v3_stability/reports/rule_compliance_20261015_v3/) found
+the fallback ranking itself had a bug. "distractor_color" ("不要碰蓝色气球，
+扎破红色的气球。") retried three times, each flagged with exactly one
+problem (steps_likely_extra) -- but one of those three answers was
+"detect_aruco\nland" with NO hit_balloon line at all, while the other two
+did contain the correct "hit_balloon:red" alongside extra steps. The old
+rank (unknown_count, problem_count) scored all three as tied, so the
+fallback kept whichever came first regardless of whether it actually
+contained the requested balloon command -- in this run that meant publishing
+the one answer that would have scored zero on the 25-point balloon stage,
+while two strictly better answers sat right next to it. v3 adds
+balloon_command_missing() as the first ranking key: for an instruction that
+is clearly about hitting a balloon, an answer with zero hit_balloon lines
+now always loses to one that has any (or, when a specific color is known,
+the right one), no matter how many extra steps the latter has around it
+(extra steps risk re-running an earlier stage; a missing balloon command
+guarantees losing the stage outright). This is keyed on the instruction
+text itself, not on `expected`, because expected_balloon_color() returns
+None on purpose for a distractor instruction naming two colors -- exactly
+the case this bug was found in.
+
+This patch keeps the LLM as the only source of commands (rule: 九格 semantic
+parsing is mandatory; no hand-written composite interface) and only changes
+how its answers are checked and retried:
+  * every answer is checked for a command block, known command names, the
+    balloon color named in the instruction, and (v2) whether it adds
+    stages the instruction never asked for;
+  * up to MISSION_MAX_ATTEMPTS answers (default 3) within
+    MISSION_RETRY_BUDGET_S seconds (default 60) are tried;
+  * if none is fully valid, the closest answer is published verbatim instead
+    of nothing, with a log line saying why -- preferring (v3) one that still
+    contains the requested balloon command over one that does not.
+
+Usage: python patch_mission_publish_fallback.py SOURCE OUTPUT [BACKUP_DIR]
+"""
+import hashlib
+import pathlib
+import shutil
+import sys
+
+EXPECTED_MD5 = "4b0ae381b683b7c38d30baf808ed1346"
+
+OLD_START = "def expected_balloon_color(task):"
+OLD_END = "\n\ndef main():\n"
+
+NEW_BLOCK = '''# mission_publish_fallback_v1: check and retry LLM answers, never publish nothing.
+VALID_COMMANDS = ("takeoff", "cross_frame", "detect_aruco", "return_cross_frame", "land")
+BALLOON_COLORS = ("red", "purple", "blue")
+MAX_ATTEMPTS = max(1, int(os.environ.get("MISSION_MAX_ATTEMPTS", "3")))
+RETRY_BUDGET_S = float(os.environ.get("MISSION_RETRY_BUDGET_S", "60"))
+COLOR_NAMES = {"red": "红", "purple": "紫", "blue": "蓝"}
+
+
+def expected_balloon_color(task):
+    """Only enforce a color when the instruction names exactly one."""
+    names = {"红": "red", "紫": "purple", "蓝": "blue"}
+    colors = {names[m.group(1)] for m in re.finditer(r"([红紫蓝])(?:颜?色)?(?:的)?气球", task)}
+    colors.update(m.group(1).lower() for m in re.finditer(
+        r"\\b(red|purple|blue)\\s+balloon\\b", task, re.IGNORECASE))
+    return next(iter(colors)) if len(colors) == 1 else None
+
+
+def command_balloon_colors(commands):
+    """Return every hit_balloon target found in the command block."""
+    return re.findall(r"(?m)^\\s*hit_balloon\\s*:\\s*([a-zA-Z]+)\\s*$", commands or "")
+
+
+# Catches the LLM expanding one requested action into the full six-step
+# mission. Deliberately narrow: each rule only fires when the instruction
+# mentions ONE family of stage keywords and none of the others, so a genuine
+# multi-step instruction (which will mention more than one family) is never
+# second-guessed. Evaluated against the ORIGINAL instruction text, never the
+# retry-augmented prompt (which lists every command name, including the
+# substring "aruco", and would otherwise always look like a multi-stage ask).
+_BALLOON_MENTION = re.compile(r"(red|purple|blue|红|紫|蓝).{0,4}(balloon|气球|球)", re.IGNORECASE)
+_OTHER_STAGE_FOR_BALLOON_ONLY = re.compile(
+    r"起飞|升空|take\\s*off|框|二维码|aruco|降落|land|穿|逆序|反向|原路", re.IGNORECASE)
+_LAND_MENTION = re.compile(r"降落|land", re.IGNORECASE)
+_OTHER_STAGE_FOR_LAND_ONLY = re.compile(
+    r"起飞|升空|take\\s*off|框|二维码|aruco|气球|balloon|球|穿|逆序|反向|原路", re.IGNORECASE)
+
+
+def single_action_problems(commands, task):
+    actual = [line.strip() for line in (commands or "").splitlines() if line.strip()]
+    problems = []
+    if _BALLOON_MENTION.search(task) and not _OTHER_STAGE_FOR_BALLOON_ONLY.search(task):
+        if len(actual) != 1 or not actual[0].startswith("hit_balloon"):
+            problems.append("steps_likely_extra: instruction names only the balloon stage")
+    if _LAND_MENTION.search(task) and not _OTHER_STAGE_FOR_LAND_ONLY.search(task):
+        if actual != ["land"]:
+            problems.append("steps_likely_extra: instruction names only the landing stage")
+    return problems
+
+
+def balloon_command_missing(commands, task, expected):
+    """1 when the task is clearly about hitting a balloon but the answer has
+    no hit_balloon line at all (or, when a specific color IS known, the
+    wrong one); 0 otherwise, including tasks that are not about a balloon.
+
+    Deliberately keyed on _BALLOON_MENTION (any color word near "balloon"),
+    not on `expected`: a distractor instruction like "不要碰蓝色气球，扎破
+    红色的气球。" names two colors, so expected_balloon_color() returns None
+    by design (ambiguous -> don't enforce a specific color) -- but the
+    instruction is still unambiguously about hitting SOME balloon, and an
+    answer with zero hit_balloon lines is strictly worse than one with any.
+    """
+    if not _BALLOON_MENTION.search(task):
+        return 0
+    targets = command_balloon_colors(commands)
+    if not targets:
+        return 1
+    if expected is not None and expected not in targets:
+        return 1
+    return 0
+
+
+def command_problems(commands, expected, task=""):
+    """List what is wrong with one answer; an empty list means publishable as-is."""
+    if not commands:
+        return ["no ```command block"]
+    problems = []
+    for line in commands.splitlines():
+        cmd = line.strip()
+        if not cmd or cmd in VALID_COMMANDS:
+            continue
+        m = re.fullmatch(r"hit_balloon\\s*:\\s*([a-zA-Z]+)", cmd)
+        if not (m and m.group(1) in BALLOON_COLORS):
+            problems.append("unknown command " + repr(cmd))
+    if expected is not None:
+        targets = command_balloon_colors(commands)
+        if targets != [expected]:
+            problems.append(f"color mismatch: task={expected}, commands={targets}")
+    problems.extend(single_action_problems(commands, task))
+    return problems
+
+
+def retry_prompt(task, expected):
+    hint = ("\\n请重新生成完整命令，放在一个 ```command 代码块中，每行一条，只能使用："
+            "takeoff、cross_frame、detect_aruco、return_cross_frame、"
+            "hit_balloon:red/purple/blue、land。只输出用户在这句话里明确要求的动作，"
+            "不要自行补充没有提到的步骤。")
+    if expected is not None:
+        hint += ("任务明确要求打击" + COLOR_NAMES[expected] +
+                 "色气球，命令必须且只能包含 hit_balloon:" + expected + "。")
+    return task + hint
+
+
+def generate_validated_commands(model, tokenizer, base_msgs, task):
+    expected = expected_balloon_color(task)
+    deadline = time.monotonic() + RETRY_BUDGET_S
+    best, best_rank = None, None
+    for attempt in range(MAX_ATTEMPTS):
+        prompt = task if attempt == 0 else retry_prompt(task, expected)
+        commands = generate_commands(model, tokenizer, base_msgs, prompt)
+        problems = command_problems(commands, expected, task)
+        if not problems:
+            return commands
+        print(f"[命令校验] 第{attempt + 1}次生成不合格：{'; '.join(problems)}", flush=True)
+        if commands:
+            # v3 (2026-10-15 real-model verification, distractor_color case):
+            # rank by whether a balloon command is present FIRST, when the
+            # task is about hitting a balloon at all. Before this, three
+            # retries that all had exactly one problem ("steps_likely_extra")
+            # ranked as ties, so the fallback kept whichever came first --
+            # even when it was "detect_aruco; land" with no hit_balloon line
+            # at all, while a later retry that merely had extra steps around
+            # a correct "hit_balloon:red" lost the tie-break. Missing the
+            # balloon command entirely costs the full 25-point stage; extra
+            # steps around a correct one do not. balloon_command_missing()
+            # keys on the task text itself (not on `expected`, which is
+            # deliberately None for distractor instructions that name two
+            # colors), so it still fires for exactly that case.
+            # Unknown commands are skipped by bt_ros, a wrong color only loses
+            # the balloon stage: prefer the answer with fewer unknown commands.
+            rank = (balloon_command_missing(commands, task, expected),
+                    sum(p.startswith("unknown") for p in problems), len(problems))
+            if best_rank is None or rank < best_rank:
+                best, best_rank = commands, rank
+        if time.monotonic() >= deadline:
+            print("[命令校验] 重试时间预算用完", flush=True)
+            break
+    if best is not None:
+        print("[命令校验] 没有完全合格的输出；按原样发布最接近的一次，"
+              "避免开赛 5 分钟内无人机未动导致本轮结束", flush=True)
+    return best
+'''
+
+
+def patch(source: bytes) -> bytes:
+    if hashlib.md5(source).hexdigest() != EXPECTED_MD5:
+        raise ValueError("mission_once.py MD5 differs from the 2026-10-12 color-guard version; no changes made")
+    text = source.decode("utf-8")
+    newline = "\r\n" if "\r\n" in text else "\n"
+    text = text.replace("\r\n", "\n")
+    if "mission_publish_fallback_v1" in text:
+        raise ValueError("patch already present; no changes made")
+    start = text.find(OLD_START)
+    end = text.find(OLD_END, start)
+    if start < 0 or end < 0 or text.count(OLD_START) != 1:
+        raise ValueError("validation block not found exactly once; no changes made")
+    text = text[:start] + NEW_BLOCK + text[end:]
+    if text.count("\nimport re\n") != 1:
+        raise ValueError("import anchor not found; no changes made")
+    text = text.replace("\nimport re\n", "\nimport re\nimport time\n", 1)
+    return text.replace("\n", newline).encode("utf-8")
+
+
+if __name__ == "__main__":
+    source = pathlib.Path(sys.argv[1])
+    output = pathlib.Path(sys.argv[2])
+    original = source.read_bytes()
+    patched = patch(original)
+    if len(sys.argv) > 3:
+        backup_dir = pathlib.Path(sys.argv[3])
+        backup_dir.mkdir(parents=True, exist_ok=False)
+        shutil.copy2(source, backup_dir / "mission_once.py")
+        (backup_dir / "restore.sh").write_text(
+            "#!/usr/bin/env bash\nset -e\n"
+            f"cp -p \"{(backup_dir / 'mission_once.py').resolve()}\" \"{source.resolve()}\"\n"
+            f"md5sum \"{source.resolve()}\"  # expect {EXPECTED_MD5}\n",
+            encoding="utf-8")
+    output.write_bytes(patched)
+    print(f"{EXPECTED_MD5} -> {hashlib.md5(patched).hexdigest()}")

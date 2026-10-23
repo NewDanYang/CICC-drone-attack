@@ -1,0 +1,4 @@
+{"module_md5": "e7bb1627c1833ae877c588dab1c80a86", "prompt": "去打A区的气球", "expected": null, "actual": null, "passed": true}
+{"module_md5": "e7bb1627c1833ae877c588dab1c80a86", "prompt": "别碰蓝色气球，扎破红色的气球", "expected": null, "actual": null, "passed": true}
+{"module_md5": "e7bb1627c1833ae877c588dab1c80a86", "prompt": "扎破红色的气球", "expected": "red", "actual": "red", "passed": true}
+{"module_md5": "e7bb1627c1833ae877c588dab1c80a86", "prompt": "hit the blue balloon", "expected": "blue", "actual": "blue", "passed": true}

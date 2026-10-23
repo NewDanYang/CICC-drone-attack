@@ -1,0 +1,9 @@
+[20261015T152112_red_A0]
+/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261015T152112_red_A0/20261015T152116_28ff1f_red_telemetry.jsonl
+/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261015T152112_red_A0/logs/20261015T152116_28ff1f_red.jsonl
+[20261015T152716_purple_A0]
+/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261015T152716_purple_A0/logs/20261015T152720_cc1d1e_purple.jsonl
+/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261015T152716_purple_A0/20261015T152720_cc1d1e_purple_telemetry.jsonl
+[20261015T153321_blue_A0]
+/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261015T153321_blue_A0/20261015T153326_bc57af_blue_telemetry.jsonl
+/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261015T153321_blue_A0/logs/20261015T153326_bc57af_blue.jsonl
