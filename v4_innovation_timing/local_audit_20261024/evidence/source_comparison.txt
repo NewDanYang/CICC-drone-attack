@@ -1,0 +1,768 @@
+2026-10-24 本地源码对照摘录；行号对应本次固定提交或封存原件。
+
+=== 创新草稿中的相关表述 ===
+来源: v4_innovation_timing/innovation_nodes_draft.md
+SHA256: b1dd85665d90006acd8b5faa2e4a5b2bd15281cb31548976ae087d7160a63915
+0026: ## 候选节点（按证据扎实程度排序）
+0027: 
+0028: ### 1. 安全边界恢复死锁修复（`mavros_cnt.cpp`）—— 证据最扎实
+0029: 
+0030: **问题**：官方原始边界恢复逻辑只有一个边界余量参数，导致恢复目标点恰好落在"判定已恢复"
+0031: 的边界线上——测量噪声会让这条判定线永远够不到，恢复状态永久卡住，直接拖到 300 秒超时，
+0032: 整轮损失气球(25)+降落(5)共 30 分。根因与验证见记忆文件
+0033: `tcei-safety-recovery-deadlock.md`（2026-10-06 确认）。
+0034: 
+0035: **方案**：解耦成两个独立余量——`recovery_target_margin`（0.30）决定恢复目标点位置，
+0036: `release_margin`（0.15）决定判定恢复完成的边界，`0.30 > 0.15` 使目标点明确落在判定线内侧，
+0037: 恢复可以真正锁定完成。
+0038: 
+0039: **实测数据**：故意把 `safety/y_max` 收紧到 1.5（制造必然触发恢复、但所有正常航点仍可达的
+0040: 测试条件），旧代码下恢复状态永远卡住、判定重置、最终 300 秒超时；新代码下 3/3 次触发恢复
+0041: **全部成功完成**（2.00–4.92 秒），全程越界 3 次仍跑出 `mission_success=true`（142.7 秒）。
+0042: 
+0043: **MD5 现状**：`mavros_cnt.cpp` = `edcd9397074f44c6028c8dca02902920`（与封存报告一致）。
+0044: 
+0045: **与官方原始代码的对比缺口**：**没有**——这条有明确的"旧逻辑 vs 新逻辑"对照，旧逻辑就是
+0046: 官方原始的单余量实现，不是我们自己的某个中间版本，这是八条里唯一不需要额外补课的一条。
+
+0092: 
+0093: ### 4. 红区气球接近改为感知驱动朝向（`bt_ros.cpp`，A-v4）
+0094: 
+0095: **问题**：官方原始行为树给红区气球接近一段硬编码朝向角（`yaw=π`）和专属接近高度，属于
+0096: 规则里"禁止预设位置点/轨迹点盲飞"条款的灰色地带（虽然经问询主办方确认沿用/手调官方坐标
+0097: 本身不算违规，但去掉硬编码朝向、改成运行时感知决策，是更干净、也更贴合规则鼓励方向的方案）。
+0098: 
+0099: **方案**：红区 `GoTo` 不再携带固定 `yaw`，保留当前朝向到达接近点，由 `VisualServo` 已有的
+0100: "目标丢失→原地扫描寻回"逻辑在到位后自行找到并对准目标色气球。
+0101: 
+0102: **实测数据**：独立验证批次红球 5/5 正确击破（断线前 2 局 + 恢复后 3 局），1/5 越界；
+0103: 去掉预设朝向后击破率没有下降（`hit_balloon_part1_1.6/REPORT.md` 单变量 D-v4）。
+0104: 
+0105: **MD5 现状**：`bt_ros.cpp` = `9b1cefe9dfa431418435f7f8f63a60ed`（含 A-v4 及后续 B-v3/
+0106: 蓝球返航等多项改动的累积字节，不是单独只含这一项的版本——见下方"重要限制"）。
+0107: 
+0108: **与官方原始代码的对比缺口**：**有，而且是本条最大的风险点**——击破率"没有下降"这个结论
+0109: 的参照系是"去掉预设朝向之前的我们自己的候选"，不是官方原始代码的红区击破率。另外规则
+0110: 对"预设位置点"本身的审查门槛是"裁判觉得飞行不平稳才会查源码"，这条修复更多是主动防御性
+
+0142: 
+0143: **问题**：击球完成后直接给一个远距离原点作为 `GoTo` 目标，无人机会以接近全速冲向这个
+0144: 远点，容易在返航途中冲出安全边界（历史上多次越界发生在"击破后返航"阶段，而不是接近或
+0145: 冲刺阶段本身）。
+0146: 
+0147: **方案**：给降落阶段生成的返航 `GoTo` 节点加一个 `setpoint_lookahead`（0.6 米）参数：
+0148: 每次最多向当前位置前方 0.6 米发布一个位置设定点，但仍以真正的原点作为到达判据，其余
+0149: `GoTo` 节点默认行为不变。
+0150: 
+0151: **实测数据**：同一批蓝球独立试验里，未限距的两局最大飞行距离 5.595、5.931 米，限距后
+0152: 三局降到 0.788、1.025、0.831 米（`hit_balloon_part1_1.6/REPORT.md` 候选 E，用同一批
+0153: 遥测对照脚本算出）。
+0154: 
+0155: **MD5 现状**：`goto.cpp` = `f557ace5bbf2ee7975b7335a738ffcf9`。
+0156: 
+0157: **与官方原始代码的对比缺口**：**没有**——官方原始返航逻辑就是"直接给远点"，这组对照数据
+0158: 里"未限距"那两局用的正是官方原始的返航生成方式，不是我们自己的某个中间版本。
+0159: 
+0160: ---
+0161: 
+0162: ### 7. 蓝球近距离丢失提前判定完成（`visual_servo.cpp`，B/F/G/J 链）
+0163: 
+0164: **问题**：官方原始 `VisualServo` 在目标丢失后固定搜索最长 50 秒（`bt_ros.cpp` 里
+0165: `<Timeout msec="50000">` 包裹的整个击球并行节点），即使无人机已经贴近气球、很可能是
+0166: 撞击后镜头暂时失焦导致的"丢失"，仍然傻等满 50 秒的搜索窗口。
+0167: 
+0168: **方案**：加一个"近距离丢失提前判定完成"的分支——仅当历史最大目标面积达到接近阈值的
+0169: 一定比例、且丢失发生在很短时间内（≤0.25 秒超时）才触发，悬停并直接返回成功，不再傻等。
+0170: 阈值经过一轮收紧（从最初版本到最终 `>=0.30` 历史最大面积比），因为最初版本在一次真实
+0171: 试验里对尚未真正接近目标的局也误触发了（漏击），说明**这条修复本身也是靠真实反例迭代
+0172: 出来的**，不是一次成型。
+0173: 
+0174: **实测数据**：阈值收紧后独立三局蓝球验证 3/3 正确击破、0 越界、0 漏击
+0175: （`hit_balloon_part1_1.6/REPORT.md` 候选 G）；叠加"冲刺后目标仍可见则重新对准"分支
+0176: （候选 J）后未观测到退化。
+0177: 
+0178: **MD5 现状**：随 `visual_servo.cpp` 整体封存字节（`a63b57fa127a23cd8bb8e647f078ff21`）。
+0179: 
+0180: **与官方原始代码的对比缺口**：**没有**——官方原始逻辑就是"丢失后固定搜索满 50 秒"，
+0181: 这正是我们在上面第三部分的用时分析里发现的、拖慢 `hit_balloon` 阶段的最大单一因素
+
+
+=== 官方快照：越界锁定当前位置悬停 ===
+来源: official_baseline/catkin_ws/src/mission_pkg/src/mavros_cnt.cpp
+SHA256: d2ccbedf6a9cd05f01a79a04117730a80827eaed95b0366b3c9f1692d0e5a0b8
+0067:   nh_->param<bool>("safety/enabled", safety_boundary_.enabled, false);
+0068:   nh_->param<double>("safety/x_min", safety_boundary_.x_min, -10.0);
+0069:   nh_->param<double>("safety/x_max", safety_boundary_.x_max, 10.0);
+0070:   nh_->param<double>("safety/y_min", safety_boundary_.y_min, -10.0);
+0071:   nh_->param<double>("safety/y_max", safety_boundary_.y_max, 10.0);
+0072:   nh_->param<double>("safety/z_min", safety_boundary_.z_min, 0.0);
+0073:   nh_->param<double>("safety/z_max", safety_boundary_.z_max, 5.0);
+0074: 
+0075:   if (safety_boundary_.enabled) {
+0076:     ROS_INFO("Safety boundary enabled: X[%.1f, %.1f] Y[%.1f, %.1f] Z[%.1f, %.1f]",
+0077:              safety_boundary_.x_min, safety_boundary_.x_max,
+0078:              safety_boundary_.y_min, safety_boundary_.y_max,
+0079:              safety_boundary_.z_min, safety_boundary_.z_max);
+0080:   }
+0081: 
+0082:   // 初始化定时发布 (50Hz)
+0083:   has_init_cmd = false;
+0084:   last_safety_log_time_ = ros::Time(0);
+
+0176: 
+0177:     // 提前检查是否已初始化指令 (用户需求)
+0178:     if (!has_init_cmd) {
+0179:         return;
+0180:     }
+0181: 
+0182:     // 安全边界检查
+0183:     if (safety_boundary_.enabled && !isWithinBoundary()) {
+0184:         ros::Time now = ros::Time::now();
+0185:         
+0186:         // 1. 首次触发越界时，锁定当前位置作为悬停点
+0187:         if (!hover_locked_) {
+0188:             hover_pos_ = fcu_odom.pose.pose.position;
+0189:             tf2::Quaternion q;
+0190:             tf2::fromMsg(fcu_odom.pose.pose.orientation, q);
+0191:             double r, p, y;
+0192:             tf2::Matrix3x3(q).getRPY(r, p, y);
+0193:             hover_yaw_ = y;
+0194:             hover_locked_ = true;
+0195:             
+0196:             ROS_ERROR("[Safety] DRONE OUT OF BOUNDARY! Triggering Hover Lock at (%.2f, %.2f, %.2f)",
+0197:                      hover_pos_.x, hover_pos_.y, hover_pos_.z);
+0198:         } else {
+0199:             // 持续报错 (2秒一次)
+0200:             if ((now - last_safety_log_time_).toSec() > 2.0) {
+0201:                 ROS_ERROR("[Safety] OUT OF BOUNDARY! Hovering at locked pos (%.2f, %.2f, %.2f)",
+0202:                          hover_pos_.x, hover_pos_.y, hover_pos_.z);
+0203:                 last_safety_log_time_ = now;
+0204:             }
+0205:         }
+0206:         
+0207:         // 构造悬停指令并更新到 current_cmd
+0208:         mavros_msgs::PositionTarget hover_cmd;
+0209:         hover_cmd.header.stamp = now;
+0210:         hover_cmd.header.frame_id = "safety_hover";
+0211:         hover_cmd.coordinate_frame = mavros_msgs::PositionTarget::FRAME_LOCAL_NED;
+0212:         hover_cmd.type_mask = mavros_msgs::PositionTarget::IGNORE_VX |
+0213:                               mavros_msgs::PositionTarget::IGNORE_VY |
+0214:                               mavros_msgs::PositionTarget::IGNORE_VZ |
+0215:                               mavros_msgs::PositionTarget::IGNORE_YAW_RATE |
+0216:                               mavros_msgs::PositionTarget::IGNORE_AFX |
+0217:                               mavros_msgs::PositionTarget::IGNORE_AFY |
+0218:                               mavros_msgs::PositionTarget::IGNORE_AFZ |
+0219:                               mavros_msgs::PositionTarget::FORCE;
+0220:         // ENU → NED 转换（与 publishPosition 保持一致）
+0221:         hover_cmd.position.x = -hover_pos_.y;   // NED x = -ENU y
+0222:         hover_cmd.position.y = hover_pos_.x;     // NED y = ENU x
+0223:         hover_cmd.position.z = hover_pos_.z;
+0224:         hover_cmd.yaw = hover_yaw_ + M_PI / 2.0;
+0225:         
+0226:         updateCommand(hover_cmd);
+0227:     } else {
+0228:         // 如果回到安全区域，重置锁定标志
+0229:         if (hover_locked_) {
+0230:             ROS_INFO("[Safety] Drone returned to safe area. Hover lock released.");
+0231:             hover_locked_ = false;
+0232:         }
+0233:     }
+0234: 
+0235:     // 统一发布 current_cmd
+0236:     std::lock_guard<std::mutex> lock(cmd_mtx);
+0237:     current_cmd.header.stamp = ros::Time::now();
+0238:     tgt_pose_pub.publish(current_cmd);
+0239: }
+
+
+=== 团队早期：单余量恢复 ===
+来源: v1_safety_recovery/backups/pre_hysteresis_20261003/mavros_cnt.cpp
+SHA256: 1f542e1c6b1dab4369898284dc9d4e22ba07ef7f8c1b9d3cf9cb2351cfd92417
+0068:   nh_->param<bool>("safety/enabled", safety_boundary_.enabled, false);
+0069:   nh_->param<double>("safety/x_min", safety_boundary_.x_min, -10.0);
+0070:   nh_->param<double>("safety/x_max", safety_boundary_.x_max, 10.0);
+0071:   nh_->param<double>("safety/y_min", safety_boundary_.y_min, -10.0);
+0072:   nh_->param<double>("safety/y_max", safety_boundary_.y_max, 10.0);
+0073:   nh_->param<double>("safety/z_min", safety_boundary_.z_min, 0.0);
+0074:   nh_->param<double>("safety/z_max", safety_boundary_.z_max, 5.0);
+0075:   nh_->param<double>("safety/recovery_margin", safety_boundary_.recovery_margin, 0.20);
+0076:   nh_->param<double>("safety/recovery_confirm_time", safety_boundary_.recovery_confirm_time, 0.50);
+0077:   safety_boundary_.recovery_margin = std::max(0.0, safety_boundary_.recovery_margin);
+0078:   safety_boundary_.recovery_confirm_time = std::max(0.0, safety_boundary_.recovery_confirm_time);
+
+0193:         if (safety_state_ == SafetyState::NORMAL && !isWithinBoundary()) {
+0194:             recovery_pos_ = fcu_odom.pose.pose.position;
+0195:             recovery_pos_.x = std::min(std::max(recovery_pos_.x,
+0196:                                                  safety_boundary_.x_min + safety_boundary_.recovery_margin),
+0197:                                        safety_boundary_.x_max - safety_boundary_.recovery_margin);
+0198:             recovery_pos_.y = std::min(std::max(recovery_pos_.y,
+0199:                                                  safety_boundary_.y_min + safety_boundary_.recovery_margin),
+0200:                                        safety_boundary_.y_max - safety_boundary_.recovery_margin);
+0201:             recovery_pos_.z = std::min(std::max(recovery_pos_.z,
+0202:                                                  safety_boundary_.z_min + safety_boundary_.recovery_margin),
+0203:                                        safety_boundary_.z_max - safety_boundary_.recovery_margin);
+0204: 
+0205:             tf2::Quaternion q;
+0206:             tf2::fromMsg(fcu_odom.pose.pose.orientation, q);
+0207:             double r, p, y;
+0208:             tf2::Matrix3x3(q).getRPY(r, p, y);
+0209:             recovery_yaw_ = y;
+0210:             recovery_enter_time_ = now;
+0211:             recovery_inside_since_ = ros::Time(0);
+0212:             safety_state_ = SafetyState::RECOVERING;
+0213: 
+
+0268: 
+0269: bool MavRosConnect::isWithinInnerBoundary() const
+0270: {
+0271:     double x = fcu_odom.pose.pose.position.x;
+0272:     double y = fcu_odom.pose.pose.position.y;
+0273:     double z = fcu_odom.pose.pose.position.z;
+0274:     const double margin = safety_boundary_.recovery_margin;
+0275:     return (x >= safety_boundary_.x_min + margin && x <= safety_boundary_.x_max - margin &&
+0276:             y >= safety_boundary_.y_min + margin && y <= safety_boundary_.y_max - margin &&
+0277:             z >= safety_boundary_.z_min + margin && z <= safety_boundary_.z_max - margin);
+
+
+=== 最终封存：双余量恢复 ===
+来源: v3_stability/reports/hit_balloon_part1_final/source/final_deployment.tar.gz::catkin_ws/src/mission_pkg/src/mavros_cnt.cpp
+SHA256: 14365bf85a918a5a799ac00b44de93a5b8989bd0d37592777f6d89fc2d8ab8a3
+0069:   nh_->param<bool>("safety/enabled", safety_boundary_.enabled, false);
+0070:   nh_->param<double>("safety/x_min", safety_boundary_.x_min, -10.0);
+0071:   nh_->param<double>("safety/x_max", safety_boundary_.x_max, 10.0);
+0072:   nh_->param<double>("safety/y_min", safety_boundary_.y_min, -10.0);
+0073:   nh_->param<double>("safety/y_max", safety_boundary_.y_max, 10.0);
+0074:   nh_->param<double>("safety/z_min", safety_boundary_.z_min, 0.0);
+0075:   nh_->param<double>("safety/z_max", safety_boundary_.z_max, 5.0);
+0076:   nh_->param<double>("safety/recovery_target_margin", safety_boundary_.recovery_target_margin, 0.30);
+0077:   nh_->param<double>("safety/release_margin", safety_boundary_.release_margin, 0.15);
+0078:   nh_->param<double>("safety/recovery_confirm_time", safety_boundary_.recovery_confirm_time, 0.50);
+0079:   safety_boundary_.recovery_target_margin = std::max(0.0, safety_boundary_.recovery_target_margin);
+0080:   safety_boundary_.release_margin = std::max(0.0, safety_boundary_.release_margin);
+0081:   safety_boundary_.recovery_confirm_time = std::max(0.0, safety_boundary_.recovery_confirm_time);
+0082: 
+0083:   if (safety_boundary_.enabled &&
+0084:       (safety_boundary_.recovery_target_margin <= safety_boundary_.release_margin ||
+0085:        2.0 * safety_boundary_.recovery_target_margin >= safety_boundary_.x_max - safety_boundary_.x_min ||
+0086:        2.0 * safety_boundary_.recovery_target_margin >= safety_boundary_.y_max - safety_boundary_.y_min ||
+0087:        2.0 * safety_boundary_.recovery_target_margin >= safety_boundary_.z_max - safety_boundary_.z_min)) {
+0088:     ROS_FATAL("Invalid SafetyRecovery margins: target margin must exceed release margin "
+0089:               "and fit inside every safety axis");
+0090:     throw std::invalid_argument("Invalid SafetyRecovery margins");
+0091:   }
+0092: 
+0093:   if (safety_boundary_.enabled) {
+0094:     ROS_INFO("Safety boundary enabled: X[%.1f, %.1f] Y[%.1f, %.1f] Z[%.1f, %.1f]",
+0095:              safety_boundary_.x_min, safety_boundary_.x_max,
+0096:              safety_boundary_.y_min, safety_boundary_.y_max,
+0097:              safety_boundary_.z_min, safety_boundary_.z_max);
+0098:     ROS_INFO("[SafetyRecovery] target_margin=%.2f m release_margin=%.2f m confirm_time=%.2f s",
+0099:              safety_boundary_.recovery_target_margin, safety_boundary_.release_margin,
+0100:              safety_boundary_.recovery_confirm_time);
+
+0208:     if (safety_boundary_.enabled) {
+0209:         if (safety_state_ == SafetyState::NORMAL && !isWithinBoundary()) {
+0210:             recovery_pos_ = fcu_odom.pose.pose.position;
+0211:             recovery_pos_.x = std::min(std::max(recovery_pos_.x,
+0212:                                                  safety_boundary_.x_min + safety_boundary_.recovery_target_margin),
+0213:                                        safety_boundary_.x_max - safety_boundary_.recovery_target_margin);
+0214:             recovery_pos_.y = std::min(std::max(recovery_pos_.y,
+0215:                                                  safety_boundary_.y_min + safety_boundary_.recovery_target_margin),
+0216:                                        safety_boundary_.y_max - safety_boundary_.recovery_target_margin);
+0217:             recovery_pos_.z = std::min(std::max(recovery_pos_.z,
+0218:                                                  safety_boundary_.z_min + safety_boundary_.recovery_target_margin),
+0219:                                        safety_boundary_.z_max - safety_boundary_.recovery_target_margin);
+0220: 
+0221:             tf2::Quaternion q;
+0222:             tf2::fromMsg(fcu_odom.pose.pose.orientation, q);
+0223:             double r, p, y;
+0224:             tf2::Matrix3x3(q).getRPY(r, p, y);
+0225:             recovery_yaw_ = y;
+0226:             recovery_enter_time_ = now;
+0227:             recovery_inside_since_ = ros::Time(0);
+0228:             safety_state_ = SafetyState::RECOVERING;
+0229: 
+0230:             ROS_ERROR("[SafetyRecovery] ENTER DRONE OUT OF BOUNDARY");
+0231:             ROS_ERROR("[SafetyRecovery] current position = (%.2f, %.2f, %.2f)",
+0232:                       fcu_odom.pose.pose.position.x,
+0233:                       fcu_odom.pose.pose.position.y,
+0234:                       fcu_odom.pose.pose.position.z);
+0235:             ROS_ERROR("[SafetyRecovery] target = (%.2f, %.2f, %.2f), target_margin=%.2f m",
+0236:                       recovery_pos_.x, recovery_pos_.y, recovery_pos_.z,
+0237:                       safety_boundary_.recovery_target_margin);
+0238:         }
+0239: 
+0240:         if (safety_state_ == SafetyState::RECOVERING) {
+0241:             if (isWithinReleaseBoundary()) {
+0242:                 if (recovery_inside_since_.isZero()) {
+0243:                     recovery_inside_since_ = now;
+0244:                     ROS_INFO("[SafetyRecovery] RELEASE confirmation started: margin=%.2f m, duration=%.2f s",
+0245:                              safety_boundary_.release_margin,
+0246:                              safety_boundary_.recovery_confirm_time);
+0247:                 } else if ((now - recovery_inside_since_).toSec() >=
+0248:                            safety_boundary_.recovery_confirm_time) {
+0249:                     const double recovery_duration = (now - recovery_enter_time_).toSec();
+0250:                     safety_state_ = SafetyState::NORMAL;
+0251:                     recovery_inside_since_ = ros::Time(0);
+0252:                     ROS_INFO("[SafetyRecovery] COMPLETE recovery duration = %.3f s; "
+0253:                              "latest command control resumed; Drone returned to safe area.",
+0254:                              recovery_duration);
+0255:                 }
+0256:             } else if (!recovery_inside_since_.isZero()) {
+0257:                 recovery_inside_since_ = ros::Time(0);
+0258:                 ROS_WARN("[SafetyRecovery] RELEASE confirmation reset: outside release boundary");
+
+
+=== 官方快照：A区原始yaw ===
+来源: official_baseline/catkin_ws/src/mission_pkg/launch/llm_mission.launch
+SHA256: f3552e3c21e1397f4280154a8d4e6f44245f11bb80860f1fe78fe9696749a9d2
+0081:     <!-- A区 (红色气球) -->
+0082:     <param name="balloon_zone_A/approach_pos" value="5.3;1.0;1.0"  type="str"/>
+0083:     <param name="balloon_zone_A/goal"         value="5.3;1.0;1.0"  type="str"/>
+0084:     <param name="balloon_zone_A/yaw"          value="1.5708"        type="double"/>
+0085:     <!-- B区 (紫色气球) -->
+0086:     <param name="balloon_zone_B/approach_pos" value="5.3;-2.0;0.7" type="str"/>
+0087:     <param name="balloon_zone_B/goal"         value="5.3;-2.0;0.7" type="str"/>
+0088:     <param name="balloon_zone_B/yaw"          value="3.14159"       type="double"/>
+0089:     <!-- C区 (蓝色气球) -->
+0090:     <param name="balloon_zone_C/approach_pos" value="5.3;1.0;0.7"  type="str"/>
+0091:     <param name="balloon_zone_C/goal"         value="5.3;1.0;0.7"  type="str"/>
+0092:     <param name="balloon_zone_C/yaw"          value="-1.5708"       type="double"/>
+
+
+=== 团队后续补丁：A区yaw从pi/2改为pi ===
+来源: v3_stability/hit_balloon_v2/patches/patch_red_entry_yaw.py
+SHA256: 3694381ee88e7a75938494d4a43caa4d809cd710b21af48fd57779f7bf6a095a
+0014: if len(sys.argv) != 3:
+0015:     raise SystemExit(__doc__)
+0016: root, backup = (Path(arg) for arg in sys.argv[1:])
+0017: relative = Path("src/mission_pkg/launch/llm_mission.launch")
+0018: path = root / relative
+0019: raw = path.read_bytes()
+0020: before_md5 = hashlib.md5(raw).hexdigest()
+0021: if before_md5 != "a1f0cfc65cd7357ab38c4a09ad4ef45a":
+0022:     raise SystemExit("launch MD5 differs from audited baseline; no changes made")
+0023: if backup.exists():
+0024:     raise SystemExit("backup directory already exists; no changes made")
+0025: old = b'<param name="balloon_zone_A/yaw"          value="1.5708"        type="double"/>'
+0026: new = b'<param name="balloon_zone_A/yaw"          value="3.14159"       type="double"/>'
+0027: if raw.count(old) != 1:
+0028:     raise SystemExit("expected launch anchor absent or non-unique; no changes made")
+0029: patched = raw.replace(old, new, 1)
+0030: backup.mkdir(parents=True)
+0031: saved = backup / relative
+
+
+=== 最终封存：去除A区GoTo的yaw、返航前视 ===
+来源: v3_stability/reports/hit_balloon_part1_final/source/final_deployment.tar.gz::catkin_ws/src/mission_pkg/src/bt_ros.cpp
+SHA256: 60f81e31d6448724c0a246068c97eaba5bfcc1c53d39d88ffbca3841fcf098ff
+0327:         
+0328:         std::string param_prefix = "balloon_zone_" + zone;
+0329:         std::string approach_pos = getStr(param_prefix + "/approach_pos", "5.3;1.0;0.7");
+0330:         std::string goto_pos = getStr(param_prefix + "/goal", "0.0;-0.8;0.5");
+0331:         // Zone A preserves arrival heading. VisualServo scans and aligns
+0332:         // from the arrival pose; B/C keep their audited entry yaw commands.
+0333:         std::string yaw = zone == "A" ? "visual_servo" :
+0334:             std::to_string(getDbl(param_prefix + "/yaw", -1.570796));
+0335:         std::string entry_goto = zone == "A" ?
+0336:             "      <GoTo goal=\"" + goto_pos + "\"/>\n" :
+0337:             "      <GoTo goal=\"" + goto_pos + "\" yaw=\"" + yaw + "\"/>\n";
+0338:         std::string balloon_name = color + "_balloon";
+0339:         
+0340:         // VisualServo 参数（从参数服务器读取，与手调 XML 一致）
+0341:         std::string vs_k_p_yaw  = std::to_string(getDbl("visual_servo/k_p_yaw_rate", 0.1));
+
+0350:         std::string vs_sprint_t = std::to_string(getDbl("visual_servo/sprint_time", 1.2));
+0351:         
+0352:         ROS_INFO("Hit balloon: color=%s -> zone=%s, approach=%s, goto=%s, yaw=%s, target=%s", 
+0353:                  color.c_str(), zone.c_str(), approach_pos.c_str(), goto_pos.c_str(), yaw.c_str(), balloon_name.c_str());
+0354:         
+0355:         return
+0356:             "      <!-- 规划飞到气球打击区域" + zone + " -->\n"
+0357:             "      <PlanningControl goal=\"" + approach_pos + "\"/>\n"
+0358:             "      <!-- 进入" + zone + "区气球(" + color + ")观察位置 -->\n"
+0359:             + entry_goto +
+0360:             "      <!-- 跟踪并撞击气球 -->\n"
+0361:             "      <ForceSuccess>\n"
+0362:             "        <Timeout msec=\"50000\">\n"
+0363:             "          <Parallel success_count=\"1\" failure_count=\"1\">\n"
+0364:             "            <TargetTracker object_name=\"" + balloon_name + "\" "
+0365:             "confidence_threshold=\"0.8\" pixel_target=\"{balloon_pixel}\"/>\n"
+0366:             "            <VisualServo pixel_target=\"{balloon_pixel}\" target_color=\"" + color + "\" "
+0367:             "k_p_yaw_rate=\"" + vs_k_p_yaw + "\" k_d_yaw_rate=\"" + vs_k_d_yaw + "\" "
+0368:             "k_p_vz=\"" + vs_k_p_vz + "\" k_d_vz=\"" + vs_k_d_vz + "\" "
+0369:             "approach_area_threshold=\"" + vs_area_th + "\" "
+0370:             "forward_velocity=\"" + vs_fwd_vel + "\" sprint_velocity=\"" + vs_sprint_v + "\" sprint_time=\"" + vs_sprint_t + "\"/>\n"
+0371:             "          </Parallel>\n"
+0372:             "        </Timeout>\n"
+0373:             "      </ForceSuccess>\n";
+0374:     }
+0375:     
+0376:     // ---- land ----
+0377:     if (cmd == "land") {
+0378:         std::string ret_pos = getStr("land/return_pos", "0.0;0.0;0.5");
+0379:         double ret_yaw = getDbl("land/return_yaw", 0.0);
+0380:         return
+0381:             "      <!-- 返回起点 -->\n"
+0382:             "      <GoTo goal=\"" + ret_pos + "\" yaw=\"" + std::to_string(ret_yaw) + "\" setpoint_lookahead=\"0.6\"/>\n"
+0383:             "      <!-- 降落 -->\n"
+0384:             "      <Land/>\n";
+0385:     }
+
+0399: )";
+0400:     bool blue_balloon_command = false;
+0401:     for (const auto& cmd : commands) {
+0402:         if (cmd.rfind("hit_balloon:", 0) == 0) {
+0403:             blue_balloon_command = (cmd == "hit_balloon:blue");
+0404:         }
+0405:         if (cmd == "land" && blue_balloon_command) {
+0406:             const std::string via = "1.0;-1.0;0.5";
+0407:             xml += "      <!-- Blue return via an interior lane -->\n"
+0408:                    "      <GoTo goal=\"" + via + "\" setpoint_lookahead=\"0.6\"/>\n";
+0409:         }
+0410:         std::string node_xml = commandToXmlNode(cmd);
+0411:         if (!node_xml.empty()) {
+
+
+=== 最终封存：蓝球失联、红球方向门、丢失判据 ===
+来源: v3_stability/reports/hit_balloon_part1_final/source/final_deployment.tar.gz::catkin_ws/src/mission_pkg/src/nodes/action/visual_servo.cpp
+SHA256: f7c839dedc67f94352006656124e8924a5e4a1ef30852bf0376816eff0a93373
+0050:              // 其他
+0051:              InputPort<double>("data_timeout", 1.0, "数据超时 (s)"),
+0052:              InputPort<double>("approach_area_threshold", 0.08, "触发冲刺的面积占比"),
+0053:              InputPort<double>("center_tolerance", 0.15, "对齐判定区域比例"),
+0054:              InputPort<double>("search_yaw_rate", 0.3, "搜索模式旋转速度 (rad/s)"),
+
+0111:     // 目标丢失处理（冲刺阶段不检查）
+0112:     if (current_state_ != SPRINTING && isTargetLost()) {
+0113:         // A blue balloon can pop while ALIGN is still active. The old 50 s
+0114:         // position-held search stays in the nearby red balloon's travel lane.
+0115:         // Finish only when the last blue detection was near and then vanished.
+0116:         const double last_ratio = last_target_.area() /
+0117:             (static_cast<double>(img_w_) * img_h_);
+0118:         const double lost_seconds = (now - last_valid_detection_time_).toSec();
+0119:         if (target_color_ == "blue" && has_ever_received_data_) {
+0120:             ROS_INFO_THROTTLE(1.0, "[%s]: BLUE_LOSS_SAMPLE area=%.4f max_area=%.4f lost_s=%.3f",
+0121:                               name().c_str(), last_ratio, max_area_ratio_, lost_seconds);
+0122:         }
+0123:         if (target_color_ == "blue" && has_ever_received_data_ &&
+0124:             max_area_ratio_ >= 0.30 &&
+0125:             last_ratio >= 0.50 * approach_area_threshold_ &&
+0126:             lost_seconds <= data_timeout_ + 0.25) {
+0127:             sendHoverCommand();
+0128:             ROS_INFO("[%s]: BLUE_NEAR_CONTACT_LOSS_COMPLETE area=%.4f max_area=%.4f lost_s=%.3f",
+0129:                      name().c_str(), last_ratio, max_area_ratio_, lost_seconds);
+0130:             return NodeStatus::SUCCESS;
+0131:         }
+
+0210:             // Red successes entered the sprint near yaw +/-pi; an observed
+0211:             // yaw=2.251 sprint ran toward the boundary and removed blue.
+0212:             bool red_heading_blocked = false;
+0213:             if (target_color_ == "red" && current_ratio >= approach_area_threshold_) {
+0214:                 const double yaw = PoseUtils::getYawFromQuat(fcu_odom_ptr->pose.pose.orientation);
+0215:                 const double yaw_error = std::abs(std::atan2(std::sin(yaw - M_PI), std::cos(yaw - M_PI)));
+0216:                 red_heading_blocked = yaw_error > 0.45;
+0217:                 if (red_heading_blocked) {
+0218:                     vx = 0.0;
+0219:                     ROS_WARN_THROTTLE(0.5, "[%s]: Red sprint heading blocked: yaw=%.3f error=%.3f rad",
+0220:                                       name().c_str(), yaw, yaw_error);
+0221:                 }
+0222:             }
+0223:             
+0224:             publishVelocityWithYawRate(vx, 0, vz, yaw_rate);
+0225:             
+0226:             // 对齐偏差过大 → 回到 ALIGN
+0227:             if (std::abs(err_x) > img_w_ * center_tolerance_ * 3) {
+0228:                 current_state_ = ALIGN;
+0229:                 align_stable_frames_ = 0;
+0230:                 ROS_WARN("[%s]: Alignment lost (err_x=%.0f), back to ALIGN", 
+0231:                          name().c_str(), err_x);
+0232:                 break;
+0233:             }
+0234:             
+0235:             // 面积达阈值 → 触发冲刺
+0236:             if (current_ratio >= approach_area_threshold_ && isCentered() && !red_heading_blocked) {
+0237:                 current_state_ = SPRINTING;
+
+0269:                 // A visible, far-off-center blue balloon is direct evidence
+0270:                 // that the fixed-time sprint missed. Stop and realign rather
+0271:                 // than reporting a hit and flying the landing return route.
+0272:                 if (target_color_ == "blue" && !isTargetLost() &&
+0273:                     current_ratio >= 0.03 && std::abs(err_x) > 0.20 * img_w_) {
+0274:                     sendHoverCommand();
+0275:                     current_state_ = ALIGN;
+0276:                     align_stable_frames_ = 0;
+0277:                     ROS_WARN("[%s]: BLUE_SPRINT_VISIBLE_RETRY err_x=%.1f area=%.4f",
+0278:                              name().c_str(), err_x, current_ratio);
+0279:                     break;
+0280:                 }
+0281:                 sendHoverCommand();
+0282:                 ROS_INFO("[%s]: Sprint completed (%.1fs). SUCCESS.", name().c_str(), sprint_dt);
+
+0372: bool VisualServo::isTargetLost() {
+0373:     if (!has_ever_received_data_) return true;
+0374:     return (ros::Time::now() - last_valid_detection_time_).toSec() > data_timeout_;
+0375: }
+
+
+=== 返航指标原始字段 ===
+来源: v3_stability/reports/hit_balloon_part1_1.6/return_setpoint_control_vs_patch.jsonl
+SHA256: f25a4443b08d8f7dd174419030dd28e41604b0579cb69e5694a55f3a1f4e5fe7
+0001: {"telemetry": "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261018T105158_blue_A0/20261018T105202_e0476b_blue_telemetry.jsonl", "return_start_utc": "2026-10-18T02:53:50.238000+00:00", "return_end_utc": "2026-10-18T02:53:56.397000+00:00", "matched_samples": 308, "max_odom_match_gap_s": 0.024, "max_setpoint_distance_m": 5.595, "p95_setpoint_distance_m": 5.487, "median_setpoint_distance_m": 0.501}
+0002: {"telemetry": "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261018T110949_blue_A0/20261018T110953_5c708f_blue_telemetry.jsonl", "return_start_utc": "2026-10-18T03:11:29.906000+00:00", "return_end_utc": "2026-10-18T03:11:37.595000+00:00", "matched_samples": 385, "max_odom_match_gap_s": 0.032, "max_setpoint_distance_m": 5.931, "p95_setpoint_distance_m": 5.81, "median_setpoint_distance_m": 0.77}
+0003: {"telemetry": "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261018T114034_blue_A0/20261018T114039_a70c49_blue_telemetry.jsonl", "return_start_utc": "2026-10-18T03:42:27.246000+00:00", "return_end_utc": "2026-10-18T03:42:35.937000+00:00", "matched_samples": 435, "max_odom_match_gap_s": 0.028, "max_setpoint_distance_m": 0.788, "p95_setpoint_distance_m": 0.741, "median_setpoint_distance_m": 0.646}
+0004: {"telemetry": "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261018T114611_blue_A0/20261018T114616_0c1035_blue_telemetry.jsonl", "return_start_utc": "2026-10-18T03:47:50.856000+00:00", "return_end_utc": "2026-10-18T03:48:05.344000+00:00", "matched_samples": 724, "max_odom_match_gap_s": 0.031, "max_setpoint_distance_m": 1.025, "p95_setpoint_distance_m": 0.897, "median_setpoint_distance_m": 0.579}
+0005: {"telemetry": "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261018T115140_blue_A0/20261018T115144_14d89e_blue_telemetry.jsonl", "return_start_utc": "2026-10-18T03:53:29.081000+00:00", "return_end_utc": "2026-10-18T03:53:36.324000+00:00", "matched_samples": 362, "max_odom_match_gap_s": 0.028, "max_setpoint_distance_m": 0.831, "p95_setpoint_distance_m": 0.766, "median_setpoint_distance_m": 0.678}
+
+
+=== 最终命令检查与兜底 ===
+来源: v3_stability/reports/hit_balloon_part1_final/source/final_deployment.tar.gz::model/mission_once.py
+SHA256: 573f3fc564f3aa1960702084aa7f372f55901e68fd320d5f7d72a13c3eaafccc
+0064:     # 提取 ```command ... ``` 代码块
+0065:     match = re.search(r"```(.*?)```", content, re.DOTALL)
+0066:     if not match:
+0067:         return None
+0068:     code = match.group(1)
+0069:     if code.startswith("command"):
+0070:         code = code[len("command"):]
+0071:     return code.strip()
+0072: 
+0073: 
+0074: # mission_publish_fallback_v1: check and retry LLM answers, never publish nothing.
+0075: VALID_COMMANDS = ("takeoff", "cross_frame", "detect_aruco", "return_cross_frame", "land")
+0076: BALLOON_COLORS = ("red", "purple", "blue")
+0077: MAX_ATTEMPTS = max(1, int(os.environ.get("MISSION_MAX_ATTEMPTS", "3")))
+0078: RETRY_BUDGET_S = float(os.environ.get("MISSION_RETRY_BUDGET_S", "60"))
+0079: COLOR_NAMES = {"red": "红", "purple": "紫", "blue": "蓝"}
+0080: 
+0081: 
+0082: def expected_balloon_color(task):
+0083:     """Only enforce a color when the instruction names exactly one."""
+0084:     names = {"红": "red", "紫": "purple", "蓝": "blue"}
+0085:     colors = {names[m.group(1)] for m in re.finditer(r"([红紫蓝])(?:颜?色)?(?:的)?气球", task)}
+0086:     colors.update(m.group(1).lower() for m in re.finditer(
+0087:         r"\b(red|purple|blue)\s+balloon\b", task, re.IGNORECASE))
+0088:     return next(iter(colors)) if len(colors) == 1 else None
+
+0145: def command_problems(commands, expected, task=""):
+0146:     """List what is wrong with one answer; an empty list means publishable as-is."""
+0147:     if not commands:
+0148:         return ["no ```command block"]
+0149:     problems = []
+0150:     for line in commands.splitlines():
+0151:         cmd = line.strip()
+0152:         if not cmd or cmd in VALID_COMMANDS:
+0153:             continue
+0154:         m = re.fullmatch(r"hit_balloon\s*:\s*([a-zA-Z]+)", cmd)
+0155:         if not (m and m.group(1) in BALLOON_COLORS):
+0156:             problems.append("unknown command " + repr(cmd))
+0157:     if expected is not None:
+0158:         targets = command_balloon_colors(commands)
+0159:         if targets != [expected]:
+0160:             problems.append(f"color mismatch: task={expected}, commands={targets}")
+0161:     problems.extend(single_action_problems(commands, task))
+0162:     return problems
+
+0176: def generate_validated_commands(model, tokenizer, base_msgs, task):
+0177:     expected = expected_balloon_color(task)
+0178:     deadline = time.monotonic() + RETRY_BUDGET_S
+0179:     best, best_rank = None, None
+0180:     for attempt in range(MAX_ATTEMPTS):
+0181:         prompt = task if attempt == 0 else retry_prompt(task, expected)
+0182:         commands = generate_commands(model, tokenizer, base_msgs, prompt)
+0183:         problems = command_problems(commands, expected, task)
+0184:         if not problems:
+0185:             return commands
+0186:         print(f"[命令校验] 第{attempt + 1}次生成不合格：{'; '.join(problems)}", flush=True)
+0187:         if commands:
+0188:             # v3 (2026-10-15 real-model verification, distractor_color case):
+0189:             # rank by whether a balloon command is present FIRST, when the
+0190:             # task is about hitting a balloon at all. Before this, three
+0191:             # retries that all had exactly one problem ("steps_likely_extra")
+0192:             # ranked as ties, so the fallback kept whichever came first --
+0193:             # even when it was "detect_aruco; land" with no hit_balloon line
+0194:             # at all, while a later retry that merely had extra steps around
+0195:             # a correct "hit_balloon:red" lost the tie-break. Missing the
+0196:             # balloon command entirely costs the full 25-point stage; extra
+0197:             # steps around a correct one do not. balloon_command_missing()
+0198:             # keys on the task text itself (not on `expected`, which is
+0199:             # deliberately None for distractor instructions that name two
+0200:             # colors), so it still fires for exactly that case.
+0201:             # Unknown commands are skipped by bt_ros, a wrong color only loses
+0202:             # the balloon stage: prefer the answer with fewer unknown commands.
+0203:             rank = (balloon_command_missing(commands, task, expected),
+0204:                     sum(p.startswith("unknown") for p in problems), len(problems))
+0205:             if best_rank is None or rank < best_rank:
+0206:                 best, best_rank = commands, rank
+0207:         if time.monotonic() >= deadline:
+0208:             print("[命令校验] 重试时间预算用完", flush=True)
+0209:             break
+0210:     if best is not None:
+0211:         print("[命令校验] 没有完全合格的输出；按原样发布最接近的一次，"
+0212:               "避免开赛 5 分钟内无人机未动导致本轮结束", flush=True)
+0213:     return best
+0214: 
+0215: 
+
+
+=== ArUco实际部署快照 ===
+来源: v3_stability/rule_compliance/deploy/aruco_detect_node.py
+SHA256: 921fb609fd981be2611f9c3a03ac6784049ed533bd99e1709db493e80409bfa3
+0100:         self.use_clahe    = bool(rospy.get_param("~use_clahe", True))
+0101:         self.upscale      = float(rospy.get_param("~upscale", 3.0))
+0102:         self.use_subpix   = bool(rospy.get_param("~use_subpix", True))
+0103:         # Rule 4.4(5): a perception-result window is mandatory (5 points per
+0104:         # stage). The window is ON unless explicitly disabled; the launch's
+0105:         # show_debug arg (sim_env_start.sh passes true) also controls it.
+0106:         self.debug_display = bool(rospy.get_param("~debug_display",
+0107:                                                   rospy.get_param("~show_debug", True)))
+0108:         self.queue_size   = max(1, int(rospy.get_param("~queue_size", 1)))
+0109: 
+0110:         # --- ArUco detector ---
+0111:         aruco_dict = cv2.aruco.getPredefinedDictionary(dict_id)
+0112:         self.params = cv2.aruco.DetectorParameters_create()
+0113:         if self.use_subpix:
+0114:             self.params.cornerRefinementMethod = cv2.aruco.CORNER_REFINE_SUBPIX
+0115:             self.params.cornerRefinementWinSize = 5
+0116:             self.params.cornerRefinementMaxIterations = 30
+0117:             self.params.cornerRefinementMinAccuracy = 0.1
+0118: 
+0119:         self.aruco_dict = aruco_dict
+0120:         self.clahe = (cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
+0121:                       if self.use_clahe else None)
+
+0197:     def _preprocess(self, gray):
+0198:         g = gray
+0199:         if self.clahe is not None:
+0200:             g = self.clahe.apply(g)
+0201:         if self.upscale and self.upscale != 1.0:
+0202:             g = cv2.resize(g, None, fx=self.upscale, fy=self.upscale,
+0203:                            interpolation=cv2.INTER_CUBIC)
+0204:         return g
+
+0239:             return
+0240: 
+0241:         gray = cv2.cvtColor(bgr, cv2.COLOR_BGR2GRAY)
+0242:         try:
+0243:             det_gray = self._preprocess(gray)
+0244:             corners, ids, rejected = cv2.aruco.detectMarkers(
+0245:                 det_gray, self.aruco_dict, parameters=self.params)
+0246:         except Exception as e:
+0247:             rospy.logerr_throttle(1.0, "[ArucoDetectNode] detectMarkers error: %s", e)
+0248:             return
+0249: 
+0250:         if self.upscale and self.upscale != 1.0 and corners:
+0251:             corners = [c / self.upscale for c in corners]
+0252: 
+0253:         detected = ids is not None and len(ids) > 0
+0254: 
+0255:         # --- publish result FIRST: a debug-drawing/display failure must never
+0256:         # be able to suppress a real detection. ---
+0257:         if detected:
+0258:             marker_id = int(ids[0][0])
+0259:             self.id_pub.publish(Int32(data=marker_id))
+0260:             self.has_detection = True
+
+0307:     def run(self):
+0308:         if not self.debug_display:
+0309:             rospy.spin()
+0310:             return
+0311:         # Main-thread display loop. After a detection the node unsubscribes,
+0312:         # so the last frame (marker outline + "ID: n") stays on screen for the
+0313:         # judges instead of flashing for the ~0.2 s detection window.
+0314:         shown = None
+0315:         try:
+0316:             while not rospy.is_shutdown():
+0317:                 frame = self._display_frame
+0318:                 if frame is not None and frame is not shown:
+0319:                     cv2.imshow(WINDOW_NAME, frame)
+0320:                     shown = frame
+0321:                 if shown is None:
+0322:                     time.sleep(0.03)   # no window yet; waitKey would not block
+0323:                 else:
+0324:                     cv2.waitKey(30)
+0325:         except Exception as e:
+0326:             # A broken display must never take detection down with it.
+0327:             rospy.logerr("[ArucoDetectNode] display loop failed, detection continues without window: %s", e)
+0328:             self.debug_display = False
+0329:             rospy.spin()
+0330:         finally:
+0331:             cv2.destroyAllWindows()
+0332: 
+0333: 
+
+
+=== 名为official_baseline的规划器已包含PoC ===
+来源: official_baseline/catkin_ws/src/ego-planner/src/planner/bspline_opt/src/bspline_optimizer.cpp
+SHA256: 063859c844124c25e976e98ecbda78330e1860888a3cde94a406773162bb2587
+0010:   void BsplineOptimizer::setParam(ros::NodeHandle &nh)
+0011:   {
+0012:     nh.param("optimization/lambda_smooth", lambda1_, -1.0);
+0013:     nh.param("optimization/lambda_collision", lambda2_, -1.0);
+0014:     nh.param("optimization/lambda_feasibility", lambda3_, -1.0);
+0015:     nh.param("optimization/lambda_fitness", lambda4_, -1.0);
+0016:     balloon_nh_ = nh;
+0017:     nh.param("optimization/lambda_balloon_clearance", lambda_balloon_clearance_, 0.0);
+0018:     nh.param("optimization/balloon_clearance", balloon_clearance_, 0.8);
+0019:     balloon_sub_ = nh.subscribe("/planning/poc_non_target_balloons", 1,
+0020:                                 &BsplineOptimizer::balloonCallback, this);
+0021: 
+0022:     nh.param("optimization/dist0", dist0_, -1.0);
+0023:     nh.param("optimization/max_vel", max_vel_, -1.0);
+0024:     nh.param("optimization/max_acc", max_acc_, -1.0);
+
+0402:       }
+0403:     }
+0404:   }
+0405: 
+0406:   void BsplineOptimizer::calcBalloonClearanceCost(const Eigen::MatrixXd &q, double &cost,
+0407:                                                   Eigen::MatrixXd &gradient)
+0408:   {
+0409:     cost = 0.0;
+0410:     if (lambda_balloon_clearance_ <= 0.0 || balloon_clearance_ <= 0.0)
+0411:       return;
+0412:     const int end_idx = q.cols() - order_;
+0413:     for (int i = order_; i < end_idx; ++i)
+0414:       for (const auto &balloon : active_balloons_)
+0415:       {
+0416:         const Eigen::Vector3d delta = q.col(i) - balloon;
+0417:         const double distance = delta.norm();
+0418:         const double error = balloon_clearance_ - distance;
+0419:         if (error <= 0.0)
+0420:           continue;
+0421:         cost += error * error * error;
+0422:         Eigen::Vector3d direction = Eigen::Vector3d::UnitX();
+0423:         if (distance > 1e-6)
+0424:           direction = delta / distance;
+0425:         gradient.col(i) -= 3.0 * error * error * direction;
+0426:       }
+0427:   }
+0428: 
+0429:   void BsplineOptimizer::calcFitnessCost(const Eigen::MatrixXd &q, double &cost, Eigen::MatrixXd &gradient)
+0430:   {
+0431: 
+0432:     cost = 0.0;
+0433: 
+0434:     int end_idx = q.cols() - order_;
+0435: 
+
+1110:     Eigen::MatrixXd g_smoothness = Eigen::MatrixXd::Zero(3, cps_.size);
+1111:     Eigen::MatrixXd g_distance = Eigen::MatrixXd::Zero(3, cps_.size);
+1112:     Eigen::MatrixXd g_feasibility = Eigen::MatrixXd::Zero(3, cps_.size);
+1113:     Eigen::MatrixXd g_balloon = Eigen::MatrixXd::Zero(3, cps_.size);
+1114: 
+1115:     calcSmoothnessCost(cps_.points, f_smoothness, g_smoothness);
+1116:     calcDistanceCostRebound(cps_.points, f_distance, g_distance, iter_num_, f_smoothness);
+1117:     calcFeasibilityCost(cps_.points, f_feasibility, g_feasibility);
+1118:     calcBalloonClearanceCost(cps_.points, f_balloon, g_balloon);
+1119:     if (f_balloon > 0.0)
+1120:       ++balloon_cost_nonzero_evals_;
+1121: 
+1122:     f_combine = lambda1_ * f_smoothness + new_lambda2_ * f_distance + lambda3_ * f_feasibility
+1123:                 + lambda_balloon_clearance_ * f_balloon;
+1124:     //printf("origin %f %f %f %f\n", f_smoothness, f_distance, f_feasibility, f_combine);
+1125: 
+1126:     Eigen::MatrixXd grad_3D = lambda1_ * g_smoothness + new_lambda2_ * g_distance
+1127:                               + lambda3_ * g_feasibility + lambda_balloon_clearance_ * g_balloon;
+1128:     memcpy(grad, grad_3D.data() + 3 * order_, n * sizeof(grad[0]));
+
