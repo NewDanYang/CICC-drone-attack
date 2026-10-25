@@ -1,0 +1,86 @@
+[
+  {
+    "archive": "/home/ubuntu/multimodal_v2_exports/development/multimodal_v2_demo2_purple_20261026.tar.gz",
+    "bytes": 10630698,
+    "sha256": "3e5d7db52af5c5ef9aa2cbf7463ce656ef8d622f82d8a904083f1d4461fefb4c",
+    "included": 142,
+    "originals": 525
+  },
+  {
+    "archive": "/home/ubuntu/multimodal_v2_exports/development/multimodal_v2_demo2_red_20261026.tar.gz",
+    "bytes": 10818198,
+    "sha256": "23f28e0c13cd2a0681e5ef4d9654360d7133dec49b9d147285652811b282ce67",
+    "included": 146,
+    "originals": 540
+  },
+  {
+    "archive": "/home/ubuntu/multimodal_v2_exports/development/multimodal_v2_demo3_purple_20261026.tar.gz",
+    "bytes": 10405795,
+    "sha256": "d372b78e455bec162c47f3b5a4538280bf4c4eadce5d1adbdcae7e34414509e0",
+    "included": 188,
+    "originals": 561
+  },
+  {
+    "archive": "/home/ubuntu/multimodal_v2_exports/development/multimodal_v2_demo3_red_20261026.tar.gz",
+    "bytes": 11034716,
+    "sha256": "182436099abae6438b62307eaf6794b5fb7e3515cfbbcbb72b502d71f832da62",
+    "included": 149,
+    "originals": 534
+  },
+  {
+    "archive": "/home/ubuntu/multimodal_v2_exports/development/multimodal_v2_demo4_purple_20261026.tar.gz",
+    "bytes": 10374406,
+    "sha256": "e497ce12f4f2ea6153acbea4ed64379012f4d36901cc8420f21a692a9efdab2a",
+    "included": 188,
+    "originals": 568
+  },
+  {
+    "archive": "/home/ubuntu/multimodal_v2_exports/development/multimodal_v2_demo4_red_20261026.tar.gz",
+    "bytes": 11758610,
+    "sha256": "e5b2e01359c8ba34524e4354710caafbb2dfb46c50f1143469936373e1e64060",
+    "included": 153,
+    "originals": 589
+  },
+  {
+    "archive": "/home/ubuntu/multimodal_v2_exports/development/multimodal_v2_demo5_purple_20261026.tar.gz",
+    "bytes": 11844843,
+    "sha256": "10095310259d97f17ec359e8f7f6c2299b7698b3a4cd13596ae801869e6046a8",
+    "included": 191,
+    "originals": 582
+  },
+  {
+    "archive": "/home/ubuntu/multimodal_v2_exports/development/multimodal_v2_demo5_red_20261026.tar.gz",
+    "bytes": 11577469,
+    "sha256": "cfc29e9b643c5268c12a522c64fde5a65f511e6116b9e9903f30aa018d9f8aa8",
+    "included": 177,
+    "originals": 541
+  },
+  {
+    "archive": "/home/ubuntu/multimodal_v2_exports/development/multimodal_v2_demo_blue_20261026.tar.gz",
+    "bytes": 12172623,
+    "sha256": "b601911f51da44b2741712c016c0879f343e601b89cc1cb4900a97ec9a27e0ad",
+    "included": 200,
+    "originals": 587
+  },
+  {
+    "archive": "/home/ubuntu/multimodal_v2_exports/development/multimodal_v2_demo_purple_20261026.tar.gz",
+    "bytes": 12760958,
+    "sha256": "dea48268c2c38e3a72caca7be6ed6a517df1d1d4833a3653e2385fb7c431360a",
+    "included": 149,
+    "originals": 585
+  },
+  {
+    "archive": "/home/ubuntu/multimodal_v2_exports/development/multimodal_v2_demo_red_20261026.tar.gz",
+    "bytes": 10211781,
+    "sha256": "2f6edbb87fd5f067dccb5f5e62b486253bc2f9cacd33f6368da5ca108e146dd4",
+    "included": 168,
+    "originals": 749
+  },
+  {
+    "archive": "/home/ubuntu/multimodal_v2_exports/development/multimodal_v2_diagnostic_baseline_red_20261026.tar.gz",
+    "bytes": 4528096,
+    "sha256": "ac1b13e0a5aa8bbbe503c2ffaf5adc147c55ff6a9855f87b4299bcd9cad57817",
+    "included": 60,
+    "originals": 438
+  }
+]

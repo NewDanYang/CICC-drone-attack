@@ -1,0 +1,1903 @@
+[
+  {
+    "session": "/home/ubuntu/tcei_baseline_tools/results/multimodal_v2_demo2_purple_20261026",
+    "sources": 32,
+    "model_calls": 48,
+    "batch_sizes": {
+      "16": 31,
+      "1": 7,
+      "4": 3,
+      "2": 4,
+      "6": 1,
+      "3": 2
+    },
+    "processor_items": 551,
+    "image_count_violations": 0,
+    "decisions": 31,
+    "valid_decisions": 2,
+    "decision_modes": {
+      "initialization": 31
+    },
+    "consumed_logs": 0,
+    "consumed_ids": {},
+    "matched_decision_consumption": 0,
+    "published_valid_messages": 0,
+    "actual_window_screenshots": 0,
+    "recorded_window_captures": 0,
+    "blank_window_captures": 0,
+    "unavailable_window_files": 0,
+    "captured_images": 426,
+    "source_hash_matches": 12,
+    "image_input_clocks": [
+      {
+        "kind": "camera_contract",
+        "topic": "/rflysim/sensor1/img_rgb",
+        "encoding": "bgr8",
+        "width": 640,
+        "height": 480,
+        "step": 1920,
+        "header_stamp": 1792950873.5450237,
+        "pixel_clock": "camera_header",
+        "note": "Monotonic acquisition age always starts at ROS receipt, never inference completion",
+        "wall_time": "2026-10-25T17:54:33.606277+00:00",
+        "monotonic": 3068493.537088037
+      }
+    ],
+    "gate_start": "2026-10-25T17:55:50.316440+00:00",
+    "gate_stop": "2026-10-25T17:56:40.316474+00:00",
+    "scene_counts": [
+      {
+        "phase": "before",
+        "count": 3,
+        "actors": [
+          "BP_Balloon_C_2147481415",
+          "BP_Balloon_C_2147481417",
+          "BP_Balloon_C_2147481420"
+        ]
+      },
+      {
+        "phase": "after",
+        "count": 3,
+        "actors": [
+          "BP_Balloon_C_2147481415",
+          "BP_Balloon_C_2147481417",
+          "BP_Balloon_C_2147481420"
+        ]
+      },
+      {
+        "phase": "settled",
+        "count": 3,
+        "actors": [
+          "BP_Balloon_C_2147481415",
+          "BP_Balloon_C_2147481417",
+          "BP_Balloon_C_2147481420"
+        ]
+      }
+    ],
+    "errors": [
+      {
+        "kind": "discard_inactive",
+        "decision": "42eebc44237a",
+        "session": "1792950950316087831_1",
+        "wall_time": "2026-10-25T17:56:40.402994+00:00",
+        "monotonic": 3068620.333805609
+      }
+    ],
+    "latest_decisions": [
+      {
+        "decision": "22fbc8406b09",
+        "color": "purple",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.1922766920179129,
+        "latency_s": 1.123145087622106
+      },
+      {
+        "decision": "ba534a1cdd4c",
+        "color": "purple",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.2541040778160095,
+        "latency_s": 1.1771117812022567
+      },
+      {
+        "decision": "1318c4a809e4",
+        "color": "purple",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.2592323240824044,
+        "latency_s": 1.1873600161634386
+      },
+      {
+        "decision": "5d2576418546",
+        "color": "purple",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.1585722472518682,
+        "latency_s": 1.111584628932178
+      },
+      {
+        "decision": "e7ccaabe6e11",
+        "color": "purple",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.9705591988749802,
+        "latency_s": 1.8788914610631764
+      }
+    ],
+    "archive": "multimodal_v2_demo2_purple_20261026.tar.gz",
+    "native_row": {
+      "run_id": "20261026T015417_03b728",
+      "target_color": "purple",
+      "start_time": "2026-10-25T17:54:42.362+00:00",
+      "end_time": "2026-10-25T17:56:52.167+00:00",
+      "total_time": "129.805",
+      "elapsed_time": "129.805",
+      "bt_success": "true",
+      "mission_success": "false",
+      "end_status": "completed",
+      "takeoff_status": "success",
+      "cross_frame_status": "success",
+      "detect_aruco_status": "success",
+      "return_cross_frame_status": "success",
+      "hit_balloon_status": "",
+      "land_status": "success",
+      "aruco_detect_time": "0.104",
+      "balloon_search_time": "",
+      "failure_stage": "hit_balloon",
+      "failure_reason": "",
+      "safety_boundary_triggered": "false",
+      "boundary_first_time": "",
+      "boundary_first_position": "",
+      "boundary_violation_count": "0",
+      "boundary_recovered": "",
+      "notes": "mission_command received as text; SUCCESS received while stages were unobserved: hit_balloon; bt_planning_controls=[{\"goal\":\"{frame_center}\",\"offset_z\":\"1.000000\",\"kind\":\"frame_outbound\"},{\"goal\":\"{frame_center}\",\"offset_z\":\"\",\"kind\":\"frame_return\"},{\"goal\":\"4.3;-2.0;0.7\",\"offset_z\":\"\",\"kind\":\"other\"}]; rosout_events_logged; setpoint_samples=6496; target_detection_messages=875"
+    }
+  },
+  {
+    "session": "/home/ubuntu/tcei_baseline_tools/results/multimodal_v2_demo2_red_20261026",
+    "sources": 35,
+    "model_calls": 40,
+    "batch_sizes": {
+      "16": 40
+    },
+    "processor_items": 656,
+    "image_count_violations": 0,
+    "decisions": 34,
+    "valid_decisions": 1,
+    "decision_modes": {
+      "initialization": 34
+    },
+    "consumed_logs": 0,
+    "consumed_ids": {},
+    "matched_decision_consumption": 0,
+    "published_valid_messages": 0,
+    "actual_window_screenshots": 0,
+    "recorded_window_captures": 0,
+    "blank_window_captures": 0,
+    "unavailable_window_files": 0,
+    "captured_images": 438,
+    "source_hash_matches": 18,
+    "image_input_clocks": [
+      {
+        "kind": "camera_contract",
+        "topic": "/rflysim/sensor1/img_rgb",
+        "encoding": "bgr8",
+        "width": 640,
+        "height": 480,
+        "step": 1920,
+        "header_stamp": 1792946949.620019,
+        "pixel_clock": "camera_header",
+        "note": "Monotonic acquisition age always starts at ROS receipt, never inference completion",
+        "wall_time": "2026-10-25T16:49:09.677013+00:00",
+        "monotonic": 3064569.607823797
+      }
+    ],
+    "gate_start": "2026-10-25T16:50:24.593680+00:00",
+    "gate_stop": "2026-10-25T16:51:14.593800+00:00",
+    "scene_counts": [
+      {
+        "phase": "before",
+        "count": 3,
+        "actors": [
+          "BP_Balloon_C_2147481415",
+          "BP_Balloon_C_2147481417",
+          "BP_Balloon_C_2147481420"
+        ]
+      },
+      {
+        "phase": "after",
+        "count": 3,
+        "actors": [
+          "BP_Balloon_C_2147481415",
+          "BP_Balloon_C_2147481417",
+          "BP_Balloon_C_2147481420"
+        ]
+      },
+      {
+        "phase": "settled",
+        "count": 3,
+        "actors": [
+          "BP_Balloon_C_2147481415",
+          "BP_Balloon_C_2147481417",
+          "BP_Balloon_C_2147481420"
+        ]
+      }
+    ],
+    "errors": [
+      {
+        "kind": "discard_inactive",
+        "decision": "2fb5e59830f4",
+        "session": "1792947024593407608_1",
+        "wall_time": "2026-10-25T16:51:14.952933+00:00",
+        "monotonic": 3064694.883753302
+      }
+    ],
+    "latest_decisions": [
+      {
+        "decision": "2adcd9e71f17",
+        "color": "red",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.3502456820569932,
+        "latency_s": 1.2886897721327841
+      },
+      {
+        "decision": "4e6ea3327d3e",
+        "color": "red",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.1720534940250218,
+        "latency_s": 1.1121608847752213
+      },
+      {
+        "decision": "0c4195312216",
+        "color": "red",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.1892422027885914,
+        "latency_s": 1.1156020099297166
+      },
+      {
+        "decision": "9c39004c8da2",
+        "color": "red",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.1719662710092962,
+        "latency_s": 1.118118081241846
+      },
+      {
+        "decision": "6564e20f01a9",
+        "color": "red",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.1748373326845467,
+        "latency_s": 1.1142968661151826
+      }
+    ],
+    "archive": "multimodal_v2_demo2_red_20261026.tar.gz",
+    "native_row": {
+      "run_id": "20261026T004859_90498c",
+      "target_color": "red",
+      "start_time": "2026-10-25T16:49:12.013+00:00",
+      "end_time": "2026-10-25T16:52:02.352+00:00",
+      "total_time": "170.338",
+      "elapsed_time": "170.338",
+      "bt_success": "true",
+      "mission_success": "false",
+      "end_status": "completed",
+      "takeoff_status": "success",
+      "cross_frame_status": "success",
+      "detect_aruco_status": "success",
+      "return_cross_frame_status": "success",
+      "hit_balloon_status": "",
+      "land_status": "success",
+      "aruco_detect_time": "0.142",
+      "balloon_search_time": "",
+      "failure_stage": "hit_balloon",
+      "failure_reason": "",
+      "safety_boundary_triggered": "false",
+      "boundary_first_time": "",
+      "boundary_first_position": "",
+      "boundary_violation_count": "0",
+      "boundary_recovered": "",
+      "notes": "mission_command received as text; SUCCESS received while stages were unobserved: hit_balloon; bt_planning_controls=[{\"goal\":\"{frame_center}\",\"offset_z\":\"1.000000\",\"kind\":\"frame_outbound\"},{\"goal\":\"{frame_center}\",\"offset_z\":\"\",\"kind\":\"frame_return\"},{\"goal\":\"4.3;1.0;0.7\",\"offset_z\":\"\",\"kind\":\"other\"}]; rosout_events_logged; setpoint_samples=8524; target_detection_messages=1070"
+    }
+  },
+  {
+    "session": "/home/ubuntu/tcei_baseline_tools/results/multimodal_v2_demo3_purple_20261026",
+    "sources": 30,
+    "model_calls": 46,
+    "batch_sizes": {
+      "16": 29,
+      "2": 4,
+      "12": 4,
+      "8": 1,
+      "5": 1,
+      "1": 5,
+      "3": 2
+    },
+    "processor_items": 560,
+    "image_count_violations": 0,
+    "decisions": 29,
+    "valid_decisions": 3,
+    "decision_modes": {
+      "initialization": 29
+    },
+    "consumed_logs": 0,
+    "consumed_ids": {},
+    "matched_decision_consumption": 0,
+    "published_valid_messages": 0,
+    "actual_window_screenshots": 0,
+    "recorded_window_captures": 0,
+    "blank_window_captures": 0,
+    "unavailable_window_files": 0,
+    "captured_images": 415,
+    "source_hash_matches": 17,
+    "image_input_clocks": [
+      {
+        "kind": "camera_contract",
+        "topic": "/rflysim/sensor1/img_rgb",
+        "encoding": "bgr8",
+        "width": 640,
+        "height": 480,
+        "step": 1920,
+        "header_stamp": 1792953399.3650227,
+        "pixel_clock": "camera_header",
+        "note": "Monotonic acquisition age always starts at ROS receipt, never inference completion",
+        "wall_time": "2026-10-25T18:36:39.503837+00:00",
+        "monotonic": 3071019.434652182
+      }
+    ],
+    "gate_start": "2026-10-25T18:37:58.911314+00:00",
+    "gate_stop": "2026-10-25T18:38:48.911272+00:00",
+    "scene_counts": [
+      {
+        "phase": "before",
+        "count": 3,
+        "actors": [
+          "BP_Balloon_C_2147481415",
+          "BP_Balloon_C_2147481417",
+          "BP_Balloon_C_2147481420"
+        ]
+      },
+      {
+        "phase": "after",
+        "count": 3,
+        "actors": [
+          "BP_Balloon_C_2147481415",
+          "BP_Balloon_C_2147481417",
+          "BP_Balloon_C_2147481420"
+        ]
+      },
+      {
+        "phase": "settled",
+        "count": 3,
+        "actors": [
+          "BP_Balloon_C_2147481415",
+          "BP_Balloon_C_2147481417",
+          "BP_Balloon_C_2147481420"
+        ]
+      }
+    ],
+    "errors": [
+      {
+        "kind": "discard_inactive",
+        "decision": "57d475e7a026",
+        "session": "1792953478910971256_1",
+        "wall_time": "2026-10-25T18:38:49.436197+00:00",
+        "monotonic": 3071149.367014085
+      }
+    ],
+    "latest_decisions": [
+      {
+        "decision": "ed3c81903fcf",
+        "color": "purple",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.730910254176706,
+        "latency_s": 1.6455223700031638
+      },
+      {
+        "decision": "87f98b767207",
+        "color": "purple",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.7527051069773734,
+        "latency_s": 1.6244421578012407
+      },
+      {
+        "decision": "eca1283fbf7e",
+        "color": "purple",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 2.033556613139808,
+        "latency_s": 1.9128028536215425
+      },
+      {
+        "decision": "339a3ca42ec4",
+        "color": "purple",
+        "bbox": [
+          334,
+          276,
+          386,
+          342
+        ],
+        "mode": "initialization",
+        "model_box": [
+          128,
+          96,
+          512,
+          480
+        ],
+        "source_age_s": 3.1227752403356135,
+        "latency_s": 3.03338120598346
+      },
+      {
+        "decision": "290aa4eb1518",
+        "color": "purple",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.203576915897429,
+        "latency_s": 1.1260387860238552
+      }
+    ],
+    "archive": "multimodal_v2_demo3_purple_20261026.tar.gz",
+    "native_row": {
+      "run_id": "20261026T023628_992501",
+      "target_color": "purple",
+      "start_time": "2026-10-25T18:36:46.308+00:00",
+      "end_time": "2026-10-25T18:39:04.259+00:00",
+      "total_time": "137.951",
+      "elapsed_time": "137.951",
+      "bt_success": "true",
+      "mission_success": "false",
+      "end_status": "completed",
+      "takeoff_status": "success",
+      "cross_frame_status": "success",
+      "detect_aruco_status": "success",
+      "return_cross_frame_status": "success",
+      "hit_balloon_status": "",
+      "land_status": "success",
+      "aruco_detect_time": "0.210",
+      "balloon_search_time": "",
+      "failure_stage": "hit_balloon",
+      "failure_reason": "",
+      "safety_boundary_triggered": "false",
+      "boundary_first_time": "",
+      "boundary_first_position": "",
+      "boundary_violation_count": "0",
+      "boundary_recovered": "",
+      "notes": "mission_command received as text; SUCCESS received while stages were unobserved: hit_balloon; bt_planning_controls=[{\"goal\":\"{frame_center}\",\"offset_z\":\"1.000000\",\"kind\":\"frame_outbound\"},{\"goal\":\"{frame_center}\",\"offset_z\":\"\",\"kind\":\"frame_return\"},{\"goal\":\"4.3;-2.0;0.7\",\"offset_z\":\"\",\"kind\":\"other\"}]; rosout_events_logged; setpoint_samples=6903; target_detection_messages=754"
+    }
+  },
+  {
+    "session": "/home/ubuntu/tcei_baseline_tools/results/multimodal_v2_demo3_red_20261026",
+    "sources": 39,
+    "model_calls": 38,
+    "batch_sizes": {
+      "16": 38
+    },
+    "processor_items": 624,
+    "image_count_violations": 0,
+    "decisions": 38,
+    "valid_decisions": 0,
+    "decision_modes": {
+      "initialization": 38
+    },
+    "consumed_logs": 0,
+    "consumed_ids": {},
+    "matched_decision_consumption": 0,
+    "published_valid_messages": 0,
+    "actual_window_screenshots": 0,
+    "recorded_window_captures": 0,
+    "blank_window_captures": 0,
+    "unavailable_window_files": 0,
+    "captured_images": 428,
+    "source_hash_matches": 21,
+    "image_input_clocks": [
+      {
+        "kind": "camera_contract",
+        "topic": "/rflysim/sensor1/img_rgb",
+        "encoding": "bgr8",
+        "width": 640,
+        "height": 480,
+        "step": 1920,
+        "header_stamp": 1792948142.4440227,
+        "pixel_clock": "camera_header",
+        "note": "Monotonic acquisition age always starts at ROS receipt, never inference completion",
+        "wall_time": "2026-10-25T17:09:02.578489+00:00",
+        "monotonic": 3065762.509299763
+      }
+    ],
+    "gate_start": "2026-10-25T17:10:14.415634+00:00",
+    "gate_stop": "2026-10-25T17:11:04.415677+00:00",
+    "scene_counts": [
+      {
+        "phase": "before",
+        "count": 3,
+        "actors": [
+          "BP_Balloon_C_2147481415",
+          "BP_Balloon_C_2147481417",
+          "BP_Balloon_C_2147481420"
+        ]
+      },
+      {
+        "phase": "after",
+        "count": 3,
+        "actors": [
+          "BP_Balloon_C_2147481415",
+          "BP_Balloon_C_2147481417",
+          "BP_Balloon_C_2147481420"
+        ]
+      },
+      {
+        "phase": "settled",
+        "count": 3,
+        "actors": [
+          "BP_Balloon_C_2147481415",
+          "BP_Balloon_C_2147481417",
+          "BP_Balloon_C_2147481420"
+        ]
+      }
+    ],
+    "errors": [
+      {
+        "kind": "discard_inactive",
+        "decision": "b0bb47342dfc",
+        "session": "1792948214415333006_1",
+        "wall_time": "2026-10-25T17:11:04.986457+00:00",
+        "monotonic": 3065884.917270162
+      }
+    ],
+    "latest_decisions": [
+      {
+        "decision": "33037d0b23bf",
+        "color": "red",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.1999196982942522,
+        "latency_s": 1.1409173007123172
+      },
+      {
+        "decision": "cdc621e54ed6",
+        "color": "red",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.2174120559357107,
+        "latency_s": 1.1443317201919854
+      },
+      {
+        "decision": "88c48e7965ef",
+        "color": "red",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.2414746638387442,
+        "latency_s": 1.1513888770714402
+      },
+      {
+        "decision": "6453b13ccdd0",
+        "color": "red",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.1971694030798972,
+        "latency_s": 1.1427639750763774
+      },
+      {
+        "decision": "dc64c032a7ed",
+        "color": "red",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.2018909761682153,
+        "latency_s": 1.1359057533554733
+      }
+    ],
+    "archive": "multimodal_v2_demo3_red_20261026.tar.gz",
+    "native_row": {
+      "run_id": "20261026T010851_a2597f",
+      "target_color": "red",
+      "start_time": "2026-10-25T17:09:09.038+00:00",
+      "end_time": "2026-10-25T17:11:43.373+00:00",
+      "total_time": "154.335",
+      "elapsed_time": "154.335",
+      "bt_success": "true",
+      "mission_success": "false",
+      "end_status": "completed",
+      "takeoff_status": "success",
+      "cross_frame_status": "success",
+      "detect_aruco_status": "success",
+      "return_cross_frame_status": "success",
+      "hit_balloon_status": "",
+      "land_status": "success",
+      "aruco_detect_time": "0.142",
+      "balloon_search_time": "",
+      "failure_stage": "hit_balloon",
+      "failure_reason": "",
+      "safety_boundary_triggered": "false",
+      "boundary_first_time": "",
+      "boundary_first_position": "",
+      "boundary_violation_count": "0",
+      "boundary_recovered": "",
+      "notes": "mission_command received as text; SUCCESS received while stages were unobserved: hit_balloon; bt_planning_controls=[{\"goal\":\"{frame_center}\",\"offset_z\":\"1.000000\",\"kind\":\"frame_outbound\"},{\"goal\":\"{frame_center}\",\"offset_z\":\"\",\"kind\":\"frame_return\"},{\"goal\":\"4.3;1.0;0.7\",\"offset_z\":\"\",\"kind\":\"other\"}]; rosout_events_logged; setpoint_samples=7717; target_detection_messages=864"
+    }
+  },
+  {
+    "session": "/home/ubuntu/tcei_baseline_tools/results/multimodal_v2_demo4_purple_20261026",
+    "sources": 28,
+    "model_calls": 47,
+    "batch_sizes": {
+      "16": 28,
+      "4": 2,
+      "8": 5,
+      "3": 1,
+      "6": 2,
+      "2": 3,
+      "1": 3,
+      "5": 3
+    },
+    "processor_items": 543,
+    "image_count_violations": 0,
+    "decisions": 27,
+    "valid_decisions": 4,
+    "decision_modes": {
+      "initialization": 27
+    },
+    "consumed_logs": 5,
+    "consumed_ids": {
+      "3937808bce5c": 5
+    },
+    "matched_decision_consumption": 1,
+    "published_valid_messages": 14,
+    "actual_window_screenshots": 0,
+    "recorded_window_captures": 1,
+    "blank_window_captures": 1,
+    "unavailable_window_files": 0,
+    "captured_images": 423,
+    "source_hash_matches": 17,
+    "image_input_clocks": [
+      {
+        "kind": "camera_contract",
+        "topic": "/rflysim/sensor1/img_rgb",
+        "encoding": "bgr8",
+        "width": 640,
+        "height": 480,
+        "step": 1920,
+        "header_stamp": 1792954634.3840165,
+        "pixel_clock": "camera_header",
+        "note": "Monotonic acquisition age always starts at ROS receipt, never inference completion",
+        "wall_time": "2026-10-25T18:57:14.441854+00:00",
+        "monotonic": 3072254.372667947
+      }
+    ],
+    "gate_start": "2026-10-25T18:58:33.768970+00:00",
+    "gate_stop": "2026-10-25T18:59:23.765156+00:00",
+    "scene_counts": [
+      {
+        "phase": "before",
+        "count": 3,
+        "actors": [
+          "BP_Balloon_C_2147481415",
+          "BP_Balloon_C_2147481417",
+          "BP_Balloon_C_2147481420"
+        ]
+      },
+      {
+        "phase": "after",
+        "count": 3,
+        "actors": [
+          "BP_Balloon_C_2147481415",
+          "BP_Balloon_C_2147481417",
+          "BP_Balloon_C_2147481420"
+        ]
+      },
+      {
+        "phase": "settled",
+        "count": 3,
+        "actors": [
+          "BP_Balloon_C_2147481415",
+          "BP_Balloon_C_2147481417",
+          "BP_Balloon_C_2147481420"
+        ]
+      }
+    ],
+    "errors": [
+      {
+        "kind": "discard_inactive",
+        "decision": "fc1e3b5917e9",
+        "session": "1792954713764785211_1",
+        "wall_time": "2026-10-25T18:59:23.879884+00:00",
+        "monotonic": 3072383.810698235
+      }
+    ],
+    "latest_decisions": [
+      {
+        "decision": "78179922c13d",
+        "color": "purple",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.6652945252135396,
+        "latency_s": 1.6238082670606673
+      },
+      {
+        "decision": "d5b07ec4bfe1",
+        "color": "purple",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 2.4923623697832227,
+        "latency_s": 2.382243165746331
+      },
+      {
+        "decision": "82da260c3e26",
+        "color": "purple",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.3048057476989925,
+        "latency_s": 1.1551809888333082
+      },
+      {
+        "decision": "b52944266e0a",
+        "color": "purple",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.2209938429296017,
+        "latency_s": 1.1494746031239629
+      },
+      {
+        "decision": "dbc906851b68",
+        "color": "purple",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.759045850019902,
+        "latency_s": 1.6752788838930428
+      }
+    ],
+    "archive": "multimodal_v2_demo4_purple_20261026.tar.gz",
+    "native_row": {
+      "run_id": "20261026T025703_0658e1",
+      "target_color": "purple",
+      "start_time": "2026-10-25T18:57:23.465+00:00",
+      "end_time": "2026-10-25T18:59:37.997+00:00",
+      "total_time": "134.532",
+      "elapsed_time": "134.532",
+      "bt_success": "true",
+      "mission_success": "false",
+      "end_status": "completed",
+      "takeoff_status": "success",
+      "cross_frame_status": "success",
+      "detect_aruco_status": "success",
+      "return_cross_frame_status": "success",
+      "hit_balloon_status": "",
+      "land_status": "success",
+      "aruco_detect_time": "0.104",
+      "balloon_search_time": "",
+      "failure_stage": "hit_balloon",
+      "failure_reason": "",
+      "safety_boundary_triggered": "false",
+      "boundary_first_time": "",
+      "boundary_first_position": "",
+      "boundary_violation_count": "0",
+      "boundary_recovered": "",
+      "notes": "mission_command received as text; SUCCESS received while stages were unobserved: hit_balloon; bt_planning_controls=[{\"goal\":\"{frame_center}\",\"offset_z\":\"1.000000\",\"kind\":\"frame_outbound\"},{\"goal\":\"{frame_center}\",\"offset_z\":\"\",\"kind\":\"frame_return\"},{\"goal\":\"4.3;-2.0;0.7\",\"offset_z\":\"\",\"kind\":\"other\"}]; rosout_events_logged; setpoint_samples=6735; target_detection_messages=848"
+    }
+  },
+  {
+    "session": "/home/ubuntu/tcei_baseline_tools/results/multimodal_v2_demo4_red_20261026",
+    "sources": 37,
+    "model_calls": 36,
+    "batch_sizes": {
+      "16": 36
+    },
+    "processor_items": 592,
+    "image_count_violations": 0,
+    "decisions": 36,
+    "valid_decisions": 0,
+    "decision_modes": {
+      "initialization": 36
+    },
+    "consumed_logs": 0,
+    "consumed_ids": {},
+    "matched_decision_consumption": 0,
+    "published_valid_messages": 0,
+    "actual_window_screenshots": 0,
+    "recorded_window_captures": 0,
+    "blank_window_captures": 0,
+    "unavailable_window_files": 0,
+    "captured_images": 485,
+    "source_hash_matches": 27,
+    "image_input_clocks": [
+      {
+        "kind": "camera_contract",
+        "topic": "/rflysim/sensor1/img_rgb",
+        "encoding": "bgr8",
+        "width": 640,
+        "height": 480,
+        "step": 1920,
+        "header_stamp": 1792948970.540011,
+        "pixel_clock": "camera_header",
+        "note": "Monotonic acquisition age always starts at ROS receipt, never inference completion",
+        "wall_time": "2026-10-25T17:22:50.667055+00:00",
+        "monotonic": 3066590.597872735
+      }
+    ],
+    "gate_start": "2026-10-25T17:24:13.589985+00:00",
+    "gate_stop": "2026-10-25T17:25:03.590250+00:00",
+    "scene_counts": [
+      {
+        "phase": "before",
+        "count": 3,
+        "actors": [
+          "BP_Balloon_C_2147481416",
+          "BP_Balloon_C_2147481418",
+          "BP_Balloon_C_2147481421"
+        ]
+      },
+      {
+        "phase": "after",
+        "count": 3,
+        "actors": [
+          "BP_Balloon_C_2147481416",
+          "BP_Balloon_C_2147481418",
+          "BP_Balloon_C_2147481421"
+        ]
+      },
+      {
+        "phase": "settled",
+        "count": 3,
+        "actors": [
+          "BP_Balloon_C_2147481416",
+          "BP_Balloon_C_2147481418",
+          "BP_Balloon_C_2147481421"
+        ]
+      }
+    ],
+    "errors": [
+      {
+        "kind": "discard_inactive",
+        "decision": "af8e16521a4a",
+        "session": "1792949053589839243_1",
+        "wall_time": "2026-10-25T17:25:03.949707+00:00",
+        "monotonic": 3066723.880522139
+      }
+    ],
+    "latest_decisions": [
+      {
+        "decision": "a46520ccfeef",
+        "color": "red",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.3812555018812418,
+        "latency_s": 1.32276078639552
+      },
+      {
+        "decision": "88f5ec129fed",
+        "color": "red",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.3688029469922185,
+        "latency_s": 1.3108887360431254
+      },
+      {
+        "decision": "ee0b1e220286",
+        "color": "red",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.1569220228120685,
+        "latency_s": 1.1141542843542993
+      },
+      {
+        "decision": "d2ea40773736",
+        "color": "red",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.1422021081671119,
+        "latency_s": 1.1036503403447568
+      },
+      {
+        "decision": "00a9c66bf01a",
+        "color": "red",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.1750975819304585,
+        "latency_s": 1.113657555077225
+      }
+    ],
+    "archive": "multimodal_v2_demo4_red_20261026.tar.gz",
+    "native_row": {
+      "run_id": "20261026T012238_bac163",
+      "target_color": "red",
+      "start_time": "2026-10-25T17:22:56.675+00:00",
+      "end_time": "2026-10-25T17:26:22.485+00:00",
+      "total_time": "205.810",
+      "elapsed_time": "205.810",
+      "bt_success": "true",
+      "mission_success": "false",
+      "end_status": "completed",
+      "takeoff_status": "success",
+      "cross_frame_status": "success",
+      "detect_aruco_status": "success",
+      "return_cross_frame_status": "success",
+      "hit_balloon_status": "",
+      "land_status": "success",
+      "aruco_detect_time": "0.410",
+      "balloon_search_time": "",
+      "failure_stage": "hit_balloon",
+      "failure_reason": "",
+      "safety_boundary_triggered": "false",
+      "boundary_first_time": "",
+      "boundary_first_position": "",
+      "boundary_violation_count": "0",
+      "boundary_recovered": "",
+      "notes": "mission_command received as text; checkArrival made no progress for 32.0s at target (0.0, 0.0, 0.5); SUCCESS received while stages were unobserved: hit_balloon; bt_planning_controls=[{\"goal\":\"{frame_center}\",\"offset_z\":\"1.000000\",\"kind\":\"frame_outbound\"},{\"goal\":\"{frame_center}\",\"offset_z\":\"\",\"kind\":\"frame_return\"},{\"goal\":\"4.3;1.0;0.7\",\"offset_z\":\"\",\"kind\":\"other\"}]; rosout_events_logged; setpoint_samples=10293; target_detection_messages=1662"
+    }
+  },
+  {
+    "session": "/home/ubuntu/tcei_baseline_tools/results/multimodal_v2_demo5_purple_20261026",
+    "sources": 34,
+    "model_calls": 52,
+    "batch_sizes": {
+      "16": 30,
+      "1": 8,
+      "8": 5,
+      "2": 3,
+      "4": 2,
+      "3": 4
+    },
+    "processor_items": 555,
+    "image_count_violations": 0,
+    "decisions": 33,
+    "valid_decisions": 7,
+    "decision_modes": {
+      "initialization": 30,
+      "confirmation": 3
+    },
+    "consumed_logs": 20,
+    "consumed_ids": {
+      "beb8eec5c343": 5,
+      "4e155bb9db22": 14,
+      "daccae8fec47": 1
+    },
+    "matched_decision_consumption": 3,
+    "published_valid_messages": 48,
+    "actual_window_screenshots": 3,
+    "recorded_window_captures": 3,
+    "blank_window_captures": 0,
+    "unavailable_window_files": 0,
+    "captured_images": 435,
+    "source_hash_matches": 15,
+    "image_input_clocks": [
+      {
+        "kind": "camera_contract",
+        "topic": "/rflysim/sensor1/img_rgb",
+        "encoding": "bgr8",
+        "width": 640,
+        "height": 480,
+        "step": 1920,
+        "header_stamp": 1792956964.8160133,
+        "pixel_clock": "camera_header",
+        "note": "Monotonic acquisition age always starts at ROS receipt, never inference completion",
+        "wall_time": "2026-10-25T19:36:04.958472+00:00",
+        "monotonic": 3074584.889286123
+      }
+    ],
+    "gate_start": "2026-10-25T19:37:23.984551+00:00",
+    "gate_stop": "2026-10-25T19:38:13.984055+00:00",
+    "scene_counts": [
+      {
+        "phase": "before",
+        "count": 3,
+        "actors": [
+          "BP_Balloon_C_2147481415",
+          "BP_Balloon_C_2147481417",
+          "BP_Balloon_C_2147481420"
+        ]
+      },
+      {
+        "phase": "after",
+        "count": 3,
+        "actors": [
+          "BP_Balloon_C_2147481415",
+          "BP_Balloon_C_2147481417",
+          "BP_Balloon_C_2147481420"
+        ]
+      },
+      {
+        "phase": "settled",
+        "count": 3,
+        "actors": [
+          "BP_Balloon_C_2147481415",
+          "BP_Balloon_C_2147481417",
+          "BP_Balloon_C_2147481420"
+        ]
+      }
+    ],
+    "errors": [
+      {
+        "kind": "discard_inactive",
+        "decision": "14ece2b12c23",
+        "session": "1792957043983690397_1",
+        "wall_time": "2026-10-25T19:38:14.235031+00:00",
+        "monotonic": 3074714.165843783
+      }
+    ],
+    "latest_decisions": [
+      {
+        "decision": "45d796789eca",
+        "color": "purple",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.2766799912787974,
+        "latency_s": 1.1760083818808198
+      },
+      {
+        "decision": "4e155bb9db22",
+        "color": "purple",
+        "bbox": [
+          47,
+          191,
+          97,
+          247
+        ],
+        "mode": "initialization",
+        "model_box": [
+          0,
+          96,
+          256,
+          384
+        ],
+        "source_age_s": 2.845357565674931,
+        "latency_s": 2.731677051167935
+      },
+      {
+        "decision": "85db9fbe966e",
+        "color": "purple",
+        "bbox": [
+          419,
+          192,
+          448,
+          252
+        ],
+        "mode": "initialization",
+        "model_box": [
+          256,
+          96,
+          640,
+          384
+        ],
+        "source_age_s": 3.029550325125456,
+        "latency_s": 2.9617276531644166
+      },
+      {
+        "decision": "daccae8fec47",
+        "color": "purple",
+        "bbox": [
+          291,
+          207,
+          329,
+          249
+        ],
+        "mode": "confirmation",
+        "model_box": null,
+        "source_age_s": 0.37390481773763895,
+        "latency_s": 0.2943937801755965
+      },
+      {
+        "decision": "b9b77e4b72ed",
+        "color": "purple",
+        "bbox": [
+          286,
+          208,
+          324,
+          250
+        ],
+        "mode": "confirmation",
+        "model_box": null,
+        "source_age_s": 0.4042844162322581,
+        "latency_s": 0.2800542525947094
+      }
+    ],
+    "archive": "multimodal_v2_demo5_purple_20261026.tar.gz",
+    "native_row": {
+      "run_id": "20261026T033554_ebf04f",
+      "target_color": "purple",
+      "start_time": "2026-10-25T19:36:11.510+00:00",
+      "end_time": "2026-10-25T19:38:27.876+00:00",
+      "total_time": "136.366",
+      "elapsed_time": "136.366",
+      "bt_success": "true",
+      "mission_success": "false",
+      "end_status": "completed",
+      "takeoff_status": "success",
+      "cross_frame_status": "success",
+      "detect_aruco_status": "success",
+      "return_cross_frame_status": "success",
+      "hit_balloon_status": "",
+      "land_status": "success",
+      "aruco_detect_time": "0.104",
+      "balloon_search_time": "",
+      "failure_stage": "hit_balloon",
+      "failure_reason": "",
+      "safety_boundary_triggered": "false",
+      "boundary_first_time": "",
+      "boundary_first_position": "",
+      "boundary_violation_count": "0",
+      "boundary_recovered": "",
+      "notes": "mission_command received as text; SUCCESS received while stages were unobserved: hit_balloon; bt_planning_controls=[{\"goal\":\"{frame_center}\",\"offset_z\":\"1.000000\",\"kind\":\"frame_outbound\"},{\"goal\":\"{frame_center}\",\"offset_z\":\"\",\"kind\":\"frame_return\"},{\"goal\":\"4.3;-2.0;0.7\",\"offset_z\":\"\",\"kind\":\"other\"}]; rosout_events_logged; setpoint_samples=6811; target_detection_messages=939"
+    }
+  },
+  {
+    "session": "/home/ubuntu/tcei_baseline_tools/results/multimodal_v2_demo5_red_20261026",
+    "sources": 40,
+    "model_calls": 52,
+    "batch_sizes": {
+      "16": 34,
+      "1": 8,
+      "4": 1,
+      "8": 3,
+      "3": 3,
+      "5": 1,
+      "2": 2
+    },
+    "processor_items": 614,
+    "image_count_violations": 0,
+    "decisions": 39,
+    "valid_decisions": 7,
+    "decision_modes": {
+      "initialization": 34,
+      "confirmation": 5
+    },
+    "consumed_logs": 14,
+    "consumed_ids": {
+      "498283974fcf": 9,
+      "1e3d88a1f8b6": 2,
+      "8fefff14521b": 1,
+      "d01fdb8201f1": 2
+    },
+    "matched_decision_consumption": 4,
+    "published_valid_messages": 31,
+    "actual_window_screenshots": 2,
+    "recorded_window_captures": 2,
+    "blank_window_captures": 0,
+    "unavailable_window_files": 0,
+    "captured_images": 405,
+    "source_hash_matches": 20,
+    "image_input_clocks": [
+      {
+        "kind": "camera_contract",
+        "topic": "/rflysim/sensor1/img_rgb",
+        "encoding": "bgr8",
+        "width": 640,
+        "height": 480,
+        "step": 1920,
+        "header_stamp": 1792956500.1850224,
+        "pixel_clock": "camera_header",
+        "note": "Monotonic acquisition age always starts at ROS receipt, never inference completion",
+        "wall_time": "2026-10-25T19:28:20.305892+00:00",
+        "monotonic": 3074120.236704849
+      }
+    ],
+    "gate_start": "2026-10-25T19:29:28.144405+00:00",
+    "gate_stop": "2026-10-25T19:30:18.144375+00:00",
+    "scene_counts": [
+      {
+        "phase": "before",
+        "count": 3,
+        "actors": [
+          "BP_Balloon_C_2147481416",
+          "BP_Balloon_C_2147481418",
+          "BP_Balloon_C_2147481421"
+        ]
+      }
+    ],
+    "errors": [
+      {
+        "kind": "discard_inactive",
+        "decision": "4c14e8cb3a3a",
+        "session": "1792956568143975942_1",
+        "wall_time": "2026-10-25T19:30:19.422773+00:00",
+        "monotonic": 3074239.353587034
+      }
+    ],
+    "latest_decisions": [
+      {
+        "decision": "611f628ba8bf",
+        "color": "red",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.2577435290440917,
+        "latency_s": 1.1536283339373767
+      },
+      {
+        "decision": "d635dd36e09a",
+        "color": "red",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.6459761238656938,
+        "latency_s": 1.5233684359118342
+      },
+      {
+        "decision": "b27053ed3848",
+        "color": "red",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 2.161819681059569,
+        "latency_s": 2.0461041829548776
+      },
+      {
+        "decision": "b029b935f716",
+        "color": "red",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.9388463199138641,
+        "latency_s": 1.8935232823714614
+      },
+      {
+        "decision": "1e9ded3b1687",
+        "color": "red",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.7536499169655144,
+        "latency_s": 1.649359127972275
+      }
+    ],
+    "archive": "multimodal_v2_demo5_red_20261026.tar.gz",
+    "native_row": {
+      "run_id": "20261026T032808_88c324",
+      "target_color": "red",
+      "start_time": "2026-10-25T19:28:26.689+00:00",
+      "end_time": "2026-10-25T19:30:31.472+00:00",
+      "total_time": "124.784",
+      "elapsed_time": "124.784",
+      "bt_success": "true",
+      "mission_success": "false",
+      "end_status": "completed",
+      "takeoff_status": "success",
+      "cross_frame_status": "success",
+      "detect_aruco_status": "success",
+      "return_cross_frame_status": "success",
+      "hit_balloon_status": "",
+      "land_status": "success",
+      "aruco_detect_time": "0.216",
+      "balloon_search_time": "",
+      "failure_stage": "hit_balloon",
+      "failure_reason": "",
+      "safety_boundary_triggered": "false",
+      "boundary_first_time": "",
+      "boundary_first_position": "",
+      "boundary_violation_count": "0",
+      "boundary_recovered": "",
+      "notes": "mission_command received as text; SUCCESS received while stages were unobserved: hit_balloon; bt_planning_controls=[{\"goal\":\"{frame_center}\",\"offset_z\":\"1.000000\",\"kind\":\"frame_outbound\"},{\"goal\":\"{frame_center}\",\"offset_z\":\"\",\"kind\":\"frame_return\"},{\"goal\":\"4.3;1.0;0.7\",\"offset_z\":\"\",\"kind\":\"other\"}]; rosout_events_logged; setpoint_samples=6234; target_detection_messages=733"
+    }
+  },
+  {
+    "session": "/home/ubuntu/tcei_baseline_tools/results/multimodal_v2_demo_blue_20261026",
+    "sources": 43,
+    "model_calls": 54,
+    "batch_sizes": {
+      "16": 30,
+      "2": 2,
+      "8": 5,
+      "5": 2,
+      "4": 2,
+      "6": 1,
+      "1": 12
+    },
+    "processor_items": 560,
+    "image_count_violations": 0,
+    "decisions": 42,
+    "valid_decisions": 15,
+    "decision_modes": {
+      "initialization": 30,
+      "confirmation": 12
+    },
+    "consumed_logs": 31,
+    "consumed_ids": {
+      "6b0208e5abda": 14,
+      "f90360d82203": 2,
+      "94e220fc5374": 1,
+      "34db3202e6b5": 2,
+      "4e8015dcbfa3": 1,
+      "061bc341ab60": 2,
+      "38d23a27fd5d": 1,
+      "17b0491565ef": 2,
+      "c55dd22f7c36": 1,
+      "bfce2afda9ba": 2,
+      "a6b98328fbcb": 2,
+      "9d220c149d5a": 1
+    },
+    "matched_decision_consumption": 12,
+    "published_valid_messages": 66,
+    "actual_window_screenshots": 4,
+    "recorded_window_captures": 4,
+    "blank_window_captures": 0,
+    "unavailable_window_files": 0,
+    "captured_images": 430,
+    "source_hash_matches": 28,
+    "image_input_clocks": [
+      {
+        "kind": "camera_contract",
+        "topic": "/rflysim/sensor1/img_rgb",
+        "encoding": "bgr8",
+        "width": 640,
+        "height": 480,
+        "step": 1920,
+        "header_stamp": 1792955519.405022,
+        "pixel_clock": "camera_header",
+        "note": "Monotonic acquisition age always starts at ROS receipt, never inference completion",
+        "wall_time": "2026-10-25T19:11:59.465919+00:00",
+        "monotonic": 3073139.396729977
+      }
+    ],
+    "gate_start": "2026-10-25T19:13:19.957855+00:00",
+    "gate_stop": "2026-10-25T19:14:09.957838+00:00",
+    "scene_counts": [
+      {
+        "phase": "before",
+        "count": 3,
+        "actors": [
+          "BP_Balloon_C_2147481415",
+          "BP_Balloon_C_2147481417",
+          "BP_Balloon_C_2147481420"
+        ]
+      },
+      {
+        "phase": "after",
+        "count": 1,
+        "actors": [
+          "BP_Balloon_C_2147481415"
+        ]
+      },
+      {
+        "phase": "settled",
+        "count": 1,
+        "actors": [
+          "BP_Balloon_C_2147481415"
+        ]
+      }
+    ],
+    "errors": [
+      {
+        "kind": "discard_inactive",
+        "decision": "438f2b04e0f7",
+        "session": "1792955599957506273_1",
+        "wall_time": "2026-10-25T19:14:09.991958+00:00",
+        "monotonic": 3073269.922763908
+      }
+    ],
+    "latest_decisions": [
+      {
+        "decision": "c55dd22f7c36",
+        "color": "blue",
+        "bbox": [
+          257,
+          225,
+          299,
+          285
+        ],
+        "mode": "confirmation",
+        "model_box": null,
+        "source_age_s": 0.36319597577676177,
+        "latency_s": 0.24646939802914858
+      },
+      {
+        "decision": "bfce2afda9ba",
+        "color": "blue",
+        "bbox": [
+          247,
+          224,
+          292,
+          288
+        ],
+        "mode": "confirmation",
+        "model_box": null,
+        "source_age_s": 0.39427573839202523,
+        "latency_s": 0.25012642703950405
+      },
+      {
+        "decision": "a6b98328fbcb",
+        "color": "blue",
+        "bbox": [
+          232,
+          221,
+          279,
+          289
+        ],
+        "mode": "confirmation",
+        "model_box": null,
+        "source_age_s": 0.3925321330316365,
+        "latency_s": 0.2512951190583408
+      },
+      {
+        "decision": "9d220c149d5a",
+        "color": "blue",
+        "bbox": [
+          203,
+          221,
+          249,
+          287
+        ],
+        "mode": "confirmation",
+        "model_box": null,
+        "source_age_s": 0.4515137788839638,
+        "latency_s": 0.26770744379609823
+      },
+      {
+        "decision": "f18df196cc28",
+        "color": "blue",
+        "bbox": [
+          144,
+          212,
+          189,
+          277
+        ],
+        "mode": "confirmation",
+        "model_box": null,
+        "source_age_s": 0.3698291671462357,
+        "latency_s": 0.25430421996861696
+      }
+    ],
+    "archive": "multimodal_v2_demo_blue_20261026.tar.gz",
+    "native_row": {
+      "run_id": "20261026T031142_4b43d5",
+      "target_color": "blue",
+      "start_time": "2026-10-25T19:12:06.099+00:00",
+      "end_time": "2026-10-25T19:14:28.668+00:00",
+      "total_time": "142.569",
+      "elapsed_time": "142.569",
+      "bt_success": "true",
+      "mission_success": "false",
+      "end_status": "completed",
+      "takeoff_status": "success",
+      "cross_frame_status": "success",
+      "detect_aruco_status": "success",
+      "return_cross_frame_status": "success",
+      "hit_balloon_status": "",
+      "land_status": "success",
+      "aruco_detect_time": "0.213",
+      "balloon_search_time": "",
+      "failure_stage": "hit_balloon",
+      "failure_reason": "",
+      "safety_boundary_triggered": "false",
+      "boundary_first_time": "",
+      "boundary_first_position": "",
+      "boundary_violation_count": "0",
+      "boundary_recovered": "",
+      "notes": "mission_command received as text; SUCCESS received while stages were unobserved: hit_balloon; bt_planning_controls=[{\"goal\":\"{frame_center}\",\"offset_z\":\"1.000000\",\"kind\":\"frame_outbound\"},{\"goal\":\"{frame_center}\",\"offset_z\":\"\",\"kind\":\"frame_return\"},{\"goal\":\"5.3;1.0;0.7\",\"offset_z\":\"\",\"kind\":\"other\"}]; rosout_events_logged; setpoint_samples=7134; target_detection_messages=915"
+    }
+  },
+  {
+    "session": "/home/ubuntu/tcei_baseline_tools/results/multimodal_v2_demo_purple_20261026",
+    "sources": 33,
+    "model_calls": 32,
+    "batch_sizes": {
+      "16": 32
+    },
+    "processor_items": 528,
+    "image_count_violations": 0,
+    "decisions": 32,
+    "valid_decisions": 0,
+    "decision_modes": {
+      "initialization": 32
+    },
+    "consumed_logs": 0,
+    "consumed_ids": {},
+    "matched_decision_consumption": 0,
+    "published_valid_messages": 0,
+    "actual_window_screenshots": 0,
+    "recorded_window_captures": 0,
+    "blank_window_captures": 0,
+    "unavailable_window_files": 0,
+    "captured_images": 485,
+    "source_hash_matches": 14,
+    "image_input_clocks": [
+      {
+        "kind": "camera_contract",
+        "topic": "/rflysim/sensor1/img_rgb",
+        "encoding": "bgr8",
+        "width": 640,
+        "height": 480,
+        "step": 1920,
+        "header_stamp": 1792949872.540019,
+        "pixel_clock": "camera_header",
+        "note": "Monotonic acquisition age always starts at ROS receipt, never inference completion",
+        "wall_time": "2026-10-25T17:37:52.595334+00:00",
+        "monotonic": 3067492.526146897
+      }
+    ],
+    "gate_start": "2026-10-25T17:39:15.513692+00:00",
+    "gate_stop": "2026-10-25T17:40:05.513722+00:00",
+    "scene_counts": [
+      {
+        "phase": "before",
+        "count": 3,
+        "actors": [
+          "BP_Balloon_C_2147481415",
+          "BP_Balloon_C_2147481417",
+          "BP_Balloon_C_2147481420"
+        ]
+      },
+      {
+        "phase": "after",
+        "count": 3,
+        "actors": [
+          "BP_Balloon_C_2147481415",
+          "BP_Balloon_C_2147481417",
+          "BP_Balloon_C_2147481420"
+        ]
+      },
+      {
+        "phase": "settled",
+        "count": 3,
+        "actors": [
+          "BP_Balloon_C_2147481415",
+          "BP_Balloon_C_2147481417",
+          "BP_Balloon_C_2147481420"
+        ]
+      }
+    ],
+    "errors": [
+      {
+        "kind": "discard_inactive",
+        "decision": "1a06821e2df2",
+        "session": "1792949955513343517_1",
+        "wall_time": "2026-10-25T17:40:06.094135+00:00",
+        "monotonic": 3067626.024947936
+      }
+    ],
+    "latest_decisions": [
+      {
+        "decision": "f630706b6f4d",
+        "color": "purple",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.4761314885690808,
+        "latency_s": 1.3991164872422814
+      },
+      {
+        "decision": "df3a5daf6ef4",
+        "color": "purple",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.175574318971485,
+        "latency_s": 1.1058938330970705
+      },
+      {
+        "decision": "5160b13ace7d",
+        "color": "purple",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": [
+          0,
+          288,
+          256,
+          480
+        ],
+        "source_age_s": 2.8725347872823477,
+        "latency_s": 2.804752582218498
+      },
+      {
+        "decision": "7eb7de01c8b3",
+        "color": "purple",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": [
+          384,
+          288,
+          640,
+          480
+        ],
+        "source_age_s": 1.9807250369340181,
+        "latency_s": 1.84566201409325
+      },
+      {
+        "decision": "c5cf1be69f52",
+        "color": "purple",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.1549495528452098,
+        "latency_s": 1.1112322229892015
+      }
+    ],
+    "archive": "multimodal_v2_demo_purple_20261026.tar.gz",
+    "native_row": {
+      "run_id": "20261026T013742_dbffb4",
+      "target_color": "purple",
+      "start_time": "2026-10-25T17:37:59.637+00:00",
+      "end_time": "2026-10-25T17:41:33.866+00:00",
+      "total_time": "214.228",
+      "elapsed_time": "214.228",
+      "bt_success": "true",
+      "mission_success": "false",
+      "end_status": "completed",
+      "takeoff_status": "success",
+      "cross_frame_status": "success",
+      "detect_aruco_status": "success",
+      "return_cross_frame_status": "success",
+      "hit_balloon_status": "",
+      "land_status": "success",
+      "aruco_detect_time": "0.487",
+      "balloon_search_time": "",
+      "failure_stage": "hit_balloon",
+      "failure_reason": "",
+      "safety_boundary_triggered": "false",
+      "boundary_first_time": "",
+      "boundary_first_position": "",
+      "boundary_violation_count": "0",
+      "boundary_recovered": "",
+      "notes": "mission_command received as text; SUCCESS received while stages were unobserved: hit_balloon; bt_planning_controls=[{\"goal\":\"{frame_center}\",\"offset_z\":\"1.000000\",\"kind\":\"frame_outbound\"},{\"goal\":\"{frame_center}\",\"offset_z\":\"\",\"kind\":\"frame_return\"},{\"goal\":\"4.3;-2.0;0.7\",\"offset_z\":\"\",\"kind\":\"other\"}]; rosout_events_logged; setpoint_samples=10714; target_detection_messages=1292"
+    }
+  },
+  {
+    "session": "/home/ubuntu/tcei_baseline_tools/results/multimodal_v2_demo_red_20261026",
+    "sources": 34,
+    "model_calls": 33,
+    "batch_sizes": {
+      "16": 33
+    },
+    "processor_items": 544,
+    "image_count_violations": 0,
+    "decisions": 33,
+    "valid_decisions": 0,
+    "decision_modes": {
+      "initialization": 33
+    },
+    "consumed_logs": 0,
+    "consumed_ids": {},
+    "matched_decision_consumption": 0,
+    "published_valid_messages": 0,
+    "actual_window_screenshots": 0,
+    "recorded_window_captures": 0,
+    "blank_window_captures": 0,
+    "unavailable_window_files": 0,
+    "captured_images": 646,
+    "source_hash_matches": 33,
+    "image_input_clocks": [
+      {
+        "kind": "camera_contract",
+        "topic": "/rflysim/sensor1/img_rgb",
+        "encoding": "bgr8",
+        "width": 640,
+        "height": 480,
+        "step": 1920,
+        "header_stamp": 1792945447.3500233,
+        "pixel_clock": "camera_header",
+        "note": "Monotonic acquisition age always starts at ROS receipt, never inference completion",
+        "wall_time": "2026-10-25T16:24:07.406791+00:00",
+        "monotonic": 3063067.337601602
+      }
+    ],
+    "gate_start": "2026-10-25T16:25:34.124501+00:00",
+    "gate_stop": "2026-10-25T16:26:24.124467+00:00",
+    "scene_counts": [
+      {
+        "phase": "before",
+        "count": 3,
+        "actors": [
+          "BP_Balloon_C_2147481415",
+          "BP_Balloon_C_2147481417",
+          "BP_Balloon_C_2147481420"
+        ]
+      },
+      {
+        "phase": "after",
+        "count": 3,
+        "actors": [
+          "BP_Balloon_C_2147481415",
+          "BP_Balloon_C_2147481417",
+          "BP_Balloon_C_2147481420"
+        ]
+      },
+      {
+        "phase": "settled",
+        "count": 3,
+        "actors": [
+          "BP_Balloon_C_2147481415",
+          "BP_Balloon_C_2147481417",
+          "BP_Balloon_C_2147481420"
+        ]
+      }
+    ],
+    "errors": [
+      {
+        "kind": "discard_inactive",
+        "decision": "fc8a14a99d84",
+        "session": "1792945534124136849_1",
+        "wall_time": "2026-10-25T16:26:25.044342+00:00",
+        "monotonic": 3063204.975159369
+      }
+    ],
+    "latest_decisions": [
+      {
+        "decision": "e247a1baf84e",
+        "color": "red",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.5060265860520303,
+        "latency_s": 1.44866297300905
+      },
+      {
+        "decision": "8bb538d83cd6",
+        "color": "red",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.4967669611796737,
+        "latency_s": 1.4569662883877754
+      },
+      {
+        "decision": "1b0b26dd1da4",
+        "color": "red",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.5045965509489179,
+        "latency_s": 1.4557091458700597
+      },
+      {
+        "decision": "0ad8881180db",
+        "color": "red",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.4854377047158778,
+        "latency_s": 1.4425710188224912
+      },
+      {
+        "decision": "f2fbe17d7209",
+        "color": "red",
+        "bbox": null,
+        "mode": "initialization",
+        "model_box": null,
+        "source_age_s": 1.4397668116725981,
+        "latency_s": 1.3766846982762218
+      }
+    ],
+    "archive": "multimodal_v2_demo_red_20261026.tar.gz",
+    "native_row": {
+      "run_id": "20261026T002350_197c14",
+      "target_color": "red",
+      "start_time": "2026-10-25T16:24:15.844+00:00",
+      "end_time": "2026-10-25T16:29:15.961+00:00",
+      "total_time": "300.117",
+      "elapsed_time": "300.117",
+      "bt_success": "",
+      "mission_success": "false",
+      "end_status": "stuck",
+      "takeoff_status": "success",
+      "cross_frame_status": "success",
+      "detect_aruco_status": "success",
+      "return_cross_frame_status": "success",
+      "hit_balloon_status": "",
+      "land_status": "",
+      "aruco_detect_time": "0.143",
+      "balloon_search_time": "",
+      "failure_stage": "hit_balloon",
+      "failure_reason": "mission_timeout: no /mission_result received",
+      "safety_boundary_triggered": "true",
+      "boundary_first_time": "2026-10-25T16:25:41.170+00:00",
+      "boundary_first_position": "",
+      "boundary_violation_count": "4",
+      "boundary_recovered": "false",
+      "notes": "mission_command received as text; checkArrival made no progress for 20.0s at target (0.0, 0.0, 0.5); mission timeout after 300.0 seconds; no terminal /mission_result received; bt_planning_controls=[{\"goal\":\"{frame_center}\",\"offset_z\":\"1.000000\",\"kind\":\"frame_outbound\"},{\"goal\":\"{frame_center}\",\"offset_z\":\"\",\"kind\":\"frame_return\"},{\"goal\":\"4.3;1.0;0.7\",\"offset_z\":\"\",\"kind\":\"other\"}]; rosout_events_logged; setpoint_samples=14861; target_detection_messages=1376"
+    }
+  },
+  {
+    "session": "/home/ubuntu/tcei_baseline_tools/results/multimodal_v2_diagnostic_baseline_red_20261026",
+    "sources": 0,
+    "model_calls": 0,
+    "batch_sizes": {},
+    "processor_items": 0,
+    "image_count_violations": 0,
+    "decisions": 0,
+    "valid_decisions": 0,
+    "decision_modes": {},
+    "consumed_logs": 0,
+    "consumed_ids": {},
+    "matched_decision_consumption": 0,
+    "published_valid_messages": 0,
+    "actual_window_screenshots": 0,
+    "recorded_window_captures": 0,
+    "blank_window_captures": 0,
+    "unavailable_window_files": 0,
+    "captured_images": 420,
+    "source_hash_matches": 0,
+    "image_input_clocks": [],
+    "gate_start": null,
+    "gate_stop": null,
+    "scene_counts": [
+      {
+        "phase": "before",
+        "count": 3,
+        "actors": [
+          "BP_Balloon_C_2147481416",
+          "BP_Balloon_C_2147481418",
+          "BP_Balloon_C_2147481421"
+        ]
+      },
+      {
+        "phase": "after",
+        "count": 2,
+        "actors": [
+          "BP_Balloon_C_2147481416",
+          "BP_Balloon_C_2147481418"
+        ]
+      },
+      {
+        "phase": "settled",
+        "count": 2,
+        "actors": [
+          "BP_Balloon_C_2147481416",
+          "BP_Balloon_C_2147481418"
+        ]
+      }
+    ],
+    "errors": [],
+    "latest_decisions": [],
+    "archive": "multimodal_v2_diagnostic_baseline_red_20261026.tar.gz",
+    "native_row": {
+      "run_id": "20261026T004126_87bd4c",
+      "target_color": "red",
+      "start_time": "2026-10-25T16:41:43.754+00:00",
+      "end_time": "2026-10-25T16:43:51.830+00:00",
+      "total_time": "128.076",
+      "elapsed_time": "128.076",
+      "bt_success": "true",
+      "mission_success": "false",
+      "end_status": "completed",
+      "takeoff_status": "success",
+      "cross_frame_status": "success",
+      "detect_aruco_status": "success",
+      "return_cross_frame_status": "success",
+      "hit_balloon_status": "",
+      "land_status": "success",
+      "aruco_detect_time": "0.099",
+      "balloon_search_time": "",
+      "failure_stage": "hit_balloon",
+      "failure_reason": "",
+      "safety_boundary_triggered": "false",
+      "boundary_first_time": "",
+      "boundary_first_position": "",
+      "boundary_violation_count": "0",
+      "boundary_recovered": "",
+      "notes": "mission_command received as text; SUCCESS received while stages were unobserved: hit_balloon; bt_planning_controls=[{\"goal\":\"{frame_center}\",\"offset_z\":\"1.000000\",\"kind\":\"frame_outbound\"},{\"goal\":\"{frame_center}\",\"offset_z\":\"\",\"kind\":\"frame_return\"},{\"goal\":\"4.3;1.0;0.7\",\"offset_z\":\"\",\"kind\":\"other\"}]; rosout_events_logged; setpoint_samples=6407; target_detection_messages=841"
+    }
+  }
+]
