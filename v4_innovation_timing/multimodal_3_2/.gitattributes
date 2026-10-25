@@ -1,0 +1,10 @@
+*.md text eol=lf
+.gitattributes text eol=lf
+*.sh text eol=lf
+tools/*.py text eol=lf
+patches/*.py text eol=lf
+test_*.py text eol=lf
+staging/** -text
+source/** -text
+evidence/handoff/** -text whitespace=cr-at-eol
+evidence/raw_trials.tar.gz binary

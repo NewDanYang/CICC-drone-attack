@@ -1,0 +1,17 @@
+{
+  "scope": "AST processor-spy contract audit; no model inference",
+  "model_source_md5": "629bf42b6bd3685c7e1fae178d4fa330",
+  "model_source_sha256": "50f1d9a74737b7bd768cc3b90d01d20cfe3a7dc5fa8cc67dbbeed7e8e035c061",
+  "tested_candidate_md5": "9e59ada4270b086f15e6133dc854cedb",
+  "images_delivered_to_processor": {
+    "tested_list_text_only": [
+      0
+    ],
+    "string_content_with_image_kwarg": [
+      1
+    ],
+    "explicit_image_in_content": [
+      1
+    ]
+  }
+}

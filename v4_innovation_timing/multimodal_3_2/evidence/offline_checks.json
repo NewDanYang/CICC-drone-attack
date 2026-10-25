@@ -1,0 +1,18 @@
+{
+  "scope": "offline structural checks; not flight/vision acceptance",
+  "unchanged_command_helper_asts": [
+    "generate_commands",
+    "expected_balloon_color",
+    "command_balloon_colors",
+    "single_action_problems",
+    "balloon_command_missing",
+    "command_problems",
+    "retry_prompt",
+    "generate_validated_commands"
+  ],
+  "bt_patch_expected_output_md5": "9a1e8d2a5913968b1c2300cad1dc02f7",
+  "bt_patch_rejects_wrong_input_md5": true,
+  "schema_checks": "passed",
+  "shell_syntax": "passed",
+  "default_deploy_guard": "rejected as expected (exit 2)"
+}
