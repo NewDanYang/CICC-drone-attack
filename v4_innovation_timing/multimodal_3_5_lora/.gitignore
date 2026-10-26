@@ -2,3 +2,6 @@
 evidence/data/*.jpg
 evidence/data/*.png
 tools/__pycache__/
+# Expanded archive and redundant local replay; authoritative raw package is retained.
+evidence/final_run/
+evidence/local_rescore/

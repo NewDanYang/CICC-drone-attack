@@ -1,0 +1,333 @@
+{
+  "summaries": {
+    "base": {
+      "overall": {
+        "n": 67,
+        "positive": 55,
+        "negative": 12,
+        "region_hits": 41,
+        "geometry_hits": 0,
+        "pipeline_geometry_hits": 0,
+        "presence_hits": 55,
+        "nonempty": 55,
+        "region_negative_errors": 3,
+        "bbox_negative_errors": 2,
+        "max_iou": 0.42303441696407784,
+        "median_center_error_px": 102.58723702293578
+      },
+      "colors": {
+        "red": {
+          "n": 24,
+          "positive": 20,
+          "negative": 4,
+          "region_hits": 17,
+          "geometry_hits": 0,
+          "pipeline_geometry_hits": 0,
+          "presence_hits": 20,
+          "nonempty": 20,
+          "region_negative_errors": 0,
+          "bbox_negative_errors": 0,
+          "max_iou": 0.4110261536057041,
+          "median_center_error_px": 60.93008681812361
+        },
+        "purple": {
+          "n": 30,
+          "positive": 26,
+          "negative": 4,
+          "region_hits": 22,
+          "geometry_hits": 0,
+          "pipeline_geometry_hits": 0,
+          "presence_hits": 26,
+          "nonempty": 26,
+          "region_negative_errors": 0,
+          "bbox_negative_errors": 0,
+          "max_iou": 0.42303441696407784,
+          "median_center_error_px": 130.2939142273379
+        },
+        "blue": {
+          "n": 13,
+          "positive": 9,
+          "negative": 4,
+          "region_hits": 2,
+          "geometry_hits": 0,
+          "pipeline_geometry_hits": 0,
+          "presence_hits": 9,
+          "nonempty": 9,
+          "region_negative_errors": 3,
+          "bbox_negative_errors": 2,
+          "max_iou": 0.33744345542098353,
+          "median_center_error_px": 92.75911599406281
+        }
+      },
+      "clipped": {
+        "n": 6,
+        "positive": 6,
+        "negative": 0,
+        "region_hits": 4,
+        "geometry_hits": 0,
+        "pipeline_geometry_hits": 0,
+        "presence_hits": 6,
+        "nonempty": 6,
+        "region_negative_errors": 0,
+        "bbox_negative_errors": 0,
+        "max_iou": 0.42303441696407784,
+        "median_center_error_px": 118.9232054171519
+      },
+      "unclipped": {
+        "n": 61,
+        "positive": 49,
+        "negative": 12,
+        "region_hits": 37,
+        "geometry_hits": 0,
+        "pipeline_geometry_hits": 0,
+        "presence_hits": 49,
+        "nonempty": 49,
+        "region_negative_errors": 3,
+        "bbox_negative_errors": 2,
+        "max_iou": 0.4110261536057041,
+        "median_center_error_px": 93.73073135316932
+      },
+      "median_call_latency_s": 1.0111575911287218
+    },
+    "adapter": {
+      "overall": {
+        "n": 67,
+        "positive": 55,
+        "negative": 12,
+        "region_hits": 48,
+        "geometry_hits": 11,
+        "pipeline_geometry_hits": 11,
+        "presence_hits": 55,
+        "nonempty": 49,
+        "region_negative_errors": 2,
+        "bbox_negative_errors": 2,
+        "max_iou": 0.7524577856691734,
+        "median_center_error_px": 18.950124010148304
+      },
+      "colors": {
+        "red": {
+          "n": 24,
+          "positive": 20,
+          "negative": 4,
+          "region_hits": 17,
+          "geometry_hits": 3,
+          "pipeline_geometry_hits": 3,
+          "presence_hits": 20,
+          "nonempty": 19,
+          "region_negative_errors": 0,
+          "bbox_negative_errors": 0,
+          "max_iou": 0.7524577856691734,
+          "median_center_error_px": 17.94017837146557
+        },
+        "purple": {
+          "n": 30,
+          "positive": 26,
+          "negative": 4,
+          "region_hits": 25,
+          "geometry_hits": 5,
+          "pipeline_geometry_hits": 5,
+          "presence_hits": 26,
+          "nonempty": 22,
+          "region_negative_errors": 0,
+          "bbox_negative_errors": 0,
+          "max_iou": 0.7466311177248667,
+          "median_center_error_px": 12.71245220220078
+        },
+        "blue": {
+          "n": 13,
+          "positive": 9,
+          "negative": 4,
+          "region_hits": 6,
+          "geometry_hits": 3,
+          "pipeline_geometry_hits": 3,
+          "presence_hits": 9,
+          "nonempty": 8,
+          "region_negative_errors": 2,
+          "bbox_negative_errors": 2,
+          "max_iou": 0.5827253392579033,
+          "median_center_error_px": 24.598579958207402
+        }
+      },
+      "clipped": {
+        "n": 6,
+        "positive": 6,
+        "negative": 0,
+        "region_hits": 5,
+        "geometry_hits": 1,
+        "pipeline_geometry_hits": 1,
+        "presence_hits": 6,
+        "nonempty": 5,
+        "region_negative_errors": 0,
+        "bbox_negative_errors": 0,
+        "max_iou": 0.5386928979760001,
+        "median_center_error_px": 30.28970782295532
+      },
+      "unclipped": {
+        "n": 61,
+        "positive": 49,
+        "negative": 12,
+        "region_hits": 43,
+        "geometry_hits": 10,
+        "pipeline_geometry_hits": 10,
+        "presence_hits": 49,
+        "nonempty": 44,
+        "region_negative_errors": 2,
+        "bbox_negative_errors": 2,
+        "max_iou": 0.7524577856691734,
+        "median_center_error_px": 18.44515119080694
+      },
+      "median_call_latency_s": 0.7952934261411428
+    }
+  },
+  "gates": {
+    "region": false,
+    "geometry": false,
+    "full_color_preflight_eligible": false,
+    "red_region": true,
+    "red_geometry": false,
+    "red_flight_eligible": false
+  },
+  "training_color_region_prior": {
+    "red": "left",
+    "purple": "right",
+    "blue": "center"
+  },
+  "prior_positive_hits": 33,
+  "off_prior": {
+    "n": 22,
+    "base": 15,
+    "adapter": 16
+  },
+  "trials": {
+    "13_r3_red_baseline": {
+      "base": {
+        "n": 21,
+        "positive": 21,
+        "region_hits": 17,
+        "geometry_hits": 0
+      },
+      "adapter": {
+        "n": 21,
+        "positive": 21,
+        "region_hits": 18,
+        "geometry_hits": 3
+      }
+    },
+    "14_r3_red_candidate": {
+      "base": {
+        "n": 7,
+        "positive": 3,
+        "region_hits": 2,
+        "geometry_hits": 0
+      },
+      "adapter": {
+        "n": 7,
+        "positive": 3,
+        "region_hits": 2,
+        "geometry_hits": 0
+      }
+    },
+    "15_r3_purple_candidate": {
+      "base": {
+        "n": 4,
+        "positive": 0,
+        "region_hits": 0,
+        "geometry_hits": 0
+      },
+      "adapter": {
+        "n": 4,
+        "positive": 0,
+        "region_hits": 0,
+        "geometry_hits": 0
+      }
+    },
+    "16_r3_purple_baseline": {
+      "base": {
+        "n": 12,
+        "positive": 12,
+        "region_hits": 9,
+        "geometry_hits": 0
+      },
+      "adapter": {
+        "n": 12,
+        "positive": 12,
+        "region_hits": 12,
+        "geometry_hits": 2
+      }
+    },
+    "17_r3_blue_baseline": {
+      "base": {
+        "n": 19,
+        "positive": 19,
+        "region_hits": 13,
+        "geometry_hits": 0
+      },
+      "adapter": {
+        "n": 19,
+        "positive": 19,
+        "region_hits": 16,
+        "geometry_hits": 6
+      }
+    },
+    "18_r3_blue_candidate": {
+      "base": {
+        "n": 4,
+        "positive": 0,
+        "region_hits": 0,
+        "geometry_hits": 0
+      },
+      "adapter": {
+        "n": 4,
+        "positive": 0,
+        "region_hits": 0,
+        "geometry_hits": 0
+      }
+    }
+  },
+  "size_bins": {
+    "small": {
+      "n": 20,
+      "base": {
+        "region_hits": 17,
+        "geometry_hits": 0
+      },
+      "adapter": {
+        "region_hits": 17,
+        "geometry_hits": 3
+      }
+    },
+    "medium": {
+      "n": 19,
+      "base": {
+        "region_hits": 16,
+        "geometry_hits": 0
+      },
+      "adapter": {
+        "region_hits": 18,
+        "geometry_hits": 4
+      }
+    },
+    "large": {
+      "n": 16,
+      "base": {
+        "region_hits": 8,
+        "geometry_hits": 0
+      },
+      "adapter": {
+        "region_hits": 13,
+        "geometry_hits": 4
+      }
+    }
+  },
+  "manual_bbox_subset": {
+    "n": 3,
+    "base": {
+      "region_hits": 2,
+      "geometry_hits": 0
+    },
+    "adapter": {
+      "region_hits": 2,
+      "geometry_hits": 0
+    }
+  }
+}

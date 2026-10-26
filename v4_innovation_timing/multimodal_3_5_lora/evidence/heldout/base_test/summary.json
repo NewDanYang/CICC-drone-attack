@@ -1,0 +1,92 @@
+{
+  "overall": {
+    "n": 67,
+    "positive": 55,
+    "negative": 12,
+    "region_hits": 41,
+    "geometry_hits": 0,
+    "pipeline_geometry_hits": 0,
+    "presence_hits": 55,
+    "nonempty": 55,
+    "region_negative_errors": 3,
+    "bbox_negative_errors": 2,
+    "max_iou": 0.42303441696407784,
+    "median_center_error_px": 102.58723702293578
+  },
+  "colors": {
+    "red": {
+      "n": 24,
+      "positive": 20,
+      "negative": 4,
+      "region_hits": 17,
+      "geometry_hits": 0,
+      "pipeline_geometry_hits": 0,
+      "presence_hits": 20,
+      "nonempty": 20,
+      "region_negative_errors": 0,
+      "bbox_negative_errors": 0,
+      "max_iou": 0.4110261536057041,
+      "median_center_error_px": 60.93008681812361
+    },
+    "purple": {
+      "n": 30,
+      "positive": 26,
+      "negative": 4,
+      "region_hits": 22,
+      "geometry_hits": 0,
+      "pipeline_geometry_hits": 0,
+      "presence_hits": 26,
+      "nonempty": 26,
+      "region_negative_errors": 0,
+      "bbox_negative_errors": 0,
+      "max_iou": 0.42303441696407784,
+      "median_center_error_px": 130.2939142273379
+    },
+    "blue": {
+      "n": 13,
+      "positive": 9,
+      "negative": 4,
+      "region_hits": 2,
+      "geometry_hits": 0,
+      "pipeline_geometry_hits": 0,
+      "presence_hits": 9,
+      "nonempty": 9,
+      "region_negative_errors": 3,
+      "bbox_negative_errors": 2,
+      "max_iou": 0.33744345542098353,
+      "median_center_error_px": 92.75911599406281
+    }
+  },
+  "clipped": {
+    "n": 6,
+    "positive": 6,
+    "negative": 0,
+    "region_hits": 4,
+    "geometry_hits": 0,
+    "pipeline_geometry_hits": 0,
+    "presence_hits": 6,
+    "nonempty": 6,
+    "region_negative_errors": 0,
+    "bbox_negative_errors": 0,
+    "max_iou": 0.42303441696407784,
+    "median_center_error_px": 118.9232054171519
+  },
+  "unclipped": {
+    "n": 61,
+    "positive": 49,
+    "negative": 12,
+    "region_hits": 37,
+    "geometry_hits": 0,
+    "pipeline_geometry_hits": 0,
+    "presence_hits": 49,
+    "nonempty": 49,
+    "region_negative_errors": 3,
+    "bbox_negative_errors": 2,
+    "max_iou": 0.4110261536057041,
+    "median_center_error_px": 93.73073135316932
+  },
+  "median_call_latency_s": 1.0111575911287218,
+  "peak_allocated_bytes": 10048752128,
+  "peak_reserved_bytes": 10462691328,
+  "processor_calls": 134
+}

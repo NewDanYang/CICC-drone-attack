@@ -1,6 +1,9 @@
 # Evidence hashes refer to exact archived bytes, including original newlines.
 evidence/** -text
+evidence/** whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 configs/** -text
 tools/*.py text eol=lf
 tools/*.sh text eol=lf
 *.md text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
