@@ -1,0 +1,64 @@
+{
+  "initializations": 280,
+  "reason_counts": {
+    "no_target_positive_tiles": 240,
+    "geometry_unconfirmed": 22,
+    "bbox_nonempty": 18
+  },
+  "per_color": {
+    "red": {
+      "no_target_positive_tiles": 94,
+      "geometry_unconfirmed": 7,
+      "bbox_nonempty": 1
+    },
+    "purple": {
+      "no_target_positive_tiles": 73,
+      "bbox_nonempty": 9,
+      "geometry_unconfirmed": 4
+    },
+    "blue": {
+      "geometry_unconfirmed": 11,
+      "bbox_nonempty": 8,
+      "no_target_positive_tiles": 73
+    }
+  },
+  "crop_pixel_hashes_verified": 4480,
+  "review_sample_count": 71,
+  "prompts": {
+    "这张图片中有没有气球？如果有，只回复red balloon、purple balloon或blue balloon。如果没有气球，只回复no balloon。平坦的墙壁、天空和小车不是气球。不要解释。": 280
+  },
+  "raw_answer_counts": {
+    "no balloon": 3892,
+    "是的，有一个气球。": 151,
+    "red balloon": 113,
+    "没有气球。": 96,
+    "蓝色气球": 56,
+    "是的，有一只气球。": 39,
+    "是的，图片中有一个气球。": 35,
+    "blue balloon": 27,
+    "这张图片中没有气球。": 27,
+    "purple balloon": 13,
+    "是的，有一只蓝色气球。": 9,
+    "这张图片中有一个气球。": 7,
+    "是的，有气球。": 3,
+    "是的，图片中有气球。": 2,
+    "是的，这张图片中有一个气球。": 2,
+    "蓝色": 2,
+    "是的，有一辆蓝色气球。": 1,
+    "是的，有一只紫色气球。": 1,
+    "这张图片中有一个蓝色的气球。": 1,
+    "是的，有一只红色的气球。": 1,
+    "是的，这张图片中有气球。": 1,
+    "紫色气球": 1
+  },
+  "target_positive_counts": {
+    "0": 240,
+    "2": 7,
+    "6": 8,
+    "4": 12,
+    "3": 3,
+    "1": 4,
+    "5": 5,
+    "7": 1
+  }
+}

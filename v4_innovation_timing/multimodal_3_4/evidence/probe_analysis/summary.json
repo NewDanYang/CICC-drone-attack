@@ -1,0 +1,12 @@
+{
+  "n": 24,
+  "visible": 8,
+  "absent": 15,
+  "uncertain": 1,
+  "coarse_visible_hits": 8,
+  "nonempty_visible_boxes": 8,
+  "usable_visible_boxes": 0,
+  "false_positive_boxes_on_absent": 0,
+  "schema_or_parse_errors": 0,
+  "passes_preflight_probe_gate": false
+}

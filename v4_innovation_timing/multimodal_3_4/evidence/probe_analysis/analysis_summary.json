@@ -1,0 +1,63 @@
+{
+  "original_gate_summary": {
+    "n": 24,
+    "visible": 8,
+    "absent": 15,
+    "uncertain": 1,
+    "coarse_visible_hits": 8,
+    "nonempty_visible_boxes": 8,
+    "usable_visible_boxes": 0,
+    "false_positive_boxes_on_absent": 0,
+    "schema_or_parse_errors": 0,
+    "passes_preflight_probe_gate": false
+  },
+  "full_visible": {
+    "n": 5,
+    "nonempty": 5,
+    "usable": 0,
+    "min_iou": 0.0,
+    "median_iou": 0.0,
+    "max_iou": 0.0539147791517725,
+    "center_error_min_px": 44.01806560947446,
+    "center_error_median_px": 69.49754837582404,
+    "center_error_max_px": 238.51256684711603
+  },
+  "source_clipped_visible": {
+    "n": 3,
+    "nonempty": 3,
+    "usable": 0,
+    "min_iou": 0.0,
+    "median_iou": 0.021402551971562992,
+    "max_iou": 0.024396393293728693,
+    "center_error_min_px": 52.481514497963936,
+    "center_error_median_px": 87.33805999677345,
+    "center_error_max_px": 111.50596382705274
+  },
+  "all_visible": {
+    "n": 8,
+    "nonempty": 8,
+    "usable": 0,
+    "min_iou": 0.0,
+    "median_iou": 0.0,
+    "max_iou": 0.0539147791517725,
+    "center_error_min_px": 44.01806560947446,
+    "center_error_median_px": 74.10566939065889,
+    "center_error_max_px": 238.51256684711603
+  },
+  "coarse_region_correct": 6,
+  "expanded_roi_contains_visible_box": 8,
+  "absent_unknown_balloon_responses": 7,
+  "old_visible_roi_nonempty": 8,
+  "old_visible_bbox_nonempty": 1,
+  "old_visible_bbox_geometry_pass": 1,
+  "all_verified_archive_members": 47,
+  "actual_processor_calls": 34,
+  "one_model_instance_verified": true,
+  "all_actual_images_and_crops_verified": true,
+  "source_pixel_hashes_verified": 34,
+  "deployment_11_md5_unchanged": true,
+  "visible_latency_min_s": 3.819499553181231,
+  "visible_latency_median_s": 4.669378058984876,
+  "visible_latency_max_s": 4.872491736896336,
+  "scope": "24 correlated old red frames, diagnostic; no flight or independent acceptance"
+}

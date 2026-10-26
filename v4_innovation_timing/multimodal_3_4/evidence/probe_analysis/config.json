@@ -1,0 +1,20 @@
+{
+  "model": "/home/ubuntu/model/FM9G4B-V",
+  "reference_sha256": "f6783cf2b3ab640784e6152227bc9a8701fce203c6bd8805886a89a2c60f0fd8",
+  "model_source_md5": "629bf42b6bd3685c7e1fae178d4fa330",
+  "model_config_sha256": "726df8d510a6650b19a7b08b6ddb62bc547b173471ece63efc1d0e79942f5400",
+  "full_prompt": "请逐一列出图中实际可见的气球，包括部分遮挡和画面边缘的气球。不要把小车、标牌或墙当成气球，不推测完全遮挡的气球。只输出一个JSON对象，顶层只有balloons数组；没有可见气球时输出 {\"balloons\":[]}。数组中每个气球用一个对象表示，对象只有color和region两个字段。color必须是一个单独的字符串，从以下四个值中选择一个：red、blue、purple、unknown。红色填red，蓝色填blue，紫色填purple；无法确定颜色时填unknown。禁止将多个颜色拼在一起，禁止使用竖线或斜杠。region按气球可见部分中心所在的图像宽度三等分区域填写，只能选择一个值：left、center、right。不要输出解释或Markdown。",
+  "full_prompt_sha256": "0f63bf86ed600042a3e2b459f43c5f4b520b77b296391f3473a27ac4e20037c8",
+  "bbox_prompt": "请定位这张图片中实际可见的红色气球球体，排除小车、绳子、墙面。只输出一个JSON对象，只有bbox字段。bbox是气球可见部分的紧致矩形，格式为[x_min,y_min,x_max,y_max]，以当前这张图片的左上角为(0,0)、右下角为(1000,1000)，四个坐标均为0到1000之间的整数，x向右增加，y向下增加。没有实际可见红色气球时输出{\"bbox\":null}。不要解释，不要Markdown。",
+  "max_new_tokens": 128,
+  "sampling": false,
+  "num_beams": 1,
+  "max_slice_nums": "model processor default",
+  "dtype": "bfloat16",
+  "gpu": "NVIDIA L40",
+  "torch_threads": 2,
+  "cases_sha256": "beebc92b355cb00711c7f7eab1c438a8dbdd23e699b0929e14d32d73ca15d5ed",
+  "warmup_calls": 1,
+  "estimator_inputs": "only image and requested color; labels used after predictions for scoring",
+  "timing": "synchronized model.chat including preprocessing, excluding model load and disk image writes"
+}
