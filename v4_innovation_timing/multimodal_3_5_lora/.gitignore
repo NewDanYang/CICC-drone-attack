@@ -1,0 +1,4 @@
+# Raw frames are retained with checksums in evidence/dataset.tar.gz.
+evidence/data/*.jpg
+evidence/data/*.png
+tools/__pycache__/

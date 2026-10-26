@@ -1,0 +1,8 @@
+{
+  "environment": "unchanged demo inference environment",
+  "official_function": "dataset.conversation_to_ids_model",
+  "example": "first training region QA",
+  "supervised_tokens": 11,
+  "decoded_supervision": "{\"color\":\"purple\",\"region\":\"right\"}<|im_end|>",
+  "scope": "token-label mask probe only; full image preprocessing still pending official numpy>=1.24 environment"
+}
