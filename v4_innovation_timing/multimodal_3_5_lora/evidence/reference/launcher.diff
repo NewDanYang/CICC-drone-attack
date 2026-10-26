@@ -49,22 +49,25 @@
      --do_train \
      --do_eval \
      --tune_vision true \
-@@ -39,8 +47,8 @@
+@@ -38,17 +46,17 @@
+     --model_max_length $MODEL_MAX_Length \
      --max_slice_nums 9 \
      --max_steps 10000 \
-     --eval_steps 1000 \
+-    --eval_steps 1000 \
 -    --output_dir output/output__lora \
 -    --logging_dir output/output_lora \
++    --eval_steps 200 \
 +    --output_dir /root/gpufree-data/tcei_lora35/output_lora \
 +    --logging_dir /root/gpufree-data/tcei_lora35/tensorboard \
      --logging_strategy "steps" \
      --per_device_train_batch_size 1 \
      --per_device_eval_batch_size 1 \
-@@ -48,7 +56,7 @@
+     --gradient_accumulation_steps 1 \
      --evaluation_strategy "steps" \
      --save_strategy "steps" \
-     --save_steps 1000 \
+-    --save_steps 1000 \
 -    --save_total_limit 10 \
++    --save_steps 200 \
 +    --save_total_limit 2 \
      --learning_rate 1e-6 \
      --weight_decay 0.1 \

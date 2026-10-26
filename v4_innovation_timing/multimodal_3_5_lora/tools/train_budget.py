@@ -8,6 +8,12 @@ from pathlib import Path
 
 ROOT=Path('/root/gpufree-data/tcei_lora35')
 OFFICIAL=ROOT/'official/FM9G4B-V/finetune'
+budget_path=ROOT/'training_wall_budget.json'
+if not budget_path.exists():
+    budget_path.write_text(json.dumps(dict(first_effective_training_start=1793029703.9464514,
+        deadline=1793029703.9464514+24*3600))+'\n')
+deadline=json.loads(budget_path.read_text())['deadline']
+if time.time()>=deadline:raise RuntimeError('24h training wall budget exhausted')
 if Path('/tmp/tcei_formal_trial.lock').exists(): raise RuntimeError('Formal trial active')
 lock=Path('/tmp/tcei_mm35_gpu.lock').open('a+')
 fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
@@ -59,8 +65,35 @@ class Audit(TrainerCallback):
         memory('train_begin',0)
     def on_step_end(self,args,state,control,**kw):
         memory('step',state.global_step)
-        if time.time()-started>24*3600:control.should_training_stop=True
+        if time.time()>=deadline:control.should_training_stop=True
         if Path('/tmp/tcei_formal_trial.lock').exists():raise RuntimeError('New formal trial active; stop')
+        return control
+    def on_save(self,args,state,control,**kw):
+        folder=Path(args.output_dir)/f'checkpoint-{state.global_step}'
+        assert folder.resolve().is_relative_to((ROOT/'output_lora').resolve())
+        assert (folder/'trainer_state.json').is_file()
+        assert (folder/'adapter_model.safetensors').is_file()
+        assert list(folder.glob('global_step*/*optim_states.pt'))
+        marker=dict(global_step=state.global_step,
+            cases_sha256=hashlib.sha256((ROOT/'data/cases.json').read_bytes()).hexdigest(),
+            completed_at=time.time())
+        tmp=folder/'experiment_complete.tmp';tmp.write_text(json.dumps(marker)+'\n')
+        tmp.replace(folder/'experiment_complete.json')
+
+class ResumableEarlyStopping(EarlyStoppingCallback):
+    def on_train_begin(self,args,state,control,**kw):
+        super().on_train_begin(args,state,control,**kw)
+        best=None;bad=0
+        for log in state.log_history:
+            if 'eval_loss' not in log:continue
+            loss=log['eval_loss']
+            if best is None or loss<best and abs(loss-best)>.005:bad=0
+            else:bad+=1
+            best=loss if best is None else min(best,loss)
+        self.early_stopping_patience_counter=bad
+    def on_evaluate(self,args,state,control,metrics,**kw):
+        super().on_evaluate(args,state,control,metrics,**kw)
+        if state.global_step<1000 and time.time()<deadline:control.should_training_stop=False
         return control
 
 sys.path.insert(0,str(OFFICIAL))
@@ -70,7 +103,20 @@ class AuditedTrainer(Original):
     def __init__(self,*args,**kwargs):
         super().__init__(*args,**kwargs)
         self.add_callback(Audit())
-        self.add_callback(EarlyStoppingCallback(early_stopping_patience=2,early_stopping_threshold=.005))
+        self.add_callback(ResumableEarlyStopping(early_stopping_patience=2,early_stopping_threshold=.005))
+    def train(self,*args,**kwargs):
+        # Only a fully saved checkpoint from this exact dataset may be resumed.
+        checksum=hashlib.sha256((ROOT/'data/cases.json').read_bytes()).hexdigest()
+        candidates=sorted((ROOT/'output_lora').glob('checkpoint-*'),key=lambda p:int(p.name.split('-')[-1]),reverse=True)
+        for folder in candidates:
+            marker=folder/'experiment_complete.json'
+            if not marker.is_file():continue
+            receipt=json.loads(marker.read_text())
+            assert receipt['cases_sha256']==checksum,'Dataset changed across resume'
+            kwargs.setdefault('resume_from_checkpoint',str(folder))
+            print('AUTO_RESUME',folder,flush=True)
+            break
+        return super().train(*args,**kwargs)
 trainer.Trainer=AuditedTrainer
 sys.argv[0]=str(OFFICIAL/'finetune.py')
 runpy.run_path(str(OFFICIAL/'finetune.py'),run_name='__main__')

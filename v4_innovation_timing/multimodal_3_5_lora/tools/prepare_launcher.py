@@ -14,6 +14,8 @@ replacements={
     '--bf16_full_eval false':'--bf16_full_eval true',
     '--fp16 true':'--fp16 false',
     '--fp16_full_eval true':'--fp16_full_eval false',
+    '--eval_steps 1000':'--eval_steps 200',
+    '--save_steps 1000':'--save_steps 200',
     '--save_total_limit 10':'--save_total_limit 2',
     'output/output__lora':f'{root}/output_lora',
     'output/output_lora':f'{root}/tensorboard',
