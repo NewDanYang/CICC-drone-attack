@@ -33,10 +33,10 @@ torchrun $DISTRIBUTED_ARGS /root/gpufree-data/tcei_lora35/tools/train_budget.py 
     --remove_unused_columns false \
     --label_names "labels" \
     --prediction_loss_only true \
-    --bf16 false \
-    --bf16_full_eval false \
-    --fp16 true \
-    --fp16_full_eval true \
+    --bf16 true \
+    --bf16_full_eval true \
+    --fp16 false \
+    --fp16_full_eval false \
     --do_train \
     --do_eval \
     --tune_vision true \
@@ -64,7 +64,7 @@ torchrun $DISTRIBUTED_ARGS /root/gpufree-data/tcei_lora35/tools/train_budget.py 
     --lr_scheduler_type "cosine" \
     --logging_steps 1 \
     --gradient_checkpointing true \
-    --deepspeed /root/gpufree-data/tcei_lora35/official/FM9G4B-V/finetune/ds_config_zero2.json \
+    --deepspeed /root/gpufree-data/tcei_lora35/configs/ds_config_zero2_cpu.json \
     --report_to "tensorboard" \
     --load_best_model_at_end true \
     --metric_for_best_model eval_loss \

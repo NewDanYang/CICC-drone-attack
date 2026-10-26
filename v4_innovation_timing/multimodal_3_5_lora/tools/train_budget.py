@@ -14,6 +14,7 @@ fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
 apps=subprocess.check_output(['nvidia-smi','--query-compute-apps=pid','--format=csv,noheader']).decode().strip()
 if apps: raise RuntimeError('GPU occupied: '+apps)
 import torch
+import psutil
 from transformers import TrainerCallback, EarlyStoppingCallback
 torch.set_num_threads(4);torch.set_num_interop_threads(1)
 torch.cuda.set_per_process_memory_fraction(23*1024**3/torch.cuda.get_device_properties(0).total_memory)
@@ -31,11 +32,12 @@ atexit.register(lambda:(ROOT/'training_peak.json').write_text(json.dumps(memory(
 stop_monitor=threading.Event()
 def monitor():
     with (ROOT/'gpu_memory.csv').open('w',buffering=1) as stream:
-        stream.write('unix_time,total_gpu_used_mib\n')
+        stream.write('unix_time,total_gpu_used_mib,training_rss_mib\n')
         while not stop_monitor.is_set():
             try:
                 used=int(subprocess.check_output(['nvidia-smi','--query-gpu=memory.used','--format=csv,noheader,nounits'],timeout=5).decode().strip())
-                stream.write(f'{time.time()},{used}\n')
+                rss=psutil.Process().memory_info().rss/1024**2
+                stream.write(f'{time.time()},{used},{rss}\n')
                 if used>24576:
                     (ROOT/'memory_budget_exceeded.json').write_text(json.dumps(dict(used_mib=used,limit_mib=24576,time=time.time()))+'\n')
                     os.kill(os.getpid(),signal.SIGTERM)

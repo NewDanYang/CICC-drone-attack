@@ -1,5 +1,6 @@
 # Evidence hashes refer to exact archived bytes, including original newlines.
 evidence/** -text
+configs/** -text
 tools/*.py text eol=lf
 tools/*.sh text eol=lf
 *.md text eol=lf

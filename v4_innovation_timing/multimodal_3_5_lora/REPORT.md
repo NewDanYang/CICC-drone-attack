@@ -42,7 +42,7 @@
 | 实际匹配约束 | 当前模型采用 q_a/q_b/kv_a/kv_b 命名，手册正则只匹配 o_proj；实测模块清单另存 |
 | 视觉、语言 | tune_vision=true，tune_llm=false，use_lora=true |
 | 其他可训练模块 | 官方脚本指定 embed_tokens、resampler、vpm；并非全模型仅训练低秩矩阵 |
-| 优化 | FP16、ZeRO2、batch=1、LR=1e-6、weight_decay=.1、beta2=.95 |
+| 优化 | 起点FP16，第0步dtype冲突后改BF16；ZeRO2、batch=1、LR=1e-6、weight_decay=.1、beta2=.95 |
 | 输入 | max_length=2048、max_slice_nums=9（模型原生预处理，不是旧流水线16块逐块提问） |
 | 预算调整 | 官方10000 steps上限，每1000 steps验证/保存；验证loss连续两次未改善0.005早停，24小时硬上限；保留2检查点，按验证loss选最佳，seed=3501 |
 | 评估内存 | prediction_loss_only=true，避免保存整个词表logits |
@@ -50,6 +50,10 @@
 手册原始上限是10000 steps、1000步验证、10个检查点；本轮保留步数/频率，检查点只留2个，并以验证loss早停和24小时上限限制预算。初稿拟1000步，实际启动前恢复官方上限，未执行过该短跑。完整差异均已保留，不把早停/日志/路径适配隐藏为“只改DATA”。不以留出测试选择检查点或修改提示词。
 
 训练独立环境和输出目录：`/root/gpufree-data/tcei_lora35/`。推理 `demo` 环境不更新。GPU实机是L40（nvidia-smi 可见总显存 46,068 MiB），使用23GiB PyTorch分配器上限为CUDA上下文留余量，另记峰值；这是大显存卡限额实验，不能直接宣传为物理24GB显卡复现。
+
+首次起跑在第0步因 `BFloat16 and Half` 失败：基座 `resampler.py:300` 强制特征为BF16，而手册加载FP16权重。未修改模型源码，以BF16重试（四个精度参数对称切换，ZeRO2自动对应）。原始异常和首次运行的脚本、参数/显存记录保留；尚无优化器更新，不能把它算成一轮有效微调。
+
+第二次BF16起跑在首次优化器更新时触发23GiB分配器限额（申请额外2.42GiB），0个调度步完成。原始OOM记录保留。第三次使用派生的ZeRO2配置将优化器状态移到CPU，并保留官方PyTorch AdamW算法；官方原始JSON未改，差异见 `reference/deepspeed_cpu.diff`。此配置需要额外CPU内存，另记训练进程RSS。
 
 训练结果、实际显存、选中检查点：待完成。
 

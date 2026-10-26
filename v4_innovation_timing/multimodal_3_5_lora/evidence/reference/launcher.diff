@@ -25,7 +25,7 @@
  
  MODEL_MAX_Length=2048 # if conduct multi-images sft, please set MODEL_MAX_Length=4096
  
-@@ -18,13 +26,13 @@
+@@ -18,17 +26,17 @@
      --master_addr $MASTER_ADDR \
      --master_port $MASTER_PORT
  "
@@ -37,10 +37,18 @@
      --remove_unused_columns false \
      --label_names "labels" \
 -    --prediction_loss_only false \
+-    --bf16 false \
+-    --bf16_full_eval false \
+-    --fp16 true \
+-    --fp16_full_eval true \
 +    --prediction_loss_only true \
-     --bf16 false \
-     --bf16_full_eval false \
-     --fp16 true \
++    --bf16 true \
++    --bf16_full_eval true \
++    --fp16 false \
++    --fp16_full_eval false \
+     --do_train \
+     --do_eval \
+     --tune_vision true \
 @@ -39,8 +47,8 @@
      --max_slice_nums 9 \
      --max_steps 10000 \
@@ -67,7 +75,7 @@
      --gradient_checkpointing true \
 -    --deepspeed ds_config_zero2.json \
 -    --report_to "tensorboard" 
-+    --deepspeed /root/gpufree-data/tcei_lora35/official/FM9G4B-V/finetune/ds_config_zero2.json \
++    --deepspeed /root/gpufree-data/tcei_lora35/configs/ds_config_zero2_cpu.json \
 +    --report_to "tensorboard" \
 +    --load_best_model_at_end true \
 +    --metric_for_best_model eval_loss \
