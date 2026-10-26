@@ -1,0 +1,114 @@
+{
+  "files": {
+    "/home/ubuntu/model/mission_once.py": {
+      "md5": "fca24bf1142ca8cddfb9e8d39c387a43",
+      "sha256": "573f3fc564f3aa1960702084aa7f372f55901e68fd320d5f7d72a13c3eaafccc"
+    },
+    "/home/ubuntu/catkin_ws/src/mission_pkg/src/bt_ros.cpp": {
+      "md5": "9b1cefe9dfa431418435f7f8f63a60ed",
+      "sha256": "60f81e31d6448724c0a246068c97eaba5bfcc1c53d39d88ffbca3841fcf098ff"
+    },
+    "/home/ubuntu/catkin_ws/devel/lib/mission_pkg/bt_ros": {
+      "md5": "abb5c49eb21b1b333d88677def4921ab",
+      "sha256": "6c47f0f4dea5b37ee3a8bfc9eed08a433f5888f7c92341fd06d7ca2505fbc841"
+    },
+    "/home/ubuntu/catkin_ws/src/mission_pkg/launch/llm_mission.launch": {
+      "md5": "5550c580a4822e773a331bcef11f0c47",
+      "sha256": "73865605433000e6fae973bb8c67539cb80f272aea2c98a32b715c34246003d2"
+    },
+    "/home/ubuntu/catkin_ws/src/mission_pkg/include/base/drone_action_node.h": {
+      "md5": "c415ddd8243afcc64c181be45bdac5e3",
+      "sha256": "0a8a922a0629fb545df8dd886685c1813d94b6dcda82afcaec2e4eb3fe2d2357"
+    },
+    "/home/ubuntu/catkin_ws/src/mission_pkg/src/nodes/action/visual_servo.cpp": {
+      "md5": "a63b57fa127a23cd8bb8e647f078ff21",
+      "sha256": "f7c839dedc67f94352006656124e8924a5e4a1ef30852bf0376816eff0a93373"
+    },
+    "/home/ubuntu/catkin_ws/src/mission_pkg/include/nodes/action/visual_servo.h": {
+      "md5": "d3324b0458b2160102f9bbf44546d035",
+      "sha256": "5a2db342d98bc80fb346cf363ce1c0e4a04f026ab91b7ce076659549fe49d405"
+    },
+    "/home/ubuntu/catkin_ws/src/mission_pkg/src/nodes/action/goto.cpp": {
+      "md5": "f557ace5bbf2ee7975b7335a738ffcf9",
+      "sha256": "a6ab5a068973f5fc88823286cdb1f46ea8560b7f68586bc4fd2143625f0440cc"
+    },
+    "/home/ubuntu/catkin_ws/src/mission_pkg/include/nodes/action/goto.h": {
+      "md5": "ee765e08024ea28cb1b8d32104a272d3",
+      "sha256": "2a988bd70de2ed07d9719600b266e944b3272b2a348f84e3b08924e162ae1bf3"
+    },
+    "/home/ubuntu/catkin_ws/src/mission_pkg/src/mavros_cnt.cpp": {
+      "md5": "edcd9397074f44c6028c8dca02902920",
+      "sha256": "14365bf85a918a5a799ac00b44de93a5b8989bd0d37592777f6d89fc2d8ab8a3"
+    },
+    "/home/ubuntu/catkin_ws/src/sensor_pkg/Config.json": {
+      "md5": "380f5f1f78000cdde9c8e116f7583e19",
+      "sha256": "37bbc9c1038f211ae3cdbfa960d3025f010d0d371a983a6b50c86338cf219d10"
+    },
+    "/home/ubuntu/model/FM9G4B-V/tokenization_fm9gv_fast.py": {
+      "md5": "c715ad7a4f950a0bf28ab64a72d8a8a2",
+      "sha256": "3228365f9a75c54b902bfddf60f1796d7e419661ec9e244b785beb4abe1a025c"
+    },
+    "/home/ubuntu/model/FM9G4B-V/configuration_fm9g.py": {
+      "md5": "e21ef5ec0c4b93957b689c727cff7db0",
+      "sha256": "766293428b12a7ddd93b96ee79ed0876d042e773549abad963b3fc1b8c5577f0"
+    },
+    "/home/ubuntu/model/FM9G4B-V/modeling_fm9g.py": {
+      "md5": "1a598e322f7557a2c8c1fb59203ddb53",
+      "sha256": "2f3f6bf7b255b489c56bd7a7c5ce70cbe602eae1b21d31e4417fbf40b849a770"
+    },
+    "/home/ubuntu/model/FM9G4B-V/processing_fm9gv.py": {
+      "md5": "740fb50c42d44f7002dbc47725a9639a",
+      "sha256": "9fa950c43ef1c1d3f0817778c8b87c2bfce4170622a6832a8b54abd562ea465b"
+    },
+    "/home/ubuntu/model/FM9G4B-V/image_processing_fm9gv.py": {
+      "md5": "2dc2984092a7fa966cb1f78007b10b6b",
+      "sha256": "d493e3e8445865139192a3d3551a015eba1c32e29f680f9b45a02146a2f1d852"
+    },
+    "/home/ubuntu/model/FM9G4B-V/modeling_fm9gv.py": {
+      "md5": "629bf42b6bd3685c7e1fae178d4fa330",
+      "sha256": "50f1d9a74737b7bd768cc3b90d01d20cfe3a7dc5fa8cc67dbbeed7e8e035c061"
+    },
+    "/home/ubuntu/model/FM9G4B-V/tokenization_fm9g.py": {
+      "md5": "879bdc0639daa64211c691bdabec4a03",
+      "sha256": "78a5fe12f3470062c114b3dcf274ce1dfef465951453c2eb16ed797d12ebff94"
+    },
+    "/home/ubuntu/model/FM9G4B-V/modeling_navit_siglip.py": {
+      "md5": "480ed71ef2bd5e777b77faf44707f1d1",
+      "sha256": "c71ca316fe7405325b7097364f98f71c317fff8c9f5c8820f30d3362b1ed5bfa"
+    },
+    "/home/ubuntu/model/FM9G4B-V/resampler.py": {
+      "md5": "307d43bfb82a5f1bd76558178f5627f3",
+      "sha256": "8f347badc48756ea9f32ce3f97da5fab7660b96e489be946226f8950d91201d9"
+    },
+    "/home/ubuntu/model/FM9G4B-V/tokenizer.json": {
+      "md5": "0943133b2ae2950a5a7f38bc8531c7b0",
+      "sha256": "4ec2d50cc716dd5546087d8fec44fa48d6ee78887c080e8a8fd96e058f087cad"
+    },
+    "/home/ubuntu/model/FM9G4B-V/tokenizer_config.json": {
+      "md5": "83320ca09b8b532614a74b5e53ebbdd5",
+      "sha256": "f92162f67fad194cd6279c211e26e1ba1d61585e03147172dd8edf5df4d10d44"
+    },
+    "/home/ubuntu/model/FM9G4B-V/added_tokens.json": {
+      "md5": "03d2e87eb20d8df4d5be84bb545cf09c",
+      "sha256": "4760fcbf90bc193f33827ffe02f2e7ba1af1ec43644cc02ac22fdd611f6cca15"
+    },
+    "/home/ubuntu/model/FM9G4B-V/preprocessor_config.json": {
+      "md5": "fb96505fe9b3e27aa29de32807014ea1",
+      "sha256": "7325477c6e9741d6306f54eae71cef8884c0e389d39aff72af8a84795ce2010b"
+    },
+    "/home/ubuntu/model/FM9G4B-V/special_tokens_map.json": {
+      "md5": "da3a8e8bb4cd8ef2e00198c60b5faf8a",
+      "sha256": "af21a2e263e40d4f5224a81c07e9728743bf944c174df9867978fda1ab785555"
+    },
+    "/home/ubuntu/model/FM9G4B-V/config.json": {
+      "md5": "b7bc924105bc0beaec7771ab715d9c50",
+      "sha256": "726df8d510a6650b19a7b08b6ddb62bc547b173471ece63efc1d0e79942f5400"
+    }
+  },
+  "demo_packages": {
+    "torch": "2.3.1",
+    "transformers": "4.44.2",
+    "accelerate": "1.2.1",
+    "numpy": "1.23.5"
+  }
+}

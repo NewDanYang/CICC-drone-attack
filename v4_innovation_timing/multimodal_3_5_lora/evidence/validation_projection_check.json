@@ -1,0 +1,5 @@
+{
+  "validation_cases_exactly_match_ids_and_image_sha256": true,
+  "validation_records": 76,
+  "note": "8 manual bbox additions affect r1/r3 only; validation unchanged. Aggregate cases hash changed, not inference inputs."
+}

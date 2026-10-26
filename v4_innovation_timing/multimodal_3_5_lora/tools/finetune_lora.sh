@@ -45,8 +45,8 @@ torchrun $DISTRIBUTED_ARGS /root/gpufree-data/tcei_lora35/tools/train_budget.py 
     --lora_target_modules "llm\..*layers\.\d+\.self_attn\.(q_proj|k_proj|v_proj|o_proj)" \
     --model_max_length $MODEL_MAX_Length \
     --max_slice_nums 9 \
-    --max_steps 1000 \
-    --eval_steps 100 \
+    --max_steps 10000 \
+    --eval_steps 1000 \
     --output_dir /root/gpufree-data/tcei_lora35/output_lora \
     --logging_dir /root/gpufree-data/tcei_lora35/tensorboard \
     --logging_strategy "steps" \
@@ -55,7 +55,7 @@ torchrun $DISTRIBUTED_ARGS /root/gpufree-data/tcei_lora35/tools/train_budget.py 
     --gradient_accumulation_steps 1 \
     --evaluation_strategy "steps" \
     --save_strategy "steps" \
-    --save_steps 100 \
+    --save_steps 1000 \
     --save_total_limit 2 \
     --learning_rate 1e-6 \
     --weight_decay 0.1 \

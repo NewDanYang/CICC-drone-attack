@@ -3,7 +3,7 @@
 No architecture, optimizer or loss replacements. LoRA paths/options come from the
 manual-derived launcher. The validation set alone selects the checkpoint.
 """
-import atexit, fcntl, hashlib, json, os, runpy, subprocess, sys, time
+import atexit, fcntl, hashlib, json, os, runpy, signal, subprocess, sys, threading, time
 from pathlib import Path
 
 ROOT=Path('/root/gpufree-data/tcei_lora35')
@@ -14,7 +14,7 @@ fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
 apps=subprocess.check_output(['nvidia-smi','--query-compute-apps=pid','--format=csv,noheader']).decode().strip()
 if apps: raise RuntimeError('GPU occupied: '+apps)
 import torch
-from transformers import TrainerCallback
+from transformers import TrainerCallback, EarlyStoppingCallback
 torch.set_num_threads(4);torch.set_num_interop_threads(1)
 torch.cuda.set_per_process_memory_fraction(23*1024**3/torch.cuda.get_device_properties(0).total_memory)
 started=time.time()
@@ -25,6 +25,25 @@ def memory(event,step=None):
     memory_log.write(json.dumps(r)+'\n')
     return r
 atexit.register(lambda:(ROOT/'training_peak.json').write_text(json.dumps(memory('exit'),indent=2)+'\n'))
+
+# Native CUDA/DeepSpeed allocations can bypass the PyTorch allocator cap.
+# Measure the whole physical GPU separately and reject a run exceeding 24GiB.
+stop_monitor=threading.Event()
+def monitor():
+    with (ROOT/'gpu_memory.csv').open('w',buffering=1) as stream:
+        stream.write('unix_time,total_gpu_used_mib\n')
+        while not stop_monitor.is_set():
+            try:
+                used=int(subprocess.check_output(['nvidia-smi','--query-gpu=memory.used','--format=csv,noheader,nounits'],timeout=5).decode().strip())
+                stream.write(f'{time.time()},{used}\n')
+                if used>24576:
+                    (ROOT/'memory_budget_exceeded.json').write_text(json.dumps(dict(used_mib=used,limit_mib=24576,time=time.time()))+'\n')
+                    os.kill(os.getpid(),signal.SIGTERM)
+                    return
+            except subprocess.SubprocessError:pass
+            stop_monitor.wait(1)
+threading.Thread(target=monitor,daemon=True).start()
+atexit.register(stop_monitor.set)
 
 class Audit(TrainerCallback):
     def on_train_begin(self,args,state,control,model=None,**kw):
@@ -49,6 +68,7 @@ class AuditedTrainer(Original):
     def __init__(self,*args,**kwargs):
         super().__init__(*args,**kwargs)
         self.add_callback(Audit())
+        self.add_callback(EarlyStoppingCallback(early_stopping_patience=2,early_stopping_threshold=.005))
 trainer.Trainer=AuditedTrainer
 sys.argv[0]=str(OFFICIAL/'finetune.py')
 runpy.run_path(str(OFFICIAL/'finetune.py'),run_name='__main__')
