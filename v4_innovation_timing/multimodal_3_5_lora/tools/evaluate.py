@@ -1,5 +1,5 @@
 """Paired offline evaluation. No ROS, detectors, truth queries, crop repairs or controller."""
-import argparse, fcntl, hashlib, json, math, os, statistics, subprocess, time
+import argparse, hashlib, json, math, os, statistics, subprocess, time
 from pathlib import Path
 from build_dataset import prompts
 
@@ -55,6 +55,7 @@ def summarize(scored,predictions):
         median_call_latency_s=statistics.median([x[k]['latency_s'] for x in predictions for k in ['region','bbox']]))
 
 def main():
+    import fcntl
     p=argparse.ArgumentParser();p.add_argument('--data',type=Path,required=True);p.add_argument('--output',type=Path,required=True)
     p.add_argument('--split',choices=['validation','test'],required=True);p.add_argument('--adapter',type=Path)
     p.add_argument('--model',default='/home/ubuntu/model/FM9G4B-V');a=p.parse_args()
