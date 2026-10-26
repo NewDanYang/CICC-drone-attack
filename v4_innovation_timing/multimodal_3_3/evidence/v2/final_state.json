@@ -1,0 +1,72 @@
+{
+  "collected_at": "2026-10-26T11:16:52.759413+00:00",
+  "completed_original_runs": 18,
+  "deployment": {
+    "mode": "baseline",
+    "mission_md5": "fca24bf1142ca8cddfb9e8d39c387a43",
+    "bt_md5": "9b1cefe9dfa431418435f7f8f63a60ed",
+    "source_md5": {},
+    "plugin_md5": null,
+    "binary_md5": "abb5c49eb21b1b333d88677def4921ab",
+    "guards": {
+      "/home/ubuntu/catkin_ws/src/mission_pkg/launch/llm_mission.launch": "5550c580a4822e773a331bcef11f0c47",
+      "/home/ubuntu/catkin_ws/src/mission_pkg/include/base/drone_action_node.h": "c415ddd8243afcc64c181be45bdac5e3",
+      "/home/ubuntu/catkin_ws/src/mission_pkg/src/nodes/action/visual_servo.cpp": "a63b57fa127a23cd8bb8e647f078ff21",
+      "/home/ubuntu/catkin_ws/src/mission_pkg/include/nodes/action/visual_servo.h": "d3324b0458b2160102f9bbf44546d035"
+    }
+  },
+  "protected_md5": {
+    "/home/ubuntu/catkin_ws/src/mission_pkg/launch/llm_mission.launch": "5550c580a4822e773a331bcef11f0c47",
+    "/home/ubuntu/catkin_ws/src/mission_pkg/include/base/drone_action_node.h": "c415ddd8243afcc64c181be45bdac5e3",
+    "/home/ubuntu/catkin_ws/src/mission_pkg/src/nodes/action/visual_servo.cpp": "a63b57fa127a23cd8bb8e647f078ff21",
+    "/home/ubuntu/catkin_ws/src/mission_pkg/include/nodes/action/visual_servo.h": "d3324b0458b2160102f9bbf44546d035",
+    "/home/ubuntu/catkin_ws/src/mission_pkg/src/nodes/action/goto.cpp": "f557ace5bbf2ee7975b7335a738ffcf9",
+    "/home/ubuntu/catkin_ws/src/mission_pkg/include/nodes/action/goto.h": "ee765e08024ea28cb1b8d32104a272d3",
+    "/home/ubuntu/catkin_ws/src/mission_pkg/src/mavros_cnt.cpp": "edcd9397074f44c6028c8dca02902920",
+    "/home/ubuntu/catkin_ws/src/sensor_pkg/Config.json": "380f5f1f78000cdde9c8e116f7583e19"
+  },
+  "expected_protected_md5": {
+    "/home/ubuntu/catkin_ws/src/mission_pkg/launch/llm_mission.launch": "5550c580a4822e773a331bcef11f0c47",
+    "/home/ubuntu/catkin_ws/src/mission_pkg/include/base/drone_action_node.h": "c415ddd8243afcc64c181be45bdac5e3",
+    "/home/ubuntu/catkin_ws/src/mission_pkg/src/nodes/action/visual_servo.cpp": "a63b57fa127a23cd8bb8e647f078ff21",
+    "/home/ubuntu/catkin_ws/src/mission_pkg/include/nodes/action/visual_servo.h": "d3324b0458b2160102f9bbf44546d035",
+    "/home/ubuntu/catkin_ws/src/mission_pkg/src/nodes/action/goto.cpp": "f557ace5bbf2ee7975b7335a738ffcf9",
+    "/home/ubuntu/catkin_ws/src/mission_pkg/include/nodes/action/goto.h": "ee765e08024ea28cb1b8d32104a272d3",
+    "/home/ubuntu/catkin_ws/src/mission_pkg/src/mavros_cnt.cpp": "edcd9397074f44c6028c8dca02902920",
+    "/home/ubuntu/catkin_ws/src/sensor_pkg/Config.json": "380f5f1f78000cdde9c8e116f7583e19"
+  },
+  "candidate_paths_absent": {
+    "/home/ubuntu/model/fm9g_perception": true,
+    "/home/ubuntu/catkin_ws/devel/lib/multimodal_target_tracker.so": true,
+    "/home/ubuntu/catkin_ws/src/mission_pkg/src/nodes/perception/multimodal_target_tracker.cpp": true,
+    "/home/ubuntu/catkin_ws/src/mission_pkg/include/nodes/perception/multimodal_target_tracker.h": true
+  },
+  "baseline_binary_tag_present": true,
+  "candidate_binary_tag_present": false,
+  "loaded_bt": [
+    {
+      "pid": 185281,
+      "executable_md5": "abb5c49eb21b1b333d88677def4921ab",
+      "matches_disk": true,
+      "multimodal_plugin_loaded": false
+    }
+  ],
+  "mavros_state": "header: \n  seq: 77\n  stamp: \n    secs: 1793013410\n    nsecs: 746376064\n  frame_id: ''\nconnected: True\narmed: False\nguided: True\nmanual_input: False\nmode: \"AUTO.LOITER\"\nsystem_status: 3\n---\n",
+  "formal_trial_lock_present": false,
+  "planner_params": {
+    "/ego_planner_node/manager/max_vel": "0.35",
+    "/ego_planner_node/optimization/max_vel": "0.35"
+  },
+  "environment_started_marker": true,
+  "final_rollback_progress": [
+    {
+      "time": "2026-10-26T11:14:13.919256+00:00",
+      "phase": "restoring_baseline"
+    },
+    {
+      "time": "2026-10-26T11:15:54.429612+00:00",
+      "phase": "regression_complete",
+      "planned_runs": 18
+    }
+  ]
+}

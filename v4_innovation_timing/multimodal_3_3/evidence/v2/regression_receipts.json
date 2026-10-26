@@ -1,0 +1,92 @@
+[
+  {
+    "archive": "/home/ubuntu/multimodal_v2_exports/regression/01_r1_red_baseline.tar.gz",
+    "bytes": 6169210,
+    "sha256": "0197a59dac53d9a2e610fbff1c0493884e075efa783c2514e516cb1b41742d29"
+  },
+  {
+    "archive": "/home/ubuntu/multimodal_v2_exports/regression/02_r1_red_candidate.tar.gz",
+    "bytes": 10487179,
+    "sha256": "21edb9d7290ebd103175cd53def26cd71948c69c4449634aafac9a62892bdfea"
+  },
+  {
+    "archive": "/home/ubuntu/multimodal_v2_exports/regression/03_r1_purple_candidate.tar.gz",
+    "bytes": 11856925,
+    "sha256": "ed9b3ccef064687fe834f5d1328b44f3e723b320e8af796d68d1e5e75a4cec5c"
+  },
+  {
+    "archive": "/home/ubuntu/multimodal_v2_exports/regression/04_r1_purple_baseline.tar.gz",
+    "bytes": 3527626,
+    "sha256": "bc94cd2671956beceaa9b7321e0c0813f6bae9c62135b7a1f90299cac3be20cf"
+  },
+  {
+    "archive": "/home/ubuntu/multimodal_v2_exports/regression/05_r1_blue_baseline.tar.gz",
+    "bytes": 3583117,
+    "sha256": "a6b90486685992e711d86367c36b30843154be339adf736c628ea0b09d02b873"
+  },
+  {
+    "archive": "/home/ubuntu/multimodal_v2_exports/regression/06_r1_blue_candidate.tar.gz",
+    "bytes": 11230720,
+    "sha256": "1f8c731438890be8cfc404386382a1e8fde983222a3f64cd67699f68520df57e"
+  },
+  {
+    "archive": "/home/ubuntu/multimodal_v2_exports/regression/07_r2_red_candidate.tar.gz",
+    "bytes": 10022405,
+    "sha256": "2ab3ea2d7c3ef732731b8818050cfbcd984215a6000e968a3fbc924af8df26c8"
+  },
+  {
+    "archive": "/home/ubuntu/multimodal_v2_exports/regression/08_r2_red_baseline.tar.gz",
+    "bytes": 4545420,
+    "sha256": "642242ec7a3241326d02bc9b74c1b39c82dd3153aaecf9b2b7bd4984189551cc"
+  },
+  {
+    "archive": "/home/ubuntu/multimodal_v2_exports/regression/09_r2_purple_baseline.tar.gz",
+    "bytes": 3843935,
+    "sha256": "696eef939fef89ea8d41b6e7cc9a019f3be96e9cec1335cd1a8f60162bac8d0b"
+  },
+  {
+    "archive": "/home/ubuntu/multimodal_v2_exports/regression/10_r2_purple_candidate.tar.gz",
+    "bytes": 11286466,
+    "sha256": "0d6874c9e0e1e2e60151dd35713653c80bb187febf080093f58378f1b4a7c0fc"
+  },
+  {
+    "archive": "/home/ubuntu/multimodal_v2_exports/regression/11_r2_blue_candidate.tar.gz",
+    "bytes": 10951456,
+    "sha256": "f499756716383449e6200037114ec0b086e36a2d6ff16f4208269e5e1997e72e"
+  },
+  {
+    "archive": "/home/ubuntu/multimodal_v2_exports/regression/12_r2_blue_baseline.tar.gz",
+    "bytes": 3476208,
+    "sha256": "151c24af4f02b6bf7e5cdc7ac87dde5cd424acfb78ba5c1c3c6cba06ca69a6c2"
+  },
+  {
+    "archive": "/home/ubuntu/multimodal_v2_exports/regression/13_r3_red_baseline.tar.gz",
+    "bytes": 4852651,
+    "sha256": "e0082ff96da051eeb8c91fe676854db0b93a8b472de32aa27bfc6f9a40d3cbd9"
+  },
+  {
+    "archive": "/home/ubuntu/multimodal_v2_exports/regression/14_r3_red_candidate.tar.gz",
+    "bytes": 11280519,
+    "sha256": "0dd86f9fc617c2f0fa4b9a1e4547134aaa456b10397fe8886eb56ab03078062f"
+  },
+  {
+    "archive": "/home/ubuntu/multimodal_v2_exports/regression/15_r3_purple_candidate.tar.gz",
+    "bytes": 10757474,
+    "sha256": "abac924a52d7f8a5e612e45fd09be299d3473a37899cd8b057b53c979990b7b9"
+  },
+  {
+    "archive": "/home/ubuntu/multimodal_v2_exports/regression/16_r3_purple_baseline.tar.gz",
+    "bytes": 3837998,
+    "sha256": "6375e3484318d7dfe44f9d44cdd76cbcd5bc9e846ceabfe398bedda788c5fa5c"
+  },
+  {
+    "archive": "/home/ubuntu/multimodal_v2_exports/regression/17_r3_blue_baseline.tar.gz",
+    "bytes": 3741055,
+    "sha256": "0f21fad25702563f2061412a7fdde0135faa9b53e7ab0f2d12825a00c4cb2f74"
+  },
+  {
+    "archive": "/home/ubuntu/multimodal_v2_exports/regression/18_r3_blue_candidate.tar.gz",
+    "bytes": 10476994,
+    "sha256": "787667615fa6ce1a0aa311921055cda0aa41cb36995f42edf8b00562cbe9ae5b"
+  }
+]
