@@ -22,10 +22,16 @@ region_gate=(frac(m,'region_hits')>=.85 and (frac(m,'region_hits')-frac(b,'regio
     all(frac(row,'region_hits')>=.75 for row in summaries['adapter']['colors'].values()) and m['region_negative_errors']<=1)
 geometry_gate=(frac(m,'geometry_hits')>=.70 and all(frac(row,'geometry_hits')>=.60 for row in summaries['adapter']['colors'].values())
     and frac(summaries['adapter']['colors']['red'],'geometry_hits')>=.70 and m['bbox_negative_errors']<=1)
+br=summaries['base']['colors']['red'];mr=summaries['adapter']['colors']['red']
+red_region_gate=(frac(mr,'region_hits')>=.85 and (frac(mr,'region_hits')-frac(br,'region_hits')>=.10 or
+    frac(br,'region_hits')>=.85 and frac(mr,'region_hits')>=frac(br,'region_hits')) and mr['region_negative_errors']==0)
+red_geometry_gate=(frac(mr,'geometry_hits')>=.70 and frac(mr,'geometry_hits')>frac(br,'geometry_hits') and mr['bbox_negative_errors']==0)
 prior={c:Counter(r['region'] for r in cases if r['split']=='train' and r['present'] and r['color']==c).most_common(1)[0][0]
     for c in ['red','purple','blue']}
 off_prior=[r['id'] for r in labels.values() if r['present'] and r['region']!=prior[r['color']]]
-result=dict(summaries=summaries,gates=dict(region=region_gate,geometry=geometry_gate,flight_eligible=region_gate and geometry_gate),
+result=dict(summaries=summaries,gates=dict(region=region_gate,geometry=geometry_gate,
+    full_color_preflight_eligible=region_gate and geometry_gate,
+    red_region=red_region_gate,red_geometry=red_geometry_gate,red_flight_eligible=red_region_gate and red_geometry_gate),
     training_color_region_prior=prior,prior_positive_hits=sum(r['region']==prior[r['color']] for r in labels.values() if r['present']),
     off_prior=dict(n=len(off_prior),**{g:sum(scored[g][i]['region_correct'] for i in off_prior) for g in scored}),
     trials={},size_bins={},manual_bbox_subset={})
