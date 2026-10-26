@@ -11,11 +11,12 @@ def strict_json(text):
 
 def score(pred, label):
     ans=dict(id=label['id'],color=label['color'],present=label['present'],clipped=label['clipped'],
-        region_correct=False,bbox_valid=False,bbox_nonempty=False,geometry_pass=False,iou=0,center_error_px=None)
+        region_correct=False,coarse_target_present=False,bbox_valid=False,bbox_nonempty=False,geometry_pass=False,iou=0,center_error_px=None)
     try:
         r=strict_json(pred['region']['answer'])
         assert isinstance(r,dict) and set(r)=={'color','region'}
         ans['region_correct']=r==dict(color=label['color'] if label['present'] else 'none',region=label['region'])
+        ans['coarse_target_present']=r['color']==label['color'] and r['region'] in ['left','center','right']
         ans['region_false_positive']=not label['present'] and r['color']!='none'
     except (ValueError,KeyError,AssertionError,TypeError): ans['region_parse_error']=True
     try:
@@ -36,13 +37,15 @@ def score(pred, label):
                 ans.update(iou=iou,center_error_px=error,center_error_threshold_px=threshold,
                     geometry_pass=iou>=.5 and error<=threshold)
     except (ValueError,KeyError,AssertionError,TypeError): ans['bbox_parse_error']=True
+    ans['pipeline_geometry_pass']=ans['coarse_target_present'] and ans['geometry_pass']
     return ans
 
 def summarize(scored,predictions):
     def group(rows):
         pos=[x for x in rows if x['present']];neg=[x for x in rows if not x['present']]
         return dict(n=len(rows),positive=len(pos),negative=len(neg),region_hits=sum(x['region_correct'] for x in pos),
-            geometry_hits=sum(x['geometry_pass'] for x in pos),nonempty=sum(x['bbox_nonempty'] for x in pos),
+            geometry_hits=sum(x['geometry_pass'] for x in pos),pipeline_geometry_hits=sum(x['pipeline_geometry_pass'] for x in pos),
+            presence_hits=sum(x['coarse_target_present'] for x in pos),nonempty=sum(x['bbox_nonempty'] for x in pos),
             region_negative_errors=sum(not x['region_correct'] for x in neg),
             bbox_negative_errors=sum(x['bbox_nonempty'] or not x['bbox_valid'] for x in neg),
             max_iou=max([x['iou'] for x in pos],default=None),

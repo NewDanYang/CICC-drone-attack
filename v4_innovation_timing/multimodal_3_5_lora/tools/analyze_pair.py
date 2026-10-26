@@ -21,11 +21,12 @@ region_gate=(frac(m,'region_hits')>=.85 and (frac(m,'region_hits')-frac(b,'regio
     frac(b,'region_hits')>=.85 and frac(m,'region_hits')>=frac(b,'region_hits')) and
     all(frac(row,'region_hits')>=.75 for row in summaries['adapter']['colors'].values()) and m['region_negative_errors']<=1)
 geometry_gate=(frac(m,'geometry_hits')>=.70 and all(frac(row,'geometry_hits')>=.60 for row in summaries['adapter']['colors'].values())
-    and frac(summaries['adapter']['colors']['red'],'geometry_hits')>=.70 and m['bbox_negative_errors']<=1)
+    and frac(summaries['adapter']['colors']['red'],'geometry_hits')>=.70 and m['bbox_negative_errors']<=1
+    and frac(m,'pipeline_geometry_hits')>=.70 and all(frac(row,'pipeline_geometry_hits')>=.60 for row in summaries['adapter']['colors'].values()))
 br=summaries['base']['colors']['red'];mr=summaries['adapter']['colors']['red']
 red_region_gate=(frac(mr,'region_hits')>=.85 and (frac(mr,'region_hits')-frac(br,'region_hits')>=.10 or
     frac(br,'region_hits')>=.85 and frac(mr,'region_hits')>=frac(br,'region_hits')) and mr['region_negative_errors']==0)
-red_geometry_gate=(frac(mr,'geometry_hits')>=.70 and frac(mr,'geometry_hits')>frac(br,'geometry_hits') and mr['bbox_negative_errors']==0)
+red_geometry_gate=(frac(mr,'pipeline_geometry_hits')>=.70 and frac(mr,'pipeline_geometry_hits')>frac(br,'pipeline_geometry_hits') and mr['bbox_negative_errors']==0)
 prior={c:Counter(r['region'] for r in cases if r['split']=='train' and r['present'] and r['color']==c).most_common(1)[0][0]
     for c in ['red','purple','blue']}
 off_prior=[r['id'] for r in labels.values() if r['present'] and r['region']!=prior[r['color']]]
