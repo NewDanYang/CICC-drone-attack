@@ -1,0 +1,10 @@
+--- official_baseline/catkin_ws/src/mission_pkg/include/nodes/action/goto.h
++++ frozen_20261019/catkin_ws/src/mission_pkg/include/nodes/action/goto.h
+@@ -27,6 +27,7 @@
+ 
+     // 偏航控制相关
+     double yaw_rate_limit;
++    double setpoint_lookahead_;
+     double current_yaw_sp;
+     ros::Time last_loop_time;
+     bool check_yaw;

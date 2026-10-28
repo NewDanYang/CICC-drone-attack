@@ -1,0 +1,4250 @@
+[
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "full_red",
+    "repetition": 1,
+    "prompt": "飞机起飞，然后穿过框，识别二维码，再穿回框，击破红色气球，最后回到起点并降落。",
+    "candidate_count": 1,
+    "expected": [
+      "takeoff",
+      "cross_frame",
+      "detect_aruco",
+      "return_cross_frame",
+      "hit_balloon:red",
+      "land"
+    ],
+    "first_candidate": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+    "recorded_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+    "replayed_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "full_red",
+    "repetition": 2,
+    "prompt": "飞机起飞，然后穿过框，识别二维码，再穿回框，击破红色气球，最后回到起点并降落。",
+    "candidate_count": 1,
+    "expected": [
+      "takeoff",
+      "cross_frame",
+      "detect_aruco",
+      "return_cross_frame",
+      "hit_balloon:red",
+      "land"
+    ],
+    "first_candidate": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+    "recorded_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+    "replayed_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "full_red",
+    "repetition": 3,
+    "prompt": "飞机起飞，然后穿过框，识别二维码，再穿回框，击破红色气球，最后回到起点并降落。",
+    "candidate_count": 1,
+    "expected": [
+      "takeoff",
+      "cross_frame",
+      "detect_aruco",
+      "return_cross_frame",
+      "hit_balloon:red",
+      "land"
+    ],
+    "first_candidate": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+    "recorded_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+    "replayed_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "full_purple",
+    "repetition": 1,
+    "prompt": "起飞，穿越方框，读二维码，原路穿回方框，扎破紫色的气球，然后降落。",
+    "candidate_count": 1,
+    "expected": [
+      "takeoff",
+      "cross_frame",
+      "detect_aruco",
+      "return_cross_frame",
+      "hit_balloon:purple",
+      "land"
+    ],
+    "first_candidate": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "recorded_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "replayed_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "full_purple",
+    "repetition": 2,
+    "prompt": "起飞，穿越方框，读二维码，原路穿回方框，扎破紫色的气球，然后降落。",
+    "candidate_count": 1,
+    "expected": [
+      "takeoff",
+      "cross_frame",
+      "detect_aruco",
+      "return_cross_frame",
+      "hit_balloon:purple",
+      "land"
+    ],
+    "first_candidate": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "recorded_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "replayed_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "full_purple",
+    "repetition": 3,
+    "prompt": "起飞，穿越方框，读二维码，原路穿回方框，扎破紫色的气球，然后降落。",
+    "candidate_count": 1,
+    "expected": [
+      "takeoff",
+      "cross_frame",
+      "detect_aruco",
+      "return_cross_frame",
+      "hit_balloon:purple",
+      "land"
+    ],
+    "first_candidate": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "recorded_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "replayed_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "step_takeoff",
+    "repetition": 1,
+    "prompt": "现在起飞。",
+    "candidate_count": 1,
+    "expected": [
+      "takeoff"
+    ],
+    "first_candidate": "takeoff",
+    "recorded_final": "takeoff",
+    "replayed_final": "takeoff",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "takeoff"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "step_takeoff",
+    "repetition": 2,
+    "prompt": "现在起飞。",
+    "candidate_count": 1,
+    "expected": [
+      "takeoff"
+    ],
+    "first_candidate": "takeoff",
+    "recorded_final": "takeoff",
+    "replayed_final": "takeoff",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": false,
+    "first_strict": false,
+    "recorded_strict": false,
+    "replayed_strict": false,
+    "replayed_failure_classes": [
+      "no_command_block"
+    ],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "takeoff"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "step_takeoff",
+    "repetition": 3,
+    "prompt": "现在起飞。",
+    "candidate_count": 1,
+    "expected": [
+      "takeoff"
+    ],
+    "first_candidate": "takeoff",
+    "recorded_final": "takeoff",
+    "replayed_final": "takeoff",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": false,
+    "first_strict": false,
+    "recorded_strict": false,
+    "replayed_strict": false,
+    "replayed_failure_classes": [
+      "no_command_block"
+    ],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "takeoff"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "step_cross",
+    "repetition": 1,
+    "prompt": "穿过前方的方框。",
+    "candidate_count": 1,
+    "expected": [
+      "cross_frame"
+    ],
+    "first_candidate": "cross_frame",
+    "recorded_final": "cross_frame",
+    "replayed_final": "cross_frame",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": false,
+    "first_strict": false,
+    "recorded_strict": false,
+    "replayed_strict": false,
+    "replayed_failure_classes": [
+      "no_command_block"
+    ],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "cross_frame"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "step_cross",
+    "repetition": 2,
+    "prompt": "穿过前方的方框。",
+    "candidate_count": 1,
+    "expected": [
+      "cross_frame"
+    ],
+    "first_candidate": "cross_frame",
+    "recorded_final": "cross_frame",
+    "replayed_final": "cross_frame",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": false,
+    "first_strict": false,
+    "recorded_strict": false,
+    "replayed_strict": false,
+    "replayed_failure_classes": [
+      "no_command_block"
+    ],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "cross_frame"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "step_cross",
+    "repetition": 3,
+    "prompt": "穿过前方的方框。",
+    "candidate_count": 1,
+    "expected": [
+      "cross_frame"
+    ],
+    "first_candidate": "cross_frame",
+    "recorded_final": "cross_frame",
+    "replayed_final": "cross_frame",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": false,
+    "first_strict": false,
+    "recorded_strict": false,
+    "replayed_strict": false,
+    "replayed_failure_classes": [
+      "no_command_block"
+    ],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "cross_frame"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "step_aruco",
+    "repetition": 1,
+    "prompt": "识别二维码。",
+    "candidate_count": 1,
+    "expected": [
+      "detect_aruco"
+    ],
+    "first_candidate": "detect_aruco",
+    "recorded_final": "detect_aruco",
+    "replayed_final": "detect_aruco",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "detect_aruco"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "step_aruco",
+    "repetition": 2,
+    "prompt": "识别二维码。",
+    "candidate_count": 1,
+    "expected": [
+      "detect_aruco"
+    ],
+    "first_candidate": "detect_aruco",
+    "recorded_final": "detect_aruco",
+    "replayed_final": "detect_aruco",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "detect_aruco"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "step_aruco",
+    "repetition": 3,
+    "prompt": "识别二维码。",
+    "candidate_count": 1,
+    "expected": [
+      "detect_aruco"
+    ],
+    "first_candidate": "detect_aruco",
+    "recorded_final": "detect_aruco",
+    "replayed_final": "detect_aruco",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "detect_aruco"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "step_return",
+    "repetition": 1,
+    "prompt": "逆序穿回刚才的方框。",
+    "candidate_count": 1,
+    "expected": [
+      "return_cross_frame"
+    ],
+    "first_candidate": "return_cross_frame",
+    "recorded_final": "return_cross_frame",
+    "replayed_final": "return_cross_frame",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "return_cross_frame"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "step_return",
+    "repetition": 2,
+    "prompt": "逆序穿回刚才的方框。",
+    "candidate_count": 1,
+    "expected": [
+      "return_cross_frame"
+    ],
+    "first_candidate": "return_cross_frame",
+    "recorded_final": "return_cross_frame",
+    "replayed_final": "return_cross_frame",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "return_cross_frame"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "step_return",
+    "repetition": 3,
+    "prompt": "逆序穿回刚才的方框。",
+    "candidate_count": 1,
+    "expected": [
+      "return_cross_frame"
+    ],
+    "first_candidate": "detect_aruco\nreturn_cross_frame",
+    "recorded_final": "detect_aruco\nreturn_cross_frame",
+    "replayed_final": "detect_aruco\nreturn_cross_frame",
+    "first_exact": false,
+    "recorded_exact": false,
+    "replayed_exact": false,
+    "recorded_passed_flag": false,
+    "first_strict": false,
+    "recorded_strict": false,
+    "replayed_strict": false,
+    "replayed_failure_classes": [
+      "steps_missing_or_extra"
+    ],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "detect_aruco\nreturn_cross_frame"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "step_hit",
+    "repetition": 1,
+    "prompt": "击破红色气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "step_hit",
+    "repetition": 2,
+    "prompt": "击破红色气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "step_hit",
+    "repetition": 3,
+    "prompt": "击破红色气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "step_land",
+    "repetition": 1,
+    "prompt": "返回起点并降落。",
+    "candidate_count": 1,
+    "expected": [
+      "land"
+    ],
+    "first_candidate": "return_cross_frame\nland",
+    "recorded_final": "return_cross_frame\nland",
+    "replayed_final": "return_cross_frame\nland",
+    "first_exact": false,
+    "recorded_exact": false,
+    "replayed_exact": false,
+    "recorded_passed_flag": false,
+    "first_strict": false,
+    "recorded_strict": false,
+    "replayed_strict": false,
+    "replayed_failure_classes": [
+      "steps_missing_or_extra"
+    ],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "return_cross_frame\nland"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": "[命令校验] 第1次生成不合格：steps_likely_extra: instruction names only the landing stage\n[命令校验] 没有完全合格的输出；按原样发布最接近的一次，避免开赛 5 分钟内无人机未动导致本轮结束\n"
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "step_land",
+    "repetition": 2,
+    "prompt": "返回起点并降落。",
+    "candidate_count": 1,
+    "expected": [
+      "land"
+    ],
+    "first_candidate": "return_cross_frame\nland",
+    "recorded_final": "return_cross_frame\nland",
+    "replayed_final": "return_cross_frame\nland",
+    "first_exact": false,
+    "recorded_exact": false,
+    "replayed_exact": false,
+    "recorded_passed_flag": false,
+    "first_strict": false,
+    "recorded_strict": false,
+    "replayed_strict": false,
+    "replayed_failure_classes": [
+      "steps_missing_or_extra"
+    ],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "return_cross_frame\nland"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": "[命令校验] 第1次生成不合格：steps_likely_extra: instruction names only the landing stage\n[命令校验] 没有完全合格的输出；按原样发布最接近的一次，避免开赛 5 分钟内无人机未动导致本轮结束\n"
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "step_land",
+    "repetition": 3,
+    "prompt": "返回起点并降落。",
+    "candidate_count": 1,
+    "expected": [
+      "land"
+    ],
+    "first_candidate": "return_cross_frame\nland",
+    "recorded_final": "return_cross_frame\nland",
+    "replayed_final": "return_cross_frame\nland",
+    "first_exact": false,
+    "recorded_exact": false,
+    "replayed_exact": false,
+    "recorded_passed_flag": false,
+    "first_strict": false,
+    "recorded_strict": false,
+    "replayed_strict": false,
+    "replayed_failure_classes": [
+      "steps_missing_or_extra"
+    ],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "return_cross_frame\nland"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": "[命令校验] 第1次生成不合格：steps_likely_extra: instruction names only the landing stage\n[命令校验] 没有完全合格的输出；按原样发布最接近的一次，避免开赛 5 分钟内无人机未动导致本轮结束\n"
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "red_short",
+    "repetition": 1,
+    "prompt": "打红气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "red_short",
+    "repetition": 2,
+    "prompt": "打红气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": false,
+    "first_strict": false,
+    "recorded_strict": false,
+    "replayed_strict": false,
+    "replayed_failure_classes": [
+      "no_command_block"
+    ],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "red_short",
+    "repetition": 3,
+    "prompt": "打红气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "red_de",
+    "repetition": 1,
+    "prompt": "扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "red_de",
+    "repetition": 2,
+    "prompt": "扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "red_de",
+    "repetition": 3,
+    "prompt": "扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "red_yanse",
+    "repetition": 1,
+    "prompt": "撞破红颜色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+    "recorded_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+    "replayed_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+    "first_exact": false,
+    "recorded_exact": false,
+    "replayed_exact": false,
+    "recorded_passed_flag": false,
+    "first_strict": false,
+    "recorded_strict": false,
+    "replayed_strict": false,
+    "replayed_failure_classes": [
+      "steps_missing_or_extra"
+    ],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": "[命令校验] 第1次生成不合格：steps_likely_extra: instruction names only the balloon stage\n[命令校验] 没有完全合格的输出；按原样发布最接近的一次，避免开赛 5 分钟内无人机未动导致本轮结束\n"
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "red_yanse",
+    "repetition": 2,
+    "prompt": "撞破红颜色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+    "recorded_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+    "replayed_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+    "first_exact": false,
+    "recorded_exact": false,
+    "replayed_exact": false,
+    "recorded_passed_flag": false,
+    "first_strict": false,
+    "recorded_strict": false,
+    "replayed_strict": false,
+    "replayed_failure_classes": [
+      "steps_missing_or_extra"
+    ],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": "[命令校验] 第1次生成不合格：steps_likely_extra: instruction names only the balloon stage\n[命令校验] 没有完全合格的输出；按原样发布最接近的一次，避免开赛 5 分钟内无人机未动导致本轮结束\n"
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "red_yanse",
+    "repetition": 3,
+    "prompt": "撞破红颜色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+    "recorded_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+    "replayed_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+    "first_exact": false,
+    "recorded_exact": false,
+    "replayed_exact": false,
+    "recorded_passed_flag": false,
+    "first_strict": false,
+    "recorded_strict": false,
+    "replayed_strict": false,
+    "replayed_failure_classes": [
+      "steps_missing_or_extra"
+    ],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": "[命令校验] 第1次生成不合格：steps_likely_extra: instruction names only the balloon stage\n[命令校验] 没有完全合格的输出；按原样发布最接近的一次，避免开赛 5 分钟内无人机未动导致本轮结束\n"
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "purple_verb",
+    "repetition": 1,
+    "prompt": "消灭紫色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:purple"
+    ],
+    "first_candidate": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "recorded_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "replayed_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "first_exact": false,
+    "recorded_exact": false,
+    "replayed_exact": false,
+    "recorded_passed_flag": false,
+    "first_strict": false,
+    "recorded_strict": false,
+    "replayed_strict": false,
+    "replayed_failure_classes": [
+      "steps_missing_or_extra"
+    ],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": "[命令校验] 第1次生成不合格：steps_likely_extra: instruction names only the balloon stage\n[命令校验] 没有完全合格的输出；按原样发布最接近的一次，避免开赛 5 分钟内无人机未动导致本轮结束\n"
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "purple_verb",
+    "repetition": 2,
+    "prompt": "消灭紫色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:purple"
+    ],
+    "first_candidate": "hit_balloon:purple",
+    "recorded_final": "hit_balloon:purple",
+    "replayed_final": "hit_balloon:purple",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:purple"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "purple_verb",
+    "repetition": 3,
+    "prompt": "消灭紫色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:purple"
+    ],
+    "first_candidate": "hit_balloon:purple",
+    "recorded_final": "hit_balloon:purple",
+    "replayed_final": "hit_balloon:purple",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:purple"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "blue_ball",
+    "repetition": 1,
+    "prompt": "撞破蓝色球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:blue"
+    ],
+    "first_candidate": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:blue\nland",
+    "recorded_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:blue\nland",
+    "replayed_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:blue\nland",
+    "first_exact": false,
+    "recorded_exact": false,
+    "replayed_exact": false,
+    "recorded_passed_flag": false,
+    "first_strict": false,
+    "recorded_strict": false,
+    "replayed_strict": false,
+    "replayed_failure_classes": [
+      "steps_missing_or_extra"
+    ],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:blue\nland"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": "[命令校验] 第1次生成不合格：steps_likely_extra: instruction names only the balloon stage\n[命令校验] 没有完全合格的输出；按原样发布最接近的一次，避免开赛 5 分钟内无人机未动导致本轮结束\n"
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "blue_ball",
+    "repetition": 2,
+    "prompt": "撞破蓝色球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:blue"
+    ],
+    "first_candidate": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:blue\nland",
+    "recorded_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:blue\nland",
+    "replayed_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:blue\nland",
+    "first_exact": false,
+    "recorded_exact": false,
+    "replayed_exact": false,
+    "recorded_passed_flag": false,
+    "first_strict": false,
+    "recorded_strict": false,
+    "replayed_strict": false,
+    "replayed_failure_classes": [
+      "steps_missing_or_extra"
+    ],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:blue\nland"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": "[命令校验] 第1次生成不合格：steps_likely_extra: instruction names only the balloon stage\n[命令校验] 没有完全合格的输出；按原样发布最接近的一次，避免开赛 5 分钟内无人机未动导致本轮结束\n"
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "blue_ball",
+    "repetition": 3,
+    "prompt": "撞破蓝色球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:blue"
+    ],
+    "first_candidate": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:blue\nland",
+    "recorded_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:blue\nland",
+    "replayed_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:blue\nland",
+    "first_exact": false,
+    "recorded_exact": false,
+    "replayed_exact": false,
+    "recorded_passed_flag": false,
+    "first_strict": false,
+    "recorded_strict": false,
+    "replayed_strict": false,
+    "replayed_failure_classes": [
+      "steps_missing_or_extra"
+    ],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:blue\nland"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": "[命令校验] 第1次生成不合格：steps_likely_extra: instruction names only the balloon stage\n[命令校验] 没有完全合格的输出；按原样发布最接近的一次，避免开赛 5 分钟内无人机未动导致本轮结束\n"
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "red_context",
+    "repetition": 1,
+    "prompt": "去打击区，把红色的那个击破。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "red_context",
+    "repetition": 2,
+    "prompt": "去打击区，把红色的那个击破。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "red_context",
+    "repetition": 3,
+    "prompt": "去打击区，把红色的那个击破。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "distractor_color",
+    "repetition": 1,
+    "prompt": "不要碰蓝色气球，扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+    "recorded_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+    "replayed_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+    "first_exact": false,
+    "recorded_exact": false,
+    "replayed_exact": false,
+    "recorded_passed_flag": false,
+    "first_strict": false,
+    "recorded_strict": false,
+    "replayed_strict": false,
+    "replayed_failure_classes": [
+      "steps_missing_or_extra"
+    ],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": "[命令校验] 第1次生成不合格：steps_likely_extra: instruction names only the balloon stage\n[命令校验] 没有完全合格的输出；按原样发布最接近的一次，避免开赛 5 分钟内无人机未动导致本轮结束\n"
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "distractor_color",
+    "repetition": 2,
+    "prompt": "不要碰蓝色气球，扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+    "recorded_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+    "replayed_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+    "first_exact": false,
+    "recorded_exact": false,
+    "replayed_exact": false,
+    "recorded_passed_flag": false,
+    "first_strict": false,
+    "recorded_strict": false,
+    "replayed_strict": false,
+    "replayed_failure_classes": [
+      "steps_missing_or_extra"
+    ],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": "[命令校验] 第1次生成不合格：steps_likely_extra: instruction names only the balloon stage\n[命令校验] 没有完全合格的输出；按原样发布最接近的一次，避免开赛 5 分钟内无人机未动导致本轮结束\n"
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "distractor_color",
+    "repetition": 3,
+    "prompt": "不要碰蓝色气球，扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+    "recorded_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+    "replayed_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+    "first_exact": false,
+    "recorded_exact": false,
+    "replayed_exact": false,
+    "recorded_passed_flag": false,
+    "first_strict": false,
+    "recorded_strict": false,
+    "replayed_strict": false,
+    "replayed_failure_classes": [
+      "steps_missing_or_extra"
+    ],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": "[命令校验] 第1次生成不合格：steps_likely_extra: instruction names only the balloon stage\n[命令校验] 没有完全合格的输出；按原样发布最接近的一次，避免开赛 5 分钟内无人机未动导致本轮结束\n"
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "negative_takeoff",
+    "repetition": 1,
+    "prompt": "先别起飞，现在只识别二维码。",
+    "candidate_count": 1,
+    "expected": [
+      "detect_aruco"
+    ],
+    "first_candidate": "detect_aruco",
+    "recorded_final": "detect_aruco",
+    "replayed_final": "detect_aruco",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "detect_aruco"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "negative_takeoff",
+    "repetition": 2,
+    "prompt": "先别起飞，现在只识别二维码。",
+    "candidate_count": 1,
+    "expected": [
+      "detect_aruco"
+    ],
+    "first_candidate": "detect_aruco",
+    "recorded_final": "detect_aruco",
+    "replayed_final": "detect_aruco",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "detect_aruco"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "negative_takeoff",
+    "repetition": 3,
+    "prompt": "先别起飞，现在只识别二维码。",
+    "candidate_count": 1,
+    "expected": [
+      "detect_aruco"
+    ],
+    "first_candidate": "detect_aruco",
+    "recorded_final": "detect_aruco",
+    "replayed_final": "detect_aruco",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "detect_aruco"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "english_blue",
+    "repetition": 1,
+    "prompt": "Hit the blue balloon.",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:blue"
+    ],
+    "first_candidate": "hit_balloon:blue",
+    "recorded_final": "hit_balloon:blue",
+    "replayed_final": "hit_balloon:blue",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": false,
+    "first_strict": false,
+    "recorded_strict": false,
+    "replayed_strict": false,
+    "replayed_failure_classes": [
+      "no_command_block"
+    ],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:blue"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "english_blue",
+    "repetition": 2,
+    "prompt": "Hit the blue balloon.",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:blue"
+    ],
+    "first_candidate": "hit_balloon:blue",
+    "recorded_final": "hit_balloon:blue",
+    "replayed_final": "hit_balloon:blue",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:blue"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "english_blue",
+    "repetition": 3,
+    "prompt": "Hit the blue balloon.",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:blue"
+    ],
+    "first_candidate": "hit_balloon:blue",
+    "recorded_final": "hit_balloon:blue",
+    "replayed_final": "hit_balloon:blue",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": false,
+    "first_strict": false,
+    "recorded_strict": false,
+    "replayed_strict": false,
+    "replayed_failure_classes": [
+      "no_command_block"
+    ],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:blue"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "mixed_purple",
+    "repetition": 1,
+    "prompt": "Take off, cross the frame, identify the ArUco marker, return through the frame, hit the purple balloon, then land.",
+    "candidate_count": 1,
+    "expected": [
+      "takeoff",
+      "cross_frame",
+      "detect_aruco",
+      "return_cross_frame",
+      "hit_balloon:purple",
+      "land"
+    ],
+    "first_candidate": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "recorded_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "replayed_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": false,
+    "first_strict": false,
+    "recorded_strict": false,
+    "replayed_strict": false,
+    "replayed_failure_classes": [
+      "no_command_block"
+    ],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "mixed_purple",
+    "repetition": 2,
+    "prompt": "Take off, cross the frame, identify the ArUco marker, return through the frame, hit the purple balloon, then land.",
+    "candidate_count": 1,
+    "expected": [
+      "takeoff",
+      "cross_frame",
+      "detect_aruco",
+      "return_cross_frame",
+      "hit_balloon:purple",
+      "land"
+    ],
+    "first_candidate": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "recorded_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "replayed_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+    "case_id": "mixed_purple",
+    "repetition": 3,
+    "prompt": "Take off, cross the frame, identify the ArUco marker, return through the frame, hit the purple balloon, then land.",
+    "candidate_count": 1,
+    "expected": [
+      "takeoff",
+      "cross_frame",
+      "detect_aruco",
+      "return_cross_frame",
+      "hit_balloon:purple",
+      "land"
+    ],
+    "first_candidate": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "recorded_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "replayed_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland"
+    ],
+    "recorded_module_md5": "e7bb1627c1833ae877c588dab1c80a86",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "full_red",
+    "repetition": 1,
+    "prompt": "飞机起飞，然后穿过框，识别二维码，再穿回框，击破红色气球，最后回到起点并降落。",
+    "candidate_count": 1,
+    "expected": [
+      "takeoff",
+      "cross_frame",
+      "detect_aruco",
+      "return_cross_frame",
+      "hit_balloon:red",
+      "land"
+    ],
+    "first_candidate": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+    "recorded_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+    "replayed_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "full_red",
+    "repetition": 2,
+    "prompt": "飞机起飞，然后穿过框，识别二维码，再穿回框，击破红色气球，最后回到起点并降落。",
+    "candidate_count": 1,
+    "expected": [
+      "takeoff",
+      "cross_frame",
+      "detect_aruco",
+      "return_cross_frame",
+      "hit_balloon:red",
+      "land"
+    ],
+    "first_candidate": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+    "recorded_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+    "replayed_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "full_red",
+    "repetition": 3,
+    "prompt": "飞机起飞，然后穿过框，识别二维码，再穿回框，击破红色气球，最后回到起点并降落。",
+    "candidate_count": 1,
+    "expected": [
+      "takeoff",
+      "cross_frame",
+      "detect_aruco",
+      "return_cross_frame",
+      "hit_balloon:red",
+      "land"
+    ],
+    "first_candidate": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+    "recorded_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+    "replayed_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "full_purple",
+    "repetition": 1,
+    "prompt": "起飞，穿越方框，读二维码，原路穿回方框，扎破紫色的气球，然后降落。",
+    "candidate_count": 1,
+    "expected": [
+      "takeoff",
+      "cross_frame",
+      "detect_aruco",
+      "return_cross_frame",
+      "hit_balloon:purple",
+      "land"
+    ],
+    "first_candidate": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "recorded_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "replayed_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "full_purple",
+    "repetition": 2,
+    "prompt": "起飞，穿越方框，读二维码，原路穿回方框，扎破紫色的气球，然后降落。",
+    "candidate_count": 1,
+    "expected": [
+      "takeoff",
+      "cross_frame",
+      "detect_aruco",
+      "return_cross_frame",
+      "hit_balloon:purple",
+      "land"
+    ],
+    "first_candidate": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "recorded_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "replayed_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "full_purple",
+    "repetition": 3,
+    "prompt": "起飞，穿越方框，读二维码，原路穿回方框，扎破紫色的气球，然后降落。",
+    "candidate_count": 1,
+    "expected": [
+      "takeoff",
+      "cross_frame",
+      "detect_aruco",
+      "return_cross_frame",
+      "hit_balloon:purple",
+      "land"
+    ],
+    "first_candidate": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "recorded_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "replayed_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "step_takeoff",
+    "repetition": 1,
+    "prompt": "现在起飞。",
+    "candidate_count": 1,
+    "expected": [
+      "takeoff"
+    ],
+    "first_candidate": "takeoff",
+    "recorded_final": "takeoff",
+    "replayed_final": "takeoff",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "takeoff"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "step_takeoff",
+    "repetition": 2,
+    "prompt": "现在起飞。",
+    "candidate_count": 1,
+    "expected": [
+      "takeoff"
+    ],
+    "first_candidate": "takeoff",
+    "recorded_final": "takeoff",
+    "replayed_final": "takeoff",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": false,
+    "first_strict": false,
+    "recorded_strict": false,
+    "replayed_strict": false,
+    "replayed_failure_classes": [
+      "no_command_block"
+    ],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "takeoff"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "step_takeoff",
+    "repetition": 3,
+    "prompt": "现在起飞。",
+    "candidate_count": 1,
+    "expected": [
+      "takeoff"
+    ],
+    "first_candidate": "takeoff",
+    "recorded_final": "takeoff",
+    "replayed_final": "takeoff",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "takeoff"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "step_cross",
+    "repetition": 1,
+    "prompt": "穿过前方的方框。",
+    "candidate_count": 1,
+    "expected": [
+      "cross_frame"
+    ],
+    "first_candidate": "cross_frame",
+    "recorded_final": "cross_frame",
+    "replayed_final": "cross_frame",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": false,
+    "first_strict": false,
+    "recorded_strict": false,
+    "replayed_strict": false,
+    "replayed_failure_classes": [
+      "no_command_block"
+    ],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "cross_frame"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "step_cross",
+    "repetition": 2,
+    "prompt": "穿过前方的方框。",
+    "candidate_count": 1,
+    "expected": [
+      "cross_frame"
+    ],
+    "first_candidate": "cross_frame",
+    "recorded_final": "cross_frame",
+    "replayed_final": "cross_frame",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "cross_frame"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "step_cross",
+    "repetition": 3,
+    "prompt": "穿过前方的方框。",
+    "candidate_count": 1,
+    "expected": [
+      "cross_frame"
+    ],
+    "first_candidate": "cross_frame",
+    "recorded_final": "cross_frame",
+    "replayed_final": "cross_frame",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "cross_frame"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "step_aruco",
+    "repetition": 1,
+    "prompt": "识别二维码。",
+    "candidate_count": 1,
+    "expected": [
+      "detect_aruco"
+    ],
+    "first_candidate": "detect_aruco",
+    "recorded_final": "detect_aruco",
+    "replayed_final": "detect_aruco",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "detect_aruco"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "step_aruco",
+    "repetition": 2,
+    "prompt": "识别二维码。",
+    "candidate_count": 1,
+    "expected": [
+      "detect_aruco"
+    ],
+    "first_candidate": "detect_aruco",
+    "recorded_final": "detect_aruco",
+    "replayed_final": "detect_aruco",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "detect_aruco"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "step_aruco",
+    "repetition": 3,
+    "prompt": "识别二维码。",
+    "candidate_count": 1,
+    "expected": [
+      "detect_aruco"
+    ],
+    "first_candidate": "detect_aruco",
+    "recorded_final": "detect_aruco",
+    "replayed_final": "detect_aruco",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "detect_aruco"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "step_return",
+    "repetition": 1,
+    "prompt": "逆序穿回刚才的方框。",
+    "candidate_count": 1,
+    "expected": [
+      "return_cross_frame"
+    ],
+    "first_candidate": "return_cross_frame",
+    "recorded_final": "return_cross_frame",
+    "replayed_final": "return_cross_frame",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "return_cross_frame"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "step_return",
+    "repetition": 2,
+    "prompt": "逆序穿回刚才的方框。",
+    "candidate_count": 1,
+    "expected": [
+      "return_cross_frame"
+    ],
+    "first_candidate": "return_cross_frame",
+    "recorded_final": "return_cross_frame",
+    "replayed_final": "return_cross_frame",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "return_cross_frame"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "step_return",
+    "repetition": 3,
+    "prompt": "逆序穿回刚才的方框。",
+    "candidate_count": 1,
+    "expected": [
+      "return_cross_frame"
+    ],
+    "first_candidate": "return_cross_frame",
+    "recorded_final": "return_cross_frame",
+    "replayed_final": "return_cross_frame",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "return_cross_frame"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "step_hit",
+    "repetition": 1,
+    "prompt": "击破红色气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "step_hit",
+    "repetition": 2,
+    "prompt": "击破红色气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "step_hit",
+    "repetition": 3,
+    "prompt": "击破红色气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "step_land",
+    "repetition": 1,
+    "prompt": "返回起点并降落。",
+    "candidate_count": 1,
+    "expected": [
+      "land"
+    ],
+    "first_candidate": "land",
+    "recorded_final": "land",
+    "replayed_final": "land",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "land"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "step_land",
+    "repetition": 2,
+    "prompt": "返回起点并降落。",
+    "candidate_count": 1,
+    "expected": [
+      "land"
+    ],
+    "first_candidate": "land",
+    "recorded_final": "land",
+    "replayed_final": "land",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "land"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "step_land",
+    "repetition": 3,
+    "prompt": "返回起点并降落。",
+    "candidate_count": 1,
+    "expected": [
+      "land"
+    ],
+    "first_candidate": "land",
+    "recorded_final": "land",
+    "replayed_final": "land",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "land"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "red_short",
+    "repetition": 1,
+    "prompt": "打红气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "red_short",
+    "repetition": 2,
+    "prompt": "打红气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "red_short",
+    "repetition": 3,
+    "prompt": "打红气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "red_de",
+    "repetition": 1,
+    "prompt": "扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "red_de",
+    "repetition": 2,
+    "prompt": "扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "red_de",
+    "repetition": 3,
+    "prompt": "扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "red_yanse",
+    "repetition": 1,
+    "prompt": "撞破红颜色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "red_yanse",
+    "repetition": 2,
+    "prompt": "撞破红颜色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "red_yanse",
+    "repetition": 3,
+    "prompt": "撞破红颜色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "purple_verb",
+    "repetition": 1,
+    "prompt": "消灭紫色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:purple"
+    ],
+    "first_candidate": "hit_balloon:purple",
+    "recorded_final": "hit_balloon:purple",
+    "replayed_final": "hit_balloon:purple",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:purple"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "purple_verb",
+    "repetition": 2,
+    "prompt": "消灭紫色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:purple"
+    ],
+    "first_candidate": "hit_balloon:purple",
+    "recorded_final": "hit_balloon:purple",
+    "replayed_final": "hit_balloon:purple",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:purple"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "purple_verb",
+    "repetition": 3,
+    "prompt": "消灭紫色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:purple"
+    ],
+    "first_candidate": "hit_balloon:purple",
+    "recorded_final": "hit_balloon:purple",
+    "replayed_final": "hit_balloon:purple",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:purple"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "blue_ball",
+    "repetition": 1,
+    "prompt": "撞破蓝色球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:blue"
+    ],
+    "first_candidate": "hit_balloon:blue",
+    "recorded_final": "hit_balloon:blue",
+    "replayed_final": "hit_balloon:blue",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:blue"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "blue_ball",
+    "repetition": 2,
+    "prompt": "撞破蓝色球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:blue"
+    ],
+    "first_candidate": "hit_balloon:blue",
+    "recorded_final": "hit_balloon:blue",
+    "replayed_final": "hit_balloon:blue",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:blue"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "blue_ball",
+    "repetition": 3,
+    "prompt": "撞破蓝色球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:blue"
+    ],
+    "first_candidate": "hit_balloon:blue",
+    "recorded_final": "hit_balloon:blue",
+    "replayed_final": "hit_balloon:blue",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:blue"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "red_context",
+    "repetition": 1,
+    "prompt": "去打击区，把红色的那个击破。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "red_context",
+    "repetition": 2,
+    "prompt": "去打击区，把红色的那个击破。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "red_context",
+    "repetition": 3,
+    "prompt": "去打击区，把红色的那个击破。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "distractor_color",
+    "repetition": 1,
+    "prompt": "不要碰蓝色气球，扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "distractor_color",
+    "repetition": 2,
+    "prompt": "不要碰蓝色气球，扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "distractor_color",
+    "repetition": 3,
+    "prompt": "不要碰蓝色气球，扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "negative_takeoff",
+    "repetition": 1,
+    "prompt": "先别起飞，现在只识别二维码。",
+    "candidate_count": 1,
+    "expected": [
+      "detect_aruco"
+    ],
+    "first_candidate": "detect_aruco",
+    "recorded_final": "detect_aruco",
+    "replayed_final": "detect_aruco",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "detect_aruco"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "negative_takeoff",
+    "repetition": 2,
+    "prompt": "先别起飞，现在只识别二维码。",
+    "candidate_count": 1,
+    "expected": [
+      "detect_aruco"
+    ],
+    "first_candidate": "detect_aruco",
+    "recorded_final": "detect_aruco",
+    "replayed_final": "detect_aruco",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "detect_aruco"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "negative_takeoff",
+    "repetition": 3,
+    "prompt": "先别起飞，现在只识别二维码。",
+    "candidate_count": 1,
+    "expected": [
+      "detect_aruco"
+    ],
+    "first_candidate": "detect_aruco",
+    "recorded_final": "detect_aruco",
+    "replayed_final": "detect_aruco",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "detect_aruco"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "english_blue",
+    "repetition": 1,
+    "prompt": "Hit the blue balloon.",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:blue"
+    ],
+    "first_candidate": "hit_balloon:blue",
+    "recorded_final": "hit_balloon:blue",
+    "replayed_final": "hit_balloon:blue",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:blue"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "english_blue",
+    "repetition": 2,
+    "prompt": "Hit the blue balloon.",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:blue"
+    ],
+    "first_candidate": "hit_balloon:blue",
+    "recorded_final": "hit_balloon:blue",
+    "replayed_final": "hit_balloon:blue",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:blue"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "english_blue",
+    "repetition": 3,
+    "prompt": "Hit the blue balloon.",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:blue"
+    ],
+    "first_candidate": "hit_balloon:blue",
+    "recorded_final": "hit_balloon:blue",
+    "replayed_final": "hit_balloon:blue",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:blue"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "mixed_purple",
+    "repetition": 1,
+    "prompt": "Take off, cross the frame, identify the ArUco marker, return through the frame, hit the purple balloon, then land.",
+    "candidate_count": 1,
+    "expected": [
+      "takeoff",
+      "cross_frame",
+      "detect_aruco",
+      "return_cross_frame",
+      "hit_balloon:purple",
+      "land"
+    ],
+    "first_candidate": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "recorded_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "replayed_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "mixed_purple",
+    "repetition": 2,
+    "prompt": "Take off, cross the frame, identify the ArUco marker, return through the frame, hit the purple balloon, then land.",
+    "candidate_count": 1,
+    "expected": [
+      "takeoff",
+      "cross_frame",
+      "detect_aruco",
+      "return_cross_frame",
+      "hit_balloon:purple",
+      "land"
+    ],
+    "first_candidate": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "recorded_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "replayed_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+    "case_id": "mixed_purple",
+    "repetition": 3,
+    "prompt": "Take off, cross the frame, identify the ArUco marker, return through the frame, hit the purple balloon, then land.",
+    "candidate_count": 1,
+    "expected": [
+      "takeoff",
+      "cross_frame",
+      "detect_aruco",
+      "return_cross_frame",
+      "hit_balloon:purple",
+      "land"
+    ],
+    "first_candidate": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "recorded_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "replayed_final": "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:purple\nland"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/targeted/samples.jsonl",
+    "case_id": "step_land",
+    "repetition": 1,
+    "prompt": "返回起点并降落。",
+    "candidate_count": 1,
+    "expected": [
+      "land"
+    ],
+    "first_candidate": "land",
+    "recorded_final": "land",
+    "replayed_final": "land",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "land"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/targeted/samples.jsonl",
+    "case_id": "step_land",
+    "repetition": 2,
+    "prompt": "返回起点并降落。",
+    "candidate_count": 1,
+    "expected": [
+      "land"
+    ],
+    "first_candidate": "land",
+    "recorded_final": "land",
+    "replayed_final": "land",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "land"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/targeted/samples.jsonl",
+    "case_id": "step_land",
+    "repetition": 3,
+    "prompt": "返回起点并降落。",
+    "candidate_count": 1,
+    "expected": [
+      "land"
+    ],
+    "first_candidate": "land",
+    "recorded_final": "land",
+    "replayed_final": "land",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "land"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/targeted/samples.jsonl",
+    "case_id": "step_land",
+    "repetition": 4,
+    "prompt": "返回起点并降落。",
+    "candidate_count": 1,
+    "expected": [
+      "land"
+    ],
+    "first_candidate": "land",
+    "recorded_final": "land",
+    "replayed_final": "land",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "land"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/targeted/samples.jsonl",
+    "case_id": "step_land",
+    "repetition": 5,
+    "prompt": "返回起点并降落。",
+    "candidate_count": 1,
+    "expected": [
+      "land"
+    ],
+    "first_candidate": "land",
+    "recorded_final": "land",
+    "replayed_final": "land",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "land"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/targeted/samples.jsonl",
+    "case_id": "red_yanse",
+    "repetition": 1,
+    "prompt": "撞破红颜色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/targeted/samples.jsonl",
+    "case_id": "red_yanse",
+    "repetition": 2,
+    "prompt": "撞破红颜色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/targeted/samples.jsonl",
+    "case_id": "red_yanse",
+    "repetition": 3,
+    "prompt": "撞破红颜色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/targeted/samples.jsonl",
+    "case_id": "red_yanse",
+    "repetition": 4,
+    "prompt": "撞破红颜色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/targeted/samples.jsonl",
+    "case_id": "red_yanse",
+    "repetition": 5,
+    "prompt": "撞破红颜色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/targeted/samples.jsonl",
+    "case_id": "blue_ball",
+    "repetition": 1,
+    "prompt": "撞破蓝色球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:blue"
+    ],
+    "first_candidate": "hit_balloon:blue",
+    "recorded_final": "hit_balloon:blue",
+    "replayed_final": "hit_balloon:blue",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:blue"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/targeted/samples.jsonl",
+    "case_id": "blue_ball",
+    "repetition": 2,
+    "prompt": "撞破蓝色球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:blue"
+    ],
+    "first_candidate": "hit_balloon:blue",
+    "recorded_final": "hit_balloon:blue",
+    "replayed_final": "hit_balloon:blue",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:blue"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/targeted/samples.jsonl",
+    "case_id": "blue_ball",
+    "repetition": 3,
+    "prompt": "撞破蓝色球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:blue"
+    ],
+    "first_candidate": "hit_balloon:blue",
+    "recorded_final": "hit_balloon:blue",
+    "replayed_final": "hit_balloon:blue",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:blue"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/targeted/samples.jsonl",
+    "case_id": "blue_ball",
+    "repetition": 4,
+    "prompt": "撞破蓝色球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:blue"
+    ],
+    "first_candidate": "hit_balloon:blue",
+    "recorded_final": "hit_balloon:blue",
+    "replayed_final": "hit_balloon:blue",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:blue"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/targeted/samples.jsonl",
+    "case_id": "blue_ball",
+    "repetition": 5,
+    "prompt": "撞破蓝色球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:blue"
+    ],
+    "first_candidate": "hit_balloon:blue",
+    "recorded_final": "hit_balloon:blue",
+    "replayed_final": "hit_balloon:blue",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:blue"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/targeted/samples.jsonl",
+    "case_id": "distractor_color",
+    "repetition": 1,
+    "prompt": "不要碰蓝色气球，扎破红色的气球。",
+    "candidate_count": 3,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "detect_aruco\nland",
+    "recorded_final": "detect_aruco\nland",
+    "replayed_final": "takeoff\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+    "first_exact": false,
+    "recorded_exact": false,
+    "replayed_exact": false,
+    "recorded_passed_flag": false,
+    "first_strict": false,
+    "recorded_strict": false,
+    "replayed_strict": false,
+    "replayed_failure_classes": [
+      "steps_missing_or_extra"
+    ],
+    "selection_changed": true,
+    "all_recorded_candidates": [
+      "detect_aruco\nland",
+      "takeoff\ndetect_aruco\nreturn_cross_frame\nhit_balloon:red\nland",
+      "takeoff\nhit_balloon:red\nland"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": "[命令校验] 第1次生成不合格：steps_likely_extra: instruction names only the balloon stage\n[命令校验] 第2次生成不合格：steps_likely_extra: instruction names only the balloon stage\n[命令校验] 第3次生成不合格：steps_likely_extra: instruction names only the balloon stage\n[命令校验] 没有完全合格的输出；按原样发布最接近的一次，避免开赛 5 分钟内无人机未动导致本轮结束\n"
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/targeted/samples.jsonl",
+    "case_id": "distractor_color",
+    "repetition": 2,
+    "prompt": "不要碰蓝色气球，扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/targeted/samples.jsonl",
+    "case_id": "distractor_color",
+    "repetition": 3,
+    "prompt": "不要碰蓝色气球，扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/targeted/samples.jsonl",
+    "case_id": "distractor_color",
+    "repetition": 4,
+    "prompt": "不要碰蓝色气球，扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/targeted/samples.jsonl",
+    "case_id": "distractor_color",
+    "repetition": 5,
+    "prompt": "不要碰蓝色气球，扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "1597c5c139632fff4823e8b4d7cadd28",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3b/extra16/samples.jsonl",
+    "case_id": "distractor_color",
+    "repetition": 1,
+    "prompt": "不要碰蓝色气球，扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "fca24bf1142ca8cddfb9e8d39c387a43",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3b/extra16/samples.jsonl",
+    "case_id": "distractor_color",
+    "repetition": 2,
+    "prompt": "不要碰蓝色气球，扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "fca24bf1142ca8cddfb9e8d39c387a43",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3b/extra16/samples.jsonl",
+    "case_id": "distractor_color",
+    "repetition": 3,
+    "prompt": "不要碰蓝色气球，扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "fca24bf1142ca8cddfb9e8d39c387a43",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3b/extra16/samples.jsonl",
+    "case_id": "distractor_color",
+    "repetition": 4,
+    "prompt": "不要碰蓝色气球，扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "fca24bf1142ca8cddfb9e8d39c387a43",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3b/extra16/samples.jsonl",
+    "case_id": "distractor_color",
+    "repetition": 5,
+    "prompt": "不要碰蓝色气球，扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "fca24bf1142ca8cddfb9e8d39c387a43",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3b/extra16/samples.jsonl",
+    "case_id": "distractor_color",
+    "repetition": 6,
+    "prompt": "不要碰蓝色气球，扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "fca24bf1142ca8cddfb9e8d39c387a43",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3b/extra16/samples.jsonl",
+    "case_id": "distractor_color",
+    "repetition": 7,
+    "prompt": "不要碰蓝色气球，扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "fca24bf1142ca8cddfb9e8d39c387a43",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3b/extra16/samples.jsonl",
+    "case_id": "distractor_color",
+    "repetition": 8,
+    "prompt": "不要碰蓝色气球，扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "fca24bf1142ca8cddfb9e8d39c387a43",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3b/extra16/samples.jsonl",
+    "case_id": "distractor_color",
+    "repetition": 9,
+    "prompt": "不要碰蓝色气球，扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "fca24bf1142ca8cddfb9e8d39c387a43",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3b/extra16/samples.jsonl",
+    "case_id": "distractor_color",
+    "repetition": 10,
+    "prompt": "不要碰蓝色气球，扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "fca24bf1142ca8cddfb9e8d39c387a43",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3b/extra16/samples.jsonl",
+    "case_id": "distractor_color",
+    "repetition": 11,
+    "prompt": "不要碰蓝色气球，扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "fca24bf1142ca8cddfb9e8d39c387a43",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3b/extra16/samples.jsonl",
+    "case_id": "distractor_color",
+    "repetition": 12,
+    "prompt": "不要碰蓝色气球，扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "fca24bf1142ca8cddfb9e8d39c387a43",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3b/extra16/samples.jsonl",
+    "case_id": "distractor_color",
+    "repetition": 13,
+    "prompt": "不要碰蓝色气球，扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "fca24bf1142ca8cddfb9e8d39c387a43",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3b/extra16/samples.jsonl",
+    "case_id": "distractor_color",
+    "repetition": 14,
+    "prompt": "不要碰蓝色气球，扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "fca24bf1142ca8cddfb9e8d39c387a43",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3b/extra16/samples.jsonl",
+    "case_id": "distractor_color",
+    "repetition": 15,
+    "prompt": "不要碰蓝色气球，扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "fca24bf1142ca8cddfb9e8d39c387a43",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3b/extra16/samples.jsonl",
+    "case_id": "distractor_color",
+    "repetition": 16,
+    "prompt": "不要碰蓝色气球，扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "fca24bf1142ca8cddfb9e8d39c387a43",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3b/samples.jsonl",
+    "case_id": "distractor_color",
+    "repetition": 1,
+    "prompt": "不要碰蓝色气球，扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "fca24bf1142ca8cddfb9e8d39c387a43",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3b/samples.jsonl",
+    "case_id": "distractor_color",
+    "repetition": 2,
+    "prompt": "不要碰蓝色气球，扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "fca24bf1142ca8cddfb9e8d39c387a43",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3b/samples.jsonl",
+    "case_id": "distractor_color",
+    "repetition": 3,
+    "prompt": "不要碰蓝色气球，扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "fca24bf1142ca8cddfb9e8d39c387a43",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3b/samples.jsonl",
+    "case_id": "distractor_color",
+    "repetition": 4,
+    "prompt": "不要碰蓝色气球，扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "fca24bf1142ca8cddfb9e8d39c387a43",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3b/samples.jsonl",
+    "case_id": "distractor_color",
+    "repetition": 5,
+    "prompt": "不要碰蓝色气球，扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "fca24bf1142ca8cddfb9e8d39c387a43",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3b/samples.jsonl",
+    "case_id": "distractor_color",
+    "repetition": 6,
+    "prompt": "不要碰蓝色气球，扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "fca24bf1142ca8cddfb9e8d39c387a43",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3b/samples.jsonl",
+    "case_id": "distractor_color",
+    "repetition": 7,
+    "prompt": "不要碰蓝色气球，扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "fca24bf1142ca8cddfb9e8d39c387a43",
+    "replay_trace": ""
+  },
+  {
+    "dataset": "v3_stability/reports/rule_compliance_20261015_v3b/samples.jsonl",
+    "case_id": "distractor_color",
+    "repetition": 8,
+    "prompt": "不要碰蓝色气球，扎破红色的气球。",
+    "candidate_count": 1,
+    "expected": [
+      "hit_balloon:red"
+    ],
+    "first_candidate": "hit_balloon:red",
+    "recorded_final": "hit_balloon:red",
+    "replayed_final": "hit_balloon:red",
+    "first_exact": true,
+    "recorded_exact": true,
+    "replayed_exact": true,
+    "recorded_passed_flag": true,
+    "first_strict": true,
+    "recorded_strict": true,
+    "replayed_strict": true,
+    "replayed_failure_classes": [],
+    "selection_changed": false,
+    "all_recorded_candidates": [
+      "hit_balloon:red"
+    ],
+    "recorded_module_md5": "fca24bf1142ca8cddfb9e8d39c387a43",
+    "replay_trace": ""
+  }
+]
