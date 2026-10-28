@@ -1,0 +1,17 @@
+[
+  {
+    "file": "staging/mission_once.py",
+    "remote": "/home/ubuntu/model/mission_once.py",
+    "md5": "9e59ada4270b086f15e6133dc854cedb"
+  },
+  {
+    "file": "source/mission_pkg/include/nodes/perception/multimodal_target_tracker.h",
+    "remote": "/home/ubuntu/catkin_ws/src/mission_pkg/include/nodes/perception/multimodal_target_tracker.h",
+    "md5": "edd5df5c1d3b1c14e592e540bc0f492e"
+  },
+  {
+    "file": "source/mission_pkg/src/nodes/perception/multimodal_target_tracker.cpp",
+    "remote": "/home/ubuntu/catkin_ws/src/mission_pkg/src/nodes/perception/multimodal_target_tracker.cpp",
+    "md5": "8b7ec875aba50f1d0b02d5ce311f9e3c"
+  }
+]
