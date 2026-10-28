@@ -1,0 +1,5 @@
+# Preserve the exact CRLF bytes used by the historical MD5 manifest.
+src/planner/bspline_opt/src/bspline_optimizer.cpp -text
+src/planner/bspline_opt/include/bspline_opt/bspline_optimizer.h -text
+src/planner/bspline_opt/CMakeLists.txt -text
+src/planner/bspline_opt/package.xml -text

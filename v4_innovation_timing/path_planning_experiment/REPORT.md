@@ -22,7 +22,9 @@
 
 `C_balloon = lambda_balloon × Σ_i Σ_b max(0, clearance_balloon - ||q_i - b||)^3`
 
-其中 `q_i` 是参与优化的 B-spline 控制点，`b` 是当前非目标球中心。梯度随同代价加入 L-BFGS，独立于原通用碰撞权重 `lambda2_`。每次 `rebound_optimize()` 开始时冻结一次有效位置列表，超过 2 秒无桥接消息则不使用；优化器日志记录非零代价评估次数。C++、头文件与依赖声明见 `official_baseline/catkin_ws/src/ego-planner/src/planner/bspline_opt/`；部署采用 [MD5 校验及备份脚本](patches/patch_balloon_clearance_cost_v1.py)。先编译 `bspline_opt`，再编译依赖它且会实例化优化器的 `ego_planner`，两者均成功；编译日志见 [bspline_opt](evidence/build_v1.log)、[ego_planner](evidence/build_ego_v1.log)。
+其中 `q_i` 是参与优化的 B-spline 控制点，`b` 是当前非目标球中心。梯度随同代价加入 L-BFGS，独立于原通用碰撞权重 `lambda2_`。每次 `rebound_optimize()` 开始时冻结一次有效位置列表，超过 2 秒无桥接消息则不使用；优化器日志记录非零代价评估次数。C++、头文件与依赖声明见独立封存的 [payload_v1](payload_v1/README.md)；部署采用 [MD5 校验及备份脚本](patches/patch_balloon_clearance_cost_v1.py)，将 `--payload-root` 指向 `payload_v1/`。先编译 `bspline_opt`，再编译依赖它且会实例化优化器的 `ego_planner`，两者均成功；编译日志见 [bspline_opt](evidence/build_v1.log)、[ego_planner](evidence/build_ego_v1.log)。
+
+2026-10-27 存储位置修订：历史提交 `add1a2a` 将上述候选代码放入了 `official_baseline/`。本次已从其父提交恢复官方基线，同时按 `deployed_md5` 将候选四文件完整封存到 `payload_v1/`，见 [恢复校验记录](evidence/baseline_restore_20261027.json)。原补丁、部署清单、实验日志及数值保持原样；这次目录修复没有新增编译或仿真实验。
 
 | 配置 | C++ 源 | 独立权重 | 避让中心距离 | 实际优化器抽样日志 |
 |---|---|---:|---:|---|
