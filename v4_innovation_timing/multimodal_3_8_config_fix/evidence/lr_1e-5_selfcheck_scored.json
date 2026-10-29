@@ -1,0 +1,356 @@
+[
+  {
+    "id": "run3_00439_red_selfcheck_native",
+    "color": "red",
+    "present": true,
+    "clipped": false,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": true,
+    "iou": 0.5686613189808,
+    "center_error_px": 22.927058250024185,
+    "predicted_bbox_px": [
+      513.92,
+      93.11999999999999,
+      609.28,
+      180.48
+    ],
+    "center_error_threshold_px": 31.043839968663676
+  },
+  {
+    "id": "run3_00434_red_selfcheck_native",
+    "color": "red",
+    "present": true,
+    "clipped": false,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": true,
+    "iou": 0.875434417587567,
+    "center_error_px": 5.132796508726985,
+    "predicted_bbox_px": [
+      385.92,
+      348.0,
+      437.76,
+      456.0
+    ],
+    "center_error_threshold_px": 25.059928172283335
+  },
+  {
+    "id": "run3_00431_red_selfcheck_native",
+    "color": "red",
+    "present": true,
+    "clipped": true,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": true,
+    "iou": 0.7836540540540541,
+    "center_error_px": 5.778338861645268,
+    "predicted_bbox_px": [
+      587.52,
+      348.0,
+      640.0,
+      454.08
+    ],
+    "center_error_threshold_px": 25.62576828116574
+  },
+  {
+    "id": "run7_00478_red_selfcheck_native",
+    "color": "red",
+    "present": true,
+    "clipped": false,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": true,
+    "iou": 0.7450672228796873,
+    "center_error_px": 11.048764636827071,
+    "predicted_bbox_px": [
+      385.92,
+      115.67999999999999,
+      451.2,
+      210.23999999999998
+    ],
+    "center_error_threshold_px": 24.08651074771936
+  },
+  {
+    "id": "run7_00490_red_selfcheck_native",
+    "color": "red",
+    "present": true,
+    "clipped": false,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": false,
+    "iou": 0.4748961817884587,
+    "center_error_px": 26.79630571552732,
+    "predicted_bbox_px": [
+      524.8,
+      94.56,
+      616.32,
+      216.0
+    ],
+    "center_error_threshold_px": 25.945327132260253
+  },
+  {
+    "id": "run7_00484_red_selfcheck_native",
+    "color": "red",
+    "present": true,
+    "clipped": false,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": false,
+    "iou": 0.45444349447121923,
+    "center_error_px": 25.023229208077876,
+    "predicted_bbox_px": [
+      371.2,
+      102.72,
+      430.72,
+      196.32
+    ],
+    "center_error_threshold_px": 23.600847442411894
+  },
+  {
+    "id": "run3_00002_red_selfcheck_native",
+    "color": "red",
+    "present": true,
+    "clipped": true,
+    "bbox_valid": false,
+    "bbox_nonempty": false,
+    "geometry_pass": false,
+    "iou": 0.0,
+    "center_error_px": null,
+    "bbox_parse_error": true
+  },
+  {
+    "id": "run3_00434_purple_selfcheck_native",
+    "color": "purple",
+    "present": true,
+    "clipped": false,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": true,
+    "iou": 0.5041526696939516,
+    "center_error_px": 18.98724835251283,
+    "predicted_bbox_px": [
+      385.92,
+      348.0,
+      437.76,
+      456.0
+    ],
+    "center_error_threshold_px": 27.687542325024083
+  },
+  {
+    "id": "run3_00432_purple_selfcheck_native",
+    "color": "purple",
+    "present": true,
+    "clipped": false,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": false,
+    "iou": 0.35706011523429665,
+    "center_error_px": 30.68711781839406,
+    "predicted_bbox_px": [
+      550.4,
+      341.76,
+      609.92,
+      453.12
+    ],
+    "center_error_threshold_px": 27.626074639731215
+  },
+  {
+    "id": "run3_00439_purple_selfcheck_native",
+    "color": "purple",
+    "present": true,
+    "clipped": false,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": true,
+    "iou": 0.5382817987643174,
+    "center_error_px": 22.488832784295404,
+    "predicted_bbox_px": [
+      518.4,
+      112.8,
+      606.08,
+      220.79999999999998
+    ],
+    "center_error_threshold_px": 25.242028444639708
+  },
+  {
+    "id": "run7_00478_purple_selfcheck_native",
+    "color": "purple",
+    "present": true,
+    "clipped": false,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": true,
+    "iou": 0.7770935101765661,
+    "center_error_px": 9.051077283948029,
+    "predicted_bbox_px": [
+      385.92,
+      119.03999999999999,
+      457.6,
+      210.72
+    ],
+    "center_error_threshold_px": 24.482646915723798
+  },
+  {
+    "id": "run7_00484_purple_selfcheck_native",
+    "color": "purple",
+    "present": true,
+    "clipped": false,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": true,
+    "iou": 0.5607139619780638,
+    "center_error_px": 17.86004479277701,
+    "predicted_bbox_px": [
+      369.92,
+      110.39999999999999,
+      424.96000000000004,
+      201.12
+    ],
+    "center_error_threshold_px": 24.482646915723798
+  },
+  {
+    "id": "run3_00171_purple_selfcheck_native",
+    "color": "purple",
+    "present": true,
+    "clipped": false,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": false,
+    "iou": 0.44371830583529726,
+    "center_error_px": 11.123182997685522,
+    "predicted_bbox_px": [
+      101.12,
+      350.4,
+      130.56,
+      434.88
+    ],
+    "center_error_threshold_px": 14.261837188805655
+  },
+  {
+    "id": "run3_00178_purple_selfcheck_native",
+    "color": "purple",
+    "present": true,
+    "clipped": false,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": false,
+    "iou": 0.20529984883674365,
+    "center_error_px": 24.47014507517277,
+    "predicted_bbox_px": [
+      257.92,
+      349.91999999999996,
+      330.24,
+      456.0
+    ],
+    "center_error_threshold_px": 13.555810562264435
+  },
+  {
+    "id": "run7_00034_blue_selfcheck_native",
+    "color": "blue",
+    "present": true,
+    "clipped": false,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": false,
+    "iou": 0.1629056497440473,
+    "center_error_px": 15.914018976990064,
+    "predicted_bbox_px": [
+      421.12,
+      254.39999999999998,
+      448.64,
+      299.52
+    ],
+    "center_error_threshold_px": 8
+  },
+  {
+    "id": "run3_00035_blue_selfcheck_native",
+    "color": "blue",
+    "present": true,
+    "clipped": false,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": true,
+    "iou": 0.6860082414641978,
+    "center_error_px": 3.795787138394314,
+    "predicted_bbox_px": [
+      513.92,
+      245.76,
+      541.44,
+      277.92
+    ],
+    "center_error_threshold_px": 8
+  },
+  {
+    "id": "run7_00052_blue_selfcheck_native",
+    "color": "blue",
+    "present": true,
+    "clipped": false,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": false,
+    "iou": 0.0,
+    "center_error_px": 33.12154585764379,
+    "predicted_bbox_px": [
+      299.52,
+      273.59999999999997,
+      314.24,
+      299.03999999999996
+    ],
+    "center_error_threshold_px": 8
+  },
+  {
+    "id": "run7_00325_blue_selfcheck_native",
+    "color": "blue",
+    "present": true,
+    "clipped": false,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": false,
+    "iou": 0.18357190914785515,
+    "center_error_px": 13.345411196362605,
+    "predicted_bbox_px": [
+      152.32,
+      268.8,
+      173.44,
+      311.52
+    ],
+    "center_error_threshold_px": 8
+  },
+  {
+    "id": "run3_00046_blue_selfcheck_native",
+    "color": "blue",
+    "present": true,
+    "clipped": false,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": true,
+    "iou": 0.5118011644650341,
+    "center_error_px": 5.323645367602926,
+    "predicted_bbox_px": [
+      385.92,
+      277.44,
+      402.56,
+      307.68
+    ],
+    "center_error_threshold_px": 8
+  },
+  {
+    "id": "run3_00047_blue_selfcheck_native",
+    "color": "blue",
+    "present": true,
+    "clipped": false,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": true,
+    "iou": 0.6450688073394493,
+    "center_error_px": 3.782591704109758,
+    "predicted_bbox_px": [
+      371.2,
+      275.03999999999996,
+      391.68,
+      307.2
+    ],
+    "center_error_threshold_px": 8
+  }
+]
