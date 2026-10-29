@@ -1,0 +1,107 @@
+--- official_baseline/catkin_ws/src/mission_pkg/src/bt_ros.cpp
++++ frozen_20261019/catkin_ws/src/mission_pkg/src/bt_ros.cpp
+@@ -241,7 +241,15 @@
+     // ---- cross_frame: 识别方框 + 穿越 ----
+     if (cmd == "cross_frame") {
+         std::string observe   = getStr("cross_frame/observe_pos",   "0.0;-1.0;1.0");
+-        std::string delay     = std::to_string((int)getDbl("cross_frame/observe_delay_ms", 2000));
++        std::string stable_pos_threshold =
++            std::to_string(getDbl("optimization/position_threshold", 0.15));
++        std::string stable_vel_threshold =
++            std::to_string(getDbl("optimization/velocity_threshold", 0.08));
++        std::string stable_confirm_time =
++            std::to_string(getDbl("optimization/stable_confirm_time", 0.50));
++        std::string stable_timeout =
++            std::to_string(getDbl("optimization/settle_timeout",
++                                  getDbl("cross_frame/observe_delay_ms", 2000) / 1000.0));
+         std::string obj_w     = std::to_string(getDbl("cross_frame/object_width",  1.25));
+         std::string obj_h     = std::to_string(getDbl("cross_frame/object_height", 1.25));
+         std::string occ_dir   = getStr("cross_frame/occlusion_direction", "right");
+@@ -253,9 +261,12 @@
+         return 
+             "      <!-- 移动到观察位置 -->\n"
+             "      <GoTo goal=\"" + observe + "\"/>\n"
+-            "      <Delay delay_msec=\"" + delay + "\">\n"
+-            "        <AlwaysSuccess/>\n"
+-            "      </Delay>\n"
++            "      <!-- 等待位置和速度稳定；超时保持原有 2 s 上限 -->\n"
++            "      <WaitForStablePosition goal=\"" + observe + "\" "
++            "position_threshold=\"" + stable_pos_threshold + "\" "
++            "velocity_threshold=\"" + stable_vel_threshold + "\" "
++            "stable_confirm_time=\"" + stable_confirm_time + "\" "
++            "timeout=\"" + stable_timeout + "\"/>\n"
+             "      <!-- 识别方框位置 -->\n"
+             "      <TargetLocator object_name=\"square_frame\" object_width=\"" + obj_w + "\" object_height=\"" + obj_h + "\" "
+             "occlusion_direction=\"" + occ_dir + "\" expected_pos=\"" + exp_pos + "\" "
+@@ -317,8 +328,13 @@
+         std::string param_prefix = "balloon_zone_" + zone;
+         std::string approach_pos = getStr(param_prefix + "/approach_pos", "5.3;1.0;0.7");
+         std::string goto_pos = getStr(param_prefix + "/goal", "0.0;-0.8;0.5");
+-        double yaw_val = getDbl(param_prefix + "/yaw", -1.570796);
+-        std::string yaw = std::to_string(yaw_val);
++        // Zone A preserves arrival heading. VisualServo scans and aligns
++        // from the arrival pose; B/C keep their audited entry yaw commands.
++        std::string yaw = zone == "A" ? "visual_servo" :
++            std::to_string(getDbl(param_prefix + "/yaw", -1.570796));
++        std::string entry_goto = zone == "A" ?
++            "      <GoTo goal=\"" + goto_pos + "\"/>\n" :
++            "      <GoTo goal=\"" + goto_pos + "\" yaw=\"" + yaw + "\"/>\n";
+         std::string balloon_name = color + "_balloon";
+         
+         // VisualServo 参数（从参数服务器读取，与手调 XML 一致）
+@@ -328,7 +344,9 @@
+         std::string vs_k_d_vz   = std::to_string(getDbl("visual_servo/k_d_vz", 0.006));
+         std::string vs_area_th  = std::to_string(getDbl("visual_servo/approach_area_threshold", 0.08));
+         std::string vs_fwd_vel  = std::to_string(getDbl("visual_servo/forward_velocity", 1.0));
+-        std::string vs_sprint_v = std::to_string(getDbl("visual_servo/sprint_velocity", 1.5));
++        std::string vs_sprint_v = std::to_string(color == "blue" ?
++            getDbl("visual_servo/blue_sprint_velocity", 1.0) :
++            getDbl("visual_servo/sprint_velocity", 1.5));
+         std::string vs_sprint_t = std::to_string(getDbl("visual_servo/sprint_time", 1.2));
+         
+         ROS_INFO("Hit balloon: color=%s -> zone=%s, approach=%s, goto=%s, yaw=%s, target=%s", 
+@@ -337,15 +355,15 @@
+         return
+             "      <!-- 规划飞到气球打击区域" + zone + " -->\n"
+             "      <PlanningControl goal=\"" + approach_pos + "\"/>\n"
+-            "      <!-- 转向朝向" + zone + "区气球(" + color + ") -->\n"
+-            "      <GoTo goal=\"" + goto_pos + "\" yaw=\"" + yaw + "\"/>\n"
++            "      <!-- 进入" + zone + "区气球(" + color + ")观察位置 -->\n"
++            + entry_goto +
+             "      <!-- 跟踪并撞击气球 -->\n"
+             "      <ForceSuccess>\n"
+             "        <Timeout msec=\"50000\">\n"
+             "          <Parallel success_count=\"1\" failure_count=\"1\">\n"
+             "            <TargetTracker object_name=\"" + balloon_name + "\" "
+             "confidence_threshold=\"0.8\" pixel_target=\"{balloon_pixel}\"/>\n"
+-            "            <VisualServo pixel_target=\"{balloon_pixel}\" "
++            "            <VisualServo pixel_target=\"{balloon_pixel}\" target_color=\"" + color + "\" "
+             "k_p_yaw_rate=\"" + vs_k_p_yaw + "\" k_d_yaw_rate=\"" + vs_k_d_yaw + "\" "
+             "k_p_vz=\"" + vs_k_p_vz + "\" k_d_vz=\"" + vs_k_d_vz + "\" "
+             "approach_area_threshold=\"" + vs_area_th + "\" "
+@@ -361,7 +379,7 @@
+         double ret_yaw = getDbl("land/return_yaw", 0.0);
+         return
+             "      <!-- 返回起点 -->\n"
+-            "      <GoTo goal=\"" + ret_pos + "\" yaw=\"" + std::to_string(ret_yaw) + "\"/>\n"
++            "      <GoTo goal=\"" + ret_pos + "\" yaw=\"" + std::to_string(ret_yaw) + "\" setpoint_lookahead=\"0.6\"/>\n"
+             "      <!-- 降落 -->\n"
+             "      <Land/>\n";
+     }
+@@ -379,7 +397,16 @@
+   <BehaviorTree ID="LLMTask">
+     <Sequence name="LLMSequence">
+ )";
++    bool blue_balloon_command = false;
+     for (const auto& cmd : commands) {
++        if (cmd.rfind("hit_balloon:", 0) == 0) {
++            blue_balloon_command = (cmd == "hit_balloon:blue");
++        }
++        if (cmd == "land" && blue_balloon_command) {
++            const std::string via = "1.0;-1.0;0.5";
++            xml += "      <!-- Blue return via an interior lane -->\n"
++                   "      <GoTo goal=\"" + via + "\" setpoint_lookahead=\"0.6\"/>\n";
++        }
+         std::string node_xml = commandToXmlNode(cmd);
+         if (!node_xml.empty()) {
+             xml += node_xml;

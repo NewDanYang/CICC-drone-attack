@@ -1,0 +1,101 @@
+{
+  "previous_audit_commit": "f0d795516e44af903de7c22403ee93c430e70c71",
+  "rerun_commit": "340a52c744b1f19fdbda0e18ef77f14a6f5400bd",
+  "audit_script_unchanged": true,
+  "audit_script_hashes": {
+    "bytes": 15836,
+    "md5": "95c4ea016f9f2be40ce3e0af437bf55a",
+    "sha256": "8da73c107df5dee36985b3a9d8398deb25fb3202a1ef98b30736a025a936071e"
+  },
+  "source_files_verified_unchanged_after_run": 2817,
+  "new_files_created_in_source": 0,
+  "source_manifest_files": 61,
+  "source_manifest_unchanged_files": 57,
+  "changed_source_files": [
+    {
+      "path": "official_baseline/catkin_ws/src/ego-planner/src/planner/bspline_opt/CMakeLists.txt",
+      "previous": {
+        "bytes": 833,
+        "md5": "6dc37b1df25ceebaf6e59d80a5851ab2",
+        "sha256": "01403fa561a77eed4e4fdb8dfd6ed748d4b6aad866a9d254e2725ae8fb211654"
+      },
+      "current": {
+        "bytes": 846,
+        "md5": "0fc1056df778674f1571a427bab78562",
+        "sha256": "c9f25f12ee92c15289cc6ebc0aad0c5a072e276527bb4d4b5a9028830bfb817c"
+      }
+    },
+    {
+      "path": "official_baseline/catkin_ws/src/ego-planner/src/planner/bspline_opt/include/bspline_opt/bspline_optimizer.h",
+      "previous": {
+        "bytes": 6654,
+        "md5": "1734796bbaaa29d3f118a2dd767968ea",
+        "sha256": "14a6a4a684ae9df2c7aaf226d48e775a1d6d04e3f36f28297b9d4c9aacd3129b"
+      },
+      "current": {
+        "bytes": 6191,
+        "md5": "2d2615f01a3834ac24104360e43426b6",
+        "sha256": "2d3827c117def59d65244eddc306b085caea012608c97b8da3216bad87c9cbec"
+      }
+    },
+    {
+      "path": "official_baseline/catkin_ws/src/ego-planner/src/planner/bspline_opt/package.xml",
+      "previous": {
+        "bytes": 3312,
+        "md5": "bf24567ca193281c371739d11eb30dd8",
+        "sha256": "6eca96e29db07e81ab3ed048bc7988fad50111caa9dcb90acbbd4e4c7667249c"
+      },
+      "current": {
+        "bytes": 3239,
+        "md5": "da5f06411d24160a919de5ba17d4c4f2",
+        "sha256": "8fe90a2679776d0eaff32812b22886019e32468a5b59edb104690500e939cd49"
+      }
+    },
+    {
+      "path": "official_baseline/catkin_ws/src/ego-planner/src/planner/bspline_opt/src/bspline_optimizer.cpp",
+      "previous": {
+        "bytes": 40648,
+        "md5": "2b80be4701fb9e8631267bc379928557",
+        "sha256": "063859c844124c25e976e98ecbda78330e1860888a3cde94a406773162bb2587"
+      },
+      "current": {
+        "bytes": 38885,
+        "md5": "a968a5e81b3799c2ed68d75b582f5fc4",
+        "sha256": "7ff7f95f4456a75ff1d6700a46698ea99fbc757b7b044b635b7e3d21909e2bae"
+      }
+    }
+  ],
+  "non_provenance_audit_sections_equal_to_previous": {
+    "additional_source_hashes": true,
+    "fixed_candidate_replay": true,
+    "frozen_integrity": true,
+    "historical_final_nine_trials": true,
+    "historical_planning_reanalysis": true,
+    "historical_stage_timing": true,
+    "planning_cost_activation": true,
+    "repository_regressions": true,
+    "stored_return_setpoint_metrics": true
+  },
+  "planner_original_matches": 4,
+  "planner_candidate_matches": 0,
+  "initial_repository_baseline_comparison": {
+    "source_commit": "045155040198da0a0a19dcad14797fa17d6a45e4",
+    "original_file_count": 1527,
+    "same_git_blob_count": 1523,
+    "only_line_endings_changed": [
+      "official_baseline/catkin_ws/src/ego-planner/src/planner/bspline_opt/CMakeLists.txt",
+      "official_baseline/catkin_ws/src/ego-planner/src/planner/bspline_opt/include/bspline_opt/bspline_optimizer.h",
+      "official_baseline/catkin_ws/src/ego-planner/src/planner/bspline_opt/package.xml",
+      "official_baseline/catkin_ws/src/ego-planner/src/planner/bspline_opt/src/bspline_optimizer.cpp"
+    ],
+    "new_metadata_files": [
+      "official_baseline/README.md",
+      "official_baseline/catkin_ws/src/ego-planner/src/planner/bspline_opt/.gitattributes"
+    ],
+    "missing_original_files": [],
+    "scope": "Matches the repository's first imported snapshot; not independent proof of upstream official distribution or live server state."
+  },
+  "remote_rollback_executed": false,
+  "new_simulation_trials": 0,
+  "new_live_model_inference": false
+}

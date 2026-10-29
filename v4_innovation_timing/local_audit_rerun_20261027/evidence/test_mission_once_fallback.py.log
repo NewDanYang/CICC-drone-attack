@@ -1,0 +1,66 @@
+PASS expected color '起飞，穿过框，识别二维码，再穿回来，去A区打红色气球，降落' -> red
+PASS expected color '扎破紫色的气球' -> purple
+PASS expected color '请撞破蓝颜色的气球' -> blue
+PASS expected color '打红气球' -> red
+PASS expected color 'hit the Blue balloon' -> blue
+PASS expected color '不要碰蓝色气球，扎破红色气球' -> None
+PASS expected color '起飞' -> None
+PASS valid first answer is published after 1 call
+[命令校验] 第1次生成不合格：color mismatch: task=blue, commands=['purple']
+PASS wrong color is retried and fixed
+PASS retry prompt names the color
+[命令校验] 第1次生成不合格：color mismatch: task=blue, commands=['purple']
+[命令校验] 第2次生成不合格：color mismatch: task=blue, commands=['purple']
+[命令校验] 第3次生成不合格：color mismatch: task=blue, commands=['purple']
+[命令校验] 没有完全合格的输出；按原样发布最接近的一次，避免开赛 5 分钟内无人机未动导致本轮结束
+PASS all-wrong color still publishes the LLM answer verbatim
+[命令校验] 第1次生成不合格：no ```command block
+PASS missing command block is retried
+[命令校验] 第1次生成不合格：no ```command block
+[命令校验] 第2次生成不合格：no ```command block
+[命令校验] 第3次生成不合格：no ```command block
+PASS no LLM command at all -> None, nothing hand-written
+[命令校验] 第1次生成不合格：unknown command 'fly_to_balloon'; color mismatch: task=red, commands=[]
+[命令校验] 第2次生成不合格：color mismatch: task=red, commands=['purple']
+[命令校验] 第3次生成不合格：no ```command block
+[命令校验] 没有完全合格的输出；按原样发布最接近的一次，避免开赛 5 分钟内无人机未动导致本轮结束
+PASS fewer unknown commands preferred as fallback
+[命令校验] 第1次生成不合格：no ```command block
+[命令校验] 重试时间预算用完
+PASS budget exhausted stops after first attempt
+PASS single-step 起飞 accepted
+PASS single-step 穿越方框 accepted
+PASS single-step 返航降落 accepted
+[命令校验] 第1次生成不合格：steps_likely_extra: instruction names only the balloon stage
+PASS single-action balloon instruction rejects a full six-step answer
+[命令校验] 第1次生成不合格：steps_likely_extra: instruction names only the balloon stage
+PASS single-action balloon instruction (variant wording) retried
+[命令校验] 第1次生成不合格：steps_likely_extra: instruction names only the balloon stage
+PASS single-action distractor-color instruction retried
+[命令校验] 第1次生成不合格：steps_likely_extra: instruction names only the balloon stage
+[命令校验] 第2次生成不合格：steps_likely_extra: instruction names only the balloon stage
+[命令校验] 第3次生成不合格：steps_likely_extra: instruction names only the balloon stage
+[命令校验] 没有完全合格的输出；按原样发布最接近的一次，避免开赛 5 分钟内无人机未动导致本轮结束
+PASS single-action balloon instruction still publishes on persistent over-generation
+[命令校验] 第1次生成不合格：steps_likely_extra: instruction names only the landing stage
+PASS landing-only instruction rejects a spurious return_cross_frame
+PASS genuine multi-step instruction with a balloon stage is not flagged
+PASS multi-step instruction ending in landing is not flagged as landing-only
+[命令校验] 第1次生成不合格：steps_likely_extra: instruction names only the balloon stage
+[命令校验] 第2次生成不合格：steps_likely_extra: instruction names only the balloon stage
+[命令校验] 第3次生成不合格：steps_likely_extra: instruction names only the balloon stage
+[命令校验] 没有完全合格的输出；按原样发布最接近的一次，避免开赛 5 分钟内无人机未动导致本轮结束
+PASS fallback prefers an answer with the requested balloon command over one with none
+PASS fallback does not publish the balloon-less answer from this sequence
+[命令校验] 第1次生成不合格：steps_likely_extra: instruction names only the balloon stage
+[命令校验] 第2次生成不合格：steps_likely_extra: instruction names only the balloon stage
+[命令校验] 第3次生成不合格：steps_likely_extra: instruction names only the balloon stage
+[命令校验] 没有完全合格的输出；按原样发布最接近的一次，避免开赛 5 分钟内无人机未动导致本轮结束
+PASS fallback still prefers the balloon command when the balloon-less answer comes second
+[命令校验] 第1次生成不合格：steps_likely_extra: instruction names only the balloon stage
+[命令校验] 第2次生成不合格：steps_likely_extra: instruction names only the balloon stage
+[命令校验] 第3次生成不合格：steps_likely_extra: instruction names only the balloon stage
+[命令校验] 没有完全合格的输出；按原样发布最接近的一次，避免开赛 5 分钟内无人机未动导致本轮结束
+PASS all attempts missing the balloon command still publish something, not None
+
+0 failure(s)

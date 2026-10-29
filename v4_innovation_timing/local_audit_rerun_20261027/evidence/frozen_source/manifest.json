@@ -1,0 +1,40 @@
+{
+  "flavor": "v4",
+  "files": {
+    "catkin_ws/src/mission_pkg/launch/llm_mission.launch": {
+      "md5": "5550c580a4822e773a331bcef11f0c47",
+      "sha256": "73865605433000e6fae973bb8c67539cb80f272aea2c98a32b715c34246003d2",
+      "bytes": 7818
+    },
+    "catkin_ws/src/mission_pkg/src/bt_ros.cpp": {
+      "md5": "9b1cefe9dfa431418435f7f8f63a60ed",
+      "sha256": "60f81e31d6448724c0a246068c97eaba5bfcc1c53d39d88ffbca3841fcf098ff",
+      "bytes": 25802
+    },
+    "catkin_ws/src/mission_pkg/src/nodes/action/visual_servo.cpp": {
+      "md5": "a63b57fa127a23cd8bb8e647f078ff21",
+      "sha256": "f7c839dedc67f94352006656124e8924a5e4a1ef30852bf0376816eff0a93373",
+      "bytes": 17890
+    },
+    "catkin_ws/src/mission_pkg/src/nodes/action/goto.cpp": {
+      "md5": "f557ace5bbf2ee7975b7335a738ffcf9",
+      "sha256": "a6ab5a068973f5fc88823286cdb1f46ea8560b7f68586bc4fd2143625f0440cc",
+      "bytes": 6069
+    },
+    "catkin_ws/src/mission_pkg/include/nodes/action/goto.h": {
+      "md5": "ee765e08024ea28cb1b8d32104a272d3",
+      "sha256": "2a988bd70de2ed07d9719600b266e944b3272b2a348f84e3b08924e162ae1bf3",
+      "bytes": 904
+    },
+    "catkin_ws/src/mission_pkg/src/mavros_cnt.cpp": {
+      "md5": "edcd9397074f44c6028c8dca02902920",
+      "sha256": "14365bf85a918a5a799ac00b44de93a5b8989bd0d37592777f6d89fc2d8ab8a3",
+      "bytes": 13175
+    },
+    "model/mission_once.py": {
+      "md5": "fca24bf1142ca8cddfb9e8d39c387a43",
+      "sha256": "573f3fc564f3aa1960702084aa7f372f55901e68fd320d5f7d72a13c3eaafccc",
+      "bytes": 12104
+    }
+  }
+}
