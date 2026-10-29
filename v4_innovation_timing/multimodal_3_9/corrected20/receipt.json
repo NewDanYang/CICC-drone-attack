@@ -1,0 +1,29 @@
+{
+  "task": "3.9 color-clean self-check",
+  "n": 20,
+  "positive_by_color": {
+    "red": 7,
+    "purple": 7,
+    "blue": 6
+  },
+  "format": "native_box",
+  "replaced_color_contaminated_rows": [
+    "run3_00432_purple_selfcheck_native",
+    "run3_00171_purple_selfcheck_native",
+    "run3_00178_purple_selfcheck_native",
+    "run3_00176_purple_selfcheck_native",
+    "run3_00169_purple_selfcheck_native",
+    "run3_00173_purple_selfcheck_native",
+    "run7_00157_purple_selfcheck_native"
+  ],
+  "verified_purple_ids": [
+    "run3_00001_purple",
+    "run3_00003_purple",
+    "run3_00005_purple",
+    "run3_00007_purple",
+    "run3_00009_purple",
+    "run3_00011_purple",
+    "run3_00013_purple"
+  ],
+  "source_cases_sha256": "34caabaa583d4df96f86a2546cce240f2220ff94d3657caf017450efaa23a9b0"
+}
