@@ -1,0 +1,319 @@
+{
+  "test_blue": {
+    "n": 10,
+    "nonempty_bbox_outputs": 9,
+    "malformed_or_empty_outputs": 1,
+    "geometry_hits": 0,
+    "median_center_error_px": 19.095475903993577,
+    "median_target_max_edge_px": 27.0,
+    "failures": [
+      {
+        "id": "run7_00002_blue",
+        "true_bbox_px": [
+          399,
+          209,
+          420,
+          235
+        ],
+        "predicted_bbox_px": [
+          421.12,
+          236.16,
+          448.64,
+          255.35999999999999
+        ],
+        "iou": 0.0,
+        "center_error_px": 34.76610418209091,
+        "threshold_px": 8,
+        "geometry_pass": false,
+        "true_region": "center",
+        "predicted_region": {
+          "color": "blue",
+          "region": "right"
+        },
+        "predicted_bbox_answer": "{\"bbox\":[658,492,701,532]}",
+        "speed_mps": 0.01114083838503946,
+        "target_max_edge_px": 26,
+        "failure_mode": "bbox_center_offset"
+      },
+      {
+        "id": "run7_00047_blue",
+        "true_bbox_px": [
+          406,
+          272,
+          424,
+          300
+        ],
+        "predicted_bbox_px": [
+          416.0,
+          284.15999999999997,
+          430.72,
+          307.68
+        ],
+        "iou": 0.17514993896290018,
+        "center_error_px": 12.972894819584386,
+        "threshold_px": 8,
+        "geometry_pass": false,
+        "true_region": "center",
+        "predicted_region": {
+          "color": "blue",
+          "region": "center"
+        },
+        "predicted_bbox_answer": "{\"bbox\":[650,592,673,641]}",
+        "speed_mps": 0.08949210118047808,
+        "target_max_edge_px": 28,
+        "failure_mode": "bbox_scale_or_small_target"
+      },
+      {
+        "id": "run7_00023_blue",
+        "true_bbox_px": [
+          588,
+          204,
+          619,
+          228
+        ],
+        "predicted_bbox_px": [
+          588.8000000000001,
+          209.28,
+          640.0,
+          252.95999999999998
+        ],
+        "iou": 0.23408991533171652,
+        "center_error_px": 18.63932402207768,
+        "threshold_px": 8,
+        "geometry_pass": false,
+        "true_region": "right",
+        "predicted_region": {
+          "color": "blue",
+          "region": "right"
+        },
+        "predicted_bbox_answer": "{\"bbox\":[920,436,1000,527]}",
+        "speed_mps": 0.007691485706810727,
+        "target_max_edge_px": 31,
+        "failure_mode": "test_label_color_confusion: purple balloon in blue row"
+      },
+      {
+        "id": "run7_00035_blue",
+        "true_bbox_px": [
+          430,
+          261,
+          456,
+          306
+        ],
+        "predicted_bbox_px": [
+          460.8,
+          286.08,
+          478.72,
+          302.88
+        ],
+        "iou": 0.0,
+        "center_error_px": 28.92504105442203,
+        "threshold_px": 10.394229168149026,
+        "geometry_pass": false,
+        "true_region": "right",
+        "predicted_region": {
+          "color": "blue",
+          "region": "right"
+        },
+        "predicted_bbox_answer": "{\"bbox\":[720,596,748,631]}",
+        "speed_mps": 0.2223676919973867,
+        "target_max_edge_px": 45,
+        "failure_mode": "bbox_center_offset"
+      },
+      {
+        "id": "run7_00038_blue",
+        "true_bbox_px": [
+          486,
+          246,
+          510,
+          273
+        ],
+        "predicted_bbox_px": [
+          467.2,
+          260.15999999999997,
+          491.52,
+          283.68
+        ],
+        "iou": 0.0616786827177717,
+        "center_error_px": 22.398794610424876,
+        "threshold_px": 8,
+        "geometry_pass": false,
+        "true_region": "right",
+        "predicted_region": {
+          "color": "blue",
+          "region": "right"
+        },
+        "predicted_bbox_answer": "{\"bbox\":[730,542,768,591]}",
+        "speed_mps": 0.33856683471681537,
+        "target_max_edge_px": 27,
+        "failure_mode": "bbox_center_offset"
+      },
+      {
+        "id": "run7_00041_blue",
+        "true_bbox_px": [
+          502,
+          245,
+          524,
+          271
+        ],
+        "predicted_bbox_px": [
+          491.52,
+          244.79999999999998,
+          507.52000000000004,
+          260.15999999999997
+        ],
+        "iou": 0.11399788142058212,
+        "center_error_px": 14.566427152874548,
+        "threshold_px": 8,
+        "geometry_pass": false,
+        "true_region": "right",
+        "predicted_region": {
+          "color": "blue",
+          "region": "right"
+        },
+        "predicted_bbox_answer": "{\"bbox\":[768,510,793,542]}",
+        "speed_mps": 0.14589203623784214,
+        "target_max_edge_px": 26,
+        "failure_mode": "bbox_center_offset"
+      },
+      {
+        "id": "run7_00044_blue",
+        "true_bbox_px": [
+          452,
+          260,
+          474,
+          287
+        ],
+        "predicted_bbox_px": [
+          467.2,
+          259.68,
+          487.68,
+          296.64
+        ],
+        "iou": 0.15728054737742425,
+        "center_error_px": 15.173305506711438,
+        "threshold_px": 8,
+        "geometry_pass": false,
+        "true_region": "right",
+        "predicted_region": {
+          "color": "blue",
+          "region": "center"
+        },
+        "predicted_bbox_answer": "{\"bbox\":[730,541,762,618]}",
+        "speed_mps": 0.11071896692713144,
+        "target_max_edge_px": 27,
+        "failure_mode": "bbox_center_offset"
+      },
+      {
+        "id": "run7_00050_blue",
+        "true_bbox_px": [
+          359,
+          274,
+          380,
+          302
+        ],
+        "predicted_bbox_px": [
+          371.2,
+          260.15999999999997,
+          392.32,
+          286.56
+        ],
+        "iou": 0.10678621116092141,
+        "center_error_px": 19.095475903993577,
+        "threshold_px": 8,
+        "geometry_pass": false,
+        "true_region": "center",
+        "predicted_region": {
+          "color": "blue",
+          "region": "center"
+        },
+        "predicted_bbox_answer": "{\"bbox\":[580,542,613,597]}",
+        "speed_mps": 0.059794138956745006,
+        "target_max_edge_px": 28,
+        "failure_mode": "bbox_center_offset"
+      },
+      {
+        "id": "run7_00053_blue",
+        "true_bbox_px": [
+          316,
+          272,
+          336,
+          299
+        ],
+        "predicted_bbox_px": null,
+        "iou": 0,
+        "center_error_px": null,
+        "threshold_px": null,
+        "geometry_pass": false,
+        "true_region": "center",
+        "predicted_region": {
+          "color": "blue",
+          "region": "center"
+        },
+        "predicted_bbox_answer": "{\"bbox\":[483,520 617]}",
+        "speed_mps": 0.0669572353115537,
+        "target_max_edge_px": 27,
+        "failure_mode": "malformed_bbox_output"
+      },
+      {
+        "id": "run7_00056_blue",
+        "true_bbox_px": [
+          274,
+          272,
+          294,
+          299
+        ],
+        "predicted_bbox_px": [
+          299.52,
+          284.15999999999997,
+          315.52,
+          307.2
+        ],
+        "iou": 0.0,
+        "center_error_px": 25.628554387635642,
+        "threshold_px": 8,
+        "geometry_pass": false,
+        "true_region": "center",
+        "predicted_region": {
+          "color": "blue",
+          "region": "center"
+        },
+        "predicted_bbox_answer": "{\"bbox\":[468,592,493,640]}",
+        "speed_mps": 0.034394473003168786,
+        "target_max_edge_px": 27,
+        "failure_mode": "bbox_center_offset"
+      }
+    ]
+  },
+  "train_blue_quality": {
+    "raw_n": 37,
+    "rejected_n": 13,
+    "kept_n": 24,
+    "rejected": {
+      "run3_00031_blue": "bbox on tripod/ground; visible blue balloon elsewhere",
+      "run3_00032_blue": "bbox on tripod/ground; visible blue balloon elsewhere",
+      "run3_00033_blue": "bbox on tripod/ground; visible blue balloon elsewhere",
+      "run3_00045_blue": "bbox on tripod/ground; no blue balloon inside box",
+      "run7_00037_blue": "bbox on tripod/ground; visible blue balloon elsewhere",
+      "run3_00008_blue": "purple balloon labeled blue",
+      "run3_00009_blue": "purple balloon labeled blue",
+      "run3_00010_blue": "purple balloon labeled blue",
+      "run3_00011_blue": "purple balloon labeled blue",
+      "run7_00007_blue": "severely occluded/loose box; not a tight visible-body box",
+      "run7_00022_blue": "purple balloon labeled blue",
+      "run7_00025_blue": "purple balloon labeled blue",
+      "run7_00046_blue": "purple balloon labeled blue"
+    },
+    "kept_max_edge_px_median": 27.0,
+    "kept_max_edge_px_max": 30
+  },
+  "root_cause": {
+    "primary": "data_quality_and_task_scale",
+    "evidence": [
+      "13/37 training blue rows are visibly mislabeled, on the tripod/ground, or too occluded/loose to be reliable tight boxes",
+      "run7_00023_blue in the test set is visibly a purple balloon",
+      "the 24 retained clean blue training boxes all have max edge <=30 px, leaving no clean medium/large blue scale coverage",
+      "the nine parseable blue test predictions are mostly nonempty but have median center offset about 12 px right and 10 px down"
+    ],
+    "not_supported": "A pure physical-color impossibility explanation is not supported: most test blue crops show a visible high-contrast blue balloon; the failure is dominated by label contamination, tiny targets, and coordinate sensitivity."
+  }
+}

@@ -1,0 +1,394 @@
+[
+  {
+    "id": "run8_00002_red_bbox",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00002.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位这张图片中实际可见的红色气球球体，排除小车、绳子、墙面。只输出一个JSON对象，只有bbox字段。bbox是气球可见部分的紧致矩形，格式为[x_min,y_min,x_max,y_max]，以当前这张图片的左上角为(0,0)、右下角为(1000,1000)，四个坐标均为0到1000之间的整数，x向右增加，y向下增加。没有实际可见红色气球时输出{\"bbox\":null}。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"bbox\":[319,421,352,488]}"
+      }
+    ]
+  },
+  {
+    "id": "run8_00004_red_bbox",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00004.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位这张图片中实际可见的红色气球球体，排除小车、绳子、墙面。只输出一个JSON对象，只有bbox字段。bbox是气球可见部分的紧致矩形，格式为[x_min,y_min,x_max,y_max]，以当前这张图片的左上角为(0,0)、右下角为(1000,1000)，四个坐标均为0到1000之间的整数，x向右增加，y向下增加。没有实际可见红色气球时输出{\"bbox\":null}。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"bbox\":[341,440,355,477]}"
+      }
+    ]
+  },
+  {
+    "id": "run8_00010_red_bbox",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00010.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位这张图片中实际可见的红色气球球体，排除小车、绳子、墙面。只输出一个JSON对象，只有bbox字段。bbox是气球可见部分的紧致矩形，格式为[x_min,y_min,x_max,y_max]，以当前这张图片的左上角为(0,0)、右下角为(1000,1000)，四个坐标均为0到1000之间的整数，x向右增加，y向下增加。没有实际可见红色气球时输出{\"bbox\":null}。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"bbox\":[312,419,350,488]}"
+      }
+    ]
+  },
+  {
+    "id": "run8_00014_red_bbox",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00014.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位这张图片中实际可见的红色气球球体，排除小车、绳子、墙面。只输出一个JSON对象，只有bbox字段。bbox是气球可见部分的紧致矩形，格式为[x_min,y_min,x_max,y_max]，以当前这张图片的左上角为(0,0)、右下角为(1000,1000)，四个坐标均为0到1000之间的整数，x向右增加，y向下增加。没有实际可见红色气球时输出{\"bbox\":null}。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"bbox\":[252,398,306,483]}"
+      }
+    ]
+  },
+  {
+    "id": "run8_00018_red_bbox",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00018.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位这张图片中实际可见的红色气球球体，排除小车、绳子、墙面。只输出一个JSON对象，只有bbox字段。bbox是气球可见部分的紧致矩形，格式为[x_min,y_min,x_max,y_max]，以当前这张图片的左上角为(0,0)、右下角为(1000,1000)，四个坐标均为0到1000之间的整数，x向右增加，y向下增加。没有实际可见红色气球时输出{\"bbox\":null}。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"bbox\":[139,352,223,475]}"
+      }
+    ]
+  },
+  {
+    "id": "run8_00042_red_bbox",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00042.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位这张图片中实际可见的红色气球球体，排除小车、绳子、墙面。只输出一个JSON对象，只有bbox字段。bbox是气球可见部分的紧致矩形，格式为[x_min,y_min,x_max,y_max]，以当前这张图片的左上角为(0,0)、右下角为(1000,1000)，四个坐标均为0到1000之间的整数，x向右增加，y向下增加。没有实际可见红色气球时输出{\"bbox\":null}。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"bbox\":[0,615,120,796]}"
+      }
+    ]
+  },
+  {
+    "id": "run8_00046_red_bbox",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00046.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位这张图片中实际可见的红色气球球体，排除小车、绳子、墙面。只输出一个JSON对象，只有bbox字段。bbox是气球可见部分的紧致矩形，格式为[x_min,y_min,x_max,y_max]，以当前这张图片的左上角为(0,0)、右下角为(1000,1000)，四个坐标均为0到1000之间的整数，x向右增加，y向下增加。没有实际可见红色气球时输出{\"bbox\":null}。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"bbox\":[119,640,209,773]}"
+      }
+    ]
+  },
+  {
+    "id": "run8_00050_red_bbox",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00050.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位这张图片中实际可见的红色气球球体，排除小车、绳子、墙面。只输出一个JSON对象，只有bbox字段。bbox是气球可见部分的紧致矩形，格式为[x_min,y_min,x_max,y_max]，以当前这张图片的左上角为(0,0)、右下角为(1000,1000)，四个坐标均为0到1000之间的整数，x向右增加，y向下增加。没有实际可见红色气球时输出{\"bbox\":null}。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"bbox\":[191,635,259,746]}"
+      }
+    ]
+  },
+  {
+    "id": "run8_00054_red_bbox",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00054.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位这张图片中实际可见的红色气球球体，排除小车、绳子、墙面。只输出一个JSON对象，只有bbox字段。bbox是气球可见部分的紧致矩形，格式为[x_min,y_min,x_max,y_max]，以当前这张图片的左上角为(0,0)、右下角为(1000,1000)，四个坐标均为0到1000之间的整数，x向右增加，y向下增加。没有实际可见红色气球时输出{\"bbox\":null}。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"bbox\":[253,602,308,694]}"
+      }
+    ]
+  },
+  {
+    "id": "run8_00058_red_bbox",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00058.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位这张图片中实际可见的红色气球球体，排除小车、绳子、墙面。只输出一个JSON对象，只有bbox字段。bbox是气球可见部分的紧致矩形，格式为[x_min,y_min,x_max,y_max]，以当前这张图片的左上角为(0,0)、右下角为(1000,1000)，四个坐标均为0到1000之间的整数，x向右增加，y向下增加。没有实际可见红色气球时输出{\"bbox\":null}。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"bbox\":[311,494,358,554]}"
+      }
+    ]
+  },
+  {
+    "id": "run8_00053_purple_bbox",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00053.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位这张图片中实际可见的紫色气球球体，排除小车、绳子、墙面。只输出一个JSON对象，只有bbox字段。bbox是气球可见部分的紧致矩形，格式为[x_min,y_min,x_max,y_max]，以当前这张图片的左上角为(0,0)、右下角为(1000,1000)，四个坐标均为0到1000之间的整数，x向右增加，y向下增加。没有实际可见紫色气球时输出{\"bbox\":null}。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"bbox\":[902,592,936,671]}"
+      }
+    ]
+  },
+  {
+    "id": "run8_00054_purple_bbox",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00054.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位这张图片中实际可见的紫色气球球体，排除小车、绳子、墙面。只输出一个JSON对象，只有bbox字段。bbox是气球可见部分的紧致矩形，格式为[x_min,y_min,x_max,y_max]，以当前这张图片的左上角为(0,0)、右下角为(1000,1000)，四个坐标均为0到1000之间的整数，x向右增加，y向下增加。没有实际可见紫色气球时输出{\"bbox\":null}。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"bbox\":[881,585,933,660]}"
+      }
+    ]
+  },
+  {
+    "id": "run8_00055_purple_bbox",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00055.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位这张图片中实际可见的紫色气球球体，排除小车、绳子、墙面。只输出一个JSON对象，只有bbox字段。bbox是气球可见部分的紧致矩形，格式为[x_min,y_min,x_max,y_max]，以当前这张图片的左上角为(0,0)、右下角为(1000,1000)，四个坐标均为0到1000之间的整数，x向右增加，y向下增加。没有实际可见紫色气球时输出{\"bbox\":null}。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"bbox\":[883,583,930,658]}"
+      }
+    ]
+  },
+  {
+    "id": "run8_00089_purple_bbox",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00089.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位这张图片中实际可见的紫色气球球体，排除小车、绳子、墙面。只输出一个JSON对象，只有bbox字段。bbox是气球可见部分的紧致矩形，格式为[x_min,y_min,x_max,y_max]，以当前这张图片的左上角为(0,0)、右下角为(1000,1000)，四个坐标均为0到1000之间的整数，x向右增加，y向下增加。没有实际可见紫色气球时输出{\"bbox\":null}。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"bbox\":[0,848,228,998]}"
+      }
+    ]
+  },
+  {
+    "id": "run8_00050_blue_bbox",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00050.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位这张图片中实际可见的蓝色气球球体，排除小车、绳子、墙面。只输出一个JSON对象，只有bbox字段。bbox是气球可见部分的紧致矩形，格式为[x_min,y_min,x_max,y_max]，以当前这张图片的左上角为(0,0)、右下角为(1000,1000)，四个坐标均为0到1000之间的整数，x向右增加，y向下增加。没有实际可见蓝色气球时输出{\"bbox\":null}。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"bbox\":[748,579,789,644]}"
+      }
+    ]
+  },
+  {
+    "id": "run8_00051_blue_bbox",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00051.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位这张图片中实际可见的蓝色气球球体，排除小车、绳子、墙面。只输出一个JSON对象，只有bbox字段。bbox是气球可见部分的紧致矩形，格式为[x_min,y_min,x_max,y_max]，以当前这张图片的左上角为(0,0)、右下角为(1000,1000)，四个坐标均为0到1000之间的整数，x向右增加，y向下增加。没有实际可见蓝色气球时输出{\"bbox\":null}。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"bbox\":[750,579,791,644]}"
+      }
+    ]
+  },
+  {
+    "id": "run8_00080_red_negative_bbox",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00080.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位这张图片中实际可见的红色气球球体，排除小车、绳子、墙面。只输出一个JSON对象，只有bbox字段。bbox是气球可见部分的紧致矩形，格式为[x_min,y_min,x_max,y_max]，以当前这张图片的左上角为(0,0)、右下角为(1000,1000)，四个坐标均为0到1000之间的整数，x向右增加，y向下增加。没有实际可见红色气球时输出{\"bbox\":null}。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"bbox\":null}"
+      }
+    ]
+  },
+  {
+    "id": "run8_00094_red_negative_bbox",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00094.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位这张图片中实际可见的红色气球球体，排除小车、绳子、墙面。只输出一个JSON对象，只有bbox字段。bbox是气球可见部分的紧致矩形，格式为[x_min,y_min,x_max,y_max]，以当前这张图片的左上角为(0,0)、右下角为(1000,1000)，四个坐标均为0到1000之间的整数，x向右增加，y向下增加。没有实际可见红色气球时输出{\"bbox\":null}。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"bbox\":null}"
+      }
+    ]
+  },
+  {
+    "id": "run8_00099_red_negative_bbox",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00099.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位这张图片中实际可见的红色气球球体，排除小车、绳子、墙面。只输出一个JSON对象，只有bbox字段。bbox是气球可见部分的紧致矩形，格式为[x_min,y_min,x_max,y_max]，以当前这张图片的左上角为(0,0)、右下角为(1000,1000)，四个坐标均为0到1000之间的整数，x向右增加，y向下增加。没有实际可见红色气球时输出{\"bbox\":null}。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"bbox\":null}"
+      }
+    ]
+  },
+  {
+    "id": "run8_00104_red_negative_bbox",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00104.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位这张图片中实际可见的红色气球球体，排除小车、绳子、墙面。只输出一个JSON对象，只有bbox字段。bbox是气球可见部分的紧致矩形，格式为[x_min,y_min,x_max,y_max]，以当前这张图片的左上角为(0,0)、右下角为(1000,1000)，四个坐标均为0到1000之间的整数，x向右增加，y向下增加。没有实际可见红色气球时输出{\"bbox\":null}。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"bbox\":null}"
+      }
+    ]
+  },
+  {
+    "id": "run8_00080_purple_negative_bbox",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00080.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位这张图片中实际可见的紫色气球球体，排除小车、绳子、墙面。只输出一个JSON对象，只有bbox字段。bbox是气球可见部分的紧致矩形，格式为[x_min,y_min,x_max,y_max]，以当前这张图片的左上角为(0,0)、右下角为(1000,1000)，四个坐标均为0到1000之间的整数，x向右增加，y向下增加。没有实际可见紫色气球时输出{\"bbox\":null}。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"bbox\":null}"
+      }
+    ]
+  },
+  {
+    "id": "run8_00094_purple_negative_bbox",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00094.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位这张图片中实际可见的紫色气球球体，排除小车、绳子、墙面。只输出一个JSON对象，只有bbox字段。bbox是气球可见部分的紧致矩形，格式为[x_min,y_min,x_max,y_max]，以当前这张图片的左上角为(0,0)、右下角为(1000,1000)，四个坐标均为0到1000之间的整数，x向右增加，y向下增加。没有实际可见紫色气球时输出{\"bbox\":null}。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"bbox\":null}"
+      }
+    ]
+  },
+  {
+    "id": "run8_00099_purple_negative_bbox",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00099.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位这张图片中实际可见的紫色气球球体，排除小车、绳子、墙面。只输出一个JSON对象，只有bbox字段。bbox是气球可见部分的紧致矩形，格式为[x_min,y_min,x_max,y_max]，以当前这张图片的左上角为(0,0)、右下角为(1000,1000)，四个坐标均为0到1000之间的整数，x向右增加，y向下增加。没有实际可见紫色气球时输出{\"bbox\":null}。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"bbox\":null}"
+      }
+    ]
+  },
+  {
+    "id": "run8_00104_purple_negative_bbox",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00104.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位这张图片中实际可见的紫色气球球体，排除小车、绳子、墙面。只输出一个JSON对象，只有bbox字段。bbox是气球可见部分的紧致矩形，格式为[x_min,y_min,x_max,y_max]，以当前这张图片的左上角为(0,0)、右下角为(1000,1000)，四个坐标均为0到1000之间的整数，x向右增加，y向下增加。没有实际可见紫色气球时输出{\"bbox\":null}。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"bbox\":null}"
+      }
+    ]
+  },
+  {
+    "id": "run8_00080_blue_negative_bbox",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00080.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位这张图片中实际可见的蓝色气球球体，排除小车、绳子、墙面。只输出一个JSON对象，只有bbox字段。bbox是气球可见部分的紧致矩形，格式为[x_min,y_min,x_max,y_max]，以当前这张图片的左上角为(0,0)、右下角为(1000,1000)，四个坐标均为0到1000之间的整数，x向右增加，y向下增加。没有实际可见蓝色气球时输出{\"bbox\":null}。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"bbox\":null}"
+      }
+    ]
+  },
+  {
+    "id": "run8_00094_blue_negative_bbox",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00094.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位这张图片中实际可见的蓝色气球球体，排除小车、绳子、墙面。只输出一个JSON对象，只有bbox字段。bbox是气球可见部分的紧致矩形，格式为[x_min,y_min,x_max,y_max]，以当前这张图片的左上角为(0,0)、右下角为(1000,1000)，四个坐标均为0到1000之间的整数，x向右增加，y向下增加。没有实际可见蓝色气球时输出{\"bbox\":null}。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"bbox\":null}"
+      }
+    ]
+  },
+  {
+    "id": "run8_00099_blue_negative_bbox",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00099.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位这张图片中实际可见的蓝色气球球体，排除小车、绳子、墙面。只输出一个JSON对象，只有bbox字段。bbox是气球可见部分的紧致矩形，格式为[x_min,y_min,x_max,y_max]，以当前这张图片的左上角为(0,0)、右下角为(1000,1000)，四个坐标均为0到1000之间的整数，x向右增加，y向下增加。没有实际可见蓝色气球时输出{\"bbox\":null}。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"bbox\":null}"
+      }
+    ]
+  },
+  {
+    "id": "run8_00104_blue_negative_bbox",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00104.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位这张图片中实际可见的蓝色气球球体，排除小车、绳子、墙面。只输出一个JSON对象，只有bbox字段。bbox是气球可见部分的紧致矩形，格式为[x_min,y_min,x_max,y_max]，以当前这张图片的左上角为(0,0)、右下角为(1000,1000)，四个坐标均为0到1000之间的整数，x向右增加，y向下增加。没有实际可见蓝色气球时输出{\"bbox\":null}。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"bbox\":null}"
+      }
+    ]
+  }
+]

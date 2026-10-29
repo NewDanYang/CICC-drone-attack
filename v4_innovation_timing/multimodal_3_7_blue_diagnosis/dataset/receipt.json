@@ -1,0 +1,64 @@
+{
+  "task": "3.7 coordinate-only LoRA",
+  "train_questions": 114,
+  "validation_questions": 28,
+  "test_questions": 42,
+  "positive_by_split": {
+    "train": {
+      "red": 31,
+      "purple": 23,
+      "blue": 24
+    },
+    "validation": {
+      "red": 10,
+      "purple": 4,
+      "blue": 2
+    },
+    "test": {
+      "red": 10,
+      "blue": 10,
+      "purple": 10
+    }
+  },
+  "negative_by_split": {
+    "train": 36,
+    "validation": 12,
+    "test": 12
+  },
+  "source_runs": {
+    "train": [
+      "run3",
+      "run7"
+    ],
+    "validation": [
+      "run8"
+    ],
+    "test": [
+      "run10"
+    ]
+  },
+  "cross_split_sha256_count": 0,
+  "region_questions": 0,
+  "blue_train_rejected": [
+    "run3_00008_blue",
+    "run3_00009_blue",
+    "run3_00010_blue",
+    "run3_00011_blue",
+    "run3_00031_blue",
+    "run3_00032_blue",
+    "run3_00033_blue",
+    "run3_00045_blue",
+    "run7_00007_blue",
+    "run7_00022_blue",
+    "run7_00025_blue",
+    "run7_00037_blue",
+    "run7_00046_blue"
+  ],
+  "files": {
+    "cases.json": "34caabaa583d4df96f86a2546cce240f2220ff94d3657caf017450efaa23a9b0",
+    "receipt.json": "811753de20e8247ff1b6041605b050b7763884da7e7e00f4fa691f47615ac5ae",
+    "test.json": "476f0eebea6dc9ac1ad5c7505e97121fac188366d249f817099d2031c2ab2b80",
+    "train.json": "36305317576cfb05f72a50f58db7a8eeb63ac157256e7684ffa922cb2b664056",
+    "validation.json": "04126f633e1b6717002fe9b1fd4f20cc791b219ad3b766da4824f33df9c3e412"
+  }
+}
