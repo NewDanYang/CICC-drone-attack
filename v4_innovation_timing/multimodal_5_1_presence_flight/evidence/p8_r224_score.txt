@@ -1,0 +1,12 @@
+rows 186 train pos 80 fitted thresholds L,R,T,B = (0.5, 0.5, 0.4, 0.4) train gate 58
+train      thr=0.5  gate 57/80  cin 67  cerr_med 3.7  iou_med 0.66  red:32/39 purple:6/12 blue:19/29  small<40:28/46
+train      fitted   gate 58/80  cin 67  cerr_med 3.6  iou_med 0.71  red:33/39 purple:7/12 blue:18/29  small<40:28/46
+validation thr=0.5  gate 13/16  cin 14  cerr_med 4.9  iou_med 0.70  red:11/13 purple:1/2 blue:1/1  small<40:2/3
+validation fitted   gate 13/16  cin 14  cerr_med 4.8  iou_med 0.72  red:11/13 purple:1/2 blue:1/1  small<40:2/3
+test       thr=0.5  gate 22/30  cin 25  cerr_med 3.2  iou_med 0.72  red:7/10 purple:5/10 blue:10/10  small<40:14/18
+test       fitted   gate 21/30  cin 25  cerr_med 3.5  iou_med 0.70  red:8/10 purple:5/10 blue:8/10  small<40:12/18
+train      presence full>=.5 pos 75/80 neg 1/48; tile-ROI found pos 77/80 neg 1/48; s1 invalid 5
+validation presence full>=.5 pos 15/16 neg 0/0; tile-ROI found pos 14/16 neg 0/0; s1 invalid 0
+test       presence full>=.5 pos 30/30 neg 0/12; tile-ROI found pos 27/30 neg 0/12; s1 invalid 3
+cross-colour false yes on fine windows (other colour absent by HSV): 5/135
+latency median s: full 0.086 tiles 0.210 s1 0.457 s2 0.571 total 1.326 cross 0.077  p90 total 1.347
