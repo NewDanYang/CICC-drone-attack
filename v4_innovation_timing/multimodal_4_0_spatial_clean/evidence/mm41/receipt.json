@@ -1,0 +1,38 @@
+{
+  "task": "4.0 run8 mix",
+  "train_questions": 138,
+  "validation_questions": 17,
+  "test_questions": 42,
+  "positive_by_split": {
+    "train": {
+      "red": 41,
+      "purple": 13,
+      "blue": 36
+    },
+    "validation": {
+      "red": 14,
+      "blue": 1,
+      "purple": 2
+    },
+    "test": {
+      "red": 10,
+      "blue": 10,
+      "purple": 10
+    }
+  },
+  "source_runs": {
+    "train": [
+      "run3",
+      "run7",
+      "run8"
+    ],
+    "validation": [
+      "run9"
+    ],
+    "test": [
+      "run10"
+    ]
+  },
+  "run9_hue_audit": "/root/gpufree-data/mm40_spatial_clean/run9_audit.json",
+  "cases_sha256": "c58f6979f969d04d717dd3d2e0c772c0923024f2966deed0972d048c10ba3f0c"
+}

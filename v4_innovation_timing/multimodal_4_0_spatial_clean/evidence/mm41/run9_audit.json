@@ -1,0 +1,248 @@
+{
+  "n": 17,
+  "by_color": {
+    "red": 14,
+    "blue": 1,
+    "purple": 2
+  },
+  "items": [
+    {
+      "color": "red",
+      "image": "frame_00008.png",
+      "bbox": [
+        607,
+        106,
+        640,
+        211
+      ],
+      "hue_fraction": 1.0,
+      "score": 0.92041015625,
+      "speed": 0.012433197643169865,
+      "frame": 8
+    },
+    {
+      "color": "red",
+      "image": "frame_00011.png",
+      "bbox": [
+        415,
+        97,
+        511,
+        220
+      ],
+      "hue_fraction": 0.699,
+      "score": 0.97607421875,
+      "speed": 0.012800917129038024,
+      "frame": 11
+    },
+    {
+      "color": "red",
+      "image": "frame_00014.png",
+      "bbox": [
+        251,
+        94,
+        342,
+        219
+      ],
+      "hue_fraction": 0.337,
+      "score": 0.974609375,
+      "speed": 0.006502684453973173,
+      "frame": 14
+    },
+    {
+      "color": "red",
+      "image": "frame_00017.png",
+      "bbox": [
+        469,
+        96,
+        576,
+        219
+      ],
+      "hue_fraction": 0.689,
+      "score": 0.97119140625,
+      "speed": 0.023208879395176723,
+      "frame": 17
+    },
+    {
+      "color": "red",
+      "image": "frame_00034.png",
+      "bbox": [
+        172,
+        261,
+        210,
+        309
+      ],
+      "hue_fraction": 0.764,
+      "score": 0.9072265625,
+      "speed": 0.34791366759914244,
+      "frame": 34
+    },
+    {
+      "color": "blue",
+      "image": "frame_00034.png",
+      "bbox": [
+        318,
+        259,
+        344,
+        294
+      ],
+      "hue_fraction": 1.0,
+      "score": 0.587890625,
+      "speed": 0.34791366759914244,
+      "frame": 34
+    },
+    {
+      "color": "red",
+      "image": "frame_00126.png",
+      "bbox": [
+        224,
+        412,
+        283,
+        479
+      ],
+      "hue_fraction": 0.481,
+      "score": 0.943359375,
+      "speed": 0.3281246781666578,
+      "frame": 126
+    },
+    {
+      "color": "red",
+      "image": "frame_00144.png",
+      "bbox": [
+        0,
+        337,
+        68,
+        409
+      ],
+      "hue_fraction": 0.698,
+      "score": 0.9716796875,
+      "speed": 0.29455268158929593,
+      "frame": 144
+    },
+    {
+      "color": "red",
+      "image": "frame_00147.png",
+      "bbox": [
+        65,
+        341,
+        133,
+        418
+      ],
+      "hue_fraction": 0.668,
+      "score": 0.97265625,
+      "speed": 0.099837391493459,
+      "frame": 147
+    },
+    {
+      "color": "red",
+      "image": "frame_00150.png",
+      "bbox": [
+        162,
+        341,
+        224,
+        419
+      ],
+      "hue_fraction": 0.669,
+      "score": 0.97119140625,
+      "speed": 0.04135806459591213,
+      "frame": 150
+    },
+    {
+      "color": "red",
+      "image": "frame_00153.png",
+      "bbox": [
+        267,
+        361,
+        328,
+        446
+      ],
+      "hue_fraction": 0.674,
+      "score": 0.97509765625,
+      "speed": 0.13502282186047873,
+      "frame": 153
+    },
+    {
+      "color": "purple",
+      "image": "frame_00281.png",
+      "bbox": [
+        508,
+        312,
+        539,
+        349
+      ],
+      "hue_fraction": 0.466,
+      "score": 0.91650390625,
+      "speed": 0.17008424634064379,
+      "frame": 281
+    },
+    {
+      "color": "purple",
+      "image": "frame_00294.png",
+      "bbox": [
+        602,
+        325,
+        640,
+        377
+      ],
+      "hue_fraction": 0.681,
+      "score": 0.95166015625,
+      "speed": 0.33894557017302135,
+      "frame": 294
+    },
+    {
+      "color": "red",
+      "image": "frame_00394.png",
+      "bbox": [
+        595,
+        353,
+        640,
+        474
+      ],
+      "hue_fraction": 0.726,
+      "score": 0.94775390625,
+      "speed": 0.060259711348276665,
+      "frame": 394
+    },
+    {
+      "color": "red",
+      "image": "frame_00397.png",
+      "bbox": [
+        424,
+        347,
+        512,
+        460
+      ],
+      "hue_fraction": 0.334,
+      "score": 0.982421875,
+      "speed": 0.04256792891348772,
+      "frame": 397
+    },
+    {
+      "color": "red",
+      "image": "frame_00400.png",
+      "bbox": [
+        347,
+        349,
+        430,
+        463
+      ],
+      "hue_fraction": 0.718,
+      "score": 0.9814453125,
+      "speed": 0.055956954450743834,
+      "frame": 400
+    },
+    {
+      "color": "red",
+      "image": "frame_00403.png",
+      "bbox": [
+        509,
+        352,
+        612,
+        468
+      ],
+      "hue_fraction": 0.465,
+      "score": 0.97412109375,
+      "speed": 0.06356008592235106,
+      "frame": 403
+    }
+  ]
+}
