@@ -1,0 +1,1934 @@
+[
+  {
+    "id": "run3_00002_red_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00002.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>0 267 56 454</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00004_red_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00004.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>0 292 111 463</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00006_red_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00006.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>25 308 138 467</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00008_red_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00008.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>142 354 219 473</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00010_red_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00010.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>191 373 255 477</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00012_red_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00012.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>230 388 284 479</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00014_red_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00014.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>252 398 302 481</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00031_red_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00031.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>44 538 148 677</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00033_red_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00033.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>0 546 116 698</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00035_red_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00035.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>0 558 112 706</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00037_red_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00037.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>0 588 97 746</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00039_red_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00039.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>0 660 31 790</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00169_red_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00169.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>0 748 92 917</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00171_red_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00171.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>78 740 186 906</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00173_red_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00173.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>170 744 267 913</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00175_red_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00175.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>250 748 342 917</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00322_red_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00322.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>122 910 175 944</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00334_red_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00334.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>122 942 172 975</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00177_red_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00177.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>319 750 408 919</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00179_red_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00179.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>381 752 470 923</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00181_red_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00181.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>447 752 534 921</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00434_red_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00434.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>605 729 686 967</box>"
+      }
+    ]
+  },
+  {
+    "id": "run7_00151_red_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run7_frame_00151.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>625 675 697 804</box>"
+      }
+    ]
+  },
+  {
+    "id": "run7_00157_red_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run7_frame_00157.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>445 717 517 856</box>"
+      }
+    ]
+  },
+  {
+    "id": "run7_00478_red_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run7_frame_00478.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>600 260 709 465</box>"
+      }
+    ]
+  },
+  {
+    "id": "run7_00484_red_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run7_frame_00484.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>553 258 662 456</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00431_red_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00431.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>900 721 1000 952</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00439_red_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00439.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>809 208 969 452</box>"
+      }
+    ]
+  },
+  {
+    "id": "run7_00433_red_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run7_frame_00433.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>975 752 1000 869</box>"
+      }
+    ]
+  },
+  {
+    "id": "run7_00472_red_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run7_frame_00472.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>944 271 1000 454</box>"
+      }
+    ]
+  },
+  {
+    "id": "run7_00490_red_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run7_frame_00490.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>858 256 991 460</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00001_purple_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00001.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的紫色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>816 438 853 488</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00003_purple_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00003.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的紫色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>836 433 877 488</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00005_purple_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00005.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的紫色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>847 431 889 488</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00007_purple_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00007.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的紫色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>888 421 938 485</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00013_purple_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00013.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的紫色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>955 406 1000 483</box>"
+      }
+    ]
+  },
+  {
+    "id": "run7_00037_purple_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run7_frame_00037.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的紫色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>972 533 988 581</box>"
+      }
+    ]
+  },
+  {
+    "id": "run7_00043_purple_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run7_frame_00043.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的紫色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>881 535 923 608</box>"
+      }
+    ]
+  },
+  {
+    "id": "run7_00049_purple_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run7_frame_00049.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的紫色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>914 585 956 665</box>"
+      }
+    ]
+  },
+  {
+    "id": "run7_00322_purple_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run7_frame_00322.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的紫色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>734 577 775 644</box>"
+      }
+    ]
+  },
+  {
+    "id": "run7_00325_blue_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run7_frame_00325.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>258 585 291 642</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00031_blue_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00031.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>639 744 688 788</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00032_blue_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00032.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>609 708 683 800</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00033_blue_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00033.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>603 694 669 779</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00045_blue_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00045.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>598 758 633 815</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00046_blue_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00046.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>592 583 623 640</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00047_blue_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00047.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>575 583 608 640</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00048_blue_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00048.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>559 579 591 635</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00049_blue_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00049.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>545 577 578 633</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00050_blue_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00050.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>533 575 564 631</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00051_blue_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00051.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>520 573 550 629</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00052_blue_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00052.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>509 573 541 627</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00053_blue_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00053.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>497 573 528 627</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00054_blue_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00054.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>488 573 519 627</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00055_blue_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00055.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>478 571 508 625</box>"
+      }
+    ]
+  },
+  {
+    "id": "run7_00034_blue_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run7_frame_00034.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>638 548 672 610</box>"
+      }
+    ]
+  },
+  {
+    "id": "run7_00037_blue_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run7_frame_00037.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>625 677 694 754</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00008_blue_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00008.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>900 440 945 488</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00010_blue_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00010.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>922 433 970 488</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00035_blue_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00035.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>809 512 850 571</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00036_blue_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00036.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>784 508 820 562</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00037_blue_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00037.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>759 508 794 562</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00038_blue_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00038.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>736 512 769 567</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00039_blue_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00039.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>716 523 747 575</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00040_blue_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00040.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>695 533 727 588</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00041_blue_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00041.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>677 548 708 600</box>"
+      }
+    ]
+  },
+  {
+    "id": "run7_00007_blue_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run7_frame_00007.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>723 435 800 490</box>"
+      }
+    ]
+  },
+  {
+    "id": "run7_00025_blue_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run7_frame_00025.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>905 362 950 410</box>"
+      }
+    ]
+  },
+  {
+    "id": "run7_00040_blue_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run7_frame_00040.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>809 504 848 560</box>"
+      }
+    ]
+  },
+  {
+    "id": "run7_00043_blue_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run7_frame_00043.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>731 529 766 583</box>"
+      }
+    ]
+  },
+  {
+    "id": "run7_00046_blue_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run7_frame_00046.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>881 585 931 644</box>"
+      }
+    ]
+  },
+  {
+    "id": "run7_00049_blue_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run7_frame_00049.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>586 573 619 629</box>"
+      }
+    ]
+  },
+  {
+    "id": "run7_00052_blue_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run7_frame_00052.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>516 567 547 625</box>"
+      }
+    ]
+  },
+  {
+    "id": "run7_00055_blue_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run7_frame_00055.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>450 567 481 623</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00080_red_negative_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00080.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00080_purple_negative_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00080.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的紫色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00080_blue_negative_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00080.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00085_red_negative_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00085.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00085_purple_negative_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00085.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的紫色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00085_blue_negative_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00085.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00090_red_negative_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00090.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00090_purple_negative_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00090.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的紫色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00090_blue_negative_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00090.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00095_red_negative_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00095.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00095_purple_negative_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00095.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的紫色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00095_blue_negative_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00095.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00100_red_negative_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00100.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00100_purple_negative_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00100.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的紫色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00100_blue_negative_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00100.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00105_red_negative_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00105.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00105_purple_negative_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00105.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的紫色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00105_blue_negative_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00105.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00110_red_negative_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00110.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00110_purple_negative_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00110.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的紫色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00110_blue_negative_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00110.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00115_red_negative_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00115.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00115_purple_negative_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00115.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的紫色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00115_blue_negative_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00115.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00120_red_negative_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00120.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00120_purple_negative_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00120.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的紫色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00120_blue_negative_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00120.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00125_red_negative_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00125.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00125_purple_negative_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00125.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的紫色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00125_blue_negative_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00125.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00130_red_negative_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00130.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00130_purple_negative_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00130.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的紫色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00130_blue_negative_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00130.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00135_red_negative_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00135.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00135_purple_negative_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00135.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的紫色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00135_blue_negative_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00135.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run8_00002_red_native",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00002.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>319 421 352 488</box>"
+      }
+    ]
+  },
+  {
+    "id": "run8_00004_red_native",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00004.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>341 440 355 477</box>"
+      }
+    ]
+  },
+  {
+    "id": "run8_00010_red_native",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00010.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>312 419 350 488</box>"
+      }
+    ]
+  },
+  {
+    "id": "run8_00014_red_native",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00014.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>252 398 306 483</box>"
+      }
+    ]
+  },
+  {
+    "id": "run8_00018_red_native",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00018.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>139 352 223 475</box>"
+      }
+    ]
+  },
+  {
+    "id": "run8_00042_red_native",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00042.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>0 615 120 796</box>"
+      }
+    ]
+  },
+  {
+    "id": "run8_00046_red_native",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00046.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>119 640 209 773</box>"
+      }
+    ]
+  },
+  {
+    "id": "run8_00050_red_native",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00050.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>191 635 259 746</box>"
+      }
+    ]
+  },
+  {
+    "id": "run8_00054_red_native",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00054.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>253 602 308 694</box>"
+      }
+    ]
+  },
+  {
+    "id": "run8_00058_red_native",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00058.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>311 494 358 554</box>"
+      }
+    ]
+  },
+  {
+    "id": "run8_00053_purple_native",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00053.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的紫色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>902 592 936 671</box>"
+      }
+    ]
+  },
+  {
+    "id": "run8_00054_purple_native",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00054.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的紫色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>881 585 933 660</box>"
+      }
+    ]
+  },
+  {
+    "id": "run8_00055_purple_native",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00055.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的紫色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>883 583 930 658</box>"
+      }
+    ]
+  },
+  {
+    "id": "run8_00089_purple_native",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00089.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的紫色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>0 848 228 998</box>"
+      }
+    ]
+  },
+  {
+    "id": "run8_00050_blue_native",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00050.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>748 579 789 644</box>"
+      }
+    ]
+  },
+  {
+    "id": "run8_00051_blue_native",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00051.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>750 579 791 644</box>"
+      }
+    ]
+  },
+  {
+    "id": "run8_00080_red_negative_native",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00080.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run8_00094_red_negative_native",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00094.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run8_00099_red_negative_native",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00099.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run8_00104_red_negative_native",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00104.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的红色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run8_00080_purple_negative_native",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00080.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的紫色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run8_00094_purple_negative_native",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00094.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的紫色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run8_00099_purple_negative_native",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00099.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的紫色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run8_00104_purple_negative_native",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00104.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的紫色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run8_00080_blue_negative_native",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00080.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run8_00094_blue_negative_native",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00094.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run8_00099_blue_negative_native",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00099.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  },
+  {
+    "id": "run8_00104_blue_negative_native",
+    "image": "/root/gpufree-data/mm36_data/run8/frame_00104.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "请定位图片中实际可见的蓝色气球球体，排除小车、绳子和墙面。只输出一个原生格式框：<box>x1 y1 x2 y2</box>。四个坐标按当前图片宽高归一化到0到1000，x向右增加、y向下增加；没有实际可见目标时输出<box>None</box>。不要解释，不要Markdown。"
+      },
+      {
+        "role": "assistant",
+        "content": "<box>None</box>"
+      }
+    ]
+  }
+]

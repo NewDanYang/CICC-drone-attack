@@ -1,0 +1,124 @@
+{
+  "task": "4.0 clean native box",
+  "train_questions": 110,
+  "validation_questions": 28,
+  "test_questions": 42,
+  "positive_by_split": {
+    "train": {
+      "red": 31,
+      "purple": 9,
+      "blue": 34
+    },
+    "validation": {
+      "red": 10,
+      "purple": 4,
+      "blue": 2
+    },
+    "test": {
+      "red": 10,
+      "blue": 10,
+      "purple": 10
+    }
+  },
+  "negative_by_split": {
+    "train": 36,
+    "validation": 12,
+    "test": 12
+  },
+  "source_runs": {
+    "train": [
+      "run3",
+      "run7"
+    ],
+    "validation": [
+      "run8"
+    ],
+    "test": [
+      "run10"
+    ]
+  },
+  "rejected_train": [
+    {
+      "id": "run3_00169_purple",
+      "reason": "hue_or_tiny",
+      "hue_fraction": 0.05267702936096719
+    },
+    {
+      "id": "run3_00171_purple",
+      "reason": "hue_or_tiny",
+      "hue_fraction": 0.039287906691221605
+    },
+    {
+      "id": "run3_00173_purple",
+      "reason": "hue_or_tiny",
+      "hue_fraction": 0.07062600321027288
+    },
+    {
+      "id": "run3_00176_purple",
+      "reason": "hue_or_tiny",
+      "hue_fraction": 0.045105566218809984
+    },
+    {
+      "id": "run3_00178_purple",
+      "reason": "hue_or_tiny",
+      "hue_fraction": 0.036845983787767135
+    },
+    {
+      "id": "run3_00434_purple",
+      "reason": "hue_or_tiny",
+      "hue_fraction": 0.019251858169855002
+    },
+    {
+      "id": "run7_00157_purple",
+      "reason": "hue_or_tiny",
+      "hue_fraction": 0.033757609297177645
+    },
+    {
+      "id": "run7_00478_purple",
+      "reason": "hue_or_tiny",
+      "hue_fraction": 0.02885936784241869
+    },
+    {
+      "id": "run7_00484_purple",
+      "reason": "hue_or_tiny",
+      "hue_fraction": 0.029434192466066798
+    },
+    {
+      "id": "run3_00432_purple",
+      "reason": "hue_or_tiny",
+      "hue_fraction": 0.023040921636865476
+    },
+    {
+      "id": "run3_00439_purple",
+      "reason": "hue_or_tiny",
+      "hue_fraction": 0.022870446453026567
+    },
+    {
+      "id": "run3_00009_purple",
+      "reason": "cross_color_overlap"
+    },
+    {
+      "id": "run3_00011_purple",
+      "reason": "cross_color_overlap"
+    },
+    {
+      "id": "run7_00022_purple",
+      "reason": "cross_color_overlap"
+    },
+    {
+      "id": "run3_00009_blue",
+      "reason": "cross_color_overlap"
+    },
+    {
+      "id": "run3_00011_blue",
+      "reason": "cross_color_overlap"
+    },
+    {
+      "id": "run7_00022_blue",
+      "reason": "cross_color_overlap"
+    }
+  ],
+  "hue_threshold": 0.2,
+  "cross_split_grouping": "train run3/run7; validation run8; test run10",
+  "cases_sha256": "e8d421ce60fa90eaa48f482c67e2b338a4ac34f83013f34ce6a42e8aba8dbc79"
+}
