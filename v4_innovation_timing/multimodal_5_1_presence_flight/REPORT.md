@@ -34,6 +34,8 @@ FastPresence 与同配置官方 processor 在 3 个真实采集帧上比较：�
 
 同时，运行时原先把内部枚举值直接拼成“blue色的气球”；现在通过 `{'red':'红色','purple':'紫色','blue':'蓝色'}` 映射，与 P12e 和 FastPresence 一致。验证脚本新增了最后区间无越界回归和中文提示词静态检查；服务器实际 torch 验证结果为 `geometry_test=passed`、`track_interpolation_test=passed`，并已重新编译候选插件。部署状态保存在 [`final_status_scan_prompt_fix.json`](evidence/stage_b/final_status_scan_prompt_fix.json)。
 
+修正后又用 20 帧真实回放做了短 smoke：11 次模型调用、15 个发布、15 个可配对框，`IndexError=0`、`inference_error=0`。这次仍与 P12e 有最大 14.08 px 中心差，因此只证明异常已消失，不能宣布定位性能达标。原始审计和摘要分别在 [`scan_prompt_fix_smoke20_audit.jsonl`](evidence/stage_b/scan_prompt_fix_smoke20_audit.jsonl) 和 [`scan_prompt_fix_smoke20_summary.json`](evidence/stage_b/scan_prompt_fix_smoke20_summary.json)。
+
 ## 部署与编译
 
 正式试验锁检查时不存在，`baseline_runs.csv` 最后一行未变化。部署前备份位于服务器：

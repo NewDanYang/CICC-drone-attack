@@ -1,0 +1,17 @@
+/opt/conda/envs/demo/lib/python3.10/site-packages/transformers/models/auto/image_processing_auto.py:513: FutureWarning: The image_processor_class argument is deprecated and will be removed in v4.42. Please use `slow_image_processor_class`, or `fast_image_processor_class` instead
+  warnings.warn(
+self.grid_size:  8
+self.num_queries:  64
+self.embed_dim:  2560
+self.num_heads:  16
+self.adaptive:  True
+self.max_size:  (70, 70)
+self.kv_dim:  1152
+{
+  "frames": 20,
+  "runtime_publishes": 15,
+  "matched_boxes": 15,
+  "max_center_difference_px": 14.080127840328723,
+  "audit_path": "/tmp/p12e_runtime_smoke/20261031T152640_39d455/audit.jsonl"
+}
+runtime replay differs from P12e by >3 px
