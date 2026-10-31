@@ -1,0 +1,19 @@
+test_backend_match_completely_outside_image_is_invalid (__main__.FrameGuards) ... ok
+test_gap_and_lost_track_never_republish_old_box (__main__.FrameGuards) ... ok
+test_model_result_age_starts_at_source_capture (__main__.FrameGuards) ... ok
+test_no_fresh_pixel_from_old_observation (__main__.FrameGuards) ... ok
+test_partial_backend_match_is_clipped_without_freshening_timestamp (__main__.FrameGuards) ... ok
+test_replay_preserves_actual_frame_stamp_and_scale (__main__.FrameGuards) ... ok
+test_duplicate_start_and_late_result_after_stop (__main__.GateGuards) ... ok
+test_rgb_and_alpha_byte_order (__main__.GateGuards) ... ok
+test_color_clarification_rejects_negative_uncertain_or_multiple_colors (__main__.SemanticGeometryGuards) ... ok
+test_geometry_uses_only_model_positive_windows (__main__.SemanticGeometryGuards) ... ok
+test_inconsistent_or_empty_semantics_never_guess_box (__main__.SemanticGeometryGuards) ... ok
+test_only_model_confirmed_adjacent_regions_form_selected_box (__main__.SemanticGeometryGuards) ... ok
+test_presence_is_clarified_by_model_without_guessing_mission_color (__main__.SemanticGeometryGuards) ... ok
+test_regions_without_model_area_cannot_search_whole_frame (__main__.SemanticGeometryGuards) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.360s
+
+OK

@@ -5,6 +5,9 @@ tools/*.py text eol=lf
 patches/*.py text eol=lf
 test_*.py text eol=lf
 staging/** -text
+# Preserve the exact tested source and original evidence bytes (MD5/SHA256).
+v2/** -text -whitespace
+evidence/v2/** -text -whitespace
 source/** -text
 evidence/handoff/** -text whitespace=cr-at-eol
 evidence/raw_trials.tar.gz binary

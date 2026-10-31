@@ -1,121 +1,106 @@
-# 3.2 收尾：接入实现未通过，已回滚
+# 3.2 第二次实施：真实图像接入、窗口与三色控制演示
 
-试验：2026-10-23 至 10-24；最终复审：2026-10-25（北京时间）。
+日期：2026-10-25 至 10-26，北京时间。本轮从封存部署重新生成候选，首轮错误接入的四次红色局与[原报告](REPORT_first_attempt.md)保留，不混入本轮样本。
 
-**结论：3.2 未完成验收，3.3 未启动。四次红色实现调试局均不能作为九格视觉能力或气球命中率样本。** 本轮最大问题是接入代码没有真正把图片传入模型。此前过程更新将重复 bbox 和约 7 秒耗时归因为模型/架构能力不足，该归因撤回。本报告以原始日志和模型输入契约复核后的结论为准。
+**已完成真实图像接入及红/紫/蓝各 1 局的窗口—识别—控制证据链。它只证明识别确实参与控制，不代表气球成功率或完整 10 分通过。** 演示中紫球漏击、蓝局额外删球、紫色跟踪漂移均保留；是否采用必须看独立 [3.3 固定版本回归](../multimodal_3_3/REPORT.md)。
 
-## 1. 架构与实际实现
+**最终回归结论：不采用此候选，已完整回滚。** 独立对照各 9 局、每色各 3 局：九格候选指定色 Actor 删除代理 0/9，封存对照 2/9（均为蓝色）；额外删球局 3 对 2；总用时中位数 131.322 对 105.594 s，增加 25.728 s（24.4%）。3.2 接入证据成立，3.3 的不退化门未通过；未追加调参试验。10 月 26 日 19:16 的实际二进制、插件清理、解除武装及 8 项保护文件核对原件见 3.3 报告。
 
-[架构决策](architecture_decision.md)比较了决策级九格加 YOLO、九格直接低频控制、九格初始 bbox 加非语义跟踪等方案。选定的最小候选是同一 `mission_once.py` 模型实例输出气球 bbox，再由光流传播到 `/multimodal/objects`，独立 C++ tracker 将其转换为封存 `VisualServo` 的 `pixel_target`。未修改 VisualServo 状态机、安全边界、方向 A/B 或用时优化参数。
+## 1. 架构与改动面
 
-候选实际实现了 ROS 门控、模型进程生命周期、输出解析、发布/消费链及窗口调用；**真实图像识别这一前提没有实现成功**。候选完整测试字节保留在 [staging/mission_once.py](staging/mission_once.py)，MD5 `9e59ada4270b086f15e6133dc854cedb`。这是已否决的历史快照，不能直接部署。
+先完成[方案比较与逐次决策](architecture_decision.md)，再实施对应修订：拒绝“九格确认＋YOLO 跟踪”，也拒绝为秒级模型重写封存伺服。选用九格独立完成气球语义与初始区域选择，非语义 CSRT 传播其框，继续使用原 VisualServo。
 
-## 2. 原始证据和复算
+最终路径：sensor1 原始 RGB → 同一个 `mission_once.py`/九格模型实例 → 16 个均匀重叠视图的九格语义 → 局部阳性区域并集 → 至多 8 个无类别图分割区域 → 九格再次识别各区域的原始像素 → CSRT 时序回放/尺度更新 → `MultimodalTargetTracker` → 原 `pixel_target`/VisualServo。区域以自身原始 RGB 输入，其余区域置黑，不能因矩形包围框碰巧含另一气球而给背景区域赋色。
 
-- [原始证据包](evidence/raw_trials.tar.gz)：14,867,071 字节；SHA256 `d6280e6dfa05858af047fa1e3cc044321cbe80f3564e7c64982d63ccf933683d`。包含四局 `mission_once.out`、`observer.out`、`planning_runs.csv`、两份原始 JSONL、环境 rosout、实际模型 chat 源码摘录、相机配置和候选各版源码。`MANIFEST.json` 内 34 个文件的 SHA256/字节数已逐项复核。
-- [自动复算结果](evidence/summary.json)由 [summarize_evidence.py](tools/summarize_evidence.py)生成。所有局均完整列出，不筛掉失败局。
-- [离线检查记录](evidence/offline_checks.json)：schema 检查、原始 BT 补丁输出 MD5 与错误输入拒绝、命令辅助函数 AST 保持一致、shell 语法和默认禁止部署检查通过；这些均不代表飞行或视觉验收。
-- 服务器原件仍在 `/home/ubuntu/tcei_baseline_tools/results/formal_trials/<试验名>/`。环境原件为 `/tmp/tcei_sim_environment/ros_home/.ros/log/5e13867c-cef1-11f1-816f-f6531ce6a97a/rosout.log`。
+- 图像实际使用 `image=None; content=[PIL.Image, prompt]`。实际 processor 入口逐项检查恰有 1 张图片，保存源图、区域 PNG、像素/文件 SHA256、原回答、时间与决策 ID。
+- 模型只加载一次；文本与图像共享同一模型锁。真实输入为 `/rflysim/sensor1/img_rgb`，`bgr8`、640×480、step=1920，通道转换有检查。
+- CSRT 从识别原帧回放至当前帧；使用实际跟踪帧的时间，不把推理结束时间冒充观察时间。帧龄≤0.35 s、语义龄≤12 s，间隔/失配/超龄输出无效。确认只更新该观察的采集时间，不用旧 bbox 覆盖当前几何。
+- session/track ID 隔离启动、停止、确认和在途结果；击球期间 YOLO 门控关闭，候选不读其 objects、HSV 或世界真值。离开阶段恢复原识别门控。
+- BT 只替换一个 tracker 标签；VisualServo 状态机、安全边界、航点、方向 A/B、起飞优化 1 和等待优化 2 保持原字节/原结构。[源码审计](evidence/v2/source_audit.json)验证入口命令辅助函数 AST 不变、BT 恰为标签替换、包内 MD5 全部符合 manifest。
+- 主线程显示实际跟踪帧；独立观察器从真实 X11 窗口取图，中心画面全黑的截图拒绝计数。旧紫色 demo4 的 1 张黑图没有算作展示通过。
 
-```bash
-python tools/summarize_evidence.py evidence/raw_trials.tar.gz --output evidence/summary.json
-```
+`obj.score=1` 是已通过离散语义门的接口标志，不是经过校准的模型置信度。局部图分割没有类别输出，但属于几何辅助，须如实向裁判展示，不能把工程解释当成裁判认可。
 
-上述命令在本目录运行，只读归档、不加载模型、不发布 ROS 命令。
+## 2. 三色演示：逐项核对
 
-## 3. 四局数据
+三局算法一致，候选 manifest SHA256：`f0eb35a145470c6015627227a994c6a34cc9e701412c2bff1802797dccd1eaae`。每个 processor 项实际含 1 张图，三局图片计数违规均为 0；一个源帧会产生多个分块/区域样本，下面的“图像项”不是独立帧数或识别准确率。
 
-| 试验目录 | 总用时 s | 进入 tracker 后持续时间 s | 模型桥收到启动门控 | 输出决策 / pixel_target 日志 | 观测器结果 |
-|---|---:|---:|---:|---:|---|
-| `20261023T235740_red_A0` | 173.723 | 50.000 | 0 | 0 / 0 | `mission_success=false`，hit 状态空 |
-| `20261024T001131_red_A0` | 164.943 | 约 50.000 | 0 | 0 / 0 | 同上 |
-| `20261024T002937_red_A0` | 173.182 | 50.000 | 0 | 0 / 0 | 同上 |
-| `20261024T004338_red_A0` | 164.086 | 50.000 | 26 | 13 / 24 | 同上 |
+| 颜色 / 正式目录 | processor 图像项 | 非空模型决策 | 坐标消费日志 / 匹配决策 | 实际非黑窗口 | 总用时 s | 物理结果 |
+|---|---:|---:|---:|---:|---:|---|
+| 红 `20261026T032804_red_A0` | 614 | 7 | 14 / 4 | 2 | 124.784 | 未知：飞后 GC 后 UE 崩溃，缺对象结果 |
+| 紫 `20261026T033549_purple_A0` | 555 | 7 | 20 / 3 | 3 | 136.366 | 三球均保留，明确漏击 |
+| 蓝 `20261026T031138_blue_A0` | 560 | 15 | 31 / 12 | 4 | 142.569 | Actor 3→1，至少一次额外删球；删球颜色未知 |
 
-前三局 `mission_once.out` 都在发布命令后打印“退出”：正式脚本使用 `stdin=/dev/null`，输入循环收到 EOF，daemon 图像线程随进程退出。原先怀疑 ROS 门控连接时序，增加了启动 5 秒内每 0.2 秒重发；日志并未证明连接时序是根因。真正修复生命周期的是最后一版的 `rospy.spin()`。
+用时沿用原生 CSV：从观察器收到 `/mission_command` 到任务结果/超时，不含模型冷启动和自然语言命令生成，不能外推为完整端到端比赛计时。原生观察器三局都报 `bt_success=true`、hit 状态空。外围 `Timeout/ForceSuccess` 和旧观察器未识别新 tracker 使其不能作为物理命中证据。上述三局安全边界事件均为 0，但样本小，不能据此证明安全性不变。
 
-另有一次**手工门控的静态调试**出现 `_publish_box(..., age=...)` 参数不匹配；后续已修正。该异常发生在正式局之前，不能当成第一局失败根因。
+可逐条重放的链见包内 `control_links.json`，人工核对见 [demo_review.json](evidence/v2/demo_review.json)：
 
-### 最后一局只证明数据通路
+- **红 `498283974fcf`**：源图由九格给出红球区域，回放后 `center=(370,323)`；原伺服 `ALIGN err=(50,83)`、向负 yaw 修正并下降，随后线上 body frame 指令记录 `vz=-0.3`、负 yaw_rate。[真实窗口](evidence/v2/review/red_window.png)框住红球。
+- **紫 `4e155bb9db22`**：真实[窗口 2](evidence/v2/review/purple_window.png)框住右侧紫球；消费 `center=(502,229)` 后 `ALIGN err=(182,-11)`，线上 yaw_rate=-0.5。后续窗口 3 仍框住紫球；其他时刻没有持续可靠跟踪。
+- **蓝 `6b0208e5abda`**：[真实窗口](evidence/v2/review/blue_window.png)框住蓝球；同一 decision/session 关联到像素消费、原伺服及随后线上指令，完整原记录在该局 `control_links.json`，没有用假框或源图重新绘制图冒充 X11 截图。
 
-- `MULTIMODAL_WINDOW_READY` 1 条；没有保存窗口截图，无法独立验收窗口内容是否与飞行目标对齐。
-- `MULTIMODAL_DECISION` 13 条，框全为 `[10,250,80,340]`；`MULTIMODAL_CONTROL` 49 条，C++ `model bbox -> pixel_target` 24 条。证明输出坐标被消费，**不能证明这些坐标来自图像识别**。
-- 13 次调用耗时最小/中位/最大为 **6.899 / 7.417 / 7.794 s**；其中包含击球 tracker 停止后的调用。因图片实际未进入模型，这不是视觉推理时延，不能与 3.1 的图像调用 P50/P95 作性能对比。
-- tracker/VisualServo 活跃窗口为 UTC `16:45:12.682–16:46:02.682`（北京时间 10 月 24 日 `00:45:12.682–00:46:02.682`）。唯一安全边界事件在 UTC `16:46:22.489`，即 tracker 停止后 **19.807 s**、返航 GoTo 已开始。活跃窗口内边界事件 **0**；不能写成“九格击球阶段触边”。同局发生和因果关系应分开。
-- 四局 `bt_success=true`；命中外围有 `ForceSuccess/Timeout`，观测器还没有适配新 tracker 名称。`hit_balloon_status` 为空不能直接等同物理漏击。本轮没有独立 Actor/破裂帧证据，**不报告 0/4 命中率，也不声称确认击破**。
+**反例：紫局早期 `beb8eec5c343` 漂移到墙面**，[原截图](evidence/v2/review/purple_drift_counterexample.png)仍被消费并产生修正。它是候选的实际缺陷，不能因后续重新找回紫球就忽略；“非黑截图”与“目标框正确”是两个不同的检查。
 
-## 4. 输入契约审计：为什么图片没有传入
+## 3. 开发失败完整保留
 
-服务器实际 `modeling_fm9gv.py` MD5 为 `629bf42b6bd3685c7e1fae178d4fa330`。其 `chat()` 第 321–322 行只在 `content` 为字符串时自动将 `image=` 插入内容；第 334–339 行只收集内容列表中的 `PIL.Image.Image`。本轮调用是：
+本轮共 11 个候选调试/演示局、1 个封存诊断基线局。前三色最终演示单列；所有开发局不进入 3.3 分母。表中简称对应 `multimodal_v2_<简称>_20261026`；完整目录、正式试验名及原生 CSV 在[自动复算结果](evidence/v2/development_summary.json)和[原始行](evidence/v2/development_summary.csv)。
 
-```python
-model.chat(image=image, msgs=[{"role": "user", "content": [MULTIMODAL_PROMPT]}], ...)
-```
+| 简称 | 版本/问题 | 图像项 | 消费 / 非黑窗口 | 总用时 s | 飞后 Actor |
+|---|---|---:|---:|---:|---|
+| demo_red | 三轮细分、原线程配置 | 544 | 0 / 0 | 300.117 | 3→3，4 次边界 |
+| diagnostic_baseline_red | 封存诊断对照 | 0 | 原 tracker / 不适用 | 128.076 | 3→2，真实帧见红球接近后消失 |
+| demo2_red | 细分、torch 2/1 线程 | 656 | 0 / 0 | 170.338 | 3→3 |
+| demo3_red | 阳性窗口交集、细化拒绝 | 624 | 0 / 0 | 154.335 | 3→3 |
+| demo4_red | 增加细化失败回退 | 592 | 0 / 0 | 205.810 | 3→3 |
+| demo_purple | 肯定回答无颜色，尚未追问 | 528 | 0 / 0 | 214.228 | 3→3 |
+| demo2_purple | 已追问，几何框选错背景 | 551 | 0 / 0 | 129.805 | 3→3 |
+| demo3_purple | 图区域版，超界适配误判丢失 | 560 | 0 / 0 | 137.951 | 3→3 |
+| demo4_purple | 修正部分框裁剪，窗口被遮挡 | 543 | 5 / 0 | 134.532 | 3→3；1 张全黑截图拒绝 |
+| demo_blue | 最终算法，修正截图工具 | 560 | 31 / 4 | 142.569 | 见三色演示 |
+| demo5_red | 同一最终算法 | 614 | 14 / 2 | 124.784 | 见三色演示 |
+| demo5_purple | 同一最终算法 | 555 | 20 / 3 | 136.366 | 见三色演示 |
 
-列表只有文本，自动插图分支不会执行，最终 processor 收到 **0 张图片**。3.1 评测器使用字符串 `content=PROMPT`，没有这个错误，不能把本轮结果用于否定 3.1。
+除首个红色超时局外，上表其余局的原生边界事件均为 0。第一次红色与诊断基线只支持资源争用的待验假设，不能把模型线程限速写成已证明的根因修复。真实帧回放另确认了两个具体实现问题：GrabCut 曾选中地面；CSRT 成功但部分超界曾被适配器错误清掉。这些与“模型本身完全不能识别”不同，修复前后证据分别保留。
 
-[输入契约审计脚本](tools/audit_image_contract.py)提取**实际模型 chat 方法和测试候选 kwargs 的 AST**，用 processor spy 在张量/推理前停止。[结果](evidence/image_contract_audit.json)：
+## 4. 测量工具与结论边界
 
-| 输入形式 | processor 收到图片数 |
-|---|---:|
-| 本轮实际：`image=im; content=[prompt]` | **0** |
-| 修正契约：`image=im; content=prompt` | **1** |
-| 修正契约：`image=None; content=[im,prompt]` | **1** |
+红色 demo5 飞前曾用 SDK 只读 `reqObj` 查询三个 Actor 以标记本实例颜色，接收线程已关闭；飞行 124.784 秒结束后才发一次 GC。1 秒后 UE 在 `ARflyHUD::processReqDataLoop` 发生 SIGSEGV，[原日志](evidence/v2/red_demo5_gc_crash.log)保留。预注册对象请求与 GC 的交互是当前解释，未独立复现或取得供应商内部证据，不能宣称精确根因已经证明。现有 SDK 没有可确认的注销接口；不能假设客户端退出就清除了引擎端引用。该局物理结果为 unknown，不改判成功/漏击，不归为算法飞行崩溃。
 
-这是接口复现测试，不是合成图片性能试验；没有调用 GPU。复现命令：
+后续取消所有飞前/飞中载荷请求。3.3 在飞行结束、解除武装、GC 和两次对象列表保存后，才查询存活球的车道颜色，随后完整重启 UE。该测量不进入控制，不跨实例套用 ID。细则见[回归协议](../multimodal_3_3/protocol_v2.md)。
 
-```bash
-python tools/audit_image_contract.py --model-source /home/ubuntu/model/FM9G4B-V/modeling_fm9gv.py
-```
+14 项接口/失效保护[检查通过](evidence/v2/guard_checks.log)，只证明时钟、停止、解码、几何门等实现约束，不是视觉准确率或飞行成功率。全部开发真实帧已经用于修改方案，不能当成盲测集。
 
-## 5. 其他尚未解决的实现缺陷
+**范围缺口保持明确**：3.1 仍是开发/诊断结果，蓝色原机位只有 14/20 帧可辨认、模型 4/14 命中，未补正式验收。方框/障碍物/起降标识未完成九格独立替换，其他阶段仍有原 YOLO；按全类别为硬门槛的保守口径，不能申请“完整 10 分已经通过”。4.4(5) 原文处于穿框条目，本轮气球窗口不等于完成穿框感知加分演示。
 
-以下来自测试快照审查，不声称都在飞行中实际触发：
+## 5. 原始证据、部署与回滚
 
-1. 默认订阅 sensor2；正式气球 RGB 配置是 **sensor1**。即使修正传图，仍须先保证与 VisualServo 使用同一摄像机几何，并验证分辨率和通道顺序。
-2. bbox 框龄从推理完成时计，隐去了采集到推理完成的延迟；旧帧坐标会当成新框。光流初始化用旧帧，缺少从该帧到当前帧的连续回放。
-3. 光流失效时继续保留旧框；只估计平移，不估计框的尺度变化，而封存伺服用框面积决定冲刺。
-4. 反复 start 会重置跟踪状态；停止后仍允许旧推理结果回写。tracker halt 没有发送 stop，模型直到整局结果才恢复 YOLO，最后一局日志已显示跨阶段输出。
-5. 交互命令和图像线程没有共同的模型互斥锁；退出清理日志出现 core dump。不能据现有 schema/命令单测声称线程或单模型运行可靠。
-6. 原始图像/哈希与每次决策未一一保存，所需的“看见什么→选中谁→如何飞”审计链仍不完整。
+证据索引和解包复算命令见 [evidence/v2/README](evidence/v2/README.md)。每局包含全部模型源 PNG/实际区域输入、全部窗口、原始 JSONL、原生遥测/规划 CSV、部署 MD5；观察器全部已存相机 JPEG 在服务器保留，Git 包抽取每十张中的一张并对所有已存原件给 SHA256。采集最小间隔为 0.085 s，实际频率受调度影响，不是传感器零丢帧全量录像。服务器原始 session 均在 `/home/ubuntu/tcei_baseline_tools/results/`，正式局在 `formal_trials/`。
 
-**这些实现问题足以否决当前候选，不能据此否决“九格初始化 + 非语义跟踪”架构。** 本轮止损于实现质量门，不再启动新局。重新投入前应先修复这些点，用真实帧离线验证传图、定位和跟踪，再决定是否值得重开 3.2。
+部署包全部原始字节 MD5： [v2/manifest.json](v2/manifest.json)。包 SHA256 为 `54ccbd05d8d552f52392aa1c194c71c5aa968b6ef0685aa68e9dfce1d8fa157d`；最终算法源与三色演示一致，后续只完善离线分析与编排测量。
 
-## 6. 加分覆盖与 3.3
+| 文件 | 原/封存 MD5 | 实验候选 MD5 |
+|---|---|---|
+| mission_once.py | `fca24bf1142ca8cddfb9e8d39c387a43` | `de03cd1a5687f7bc0664ea52f3cd095f` |
+| bt_ros.cpp | `9b1cefe9dfa431418435f7f8f63a60ed` | `9a1e8d2a5913968b1c2300cad1dc02f7` |
+| localizer.py | 新增 | `8d329caed84b8d1c7eb4c7c20c3fb06f` |
+| geometry.py | 新增 | `58db79f8cb33c10c6bc4d7aad60e54dc` |
+| tracking.py | 新增 | `96a1683400e98c7f8fb898a53f3f2434` |
+| runtime.py | 新增 | `d6f65f166b8ecda4de0b7c1126fa3c2e` |
+| MultimodalTargetTracker.cpp | 新增 | `092fe8df8991ef5e2bb510ce5650c731` |
+| llm_mission.launch | `5550c580a4822e773a331bcef11f0c47` | 不变 |
+| 起飞重试头文件（候选 1） | `c415ddd8243afcc64c181be45bdac5e3` | 不变 |
+| VisualServo.cpp | `a63b57fa127a23cd8bb8e647f078ff21` | 不变 |
+| VisualServo.h | `d3324b0458b2160102f9bbf44546d035` | 不变 |
 
-4.3 表格是九格目标识别 10 分；4.4(5) 原文针对穿框感知窗口/反馈的扣分要求，本轮气球窗口沿用这一展示标准，并未证明穿框窗口加分合规。补充 FAQ 明确要求全类别识别且混用 YOLO 不加分；**保守按完整 10 分的硬性门槛处理**。当前方框仍由原 YOLO 路径识别，障碍物、起降标识等没有九格验证，提示词列出类别不等于覆盖。
-
-3.1 仍是开发/诊断结果：原视角蓝色可辨认 14/20，模型命中 4/14，标签非完全盲标。未补齐该缺口。本轮红紫蓝各 1 局的窗口验收没有完成，红紫蓝各 ≥3 局的前后回归也没有开展。[3.3 报告](../multimodal_3_3/REPORT.md)标为未验证。建议保持封存部署，不采用本轮候选，不申报该 10 分已经获得。
-
-## 7. MD5 与回滚完成状态
-
-| 对象 | MD5 / 状态 |
-|---|---|
-| 测试末版 mission_once | `9e59ada4270b086f15e6133dc854cedb`，仅归档 |
-| 测试 bt_ros | `9a1e8d2a5913968b1c2300cad1dc02f7`，已回滚 |
-| 原 mission_once / 已恢复 | `fca24bf1142ca8cddfb9e8d39c387a43` |
-| 原 bt_ros / 已恢复 | `9b1cefe9dfa431418435f7f8f63a60ed` |
-| 原 launch / 未改 | `5550c580a4822e773a331bcef11f0c47` |
-| 起飞重试头文件 / 保留候选 1 | `c415ddd8243afcc64c181be45bdac5e3` |
-| 封存 VisualServo.cpp / 未改 | `a63b57fa127a23cd8bb8e647f078ff21` |
-| 测试插件 | `e59a1cde93b0fb7ecd9b91b50240e3ec`，已移入备份目录，不在自动加载目录 |
-
-10 月 24 日恢复了源码并删除新增 tracker 源文件，但回滚复核不完整：构建系统没有删除旧 `.so`，且 `cp -p` 的旧源码时间戳导致编译器跳过 bt_ros 重建，二进制仍引用新节点。10 月 25 日用户确认无人使用后，已把插件移到 `/home/ubuntu/multimodal_3_2_backup_20261023T224616/multimodal_target_tracker.rejected.so`，`touch bt_ros.cpp` 后重新编译并直接检查二进制：含 `<TargetTracker object_name`，不含 `<MultimodalTargetTracker`；最终 bt_ros 二进制 MD5 为 `abb5c49eb21b1b333d88677def4921ab`。这才完成代码/二进制一致的回滚。该次核对服务器没有活动 bt_ros、没有正式试验锁；未启动仿真或试验。旧仿真锁保留，不冒充运行就绪状态。
-
-原始备份：`/home/ubuntu/multimodal_3_2_backup_20261023T224616/`。[归档部署脚本](patches/deploy_multimodal_3_2.sh)默认拒绝部署失败候选；[回滚脚本](patches/rollback_multimodal_3_2.sh)含 MD5 检查、插件清理和重新编译。人工等价命令（在服务器、无活动任务时）：
-
-最终原始核对输出：[rollback_verification.txt](evidence/rollback_verification.txt)；重新编译原始日志：[rollback_build.log](evidence/rollback_build.log)。
+备份 `/home/ubuntu/multimodal_v2_backup_20261026T0009`；实验包 `/home/ubuntu/multimodal_v2`。在已确认无人占用、无正式锁且 PX4 解除武装时，使用带 MD5、精确 PID、串行构建与二进制检查的脚本：
 
 ```bash
-cp -p /home/ubuntu/multimodal_3_2_backup_20261023T224616/mission_once.py /home/ubuntu/model/mission_once.py
-cp -p /home/ubuntu/multimodal_3_2_backup_20261023T224616/bt_ros.cpp /home/ubuntu/catkin_ws/src/mission_pkg/src/bt_ros.cpp
-rm -f /home/ubuntu/catkin_ws/src/mission_pkg/include/nodes/perception/multimodal_target_tracker.h
-rm -f /home/ubuntu/catkin_ws/src/mission_pkg/src/nodes/perception/multimodal_target_tracker.cpp
-# 如旧插件仍在，移入上述备份，避免 bt_ros 自动扫描到它。
-touch /home/ubuntu/catkin_ws/src/mission_pkg/src/bt_ros.cpp
-source /opt/ros/noetic/setup.bash
-cd /home/ubuntu/catkin_ws
-catkin_make --force-cmake --pkg mission_pkg -j2
-md5sum /home/ubuntu/model/mission_once.py /home/ubuntu/catkin_ws/src/mission_pkg/src/bt_ros.cpp
-strings devel/lib/mission_pkg/bt_ros | grep -F '<TargetTracker object_name'
+# 实验候选；不是正式比赛部署建议
+bash /home/ubuntu/multimodal_v2/tools/switch_condition_v2.sh candidate /home/ubuntu/multimodal_v2_backup_20261026T0009
+# 完整回滚：恢复原入口/BT，移出新增模块、源码与插件，touch 并重编译，重启独立新场景
+bash /home/ubuntu/multimodal_v2/tools/switch_condition_v2.sh baseline /home/ubuntu/multimodal_v2_backup_20261026T0009
+# 核对源码、插件存在性及实际二进制；构建脚本另外检查实际 BT 标签
+/usr/bin/python3 /home/ubuntu/multimodal_v2/patches/deploy_v2.py status /home/ubuntu/multimodal_v2_backup_20261026T0009
 ```
+
+最终部署状态与回滚核对原件统一记录在 [3.3 报告](../multimodal_3_3/REPORT.md)，不能用本文三色接通结论替代可靠性采用结论。
