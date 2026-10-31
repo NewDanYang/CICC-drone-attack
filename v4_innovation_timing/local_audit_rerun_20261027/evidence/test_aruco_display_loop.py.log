@@ -1,0 +1,8 @@
+PASS window disabled: plain rospy.spin, no GUI calls
+PASS each new frame shown exactly once
+PASS no waitKey before first frame, then one per tick (got 5)
+PASS last frame stays (no re-show while unchanged)
+PASS window destroyed on shutdown
+PASS display failure falls back to spin with error log
+
+0 failure(s)

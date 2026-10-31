@@ -1,0 +1,519 @@
+{
+  "provenance": {
+    "time_utc": "2026-10-27T10:27:22.418538+00:00",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "repository": ".",
+    "repository_path_basis": "repository root",
+    "mode": "offline; no flight; no live model inference",
+    "source_zip": {
+      "bytes": 101917062,
+      "md5": "6f3a7e9c1c8f21be06b969fad90dd9d0",
+      "sha256": "b4a30eacdd9928bd8a45621c06b68c624e7592112795c4c954785327848529ab"
+    },
+    "commit": "340a52c744b1f19fdbda0e18ef77f14a6f5400bd",
+    "expanded_bytes": 209767409
+  },
+  "frozen_integrity": [
+    {
+      "file": "catkin_ws/src/mission_pkg/launch/llm_mission.launch",
+      "bytes": 7818,
+      "md5": "5550c580a4822e773a331bcef11f0c47",
+      "sha256": "73865605433000e6fae973bb8c67539cb80f272aea2c98a32b715c34246003d2",
+      "matches_manifest": true
+    },
+    {
+      "file": "catkin_ws/src/mission_pkg/src/bt_ros.cpp",
+      "bytes": 25802,
+      "md5": "9b1cefe9dfa431418435f7f8f63a60ed",
+      "sha256": "60f81e31d6448724c0a246068c97eaba5bfcc1c53d39d88ffbca3841fcf098ff",
+      "matches_manifest": true
+    },
+    {
+      "file": "catkin_ws/src/mission_pkg/src/nodes/action/visual_servo.cpp",
+      "bytes": 17890,
+      "md5": "a63b57fa127a23cd8bb8e647f078ff21",
+      "sha256": "f7c839dedc67f94352006656124e8924a5e4a1ef30852bf0376816eff0a93373",
+      "matches_manifest": true
+    },
+    {
+      "file": "catkin_ws/src/mission_pkg/src/nodes/action/goto.cpp",
+      "bytes": 6069,
+      "md5": "f557ace5bbf2ee7975b7335a738ffcf9",
+      "sha256": "a6ab5a068973f5fc88823286cdb1f46ea8560b7f68586bc4fd2143625f0440cc",
+      "matches_manifest": true
+    },
+    {
+      "file": "catkin_ws/src/mission_pkg/include/nodes/action/goto.h",
+      "bytes": 904,
+      "md5": "ee765e08024ea28cb1b8d32104a272d3",
+      "sha256": "2a988bd70de2ed07d9719600b266e944b3272b2a348f84e3b08924e162ae1bf3",
+      "matches_manifest": true
+    },
+    {
+      "file": "catkin_ws/src/mission_pkg/src/mavros_cnt.cpp",
+      "bytes": 13175,
+      "md5": "edcd9397074f44c6028c8dca02902920",
+      "sha256": "14365bf85a918a5a799ac00b44de93a5b8989bd0d37592777f6d89fc2d8ab8a3",
+      "matches_manifest": true
+    },
+    {
+      "file": "model/mission_once.py",
+      "bytes": 12104,
+      "md5": "fca24bf1142ca8cddfb9e8d39c387a43",
+      "sha256": "573f3fc564f3aa1960702084aa7f372f55901e68fd320d5f7d72a13c3eaafccc",
+      "matches_manifest": true
+    }
+  ],
+  "additional_source_hashes": [
+    {
+      "file": "official_baseline/catkin_ws/src/mission_pkg/scripts/aruco_detect_node.py",
+      "bytes": 9837,
+      "md5": "e9def27d30de35a3f1225bac5ca296d9",
+      "sha256": "cf0219cbf3d254c9424fdeca64d32e061ffa44f974ea18d5f5c5a4aa4358bf40"
+    },
+    {
+      "file": "v3_stability/rule_compliance/deploy/aruco_detect_node.py",
+      "bytes": 15420,
+      "md5": "43c3bc40fc5c7de29730f5f1ce32574f",
+      "sha256": "921fb609fd981be2611f9c3a03ac6784049ed533bd99e1709db493e80409bfa3"
+    },
+    {
+      "file": "v3_stability/rule_compliance/deploy/mission_once.py",
+      "bytes": 12104,
+      "md5": "fca24bf1142ca8cddfb9e8d39c387a43",
+      "sha256": "573f3fc564f3aa1960702084aa7f372f55901e68fd320d5f7d72a13c3eaafccc"
+    },
+    {
+      "file": "v3_stability/aruco/aruco_detect_node.py",
+      "bytes": 14172,
+      "md5": "0f15e84bdaed68c85d3b6b6ee5e33788",
+      "sha256": "519e5b243dc3b99f517ddfbaf1380630c3980271dc5216893fce3337b5ef4815"
+    },
+    {
+      "file": "v3_stability/aruco/aruco_detect_node.py.original",
+      "bytes": 9837,
+      "md5": "e9def27d30de35a3f1225bac5ca296d9",
+      "sha256": "cf0219cbf3d254c9424fdeca64d32e061ffa44f974ea18d5f5c5a4aa4358bf40"
+    }
+  ],
+  "planner_baseline_provenance": [
+    {
+      "file": "official_baseline/catkin_ws/src/ego-planner/src/planner/bspline_opt/src/bspline_optimizer.cpp",
+      "bytes": 38885,
+      "md5": "a968a5e81b3799c2ed68d75b582f5fc4",
+      "sha256": "7ff7f95f4456a75ff1d6700a46698ea99fbc757b7b044b635b7e3d21909e2bae",
+      "matches_original": true,
+      "matches_candidate": false,
+      "lf_md5": "363c7860c0101344c0ff0af119dd2e18",
+      "crlf_md5": "a968a5e81b3799c2ed68d75b582f5fc4",
+      "expected_original_md5": "a968a5e81b3799c2ed68d75b582f5fc4",
+      "expected_candidate_md5": "c48a58affe333bfef509deba6b7ba43d"
+    },
+    {
+      "file": "official_baseline/catkin_ws/src/ego-planner/src/planner/bspline_opt/include/bspline_opt/bspline_optimizer.h",
+      "bytes": 6191,
+      "md5": "2d2615f01a3834ac24104360e43426b6",
+      "sha256": "2d3827c117def59d65244eddc306b085caea012608c97b8da3216bad87c9cbec",
+      "matches_original": true,
+      "matches_candidate": false,
+      "lf_md5": "cf0787b29046c3a251f80b44540d4e29",
+      "crlf_md5": "2d2615f01a3834ac24104360e43426b6",
+      "expected_original_md5": "2d2615f01a3834ac24104360e43426b6",
+      "expected_candidate_md5": "25846f16c76c3cdc16c17a91d3b14b5a"
+    },
+    {
+      "file": "official_baseline/catkin_ws/src/ego-planner/src/planner/bspline_opt/CMakeLists.txt",
+      "bytes": 846,
+      "md5": "0fc1056df778674f1571a427bab78562",
+      "sha256": "c9f25f12ee92c15289cc6ebc0aad0c5a072e276527bb4d4b5a9028830bfb817c",
+      "matches_original": true,
+      "matches_candidate": false,
+      "lf_md5": "22b8ff038d7442bb46ee0ae0a72c6460",
+      "crlf_md5": "0fc1056df778674f1571a427bab78562",
+      "expected_original_md5": "0fc1056df778674f1571a427bab78562",
+      "expected_candidate_md5": "214b8bb4e48f4f40086e2f81900ed4cd"
+    },
+    {
+      "file": "official_baseline/catkin_ws/src/ego-planner/src/planner/bspline_opt/package.xml",
+      "bytes": 3239,
+      "md5": "da5f06411d24160a919de5ba17d4c4f2",
+      "sha256": "8fe90a2679776d0eaff32812b22886019e32468a5b59edb104690500e939cd49",
+      "matches_original": true,
+      "matches_candidate": false,
+      "lf_md5": "5f608b36722ea75d9aab4364811c6ac6",
+      "crlf_md5": "da5f06411d24160a919de5ba17d4c4f2",
+      "expected_original_md5": "da5f06411d24160a919de5ba17d4c4f2",
+      "expected_candidate_md5": "90c848a6d25554959f320f8ee9ff6f7b"
+    }
+  ],
+  "repository_regressions": [
+    {
+      "script": "v3_stability/rule_compliance/tests/test_mission_once_fallback.py",
+      "exit_code": 0,
+      "passed_assertions": 29,
+      "failed_assertions": 0
+    },
+    {
+      "script": "v3_stability/rule_compliance/tests/test_aruco_display_loop.py",
+      "exit_code": 0,
+      "passed_assertions": 6,
+      "failed_assertions": 0
+    }
+  ],
+  "historical_stage_timing": {
+    "trials": 24,
+    "stages": [
+      {
+        "stage": "total",
+        "n": 23,
+        "mean_s": 136.4625652173913,
+        "median_s": 136.715,
+        "min_s": 93.151,
+        "max_s": 212.652
+      },
+      {
+        "stage": "takeoff",
+        "n": 24,
+        "mean_s": 16.021666666666665,
+        "median_s": 17.9015,
+        "min_s": 12.644,
+        "max_s": 18.93
+      },
+      {
+        "stage": "cross_frame_1",
+        "n": 24,
+        "mean_s": 15.868416666666667,
+        "median_s": 15.997499999999999,
+        "min_s": 13.458,
+        "max_s": 17.896
+      },
+      {
+        "stage": "aruco_wait",
+        "n": 24,
+        "mean_s": 2.2434166666666666,
+        "median_s": 2.0305,
+        "min_s": 1.503,
+        "max_s": 6.506
+      },
+      {
+        "stage": "return_cross_frame",
+        "n": 24,
+        "mean_s": 4.220083333333333,
+        "median_s": 3.9234999999999998,
+        "min_s": 2.923,
+        "max_s": 11.191
+      },
+      {
+        "stage": "hit_balloon",
+        "n": 24,
+        "mean_s": 38.45041666666667,
+        "median_s": 50.003,
+        "min_s": 6.798,
+        "max_s": 50.009
+      },
+      {
+        "stage": "land",
+        "n": 23,
+        "mean_s": 5.596304347826087,
+        "median_s": 5.479,
+        "min_s": 4.419,
+        "max_s": 7.191
+      }
+    ],
+    "near_50s_count_tolerance_0p1s": 16
+  },
+  "historical_planning_reanalysis": [
+    {
+      "configuration": "official",
+      "kind": "baseline_probe",
+      "rows": 125,
+      "distance_samples": 108,
+      "balloon_stage_start": "2026-10-20T01:34:04.362+00:00",
+      "balloon_stage_end": "2026-10-20T01:34:17.084+00:00",
+      "balloon_stage_duration_s": 12.722667,
+      "balloon_stage_distance_samples": 10,
+      "all_min": {
+        "utc": "2026-10-20T01:33:52.689047+00:00",
+        "distance_m": 0.678959521740633,
+        "odom": [
+          4.075563907623291,
+          -1.6179782152175903,
+          0.8247351050376892
+        ],
+        "balloon": [
+          4.375703889876604,
+          -2.0967699247412384,
+          0.4483569413423538
+        ]
+      },
+      "all_median_m": 3.137881514892293,
+      "all_under_0p8m": 1,
+      "balloon_stage_min": {
+        "utc": "2026-10-20T01:34:06.124834+00:00",
+        "distance_m": 0.871255494704455,
+        "odom": [
+          2.2917606830596924,
+          -1.3132447004318237,
+          0.8102797865867615
+        ],
+        "balloon": [
+          2.41086657717824,
+          -2.0967699247412384,
+          0.4483569413423538
+        ]
+      },
+      "balloon_stage_median_m": 2.150990580549549,
+      "balloon_stage_under_0p8m": 0
+    },
+    {
+      "configuration": "v1",
+      "kind": "truth_bridge",
+      "rows": 246,
+      "distance_samples": 95,
+      "balloon_stage_start": "2026-10-20T02:01:42.230+00:00",
+      "balloon_stage_end": "2026-10-20T02:01:52.307+00:00",
+      "balloon_stage_duration_s": 10.077559,
+      "balloon_stage_distance_samples": 12,
+      "all_min": {
+        "utc": "2026-10-20T02:01:30.090961+00:00",
+        "distance_m": 0.9850078583204901,
+        "odom": [
+          3.7044951915740967,
+          -1.184393286705017,
+          0.7062156796455383
+        ],
+        "balloon": [
+          3.437440473586321,
+          -2.0967699247412384,
+          0.4483569413423538
+        ]
+      },
+      "all_median_m": 2.630526673272531,
+      "all_under_0p8m": 0,
+      "balloon_stage_min": {
+        "utc": "2026-10-20T02:01:43.708559+00:00",
+        "distance_m": 1.3253382835743914,
+        "odom": [
+          2.2617571353912354,
+          -0.8495467305183411,
+          0.8779988884925842
+        ],
+        "balloon": [
+          2.1338365860283375,
+          -2.0967699247412384,
+          0.4483569413423538
+        ]
+      },
+      "balloon_stage_median_m": 2.4866290887506253,
+      "balloon_stage_under_0p8m": 0
+    },
+    {
+      "configuration": "v2",
+      "kind": "truth_bridge",
+      "rows": 169,
+      "distance_samples": 97,
+      "balloon_stage_start": "2026-10-20T02:10:21.648+00:00",
+      "balloon_stage_end": "2026-10-20T02:10:32.167+00:00",
+      "balloon_stage_duration_s": 10.518406,
+      "balloon_stage_distance_samples": 12,
+      "all_min": {
+        "utc": "2026-10-20T02:10:19.605434+00:00",
+        "distance_m": 1.1421590712289724,
+        "odom": [
+          2.3365917205810547,
+          -1.087561845779419,
+          0.9782924056053162
+        ],
+        "balloon": [
+          2.4086666889488697,
+          -2.0967699247412384,
+          0.4483569413423538
+        ]
+      },
+      "all_median_m": 2.9154852037691628,
+      "all_under_0p8m": 0,
+      "balloon_stage_min": {
+        "utc": "2026-10-20T02:10:24.712637+00:00",
+        "distance_m": 1.540576946927533,
+        "odom": [
+          2.3846726417541504,
+          -0.7316887378692627,
+          0.9806857705116272
+        ],
+        "balloon": [
+          1.9086929149925709,
+          -2.0967699247412384,
+          0.4483569413423538
+        ]
+      },
+      "balloon_stage_median_m": 2.3610655993927967,
+      "balloon_stage_under_0p8m": 0
+    }
+  ],
+  "planning_cost_activation": [
+    {
+      "configuration": "v1",
+      "logged_samples": 7,
+      "nonzero_samples": 0,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "configuration": "v2",
+      "logged_samples": 7,
+      "nonzero_samples": 4,
+      "counts": [
+        75,
+        0,
+        12,
+        0,
+        1,
+        16,
+        0
+      ]
+    }
+  ],
+  "fixed_candidate_replay": [
+    {
+      "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+      "total_records": 60,
+      "n": 54,
+      "excluded_records": 6,
+      "first_exact": 40,
+      "recorded_exact": 40,
+      "replayed_exact": 40,
+      "first_strict": 31,
+      "recorded_strict": 31,
+      "replayed_strict": 31,
+      "selection_changed": 0,
+      "recorded_score_mismatches": 0
+    },
+    {
+      "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+      "total_records": 60,
+      "n": 54,
+      "excluded_records": 6,
+      "first_exact": 54,
+      "recorded_exact": 54,
+      "replayed_exact": 54,
+      "first_strict": 52,
+      "recorded_strict": 52,
+      "replayed_strict": 52,
+      "selection_changed": 0,
+      "recorded_score_mismatches": 0
+    },
+    {
+      "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/targeted/samples.jsonl",
+      "total_records": 20,
+      "n": 20,
+      "excluded_records": 0,
+      "first_exact": 19,
+      "recorded_exact": 19,
+      "replayed_exact": 19,
+      "first_strict": 19,
+      "recorded_strict": 19,
+      "replayed_strict": 19,
+      "selection_changed": 1,
+      "recorded_score_mismatches": 0
+    },
+    {
+      "dataset": "v3_stability/reports/rule_compliance_20261015_v3b/extra16/samples.jsonl",
+      "total_records": 16,
+      "n": 16,
+      "excluded_records": 0,
+      "first_exact": 16,
+      "recorded_exact": 16,
+      "replayed_exact": 16,
+      "first_strict": 16,
+      "recorded_strict": 16,
+      "replayed_strict": 16,
+      "selection_changed": 0,
+      "recorded_score_mismatches": 0
+    },
+    {
+      "dataset": "v3_stability/reports/rule_compliance_20261015_v3b/samples.jsonl",
+      "total_records": 8,
+      "n": 8,
+      "excluded_records": 0,
+      "first_exact": 8,
+      "recorded_exact": 8,
+      "replayed_exact": 8,
+      "first_strict": 8,
+      "recorded_strict": 8,
+      "replayed_strict": 8,
+      "selection_changed": 0,
+      "recorded_score_mismatches": 0
+    }
+  ],
+  "stored_return_setpoint_metrics": [
+    {
+      "telemetry": "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261018T105158_blue_A0/20261018T105202_e0476b_blue_telemetry.jsonl",
+      "return_start_utc": "2026-10-18T02:53:50.238000+00:00",
+      "return_end_utc": "2026-10-18T02:53:56.397000+00:00",
+      "matched_samples": 308,
+      "max_odom_match_gap_s": 0.024,
+      "max_setpoint_distance_m": 5.595,
+      "p95_setpoint_distance_m": 5.487,
+      "median_setpoint_distance_m": 0.501
+    },
+    {
+      "telemetry": "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261018T110949_blue_A0/20261018T110953_5c708f_blue_telemetry.jsonl",
+      "return_start_utc": "2026-10-18T03:11:29.906000+00:00",
+      "return_end_utc": "2026-10-18T03:11:37.595000+00:00",
+      "matched_samples": 385,
+      "max_odom_match_gap_s": 0.032,
+      "max_setpoint_distance_m": 5.931,
+      "p95_setpoint_distance_m": 5.81,
+      "median_setpoint_distance_m": 0.77
+    },
+    {
+      "telemetry": "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261018T114034_blue_A0/20261018T114039_a70c49_blue_telemetry.jsonl",
+      "return_start_utc": "2026-10-18T03:42:27.246000+00:00",
+      "return_end_utc": "2026-10-18T03:42:35.937000+00:00",
+      "matched_samples": 435,
+      "max_odom_match_gap_s": 0.028,
+      "max_setpoint_distance_m": 0.788,
+      "p95_setpoint_distance_m": 0.741,
+      "median_setpoint_distance_m": 0.646
+    },
+    {
+      "telemetry": "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261018T114611_blue_A0/20261018T114616_0c1035_blue_telemetry.jsonl",
+      "return_start_utc": "2026-10-18T03:47:50.856000+00:00",
+      "return_end_utc": "2026-10-18T03:48:05.344000+00:00",
+      "matched_samples": 724,
+      "max_odom_match_gap_s": 0.031,
+      "max_setpoint_distance_m": 1.025,
+      "p95_setpoint_distance_m": 0.897,
+      "median_setpoint_distance_m": 0.579
+    },
+    {
+      "telemetry": "/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261018T115140_blue_A0/20261018T115144_14d89e_blue_telemetry.jsonl",
+      "return_start_utc": "2026-10-18T03:53:29.081000+00:00",
+      "return_end_utc": "2026-10-18T03:53:36.324000+00:00",
+      "matched_samples": 362,
+      "max_odom_match_gap_s": 0.028,
+      "max_setpoint_distance_m": 0.831,
+      "p95_setpoint_distance_m": 0.766,
+      "median_setpoint_distance_m": 0.678
+    }
+  ],
+  "historical_final_nine_trials": {
+    "trials": 9,
+    "started_with_three": 9,
+    "ended_with_two": 8,
+    "observer_mission_success": 2,
+    "boundary_events": 4,
+    "trials_with_boundary": 1,
+    "gc_samples": 729,
+    "gc_errors": 0,
+    "scope": "CSV/Actor count reanalysis only; does not independently establish color identity or physical contact"
+  }
+}

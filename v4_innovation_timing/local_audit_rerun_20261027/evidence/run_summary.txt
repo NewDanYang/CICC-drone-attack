@@ -1,0 +1,169 @@
+{
+  "commit": "340a52c744b1f19fdbda0e18ef77f14a6f5400bd",
+  "integrity_passed": 7,
+  "tests": [
+    {
+      "script": "v3_stability/rule_compliance/tests/test_mission_once_fallback.py",
+      "exit_code": 0,
+      "passed_assertions": 29,
+      "failed_assertions": 0
+    },
+    {
+      "script": "v3_stability/rule_compliance/tests/test_aruco_display_loop.py",
+      "exit_code": 0,
+      "passed_assertions": 6,
+      "failed_assertions": 0
+    }
+  ],
+  "timing": {
+    "trials": 24,
+    "stages": [
+      {
+        "stage": "total",
+        "n": 23,
+        "mean_s": 136.4625652173913,
+        "median_s": 136.715,
+        "min_s": 93.151,
+        "max_s": 212.652
+      },
+      {
+        "stage": "takeoff",
+        "n": 24,
+        "mean_s": 16.021666666666665,
+        "median_s": 17.9015,
+        "min_s": 12.644,
+        "max_s": 18.93
+      },
+      {
+        "stage": "cross_frame_1",
+        "n": 24,
+        "mean_s": 15.868416666666667,
+        "median_s": 15.997499999999999,
+        "min_s": 13.458,
+        "max_s": 17.896
+      },
+      {
+        "stage": "aruco_wait",
+        "n": 24,
+        "mean_s": 2.2434166666666666,
+        "median_s": 2.0305,
+        "min_s": 1.503,
+        "max_s": 6.506
+      },
+      {
+        "stage": "return_cross_frame",
+        "n": 24,
+        "mean_s": 4.220083333333333,
+        "median_s": 3.9234999999999998,
+        "min_s": 2.923,
+        "max_s": 11.191
+      },
+      {
+        "stage": "hit_balloon",
+        "n": 24,
+        "mean_s": 38.45041666666667,
+        "median_s": 50.003,
+        "min_s": 6.798,
+        "max_s": 50.009
+      },
+      {
+        "stage": "land",
+        "n": 23,
+        "mean_s": 5.596304347826087,
+        "median_s": 5.479,
+        "min_s": 4.419,
+        "max_s": 7.191
+      }
+    ],
+    "near_50s_count_tolerance_0p1s": 16
+  },
+  "replay": [
+    {
+      "dataset": "v3_stability/reports/rule_compliance_20261014/llm_paraphrase/samples.jsonl",
+      "total_records": 60,
+      "n": 54,
+      "excluded_records": 6,
+      "first_exact": 40,
+      "recorded_exact": 40,
+      "replayed_exact": 40,
+      "first_strict": 31,
+      "recorded_strict": 31,
+      "replayed_strict": 31,
+      "selection_changed": 0,
+      "recorded_score_mismatches": 0
+    },
+    {
+      "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/full/samples.jsonl",
+      "total_records": 60,
+      "n": 54,
+      "excluded_records": 6,
+      "first_exact": 54,
+      "recorded_exact": 54,
+      "replayed_exact": 54,
+      "first_strict": 52,
+      "recorded_strict": 52,
+      "replayed_strict": 52,
+      "selection_changed": 0,
+      "recorded_score_mismatches": 0
+    },
+    {
+      "dataset": "v3_stability/reports/rule_compliance_20261015_v3/llm_paraphrase/targeted/samples.jsonl",
+      "total_records": 20,
+      "n": 20,
+      "excluded_records": 0,
+      "first_exact": 19,
+      "recorded_exact": 19,
+      "replayed_exact": 19,
+      "first_strict": 19,
+      "recorded_strict": 19,
+      "replayed_strict": 19,
+      "selection_changed": 1,
+      "recorded_score_mismatches": 0
+    },
+    {
+      "dataset": "v3_stability/reports/rule_compliance_20261015_v3b/extra16/samples.jsonl",
+      "total_records": 16,
+      "n": 16,
+      "excluded_records": 0,
+      "first_exact": 16,
+      "recorded_exact": 16,
+      "replayed_exact": 16,
+      "first_strict": 16,
+      "recorded_strict": 16,
+      "replayed_strict": 16,
+      "selection_changed": 0,
+      "recorded_score_mismatches": 0
+    },
+    {
+      "dataset": "v3_stability/reports/rule_compliance_20261015_v3b/samples.jsonl",
+      "total_records": 8,
+      "n": 8,
+      "excluded_records": 0,
+      "first_exact": 8,
+      "recorded_exact": 8,
+      "replayed_exact": 8,
+      "first_strict": 8,
+      "recorded_strict": 8,
+      "replayed_strict": 8,
+      "selection_changed": 0,
+      "recorded_score_mismatches": 0
+    }
+  ],
+  "planner": [
+    {
+      "label": "official",
+      "distance_m": 0.871255494704455,
+      "n": 10
+    },
+    {
+      "label": "v1",
+      "distance_m": 1.3253382835743914,
+      "n": 12
+    },
+    {
+      "label": "v2",
+      "distance_m": 1.540576946927533,
+      "n": 12
+    }
+  ]
+}

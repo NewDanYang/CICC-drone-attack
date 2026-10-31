@@ -1,0 +1,174 @@
+--- official_baseline/catkin_ws/src/mission_pkg/src/nodes/action/visual_servo.cpp
++++ frozen_20261019/catkin_ws/src/mission_pkg/src/nodes/action/visual_servo.cpp
+@@ -10,6 +10,7 @@
+  * @date       2026-03-16
+  ******************************************************************************/
+ #include "nodes/action/visual_servo.h"
++#include "utils/pose_utils.h"
+ #include <algorithm>
+ #include <cmath>
+ 
+@@ -50,7 +51,8 @@
+              InputPort<double>("data_timeout", 1.0, "数据超时 (s)"),
+              InputPort<double>("approach_area_threshold", 0.08, "触发冲刺的面积占比"),
+              InputPort<double>("center_tolerance", 0.15, "对齐判定区域比例"),
+-             InputPort<double>("search_yaw_rate", 0.3, "搜索模式旋转速度 (rad/s)") };
++             InputPort<double>("search_yaw_rate", 0.3, "搜索模式旋转速度 (rad/s)"),
++             InputPort<std::string>("target_color", "", "当前气球颜色") };
+ }
+ 
+ NodeStatus VisualServo::onStart() {
+@@ -73,6 +75,8 @@
+     approach_area_threshold_ = getInput<double>("approach_area_threshold").value();
+     center_tolerance_ = getInput<double>("center_tolerance").value();
+     search_yaw_rate_ = getInput<double>("search_yaw_rate").value();
++    target_color_ = getInput<std::string>("target_color").value();
++    search_anchor_active_ = false;
+     
+     // 初始化状态机
+     current_state_ = APPROACHING;  // 直接进入边飞边对齐模式（气球是移动目标）
+@@ -106,18 +110,51 @@
+     
+     // 目标丢失处理（冲刺阶段不检查）
+     if (current_state_ != SPRINTING && isTargetLost()) {
+-        if (max_area_ratio_ > approach_area_threshold_) {
++        // A blue balloon can pop while ALIGN is still active. The old 50 s
++        // position-held search stays in the nearby red balloon's travel lane.
++        // Finish only when the last blue detection was near and then vanished.
++        const double last_ratio = last_target_.area() /
++            (static_cast<double>(img_w_) * img_h_);
++        const double lost_seconds = (now - last_valid_detection_time_).toSec();
++        if (target_color_ == "blue" && has_ever_received_data_) {
++            ROS_INFO_THROTTLE(1.0, "[%s]: BLUE_LOSS_SAMPLE area=%.4f max_area=%.4f lost_s=%.3f",
++                              name().c_str(), last_ratio, max_area_ratio_, lost_seconds);
++        }
++        if (target_color_ == "blue" && has_ever_received_data_ &&
++            max_area_ratio_ >= 0.30 &&
++            last_ratio >= 0.50 * approach_area_threshold_ &&
++            lost_seconds <= data_timeout_ + 0.25) {
+             sendHoverCommand();
+-            ROS_INFO("[%s]: Target lost after approach (max_ratio=%.3f). SUCCESS.", 
+-                     name().c_str(), max_area_ratio_);
++            ROS_INFO("[%s]: BLUE_NEAR_CONTACT_LOSS_COMPLETE area=%.4f max_area=%.4f lost_s=%.3f",
++                     name().c_str(), last_ratio, max_area_ratio_, lost_seconds);
+             return NodeStatus::SUCCESS;
+         }
+-        // 搜索模式：原地慢转
+-        publishVelocityWithYawRate(0, 0, 0, search_yaw_rate_);
+-        ROS_WARN_THROTTLE(1.0, "[%s]: Target lost. Searching (yaw_rate=%.2f)...", 
+-                          name().c_str(), search_yaw_rate_);
++        if (current_state_ != ALIGN) {
++            current_state_ = ALIGN;
++            align_stable_frames_ = 0;
++            ROS_WARN("[%s]: Off-center target lost after approach; return to ALIGN and search.",
++                     name().c_str());
++        }
++        // Body-frame zero velocity drifted 2.5 m during a 50-second
++        // purple search. Keep the current world position while scanning yaw.
++        if (!search_anchor_active_) {
++            search_anchor_ = fcu_odom_ptr->pose.pose.position;
++            search_base_yaw_ = PoseUtils::getYawFromQuat(fcu_odom_ptr->pose.pose.orientation);
++            search_start_time_ = now;
++            search_anchor_active_ = true;
++            ROS_INFO("[%s]: SEARCH_ANCHOR pos=(%.3f,%.3f,%.3f) yaw=%.3f",
++                     name().c_str(), search_anchor_.x, search_anchor_.y,
++                     search_anchor_.z, search_base_yaw_);
++        }
++        const double search_yaw = search_base_yaw_ +
++            search_yaw_rate_ * (now - search_start_time_).toSec();
++        publishPosition(search_anchor_, search_yaw);
++        ROS_WARN_THROTTLE(1.0, "[%s]: Target lost. Position-held search yaw=%.3f anchor=(%.2f,%.2f,%.2f)",
++                          name().c_str(), search_yaw, search_anchor_.x,
++                          search_anchor_.y, search_anchor_.z);
+         return NodeStatus::RUNNING;
+     }
++    search_anchor_active_ = false;
+     
+     // 计算基本量
+     double img_area = static_cast<double>(img_w_) * img_h_;
+@@ -165,6 +202,24 @@
+             // 根据对齐程度调节前进速度（越偏越慢）
+             double align_ratio = std::max(0.0, 1.0 - std::abs(err_x) / (img_w_ * 0.3));
+             double vx = forward_velocity_ * align_ratio;
++            // Close range with an off-center target needs yaw/vz correction,
++            // not more forward travel that drives the target out of frame.
++            if (current_ratio >= approach_area_threshold_ && !isCentered()) {
++                vx = 0.0;
++            }
++            // Red successes entered the sprint near yaw +/-pi; an observed
++            // yaw=2.251 sprint ran toward the boundary and removed blue.
++            bool red_heading_blocked = false;
++            if (target_color_ == "red" && current_ratio >= approach_area_threshold_) {
++                const double yaw = PoseUtils::getYawFromQuat(fcu_odom_ptr->pose.pose.orientation);
++                const double yaw_error = std::abs(std::atan2(std::sin(yaw - M_PI), std::cos(yaw - M_PI)));
++                red_heading_blocked = yaw_error > 0.45;
++                if (red_heading_blocked) {
++                    vx = 0.0;
++                    ROS_WARN_THROTTLE(0.5, "[%s]: Red sprint heading blocked: yaw=%.3f error=%.3f rad",
++                                      name().c_str(), yaw, yaw_error);
++                }
++            }
+             
+             publishVelocityWithYawRate(vx, 0, vz, yaw_rate);
+             
+@@ -178,12 +233,20 @@
+             }
+             
+             // 面积达阈值 → 触发冲刺
+-            if (current_ratio >= approach_area_threshold_) {
++            if (current_ratio >= approach_area_threshold_ && isCentered() && !red_heading_blocked) {
+                 current_state_ = SPRINTING;
+                 sprint_start_time_ = ros::Time::now();
++                const auto& sprint_pose = fcu_odom_ptr->pose.pose;
++                ROS_INFO("[%s]: SPRINT_START pos=(%.3f,%.3f,%.3f) yaw=%.3f err=(%.1f,%.1f) area=%.4f velocity=%.3f time=%.3f",
++                         name().c_str(), sprint_pose.position.x, sprint_pose.position.y,
++                         sprint_pose.position.z, PoseUtils::getYawFromQuat(sprint_pose.orientation),
++                         err_x, err_y, current_ratio, sprint_velocity_, sprint_time_);
+                 ROS_INFO("[%s]: Area %.1f%% >= %.1f%% -> SPRINT! (sprint_vel=%.2f, time=%.1fs)", 
+                          name().c_str(), current_ratio*100, approach_area_threshold_*100,
+                          sprint_velocity_, sprint_time_);
++            } else if (current_ratio >= approach_area_threshold_) {
++                ROS_WARN_THROTTLE(0.5, "[%s]: Sprint area ready but off-center err:(%.0f,%.0f); continue alignment",
++                                  name().c_str(), err_x, err_y);
+             }
+             
+             ROS_INFO_THROTTLE(0.5, "[%s]: APPROACH - vx:%.2f(%.0f%%) yaw_rate:%.3f vz:%.3f err:(%.0f,%.0f) area:%.1f%%", 
+@@ -198,6 +261,23 @@
+             
+             // 超时 → 完成
+             if (sprint_dt >= sprint_time_) {
++                const auto& sprint_pose = fcu_odom_ptr->pose.pose;
++                ROS_INFO("[%s]: SPRINT_END pos=(%.3f,%.3f,%.3f) yaw=%.3f err=(%.1f,%.1f) area=%.4f target_fresh=%d velocity=%.3f time=%.3f",
++                         name().c_str(), sprint_pose.position.x, sprint_pose.position.y,
++                         sprint_pose.position.z, PoseUtils::getYawFromQuat(sprint_pose.orientation),
++                         err_x, err_y, current_ratio, !isTargetLost(), sprint_velocity_, sprint_time_);
++                // A visible, far-off-center blue balloon is direct evidence
++                // that the fixed-time sprint missed. Stop and realign rather
++                // than reporting a hit and flying the landing return route.
++                if (target_color_ == "blue" && !isTargetLost() &&
++                    current_ratio >= 0.03 && std::abs(err_x) > 0.20 * img_w_) {
++                    sendHoverCommand();
++                    current_state_ = ALIGN;
++                    align_stable_frames_ = 0;
++                    ROS_WARN("[%s]: BLUE_SPRINT_VISIBLE_RETRY err_x=%.1f area=%.4f",
++                             name().c_str(), err_x, current_ratio);
++                    break;
++                }
+                 sendHoverCommand();
+                 ROS_INFO("[%s]: Sprint completed (%.1fs). SUCCESS.", name().c_str(), sprint_dt);
+                 return NodeStatus::SUCCESS;
+@@ -297,9 +377,11 @@
+ bool VisualServo::isCentered() const {
+     double err_x = last_target_.center_x - img_cx_;
+     double err_y = last_target_.center_y - img_cy_;
+-    double tol_w = last_target_.width * center_tolerance_;
+-    double tol_h = last_target_.height * center_tolerance_;
+-    return std::abs(err_x) < tol_w && std::abs(err_y) < tol_h;
++    // A controller cannot reduce error inside its own zero-command deadzone.
++    // Accept that region as centered even when the target box is very small.
++    double tol_w = std::max(last_target_.width * center_tolerance_, deadzone_yaw_);
++    double tol_h = std::max(last_target_.height * center_tolerance_, deadzone_vz_);
++    return std::abs(err_x) <= tol_w && std::abs(err_y) <= tol_h;
+ }
+ 
+ BT_REGISTER_NODES(factory) {
