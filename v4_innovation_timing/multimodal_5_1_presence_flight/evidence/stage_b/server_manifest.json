@@ -1,0 +1,12 @@
+{
+  "candidate_archive": "/tmp/p12e_stage_b.tar.gz",
+  "candidate_archive_sha256": "e1cfcecbc7c6e98d30f099f7fad515b33b1beaff9fbfa4223e60b4789056e8e",
+  "staging_root": "/home/ubuntu/multimodal_v2/p12e_stage_b",
+  "backup_root": "/home/ubuntu/multimodal_v2/p12e_backup_20261031",
+  "runtime_source": "/home/ubuntu/model/fm9g_perception",
+  "plugin": "/home/ubuntu/catkin_ws/devel/lib/multimodal_target_tracker.so",
+  "bt_binary": "/home/ubuntu/catkin_ws/devel/lib/mission_pkg/bt_ros",
+  "formal_trial_lock_checked": true,
+  "formal_trial_lock_present_before_activation": false,
+  "runtime_trial_executed": false
+}

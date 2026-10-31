@@ -1,0 +1,28 @@
+self.grid_size:  8
+self.num_queries:  64
+self.embed_dim:  2560
+self.num_heads:  16
+self.adaptive:  True
+self.max_size:  (70, 70)
+self.kv_dim:  1152
+{
+  "count": 3,
+  "fast": [
+    0.8670357465744019,
+    0.2393493503332138,
+    0.42250463366508484
+  ],
+  "official": [
+    0.8705973029136658,
+    0.2393493503332138,
+    0.42250463366508484
+  ],
+  "abs_diff": [
+    0.003561556339263916,
+    0.0,
+    0.0
+  ],
+  "max_abs_diff": 0.003561556339263916,
+  "fast_latency_s": 0.36432170728221536,
+  "official_latency_s": 0.08235269086435437
+}

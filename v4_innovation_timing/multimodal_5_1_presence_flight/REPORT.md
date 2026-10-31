@@ -1,81 +1,67 @@
-# FM9G4B-V presence-sweep 阶段 A 复核报告
+# FM9G4B-V presence-sweep 阶段 B 接入报告
 
-日期：2026-10-31（北京时间）。本轮严格按 `docs/astra-handoff-fm9g-presence-sweep.md` 执行到阶段 A 止损门，没有进入阶段 B/C/D，没有修改比赛运行链路。
+日期：2026-10-31（北京时间）。本报告承接 P12e 的阶段 A 通过结果，记录同进程 runtime 接入、MD5 备份、编译和不起飞离线验收。
 
-## 结论
+## 阶段 A 依据
 
-P10 的 224/224 方案作为基线重放了 9 个真实击球窗口，随后将 A1–A4 四项改动逐项独立加入并各重放同一组 9 局。四个变体全部至少同时违反两条开发门：中心落入 YOLO 框比例低于 70%，发布精确率低于 92%，面积比或离屏残留也存在额外失败。因此按交接文档的止损规则停止，**不把任何变体接入比赛，不开展阶段 B 的 runtime 改造或阶段 C 单局台架**。
+P12e 在同一组 9 个真实 VisualServo 窗口上得到 357/494（72.3%）中心正确、93.5% 发布精确率；红色 92/109、紫色 154/242、蓝色 111/143。获取延迟中位数为 1.0 s。面积比中位数 0.65、尾部最大残留 8 帧仍保留在证据中，分别对应 YOLO 框偏松和蓝色横幅误判，不能被改写成已解决。
 
-这 9 局是开发数据，不是盲测。YOLO 只在离线评分中作为参照；它没有进入运行链路。运行时没有读取 HSV、YOLO、UE 真值或 `/objects`，也没有加载第二份模型。
+P12e 状态机是本阶段基线：模型每周期做一次瓦片/四向存在扫描，CSRT 只在两次九格结果之间插值；一次阴性先暂停发布，第二次阴性才丢弃；精扫使用 7 档、窗口因子 2.2、模型结果保持 1.5 秒；气球框形状先验保持在高宽比 `[0.9,1.6]`。
 
-## 实施的四项独立改动
+## 接入实现
 
-`tools/p11_servo_replay.py` 是 `p10_servo_replay.py` 的独立副本，最后一个参数选择一个变体，保证每次只改一项：
+接入包位于 `v2/`：
 
-| 变体 | 改动 |
-|---|---|
-| A1 | 复核间隔 0.25 s；复核窗口为当前框 1.2 倍；最小边 40 px；一次 `P(是)<0.5` 立即回 SEARCH |
-| A2 | 每次定位/刷新保存扫描框尺寸；发布框中心使用 CSRT，尺寸用扫描尺寸乘 CSRT 相对初始化尺寸的比例，比例夹在 `[0.85,1.6]` |
-| A3 | 精扫刷新间隔从 2.0 s 改为 1.0 s |
-| A4 | 从 `p8_r224.jsonl` 仅用 train split 重拟合四个阈值，得到 `(0.5,0.5,0.4,0.4)` |
+- `presence.py` 提供 GPU FastPresence 和 P12e 的瓦片/四向扫描；只询问“有没有指定颜色气球”，不包含检测器、HSV、YOLO 或 UE 真值。
+- `runtime.py` 删除了 `OverlapLocalizer`、`local_regions` 和旧语义确认路径，改用 P12e 状态机。
+- 保留 session/epoch 门控、`MultimodalTargetTracker` C++ 插件、帧龄 0.35 s 输出门、窗口截图、`ReplayTracker`、ROS 审计和 `/multimodal/objects` 链路。
+- 新增 pending handoff barrier，确保上一轮模型结果被 tracking worker 消费并更新后，下一轮才选择 acquire/track，避免并发覆盖。
+- `scale_resolution=224` 在官方 processor 上显式固定，使 FastPresence 与部署时实际 processor 配置一致；模型仍只有一份，命令生成和图像推理共用同一 `model_lock`。
 
-A4 的原始拟合输出在 [`p8_r224_score.txt`](evidence/p8_r224_score.txt) 和 [`p8_r224.jsonl.fit.json`](evidence/p8_r224.jsonl.fit.json)。
+## 离线验收
 
-## 九局合计结果
+静态验收通过：`validate_stage_b.py` 通过，runtime 源码中没有旧 `OverlapLocalizer`/HSV/YOLO 读取路径，P12e edge-box 单元检查通过。
 
-评分器以录制的 YOLO 可见帧为分母。`center` 是发布框中心落在 YOLO 框内的帧；`precision` 是已发布且 YOLO 可见的帧中中心正确的比例；`area` 是这些发布框与 YOLO 框的面积比中位数；`tail max` 是每局最后一段连续 YOLO 不可见区间中仍发布的最大帧数。面积和残留是离线代理指标，不能代替物理击球。
+FastPresence 与同配置官方 processor 在 3 个真实采集帧上比较：最大概率绝对差 **0.00356**，低于 0.03。原始结果在 [`fastpresence_parity.json`](evidence/stage_b/fastpresence_parity.json)。
 
-| 配置 | 可见帧中心正确 | 发布精确率 | 面积比中位数 | tail max | 首次发布延迟中位数 |
-|---|---:|---:|---:|---:|---:|
-| P10 224/224 基线 | 313/494 = 63.4% | 88.4% | 0.652 | 8 | 1.40 s |
-| A1 快速放弃 | 292/494 = 59.1% | 87.4% | 0.628 | 5 | 1.40 s |
-| A2 尺寸锁定 | 303/494 = 61.3% | 88.3% | 0.646 | 5 | 1.40 s |
-| A3 1 s 刷新 | 277/494 = 56.1% | 76.1% | **0.827** | 7 | 1.36 s |
-| A4 重拟合阈值 | 297/494 = 60.1% | 86.8% | 0.632 | 7 | 1.40 s |
+修正前的真实帧桥接 smoke 使用 FM9G 模型、`PerceptionBridge`、`NativePresenceSweep`、`ReplayTracker` 和审计发布路径，未启动 ROS 飞行。该版本记录 103 次发布、81 个可配对框，但与 P12e 逐帧中心差中位 **12.0 px**、最大 131.36 px，未达到 ≤3 px 验收门。原始审计在 [`runtime_smoke_blue_audit_handoff_barrier.jsonl`](evidence/stage_b/runtime_smoke_blue_audit_handoff_barrier.jsonl)，评分在 [`runtime_replay_score.json`](evidence/stage_b/runtime_replay_score.json)。这个数字不能直接归因于模型，因为当时线上 `track()` 仍有扫描插值错误，运行时提示词也与 P12e 不一致。
 
-四个版本均未达到 70%/92% 两项开发门。A3 唯一把面积比拉进 `[0.8,1.25]`，但中心正确率和发布精确率明显下降；A1 虽减少了部分尾部发布，但最大残留仍为 5 帧。完整逐帧结果在 [`score_summary.json`](evidence/score_summary.json) 与各变体目录中。
+这项差异没有被隐藏或当作通过。修正前日志显示模型推理结果、pending handoff 和模型年龄门均生效；修正后的同条件端到端重放需要重新生成，才能把实现错误与 CSRT/帧龄调度差异分开。阶段 C 台架飞行因此暂不执行。
 
-## 分颜色明细
+## 扫描插值与提示词修正（2026-10-31）
 
-下表给出“中心正确帧 / YOLO 可见帧”和“中心正确发布 / 已发布可见帧”。
+这次复核确认了一个确定性的 `track()` bug：扫描曲线第 0 个值是未遮挡图像，坐标应为 `0.0`，但旧代码用 `positions[j-1]`/`positions[j]` 插值。结果是所有交点整体偏移一个采样间隔，并且交点落在最后区间时访问 `positions[len(positions)]`，与回放中 8 次 `IndexError` 的位置一致。已改为 `xs = [0.0] + positions` 后使用 `xs[j-1]`/`xs[j]`。
 
-| 配置 | 红色 | 紫色 | 蓝色 |
-|---|---:|---:|---:|
-| P10 | 78/109 = 71.6%; 78/90 = 86.7% | 143/242 = 59.1%; 143/157 = 91.1% | 92/143 = 64.3%; 92/107 = 86.0% |
-| A1 | 75/109 = 68.8%; 75/83 = 90.4% | 142/242 = 58.7%; 142/151 = 94.0% | 75/143 = 52.4%; 75/100 = 75.0% |
-| A2 | 78/109 = 71.6%; 78/90 = 86.7% | 135/242 = 55.8%; 135/147 = 91.8% | 90/143 = 62.9%; 90/106 = 84.9% |
-| A3 | 84/109 = 77.1%; 84/90 = 93.3% | 145/242 = 59.9%; 145/168 = 86.3% | 48/143 = 33.6%; 48/106 = 45.3% |
-| A4 | 76/109 = 69.7%; 76/82 = 92.7% | 137/242 = 56.6%; 137/153 = 89.5% | 84/143 = 58.7%; 84/107 = 78.5% |
+同时，运行时原先把内部枚举值直接拼成“blue色的气球”；现在通过 `{'red':'红色','purple':'紫色','blue':'蓝色'}` 映射，与 P12e 和 FastPresence 一致。验证脚本新增了最后区间无越界回归和中文提示词静态检查；服务器实际 torch 验证结果为 `geometry_test=passed`、`track_interpolation_test=passed`，并已重新编译候选插件。部署状态保存在 [`final_status_scan_prompt_fix.json`](evidence/stage_b/final_status_scan_prompt_fix.json)。
 
-A3 的刷新加频对红色有局部帮助，但蓝色明显恶化；A2 对蓝色中心率有小幅改善，但没有解决紫色和红色窗口的漂移。单次改动没有显示出足以进入实飞的稳定收益。
+修正后又用 20 帧真实回放做了短 smoke：11 次模型调用、15 个发布、15 个可配对框，`IndexError=0`、`inference_error=0`。这次仍与 P12e 有最大 14.08 px 中心差，因此只证明异常已消失，不能宣布定位性能达标。原始审计和摘要分别在 [`scan_prompt_fix_smoke20_audit.jsonl`](evidence/stage_b/scan_prompt_fix_smoke20_audit.jsonl) 和 [`scan_prompt_fix_smoke20_summary.json`](evidence/stage_b/scan_prompt_fix_smoke20_summary.json)。
 
-## 残留、人工证据和适用范围
+## 部署与编译
 
-尾部残留统计只用于开发门筛查。P10 已有的人工复核联系表 [`p10_05.jpg`](evidence/p10_05.jpg) 记录了九格正确而 YOLO 漏检的帧，也记录了立柱遮挡和 CSRT 漂到砖墙的错误。A1–A4 没有把新的“YOLO 漏检但九格正确”判断写成结论，避免用评分器代理替代人工确认。
+正式试验锁检查时不存在，`baseline_runs.csv` 最后一行未变化。部署前备份位于服务器：
 
-本轮数据全部来自 3.3 封存的 9 个真实 5 Hz 窗口，共 494 个 YOLO 可见帧；颜色各 3 局。它们是开发数据，不证明比赛现场成功率。回放仍以旧轨迹为输入，不能推断九格闭环改变轨迹后的物理命中率。失败样本、异常窗口和所有低分颜色都保留在原始 JSON 中，没有剔除。
-
-## 规则与安全检查
-
-- 没有修改 VisualServo C++/头文件、安全边界、launch 速度参数、航点、方向 A/B 或优化参数。
-- 阶段 A 只加载一份 FM9G4B-V，命令生成没有参与回放；没有增加模型实例。
-- YOLO、HSV 和 `/objects` 只出现在离线 replay/scoring 证据，部署脚本不导入这些模块。
-- 运行服务器前检查了 `/tmp/tcei_formal_trial.lock`，当时不存在；没有启动正式飞行。
-- `python -m py_compile` 已通过 `p11_servo_replay.py` 和 `score_p11.py`。
-
-服务器原始回放压缩包和 SHA-256 在 [`server_manifest.json`](evidence/server_manifest.json)。最终部署状态在 [`deployment_status.json`](evidence/deployment_status.json)。
-
-## 阶段 B 及回滚
-
-阶段 B 未进入，因而没有 runtime 部署文件、适配器、VisualServo 修改或比赛版本变更。`tools/deploy_presence_flight.sh` 会明确拒绝部署；`tools/rollback_presence_flight.sh` 只记录无运行时变更并给出可选的服务器实验目录清理命令。
-
-若只清理服务器回放证据，可删除：
-
-```bash
-rm -rf /root/gpufree-data/fm_research/evidence/p11_A1 \
-       /root/gpufree-data/fm_research/evidence/p11_A2 \
-       /root/gpufree-data/fm_research/evidence/p11_A3 \
-       /root/gpufree-data/fm_research/evidence/p11_A4
+```text
+/home/ubuntu/multimodal_v2/p12e_backup_20261031
 ```
 
-算法问题是 CSRT 漂移、面积低估和遮挡框停在立柱上；环境偶发项是旧回放中 YOLO 的漏检和不同窗口的可见帧数量差异；本轮没有出现大模型命令输出异常，因为没有运行命令生成链路。三者没有混入同一个失败统计。
+备份记录了原始 mission、bt_ros、二进制和安全 guard MD5。候选源码已激活并编译通过：
+
+- mission：`de03cd1a5687f7bc0664ea52f3cd095f`
+- bt_ros：`9a1e8d2a5913968b1c2300cad1dc02f7`
+- plugin：`2a2e1b7fc0b2ca37291ecbef97ade06f`
+- bt_ros binary：`1f1592dc8d33613bf4b772a4eb2f6dfb`
+
+完整状态在 [`final_status.json`](evidence/stage_b/final_status.json)，编译日志在 [`build_candidate.log`](evidence/stage_b/build_candidate.log)，服务器路径和候选包 SHA 在 [`server_manifest.json`](evidence/stage_b/server_manifest.json)。
+
+## 回滚
+
+候选保持部署但未起飞。停止相关节点、确认没有正式试验锁后执行：
+
+```bash
+cd /home/ubuntu/multimodal_v2/p12e_stage_b
+bash patches/build_p12e.sh baseline /home/ubuntu/multimodal_v2/p12e_backup_20261031
+```
+
+脚本会恢复 mission、bt_ros、原始二进制并检查 `TargetTracker` 字符串和候选插件不存在。没有修改 VisualServo、安全边界、launch 速度、航点、方向 A/B 或优化参数。
+
+算法问题仍是 CSRT 插值与离线虚拟时钟的差异；环境问题包括录制窗口首帧间隔和真实 ROS 回调调度；本轮没有大模型命令输出异常。三类问题在审计中分开记录。

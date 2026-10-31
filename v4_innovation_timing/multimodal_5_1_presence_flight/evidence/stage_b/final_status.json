@@ -1,0 +1,21 @@
+{
+  "mode": "candidate",
+  "mission_md5": "de03cd1a5687f7bc0664ea52f3cd095f",
+  "bt_md5": "9a1e8d2a5913968b1c2300cad1dc02f7",
+  "source_md5": {
+    "/home/ubuntu/model/fm9g_perception/localizer.py": "8d329caed84b8d1c7eb4c7c20c3fb06f",
+    "/home/ubuntu/model/fm9g_perception/tracking.py": "596009abe3dc4e6bea0c07e372ba239e",
+    "/home/ubuntu/model/fm9g_perception/runtime.py": "3523402159ef048946524c4eaabfe959",
+    "/home/ubuntu/model/fm9g_perception/refinement.py": "af0ad29d1fa4a43fc4e18e77fdeb30cf",
+    "/home/ubuntu/model/fm9g_perception/geometry.py": "58db79f8cb33c10c6bc4d7aad60e54dc",
+    "/home/ubuntu/model/fm9g_perception/presence.py": "08067ab2c7d6dab059bb3ae8c15024ee"
+  },
+  "plugin_md5": "2a2e1b7fc0b2ca37291ecbef97ade06f",
+  "binary_md5": "1f1592dc8d33613bf4b772a4eb2f6dfb",
+  "guards": {
+    "/home/ubuntu/catkin_ws/src/mission_pkg/launch/llm_mission.launch": "5550c580a4822e773a331bcef11f0c47",
+    "/home/ubuntu/catkin_ws/src/mission_pkg/include/base/drone_action_node.h": "c415ddd8243afcc64c181be45bdac5e3",
+    "/home/ubuntu/catkin_ws/src/mission_pkg/src/nodes/action/visual_servo.cpp": "a63b57fa127a23cd8bb8e647f078ff21",
+    "/home/ubuntu/catkin_ws/src/mission_pkg/include/nodes/action/visual_servo.h": "d3324b0458b2160102f9bbf44546d035"
+  }
+}
