@@ -1,0 +1,25 @@
+{
+  "stage": "B",
+  "candidate_deployed": true,
+  "build_verified": true,
+  "flight_executed": false,
+  "stage_c_entered": false,
+  "stage_d_entered": false,
+  "fastpresence_parity_max_abs_diff": 0.003561556339263916,
+  "runtime_replay_passed": false,
+  "runtime_replay_score": {
+    "reference": "p12e_debug_blue_reference.json",
+    "runtime_audit": "runtime_smoke_blue_audit_handoff_barrier.jsonl",
+    "runtime_publishes": 103,
+    "matched_boxes": 81,
+    "median_center_difference_px": 12.0,
+    "max_center_difference_px": 131.35924025358855,
+    "gate_max_center_difference_px": 3.0,
+    "passed": false
+  },
+  "backup": "/home/ubuntu/multimodal_v2/p12e_backup_20261031",
+  "source_root": "/home/ubuntu/model/fm9g_perception",
+  "plugin": "/home/ubuntu/catkin_ws/devel/lib/multimodal_target_tracker.so",
+  "binary": "/home/ubuntu/catkin_ws/devel/lib/mission_pkg/bt_ros",
+  "rollback": "cd /home/ubuntu/multimodal_v2/p12e_stage_b && bash patches/build_p12e.sh baseline /home/ubuntu/multimodal_v2/p12e_backup_20261031"
+}

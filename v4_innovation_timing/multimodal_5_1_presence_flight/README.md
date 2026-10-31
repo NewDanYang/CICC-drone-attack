@@ -1,37 +1,12 @@
-# 5.1 Presence-sweep flight gate
+# 5.1 P12e 接入包
 
-This package contains the Stage-A P11 replay variants requested by the Astra
-handoff. It is an offline development-data evaluation of nine real 5 Hz
-VisualServo windows (three red, three purple, three blue). Stage B was not
-entered because the development gate failed.
+`v2/` 是从 3.2 第二次实施包派生的候选 runtime，`patches/` 包含 MD5 守卫部署、编译和回滚脚本，`tools/` 包含 P12e 状态机、FastPresence parity 检查、源码检查和录制帧 smoke 驱动。
 
-The baseline is the existing 224/224 P10 replay. `p11_servo_replay.py` keeps
-the same input contract and exposes one independent variant argument:
+服务器上的候选已经完成源码激活和 `catkin_make --pkg mission_pkg` 编译。录制帧 smoke 仍未达到 P12e 框中心 ≤3 px 的离线门，因此没有启动阶段 C 仿真飞行。
 
-```text
-base A1 A2 A3 A4
-```
-
-The four variants are:
-
-* A1: 0.25 s verification, 1.2x crop, 40 px minimum, one negative drops to SEARCH.
-* A2: scan-size lock with CSRT scale clamped to `[0.85, 1.6]`.
-* A3: refresh interval reduced to 1.0 s.
-* A4: train-only threshold fit `(0.5, 0.5, 0.4, 0.4)` from `p8_r224.jsonl`.
-
-All YOLO references and image processing in this directory are offline scoring
-or replay evidence. They are not runtime dependencies. No VisualServo, launch,
-velocity, waypoint, mission, or competition model files were changed.
-
-To reproduce on the research server, after copying `tools/p11_servo_replay.py`
-to `/root/gpufree-data/fm_research/tools/`, run one variant at a time:
+候选回滚：
 
 ```bash
-cd /root/gpufree-data/fm_research
-/opt/conda/envs/demo/bin/python3 tools/p11_servo_replay.py evidence/p11_A1 224,224 \
-  01_r1_red_baseline,04_r1_purple_baseline,05_r1_blue_baseline,08_r2_red_baseline,09_r2_purple_baseline,12_r2_blue_baseline,13_r3_red_baseline,16_r3_purple_baseline,17_r3_blue_baseline \
-  fit_p8_448.json A1
+cd /home/ubuntu/multimodal_v2/p12e_stage_b
+bash patches/build_p12e.sh baseline /home/ubuntu/multimodal_v2/p12e_backup_20261031
 ```
-
-Use `tools/score_p11.py` on the copied JSON directories to generate the gate
-summary. The raw server archive SHA-256 is recorded in `evidence/server_manifest.json`.
