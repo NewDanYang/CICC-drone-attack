@@ -24,9 +24,15 @@ P12e 状态机是本阶段基线：模型每周期做一次瓦片/四向存在�
 
 FastPresence 与同配置官方 processor 在 3 个真实采集帧上比较：最大概率绝对差 **0.00356**，低于 0.03。原始结果在 [`fastpresence_parity.json`](evidence/stage_b/fastpresence_parity.json)。
 
-真实帧桥接 smoke 使用 FM9G 模型、`PerceptionBridge`、`NativePresenceSweep`、`ReplayTracker` 和审计发布路径，未启动 ROS 飞行。最新蓝色窗口记录 103 次发布、81 个可配对框，但与 P12e 逐帧中心差中位 **12.0 px**、最大 131.36 px，未达到 ≤3 px 验收门。原始审计在 [`runtime_smoke_blue_audit_handoff_barrier.jsonl`](evidence/stage_b/runtime_smoke_blue_audit_handoff_barrier.jsonl)，评分在 [`runtime_replay_score.json`](evidence/stage_b/runtime_replay_score.json)。
+修正前的真实帧桥接 smoke 使用 FM9G 模型、`PerceptionBridge`、`NativePresenceSweep`、`ReplayTracker` 和审计发布路径，未启动 ROS 飞行。该版本记录 103 次发布、81 个可配对框，但与 P12e 逐帧中心差中位 **12.0 px**、最大 131.36 px，未达到 ≤3 px 验收门。原始审计在 [`runtime_smoke_blue_audit_handoff_barrier.jsonl`](evidence/stage_b/runtime_smoke_blue_audit_handoff_barrier.jsonl)，评分在 [`runtime_replay_score.json`](evidence/stage_b/runtime_replay_score.json)。这个数字不能直接归因于模型，因为当时线上 `track()` 仍有扫描插值错误，运行时提示词也与 P12e 不一致。
 
-这项差异没有被隐藏或当作通过。日志显示模型推理结果、pending handoff 和模型年龄门均生效；剩余差异集中在真实帧回放的 CSRT 插值/帧龄调度与离线 P12e 虚拟时钟之间。阶段 C 台架飞行因此暂不执行。
+这项差异没有被隐藏或当作通过。修正前日志显示模型推理结果、pending handoff 和模型年龄门均生效；修正后的同条件端到端重放需要重新生成，才能把实现错误与 CSRT/帧龄调度差异分开。阶段 C 台架飞行因此暂不执行。
+
+## 扫描插值与提示词修正（2026-10-31）
+
+这次复核确认了一个确定性的 `track()` bug：扫描曲线第 0 个值是未遮挡图像，坐标应为 `0.0`，但旧代码用 `positions[j-1]`/`positions[j]` 插值。结果是所有交点整体偏移一个采样间隔，并且交点落在最后区间时访问 `positions[len(positions)]`，与回放中 8 次 `IndexError` 的位置一致。已改为 `xs = [0.0] + positions` 后使用 `xs[j-1]`/`xs[j]`。
+
+同时，运行时原先把内部枚举值直接拼成“blue色的气球”；现在通过 `{'red':'红色','purple':'紫色','blue':'蓝色'}` 映射，与 P12e 和 FastPresence 一致。验证脚本新增了最后区间无越界回归和中文提示词静态检查；服务器实际 torch 验证结果为 `geometry_test=passed`、`track_interpolation_test=passed`，并已重新编译候选插件。部署状态保存在 [`final_status_scan_prompt_fix.json`](evidence/stage_b/final_status_scan_prompt_fix.json)。
 
 ## 部署与编译
 

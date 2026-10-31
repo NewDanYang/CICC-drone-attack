@@ -246,12 +246,18 @@ class NativePresenceSweep:
         if p0 < 0.5:
             return None
         c = []
+        # The sweep profile contains the unmasked crop at coordinate 0.0,
+        # followed by samples at `positions`.  Keep that origin in the
+        # interpolation grid: indexing `positions` directly shifts every
+        # crossing by one sample interval and raises IndexError when the
+        # crossing is in the final interval.
+        xs = [0.0] + positions
         for profile, threshold in zip(curves, self.thresholds):
             value = None
             for j in range(1, len(profile)):
                 if profile[j - 1] >= threshold * p0 > profile[j]:
                     fraction = (profile[j - 1] - threshold * p0) / (profile[j - 1] - profile[j] + 1e-9)
-                    value = positions[j - 1] + fraction * (positions[j] - positions[j - 1])
+                    value = xs[j - 1] + fraction * (xs[j] - xs[j - 1])
                     break
             c.append(value)
         left, right, top, bottom = c

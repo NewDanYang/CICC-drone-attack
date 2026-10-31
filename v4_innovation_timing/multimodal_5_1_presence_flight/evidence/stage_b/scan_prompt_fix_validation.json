@@ -1,0 +1,12 @@
+{
+  "runtime_forbidden_tokens": [],
+  "geometry_test": "passed",
+  "track_interpolation_test": "passed",
+  "edge_box": [
+    187.14285716122447,
+    164.5714285934694,
+    215.4285714065306,
+    192.85714283877553
+  ],
+  "manifest_files": 11
+}

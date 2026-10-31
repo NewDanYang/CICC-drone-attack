@@ -20,6 +20,8 @@ from common_msgs.msg import Objects, Obj, DetEnable
 from .tracking import Frame, ReplayTracker
 from .presence import NativePresenceSweep
 
+COLOR_TEXT = {'red': '红色', 'purple': '紫色', 'blue': '蓝色'}
+
 
 class StageInactive(Exception):
     pass
@@ -203,7 +205,7 @@ class PerceptionBridge:
                        image_sha256=hashlib.sha256(image_path.read_bytes()).hexdigest(),
                        pixels_sha256=hashlib.sha256(image.tobytes()).hexdigest(),
                        size=image.size,source_mode='native_presence_sweep')
-            text=f"这张图片里有没有{color}色的气球？只回答“是”或“否”。"
+            text=f"这张图片里有没有{COLOR_TEXT[color]}的气球？只回答“是”或“否”。"
             start=time.monotonic()
             try:
                 if current:
