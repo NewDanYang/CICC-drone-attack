@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\Codex\2026-10-30\new-chat\work\research-repo\research_20261030\planner\install_candidate.py", line 93, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\Administrator\Documents\Codex\2026-10-30\new-chat\work\research-repo\research_20261030\planner\install_candidate.py", line 62, in main
+    raise ValueError('Refusing protected baseline/formal workspace; create an isolated workspace first')
+ValueError: Refusing protected baseline/formal workspace; create an isolated workspace first

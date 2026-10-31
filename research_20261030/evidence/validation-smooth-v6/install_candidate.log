@@ -1,0 +1,35 @@
+{
+  "applied": true,
+  "files": [
+    {
+      "path": "include\\plan_manage\\planner_manager.h",
+      "before": "652d28dcec5757f390766a72904f13ee48e79d95a32244184b9bd5a711065d37",
+      "after": "5ff24d13531f542d7c5caa7372c501eae606f04c6dc099d5342ddbab594fd167",
+      "backup": "include\\plan_manage\\planner_manager.h.pre_certified_shortcut"
+    },
+    {
+      "path": "src\\planner_manager.cpp",
+      "before": "88bcf44ceba458b2cd5a1bfe5d05d05e352b00d1fb70db107c449b897452731d",
+      "after": "a8526ec40bd450535627c063ee5ecd817900bfcc28656fa4010ba892d4c7a300",
+      "backup": "src\\planner_manager.cpp.pre_certified_shortcut"
+    },
+    {
+      "path": "src\\ego_replan_fsm.cpp",
+      "before": "c834de69cc610ebeefdf888098d43cfac511f6d7105d2d6d203cdce59a4579bf",
+      "after": "b335f12d30777e15e3fc777f110c067ddd1a7d6039e802b0e42dc6ef672b9b75",
+      "backup": "src\\ego_replan_fsm.cpp.pre_certified_shortcut"
+    },
+    {
+      "path": "include\\plan_manage\\certified_shortcut.hpp",
+      "before": null,
+      "after": "7ab36a21fefd000bff25afb8cb40a10386736f86fedc76d8ffcc4e4d1b95378b",
+      "backup": "include\\plan_manage\\certified_shortcut.hpp.pre_certified_shortcut"
+    },
+    {
+      "path": "include\\plan_manage\\ego_adapter.hpp",
+      "before": null,
+      "after": "d6dba1c3cb555eda4992ec4adf5f2b89da23a89babce531649573ff25acc2577",
+      "backup": "include\\plan_manage\\ego_adapter.hpp.pre_certified_shortcut"
+    }
+  ]
+}

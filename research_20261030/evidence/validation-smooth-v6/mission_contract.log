@@ -1,0 +1,10 @@
+[命令校验] 第1次生成不合格：full mission sequence mismatch: expected takeoff -> cross_frame -> detect_aruco -> return_cross_frame -> hit_balloon -> land; got takeoff -> detect_aruco -> return_cross_frame -> hit_balloon -> land
+[命令校验] 第1次生成不合格：full mission sequence mismatch: expected takeoff -> cross_frame -> detect_aruco -> return_cross_frame -> hit_balloon -> land; got takeoff -> detect_aruco -> return_cross_frame -> hit_balloon -> land
+[命令校验] 第2次生成不合格：full mission sequence mismatch: expected takeoff -> cross_frame -> detect_aruco -> return_cross_frame -> hit_balloon -> land; got takeoff -> detect_aruco -> return_cross_frame -> hit_balloon -> land
+[命令校验] 第3次生成不合格：full mission sequence mismatch: expected takeoff -> cross_frame -> detect_aruco -> return_cross_frame -> hit_balloon -> land; got takeoff -> detect_aruco -> return_cross_frame -> hit_balloon -> land
+[contract] No valid complete model response; no command published
+........
+----------------------------------------------------------------------
+Ran 8 tests in 0.004s
+
+OK

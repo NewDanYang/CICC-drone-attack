@@ -1,0 +1,524 @@
+
+[rebo replan]: -------------------------------------0
+start: 0 0 1, 0 0 0
+goal:0.75    0    1, 0 0 0
+[32miter(+1)=18,time(ms)=0.041,total_t(ms)=0.042,cost=0.030
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.000213[0m,optimize:0.000143,refine:6.99e-05
+des manager
+
+[rebo replan]: -------------------------------------1
+start: 0 0 1, 0 0 0
+goal:1.5   0   1, 0 0 0
+[32miter(+1)=21,time(ms)=0.047,total_t(ms)=0.047,cost=0.012
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.000219[0m,optimize:0.000122,refine:9.75e-05
+des manager
+
+[rebo replan]: -------------------------------------2
+start: 0 0 1, 0 0 0
+goal:2.5   0   1, 0 0 0
+[32miter(+1)=42,time(ms)=0.152,total_t(ms)=0.153,cost=0.015
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.000502[0m,optimize:0.000251,refine:0.000251
+des manager
+
+[rebo replan]: -------------------------------------3
+start: 0 0 1, 0 0 0
+goal:3.5   0   1, 0 0 0
+[32miter(+1)=57,time(ms)=0.267,total_t(ms)=0.267,cost=0.021
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.000767[0m,optimize:0.0004,refine:0.000367
+des manager
+
+[rebo replan]: -------------------------------------4
+start: 0 0 1, 0.15    0    0
+goal:0.75    0    1, 0 0 0
+[32miter(+1)=14,time(ms)=0.017,total_t(ms)=0.017,cost=0.006
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.000102[0m,optimize:5.73e-05,refine:4.44e-05
+des manager
+
+[rebo replan]: -------------------------------------5
+start: 0 0 1, 0.15    0    0
+goal:1.5   0   1, 0 0 0
+[32miter(+1)=40,time(ms)=0.089,total_t(ms)=0.090,cost=0.003
+[0mfirst_optimize_step_success=1
+total time:[42m0.000155[0m,optimize:0.000153,refine:1.7e-06
+des manager
+
+[rebo replan]: -------------------------------------6
+start: 0 0 1, 0.15    0    0
+goal:2.5   0   1, 0 0 0
+[32miter(+1)=64,time(ms)=0.240,total_t(ms)=0.240,cost=0.004
+[0mfirst_optimize_step_success=1
+total time:[42m0.000344[0m,optimize:0.000342,refine:2.7e-06
+des manager
+
+[rebo replan]: -------------------------------------7
+start: 0 0 1, 0.15    0    0
+goal:3.5   0   1, 0 0 0
+[32miter(+1)=93,time(ms)=0.460,total_t(ms)=0.460,cost=0.007
+[0mfirst_optimize_step_success=1
+total time:[42m0.000606[0m,optimize:0.000602,refine:3.1e-06
+des manager
+
+[rebo replan]: -------------------------------------8
+start: 0 0 1, 0.27    0    0
+goal:0.75    0    1, 0 0 0
+[32miter(+1)=11,time(ms)=0.013,total_t(ms)=0.013,cost=0.008
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m8.79e-05[0m,optimize:5.57e-05,refine:3.22e-05
+des manager
+
+[rebo replan]: -------------------------------------9
+start: 0 0 1, 0.27    0    0
+goal:1.5   0   1, 0 0 0
+[32miter(+1)=36,time(ms)=0.081,total_t(ms)=0.082,cost=0.001
+[0mfirst_optimize_step_success=1
+total time:[42m0.000162[0m,optimize:0.00016,refine:1.9e-06
+des manager
+
+[rebo replan]: -------------------------------------10
+start: 0 0 1, 0.27    0    0
+goal:2.5   0   1, 0 0 0
+[32miter(+1)=54,time(ms)=0.194,total_t(ms)=0.194,cost=0.002
+[0mfirst_optimize_step_success=1
+total time:[42m0.000298[0m,optimize:0.000295,refine:2.9e-06
+des manager
+
+[rebo replan]: -------------------------------------11
+start: 0 0 1, 0.27    0    0
+goal:3.5   0   1, 0 0 0
+[32miter(+1)=72,time(ms)=0.343,total_t(ms)=0.343,cost=0.006
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.000743[0m,optimize:0.000479,refine:0.000264
+des manager
+
+[rebo replan]: -------------------------------------12
+start: 0 0 1,    0 0.15    0
+goal:0.75    0    1, 0 0 0
+[32miter(+1)=18,time(ms)=0.029,total_t(ms)=0.030,cost=0.030
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.000132[0m,optimize:8.35e-05,refine:4.85e-05
+des manager
+
+[rebo replan]: -------------------------------------13
+start: 0 0 1,    0 0.15    0
+goal:1.5   0   1, 0 0 0
+[32miter(+1)=21,time(ms)=0.045,total_t(ms)=0.045,cost=0.012
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.000228[0m,optimize:0.000107,refine:0.00012
+des manager
+
+[rebo replan]: -------------------------------------14
+start: 0 0 1,    0 0.15    0
+goal:2.5   0   1, 0 0 0
+[32miter(+1)=42,time(ms)=0.148,total_t(ms)=0.148,cost=0.015
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.000538[0m,optimize:0.000245,refine:0.000293
+des manager
+
+[rebo replan]: -------------------------------------15
+start: 0 0 1,    0 0.15    0
+goal:3.5   0   1, 0 0 0
+[32miter(+1)=53,time(ms)=0.253,total_t(ms)=0.253,cost=0.022
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.000736[0m,optimize:0.00039,refine:0.000346
+des manager
+
+[rebo replan]: -------------------------------------16
+start: 0 0 1, 0.1 0.1   0
+goal:0.75    0    1, 0.15    0    0
+[32miter(+1)=12,time(ms)=0.013,total_t(ms)=0.013,cost=0.005
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m8.61e-05[0m,optimize:5.16e-05,refine:3.45e-05
+des manager
+
+[rebo replan]: -------------------------------------17
+start: 0 0 1, 0.1 0.1   0
+goal:1.5   0   1, 0.15    0    0
+[32miter(+1)=24,time(ms)=0.051,total_t(ms)=0.051,cost=0.001
+[0mfirst_optimize_step_success=1
+total time:[42m0.000119[0m,optimize:0.000118,refine:1.7e-06
+des manager
+
+[rebo replan]: -------------------------------------18
+start: 0 0 1, 0.1 0.1   0
+goal:2.5   0   1, 0.15    0    0
+[32miter(+1)=34,time(ms)=0.112,total_t(ms)=0.112,cost=0.002
+[0mfirst_optimize_step_success=1
+total time:[42m0.000209[0m,optimize:0.000207,refine:2.6e-06
+des manager
+
+[rebo replan]: -------------------------------------19
+start: 0 0 1, 0.1 0.1   0
+goal:3.5   0   1, 0.15    0    0
+[32miter(+1)=42,time(ms)=0.195,total_t(ms)=0.196,cost=0.003
+[0mfirst_optimize_step_success=1
+total time:[42m0.000362[0m,optimize:0.000358,refine:3.5e-06
+des manager
+
+[rebo replan]: -------------------------------------20
+start: 0 0 1, 0 0 0
+goal:0.75    0    1, 0 0 0
+[32miter(+1)=26,time(ms)=0.033,keep optimizing
+[0m[32miter(+1)=18,time(ms)=0.017,total_t(ms)=0.059,cost=0.142
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+[34mThis refined trajectory hits obstacles. It doesn't matter if appeares occasionally. But if continously appearing, Increase parameter "lambda_fitness".
+[0mdes manager
+
+[rebo replan]: -------------------------------------21
+start: 0 0 1, 0 0 0
+goal:1.5   0   1, 0 0 0
+[32miter(+1)=57,time(ms)=0.142,total_t(ms)=0.142,cost=0.013
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.0004[0m,optimize:0.00027,refine:0.00013
+des manager
+
+[rebo replan]: -------------------------------------22
+start: 0 0 1, 0 0 0
+goal:2.5   0   1, 0 0 0
+[32miter(+1)=54,time(ms)=0.186,total_t(ms)=0.186,cost=0.017
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.00067[0m,optimize:0.00035,refine:0.00033
+des manager
+
+[rebo replan]: -------------------------------------23
+start: 0 0 1, 0 0 0
+goal:3.5   0   1, 0 0 0
+iter=16,time(ms)=0.085,rebound.
+[32miter(+1)=66,time(ms)=0.303,total_t(ms)=0.393,cost=0.021
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.00093[0m,optimize:0.00057,refine:0.00036
+des manager
+
+[rebo replan]: -------------------------------------24
+start: 0 0 1, 0.15    0    0
+goal:0.75    0    1, 0 0 0
+[32miter(+1)=26,time(ms)=0.037,keep optimizing
+[0m[32miter(+1)=24,time(ms)=0.029,total_t(ms)=0.076,cost=0.193
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.00023[0m,optimize:0.00016,refine:6.8e-05
+des manager
+
+[rebo replan]: -------------------------------------25
+start: 0 0 1, 0.15    0    0
+goal:1.5   0   1, 0 0 0
+[32miter(+1)=64,time(ms)=0.143,total_t(ms)=0.143,cost=0.005
+[0mfirst_optimize_step_success=1
+total time:[42m0.00026[0m,optimize:0.00025,refine:1.9e-06
+des manager
+
+[rebo replan]: -------------------------------------26
+start: 0 0 1, 0.15    0    0
+goal:2.5   0   1, 0 0 0
+[32miter(+1)=76,time(ms)=0.268,total_t(ms)=0.268,cost=0.006
+[0mfirst_optimize_step_success=1
+total time:[42m0.0004[0m,optimize:0.0004,refine:2.8e-06
+des manager
+
+[rebo replan]: -------------------------------------27
+start: 0 0 1, 0.15    0    0
+goal:3.5   0   1, 0 0 0
+[32miter(+1)=90,time(ms)=0.432,total_t(ms)=0.432,cost=0.013
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.00094[0m,optimize:0.00062,refine:0.00031
+des manager
+
+[rebo replan]: -------------------------------------28
+start: 0 0 1, 0.27    0    0
+goal:0.75    0    1, 0 0 0
+[32miter(+1)=13,time(ms)=0.012,keep optimizing
+[0m[32miter(+1)=10,time(ms)=0.009,keep optimizing
+[0m[32miter(+1)=13,time(ms)=0.011,total_t(ms)=0.054,cost=0.582
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+[34mThis refined trajectory hits obstacles. It doesn't matter if appeares occasionally. But if continously appearing, Increase parameter "lambda_fitness".
+[0mdes manager
+
+[rebo replan]: -------------------------------------29
+start: 0 0 1, 0.27    0    0
+goal:1.5   0   1, 0 0 0
+[32miter(+1)=71,time(ms)=0.161,total_t(ms)=0.161,cost=0.003
+[0mfirst_optimize_step_success=1
+total time:[42m0.00026[0m,optimize:0.00026,refine:1.8e-06
+des manager
+
+[rebo replan]: -------------------------------------30
+start: 0 0 1, 0.27    0    0
+goal:2.5   0   1, 0 0 0
+[32miter(+1)=75,time(ms)=0.261,total_t(ms)=0.261,cost=0.004
+[0mfirst_optimize_step_success=1
+total time:[42m0.00041[0m,optimize:0.00041,refine:2.7e-06
+des manager
+
+[rebo replan]: -------------------------------------31
+start: 0 0 1, 0.27    0    0
+goal:3.5   0   1, 0 0 0
+[32miter(+1)=87,time(ms)=0.409,total_t(ms)=0.409,cost=0.007
+[0mfirst_optimize_step_success=1
+total time:[42m0.00062[0m,optimize:0.00061,refine:3.8e-06
+des manager
+
+[rebo replan]: -------------------------------------32
+start: 0 0 1,    0 0.15    0
+goal:0.75    0    1, 0 0 0
+[32miter(+1)=32,time(ms)=0.039,keep optimizing
+[0m[32miter(+1)=11,time(ms)=0.011,total_t(ms)=0.057,cost=0.088
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+[34mThis refined trajectory hits obstacles. It doesn't matter if appeares occasionally. But if continously appearing, Increase parameter "lambda_fitness".
+[0mdes manager
+
+[rebo replan]: -------------------------------------33
+start: 0 0 1,    0 0.15    0
+goal:1.5   0   1, 0 0 0
+[32miter(+1)=61,time(ms)=0.141,total_t(ms)=0.141,cost=0.013
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.00038[0m,optimize:0.00023,refine:0.00015
+des manager
+
+[rebo replan]: -------------------------------------34
+start: 0 0 1,    0 0.15    0
+goal:2.5   0   1, 0 0 0
+[32miter(+1)=46,time(ms)=0.158,total_t(ms)=0.159,cost=0.016
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.000527[0m,optimize:0.000272,refine:0.000255
+des manager
+
+[rebo replan]: -------------------------------------35
+start: 0 0 1,    0 0.15    0
+goal:3.5   0   1, 0 0 0
+[32miter(+1)=53,time(ms)=0.246,total_t(ms)=0.246,cost=0.022
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.000745[0m,optimize:0.000402,refine:0.000344
+des manager
+
+[rebo replan]: -------------------------------------36
+start: 0 0 1, 0.1 0.1   0
+goal:0.75    0    1, 0.15    0    0
+iter=5,time(ms)=0.0618,rebound.
+[32miter(+1)=14,time(ms)=0.009,keep optimizing
+[0m[32miter(+1)=10,time(ms)=0.006,keep optimizing
+[0m[32miter(+1)=16,time(ms)=0.009,keep optimizing
+[0mfirst_optimize_step_success=0
+des manager
+
+[rebo replan]: -------------------------------------37
+start: 0 0 1, 0.1 0.1   0
+goal:1.5   0   1, 0.15    0    0
+iter=9,time(ms)=0.022,rebound.
+[32miter(+1)=72,time(ms)=0.161,total_t(ms)=0.187,cost=0.003
+[0mfirst_optimize_step_success=1
+total time:[42m0.00028[0m,optimize:0.00028,refine:1.9e-06
+des manager
+
+[rebo replan]: -------------------------------------38
+start: 0 0 1, 0.1 0.1   0
+goal:2.5   0   1, 0.15    0    0
+[32miter(+1)=45,time(ms)=0.147,total_t(ms)=0.148,cost=0.004
+[0mfirst_optimize_step_success=1
+total time:[42m0.00028[0m,optimize:0.00027,refine:2.7e-06
+des manager
+
+[rebo replan]: -------------------------------------39
+start: 0 0 1, 0.1 0.1   0
+goal:3.5   0   1, 0.15    0    0
+[32miter(+1)=55,time(ms)=0.250,total_t(ms)=0.251,cost=0.005
+[0mfirst_optimize_step_success=1
+total time:[42m0.00041[0m,optimize:0.00041,refine:3.6e-06
+des manager
+
+[rebo replan]: -------------------------------------40
+start: 0 0 1, 0 0 0
+goal:0.75    0    1, 0 0 0
+[32miter(+1)=18,time(ms)=0.019,total_t(ms)=0.020,cost=0.030
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.000116[0m,optimize:6.91e-05,refine:4.71e-05
+des manager
+
+[rebo replan]: -------------------------------------41
+start: 0 0 1, 0 0 0
+goal:1.5   0   1, 0 0 0
+[32miter(+1)=21,time(ms)=0.037,total_t(ms)=0.038,cost=0.012
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.000213[0m,optimize:0.000113,refine:9.98e-05
+des manager
+
+[rebo replan]: -------------------------------------42
+start: 0 0 1, 0 0 0
+goal:2.5   0   1, 0 0 0
+[32miter(+1)=42,time(ms)=0.136,total_t(ms)=0.137,cost=0.015
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.000473[0m,optimize:0.000236,refine:0.000237
+des manager
+
+[rebo replan]: -------------------------------------43
+start: 0 0 1, 0 0 0
+goal:3.5   0   1, 0 0 0
+[32miter(+1)=57,time(ms)=0.268,total_t(ms)=0.269,cost=0.021
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.000801[0m,optimize:0.000436,refine:0.000365
+des manager
+
+[rebo replan]: -------------------------------------44
+start: 0 0 1, 0.15    0    0
+goal:0.75    0    1, 0 0 0
+[32miter(+1)=14,time(ms)=0.016,total_t(ms)=0.017,cost=0.006
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.000119[0m,optimize:6.97e-05,refine:4.91e-05
+des manager
+
+[rebo replan]: -------------------------------------45
+start: 0 0 1, 0.15    0    0
+goal:1.5   0   1, 0 0 0
+[32miter(+1)=40,time(ms)=0.085,total_t(ms)=0.085,cost=0.003
+[0mfirst_optimize_step_success=1
+total time:[42m0.000167[0m,optimize:0.000163,refine:3.4e-06
+des manager
+
+[rebo replan]: -------------------------------------46
+start: 0 0 1, 0.15    0    0
+goal:2.5   0   1, 0 0 0
+[32miter(+1)=64,time(ms)=0.234,total_t(ms)=0.234,cost=0.004
+[0mfirst_optimize_step_success=1
+total time:[42m0.000355[0m,optimize:0.000347,refine:8.3e-06
+des manager
+
+[rebo replan]: -------------------------------------47
+start: 0 0 1, 0.15    0    0
+goal:3.5   0   1, 0 0 0
+[32miter(+1)=93,time(ms)=0.460,total_t(ms)=0.461,cost=0.007
+[0mfirst_optimize_step_success=1
+total time:[42m0.000625[0m,optimize:0.00062,refine:5.2e-06
+des manager
+
+[rebo replan]: -------------------------------------48
+start: 0 0 1, 0.27    0    0
+goal:0.75    0    1, 0 0 0
+[32miter(+1)=11,time(ms)=0.011,total_t(ms)=0.012,cost=0.008
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m8.98e-05[0m,optimize:5.64e-05,refine:3.34e-05
+des manager
+
+[rebo replan]: -------------------------------------49
+start: 0 0 1, 0.27    0    0
+goal:1.5   0   1, 0 0 0
+[32miter(+1)=36,time(ms)=0.077,total_t(ms)=0.077,cost=0.001
+[0mfirst_optimize_step_success=1
+total time:[42m0.000158[0m,optimize:0.000155,refine:2.9e-06
+des manager
+
+[rebo replan]: -------------------------------------50
+start: 0 0 1, 0.27    0    0
+goal:2.5   0   1, 0 0 0
+[32miter(+1)=54,time(ms)=0.243,total_t(ms)=0.244,cost=0.002
+[0mfirst_optimize_step_success=1
+total time:[42m0.000413[0m,optimize:0.000409,refine:3.3e-06
+des manager
+
+[rebo replan]: -------------------------------------51
+start: 0 0 1, 0.27    0    0
+goal:3.5   0   1, 0 0 0
+[32miter(+1)=72,time(ms)=0.344,total_t(ms)=0.345,cost=0.006
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.000777[0m,optimize:0.000496,refine:0.000281
+des manager
+
+[rebo replan]: -------------------------------------52
+start: 0 0 1,    0 0.15    0
+goal:0.75    0    1, 0 0 0
+[32miter(+1)=18,time(ms)=0.020,total_t(ms)=0.020,cost=0.030
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.000124[0m,optimize:7.32e-05,refine:5.13e-05
+des manager
+
+[rebo replan]: -------------------------------------53
+start: 0 0 1,    0 0.15    0
+goal:1.5   0   1, 0 0 0
+[32miter(+1)=21,time(ms)=0.044,total_t(ms)=0.044,cost=0.012
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.000247[0m,optimize:0.000122,refine:0.000125
+des manager
+
+[rebo replan]: -------------------------------------54
+start: 0 0 1,    0 0.15    0
+goal:2.5   0   1, 0 0 0
+[32miter(+1)=42,time(ms)=0.151,total_t(ms)=0.152,cost=0.015
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.00063[0m,optimize:0.000271,refine:0.000359
+des manager
+
+[rebo replan]: -------------------------------------55
+start: 0 0 1,    0 0.15    0
+goal:3.5   0   1, 0 0 0
+[32miter(+1)=53,time(ms)=0.260,total_t(ms)=0.260,cost=0.022
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.000792[0m,optimize:0.000416,refine:0.000376
+des manager
+
+[rebo replan]: -------------------------------------56
+start: 0 0 1, 0.1 0.1   0
+goal:0.75    0    1, 0.15    0    0
+[32miter(+1)=12,time(ms)=0.011,total_t(ms)=0.012,cost=0.005
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m9.24e-05[0m,optimize:5.56e-05,refine:3.68e-05
+des manager
+
+[rebo replan]: -------------------------------------57
+start: 0 0 1, 0.1 0.1   0
+goal:1.5   0   1, 0.15    0    0
+[32miter(+1)=24,time(ms)=0.069,total_t(ms)=0.069,cost=0.001
+[0mfirst_optimize_step_success=1
+total time:[42m0.000181[0m,optimize:0.000178,refine:3e-06
+des manager
+
+[rebo replan]: -------------------------------------58
+start: 0 0 1, 0.1 0.1   0
+goal:2.5   0   1, 0.15    0    0
+[32miter(+1)=34,time(ms)=0.115,total_t(ms)=0.115,cost=0.002
+[0mfirst_optimize_step_success=1
+total time:[42m0.000235[0m,optimize:0.000231,refine:4.3e-06
+des manager
+
+[rebo replan]: -------------------------------------59
+start: 0 0 1, 0.1 0.1   0
+goal:3.5   0   1, 0.15    0    0
+[32miter(+1)=42,time(ms)=0.200,total_t(ms)=0.200,cost=0.003
+[0mfirst_optimize_step_success=1
+total time:[42m0.000359[0m,optimize:0.000354,refine:5.2e-06
+des manager

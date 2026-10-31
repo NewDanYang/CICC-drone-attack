@@ -1,0 +1,15 @@
+{
+  "repository": "NewDanYang/CICC-drone-attack",
+  "commit": "8d0c9694f99a1cd8c86b11bd93a2590bffc2f4e8",
+  "base": "6499977d076a940b07e4466543f2ed1cbd306a3e",
+  "date": "2026-10-30",
+  "ssh_endpoint": "120.209.70.195:30316",
+  "ssh_tcp_result": 10061,
+  "server_authenticated": false,
+  "server_mutations": false,
+  "new_flights": 0,
+  "upstream_publication": false,
+  "updated_date": "2026-10-31",
+  "current_validation": "validation-smooth-v6",
+  "old_validation_preserved": "validation"
+}

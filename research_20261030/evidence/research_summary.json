@@ -1,0 +1,71 @@
+{
+  "scope": "synthetic maps and states; unchanged official EGO solver; offline, not flight",
+  "total_cases": 60,
+  "original_solver_returned_trajectory": 56,
+  "original_failures_preserved": 4,
+  "ungated_selected": 7,
+  "smoothness_guard_selected": 2,
+  "fallback_trajectories": 54,
+  "all_solved_case_median_time_reduction_percent": 0.0,
+  "all_solved_case_mean_time_reduction_percent": 0.40823929623495636,
+  "selected_cases": [
+    {
+      "case": "3",
+      "map": "0",
+      "profile": "0",
+      "distance": "3.5",
+      "success": "1",
+      "original_s": "13.2143763581",
+      "original_jerk_exact": "0.28866194233",
+      "original_jerk_sampled": "0.288596790962",
+      "ungated_accepted": "1",
+      "ungated_s": "12.6285303978",
+      "ungated_jerk_sampled": "0.437827222516",
+      "guarded_accepted": "1",
+      "guarded_s": "12.9500888309",
+      "guarded_jerk_sampled": "0.268731223923",
+      "guarded_ms": "2.8381",
+      "guarded_peak_velocity": "0.299882856059",
+      "time_reduction_percent": 2.0000000002875717,
+      "sampled_jerk_rms_reduction_percent": 6.883502402358932
+    },
+    {
+      "case": "11",
+      "map": "0",
+      "profile": "2",
+      "distance": "3.5",
+      "success": "1",
+      "original_s": "16.5287349486",
+      "original_jerk_exact": "0.0853054438706",
+      "original_jerk_sampled": "0.085272034175",
+      "ungated_accepted": "1",
+      "ungated_s": "12.2303681811",
+      "ungated_jerk_sampled": "0.328471243808",
+      "guarded_accepted": "1",
+      "guarded_s": "13.0806093387",
+      "guarded_jerk_sampled": "0.0629552165509",
+      "guarded_ms": "2.2245",
+      "guarded_peak_velocity": "0.299636348188",
+      "time_reduction_percent": 20.861400588869984,
+      "sampled_jerk_rms_reduction_percent": 26.171320808766197
+    }
+  ],
+  "map_groups": {
+    "0": {
+      "cases": 20,
+      "selected": 2
+    },
+    "1": {
+      "cases": 20,
+      "selected": 0
+    },
+    "2": {
+      "cases": 20,
+      "selected": 0
+    }
+  },
+  "new_flights": 0,
+  "recommended_for_competition": false,
+  "runtime_version_verified": false,
+  "acceptance": "research candidate only; missing live known-free map and full flight verification"
+}

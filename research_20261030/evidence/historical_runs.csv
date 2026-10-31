@@ -1,0 +1,10 @@
+boundary_events,bt_success,color,observer_hit_status,observer_mission_success,planning_1_s,planning_2_s,planning_3_s,planning_count,planning_total_s,total_s,trial
+0,true,blue,,false,16.099,2.994,14.116,3,33.209,98.715,r1_blue_a1
+0,true,purple,,false,16.456,4.875,10.801,3,32.132,147.371,r1_purple_a1
+0,true,red,,false,15.98,3.59,11.28,3,30.85,126.851,r1_red_a1
+0,true,blue,,false,14.26,4.399,13.52,3,32.179,106.083,r2_blue_a1
+4,true,purple,,false,17.846,3.712,9.367,3,30.925,142.541,r2_purple_a1
+0,true,red,success,true,16.184,3.681,10.001,3,29.866,97.165,r2_red_a1
+0,true,blue,success,true,16.577,4.398,13.207,3,34.182,120.038,r3_blue_a1
+0,true,purple,,false,16.577,3.681,11.509,3,31.767000000000003,138.391,r3_purple_a1
+0,true,red,,false,14.907,3.318,10.924,3,29.149,126.525,r3_red_a1
