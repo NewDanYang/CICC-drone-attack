@@ -1,0 +1,13 @@
+{
+  "stage": "A",
+  "stage_a_complete": true,
+  "stage_b_entered": false,
+  "stage_c_entered": false,
+  "stage_d_entered": false,
+  "selected_variant": null,
+  "runtime_files_changed": [],
+  "reason": "All four independent variants failed at least two development gates on the nine-window development set.",
+  "competition_model_changed": false,
+  "visual_servo_changed": false,
+  "velocity_or_waypoint_changed": false
+}

@@ -1,0 +1,15 @@
+{
+  "server": "120.209.70.195:30316",
+  "archive": "/tmp/p11_replays.tar.gz",
+  "archive_sha256": "ed5c94edc20c26d35eb20a5c70a8663f0283280b52748306f1060cff65464a65",
+  "remote_tools": "/root/gpufree-data/fm_research/tools/p11_servo_replay.py",
+  "remote_evidence": [
+    "/root/gpufree-data/fm_research/evidence/p11_A1",
+    "/root/gpufree-data/fm_research/evidence/p11_A2",
+    "/root/gpufree-data/fm_research/evidence/p11_A3",
+    "/root/gpufree-data/fm_research/evidence/p11_A4"
+  ],
+  "runtime_modified": false,
+  "formal_trial_lock_checked": true,
+  "formal_trial_lock_present": false
+}
