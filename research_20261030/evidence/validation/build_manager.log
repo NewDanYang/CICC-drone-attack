@@ -1,0 +1,7 @@
+In file included from C:\Users\Administrator\Documents\Codex\2026-10-30\new-chat\work\research-repo\research_20261030\tests\benchmark_manager.cpp:1:
+In file included from C:\Users\Administrator\Documents\Codex\2026-10-30\new-chat\work\research-repo\official_baseline\catkin_ws\src\ego-planner\src\planner\plan_manage\include/plan_manage/planner_manager.h:10:
+In file included from C:\Users\Administrator\Documents\Codex\2026-10-30\new-chat\work\research-repo\official_baseline\catkin_ws\src\ego-planner\src\planner\plan_manage\include/plan_manage/plan_container.hpp:9:
+C:\Users\Administrator\Documents\Codex\2026-10-30\new-chat\work\research-repo\official_baseline\catkin_ws\src\ego-planner\src\planner\traj_utils\include/traj_utils/polynomial_traj.h:198:3: warning: non-void function does not return a value [-Wreturn-type]
+  198 |   }
+      |   ^
+1 warning generated.

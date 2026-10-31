@@ -1,0 +1,302 @@
+{
+  "kind": "offline_only_no_ROS_no_flight",
+  "commands": [
+    {
+      "name": "build_core",
+      "argv": [
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\compiler-mirror\\ziglang\\zig.exe",
+        "c++",
+        "-std=c++14",
+        "-O2",
+        "-Wno-narrowing",
+        "-IC:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\research_20261030\\tests\\stubs",
+        "-IC:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\eigen\\eigenteam-eigen-git-mirror-cf794d3",
+        "-IC:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\plan_manage\\include",
+        "-IC:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\bspline_opt\\include",
+        "-IC:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\path_searching\\include",
+        "-IC:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\traj_utils\\include",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\research_20261030\\tests\\test_core.cpp",
+        "-o",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\validation-smooth-v6\\core.exe"
+      ],
+      "exit_code": 0,
+      "seconds": 3.703000000000202
+    },
+    {
+      "name": "run_core",
+      "argv": [
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\validation-smooth-v6\\core.exe"
+      ],
+      "exit_code": 0,
+      "seconds": 0.07799999999997453
+    },
+    {
+      "name": "build_upstream",
+      "argv": [
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\compiler-mirror\\ziglang\\zig.exe",
+        "c++",
+        "-std=c++14",
+        "-O2",
+        "-Wno-narrowing",
+        "-IC:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\research_20261030\\tests\\stubs",
+        "-IC:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\eigen\\eigenteam-eigen-git-mirror-cf794d3",
+        "-IC:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\plan_manage\\include",
+        "-IC:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\bspline_opt\\include",
+        "-IC:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\path_searching\\include",
+        "-IC:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\traj_utils\\include",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\research_20261030\\tests\\test_upstream_bspline.cpp",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\bspline_opt\\src\\uniform_bspline.cpp",
+        "-o",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\validation-smooth-v6\\upstream.exe"
+      ],
+      "exit_code": 0,
+      "seconds": 4.125
+    },
+    {
+      "name": "run_upstream",
+      "argv": [
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\validation-smooth-v6\\upstream.exe"
+      ],
+      "exit_code": 0,
+      "seconds": 0.07799999999997453
+    },
+    {
+      "name": "build_manager",
+      "argv": [
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\compiler-mirror\\ziglang\\zig.exe",
+        "c++",
+        "-std=c++14",
+        "-O2",
+        "-Wno-narrowing",
+        "-IC:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\research_20261030\\tests\\stubs",
+        "-IC:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\eigen\\eigenteam-eigen-git-mirror-cf794d3",
+        "-IC:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\plan_manage\\include",
+        "-IC:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\bspline_opt\\include",
+        "-IC:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\path_searching\\include",
+        "-IC:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\traj_utils\\include",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\research_20261030\\tests\\benchmark_manager.cpp",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\plan_manage\\src\\planner_manager.cpp",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\bspline_opt\\src\\bspline_optimizer.cpp",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\bspline_opt\\src\\uniform_bspline.cpp",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\path_searching\\src\\dyn_a_star.cpp",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\traj_utils\\src\\polynomial_traj.cpp",
+        "-o",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\validation-smooth-v6\\manager.exe"
+      ],
+      "exit_code": 0,
+      "seconds": 7.828999999999951
+    },
+    {
+      "name": "run_manager",
+      "argv": [
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\validation-smooth-v6\\manager.exe",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\validation-smooth-v6\\manager_benchmark.csv"
+      ],
+      "exit_code": 0,
+      "seconds": 0.125
+    },
+    {
+      "name": "run_manager_v1",
+      "argv": [
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\validation-smooth-v6\\manager.exe",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\validation-smooth-v6\\manager_v1.csv",
+        "v1"
+      ],
+      "exit_code": 0,
+      "seconds": 0.07799999999997453
+    },
+    {
+      "name": "run_manager_v2",
+      "argv": [
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\validation-smooth-v6\\manager.exe",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\validation-smooth-v6\\manager_v2.csv",
+        "v2"
+      ],
+      "exit_code": 0,
+      "seconds": 0.09300000000007458
+    },
+    {
+      "name": "build_replanning",
+      "argv": [
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\compiler-mirror\\ziglang\\zig.exe",
+        "c++",
+        "-std=c++14",
+        "-O2",
+        "-Wno-narrowing",
+        "-IC:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\research_20261030\\tests\\stubs",
+        "-IC:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\eigen\\eigenteam-eigen-git-mirror-cf794d3",
+        "-IC:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\plan_manage\\include",
+        "-IC:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\bspline_opt\\include",
+        "-IC:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\path_searching\\include",
+        "-IC:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\traj_utils\\include",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\research_20261030\\tests\\benchmark_replanning.cpp",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\plan_manage\\src\\planner_manager.cpp",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\bspline_opt\\src\\bspline_optimizer.cpp",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\bspline_opt\\src\\uniform_bspline.cpp",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\path_searching\\src\\dyn_a_star.cpp",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\traj_utils\\src\\polynomial_traj.cpp",
+        "-o",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\validation-smooth-v6\\replanning.exe"
+      ],
+      "exit_code": 0,
+      "seconds": 10.8599999999999
+    },
+    {
+      "name": "run_replanning",
+      "argv": [
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\validation-smooth-v6\\replanning.exe",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\validation-smooth-v6\\replanning_benchmark.csv"
+      ],
+      "exit_code": 0,
+      "seconds": 4.280999999999949
+    },
+    {
+      "name": "mission_contract",
+      "argv": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\research_20261030\\tests\\test_mission_contract.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.07799999999997453
+    },
+    {
+      "name": "runtime_probe_parser",
+      "argv": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\research_20261030\\tests\\test_runtime_probe.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.07799999999997453
+    },
+    {
+      "name": "install_candidate",
+      "argv": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\research_20261030\\planner\\install_candidate.py",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\validation-smooth-v6\\isolated_plan_manage",
+        "--apply"
+      ],
+      "exit_code": 0,
+      "seconds": 0.047000000000025466
+    },
+    {
+      "name": "build_patched_manager",
+      "argv": [
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\compiler-mirror\\ziglang\\zig.exe",
+        "c++",
+        "-IC:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\validation-smooth-v6\\isolated_plan_manage\\include",
+        "-std=c++14",
+        "-O2",
+        "-Wno-narrowing",
+        "-IC:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\research_20261030\\tests\\stubs",
+        "-IC:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\eigen\\eigenteam-eigen-git-mirror-cf794d3",
+        "-IC:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\plan_manage\\include",
+        "-IC:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\bspline_opt\\include",
+        "-IC:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\path_searching\\include",
+        "-IC:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\traj_utils\\include",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\research_20261030\\tests\\benchmark_manager.cpp",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\validation-smooth-v6\\isolated_plan_manage\\src\\planner_manager.cpp",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\bspline_opt\\src\\bspline_optimizer.cpp",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\bspline_opt\\src\\uniform_bspline.cpp",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\path_searching\\src\\dyn_a_star.cpp",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\traj_utils\\src\\polynomial_traj.cpp",
+        "-o",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\validation-smooth-v6\\patched_manager.exe"
+      ],
+      "exit_code": 0,
+      "seconds": 15.766000000000076
+    },
+    {
+      "name": "run_patched_default_off",
+      "argv": [
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\validation-smooth-v6\\patched_manager.exe",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\validation-smooth-v6\\patched_default_off.csv"
+      ],
+      "exit_code": 0,
+      "seconds": 0.1089999999999236
+    },
+    {
+      "name": "run_patched_runtime_on",
+      "argv": [
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\validation-smooth-v6\\patched_manager.exe",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\validation-smooth-v6\\patched_runtime_on.csv",
+        "runtime"
+      ],
+      "exit_code": 0,
+      "seconds": 0.11000000000012733
+    },
+    {
+      "name": "build_patched_replanning",
+      "argv": [
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\compiler-mirror\\ziglang\\zig.exe",
+        "c++",
+        "-IC:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\validation-smooth-v6\\isolated_plan_manage\\include",
+        "-std=c++14",
+        "-O2",
+        "-Wno-narrowing",
+        "-IC:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\research_20261030\\tests\\stubs",
+        "-IC:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\eigen\\eigenteam-eigen-git-mirror-cf794d3",
+        "-IC:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\plan_manage\\include",
+        "-IC:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\bspline_opt\\include",
+        "-IC:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\path_searching\\include",
+        "-IC:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\traj_utils\\include",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\research_20261030\\tests\\benchmark_replanning.cpp",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\validation-smooth-v6\\isolated_plan_manage\\src\\planner_manager.cpp",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\bspline_opt\\src\\bspline_optimizer.cpp",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\bspline_opt\\src\\uniform_bspline.cpp",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\path_searching\\src\\dyn_a_star.cpp",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\traj_utils\\src\\polynomial_traj.cpp",
+        "-o",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\validation-smooth-v6\\patched_replanning.exe"
+      ],
+      "exit_code": 0,
+      "seconds": 16.092999999999847
+    },
+    {
+      "name": "run_patched_replanning",
+      "argv": [
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\validation-smooth-v6\\patched_replanning.exe",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\validation-smooth-v6\\patched_replanning.csv",
+        "runtime"
+      ],
+      "exit_code": 0,
+      "seconds": 4.25
+    },
+    {
+      "name": "rollback_candidate",
+      "argv": [
+        "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\research-repo\\research_20261030\\planner\\install_candidate.py",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-30\\new-chat\\work\\validation-smooth-v6\\isolated_plan_manage",
+        "--rollback"
+      ],
+      "exit_code": 0,
+      "seconds": 0.047000000000025466
+    }
+  ],
+  "source_sha256": {
+    "official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\plan_manage\\src\\planner_manager.cpp": "88bcf44ceba458b2cd5a1bfe5d05d05e352b00d1fb70db107c449b897452731d",
+    "official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\bspline_opt\\src\\bspline_optimizer.cpp": "7ff7f95f4456a75ff1d6700a46698ea99fbc757b7b044b635b7e3d21909e2bae",
+    "official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\bspline_opt\\src\\uniform_bspline.cpp": "c61109369e880d82312336d8b2617b71b60f1ee40a5635fab26811ebf178d339",
+    "official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\path_searching\\src\\dyn_a_star.cpp": "9878feb21052e2946335c2d5256c2dacdc2c9d3d938a3a3f6e821ff400dfb064",
+    "official_baseline\\catkin_ws\\src\\ego-planner\\src\\planner\\traj_utils\\src\\polynomial_traj.cpp": "608005c392dbfa46315cfa3f6e5f3b9db5bc3a10cb3f9ac539c3321505acdb18"
+  },
+  "checks": [
+    {
+      "runtime_selected_trajectories_matching_adapter": 0
+    },
+    {
+      "extended_runtime_selected_matches": 2,
+      "synthetic_cases": 60
+    },
+    {
+      "installer_rollback_original_files": 14,
+      "all_hashes_restored": true
+    }
+  ],
+  "passed": true
+}

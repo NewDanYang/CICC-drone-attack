@@ -1,0 +1,124 @@
+
+[rebo replan]: -------------------------------------0
+start: 0 0 1, 0 0 0
+goal:0.5   0   1, 0 0 0
+[32miter(+1)=12,time(ms)=0.025,total_t(ms)=0.025,cost=0.033
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.000143[0m,optimize:0.000103,refine:3.97e-05
+
+[rebo replan]: -------------------------------------1
+start: 0 0 1, 0 0 0
+goal:1 0 1, 0 0 0
+[32miter(+1)=23,time(ms)=0.034,total_t(ms)=0.034,cost=0.029
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.000145[0m,optimize:7.16e-05,refine:7.37e-05
+
+[rebo replan]: -------------------------------------2
+start: 0 0 1, 0 0 0
+goal:2 0 1, 0 0 0
+[32miter(+1)=30,time(ms)=0.097,total_t(ms)=0.097,cost=0.013
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.000366[0m,optimize:0.00016,refine:0.000206
+
+[rebo replan]: -------------------------------------3
+start: 0 0 1, 0 0 0
+goal:3 0 1, 0 0 0
+[32miter(+1)=45,time(ms)=0.183,total_t(ms)=0.183,cost=0.019
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.000592[0m,optimize:0.000276,refine:0.000316
+
+[rebo replan]: -------------------------------------4
+start: 0 0 1, 0 0 0
+goal:4 0 1, 0 0 0
+[32miter(+1)=54,time(ms)=0.319,total_t(ms)=0.319,cost=0.010
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.00099[0m,optimize:0.000474,refine:0.000516
+
+[rebo replan]: -------------------------------------5
+start: 0 0 1, 0 0 0
+goal:0.5   0   1, 0 0 0
+iter=5,time(ms)=0.0565,rebound.
+[32miter(+1)=20,time(ms)=0.019,keep optimizing
+[0m[32miter(+1)=11,time(ms)=0.010,keep optimizing
+[0m[32miter(+1)=10,time(ms)=0.009,keep optimizing
+[0mfirst_optimize_step_success=0
+
+[rebo replan]: -------------------------------------6
+start: 0 0 1, 0 0 0
+goal:1 0 1, 0 0 0
+[32miter(+1)=51,time(ms)=0.076,total_t(ms)=0.076,cost=0.037
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.0002[0m,optimize:0.00013,refine:7.3e-05
+
+[rebo replan]: -------------------------------------7
+start: 0 0 1, 0 0 0
+goal:2 0 1, 0 0 0
+[32miter(+1)=65,time(ms)=0.191,total_t(ms)=0.191,cost=0.015
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.00046[0m,optimize:0.00026,refine:0.0002
+
+[rebo replan]: -------------------------------------8
+start: 0 0 1, 0 0 0
+goal:3 0 1, 0 0 0
+iter=18,time(ms)=0.06,rebound.
+[32miter(+1)=45,time(ms)=0.190,total_t(ms)=0.254,cost=0.018
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.00073[0m,optimize:0.00036,refine:0.00037
+
+[rebo replan]: -------------------------------------9
+start: 0 0 1, 0 0 0
+goal:4 0 1, 0 0 0
+iter=6,time(ms)=0.021,rebound.
+[32miter(+1)=67,time(ms)=0.374,total_t(ms)=0.399,cost=0.011
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.00098[0m,optimize:0.00055,refine:0.00042
+
+[rebo replan]: -------------------------------------10
+start: 0 0 1, 0 0 0
+goal:0.5   0   1, 0 0 0
+[32miter(+1)=12,time(ms)=0.011,total_t(ms)=0.011,cost=0.033
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m5.79e-05[0m,optimize:3.09e-05,refine:2.7e-05
+
+[rebo replan]: -------------------------------------11
+start: 0 0 1, 0 0 0
+goal:1 0 1, 0 0 0
+[32miter(+1)=23,time(ms)=0.027,total_t(ms)=0.027,cost=0.029
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.000117[0m,optimize:5.65e-05,refine:6.04e-05
+
+[rebo replan]: -------------------------------------12
+start: 0 0 1, 0 0 0
+goal:2 0 1, 0 0 0
+[32miter(+1)=30,time(ms)=0.079,total_t(ms)=0.080,cost=0.013
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.000347[0m,optimize:0.000133,refine:0.000214
+
+[rebo replan]: -------------------------------------13
+start: 0 0 1, 0 0 0
+goal:3 0 1, 0 0 0
+[32miter(+1)=45,time(ms)=0.180,total_t(ms)=0.180,cost=0.019
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.00057[0m,optimize:0.000258,refine:0.000312
+
+[rebo replan]: -------------------------------------14
+start: 0 0 1, 0 0 0
+goal:4 0 1, 0 0 0
+[32miter(+1)=54,time(ms)=0.291,total_t(ms)=0.291,cost=0.010
+[0mfirst_optimize_step_success=1
+Need to reallocate time.
+total time:[42m0.000918[0m,optimize:0.000428,refine:0.00049
+des manager

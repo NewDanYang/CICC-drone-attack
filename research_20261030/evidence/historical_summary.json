@@ -1,0 +1,46 @@
+{
+  "kind": "reanalysis_of_historical_flight_not_new_flight",
+  "n": 9,
+  "source": "v3_stability\\reports\\hit_balloon_part1_1.8\\evidence\\batch5_evidence.tar.gz",
+  "source_sha256": "844b8d729eff4612de41f6063a92e1a952b429e7c2530c2eb92d06068f7f331a",
+  "median_total_s": 126.525,
+  "color_medians_s": {
+    "red": 126.525,
+    "purple": 142.541,
+    "blue": 106.083
+  },
+  "user_required_reference_s": {
+    "overall": 105.594,
+    "red": 133.99,
+    "purple": 105.594,
+    "blue": 98.896
+  },
+  "user_required_targets_120pct_s": {
+    "overall": 126.7128,
+    "red": 160.788,
+    "purple": 126.7128,
+    "blue": 118.6752
+  },
+  "baseline_discrepancy": "This archived batch is NOT the user-specified 105.594s reference. Do not replace the acceptance target with this batch.",
+  "bt_success_count": 9,
+  "observer_mission_success_count": 2,
+  "physical_hit_count_from_published_frame_review": 8,
+  "physical_hit_note": "8/9 is the historical report frame review, not inferred anew from SUCCESS or Actor count.",
+  "recent_report_only": [
+    {
+      "color": "purple",
+      "total_s": 141.199,
+      "physical": "reported miss"
+    },
+    {
+      "color": "blue",
+      "total_s": 141.652,
+      "physical": "human reported hit; automatic evidence inconsistent"
+    },
+    {
+      "color": "red",
+      "total_s": 216.383,
+      "physical": "invalid complete comparison: missing cross_frame"
+    }
+  ]
+}

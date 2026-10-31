@@ -1,0 +1,2300 @@
+[
+  {
+    "trial": "r1_blue_a1",
+    "offboard_requests": [
+      "2026-10-18T17:26:58.977+00:00"
+    ],
+    "visual_servo_events": [
+      {
+        "time": "2026-10-18T17:28:09.201+00:00",
+        "message": "[VisualServo]: Visual Servo Started (VX+VZ+yaw_rate)"
+      },
+      {
+        "time": "2026-10-18T17:28:09.201+00:00",
+        "message": "[VisualServo]: k_p_yaw_rate=0.0030 k_d=0.0010 max_rate=0.50 deadzone=8.0"
+      },
+      {
+        "time": "2026-10-18T17:28:09.201+00:00",
+        "message": "[VisualServo]: forward_vel=1.00 sprint_vel=1.00 sprint_time=1.2 area_thresh=0.080"
+      },
+      {
+        "time": "2026-10-18T17:28:09.211+00:00",
+        "message": "[VisualServo]: Off-center target lost after approach; return to ALIGN and search."
+      },
+      {
+        "time": "2026-10-18T17:28:09.211+00:00",
+        "message": "[VisualServo]: SEARCH_ANCHOR pos=(5.217,0.881,0.734) yaw=-1.696"
+      },
+      {
+        "time": "2026-10-18T17:28:09.211+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-1.696 anchor=(5.22,0.88,0.73)"
+      },
+      {
+        "time": "2026-10-18T17:28:10.213+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-1.395 anchor=(5.22,0.88,0.73)"
+      },
+      {
+        "time": "2026-10-18T17:28:11.216+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-1.094 anchor=(5.22,0.88,0.73)"
+      },
+      {
+        "time": "2026-10-18T17:28:11.297+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-123,199) yaw_rate:0.400 vz:-0.300 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:28:12.299+00:00",
+        "message": "[VisualServo]: ALIGN - err:(43,53) yaw_rate:-0.500 vz:0.300 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:28:13.301+00:00",
+        "message": "[VisualServo]: ALIGN - err:(42,6) yaw_rate:-0.003 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:28:14.302+00:00",
+        "message": "[VisualServo]: ALIGN - err:(29,5) yaw_rate:-0.063 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:28:15.304+00:00",
+        "message": "[VisualServo]: ALIGN - err:(23,5) yaw_rate:-0.045 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:28:16.306+00:00",
+        "message": "[VisualServo]: ALIGN - err:(15,3) yaw_rate:-0.021 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:28:17.308+00:00",
+        "message": "[VisualServo]: ALIGN - err:(11,5) yaw_rate:-0.009 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:28:18.138+00:00",
+        "message": "[VisualServo]: Aligned! err:(8,7) -> APPROACHING"
+      },
+      {
+        "time": "2026-10-18T17:28:18.148+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.96(96%) yaw_rate:-0.000 vz:-0.000 err:(8,7) area:0.6%"
+      },
+      {
+        "time": "2026-10-18T17:28:18.655+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.97(97%) yaw_rate:-0.000 vz:0.300 err:(5,-42) area:0.8%"
+      },
+      {
+        "time": "2026-10-18T17:28:19.161+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.99(99%) yaw_rate:-0.000 vz:-0.000 err:(1,8) area:1.3%"
+      },
+      {
+        "time": "2026-10-18T17:28:19.667+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.94(94%) yaw_rate:0.012 vz:-0.240 err:(-12,34) area:3.7%"
+      },
+      {
+        "time": "2026-10-18T17:28:19.900+00:00",
+        "message": "[VisualServo]: Sprint area ready but off-center err:(-30,43); continue alignment"
+      },
+      {
+        "time": "2026-10-18T17:28:20.173+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.00(58%) yaw_rate:0.219 vz:-0.250 err:(-81,35) area:45.6%"
+      },
+      {
+        "time": "2026-10-18T17:28:20.406+00:00",
+        "message": "[VisualServo]: Sprint area ready but off-center err:(-81,35); continue alignment"
+      },
+      {
+        "time": "2026-10-18T17:28:20.680+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.00(58%) yaw_rate:0.219 vz:-0.250 err:(-81,35) area:45.6%"
+      },
+      {
+        "time": "2026-10-18T17:28:20.912+00:00",
+        "message": "[VisualServo]: Sprint area ready but off-center err:(-81,35); continue alignment"
+      },
+      {
+        "time": "2026-10-18T17:28:21.105+00:00",
+        "message": "[VisualServo]: BLUE_LOSS_SAMPLE area=0.4562 max_area=0.4562 lost_s=1.002"
+      },
+      {
+        "time": "2026-10-18T17:28:21.105+00:00",
+        "message": "[VisualServo]: Maintaining hover at (5.70, -1.07, 0.05) yaw: -1.21"
+      },
+      {
+        "time": "2026-10-18T17:28:21.105+00:00",
+        "message": "[VisualServo]: BLUE_NEAR_CONTACT_LOSS_COMPLETE area=0.4562 max_area=0.4562 lost_s=1.002"
+      }
+    ],
+    "observer": {
+      "run_id": "20261019T012640_bca532",
+      "target_color": "blue",
+      "start_time": "2026-10-18T17:26:58.949+00:00",
+      "end_time": "2026-10-18T17:28:37.663+00:00",
+      "total_time": "98.715",
+      "elapsed_time": "98.715",
+      "bt_success": "true",
+      "mission_success": "false",
+      "end_status": "completed",
+      "takeoff_status": "success",
+      "cross_frame_status": "success",
+      "detect_aruco_status": "success",
+      "return_cross_frame_status": "success",
+      "hit_balloon_status": "",
+      "land_status": "success",
+      "aruco_detect_time": "0.145",
+      "balloon_search_time": "",
+      "failure_stage": "hit_balloon",
+      "failure_reason": "",
+      "safety_boundary_triggered": "false",
+      "boundary_first_time": "",
+      "boundary_first_position": "",
+      "boundary_violation_count": "0",
+      "boundary_recovered": "",
+      "notes": "mission_command received as text; SUCCESS received while stages were unobserved: hit_balloon; bt_planning_controls=[{\"goal\":\"{frame_center}\",\"offset_z\":\"1.000000\",\"kind\":\"frame_outbound\"},{\"goal\":\"{frame_center}\",\"offset_z\":\"\",\"kind\":\"frame_return\"},{\"goal\":\"5.3;1.0;0.7\",\"offset_z\":\"\",\"kind\":\"other\"}]; rosout_events_logged; setpoint_samples=5817; target_detection_messages=985"
+    }
+  },
+  {
+    "trial": "r1_purple_a1",
+    "offboard_requests": [
+      "2026-10-18T17:21:48.343+00:00",
+      "2026-10-18T17:21:53.354+00:00"
+    ],
+    "visual_servo_events": [
+      {
+        "time": "2026-10-18T17:23:12.380+00:00",
+        "message": "[VisualServo]: Visual Servo Started (VX+VZ+yaw_rate)"
+      },
+      {
+        "time": "2026-10-18T17:23:12.380+00:00",
+        "message": "[VisualServo]: k_p_yaw_rate=0.0030 k_d=0.0010 max_rate=0.50 deadzone=8.0"
+      },
+      {
+        "time": "2026-10-18T17:23:12.380+00:00",
+        "message": "[VisualServo]: forward_vel=1.00 sprint_vel=1.50 sprint_time=1.2 area_thresh=0.080"
+      },
+      {
+        "time": "2026-10-18T17:23:12.390+00:00",
+        "message": "[VisualServo]: Off-center target lost after approach; return to ALIGN and search."
+      },
+      {
+        "time": "2026-10-18T17:23:12.390+00:00",
+        "message": "[VisualServo]: SEARCH_ANCHOR pos=(4.194,-2.100,0.729) yaw=-3.131"
+      },
+      {
+        "time": "2026-10-18T17:23:12.390+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-3.131 anchor=(4.19,-2.10,0.73)"
+      },
+      {
+        "time": "2026-10-18T17:23:12.400+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-68,40) yaw_rate:0.500 vz:-0.300 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:23:13.403+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-50,26) yaw_rate:-0.365 vz:0.300 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:23:14.407+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-34,19) yaw_rate:0.078 vz:-0.090 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:23:15.410+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-43,15) yaw_rate:0.303 vz:-0.050 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:23:16.412+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-83,14) yaw_rate:0.225 vz:-0.040 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:23:17.415+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-253,15) yaw_rate:0.500 vz:-0.050 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:23:18.419+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-293,-2) yaw_rate:0.500 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:23:18.722+00:00",
+        "message": "[VisualServo]: SEARCH_ANCHOR pos=(4.423,-2.123,0.280) yaw=-1.768"
+      },
+      {
+        "time": "2026-10-18T17:23:18.723+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-1.768 anchor=(4.42,-2.12,0.28)"
+      },
+      {
+        "time": "2026-10-18T17:23:19.421+00:00",
+        "message": "[VisualServo]: ALIGN - err:(91,9) yaw_rate:-0.249 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:23:20.424+00:00",
+        "message": "[VisualServo]: ALIGN - err:(283,6) yaw_rate:-0.500 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:23:21.427+00:00",
+        "message": "[VisualServo]: ALIGN - err:(150,-3) yaw_rate:-0.426 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:23:22.429+00:00",
+        "message": "[VisualServo]: ALIGN - err:(63,-5) yaw_rate:-0.165 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:23:23.432+00:00",
+        "message": "[VisualServo]: ALIGN - err:(45,-6) yaw_rate:-0.111 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:23:23.919+00:00",
+        "message": "[VisualServo]: SEARCH_ANCHOR pos=(4.777,-1.887,0.236) yaw=-2.826"
+      },
+      {
+        "time": "2026-10-18T17:23:23.919+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-2.826 anchor=(4.78,-1.89,0.24)"
+      },
+      {
+        "time": "2026-10-18T17:23:24.922+00:00",
+        "message": "[VisualServo]: ALIGN - err:(83,-8) yaw_rate:-0.262 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:23:25.925+00:00",
+        "message": "[VisualServo]: ALIGN - err:(34,-5) yaw_rate:0.500 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:23:26.249+00:00",
+        "message": "[VisualServo]: Aligned! err:(4,-6) -> APPROACHING"
+      },
+      {
+        "time": "2026-10-18T17:23:26.259+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.98(98%) yaw_rate:-0.000 vz:-0.000 err:(4,-6) area:0.6%"
+      },
+      {
+        "time": "2026-10-18T17:23:26.766+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.85(85%) yaw_rate:0.063 vz:0.300 err:(-29,-58) area:1.0%"
+      },
+      {
+        "time": "2026-10-18T17:23:27.273+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.64(64%) yaw_rate:0.183 vz:-0.010 err:(-69,11) area:2.4%"
+      },
+      {
+        "time": "2026-10-18T17:23:27.598+00:00",
+        "message": "[VisualServo]: Sprint area ready but off-center err:(-179,67); continue alignment"
+      },
+      {
+        "time": "2026-10-18T17:23:27.780+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.00(0%) yaw_rate:0.500 vz:-0.300 err:(-242,75) area:14.8%"
+      },
+      {
+        "time": "2026-10-18T17:23:28.105+00:00",
+        "message": "[VisualServo]: Sprint area ready but off-center err:(-274,66); continue alignment"
+      },
+      {
+        "time": "2026-10-18T17:23:28.287+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.00(0%) yaw_rate:0.500 vz:-0.300 err:(-274,66) area:12.1%"
+      },
+      {
+        "time": "2026-10-18T17:23:28.611+00:00",
+        "message": "[VisualServo]: Sprint area ready but off-center err:(-274,66); continue alignment"
+      },
+      {
+        "time": "2026-10-18T17:23:28.794+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.00(0%) yaw_rate:0.500 vz:-0.300 err:(-274,66) area:12.1%"
+      },
+      {
+        "time": "2026-10-18T17:23:28.804+00:00",
+        "message": "[VisualServo]: Off-center target lost after approach; return to ALIGN and search."
+      },
+      {
+        "time": "2026-10-18T17:23:28.804+00:00",
+        "message": "[VisualServo]: SEARCH_ANCHOR pos=(3.625,-2.371,0.000) yaw=-2.059"
+      },
+      {
+        "time": "2026-10-18T17:23:28.804+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-2.059 anchor=(3.63,-2.37,0.00)"
+      },
+      {
+        "time": "2026-10-18T17:23:29.807+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-1.758 anchor=(3.63,-2.37,0.00)"
+      },
+      {
+        "time": "2026-10-18T17:23:30.810+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-306,-197) yaw_rate:0.500 vz:0.300 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:23:31.814+00:00",
+        "message": "[VisualServo]: ALIGN - err:(287,-98) yaw_rate:-0.500 vz:0.300 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:23:32.736+00:00",
+        "message": "[VisualServo]: SEARCH_ANCHOR pos=(3.712,-2.264,0.475) yaw=-1.572"
+      },
+      {
+        "time": "2026-10-18T17:23:32.736+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-1.572 anchor=(3.71,-2.26,0.47)"
+      },
+      {
+        "time": "2026-10-18T17:23:33.738+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-1.272 anchor=(3.71,-2.26,0.47)"
+      },
+      {
+        "time": "2026-10-18T17:23:34.740+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-0.971 anchor=(3.71,-2.26,0.47)"
+      },
+      {
+        "time": "2026-10-18T17:23:35.743+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-0.670 anchor=(3.71,-2.26,0.47)"
+      },
+      {
+        "time": "2026-10-18T17:23:36.746+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-0.369 anchor=(3.71,-2.26,0.47)"
+      },
+      {
+        "time": "2026-10-18T17:23:37.748+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-0.069 anchor=(3.71,-2.26,0.47)"
+      },
+      {
+        "time": "2026-10-18T17:23:38.752+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=0.232 anchor=(3.71,-2.26,0.47)"
+      },
+      {
+        "time": "2026-10-18T17:23:39.755+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=0.533 anchor=(3.71,-2.26,0.47)"
+      },
+      {
+        "time": "2026-10-18T17:23:40.758+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=0.834 anchor=(3.71,-2.26,0.47)"
+      },
+      {
+        "time": "2026-10-18T17:23:41.761+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=1.135 anchor=(3.71,-2.26,0.47)"
+      },
+      {
+        "time": "2026-10-18T17:23:42.764+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=1.436 anchor=(3.71,-2.26,0.47)"
+      },
+      {
+        "time": "2026-10-18T17:23:43.768+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=1.737 anchor=(3.71,-2.26,0.47)"
+      },
+      {
+        "time": "2026-10-18T17:23:44.771+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=2.038 anchor=(3.71,-2.26,0.47)"
+      },
+      {
+        "time": "2026-10-18T17:23:45.774+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=2.339 anchor=(3.71,-2.26,0.47)"
+      },
+      {
+        "time": "2026-10-18T17:23:46.777+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=2.640 anchor=(3.71,-2.26,0.47)"
+      },
+      {
+        "time": "2026-10-18T17:23:47.131+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-312,31) yaw_rate:0.500 vz:-0.255 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:23:48.133+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-125,15) yaw_rate:-0.500 vz:-0.300 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:23:49.136+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-85,15) yaw_rate:0.231 vz:-0.050 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:23:50.140+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-125,14) yaw_rate:0.351 vz:-0.040 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:23:51.143+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-276,9) yaw_rate:0.500 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:23:52.014+00:00",
+        "message": "[VisualServo]: SEARCH_ANCHOR pos=(3.541,-2.137,0.289) yaw=-1.895"
+      },
+      {
+        "time": "2026-10-18T17:23:52.014+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-1.895 anchor=(3.54,-2.14,0.29)"
+      },
+      {
+        "time": "2026-10-18T17:23:53.016+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-1.594 anchor=(3.54,-2.14,0.29)"
+      },
+      {
+        "time": "2026-10-18T17:23:53.614+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-308,2) yaw_rate:0.500 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:23:54.252+00:00",
+        "message": "[VisualServo]: Aligned! err:(-9,9) -> APPROACHING"
+      },
+      {
+        "time": "2026-10-18T17:23:54.262+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.95(95%) yaw_rate:0.003 vz:-0.000 err:(-9,9) area:7.9%"
+      },
+      {
+        "time": "2026-10-18T17:23:54.333+00:00",
+        "message": "[VisualServo]: Sprint area ready but off-center err:(100,12); continue alignment"
+      },
+      {
+        "time": "2026-10-18T17:23:54.768+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.00(0%) yaw_rate:-0.500 vz:-0.000 err:(288,7) area:6.4%"
+      },
+      {
+        "time": "2026-10-18T17:23:55.011+00:00",
+        "message": "[VisualServo]: Alignment lost (err_x=307), back to ALIGN"
+      },
+      {
+        "time": "2026-10-18T17:23:55.021+00:00",
+        "message": "[VisualServo]: ALIGN - err:(307,26) yaw_rate:-0.500 vz:-0.160 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:23:56.025+00:00",
+        "message": "[VisualServo]: ALIGN - err:(288,-29) yaw_rate:-0.500 vz:0.190 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:23:57.027+00:00",
+        "message": "[VisualServo]: ALIGN - err:(115,-8) yaw_rate:-0.321 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:23:58.031+00:00",
+        "message": "[VisualServo]: ALIGN - err:(26,-7) yaw_rate:-0.054 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:23:58.568+00:00",
+        "message": "[VisualServo]: Aligned! err:(4,-10) -> APPROACHING"
+      },
+      {
+        "time": "2026-10-18T17:23:58.578+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.98(98%) yaw_rate:-0.000 vz:-0.000 err:(4,-10) area:0.4%"
+      },
+      {
+        "time": "2026-10-18T17:23:59.085+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.94(94%) yaw_rate:0.012 vz:0.300 err:(-12,-57) area:0.4%"
+      },
+      {
+        "time": "2026-10-18T17:23:59.591+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.84(84%) yaw_rate:0.069 vz:0.040 err:(-31,-14) area:0.7%"
+      },
+      {
+        "time": "2026-10-18T17:24:00.098+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.78(78%) yaw_rate:0.105 vz:-0.020 err:(-43,12) area:1.2%"
+      },
+      {
+        "time": "2026-10-18T17:24:00.606+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.52(52%) yaw_rate:0.252 vz:-0.210 err:(-92,31) area:3.6%"
+      },
+      {
+        "time": "2026-10-18T17:24:00.809+00:00",
+        "message": "[VisualServo]: Sprint area ready but off-center err:(-171,41); continue alignment"
+      },
+      {
+        "time": "2026-10-18T17:24:01.113+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.00(0%) yaw_rate:0.500 vz:-0.290 err:(-253,39) area:16.5%"
+      },
+      {
+        "time": "2026-10-18T17:24:01.214+00:00",
+        "message": "[VisualServo]: Alignment lost (err_x=-302), back to ALIGN"
+      },
+      {
+        "time": "2026-10-18T17:24:01.224+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-302,-40) yaw_rate:0.500 vz:0.300 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:24:02.216+00:00",
+        "message": "[VisualServo]: SEARCH_ANCHOR pos=(1.673,-2.544,0.466) yaw=-1.852"
+      },
+      {
+        "time": "2026-10-18T17:24:02.216+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-1.852 anchor=(1.67,-2.54,0.47)"
+      },
+      {
+        "time": "2026-10-18T17:24:02.380+00:00",
+        "message": "[VisualServo]: Halted, entering hover mode."
+      },
+      {
+        "time": "2026-10-18T17:24:02.380+00:00",
+        "message": "[VisualServo]: Maintaining hover at (1.67, -2.56, 0.51) yaw: -1.79"
+      }
+    ],
+    "observer": {
+      "run_id": "20261019T012128_d17030",
+      "target_color": "purple",
+      "start_time": "2026-10-18T17:21:48.315+00:00",
+      "end_time": "2026-10-18T17:24:15.686+00:00",
+      "total_time": "147.371",
+      "elapsed_time": "147.371",
+      "bt_success": "true",
+      "mission_success": "false",
+      "end_status": "completed",
+      "takeoff_status": "success",
+      "cross_frame_status": "success",
+      "detect_aruco_status": "success",
+      "return_cross_frame_status": "success",
+      "hit_balloon_status": "",
+      "land_status": "success",
+      "aruco_detect_time": "0.096",
+      "balloon_search_time": "",
+      "failure_stage": "hit_balloon",
+      "failure_reason": "",
+      "safety_boundary_triggered": "false",
+      "boundary_first_time": "",
+      "boundary_first_position": "",
+      "boundary_violation_count": "0",
+      "boundary_recovered": "",
+      "notes": "mission_command received as text; SUCCESS received while stages were unobserved: hit_balloon; bt_planning_controls=[{\"goal\":\"{frame_center}\",\"offset_z\":\"1.000000\",\"kind\":\"frame_outbound\"},{\"goal\":\"{frame_center}\",\"offset_z\":\"\",\"kind\":\"frame_return\"},{\"goal\":\"4.3;-2.0;0.7\",\"offset_z\":\"\",\"kind\":\"other\"}]; rosout_events_logged; setpoint_samples=7370; target_detection_messages=1312"
+    }
+  },
+  {
+    "trial": "r1_red_a1",
+    "offboard_requests": [
+      "2026-10-18T17:15:47.343+00:00"
+    ],
+    "visual_servo_events": [
+      {
+        "time": "2026-10-18T17:16:54.841+00:00",
+        "message": "[VisualServo]: Visual Servo Started (VX+VZ+yaw_rate)"
+      },
+      {
+        "time": "2026-10-18T17:16:54.841+00:00",
+        "message": "[VisualServo]: k_p_yaw_rate=0.0030 k_d=0.0010 max_rate=0.50 deadzone=8.0"
+      },
+      {
+        "time": "2026-10-18T17:16:54.841+00:00",
+        "message": "[VisualServo]: forward_vel=1.00 sprint_vel=1.50 sprint_time=1.2 area_thresh=0.080"
+      },
+      {
+        "time": "2026-10-18T17:16:54.851+00:00",
+        "message": "[VisualServo]: Off-center target lost after approach; return to ALIGN and search."
+      },
+      {
+        "time": "2026-10-18T17:16:54.851+00:00",
+        "message": "[VisualServo]: SEARCH_ANCHOR pos=(4.382,1.028,0.880) yaw=0.034"
+      },
+      {
+        "time": "2026-10-18T17:16:54.851+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=0.034 anchor=(4.38,1.03,0.88)"
+      },
+      {
+        "time": "2026-10-18T17:16:55.853+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=0.334 anchor=(4.38,1.03,0.88)"
+      },
+      {
+        "time": "2026-10-18T17:16:56.855+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=0.635 anchor=(4.38,1.03,0.88)"
+      },
+      {
+        "time": "2026-10-18T17:16:57.857+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=0.935 anchor=(4.38,1.03,0.88)"
+      },
+      {
+        "time": "2026-10-18T17:16:58.858+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=1.236 anchor=(4.38,1.03,0.88)"
+      },
+      {
+        "time": "2026-10-18T17:16:59.860+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=1.536 anchor=(4.38,1.03,0.88)"
+      },
+      {
+        "time": "2026-10-18T17:17:00.862+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=1.837 anchor=(4.38,1.03,0.88)"
+      },
+      {
+        "time": "2026-10-18T17:17:01.863+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=2.137 anchor=(4.38,1.03,0.88)"
+      },
+      {
+        "time": "2026-10-18T17:17:02.865+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=2.438 anchor=(4.38,1.03,0.88)"
+      },
+      {
+        "time": "2026-10-18T17:17:03.867+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=2.738 anchor=(4.38,1.03,0.88)"
+      },
+      {
+        "time": "2026-10-18T17:17:03.938+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-74,210) yaw_rate:0.205 vz:-0.300 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:17:04.940+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-63,105) yaw_rate:0.066 vz:0.300 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:17:05.942+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-44,42) yaw_rate:-0.189 vz:0.300 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:17:06.944+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-36,11) yaw_rate:0.084 vz:-0.010 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:17:07.946+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-24,5) yaw_rate:0.048 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:17:08.948+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-16,2) yaw_rate:0.024 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:17:09.950+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-13,2) yaw_rate:0.015 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:17:10.345+00:00",
+        "message": "[VisualServo]: SEARCH_ANCHOR pos=(4.194,0.981,0.322) yaw=3.030"
+      },
+      {
+        "time": "2026-10-18T17:17:10.345+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=3.030 anchor=(4.19,0.98,0.32)"
+      },
+      {
+        "time": "2026-10-18T17:17:10.952+00:00",
+        "message": "[VisualServo]: ALIGN - err:(5,-2) yaw_rate:-0.000 vz:-0.000 stable:2"
+      },
+      {
+        "time": "2026-10-18T17:17:10.982+00:00",
+        "message": "[VisualServo]: Aligned! err:(5,-2) -> APPROACHING"
+      },
+      {
+        "time": "2026-10-18T17:17:10.992+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.97(97%) yaw_rate:-0.000 vz:-0.000 err:(5,-2) area:0.3%"
+      },
+      {
+        "time": "2026-10-18T17:17:11.499+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.81(81%) yaw_rate:-0.087 vz:0.240 err:(37,-34) area:0.4%"
+      },
+      {
+        "time": "2026-10-18T17:17:12.005+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.85(85%) yaw_rate:-0.060 vz:-0.000 err:(28,-10) area:0.5%"
+      },
+      {
+        "time": "2026-10-18T17:17:12.511+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.84(84%) yaw_rate:-0.069 vz:-0.000 err:(31,2) area:0.9%"
+      },
+      {
+        "time": "2026-10-18T17:17:13.017+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.81(81%) yaw_rate:-0.084 vz:-0.060 err:(36,16) area:2.2%"
+      },
+      {
+        "time": "2026-10-18T17:17:13.453+00:00",
+        "message": "[VisualServo]: Sprint area ready but off-center err:(66,26); continue alignment"
+      },
+      {
+        "time": "2026-10-18T17:17:13.524+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.00(66%) yaw_rate:-0.174 vz:-0.160 err:(66,26) area:9.8%"
+      },
+      {
+        "time": "2026-10-18T17:17:13.959+00:00",
+        "message": "[VisualServo]: Sprint area ready but off-center err:(147,33); continue alignment"
+      },
+      {
+        "time": "2026-10-18T17:17:14.030+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.00(23%) yaw_rate:-0.417 vz:-0.230 err:(147,33) area:41.9%"
+      },
+      {
+        "time": "2026-10-18T17:17:14.435+00:00",
+        "message": "[VisualServo]: Red sprint heading blocked: yaw=2.655 error=0.486 rad"
+      },
+      {
+        "time": "2026-10-18T17:17:14.465+00:00",
+        "message": "[VisualServo]: Sprint area ready but off-center err:(147,33); continue alignment"
+      },
+      {
+        "time": "2026-10-18T17:17:14.536+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.00(23%) yaw_rate:-0.417 vz:-0.230 err:(147,33) area:41.9%"
+      },
+      {
+        "time": "2026-10-18T17:17:14.749+00:00",
+        "message": "[VisualServo]: Off-center target lost after approach; return to ALIGN and search."
+      },
+      {
+        "time": "2026-10-18T17:17:14.749+00:00",
+        "message": "[VisualServo]: SEARCH_ANCHOR pos=(1.858,1.135,0.064) yaw=2.534"
+      },
+      {
+        "time": "2026-10-18T17:17:14.750+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=2.534 anchor=(1.86,1.13,0.06)"
+      },
+      {
+        "time": "2026-10-18T17:17:15.751+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=2.835 anchor=(1.86,1.13,0.06)"
+      },
+      {
+        "time": "2026-10-18T17:17:16.753+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=3.135 anchor=(1.86,1.13,0.06)"
+      },
+      {
+        "time": "2026-10-18T17:17:17.755+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=3.436 anchor=(1.86,1.13,0.06)"
+      },
+      {
+        "time": "2026-10-18T17:17:18.757+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=3.737 anchor=(1.86,1.13,0.06)"
+      },
+      {
+        "time": "2026-10-18T17:17:19.759+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=4.037 anchor=(1.86,1.13,0.06)"
+      },
+      {
+        "time": "2026-10-18T17:17:20.761+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=4.338 anchor=(1.86,1.13,0.06)"
+      },
+      {
+        "time": "2026-10-18T17:17:21.763+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=4.638 anchor=(1.86,1.13,0.06)"
+      },
+      {
+        "time": "2026-10-18T17:17:22.765+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=4.939 anchor=(1.86,1.13,0.06)"
+      },
+      {
+        "time": "2026-10-18T17:17:23.766+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=5.239 anchor=(1.86,1.13,0.06)"
+      },
+      {
+        "time": "2026-10-18T17:17:24.768+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=5.540 anchor=(1.86,1.13,0.06)"
+      },
+      {
+        "time": "2026-10-18T17:17:25.770+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=5.841 anchor=(1.86,1.13,0.06)"
+      },
+      {
+        "time": "2026-10-18T17:17:26.772+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=6.141 anchor=(1.86,1.13,0.06)"
+      },
+      {
+        "time": "2026-10-18T17:17:27.774+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=6.442 anchor=(1.86,1.13,0.06)"
+      },
+      {
+        "time": "2026-10-18T17:17:28.776+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=6.742 anchor=(1.86,1.13,0.06)"
+      },
+      {
+        "time": "2026-10-18T17:17:29.778+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=7.043 anchor=(1.86,1.13,0.06)"
+      },
+      {
+        "time": "2026-10-18T17:17:30.780+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=7.343 anchor=(1.86,1.13,0.06)"
+      },
+      {
+        "time": "2026-10-18T17:17:31.782+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=7.644 anchor=(1.86,1.13,0.06)"
+      },
+      {
+        "time": "2026-10-18T17:17:32.784+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=7.945 anchor=(1.86,1.13,0.06)"
+      },
+      {
+        "time": "2026-10-18T17:17:33.785+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=8.245 anchor=(1.86,1.13,0.06)"
+      },
+      {
+        "time": "2026-10-18T17:17:34.787+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=8.546 anchor=(1.86,1.13,0.06)"
+      },
+      {
+        "time": "2026-10-18T17:17:35.789+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=8.846 anchor=(1.86,1.13,0.06)"
+      },
+      {
+        "time": "2026-10-18T17:17:36.791+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=9.147 anchor=(1.86,1.13,0.06)"
+      },
+      {
+        "time": "2026-10-18T17:17:37.793+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=9.447 anchor=(1.86,1.13,0.06)"
+      },
+      {
+        "time": "2026-10-18T17:17:38.795+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=9.748 anchor=(1.86,1.13,0.06)"
+      },
+      {
+        "time": "2026-10-18T17:17:39.797+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=10.049 anchor=(1.86,1.13,0.06)"
+      },
+      {
+        "time": "2026-10-18T17:17:40.799+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=10.349 anchor=(1.86,1.13,0.06)"
+      },
+      {
+        "time": "2026-10-18T17:17:41.800+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=10.650 anchor=(1.86,1.13,0.06)"
+      },
+      {
+        "time": "2026-10-18T17:17:42.803+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=10.950 anchor=(1.86,1.13,0.06)"
+      },
+      {
+        "time": "2026-10-18T17:17:43.805+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=11.251 anchor=(1.86,1.13,0.06)"
+      },
+      {
+        "time": "2026-10-18T17:17:44.806+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=11.551 anchor=(1.86,1.13,0.06)"
+      },
+      {
+        "time": "2026-10-18T17:17:44.841+00:00",
+        "message": "[VisualServo]: Halted, entering hover mode."
+      },
+      {
+        "time": "2026-10-18T17:17:44.841+00:00",
+        "message": "[VisualServo]: Maintaining hover at (1.86, 1.17, 0.08) yaw: -1.10"
+      }
+    ],
+    "observer": {
+      "run_id": "20261019T011533_452ac1",
+      "target_color": "red",
+      "start_time": "2026-10-18T17:15:47.314+00:00",
+      "end_time": "2026-10-18T17:17:54.165+00:00",
+      "total_time": "126.851",
+      "elapsed_time": "126.851",
+      "bt_success": "true",
+      "mission_success": "false",
+      "end_status": "completed",
+      "takeoff_status": "success",
+      "cross_frame_status": "success",
+      "detect_aruco_status": "success",
+      "return_cross_frame_status": "success",
+      "hit_balloon_status": "",
+      "land_status": "success",
+      "aruco_detect_time": "0.106",
+      "balloon_search_time": "",
+      "failure_stage": "hit_balloon",
+      "failure_reason": "",
+      "safety_boundary_triggered": "false",
+      "boundary_first_time": "",
+      "boundary_first_position": "",
+      "boundary_violation_count": "0",
+      "boundary_recovered": "",
+      "notes": "mission_command received as text; SUCCESS received while stages were unobserved: hit_balloon; bt_planning_controls=[{\"goal\":\"{frame_center}\",\"offset_z\":\"1.000000\",\"kind\":\"frame_outbound\"},{\"goal\":\"{frame_center}\",\"offset_z\":\"\",\"kind\":\"frame_return\"},{\"goal\":\"4.3;1.0;0.7\",\"offset_z\":\"\",\"kind\":\"other\"}]; rosout_events_logged; setpoint_samples=6349; target_detection_messages=920"
+    }
+  },
+  {
+    "trial": "r2_blue_a1",
+    "offboard_requests": [
+      "2026-10-18T17:44:18.263+00:00",
+      "2026-10-18T17:44:23.271+00:00"
+    ],
+    "visual_servo_events": [
+      {
+        "time": "2026-10-18T17:45:38.012+00:00",
+        "message": "[VisualServo]: Visual Servo Started (VX+VZ+yaw_rate)"
+      },
+      {
+        "time": "2026-10-18T17:45:38.012+00:00",
+        "message": "[VisualServo]: k_p_yaw_rate=0.0030 k_d=0.0010 max_rate=0.50 deadzone=8.0"
+      },
+      {
+        "time": "2026-10-18T17:45:38.012+00:00",
+        "message": "[VisualServo]: forward_vel=1.00 sprint_vel=1.00 sprint_time=1.2 area_thresh=0.080"
+      },
+      {
+        "time": "2026-10-18T17:45:38.022+00:00",
+        "message": "[VisualServo]: Off-center target lost after approach; return to ALIGN and search."
+      },
+      {
+        "time": "2026-10-18T17:45:38.022+00:00",
+        "message": "[VisualServo]: SEARCH_ANCHOR pos=(5.237,0.965,0.731) yaw=-1.463"
+      },
+      {
+        "time": "2026-10-18T17:45:38.022+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-1.463 anchor=(5.24,0.97,0.73)"
+      },
+      {
+        "time": "2026-10-18T17:45:38.639+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-70,71) yaw_rate:0.285 vz:-0.300 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:45:39.641+00:00",
+        "message": "[VisualServo]: ALIGN - err:(16,27) yaw_rate:-0.024 vz:-0.170 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:45:40.643+00:00",
+        "message": "[VisualServo]: ALIGN - err:(22,11) yaw_rate:-0.042 vz:-0.010 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:45:41.646+00:00",
+        "message": "[VisualServo]: ALIGN - err:(4,13) yaw_rate:-0.000 vz:-0.030 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:45:42.648+00:00",
+        "message": "[VisualServo]: ALIGN - err:(3,13) yaw_rate:-0.000 vz:-0.030 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:45:43.650+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-4,12) yaw_rate:-0.000 vz:-0.020 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:45:43.792+00:00",
+        "message": "[VisualServo]: Aligned! err:(-5,12) -> APPROACHING"
+      },
+      {
+        "time": "2026-10-18T17:45:43.802+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.97(97%) yaw_rate:-0.000 vz:-0.020 err:(-5,12) area:1.6%"
+      },
+      {
+        "time": "2026-10-18T17:45:44.309+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.94(94%) yaw_rate:0.009 vz:0.220 err:(-11,-32) area:2.4%"
+      },
+      {
+        "time": "2026-10-18T17:45:44.815+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.85(85%) yaw_rate:0.063 vz:-0.300 err:(-29,47) area:7.0%"
+      },
+      {
+        "time": "2026-10-18T17:45:44.835+00:00",
+        "message": "[VisualServo]: Sprint area ready but off-center err:(-37,64); continue alignment"
+      },
+      {
+        "time": "2026-10-18T17:45:45.321+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.00(41%) yaw_rate:0.315 vz:-0.300 err:(-113,117) area:34.9%"
+      },
+      {
+        "time": "2026-10-18T17:45:45.341+00:00",
+        "message": "[VisualServo]: Sprint area ready but off-center err:(-113,117); continue alignment"
+      },
+      {
+        "time": "2026-10-18T17:45:45.827+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.00(41%) yaw_rate:0.315 vz:-0.300 err:(-113,117) area:34.9%"
+      },
+      {
+        "time": "2026-10-18T17:45:45.848+00:00",
+        "message": "[VisualServo]: Sprint area ready but off-center err:(-113,117); continue alignment"
+      },
+      {
+        "time": "2026-10-18T17:45:46.121+00:00",
+        "message": "[VisualServo]: BLUE_LOSS_SAMPLE area=0.3485 max_area=0.3485 lost_s=1.002"
+      },
+      {
+        "time": "2026-10-18T17:45:46.121+00:00",
+        "message": "[VisualServo]: Maintaining hover at (5.67, -0.49, 0.06) yaw: -1.11"
+      },
+      {
+        "time": "2026-10-18T17:45:46.121+00:00",
+        "message": "[VisualServo]: BLUE_NEAR_CONTACT_LOSS_COMPLETE area=0.3485 max_area=0.3485 lost_s=1.002"
+      }
+    ],
+    "observer": {
+      "run_id": "20261019T014400_aeb567",
+      "target_color": "blue",
+      "start_time": "2026-10-18T17:44:18.235+00:00",
+      "end_time": "2026-10-18T17:46:04.319+00:00",
+      "total_time": "106.083",
+      "elapsed_time": "106.083",
+      "bt_success": "true",
+      "mission_success": "false",
+      "end_status": "completed",
+      "takeoff_status": "success",
+      "cross_frame_status": "success",
+      "detect_aruco_status": "success",
+      "return_cross_frame_status": "success",
+      "hit_balloon_status": "",
+      "land_status": "success",
+      "aruco_detect_time": "0.215",
+      "balloon_search_time": "",
+      "failure_stage": "hit_balloon",
+      "failure_reason": "",
+      "safety_boundary_triggered": "false",
+      "boundary_first_time": "",
+      "boundary_first_position": "",
+      "boundary_violation_count": "0",
+      "boundary_recovered": "",
+      "notes": "mission_command received as text; SUCCESS received while stages were unobserved: hit_balloon; bt_planning_controls=[{\"goal\":\"{frame_center}\",\"offset_z\":\"1.000000\",\"kind\":\"frame_outbound\"},{\"goal\":\"{frame_center}\",\"offset_z\":\"\",\"kind\":\"frame_return\"},{\"goal\":\"5.3;1.0;0.7\",\"offset_z\":\"\",\"kind\":\"other\"}]; rosout_events_logged; setpoint_samples=5312; target_detection_messages=1111"
+    }
+  },
+  {
+    "trial": "r2_purple_a1",
+    "offboard_requests": [
+      "2026-10-18T17:38:04.091+00:00"
+    ],
+    "visual_servo_events": [
+      {
+        "time": "2026-10-18T17:39:25.658+00:00",
+        "message": "[VisualServo]: Visual Servo Started (VX+VZ+yaw_rate)"
+      },
+      {
+        "time": "2026-10-18T17:39:25.658+00:00",
+        "message": "[VisualServo]: k_p_yaw_rate=0.0030 k_d=0.0010 max_rate=0.50 deadzone=8.0"
+      },
+      {
+        "time": "2026-10-18T17:39:25.658+00:00",
+        "message": "[VisualServo]: forward_vel=1.00 sprint_vel=1.50 sprint_time=1.2 area_thresh=0.080"
+      },
+      {
+        "time": "2026-10-18T17:39:25.668+00:00",
+        "message": "[VisualServo]: Off-center target lost after approach; return to ALIGN and search."
+      },
+      {
+        "time": "2026-10-18T17:39:25.668+00:00",
+        "message": "[VisualServo]: SEARCH_ANCHOR pos=(4.272,-2.114,0.688) yaw=-3.008"
+      },
+      {
+        "time": "2026-10-18T17:39:25.668+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-3.008 anchor=(4.27,-2.11,0.69)"
+      },
+      {
+        "time": "2026-10-18T17:39:26.670+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-2.708 anchor=(4.27,-2.11,0.69)"
+      },
+      {
+        "time": "2026-10-18T17:39:27.671+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-2.407 anchor=(4.27,-2.11,0.69)"
+      },
+      {
+        "time": "2026-10-18T17:39:28.673+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-2.107 anchor=(4.27,-2.11,0.69)"
+      },
+      {
+        "time": "2026-10-18T17:39:29.675+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-1.806 anchor=(4.27,-2.11,0.69)"
+      },
+      {
+        "time": "2026-10-18T17:39:30.080+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-66,199) yaw_rate:0.187 vz:-0.300 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:39:31.082+00:00",
+        "message": "[VisualServo]: ALIGN - err:(167,93) yaw_rate:-0.378 vz:0.300 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:39:32.084+00:00",
+        "message": "[VisualServo]: ALIGN - err:(91,-4) yaw_rate:-0.249 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:39:33.086+00:00",
+        "message": "[VisualServo]: ALIGN - err:(55,-10) yaw_rate:-0.141 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:39:34.089+00:00",
+        "message": "[VisualServo]: ALIGN - err:(42,-10) yaw_rate:-0.102 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:39:35.091+00:00",
+        "message": "[VisualServo]: ALIGN - err:(29,-10) yaw_rate:-0.063 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:39:36.094+00:00",
+        "message": "[VisualServo]: ALIGN - err:(26,-9) yaw_rate:-0.054 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:39:37.096+00:00",
+        "message": "[VisualServo]: ALIGN - err:(22,-9) yaw_rate:-0.042 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:39:38.098+00:00",
+        "message": "[VisualServo]: ALIGN - err:(19,-9) yaw_rate:-0.033 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:39:39.100+00:00",
+        "message": "[VisualServo]: ALIGN - err:(17,-9) yaw_rate:-0.027 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:39:40.102+00:00",
+        "message": "[VisualServo]: ALIGN - err:(13,-10) yaw_rate:-0.015 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:39:41.105+00:00",
+        "message": "[VisualServo]: ALIGN - err:(11,-10) yaw_rate:-0.009 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:39:42.107+00:00",
+        "message": "[VisualServo]: ALIGN - err:(11,-10) yaw_rate:-0.009 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:39:43.109+00:00",
+        "message": "[VisualServo]: ALIGN - err:(10,-10) yaw_rate:-0.006 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:39:44.111+00:00",
+        "message": "[VisualServo]: ALIGN - err:(10,-9) yaw_rate:-0.006 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:39:44.395+00:00",
+        "message": "[VisualServo]: SEARCH_ANCHOR pos=(4.233,-2.019,0.185) yaw=-2.885"
+      },
+      {
+        "time": "2026-10-18T17:39:44.395+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-2.885 anchor=(4.23,-2.02,0.18)"
+      },
+      {
+        "time": "2026-10-18T17:39:45.113+00:00",
+        "message": "[VisualServo]: ALIGN - err:(11,-8) yaw_rate:-0.009 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:39:45.478+00:00",
+        "message": "[VisualServo]: SEARCH_ANCHOR pos=(4.218,-2.014,0.185) yaw=-2.893"
+      },
+      {
+        "time": "2026-10-18T17:39:45.478+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-2.893 anchor=(4.22,-2.01,0.19)"
+      },
+      {
+        "time": "2026-10-18T17:39:46.115+00:00",
+        "message": "[VisualServo]: ALIGN - err:(7,-14) yaw_rate:-0.000 vz:0.040 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:39:46.804+00:00",
+        "message": "[VisualServo]: SEARCH_ANCHOR pos=(4.151,-2.055,0.222) yaw=-2.907"
+      },
+      {
+        "time": "2026-10-18T17:39:46.804+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-2.907 anchor=(4.15,-2.05,0.22)"
+      },
+      {
+        "time": "2026-10-18T17:39:47.593+00:00",
+        "message": "[VisualServo]: ALIGN - err:(8,-8) yaw_rate:-0.000 vz:-0.030 stable:1"
+      },
+      {
+        "time": "2026-10-18T17:39:47.634+00:00",
+        "message": "[VisualServo]: Aligned! err:(8,-8) -> APPROACHING"
+      },
+      {
+        "time": "2026-10-18T17:39:47.644+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.96(96%) yaw_rate:-0.000 vz:-0.000 err:(8,-8) area:0.3%"
+      },
+      {
+        "time": "2026-10-18T17:39:48.150+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.78(78%) yaw_rate:-0.105 vz:0.300 err:(43,-64) area:0.4%"
+      },
+      {
+        "time": "2026-10-18T17:39:48.656+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.79(79%) yaw_rate:-0.099 vz:-0.000 err:(41,-7) area:0.5%"
+      },
+      {
+        "time": "2026-10-18T17:39:49.163+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.85(85%) yaw_rate:-0.063 vz:-0.000 err:(29,-3) area:0.7%"
+      },
+      {
+        "time": "2026-10-18T17:39:49.669+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.83(83%) yaw_rate:-0.072 vz:-0.000 err:(32,0) area:1.2%"
+      },
+      {
+        "time": "2026-10-18T17:39:50.175+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.80(80%) yaw_rate:-0.093 vz:-0.000 err:(39,5) area:2.3%"
+      },
+      {
+        "time": "2026-10-18T17:39:50.681+00:00",
+        "message": "[VisualServo]: Sprint area ready but off-center err:(69,10); continue alignment"
+      },
+      {
+        "time": "2026-10-18T17:39:50.681+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.00(64%) yaw_rate:-0.500 vz:-0.000 err:(69,10) area:9.9%"
+      },
+      {
+        "time": "2026-10-18T17:39:51.187+00:00",
+        "message": "[VisualServo]: Sprint area ready but off-center err:(167,40); continue alignment"
+      },
+      {
+        "time": "2026-10-18T17:39:51.187+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.00(13%) yaw_rate:-0.477 vz:-0.300 err:(167,40) area:45.4%"
+      },
+      {
+        "time": "2026-10-18T17:39:51.693+00:00",
+        "message": "[VisualServo]: Sprint area ready but off-center err:(167,40); continue alignment"
+      },
+      {
+        "time": "2026-10-18T17:39:51.693+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.00(13%) yaw_rate:-0.477 vz:-0.300 err:(167,40) area:45.4%"
+      },
+      {
+        "time": "2026-10-18T17:39:52.078+00:00",
+        "message": "[VisualServo]: Off-center target lost after approach; return to ALIGN and search."
+      },
+      {
+        "time": "2026-10-18T17:39:52.078+00:00",
+        "message": "[VisualServo]: SEARCH_ANCHOR pos=(1.477,-3.004,0.267) yaw=3.122"
+      },
+      {
+        "time": "2026-10-18T17:39:52.078+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=3.122 anchor=(1.48,-3.00,0.27)"
+      },
+      {
+        "time": "2026-10-18T17:39:53.080+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=3.423 anchor=(1.48,-3.00,0.27)"
+      },
+      {
+        "time": "2026-10-18T17:39:54.082+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=3.724 anchor=(1.48,-3.00,0.27)"
+      },
+      {
+        "time": "2026-10-18T17:39:55.084+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=4.024 anchor=(1.48,-3.00,0.27)"
+      },
+      {
+        "time": "2026-10-18T17:39:56.086+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=4.325 anchor=(1.48,-3.00,0.27)"
+      },
+      {
+        "time": "2026-10-18T17:39:57.088+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=4.625 anchor=(1.48,-3.00,0.27)"
+      },
+      {
+        "time": "2026-10-18T17:39:58.090+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=4.926 anchor=(1.48,-3.00,0.27)"
+      },
+      {
+        "time": "2026-10-18T17:39:59.092+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=5.227 anchor=(1.48,-3.00,0.27)"
+      },
+      {
+        "time": "2026-10-18T17:40:00.093+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=5.527 anchor=(1.48,-3.00,0.27)"
+      },
+      {
+        "time": "2026-10-18T17:40:01.095+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=5.828 anchor=(1.48,-3.00,0.27)"
+      },
+      {
+        "time": "2026-10-18T17:40:02.097+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=6.128 anchor=(1.48,-3.00,0.27)"
+      },
+      {
+        "time": "2026-10-18T17:40:03.100+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=6.429 anchor=(1.48,-3.00,0.27)"
+      },
+      {
+        "time": "2026-10-18T17:40:04.102+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=6.730 anchor=(1.48,-3.00,0.27)"
+      },
+      {
+        "time": "2026-10-18T17:40:05.104+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=7.030 anchor=(1.48,-3.00,0.27)"
+      },
+      {
+        "time": "2026-10-18T17:40:06.106+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=7.331 anchor=(1.48,-3.00,0.27)"
+      },
+      {
+        "time": "2026-10-18T17:40:07.107+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=7.631 anchor=(1.48,-3.00,0.27)"
+      },
+      {
+        "time": "2026-10-18T17:40:08.109+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=7.932 anchor=(1.48,-3.00,0.27)"
+      },
+      {
+        "time": "2026-10-18T17:40:09.111+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=8.232 anchor=(1.48,-3.00,0.27)"
+      },
+      {
+        "time": "2026-10-18T17:40:10.113+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=8.533 anchor=(1.48,-3.00,0.27)"
+      },
+      {
+        "time": "2026-10-18T17:40:11.115+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=8.834 anchor=(1.48,-3.00,0.27)"
+      },
+      {
+        "time": "2026-10-18T17:40:12.117+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=9.134 anchor=(1.48,-3.00,0.27)"
+      },
+      {
+        "time": "2026-10-18T17:40:13.119+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=9.435 anchor=(1.48,-3.00,0.27)"
+      },
+      {
+        "time": "2026-10-18T17:40:14.121+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=9.735 anchor=(1.48,-3.00,0.27)"
+      },
+      {
+        "time": "2026-10-18T17:40:15.123+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=10.036 anchor=(1.48,-3.00,0.27)"
+      },
+      {
+        "time": "2026-10-18T17:40:15.658+00:00",
+        "message": "[VisualServo]: Halted, entering hover mode."
+      },
+      {
+        "time": "2026-10-18T17:40:15.658+00:00",
+        "message": "[VisualServo]: Maintaining hover at (1.36, -2.88, 0.28) yaw: -2.45"
+      }
+    ],
+    "observer": {
+      "run_id": "20261019T013746_249d86",
+      "target_color": "purple",
+      "start_time": "2026-10-18T17:38:04.063+00:00",
+      "end_time": "2026-10-18T17:40:26.604+00:00",
+      "total_time": "142.541",
+      "elapsed_time": "142.541",
+      "bt_success": "true",
+      "mission_success": "false",
+      "end_status": "completed",
+      "takeoff_status": "success",
+      "cross_frame_status": "success",
+      "detect_aruco_status": "success",
+      "return_cross_frame_status": "success",
+      "hit_balloon_status": "",
+      "land_status": "success",
+      "aruco_detect_time": "0.145",
+      "balloon_search_time": "",
+      "failure_stage": "hit_balloon",
+      "failure_reason": "",
+      "safety_boundary_triggered": "true",
+      "boundary_first_time": "2026-10-18T17:39:51.070+00:00",
+      "boundary_first_position": "",
+      "boundary_violation_count": "4",
+      "boundary_recovered": "true",
+      "notes": "mission_command received as text; SUCCESS received while stages were unobserved: hit_balloon; bt_planning_controls=[{\"goal\":\"{frame_center}\",\"offset_z\":\"1.000000\",\"kind\":\"frame_outbound\"},{\"goal\":\"{frame_center}\",\"offset_z\":\"\",\"kind\":\"frame_return\"},{\"goal\":\"4.3;-2.0;0.7\",\"offset_z\":\"\",\"kind\":\"other\"}]; rosout_events_logged; setpoint_samples=7127; target_detection_messages=1085"
+    }
+  },
+  {
+    "trial": "r2_red_a1",
+    "offboard_requests": [
+      "2026-10-18T17:32:34.625+00:00"
+    ],
+    "visual_servo_events": [
+      {
+        "time": "2026-10-18T17:33:39.883+00:00",
+        "message": "[VisualServo]: Visual Servo Started (VX+VZ+yaw_rate)"
+      },
+      {
+        "time": "2026-10-18T17:33:39.883+00:00",
+        "message": "[VisualServo]: k_p_yaw_rate=0.0030 k_d=0.0010 max_rate=0.50 deadzone=8.0"
+      },
+      {
+        "time": "2026-10-18T17:33:39.883+00:00",
+        "message": "[VisualServo]: forward_vel=1.00 sprint_vel=1.50 sprint_time=1.2 area_thresh=0.080"
+      },
+      {
+        "time": "2026-10-18T17:33:39.893+00:00",
+        "message": "[VisualServo]: Off-center target lost after approach; return to ALIGN and search."
+      },
+      {
+        "time": "2026-10-18T17:33:39.893+00:00",
+        "message": "[VisualServo]: SEARCH_ANCHOR pos=(4.286,1.118,0.909) yaw=-0.046"
+      },
+      {
+        "time": "2026-10-18T17:33:39.893+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-0.046 anchor=(4.29,1.12,0.91)"
+      },
+      {
+        "time": "2026-10-18T17:33:40.895+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=0.255 anchor=(4.29,1.12,0.91)"
+      },
+      {
+        "time": "2026-10-18T17:33:41.897+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=0.555 anchor=(4.29,1.12,0.91)"
+      },
+      {
+        "time": "2026-10-18T17:33:42.899+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=0.856 anchor=(4.29,1.12,0.91)"
+      },
+      {
+        "time": "2026-10-18T17:33:43.900+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=1.157 anchor=(4.29,1.12,0.91)"
+      },
+      {
+        "time": "2026-10-18T17:33:44.902+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=1.457 anchor=(4.29,1.12,0.91)"
+      },
+      {
+        "time": "2026-10-18T17:33:45.904+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=1.758 anchor=(4.29,1.12,0.91)"
+      },
+      {
+        "time": "2026-10-18T17:33:46.906+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=2.058 anchor=(4.29,1.12,0.91)"
+      },
+      {
+        "time": "2026-10-18T17:33:47.907+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=2.359 anchor=(4.29,1.12,0.91)"
+      },
+      {
+        "time": "2026-10-18T17:33:48.423+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-298,81) yaw_rate:0.500 vz:-0.300 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:33:49.425+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-120,52) yaw_rate:-0.500 vz:0.300 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:33:50.427+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-42,28) yaw_rate:-0.096 vz:0.300 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:33:51.429+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-25,19) yaw_rate:-0.047 vz:-0.300 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:33:52.431+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-23,21) yaw_rate:0.045 vz:-0.110 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:33:53.432+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-22,17) yaw_rate:0.042 vz:-0.070 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:33:54.434+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-27,13) yaw_rate:0.057 vz:-0.030 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:33:55.072+00:00",
+        "message": "[VisualServo]: Aligned! err:(-33,7) -> APPROACHING"
+      },
+      {
+        "time": "2026-10-18T17:33:55.082+00:00",
+        "message": "[VisualServo]: SPRINT_START pos=(4.110,1.331,0.292) yaw=-3.127 err=(-33.0,7.0) area=0.2407 velocity=1.500 time=1.200"
+      },
+      {
+        "time": "2026-10-18T17:33:55.082+00:00",
+        "message": "[VisualServo]: Area 24.1% >= 8.0% -> SPRINT! (sprint_vel=1.50, time=1.2s)"
+      },
+      {
+        "time": "2026-10-18T17:33:55.082+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.83(83%) yaw_rate:0.075 vz:-0.000 err:(-33,7) area:24.1%"
+      },
+      {
+        "time": "2026-10-18T17:33:55.092+00:00",
+        "message": "[VisualServo]: SPRINT - vx:1.50 yaw_rate:0.075 vz:-0.000 (0.0/1.2s)"
+      },
+      {
+        "time": "2026-10-18T17:33:55.294+00:00",
+        "message": "[VisualServo]: SPRINT - vx:1.50 yaw_rate:0.090 vz:-0.000 (0.2/1.2s)"
+      },
+      {
+        "time": "2026-10-18T17:33:55.497+00:00",
+        "message": "[VisualServo]: SPRINT - vx:1.50 yaw_rate:0.132 vz:0.300 (0.4/1.2s)"
+      },
+      {
+        "time": "2026-10-18T17:33:55.699+00:00",
+        "message": "[VisualServo]: SPRINT - vx:1.50 yaw_rate:0.132 vz:0.300 (0.6/1.2s)"
+      },
+      {
+        "time": "2026-10-18T17:33:55.902+00:00",
+        "message": "[VisualServo]: SPRINT - vx:1.50 yaw_rate:0.132 vz:0.300 (0.8/1.2s)"
+      },
+      {
+        "time": "2026-10-18T17:33:56.104+00:00",
+        "message": "[VisualServo]: SPRINT - vx:1.50 yaw_rate:0.132 vz:0.300 (1.0/1.2s)"
+      },
+      {
+        "time": "2026-10-18T17:33:56.286+00:00",
+        "message": "[VisualServo]: SPRINT_END pos=(3.148,1.284,0.573) yaw=-2.984 err=(-52.0,-73.0) area=0.5795 target_fresh=1 velocity=1.500 time=1.200"
+      },
+      {
+        "time": "2026-10-18T17:33:56.286+00:00",
+        "message": "[VisualServo]: Maintaining hover at (3.15, 1.28, 0.57) yaw: -2.98"
+      },
+      {
+        "time": "2026-10-18T17:33:56.287+00:00",
+        "message": "[VisualServo]: Sprint completed (1.2s). SUCCESS."
+      }
+    ],
+    "observer": {
+      "run_id": "20261019T013211_86208e",
+      "target_color": "red",
+      "start_time": "2026-10-18T17:32:34.596+00:00",
+      "end_time": "2026-10-18T17:34:11.761+00:00",
+      "total_time": "97.165",
+      "elapsed_time": "97.165",
+      "bt_success": "true",
+      "mission_success": "true",
+      "end_status": "completed",
+      "takeoff_status": "success",
+      "cross_frame_status": "success",
+      "detect_aruco_status": "success",
+      "return_cross_frame_status": "success",
+      "hit_balloon_status": "success",
+      "land_status": "success",
+      "aruco_detect_time": "0.134",
+      "balloon_search_time": "16.404",
+      "failure_stage": "",
+      "failure_reason": "",
+      "safety_boundary_triggered": "false",
+      "boundary_first_time": "",
+      "boundary_first_position": "",
+      "boundary_violation_count": "0",
+      "boundary_recovered": "",
+      "notes": "mission_command received as text; bt_planning_controls=[{\"goal\":\"{frame_center}\",\"offset_z\":\"1.000000\",\"kind\":\"frame_outbound\"},{\"goal\":\"{frame_center}\",\"offset_z\":\"\",\"kind\":\"frame_return\"},{\"goal\":\"4.3;1.0;0.7\",\"offset_z\":\"\",\"kind\":\"other\"}]; rosout_events_logged; setpoint_samples=4864; target_detection_messages=822"
+    }
+  },
+  {
+    "trial": "r3_blue_a1",
+    "offboard_requests": [
+      "2026-10-18T18:01:59.446+00:00",
+      "2026-10-18T18:02:04.455+00:00"
+    ],
+    "visual_servo_events": [
+      {
+        "time": "2026-10-18T18:03:32.750+00:00",
+        "message": "[VisualServo]: Visual Servo Started (VX+VZ+yaw_rate)"
+      },
+      {
+        "time": "2026-10-18T18:03:32.750+00:00",
+        "message": "[VisualServo]: k_p_yaw_rate=0.0030 k_d=0.0010 max_rate=0.50 deadzone=8.0"
+      },
+      {
+        "time": "2026-10-18T18:03:32.750+00:00",
+        "message": "[VisualServo]: forward_vel=1.00 sprint_vel=1.00 sprint_time=1.2 area_thresh=0.080"
+      },
+      {
+        "time": "2026-10-18T18:03:32.759+00:00",
+        "message": "[VisualServo]: Off-center target lost after approach; return to ALIGN and search."
+      },
+      {
+        "time": "2026-10-18T18:03:32.759+00:00",
+        "message": "[VisualServo]: SEARCH_ANCHOR pos=(5.384,0.879,0.717) yaw=-1.553"
+      },
+      {
+        "time": "2026-10-18T18:03:32.759+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-1.553 anchor=(5.38,0.88,0.72)"
+      },
+      {
+        "time": "2026-10-18T18:03:32.779+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-43,70) yaw_rate:0.500 vz:-0.300 stable:0"
+      },
+      {
+        "time": "2026-10-18T18:03:33.781+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-7,26) yaw_rate:-0.000 vz:-0.160 stable:0"
+      },
+      {
+        "time": "2026-10-18T18:03:34.783+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-2,19) yaw_rate:-0.000 vz:-0.090 stable:0"
+      },
+      {
+        "time": "2026-10-18T18:03:34.854+00:00",
+        "message": "[VisualServo]: BLUE_LOSS_SAMPLE area=0.0045 max_area=0.0107 lost_s=1.002"
+      },
+      {
+        "time": "2026-10-18T18:03:34.854+00:00",
+        "message": "[VisualServo]: SEARCH_ANCHOR pos=(5.420,0.909,0.355) yaw=-1.488"
+      },
+      {
+        "time": "2026-10-18T18:03:34.854+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-1.488 anchor=(5.42,0.91,0.36)"
+      },
+      {
+        "time": "2026-10-18T18:03:35.096+00:00",
+        "message": "[VisualServo]: Aligned! err:(-1,6) -> APPROACHING"
+      },
+      {
+        "time": "2026-10-18T18:03:35.107+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.99(99%) yaw_rate:-0.000 vz:-0.000 err:(-1,6) area:0.4%"
+      },
+      {
+        "time": "2026-10-18T18:03:35.613+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.96(96%) yaw_rate:-0.000 vz:0.280 err:(8,-38) area:0.5%"
+      },
+      {
+        "time": "2026-10-18T18:03:36.119+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.95(95%) yaw_rate:-0.003 vz:-0.000 err:(9,5) area:0.8%"
+      },
+      {
+        "time": "2026-10-18T18:03:36.625+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.95(95%) yaw_rate:-0.006 vz:-0.190 err:(10,29) area:2.2%"
+      },
+      {
+        "time": "2026-10-18T18:03:36.979+00:00",
+        "message": "[VisualServo]: Sprint area ready but off-center err:(9,50); continue alignment"
+      },
+      {
+        "time": "2026-10-18T18:03:37.131+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.00(95%) yaw_rate:-0.003 vz:-0.300 err:(9,54) area:17.4%"
+      },
+      {
+        "time": "2026-10-18T18:03:37.182+00:00",
+        "message": "[VisualServo]: SPRINT_START pos=(5.670,-0.666,0.306) yaw=-1.463 err=(11.0,52.0) area=0.4688 velocity=1.000 time=1.200"
+      },
+      {
+        "time": "2026-10-18T18:03:37.182+00:00",
+        "message": "[VisualServo]: Area 46.9% >= 8.0% -> SPRINT! (sprint_vel=1.00, time=1.2s)"
+      },
+      {
+        "time": "2026-10-18T18:03:37.192+00:00",
+        "message": "[VisualServo]: SPRINT - vx:1.00 yaw_rate:-0.009 vz:-0.300 (0.0/1.2s)"
+      },
+      {
+        "time": "2026-10-18T18:03:37.394+00:00",
+        "message": "[VisualServo]: SPRINT - vx:1.00 yaw_rate:-0.009 vz:-0.300 (0.2/1.2s)"
+      },
+      {
+        "time": "2026-10-18T18:03:37.597+00:00",
+        "message": "[VisualServo]: SPRINT - vx:1.00 yaw_rate:-0.009 vz:-0.300 (0.4/1.2s)"
+      },
+      {
+        "time": "2026-10-18T18:03:37.799+00:00",
+        "message": "[VisualServo]: SPRINT - vx:1.00 yaw_rate:-0.009 vz:-0.300 (0.6/1.2s)"
+      },
+      {
+        "time": "2026-10-18T18:03:38.002+00:00",
+        "message": "[VisualServo]: SPRINT - vx:1.00 yaw_rate:-0.009 vz:-0.300 (0.8/1.2s)"
+      },
+      {
+        "time": "2026-10-18T18:03:38.204+00:00",
+        "message": "[VisualServo]: SPRINT - vx:1.00 yaw_rate:-0.009 vz:-0.300 (1.0/1.2s)"
+      },
+      {
+        "time": "2026-10-18T18:03:38.386+00:00",
+        "message": "[VisualServo]: SPRINT_END pos=(5.779,-1.719,0.008) yaw=-1.475 err=(11.0,52.0) area=0.4688 target_fresh=0 velocity=1.000 time=1.200"
+      },
+      {
+        "time": "2026-10-18T18:03:38.386+00:00",
+        "message": "[VisualServo]: Maintaining hover at (5.78, -1.72, 0.01) yaw: -1.48"
+      },
+      {
+        "time": "2026-10-18T18:03:38.386+00:00",
+        "message": "[VisualServo]: Sprint completed (1.2s). SUCCESS."
+      }
+    ],
+    "observer": {
+      "run_id": "20261019T020141_0f5540",
+      "target_color": "blue",
+      "start_time": "2026-10-18T18:01:59.418+00:00",
+      "end_time": "2026-10-18T18:03:59.456+00:00",
+      "total_time": "120.038",
+      "elapsed_time": "120.038",
+      "bt_success": "true",
+      "mission_success": "true",
+      "end_status": "completed",
+      "takeoff_status": "success",
+      "cross_frame_status": "success",
+      "detect_aruco_status": "success",
+      "return_cross_frame_status": "success",
+      "hit_balloon_status": "success",
+      "land_status": "success",
+      "aruco_detect_time": "0.212",
+      "balloon_search_time": "5.637",
+      "failure_stage": "",
+      "failure_reason": "",
+      "safety_boundary_triggered": "false",
+      "boundary_first_time": "",
+      "boundary_first_position": "",
+      "boundary_violation_count": "0",
+      "boundary_recovered": "",
+      "notes": "mission_command received as text; bt_planning_controls=[{\"goal\":\"{frame_center}\",\"offset_z\":\"1.000000\",\"kind\":\"frame_outbound\"},{\"goal\":\"{frame_center}\",\"offset_z\":\"\",\"kind\":\"frame_return\"},{\"goal\":\"5.3;1.0;0.7\",\"offset_z\":\"\",\"kind\":\"other\"}]; rosout_events_logged; setpoint_samples=6009; target_detection_messages=900"
+    }
+  },
+  {
+    "trial": "r3_purple_a1",
+    "offboard_requests": [
+      "2026-10-18T17:55:48.728+00:00"
+    ],
+    "visual_servo_events": [
+      {
+        "time": "2026-10-18T17:57:02.113+00:00",
+        "message": "[VisualServo]: Visual Servo Started (VX+VZ+yaw_rate)"
+      },
+      {
+        "time": "2026-10-18T17:57:02.113+00:00",
+        "message": "[VisualServo]: k_p_yaw_rate=0.0030 k_d=0.0010 max_rate=0.50 deadzone=8.0"
+      },
+      {
+        "time": "2026-10-18T17:57:02.113+00:00",
+        "message": "[VisualServo]: forward_vel=1.00 sprint_vel=1.50 sprint_time=1.2 area_thresh=0.080"
+      },
+      {
+        "time": "2026-10-18T17:57:02.123+00:00",
+        "message": "[VisualServo]: Off-center target lost after approach; return to ALIGN and search."
+      },
+      {
+        "time": "2026-10-18T17:57:02.123+00:00",
+        "message": "[VisualServo]: SEARCH_ANCHOR pos=(4.166,-1.937,0.715) yaw=-3.102"
+      },
+      {
+        "time": "2026-10-18T17:57:02.123+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-3.102 anchor=(4.17,-1.94,0.71)"
+      },
+      {
+        "time": "2026-10-18T17:57:03.125+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-2.801 anchor=(4.17,-1.94,0.71)"
+      },
+      {
+        "time": "2026-10-18T17:57:04.127+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-2.501 anchor=(4.17,-1.94,0.71)"
+      },
+      {
+        "time": "2026-10-18T17:57:05.130+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-2.200 anchor=(4.17,-1.94,0.71)"
+      },
+      {
+        "time": "2026-10-18T17:57:05.939+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-308,195) yaw_rate:0.500 vz:-0.300 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:57:06.940+00:00",
+        "message": "[VisualServo]: ALIGN - err:(67,82) yaw_rate:-0.500 vz:0.300 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:57:07.943+00:00",
+        "message": "[VisualServo]: ALIGN - err:(133,2) yaw_rate:-0.375 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:57:08.945+00:00",
+        "message": "[VisualServo]: ALIGN - err:(96,3) yaw_rate:-0.264 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:57:09.946+00:00",
+        "message": "[VisualServo]: ALIGN - err:(62,-1) yaw_rate:-0.162 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:57:10.948+00:00",
+        "message": "[VisualServo]: ALIGN - err:(37,0) yaw_rate:-0.087 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:57:11.950+00:00",
+        "message": "[VisualServo]: ALIGN - err:(20,0) yaw_rate:-0.036 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:57:12.951+00:00",
+        "message": "[VisualServo]: ALIGN - err:(16,1) yaw_rate:-0.024 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:57:13.538+00:00",
+        "message": "[VisualServo]: SEARCH_ANCHOR pos=(4.043,-1.418,0.302) yaw=-2.766"
+      },
+      {
+        "time": "2026-10-18T17:57:13.538+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-2.766 anchor=(4.04,-1.42,0.30)"
+      },
+      {
+        "time": "2026-10-18T17:57:14.541+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-2.465 anchor=(4.04,-1.42,0.30)"
+      },
+      {
+        "time": "2026-10-18T17:57:15.542+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-2.165 anchor=(4.04,-1.42,0.30)"
+      },
+      {
+        "time": "2026-10-18T17:57:16.261+00:00",
+        "message": "[VisualServo]: ALIGN - err:(154,7) yaw_rate:-0.489 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:57:17.262+00:00",
+        "message": "[VisualServo]: ALIGN - err:(43,11) yaw_rate:0.500 vz:-0.300 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:57:17.900+00:00",
+        "message": "[VisualServo]: Aligned! err:(4,9) -> APPROACHING"
+      },
+      {
+        "time": "2026-10-18T17:57:17.910+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.98(98%) yaw_rate:-0.000 vz:-0.000 err:(4,9) area:1.0%"
+      },
+      {
+        "time": "2026-10-18T17:57:18.416+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.91(91%) yaw_rate:0.027 vz:0.250 err:(-17,-35) area:1.3%"
+      },
+      {
+        "time": "2026-10-18T17:57:18.922+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.82(82%) yaw_rate:0.081 vz:-0.050 err:(-35,15) area:2.1%"
+      },
+      {
+        "time": "2026-10-18T17:57:19.428+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.60(60%) yaw_rate:0.204 vz:-0.240 err:(-76,34) area:5.0%"
+      },
+      {
+        "time": "2026-10-18T17:57:19.539+00:00",
+        "message": "[VisualServo]: Sprint area ready but off-center err:(-118,29); continue alignment"
+      },
+      {
+        "time": "2026-10-18T17:57:19.934+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.00(0%) yaw_rate:0.500 vz:-0.300 err:(-235,56) area:21.5%"
+      },
+      {
+        "time": "2026-10-18T17:57:20.045+00:00",
+        "message": "[VisualServo]: Sprint area ready but off-center err:(-253,32); continue alignment"
+      },
+      {
+        "time": "2026-10-18T17:57:20.258+00:00",
+        "message": "[VisualServo]: Alignment lost (err_x=-293), back to ALIGN"
+      },
+      {
+        "time": "2026-10-18T17:57:20.268+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-293,-37) yaw_rate:0.500 vz:0.270 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:57:21.270+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-296,132) yaw_rate:0.500 vz:-0.300 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:57:22.271+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-187,8) yaw_rate:0.500 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:57:23.273+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-62,-4) yaw_rate:0.162 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:57:24.275+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-56,-4) yaw_rate:0.144 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:57:24.781+00:00",
+        "message": "[VisualServo]: Aligned! err:(-5,-6) -> APPROACHING"
+      },
+      {
+        "time": "2026-10-18T17:57:24.791+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.97(97%) yaw_rate:-0.000 vz:-0.000 err:(-5,-6) area:2.1%"
+      },
+      {
+        "time": "2026-10-18T17:57:25.297+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.82(82%) yaw_rate:-0.081 vz:0.300 err:(35,-45) area:3.7%"
+      },
+      {
+        "time": "2026-10-18T17:57:25.661+00:00",
+        "message": "[VisualServo]: Sprint area ready but off-center err:(109,26); continue alignment"
+      },
+      {
+        "time": "2026-10-18T17:57:25.803+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.00(21%) yaw_rate:-0.429 vz:-0.300 err:(151,51) area:15.5%"
+      },
+      {
+        "time": "2026-10-18T17:57:26.056+00:00",
+        "message": "[VisualServo]: Alignment lost (err_x=291), back to ALIGN"
+      },
+      {
+        "time": "2026-10-18T17:57:26.066+00:00",
+        "message": "[VisualServo]: ALIGN - err:(291,81) yaw_rate:-0.500 vz:-0.300 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:57:27.057+00:00",
+        "message": "[VisualServo]: SEARCH_ANCHOR pos=(4.218,-2.587,0.000) yaw=-1.055"
+      },
+      {
+        "time": "2026-10-18T17:57:27.057+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-1.055 anchor=(4.22,-2.59,0.00)"
+      },
+      {
+        "time": "2026-10-18T17:57:28.059+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-0.755 anchor=(4.22,-2.59,0.00)"
+      },
+      {
+        "time": "2026-10-18T17:57:29.060+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-0.454 anchor=(4.22,-2.59,0.00)"
+      },
+      {
+        "time": "2026-10-18T17:57:30.062+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-0.154 anchor=(4.22,-2.59,0.00)"
+      },
+      {
+        "time": "2026-10-18T17:57:31.064+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=0.147 anchor=(4.22,-2.59,0.00)"
+      },
+      {
+        "time": "2026-10-18T17:57:32.065+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=0.447 anchor=(4.22,-2.59,0.00)"
+      },
+      {
+        "time": "2026-10-18T17:57:33.067+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=0.748 anchor=(4.22,-2.59,0.00)"
+      },
+      {
+        "time": "2026-10-18T17:57:34.069+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=1.048 anchor=(4.22,-2.59,0.00)"
+      },
+      {
+        "time": "2026-10-18T17:57:35.071+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=1.349 anchor=(4.22,-2.59,0.00)"
+      },
+      {
+        "time": "2026-10-18T17:57:36.073+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=1.650 anchor=(4.22,-2.59,0.00)"
+      },
+      {
+        "time": "2026-10-18T17:57:37.075+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=1.950 anchor=(4.22,-2.59,0.00)"
+      },
+      {
+        "time": "2026-10-18T17:57:38.077+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=2.251 anchor=(4.22,-2.59,0.00)"
+      },
+      {
+        "time": "2026-10-18T17:57:39.079+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=2.551 anchor=(4.22,-2.59,0.00)"
+      },
+      {
+        "time": "2026-10-18T17:57:40.081+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=2.852 anchor=(4.22,-2.59,0.00)"
+      },
+      {
+        "time": "2026-10-18T17:57:41.083+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=3.153 anchor=(4.22,-2.59,0.00)"
+      },
+      {
+        "time": "2026-10-18T17:57:42.085+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=3.453 anchor=(4.22,-2.59,0.00)"
+      },
+      {
+        "time": "2026-10-18T17:57:43.087+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=3.754 anchor=(4.22,-2.59,0.00)"
+      },
+      {
+        "time": "2026-10-18T17:57:44.089+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=4.055 anchor=(4.22,-2.59,0.00)"
+      },
+      {
+        "time": "2026-10-18T17:57:45.091+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=4.355 anchor=(4.22,-2.59,0.00)"
+      },
+      {
+        "time": "2026-10-18T17:57:46.096+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=4.657 anchor=(4.22,-2.59,0.00)"
+      },
+      {
+        "time": "2026-10-18T17:57:47.098+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=4.957 anchor=(4.22,-2.59,0.00)"
+      },
+      {
+        "time": "2026-10-18T17:57:48.101+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=5.258 anchor=(4.22,-2.59,0.00)"
+      },
+      {
+        "time": "2026-10-18T17:57:49.103+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=5.559 anchor=(4.22,-2.59,0.00)"
+      },
+      {
+        "time": "2026-10-18T17:57:50.104+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=5.859 anchor=(4.22,-2.59,0.00)"
+      },
+      {
+        "time": "2026-10-18T17:57:51.107+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=6.160 anchor=(4.22,-2.59,0.00)"
+      },
+      {
+        "time": "2026-10-18T17:57:52.113+00:00",
+        "message": "[VisualServo]: Halted, entering hover mode."
+      },
+      {
+        "time": "2026-10-18T17:57:52.113+00:00",
+        "message": "[VisualServo]: Maintaining hover at (4.25, -2.52, 0.00) yaw: 0.11"
+      }
+    ],
+    "observer": {
+      "run_id": "20261019T015531_0aa92b",
+      "target_color": "purple",
+      "start_time": "2026-10-18T17:55:48.700+00:00",
+      "end_time": "2026-10-18T17:58:07.091+00:00",
+      "total_time": "138.391",
+      "elapsed_time": "138.391",
+      "bt_success": "true",
+      "mission_success": "false",
+      "end_status": "completed",
+      "takeoff_status": "success",
+      "cross_frame_status": "success",
+      "detect_aruco_status": "success",
+      "return_cross_frame_status": "success",
+      "hit_balloon_status": "",
+      "land_status": "success",
+      "aruco_detect_time": "0.099",
+      "balloon_search_time": "",
+      "failure_stage": "hit_balloon",
+      "failure_reason": "",
+      "safety_boundary_triggered": "false",
+      "boundary_first_time": "",
+      "boundary_first_position": "",
+      "boundary_violation_count": "0",
+      "boundary_recovered": "",
+      "notes": "mission_command received as text; SUCCESS received while stages were unobserved: hit_balloon; bt_planning_controls=[{\"goal\":\"{frame_center}\",\"offset_z\":\"1.000000\",\"kind\":\"frame_outbound\"},{\"goal\":\"{frame_center}\",\"offset_z\":\"\",\"kind\":\"frame_return\"},{\"goal\":\"4.3;-2.0;0.7\",\"offset_z\":\"\",\"kind\":\"other\"}]; rosout_events_logged; setpoint_samples=6921; target_detection_messages=1192"
+    }
+  },
+  {
+    "trial": "r3_red_a1",
+    "offboard_requests": [
+      "2026-10-18T17:49:50.546+00:00"
+    ],
+    "visual_servo_events": [
+      {
+        "time": "2026-10-18T17:50:58.034+00:00",
+        "message": "[VisualServo]: Visual Servo Started (VX+VZ+yaw_rate)"
+      },
+      {
+        "time": "2026-10-18T17:50:58.034+00:00",
+        "message": "[VisualServo]: k_p_yaw_rate=0.0030 k_d=0.0010 max_rate=0.50 deadzone=8.0"
+      },
+      {
+        "time": "2026-10-18T17:50:58.034+00:00",
+        "message": "[VisualServo]: forward_vel=1.00 sprint_vel=1.50 sprint_time=1.2 area_thresh=0.080"
+      },
+      {
+        "time": "2026-10-18T17:50:58.044+00:00",
+        "message": "[VisualServo]: Off-center target lost after approach; return to ALIGN and search."
+      },
+      {
+        "time": "2026-10-18T17:50:58.044+00:00",
+        "message": "[VisualServo]: SEARCH_ANCHOR pos=(4.247,1.048,0.869) yaw=-0.056"
+      },
+      {
+        "time": "2026-10-18T17:50:58.044+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-0.056 anchor=(4.25,1.05,0.87)"
+      },
+      {
+        "time": "2026-10-18T17:50:59.046+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=0.244 anchor=(4.25,1.05,0.87)"
+      },
+      {
+        "time": "2026-10-18T17:51:00.047+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=0.545 anchor=(4.25,1.05,0.87)"
+      },
+      {
+        "time": "2026-10-18T17:51:01.050+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=0.845 anchor=(4.25,1.05,0.87)"
+      },
+      {
+        "time": "2026-10-18T17:51:02.051+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=1.146 anchor=(4.25,1.05,0.87)"
+      },
+      {
+        "time": "2026-10-18T17:51:03.053+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=1.446 anchor=(4.25,1.05,0.87)"
+      },
+      {
+        "time": "2026-10-18T17:51:04.054+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=1.747 anchor=(4.25,1.05,0.87)"
+      },
+      {
+        "time": "2026-10-18T17:51:05.056+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=2.047 anchor=(4.25,1.05,0.87)"
+      },
+      {
+        "time": "2026-10-18T17:51:06.058+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=2.348 anchor=(4.25,1.05,0.87)"
+      },
+      {
+        "time": "2026-10-18T17:51:07.060+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=2.648 anchor=(4.25,1.05,0.87)"
+      },
+      {
+        "time": "2026-10-18T17:51:08.061+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=2.949 anchor=(4.25,1.05,0.87)"
+      },
+      {
+        "time": "2026-10-18T17:51:09.063+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=3.249 anchor=(4.25,1.05,0.87)"
+      },
+      {
+        "time": "2026-10-18T17:51:10.065+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=3.550 anchor=(4.25,1.05,0.87)"
+      },
+      {
+        "time": "2026-10-18T17:51:11.067+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=3.850 anchor=(4.25,1.05,0.87)"
+      },
+      {
+        "time": "2026-10-18T17:51:12.070+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=4.151 anchor=(4.25,1.05,0.87)"
+      },
+      {
+        "time": "2026-10-18T17:51:13.071+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=4.452 anchor=(4.25,1.05,0.87)"
+      },
+      {
+        "time": "2026-10-18T17:51:14.073+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=4.752 anchor=(4.25,1.05,0.87)"
+      },
+      {
+        "time": "2026-10-18T17:51:15.074+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=5.053 anchor=(4.25,1.05,0.87)"
+      },
+      {
+        "time": "2026-10-18T17:51:16.076+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=5.353 anchor=(4.25,1.05,0.87)"
+      },
+      {
+        "time": "2026-10-18T17:51:17.077+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=5.654 anchor=(4.25,1.05,0.87)"
+      },
+      {
+        "time": "2026-10-18T17:51:18.080+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=5.954 anchor=(4.25,1.05,0.87)"
+      },
+      {
+        "time": "2026-10-18T17:51:19.081+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=6.255 anchor=(4.25,1.05,0.87)"
+      },
+      {
+        "time": "2026-10-18T17:51:20.083+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=6.555 anchor=(4.25,1.05,0.87)"
+      },
+      {
+        "time": "2026-10-18T17:51:21.084+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=6.856 anchor=(4.25,1.05,0.87)"
+      },
+      {
+        "time": "2026-10-18T17:51:22.086+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=7.156 anchor=(4.25,1.05,0.87)"
+      },
+      {
+        "time": "2026-10-18T17:51:23.089+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=7.457 anchor=(4.25,1.05,0.87)"
+      },
+      {
+        "time": "2026-10-18T17:51:24.091+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=7.758 anchor=(4.25,1.05,0.87)"
+      },
+      {
+        "time": "2026-10-18T17:51:25.093+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=8.058 anchor=(4.25,1.05,0.87)"
+      },
+      {
+        "time": "2026-10-18T17:51:26.095+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=8.359 anchor=(4.25,1.05,0.87)"
+      },
+      {
+        "time": "2026-10-18T17:51:27.096+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=8.659 anchor=(4.25,1.05,0.87)"
+      },
+      {
+        "time": "2026-10-18T17:51:28.058+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-225,201) yaw_rate:0.500 vz:-0.300 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:51:29.060+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-79,71) yaw_rate:0.213 vz:-0.300 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:51:30.063+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-27,9) yaw_rate:0.057 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:51:31.065+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-23,7) yaw_rate:0.045 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:51:32.068+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-18,6) yaw_rate:0.030 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:51:33.070+00:00",
+        "message": "[VisualServo]: ALIGN - err:(-17,6) yaw_rate:0.027 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:51:33.252+00:00",
+        "message": "[VisualServo]: SEARCH_ANCHOR pos=(4.083,1.351,0.371) yaw=3.109"
+      },
+      {
+        "time": "2026-10-18T17:51:33.252+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=3.109 anchor=(4.08,1.35,0.37)"
+      },
+      {
+        "time": "2026-10-18T17:51:34.255+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=3.410 anchor=(4.08,1.35,0.37)"
+      },
+      {
+        "time": "2026-10-18T17:51:34.862+00:00",
+        "message": "[VisualServo]: ALIGN - err:(87,7) yaw_rate:-0.291 vz:-0.000 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:51:35.864+00:00",
+        "message": "[VisualServo]: ALIGN - err:(68,11) yaw_rate:-0.180 vz:-0.010 stable:0"
+      },
+      {
+        "time": "2026-10-18T17:51:36.420+00:00",
+        "message": "[VisualServo]: Aligned! err:(3,10) -> APPROACHING"
+      },
+      {
+        "time": "2026-10-18T17:51:36.430+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.98(98%) yaw_rate:-0.000 vz:-0.000 err:(3,10) area:0.5%"
+      },
+      {
+        "time": "2026-10-18T17:51:36.936+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.96(96%) yaw_rate:-0.000 vz:0.130 err:(-7,-23) area:0.5%"
+      },
+      {
+        "time": "2026-10-18T17:51:37.442+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.94(94%) yaw_rate:0.012 vz:0.030 err:(-12,-13) area:0.7%"
+      },
+      {
+        "time": "2026-10-18T17:51:37.949+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.91(91%) yaw_rate:0.027 vz:-0.130 err:(-17,23) area:1.3%"
+      },
+      {
+        "time": "2026-10-18T17:51:38.455+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.86(86%) yaw_rate:0.153 vz:0.300 err:(-26,28) area:4.0%"
+      },
+      {
+        "time": "2026-10-18T17:51:38.779+00:00",
+        "message": "[VisualServo]: Sprint area ready but off-center err:(-34,16); continue alignment"
+      },
+      {
+        "time": "2026-10-18T17:51:38.961+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.00(78%) yaw_rate:0.105 vz:-0.010 err:(-43,11) area:19.4%"
+      },
+      {
+        "time": "2026-10-18T17:51:39.285+00:00",
+        "message": "[VisualServo]: Sprint area ready but off-center err:(-65,1); continue alignment"
+      },
+      {
+        "time": "2026-10-18T17:51:39.467+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.00(66%) yaw_rate:0.171 vz:-0.000 err:(-65,1) area:46.8%"
+      },
+      {
+        "time": "2026-10-18T17:51:39.791+00:00",
+        "message": "[VisualServo]: Sprint area ready but off-center err:(-65,1); continue alignment"
+      },
+      {
+        "time": "2026-10-18T17:51:39.973+00:00",
+        "message": "[VisualServo]: APPROACH - vx:0.00(66%) yaw_rate:0.171 vz:-0.000 err:(-65,1) area:46.8%"
+      },
+      {
+        "time": "2026-10-18T17:51:39.983+00:00",
+        "message": "[VisualServo]: Off-center target lost after approach; return to ALIGN and search."
+      },
+      {
+        "time": "2026-10-18T17:51:39.983+00:00",
+        "message": "[VisualServo]: SEARCH_ANCHOR pos=(1.537,1.302,0.308) yaw=-2.903"
+      },
+      {
+        "time": "2026-10-18T17:51:39.983+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-2.903 anchor=(1.54,1.30,0.31)"
+      },
+      {
+        "time": "2026-10-18T17:51:40.985+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-2.602 anchor=(1.54,1.30,0.31)"
+      },
+      {
+        "time": "2026-10-18T17:51:41.987+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-2.302 anchor=(1.54,1.30,0.31)"
+      },
+      {
+        "time": "2026-10-18T17:51:42.989+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-2.001 anchor=(1.54,1.30,0.31)"
+      },
+      {
+        "time": "2026-10-18T17:51:43.991+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-1.701 anchor=(1.54,1.30,0.31)"
+      },
+      {
+        "time": "2026-10-18T17:51:44.992+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-1.400 anchor=(1.54,1.30,0.31)"
+      },
+      {
+        "time": "2026-10-18T17:51:45.994+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-1.099 anchor=(1.54,1.30,0.31)"
+      },
+      {
+        "time": "2026-10-18T17:51:46.997+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-0.799 anchor=(1.54,1.30,0.31)"
+      },
+      {
+        "time": "2026-10-18T17:51:47.999+00:00",
+        "message": "[VisualServo]: Target lost. Position-held search yaw=-0.498 anchor=(1.54,1.30,0.31)"
+      },
+      {
+        "time": "2026-10-18T17:51:48.034+00:00",
+        "message": "[VisualServo]: Halted, entering hover mode."
+      },
+      {
+        "time": "2026-10-18T17:51:48.034+00:00",
+        "message": "[VisualServo]: Maintaining hover at (1.47, 1.37, 0.31) yaw: -0.65"
+      }
+    ],
+    "observer": {
+      "run_id": "20261019T014937_e906c0",
+      "target_color": "red",
+      "start_time": "2026-10-18T17:49:50.517+00:00",
+      "end_time": "2026-10-18T17:51:57.042+00:00",
+      "total_time": "126.525",
+      "elapsed_time": "126.525",
+      "bt_success": "true",
+      "mission_success": "false",
+      "end_status": "completed",
+      "takeoff_status": "success",
+      "cross_frame_status": "success",
+      "detect_aruco_status": "success",
+      "return_cross_frame_status": "success",
+      "hit_balloon_status": "",
+      "land_status": "success",
+      "aruco_detect_time": "0.097",
+      "balloon_search_time": "",
+      "failure_stage": "hit_balloon",
+      "failure_reason": "",
+      "safety_boundary_triggered": "false",
+      "boundary_first_time": "",
+      "boundary_first_position": "",
+      "boundary_violation_count": "0",
+      "boundary_recovered": "",
+      "notes": "mission_command received as text; SUCCESS received while stages were unobserved: hit_balloon; bt_planning_controls=[{\"goal\":\"{frame_center}\",\"offset_z\":\"1.000000\",\"kind\":\"frame_outbound\"},{\"goal\":\"{frame_center}\",\"offset_z\":\"\",\"kind\":\"frame_return\"},{\"goal\":\"4.3;1.0;0.7\",\"offset_z\":\"\",\"kind\":\"other\"}]; rosout_events_logged; setpoint_samples=6334; target_detection_messages=924"
+    }
+  }
+]

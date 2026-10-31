@@ -1,0 +1,41 @@
+In file included from C:\Users\Administrator\Documents\Codex\2026-10-30\new-chat\work\research-repo\official_baseline\catkin_ws\src\ego-planner\src\planner\traj_utils\src\polynomial_traj.cpp:2:
+C:\Users\Administrator\Documents\Codex\2026-10-30\new-chat\work\research-repo\official_baseline\catkin_ws\src\ego-planner\src\planner\traj_utils\include/traj_utils/polynomial_traj.h:198:3: warning: non-void function does not return a value [-Wreturn-type]
+  198 |   }
+      |   ^
+In file included from C:\Users\Administrator\Documents\Codex\2026-10-30\new-chat\work\research-repo\official_baseline\catkin_ws\src\ego-planner\src\planner\bspline_opt\src\bspline_optimizer.cpp:2:
+C:\Users\Administrator\Documents\Codex\2026-10-30\new-chat\work\research-repo\official_baseline\catkin_ws\src\ego-planner\src\planner\bspline_opt\include/bspline_opt/gradient_descent_optimizer.h:42:19: warning: implicit conversion of out of range value from 'double' to 'int' is undefined [-Wliteral-conversion]
+   42 |   int iter_limit_{1e10};
+      |                  ~^~~~
+C:\Users\Administrator\Documents\Codex\2026-10-30\new-chat\work\research-repo\official_baseline\catkin_ws\src\ego-planner\src\planner\bspline_opt\include/bspline_opt/gradient_descent_optimizer.h:43:21: warning: implicit conversion of out of range value from 'double' to 'int' is undefined [-Wliteral-conversion]
+   43 |   int invoke_limit_{1e10};
+      |                    ~^~~~
+C:\Users\Administrator\Documents\Codex\2026-10-30\new-chat\work\research-repo\official_baseline\catkin_ws\src\ego-planner\src\planner\bspline_opt\include/bspline_opt/gradient_descent_optimizer.h:42:19: warning: implicit conversion of out of range value from 'double' to 'int' is undefined [-Wliteral-conversion]
+   42 |   int iter_limit_{1e10};
+      |                  ~^~~~
+C:\Users\Administrator\Documents\Codex\2026-10-30\new-chat\work\research-repo\official_baseline\catkin_ws\src\ego-planner\src\planner\bspline_opt\include/bspline_opt/gradient_descent_optimizer.h:43:21: warning: implicit conversion of out of range value from 'double' to 'int' is undefined [-Wliteral-conversion]
+   43 |   int invoke_limit_{1e10};
+      |                    ~^~~~
+In file included from C:\Users\Administrator\Documents\Codex\2026-10-30\new-chat\work\research-repo\research_20261030\tests\benchmark_replanning.cpp:2:
+In file included from C:\Users\Administrator\Documents\Codex\2026-10-30\new-chat\work\validation-smooth-v6\isolated_plan_manage\include/plan_manage/planner_manager.h:10:
+In file included from C:\Users\Administrator\Documents\Codex\2026-10-30\new-chat\work\validation-smooth-v6\isolated_plan_manage\include/plan_manage/plan_container.hpp:9:
+C:\Users\Administrator\Documents\Codex\2026-10-30\new-chat\work\research-repo\official_baseline\catkin_ws\src\ego-planner\src\planner\traj_utils\include/traj_utils/polynomial_traj.h:198:3: warning: non-void function does not return a value [-Wreturn-type]
+  198 |   }
+      |   ^
+In file included from C:\Users\Administrator\Documents\Codex\2026-10-30\new-chat\work\validation-smooth-v6\isolated_plan_manage\src\planner_manager.cpp:2:
+In file included from C:\Users\Administrator\Documents\Codex\2026-10-30\new-chat\work\validation-smooth-v6\isolated_plan_manage\include/plan_manage/planner_manager.h:10:
+In file included from C:\Users\Administrator\Documents\Codex\2026-10-30\new-chat\work\validation-smooth-v6\isolated_plan_manage\include/plan_manage/plan_container.hpp:9:
+C:\Users\Administrator\Documents\Codex\2026-10-30\new-chat\work\research-repo\official_baseline\catkin_ws\src\ego-planner\src\planner\traj_utils\include/traj_utils/polynomial_traj.h:198:3: warning: non-void function does not return a value [-Wreturn-type]
+  198 |   }
+      |   ^
+C:\Users\Administrator\Documents\Codex\2026-10-30\new-chat\work\research-repo\official_baseline\catkin_ws\src\ego-planner\src\planner\bspline_opt\src\bspline_optimizer.cpp:892:16: warning: variable length arrays in C++ are a Clang extension [-Wvla-cxx-extension]
+  892 |       double q[variable_num_];
+      |                ^~~~~~~~~~~~~
+C:\Users\Administrator\Documents\Codex\2026-10-30\new-chat\work\research-repo\official_baseline\catkin_ws\src\ego-planner\src\planner\bspline_opt\src\bspline_optimizer.cpp:892:16: note: implicit use of 'this' pointer is only allowed within the evaluation of a call to a 'constexpr' member function
+C:\Users\Administrator\Documents\Codex\2026-10-30\new-chat\work\research-repo\official_baseline\catkin_ws\src\ego-planner\src\planner\bspline_opt\src\bspline_optimizer.cpp:981:14: warning: variable length arrays in C++ are a Clang extension [-Wvla-cxx-extension]
+  981 |     double q[variable_num_];
+      |              ^~~~~~~~~~~~~
+C:\Users\Administrator\Documents\Codex\2026-10-30\new-chat\work\research-repo\official_baseline\catkin_ws\src\ego-planner\src\planner\bspline_opt\src\bspline_optimizer.cpp:981:14: note: implicit use of 'this' pointer is only allowed within the evaluation of a call to a 'constexpr' member function
+1 warning generated.
+6 warnings generated.
+1 warning generated.
+1 warning generated.
