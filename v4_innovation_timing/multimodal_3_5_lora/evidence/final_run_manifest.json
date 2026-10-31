@@ -1,0 +1,198 @@
+{
+  "adapter_test.log": {
+    "bytes": 5212,
+    "sha256": "d127a98748a1dbdfed0c6364b77cee75ed749cfa2f789771c6b5858804830428"
+  },
+  "adapter_test/config.json": {
+    "bytes": 377,
+    "sha256": "74c3e244ae336367beeb2ad1d36225700947fb3fc0718d48d876958503e9e148"
+  },
+  "adapter_test/predictions.jsonl": {
+    "bytes": 35547,
+    "sha256": "205a492df00b28187c9fb48663cea0c5537d0020bae299caf6b9dd42c7954a27"
+  },
+  "adapter_test/scored.json": {
+    "bytes": 34004,
+    "sha256": "3964f2e13152b548396d623da8a89f5fadee9558c238927579a38d2e2f1afdc2"
+  },
+  "adapter_test/summary.json": {
+    "bytes": 2312,
+    "sha256": "d17bb701510fc064e12d9abfa92d0be8ccd61fa4128d126813ff9e87285fd2d0"
+  },
+  "base_test.log": {
+    "bytes": 5211,
+    "sha256": "3ce75a6b41cdc7d3410c75f90321a06d4ce56b80e3be0c5c66bfe5a967d0b23a"
+  },
+  "base_test/config.json": {
+    "bytes": 324,
+    "sha256": "03a87d7b691f99087b85843da65319270d4b869c6875e15f99fc7750594209c9"
+  },
+  "base_test/predictions.jsonl": {
+    "bytes": 36924,
+    "sha256": "5de6ff79dd6de64e4eb98e9d67a0df4d39ad85bb66bb8a98de8dd465a07aa8ab"
+  },
+  "base_test/scored.json": {
+    "bytes": 34626,
+    "sha256": "1262a06cf2fa5088f3382677174144f7b307999a179180ef6a98668f1dc28b31"
+  },
+  "base_test/summary.json": {
+    "bytes": 2311,
+    "sha256": "114024f33c70bdc15cb21ea6a747a9c8a97b143ee86719fb6c57a87846ec701d"
+  },
+  "base_weights_after.sha256": {
+    "bytes": 112,
+    "sha256": "4acd1502bfcf34f18b1c5b180c5b5a157fb2330c4342ddfcf8685dedf985f2b1"
+  },
+  "base_weights_before.sha256": {
+    "bytes": 112,
+    "sha256": "4acd1502bfcf34f18b1c5b180c5b5a157fb2330c4342ddfcf8685dedf985f2b1"
+  },
+  "checkpoint200_update_proof.json": {
+    "bytes": 154,
+    "sha256": "458c71895a7ad668a03eaa56ddaf8a8be136cf351c1edd65c1a70ed9faefb08f"
+  },
+  "configs/ds_config_zero2_cpu.json": {
+    "bytes": 786,
+    "sha256": "bcfe99d501aa8f43d77ed2f04b859b64c3be7b17b14b70f8db259f69566e769d"
+  },
+  "evaluation_complete.json": {
+    "bytes": 113,
+    "sha256": "fe9c2adafc07e23a6d56a221e4449de2b477cb473d0546d7bebdb649879abad3"
+  },
+  "evaluation_process.json": {
+    "bytes": 72,
+    "sha256": "8d07dd7f937718102ca7a5e372b06efabbaee29e73ddc4b312384ad0ee277eff"
+  },
+  "gpu_memory.csv": {
+    "bytes": 153029,
+    "sha256": "302e6f6ce4adbcde8d36a1d28d14fe25d9a39787cdaba99afb32b3c5e6d7f611"
+  },
+  "output_lora/checkpoint-800/adapter_config.json": {
+    "bytes": 903,
+    "sha256": "441711bf0d35870cfc3e8490d2709a34c1380c1f38325bad32f9eebe2fb89c48"
+  },
+  "output_lora/checkpoint-800/experiment_complete.json": {
+    "bytes": 140,
+    "sha256": "3593f2a65ec5377420962a5418931200831eccf7ba549b22f868eb2e3a35f637"
+  },
+  "output_lora/checkpoint-800/trainer_state.json": {
+    "bytes": 129116,
+    "sha256": "272c8b09d872fcb62ba1baebf95290269152445fb65d7d7e0610dfd14fc19552"
+  },
+  "output_lora/trainer_state.json": {
+    "bytes": 194504,
+    "sha256": "43e4bcf309615e05d60858286a8961f6cd4f45cbaba568de1ec3ed3ddd405862"
+  },
+  "paired_analysis/paired.csv": {
+    "bytes": 15352,
+    "sha256": "259edbbbbd4c13f9eb060c36817e926c2e9f029339139a85ba5e0d3d1d6d63c7"
+  },
+  "paired_analysis/paired_summary.json": {
+    "bytes": 8034,
+    "sha256": "e9da1e630fceed3a23a051240d0181b4275722de157dad16062013db5bb8dcdd"
+  },
+  "paired_runner.log": {
+    "bytes": 935,
+    "sha256": "1e9b9b3eb0d0ab0b698717dfd3566ac3b5cc1d8bc710d0a7a880ff7982f1fea4"
+  },
+  "runtime_after.json": {
+    "bytes": 5386,
+    "sha256": "d98fcd746f264463ee6c1aa97bb7e75d47848948bfdf424d7410ea922860edf1"
+  },
+  "runtime_integrity_comparison.json": {
+    "bytes": 567,
+    "sha256": "c16a81b775c325586032d106463835297c4b85bd5d376380b8e028fe4a94e43d"
+  },
+  "tools/analyze_pair.py": {
+    "bytes": 5159,
+    "sha256": "525594f6e2624ecce5edde5bd00cde08c897272eb093836505d936632c434240"
+  },
+  "tools/audit_runtime.py": {
+    "bytes": 1491,
+    "sha256": "1b5d1c60da4d625321fd1a1fdac6370c3f34cf27b87f9996d5b20ac075515b57"
+  },
+  "tools/build_dataset.py": {
+    "bytes": 6099,
+    "sha256": "c8ea5bac22e6b4ac272906b5c45bb9a6fa307df28ba9db906da0b458995a27ff"
+  },
+  "tools/collect_evidence.py": {
+    "bytes": 2194,
+    "sha256": "3833c0f6d6c4c3f7475d25b9701789c0011861028b83fdf3568acf315acd2cb2"
+  },
+  "tools/evaluate.py": {
+    "bytes": 8020,
+    "sha256": "19110f8f66bc4e601757900fe4d5a9509806e1ec50c1f7653e688188f4f6ae30"
+  },
+  "tools/finetune_lora.sh": {
+    "bytes": 2295,
+    "sha256": "a587736fd9f355cd4272c0728efb87589258f2bab462096229a0544650032604"
+  },
+  "tools/link_cuda_libraries.py": {
+    "bytes": 1032,
+    "sha256": "9fb8fa2233aea0af0dc114972a29476fe166dac1062c1ff94990b46900e39d96"
+  },
+  "tools/preflight_dataset.py": {
+    "bytes": 1691,
+    "sha256": "53875b7407f2495a49c5361e5d1b31f4f341afd515892f8c9beec2f90cc8599d"
+  },
+  "tools/prepare_launcher.py": {
+    "bytes": 1931,
+    "sha256": "a542f733b511fa9a6c587a386e4e7bc4661a4c7abfa28324e446809fe117eda7"
+  },
+  "tools/prepare_pool.py": {
+    "bytes": 3038,
+    "sha256": "35fa4e0330dc77fdbf6930ca8f1ef7f1c7b9bfb528f4282eac268c4f262a3491"
+  },
+  "tools/progress.py": {
+    "bytes": 1265,
+    "sha256": "34d49d78d124601c62fea00e7e734ba651cd0d1038db5ec1765ce9e665713663"
+  },
+  "tools/run_pair.py": {
+    "bytes": 2105,
+    "sha256": "e56bd52fc57ed989535f2c5469de21f13ce165c94686d57c79e0a9357494feee"
+  },
+  "tools/train_budget.py": {
+    "bytes": 6635,
+    "sha256": "0228b8f1d690f1928443e81b3cac736cabe821f14657cdcf4e3369b7124f5b7f"
+  },
+  "tools/training_receipt.py": {
+    "bytes": 2109,
+    "sha256": "6fbe8809f2de6f3b1c33c67ba1ea971594553cd7309459b0094ab81a96c56275"
+  },
+  "tools/verify_integrity.py": {
+    "bytes": 1565,
+    "sha256": "1734d574a87968834f0381296e2d3349f0b50565924acfa8cd049ddb90d4a524"
+  },
+  "trainable_parameters.json": {
+    "bytes": 81207,
+    "sha256": "efe0a5f503b865cdb97377542de8a4113b9bdd6dba7b29c573495a871d231fba"
+  },
+  "training_attempt4.log": {
+    "bytes": 1482227,
+    "sha256": "e25de061d80c0361b487a987281c782056a536c16fac13a675afb7f0548aba51"
+  },
+  "training_environment.json": {
+    "bytes": 196,
+    "sha256": "6365be1128c165ba9fdfdb5bfd1fd4c6a022ebe228feb1cb8a41a5a224384165"
+  },
+  "training_memory.jsonl": {
+    "bytes": 164120,
+    "sha256": "edb3ad19f616f696373f4723a45b7fd7fb6d9a76cbbad5544e362d1267c93142"
+  },
+  "training_peak.json": {
+    "bytes": 149,
+    "sha256": "3d0d28c707a8db1f780c501b94c98155f6fb852646e9ada8c79c6f21f73e83fb"
+  },
+  "training_process.json": {
+    "bytes": 102,
+    "sha256": "a73cf721469850a188a99db1d66a3ffaeb01c31a1ee431337fd36fab2fa35db0"
+  },
+  "training_receipt.json": {
+    "bytes": 3366,
+    "sha256": "0e194a87ffd9b0ca0c747faf99895d090dec1515434e2958a5686d205f48ad87"
+  },
+  "training_wall_budget.json": {
+    "bytes": 87,
+    "sha256": "e0089e993bac26f289b9eb0dd3f2e78e1138fd019ed56c81d642e3b2d2703ed0"
+  }
+}

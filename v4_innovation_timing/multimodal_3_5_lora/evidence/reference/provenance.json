@@ -1,0 +1,8 @@
+{
+  "manual_file": "九格多模态大模型 4B 量化与训练使用手册2026_10_13_修正版.docx",
+  "manual_sha256": "d1ab84a2bf3afd3fb41c2ee9fed8b13e59cf4109fd747e8f554106a006a8ad1a",
+  "official_repo": "https://osredm.com/jiuyuan/CPM-9G-8B.git",
+  "branch": "FM9G-V",
+  "commit": "7530eba39cf345d4991eb955ed7ef6665c8f58e9",
+  "note": "Repository has finetune_ds.sh but no finetune_lora.sh; LoRA launcher extracted from manual paragraph 133 without changing arguments."
+}

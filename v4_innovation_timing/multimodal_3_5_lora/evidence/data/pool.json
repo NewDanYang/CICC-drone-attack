@@ -1,0 +1,4274 @@
+[
+  {
+    "id": "01_r1_red_baseline_000011",
+    "trial": "01_r1_red_baseline",
+    "file": "01_r1_red_baseline_000011.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/01_r1_red_baseline.tar.gz",
+    "member": "session/audit/frames/000011.jpg",
+    "sha256": "d65821dbc55d3ff920bad83feb34bc45d7169f26b0af9126b675c7134a9d978d",
+    "stamp": 1792957494.8700182,
+    "objects_stamp": 1792957494.8700182,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.9638671875,
+        "center": [
+          605,
+          212
+        ],
+        "bbox": [
+          586,
+          194,
+          625,
+          233
+        ]
+      },
+      {
+        "name": "red_balloon",
+        "score": 0.91796875,
+        "center": [
+          145,
+          202
+        ],
+        "bbox": [
+          123,
+          179,
+          167,
+          230
+        ]
+      }
+    ]
+  },
+  {
+    "id": "01_r1_red_baseline_000021",
+    "trial": "01_r1_red_baseline",
+    "file": "01_r1_red_baseline_000021.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/01_r1_red_baseline.tar.gz",
+    "member": "session/audit/frames/000021.jpg",
+    "sha256": "091576d2667ad0e7f105ba34e82676b1f6cbda6db3da99300c6231208fe9c342",
+    "stamp": 1792957504.9900181,
+    "objects_stamp": 1792957504.9900181,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.9541015625,
+        "center": [
+          55,
+          182
+        ],
+        "bbox": [
+          17,
+          146,
+          94,
+          226
+        ]
+      }
+    ]
+  },
+  {
+    "id": "01_r1_red_baseline_000031",
+    "trial": "01_r1_red_baseline",
+    "file": "01_r1_red_baseline_000031.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/01_r1_red_baseline.tar.gz",
+    "member": "session/audit/frames/000031.jpg",
+    "sha256": "87060c61ba80c619cc4bb47a74af872b47ea9fa3f9c1d66382d3a6099ae29850",
+    "stamp": 1792957514.9900181,
+    "objects_stamp": 1792957514.9900181,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.921875,
+        "center": [
+          100,
+          196
+        ],
+        "bbox": [
+          72,
+          167,
+          130,
+          232
+        ]
+      }
+    ]
+  },
+  {
+    "id": "01_r1_red_baseline_000161",
+    "trial": "01_r1_red_baseline",
+    "file": "01_r1_red_baseline_000161.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/01_r1_red_baseline.tar.gz",
+    "member": "session/audit/frames/000161.jpg",
+    "sha256": "8cc6fbd54e77913ad8f0376502bf4a873b1ed0798b69a9709712289eac07ecd4",
+    "stamp": 1792957588.7900183,
+    "objects_stamp": 1792957588.7900183,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.955078125,
+        "center": [
+          60,
+          307
+        ],
+        "bbox": [
+          40,
+          288,
+          81,
+          330
+        ]
+      }
+    ]
+  },
+  {
+    "id": "01_r1_red_baseline_000171",
+    "trial": "01_r1_red_baseline",
+    "file": "01_r1_red_baseline_000171.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/01_r1_red_baseline.tar.gz",
+    "member": "session/audit/frames/000171.jpg",
+    "sha256": "488b99afbbdcd6c4a4d7ae1391b2b5169e53af430ae267f53b2e7325c9f83d4e",
+    "stamp": 1792957590.7900183,
+    "objects_stamp": 1792957590.7900183,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.89892578125,
+        "center": [
+          274,
+          292
+        ],
+        "bbox": [
+          263,
+          276,
+          288,
+          310
+        ]
+      }
+    ]
+  },
+  {
+    "id": "01_r1_red_baseline_000271",
+    "trial": "01_r1_red_baseline",
+    "file": "01_r1_red_baseline_000271.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/01_r1_red_baseline.tar.gz",
+    "member": "session/audit/frames/000271.jpg",
+    "sha256": "959cd3da8d42bd9d7894fc1aa50fe6c3697032995c7f15db5e5b3f31cd22f2e9",
+    "stamp": 1792957610.7900183,
+    "objects_stamp": 1792957610.7900183,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.82666015625,
+        "center": [
+          207,
+          294
+        ],
+        "bbox": [
+          193,
+          278,
+          221,
+          313
+        ]
+      }
+    ]
+  },
+  {
+    "id": "01_r1_red_baseline_000391",
+    "trial": "01_r1_red_baseline",
+    "file": "01_r1_red_baseline_000391.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/01_r1_red_baseline.tar.gz",
+    "member": "session/audit/frames/000391.jpg",
+    "sha256": "a5b8ce7a18617099a0e00898efbc77acbb32712e5404f0d55686fc668cf48860",
+    "stamp": 1792957634.5900183,
+    "objects_stamp": 1792957634.5900183,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.80078125,
+        "center": [
+          438,
+          258
+        ],
+        "bbox": [
+          428,
+          247,
+          449,
+          274
+        ]
+      }
+    ]
+  },
+  {
+    "id": "01_r1_red_baseline_000401",
+    "trial": "01_r1_red_baseline",
+    "file": "01_r1_red_baseline_000401.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/01_r1_red_baseline.tar.gz",
+    "member": "session/audit/frames/000401.jpg",
+    "sha256": "0b18e08adbfdfe16a6fc0696d240c9a432f3c5dff343239a809fd056ba9252f6",
+    "stamp": 1792957636.5900183,
+    "objects_stamp": 1792957636.5900183,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.94970703125,
+        "center": [
+          535,
+          258
+        ],
+        "bbox": [
+          520,
+          240,
+          552,
+          279
+        ]
+      },
+      {
+        "name": "red_balloon",
+        "score": 0.86083984375,
+        "center": [
+          151,
+          258
+        ],
+        "bbox": [
+          138,
+          245,
+          165,
+          277
+        ]
+      }
+    ]
+  },
+  {
+    "id": "01_r1_red_baseline_000421",
+    "trial": "01_r1_red_baseline",
+    "file": "01_r1_red_baseline_000421.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/01_r1_red_baseline.tar.gz",
+    "member": "session/audit/frames/000421.jpg",
+    "sha256": "f2aa4e92e5a768fd1c4ff2317dc81c7aa86d4c3b9eac59d4b5e5ac209e01e043",
+    "stamp": 1792957640.5900183,
+    "objects_stamp": 1792957640.5900183,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.9287109375,
+        "center": [
+          121,
+          261
+        ],
+        "bbox": [
+          105,
+          245,
+          137,
+          281
+        ]
+      }
+    ]
+  },
+  {
+    "id": "01_r1_red_baseline_000431",
+    "trial": "01_r1_red_baseline",
+    "file": "01_r1_red_baseline_000431.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/01_r1_red_baseline.tar.gz",
+    "member": "session/audit/frames/000431.jpg",
+    "sha256": "f9acca1009a9dc5b629f6670348f26cae6ac2dd73a4efbf09111b115502a742c",
+    "stamp": 1792957642.5900183,
+    "objects_stamp": 1792957642.5900183,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.9443359375,
+        "center": [
+          97,
+          265
+        ],
+        "bbox": [
+          77,
+          246,
+          118,
+          291
+        ]
+      }
+    ]
+  },
+  {
+    "id": "01_r1_red_baseline_000441",
+    "trial": "01_r1_red_baseline",
+    "file": "01_r1_red_baseline_000441.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/01_r1_red_baseline.tar.gz",
+    "member": "session/audit/frames/000441.jpg",
+    "sha256": "95218ff8953351d6823b34f3eabac62aa804ca31516b7db68edea342be6d0659",
+    "stamp": 1792957644.5900183,
+    "objects_stamp": 1792957644.5900183,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.90966796875,
+        "center": [
+          33,
+          267
+        ],
+        "bbox": [
+          4,
+          243,
+          63,
+          302
+        ]
+      }
+    ]
+  },
+  {
+    "id": "01_r1_red_baseline_000451",
+    "trial": "01_r1_red_baseline",
+    "file": "01_r1_red_baseline_000451.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/01_r1_red_baseline.tar.gz",
+    "member": "session/audit/frames/000451.jpg",
+    "sha256": "22307ebb25754c297624c9390193ce32556a1a76c593541352adf45071d75317",
+    "stamp": 1792957646.5900183,
+    "objects_stamp": 1792957646.5900183,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.8662109375,
+        "center": [
+          490,
+          259
+        ],
+        "bbox": [
+          476,
+          244,
+          505,
+          278
+        ]
+      }
+    ]
+  },
+  {
+    "id": "01_r1_red_baseline_000481",
+    "trial": "01_r1_red_baseline",
+    "file": "01_r1_red_baseline_000481.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/01_r1_red_baseline.tar.gz",
+    "member": "session/audit/frames/000481.jpg",
+    "sha256": "722a08ba788da6194a4a08e0b6c12c1350175501e3b487bc58f957ca676795e0",
+    "stamp": 1792957652.5900183,
+    "objects_stamp": 1792957652.5900183,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.92724609375,
+        "center": [
+          506,
+          256
+        ],
+        "bbox": [
+          492,
+          240,
+          522,
+          275
+        ]
+      }
+    ]
+  },
+  {
+    "id": "01_r1_red_baseline_000531",
+    "trial": "01_r1_red_baseline",
+    "file": "01_r1_red_baseline_000531.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/01_r1_red_baseline.tar.gz",
+    "member": "session/audit/frames/000531.jpg",
+    "sha256": "e621e12d6dbe1a4b70bfdfdcffd085ecd11ba607d3addfc4582e32401b50dc30",
+    "stamp": 1792957662.5900183,
+    "objects_stamp": 1792957662.5900183,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.91162109375,
+        "center": [
+          532,
+          258
+        ],
+        "bbox": [
+          516,
+          241,
+          549,
+          278
+        ]
+      }
+    ]
+  },
+  {
+    "id": "01_r1_red_baseline_000541",
+    "trial": "01_r1_red_baseline",
+    "file": "01_r1_red_baseline_000541.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/01_r1_red_baseline.tar.gz",
+    "member": "session/audit/frames/000541.jpg",
+    "sha256": "b90f0a3885c5d540019dbb620a8370c32fac5da40e41dcdee732dc3961435e0a",
+    "stamp": 1792957664.5900183,
+    "objects_stamp": 1792957664.5900183,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.810546875,
+        "center": [
+          461,
+          253
+        ],
+        "bbox": [
+          451,
+          241,
+          472,
+          268
+        ]
+      }
+    ]
+  },
+  {
+    "id": "01_r1_red_baseline_000551",
+    "trial": "01_r1_red_baseline",
+    "file": "01_r1_red_baseline_000551.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/01_r1_red_baseline.tar.gz",
+    "member": "session/audit/frames/000551.jpg",
+    "sha256": "9665313dbd90e55b498c0af835b63ac59734f0470860c6459fc2e7f3000625c4",
+    "stamp": 1792957666.5900183,
+    "objects_stamp": 1792957666.5900183,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.9599609375,
+        "center": [
+          20,
+          274
+        ],
+        "bbox": [
+          0,
+          248,
+          48,
+          319
+        ]
+      },
+      {
+        "name": "purple_balloon",
+        "score": 0.81298828125,
+        "center": [
+          471,
+          255
+        ],
+        "bbox": [
+          460,
+          241,
+          482,
+          270
+        ]
+      }
+    ]
+  },
+  {
+    "id": "01_r1_red_baseline_000561",
+    "trial": "01_r1_red_baseline",
+    "file": "01_r1_red_baseline_000561.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/01_r1_red_baseline.tar.gz",
+    "member": "session/audit/frames/000561.jpg",
+    "sha256": "29330cf85c937ef0423da4f6aa6dd2ab550437531c66785f12df716944f4f522",
+    "stamp": 1792957668.5900183,
+    "objects_stamp": 1792957668.5900183,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.95458984375,
+        "center": [
+          552,
+          260
+        ],
+        "bbox": [
+          536,
+          242,
+          571,
+          282
+        ]
+      },
+      {
+        "name": "red_balloon",
+        "score": 0.939453125,
+        "center": [
+          71,
+          267
+        ],
+        "bbox": [
+          45,
+          244,
+          98,
+          300
+        ]
+      }
+    ]
+  },
+  {
+    "id": "01_r1_red_baseline_000571",
+    "trial": "01_r1_red_baseline",
+    "file": "01_r1_red_baseline_000571.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/01_r1_red_baseline.tar.gz",
+    "member": "session/audit/frames/000571.jpg",
+    "sha256": "e94b35ce5ae5d873ade021e49505029b73eb01a386b61df9c610c641082390bd",
+    "stamp": 1792957670.5900183,
+    "objects_stamp": 1792957670.5900183,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.970703125,
+        "center": [
+          109,
+          205
+        ],
+        "bbox": [
+          89,
+          184,
+          131,
+          231
+        ]
+      }
+    ]
+  },
+  {
+    "id": "01_r1_red_baseline_000581",
+    "trial": "01_r1_red_baseline",
+    "file": "01_r1_red_baseline_000581.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/01_r1_red_baseline.tar.gz",
+    "member": "session/audit/frames/000581.jpg",
+    "sha256": "2b21f1893003a146688307aaf113f7397080edeec75b01a514fa28f637391ac0",
+    "stamp": 1792957672.5900183,
+    "objects_stamp": 1792957672.5900183,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.962890625,
+        "center": [
+          132,
+          210
+        ],
+        "bbox": [
+          114,
+          192,
+          150,
+          232
+        ]
+      }
+    ]
+  },
+  {
+    "id": "01_r1_red_baseline_000591",
+    "trial": "01_r1_red_baseline",
+    "file": "01_r1_red_baseline_000591.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/01_r1_red_baseline.tar.gz",
+    "member": "session/audit/frames/000591.jpg",
+    "sha256": "8782092d8ef00a7982061711d28d4c6da3972305f2b7d4759ce73294180edc4c",
+    "stamp": 1792957676.9900181,
+    "objects_stamp": 1792957676.9900181,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.8447265625,
+        "center": [
+          156,
+          215
+        ],
+        "bbox": [
+          143,
+          200,
+          171,
+          235
+        ]
+      }
+    ]
+  },
+  {
+    "id": "01_r1_red_baseline_000601",
+    "trial": "01_r1_red_baseline",
+    "file": "01_r1_red_baseline_000601.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/01_r1_red_baseline.tar.gz",
+    "member": "session/audit/frames/000601.jpg",
+    "sha256": "fa766864d4e4560bfe65d238bfd98faa5ad146182a8e9eee2e1459c03a2136b5",
+    "stamp": 1792957686.9700181,
+    "objects_stamp": 1792957686.9700181,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.962890625,
+        "center": [
+          22,
+          187
+        ],
+        "bbox": [
+          0,
+          155,
+          54,
+          227
+        ]
+      },
+      {
+        "name": "purple_balloon",
+        "score": 0.9013671875,
+        "center": [
+          484,
+          219
+        ],
+        "bbox": [
+          473,
+          205,
+          497,
+          234
+        ]
+      }
+    ]
+  },
+  {
+    "id": "04_r1_purple_baseline_000001",
+    "trial": "04_r1_purple_baseline",
+    "file": "04_r1_purple_baseline_000001.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/04_r1_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000001.jpg",
+    "sha256": "93851d8bf6daefe439199729f3d082ee2f3884e86c884f6c3301bf8c12a6a636",
+    "stamp": 1792958373.6450236,
+    "objects_stamp": 1792958373.6450236,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.95947265625,
+        "center": [
+          180,
+          209
+        ],
+        "bbox": [
+          163,
+          191,
+          197,
+          232
+        ]
+      },
+      {
+        "name": "purple_balloon",
+        "score": 0.91162109375,
+        "center": [
+          543,
+          217
+        ],
+        "bbox": [
+          530,
+          203,
+          558,
+          235
+        ]
+      }
+    ]
+  },
+  {
+    "id": "04_r1_purple_baseline_000011",
+    "trial": "04_r1_purple_baseline",
+    "file": "04_r1_purple_baseline_000011.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/04_r1_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000011.jpg",
+    "sha256": "ce63c2b6412c2d87f1534a27e045c2f89110919ab8a3c788df4e9caf85e8f3d9",
+    "stamp": 1792958383.9650238,
+    "objects_stamp": 1792958383.9650238,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.96044921875,
+        "center": [
+          161,
+          205
+        ],
+        "bbox": [
+          141,
+          184,
+          181,
+          231
+        ]
+      }
+    ]
+  },
+  {
+    "id": "04_r1_purple_baseline_000021",
+    "trial": "04_r1_purple_baseline",
+    "file": "04_r1_purple_baseline_000021.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/04_r1_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000021.jpg",
+    "sha256": "ad245c43b5776d54807acbe7ba79b8084e6bd2edb7024dc32fd3d8a3f7932d20",
+    "stamp": 1792958393.9660237,
+    "objects_stamp": 1792958393.9660237,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.9443359375,
+        "center": [
+          189,
+          212
+        ],
+        "bbox": [
+          173,
+          194,
+          206,
+          233
+        ]
+      },
+      {
+        "name": "purple_balloon",
+        "score": 0.89892578125,
+        "center": [
+          542,
+          218
+        ],
+        "bbox": [
+          529,
+          203,
+          557,
+          235
+        ]
+      }
+    ]
+  },
+  {
+    "id": "04_r1_purple_baseline_000031",
+    "trial": "04_r1_purple_baseline",
+    "file": "04_r1_purple_baseline_000031.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/04_r1_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000031.jpg",
+    "sha256": "83bc531e822272ccc02028c269575795db0a3c2ed88056fcf95728f6d210e38c",
+    "stamp": 1792958403.9660237,
+    "objects_stamp": 1792958403.9660237,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.87255859375,
+        "center": [
+          8,
+          317
+        ],
+        "bbox": [
+          0,
+          286,
+          24,
+          385
+        ]
+      }
+    ]
+  },
+  {
+    "id": "04_r1_purple_baseline_000041",
+    "trial": "04_r1_purple_baseline",
+    "file": "04_r1_purple_baseline_000041.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/04_r1_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000041.jpg",
+    "sha256": "e85c3ac4f6b3ba437adef85261fac998f9053fb966989c26b2dab9906fb17526",
+    "stamp": 1792958413.9640236,
+    "objects_stamp": 1792958413.9640236,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.92919921875,
+        "center": [
+          527,
+          304
+        ],
+        "bbox": [
+          510,
+          287,
+          546,
+          328
+        ]
+      },
+      {
+        "name": "red_balloon",
+        "score": 0.90185546875,
+        "center": [
+          109,
+          300
+        ],
+        "bbox": [
+          92,
+          285,
+          127,
+          325
+        ]
+      }
+    ]
+  },
+  {
+    "id": "04_r1_purple_baseline_000081",
+    "trial": "04_r1_purple_baseline",
+    "file": "04_r1_purple_baseline_000081.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/04_r1_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000081.jpg",
+    "sha256": "4b3c7b8851263d471fe29d563f614bbdd48c24c7e3fd50162cf539b53e790f2c",
+    "stamp": 1792958453.9650238,
+    "objects_stamp": 1792958453.9650238,
+    "proposals": [
+      {
+        "name": "blue_balloon",
+        "score": 0.8759765625,
+        "center": [
+          9,
+          334
+        ],
+        "bbox": [
+          0,
+          295,
+          15,
+          363
+        ]
+      }
+    ]
+  },
+  {
+    "id": "04_r1_purple_baseline_000091",
+    "trial": "04_r1_purple_baseline",
+    "file": "04_r1_purple_baseline_000091.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/04_r1_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000091.jpg",
+    "sha256": "357a8dd150ebf55a8249ef8238ccecd7a00c17208f905f665b8de81a2d9a44a5",
+    "stamp": 1792958463.9650238,
+    "objects_stamp": 1792958463.9650238,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.927734375,
+        "center": [
+          614,
+          338
+        ],
+        "bbox": [
+          580,
+          296,
+          640,
+          410
+        ]
+      },
+      {
+        "name": "blue_balloon",
+        "score": 0.9267578125,
+        "center": [
+          153,
+          327
+        ],
+        "bbox": [
+          116,
+          286,
+          192,
+          376
+        ]
+      }
+    ]
+  },
+  {
+    "id": "04_r1_purple_baseline_000111",
+    "trial": "04_r1_purple_baseline",
+    "file": "04_r1_purple_baseline_000111.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/04_r1_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000111.jpg",
+    "sha256": "c6d3ba22bb6b43d7bcdc68691bdebaa8de2961dcf119024e0122bdfda526f025",
+    "stamp": 1792958473.5660236,
+    "objects_stamp": 1792958473.5660236,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.9404296875,
+        "center": [
+          309,
+          259
+        ],
+        "bbox": [
+          291,
+          236,
+          329,
+          287
+        ]
+      }
+    ]
+  },
+  {
+    "id": "04_r1_purple_baseline_000121",
+    "trial": "04_r1_purple_baseline",
+    "file": "04_r1_purple_baseline_000121.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/04_r1_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000121.jpg",
+    "sha256": "ce2e86f170342df6a6a6029c8a530078450725ea6cbba2b330e8f1759e85f962",
+    "stamp": 1792958475.5640237,
+    "objects_stamp": 1792958475.5640237,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.9716796875,
+        "center": [
+          229,
+          257
+        ],
+        "bbox": [
+          176,
+          191,
+          284,
+          330
+        ]
+      }
+    ]
+  },
+  {
+    "id": "04_r1_purple_baseline_000171",
+    "trial": "04_r1_purple_baseline",
+    "file": "04_r1_purple_baseline_000171.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/04_r1_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000171.jpg",
+    "sha256": "bd7da756952ac3949674db9569f0753430ec1185a2080d7cfe80587b9fd06d24",
+    "stamp": 1792958485.5640237,
+    "objects_stamp": 1792958485.5640237,
+    "proposals": [
+      {
+        "name": "blue_balloon",
+        "score": 0.8818359375,
+        "center": [
+          131,
+          250
+        ],
+        "bbox": [
+          109,
+          228,
+          153,
+          277
+        ]
+      }
+    ]
+  },
+  {
+    "id": "04_r1_purple_baseline_000191",
+    "trial": "04_r1_purple_baseline",
+    "file": "04_r1_purple_baseline_000191.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/04_r1_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000191.jpg",
+    "sha256": "188f6b84c6359d77a1e6393ec2b758f2f3c77e4d8ea689a62326f7dfb82554a6",
+    "stamp": 1792958489.5650237,
+    "objects_stamp": 1792958489.5650237,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.93896484375,
+        "center": [
+          622,
+          251
+        ],
+        "bbox": [
+          610,
+          234,
+          638,
+          273
+        ]
+      },
+      {
+        "name": "red_balloon",
+        "score": 0.822265625,
+        "center": [
+          200,
+          257
+        ],
+        "bbox": [
+          184,
+          242,
+          218,
+          285
+        ]
+      }
+    ]
+  },
+  {
+    "id": "04_r1_purple_baseline_000201",
+    "trial": "04_r1_purple_baseline",
+    "file": "04_r1_purple_baseline_000201.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/04_r1_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000201.jpg",
+    "sha256": "116314c3cd937090dc219c0f29ab7e7a5a422da8d65f86dd9d3bd97f5b45da67",
+    "stamp": 1792958491.5640237,
+    "objects_stamp": 1792958491.5640237,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.94873046875,
+        "center": [
+          624,
+          251
+        ],
+        "bbox": [
+          607,
+          233,
+          640,
+          273
+        ]
+      }
+    ]
+  },
+  {
+    "id": "04_r1_purple_baseline_000211",
+    "trial": "04_r1_purple_baseline",
+    "file": "04_r1_purple_baseline_000211.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/04_r1_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000211.jpg",
+    "sha256": "05fd3e4036d484b3ea6d62ca32b072eabcc573e24fee2e49adfb97d1ab794961",
+    "stamp": 1792958493.5640237,
+    "objects_stamp": 1792958493.5640237,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.91796875,
+        "center": [
+          215,
+          211
+        ],
+        "bbox": [
+          202,
+          196,
+          228,
+          229
+        ]
+      }
+    ]
+  },
+  {
+    "id": "04_r1_purple_baseline_000221",
+    "trial": "04_r1_purple_baseline",
+    "file": "04_r1_purple_baseline_000221.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/04_r1_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000221.jpg",
+    "sha256": "9da83de65cc7a65092d5322fe3f49648af2a20bae83d1cc59ef7e7bb66fde18a",
+    "stamp": 1792958495.5640237,
+    "objects_stamp": 1792958495.5640237,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.9599609375,
+        "center": [
+          172,
+          205
+        ],
+        "bbox": [
+          153,
+          185,
+          192,
+          232
+        ]
+      }
+    ]
+  },
+  {
+    "id": "05_r1_blue_baseline_000001",
+    "trial": "05_r1_blue_baseline",
+    "file": "05_r1_blue_baseline_000001.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/05_r1_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000001.jpg",
+    "sha256": "21bac20f61a7a381161d23c3d07de585205f85fbbbf2394a8a3181d4e2a5e8b4",
+    "stamp": 1792958626.5440109,
+    "objects_stamp": 1792958626.5440109,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.955078125,
+        "center": [
+          149,
+          203
+        ],
+        "bbox": [
+          129,
+          180,
+          172,
+          231
+        ]
+      },
+      {
+        "name": "purple_balloon",
+        "score": 0.923828125,
+        "center": [
+          532,
+          219
+        ],
+        "bbox": [
+          520,
+          205,
+          546,
+          234
+        ]
+      }
+    ]
+  },
+  {
+    "id": "05_r1_blue_baseline_000021",
+    "trial": "05_r1_blue_baseline",
+    "file": "05_r1_blue_baseline_000021.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/05_r1_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000021.jpg",
+    "sha256": "05273d2f203d35a3192fdf76e4804a3c2c58c3fa6a1557d2f00dfefecbce3c3c",
+    "stamp": 1792958646.7100108,
+    "objects_stamp": 1792958646.7100108,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.93603515625,
+        "center": [
+          590,
+          214
+        ],
+        "bbox": [
+          572,
+          196,
+          608,
+          234
+        ]
+      },
+      {
+        "name": "red_balloon",
+        "score": 0.93310546875,
+        "center": [
+          186,
+          211
+        ],
+        "bbox": [
+          170,
+          193,
+          201,
+          233
+        ]
+      }
+    ]
+  },
+  {
+    "id": "05_r1_blue_baseline_000071",
+    "trial": "05_r1_blue_baseline",
+    "file": "05_r1_blue_baseline_000071.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/05_r1_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000071.jpg",
+    "sha256": "bcb3076da77c36f0e3059bc2eb0bbee765f668a66e0cc3fa7d17659ff1970974",
+    "stamp": 1792958696.7100108,
+    "objects_stamp": 1792958696.7100108,
+    "proposals": [
+      {
+        "name": "blue_balloon",
+        "score": 0.8408203125,
+        "center": [
+          443,
+          310
+        ],
+        "bbox": [
+          426,
+          291,
+          460,
+          333
+        ]
+      }
+    ]
+  },
+  {
+    "id": "05_r1_blue_baseline_000091",
+    "trial": "05_r1_blue_baseline",
+    "file": "05_r1_blue_baseline_000091.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/05_r1_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000091.jpg",
+    "sha256": "2ed77a26840f80e646775b8af3a44c7c346111a2ba323aea2289bf9eabdbea99",
+    "stamp": 1792958716.711011,
+    "objects_stamp": 1792958716.711011,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.94873046875,
+        "center": [
+          568,
+          277
+        ],
+        "bbox": [
+          549,
+          263,
+          587,
+          304
+        ]
+      }
+    ]
+  },
+  {
+    "id": "05_r1_blue_baseline_000101",
+    "trial": "05_r1_blue_baseline",
+    "file": "05_r1_blue_baseline_000101.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/05_r1_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000101.jpg",
+    "sha256": "18a7a80fb3f10c8defb42c0b2c5336c4f6f568a0e29de087c34b64a63e8dee7d",
+    "stamp": 1792958718.830011,
+    "objects_stamp": 1792958718.830011,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.916015625,
+        "center": [
+          558,
+          286
+        ],
+        "bbox": [
+          537,
+          267,
+          578,
+          313
+        ]
+      },
+      {
+        "name": "blue_balloon",
+        "score": 0.83447265625,
+        "center": [
+          421,
+          286
+        ],
+        "bbox": [
+          404,
+          266,
+          439,
+          309
+        ]
+      }
+    ]
+  },
+  {
+    "id": "05_r1_blue_baseline_000111",
+    "trial": "05_r1_blue_baseline",
+    "file": "05_r1_blue_baseline_000111.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/05_r1_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000111.jpg",
+    "sha256": "738c7794691353df856a09c8bf3cb6734996b6f4a7e73105f726ba173e059b8c",
+    "stamp": 1792958720.8310108,
+    "objects_stamp": 1792958720.8310108,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.94580078125,
+        "center": [
+          629,
+          244
+        ],
+        "bbox": [
+          616,
+          227,
+          640,
+          272
+        ]
+      },
+      {
+        "name": "blue_balloon",
+        "score": 0.869140625,
+        "center": [
+          321,
+          253
+        ],
+        "bbox": [
+          294,
+          223,
+          344,
+          289
+        ]
+      }
+    ]
+  },
+  {
+    "id": "05_r1_blue_baseline_000121",
+    "trial": "05_r1_blue_baseline",
+    "file": "05_r1_blue_baseline_000121.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/05_r1_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000121.jpg",
+    "sha256": "75d9f8f5d98c156fc03236024e31b74ae9a800b67bd650519a7d377373c10f33",
+    "stamp": 1792958722.8310108,
+    "objects_stamp": 1792958722.8310108,
+    "proposals": [
+      {
+        "name": "blue_balloon",
+        "score": 0.97412109375,
+        "center": [
+          256,
+          254
+        ],
+        "bbox": [
+          193,
+          176,
+          321,
+          341
+        ]
+      }
+    ]
+  },
+  {
+    "id": "05_r1_blue_baseline_000141",
+    "trial": "05_r1_blue_baseline",
+    "file": "05_r1_blue_baseline_000141.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/05_r1_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000141.jpg",
+    "sha256": "e0f7e4e0e34e3f0942e4398f5a63b21d478608b62f9cfef1af693694842dffb6",
+    "stamp": 1792958726.830011,
+    "objects_stamp": 1792958726.830011,
+    "proposals": [
+      {
+        "name": "blue_balloon",
+        "score": 0.97509765625,
+        "center": [
+          379,
+          346
+        ],
+        "bbox": [
+          330,
+          284,
+          431,
+          419
+        ]
+      }
+    ]
+  },
+  {
+    "id": "05_r1_blue_baseline_000151",
+    "trial": "05_r1_blue_baseline",
+    "file": "05_r1_blue_baseline_000151.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/05_r1_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000151.jpg",
+    "sha256": "f38ed075531471046a2b702ea41ef9841364aba8f3dbb8ede6291c6a5875efae",
+    "stamp": 1792958728.830011,
+    "objects_stamp": 1792958728.830011,
+    "proposals": [
+      {
+        "name": "blue_balloon",
+        "score": 0.85791015625,
+        "center": [
+          424,
+          264
+        ],
+        "bbox": [
+          404,
+          241,
+          445,
+          293
+        ]
+      }
+    ]
+  },
+  {
+    "id": "05_r1_blue_baseline_000171",
+    "trial": "05_r1_blue_baseline",
+    "file": "05_r1_blue_baseline_000171.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/05_r1_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000171.jpg",
+    "sha256": "02577d5a00bb94a001d7f5097124b40c55bd2341d1a0aa549b7fffcceabdb3aa",
+    "stamp": 1792958732.830011,
+    "objects_stamp": 1792958732.830011,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.95947265625,
+        "center": [
+          557,
+          280
+        ],
+        "bbox": [
+          525,
+          248,
+          591,
+          317
+        ]
+      }
+    ]
+  },
+  {
+    "id": "05_r1_blue_baseline_000181",
+    "trial": "05_r1_blue_baseline",
+    "file": "05_r1_blue_baseline_000181.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/05_r1_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000181.jpg",
+    "sha256": "a3e55d88ddbbacfc44182728ad1666b192e858378bdd8acbe9932c46bffe03ef",
+    "stamp": 1792958734.830011,
+    "objects_stamp": 1792958734.830011,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.89013671875,
+        "center": [
+          555,
+          265
+        ],
+        "bbox": [
+          536,
+          246,
+          576,
+          291
+        ]
+      }
+    ]
+  },
+  {
+    "id": "05_r1_blue_baseline_000201",
+    "trial": "05_r1_blue_baseline",
+    "file": "05_r1_blue_baseline_000201.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/05_r1_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000201.jpg",
+    "sha256": "48f66fd45d3179f77a4fc01475980d6e2e8426799af5bf3e5ebf04370f1e1aff",
+    "stamp": 1792958738.830011,
+    "objects_stamp": 1792958738.830011,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.92529296875,
+        "center": [
+          109,
+          200
+        ],
+        "bbox": [
+          87,
+          177,
+          126,
+          230
+        ]
+      },
+      {
+        "name": "purple_balloon",
+        "score": 0.88427734375,
+        "center": [
+          503,
+          223
+        ],
+        "bbox": [
+          492,
+          210,
+          516,
+          238
+        ]
+      }
+    ]
+  },
+  {
+    "id": "05_r1_blue_baseline_000211",
+    "trial": "05_r1_blue_baseline",
+    "file": "05_r1_blue_baseline_000211.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/05_r1_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000211.jpg",
+    "sha256": "6a54f1c4eef07e288e660e0c4aa9f24b19e65ebb56156892e862f573e9072901",
+    "stamp": 1792958740.8310108,
+    "objects_stamp": 1792958740.8310108,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.94287109375,
+        "center": [
+          540,
+          217
+        ],
+        "bbox": [
+          526,
+          201,
+          556,
+          235
+        ]
+      }
+    ]
+  },
+  {
+    "id": "05_r1_blue_baseline_000221",
+    "trial": "05_r1_blue_baseline",
+    "file": "05_r1_blue_baseline_000221.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/05_r1_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000221.jpg",
+    "sha256": "c8aba734e175baa9d8e766c0109f64549e503b5e8687562ba6f5d24f2fdc48f5",
+    "stamp": 1792958742.830011,
+    "objects_stamp": 1792958742.830011,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.95556640625,
+        "center": [
+          582,
+          212
+        ],
+        "bbox": [
+          564,
+          193,
+          602,
+          233
+        ]
+      }
+    ]
+  },
+  {
+    "id": "08_r2_red_baseline_000001",
+    "trial": "08_r2_red_baseline",
+    "file": "08_r2_red_baseline_000001.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/08_r2_red_baseline.tar.gz",
+    "member": "session/audit/frames/000001.jpg",
+    "sha256": "aa9c77f8682bf1f781a7799ccb740fbfb4d3e7bb98bc53e9a85e8cb6863df9ae",
+    "stamp": 1793010191.91902,
+    "objects_stamp": 1793010191.91902,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.9462890625,
+        "center": [
+          587,
+          213
+        ],
+        "bbox": [
+          570,
+          196,
+          606,
+          233
+        ]
+      },
+      {
+        "name": "red_balloon",
+        "score": 0.9365234375,
+        "center": [
+          126,
+          198
+        ],
+        "bbox": [
+          101,
+          172,
+          151,
+          229
+        ]
+      }
+    ]
+  },
+  {
+    "id": "08_r2_red_baseline_000011",
+    "trial": "08_r2_red_baseline",
+    "file": "08_r2_red_baseline_000011.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/08_r2_red_baseline.tar.gz",
+    "member": "session/audit/frames/000011.jpg",
+    "sha256": "0f3ad520e18503db2930a2a9dba4f424d82cb4cf1e5fbc834e4e9bdb965592eb",
+    "stamp": 1793010202.1440198,
+    "objects_stamp": 1793010202.1440198,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.9462890625,
+        "center": [
+          185,
+          210
+        ],
+        "bbox": [
+          168,
+          191,
+          202,
+          232
+        ]
+      },
+      {
+        "name": "purple_balloon",
+        "score": 0.9267578125,
+        "center": [
+          558,
+          216
+        ],
+        "bbox": [
+          544,
+          201,
+          574,
+          235
+        ]
+      }
+    ]
+  },
+  {
+    "id": "08_r2_red_baseline_000051",
+    "trial": "08_r2_red_baseline",
+    "file": "08_r2_red_baseline_000051.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/08_r2_red_baseline.tar.gz",
+    "member": "session/audit/frames/000051.jpg",
+    "sha256": "ba766bd98ba478914955fbf524e45fd60f154308ead7d74e62b814b55916a622",
+    "stamp": 1793010242.11002,
+    "objects_stamp": 1793010242.11002,
+    "proposals": [
+      {
+        "name": "blue_balloon",
+        "score": 0.9228515625,
+        "center": [
+          595,
+          445
+        ],
+        "bbox": [
+          552,
+          407,
+          640,
+          478
+        ]
+      }
+    ]
+  },
+  {
+    "id": "08_r2_red_baseline_000131",
+    "trial": "08_r2_red_baseline",
+    "file": "08_r2_red_baseline_000131.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/08_r2_red_baseline.tar.gz",
+    "member": "session/audit/frames/000131.jpg",
+    "sha256": "1a26cdabdfa24066971b22daad9112a4361937c6cc858820abed84ff5df1a070",
+    "stamp": 1793010287.63002,
+    "objects_stamp": 1793010287.63002,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.974609375,
+        "center": [
+          286,
+          252
+        ],
+        "bbox": [
+          268,
+          233,
+          307,
+          284
+        ]
+      }
+    ]
+  },
+  {
+    "id": "08_r2_red_baseline_000151",
+    "trial": "08_r2_red_baseline",
+    "file": "08_r2_red_baseline_000151.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/08_r2_red_baseline.tar.gz",
+    "member": "session/audit/frames/000151.jpg",
+    "sha256": "da795c16b0c6952f161de79285f1cd5080390f0934240cfd51e035ea066e214b",
+    "stamp": 1793010291.63002,
+    "objects_stamp": 1793010291.63002,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.8759765625,
+        "center": [
+          300,
+          252
+        ],
+        "bbox": [
+          286,
+          238,
+          314,
+          275
+        ]
+      }
+    ]
+  },
+  {
+    "id": "08_r2_red_baseline_000161",
+    "trial": "08_r2_red_baseline",
+    "file": "08_r2_red_baseline_000161.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/08_r2_red_baseline.tar.gz",
+    "member": "session/audit/frames/000161.jpg",
+    "sha256": "ed71d45acaf516e91ee15e380176da441cc44dd8a18feaa5958e823999832be2",
+    "stamp": 1793010293.63002,
+    "objects_stamp": 1793010293.63002,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.96923828125,
+        "center": [
+          297,
+          254
+        ],
+        "bbox": [
+          276,
+          232,
+          320,
+          290
+        ]
+      }
+    ]
+  },
+  {
+    "id": "08_r2_red_baseline_000171",
+    "trial": "08_r2_red_baseline",
+    "file": "08_r2_red_baseline_000171.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/08_r2_red_baseline.tar.gz",
+    "member": "session/audit/frames/000171.jpg",
+    "sha256": "1022cffba2f6acb5018465c95b4d52c84ce20841c89e78d61a010adf383bce6f",
+    "stamp": 1793010295.63002,
+    "objects_stamp": 1793010295.63002,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.97998046875,
+        "center": [
+          284,
+          255
+        ],
+        "bbox": [
+          241,
+          208,
+          326,
+          322
+        ]
+      }
+    ]
+  },
+  {
+    "id": "08_r2_red_baseline_000201",
+    "trial": "08_r2_red_baseline",
+    "file": "08_r2_red_baseline_000201.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/08_r2_red_baseline.tar.gz",
+    "member": "session/audit/frames/000201.jpg",
+    "sha256": "0442b50282bb8bddeec866de2321a497ea1d9939e43c97fdd2b9f03bc0e20527",
+    "stamp": 1793010301.62902,
+    "objects_stamp": 1793010301.62902,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.83447265625,
+        "center": [
+          543,
+          255
+        ],
+        "bbox": [
+          536,
+          240,
+          554,
+          274
+        ]
+      }
+    ]
+  },
+  {
+    "id": "08_r2_red_baseline_000211",
+    "trial": "08_r2_red_baseline",
+    "file": "08_r2_red_baseline_000211.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/08_r2_red_baseline.tar.gz",
+    "member": "session/audit/frames/000211.jpg",
+    "sha256": "dd9042a8a56c3b4c403a66e4cc6fa64db28e080efa8f32932655e815d18959a9",
+    "stamp": 1793010303.63002,
+    "objects_stamp": 1793010303.63002,
+    "proposals": [
+      {
+        "name": "blue_balloon",
+        "score": 0.822265625,
+        "center": [
+          445,
+          264
+        ],
+        "bbox": [
+          428,
+          244,
+          462,
+          288
+        ]
+      }
+    ]
+  },
+  {
+    "id": "08_r2_red_baseline_000291",
+    "trial": "08_r2_red_baseline",
+    "file": "08_r2_red_baseline_000291.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/08_r2_red_baseline.tar.gz",
+    "member": "session/audit/frames/000291.jpg",
+    "sha256": "19ec0ddcba3833297943660301ad5908c2d1fc3efd2266bd1dc687a92580c36c",
+    "stamp": 1793010319.53002,
+    "objects_stamp": 1793010319.53002,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.93603515625,
+        "center": [
+          10,
+          262
+        ],
+        "bbox": [
+          0,
+          244,
+          24,
+          284
+        ]
+      }
+    ]
+  },
+  {
+    "id": "08_r2_red_baseline_000301",
+    "trial": "08_r2_red_baseline",
+    "file": "08_r2_red_baseline_000301.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/08_r2_red_baseline.tar.gz",
+    "member": "session/audit/frames/000301.jpg",
+    "sha256": "2b75aacff93280288155bbcc26029289c249d4b39cb226e8bce1b6063451fa4f",
+    "stamp": 1793010321.55002,
+    "objects_stamp": 1793010321.55002,
+    "proposals": [
+      {
+        "name": "blue_balloon",
+        "score": 0.9306640625,
+        "center": [
+          127,
+          266
+        ],
+        "bbox": [
+          108,
+          244,
+          148,
+          291
+        ]
+      }
+    ]
+  },
+  {
+    "id": "08_r2_red_baseline_000311",
+    "trial": "08_r2_red_baseline",
+    "file": "08_r2_red_baseline_000311.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/08_r2_red_baseline.tar.gz",
+    "member": "session/audit/frames/000311.jpg",
+    "sha256": "c517b861b2696e89ff015c11ee4b85263f80d3edd3b1aae1ff7772e1dc438432",
+    "stamp": 1793010323.24502,
+    "objects_stamp": 1793010323.24502,
+    "proposals": [
+      {
+        "name": "blue_balloon",
+        "score": 0.9326171875,
+        "center": [
+          271,
+          268
+        ],
+        "bbox": [
+          252,
+          245,
+          291,
+          295
+        ]
+      }
+    ]
+  },
+  {
+    "id": "08_r2_red_baseline_000321",
+    "trial": "08_r2_red_baseline",
+    "file": "08_r2_red_baseline_000321.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/08_r2_red_baseline.tar.gz",
+    "member": "session/audit/frames/000321.jpg",
+    "sha256": "9e5d605b4b82292af572c60143738b9b830cf244dd38fb13bac87235247d4df6",
+    "stamp": 1793010325.24402,
+    "objects_stamp": 1793010325.24402,
+    "proposals": [
+      {
+        "name": "blue_balloon",
+        "score": 0.89111328125,
+        "center": [
+          364,
+          281
+        ],
+        "bbox": [
+          336,
+          247,
+          393,
+          322
+        ]
+      }
+    ]
+  },
+  {
+    "id": "08_r2_red_baseline_000381",
+    "trial": "08_r2_red_baseline",
+    "file": "08_r2_red_baseline_000381.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/08_r2_red_baseline.tar.gz",
+    "member": "session/audit/frames/000381.jpg",
+    "sha256": "2bf55dc96356da31a2ee58e30cbd2d1a161154c544a3d2af9e904355f3b5d5ef",
+    "stamp": 1793010337.4400198,
+    "objects_stamp": 1793010337.4400198,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.91845703125,
+        "center": [
+          566,
+          258
+        ],
+        "bbox": [
+          552,
+          244,
+          582,
+          276
+        ]
+      }
+    ]
+  },
+  {
+    "id": "08_r2_red_baseline_000401",
+    "trial": "08_r2_red_baseline",
+    "file": "08_r2_red_baseline_000401.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/08_r2_red_baseline.tar.gz",
+    "member": "session/audit/frames/000401.jpg",
+    "sha256": "60678605640427e431d2fdd78e16ca413fee4adfee24789faafff6e9222952e4",
+    "stamp": 1793010341.4400198,
+    "objects_stamp": 1793010341.4400198,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.94677734375,
+        "center": [
+          591,
+          214
+        ],
+        "bbox": [
+          575,
+          198,
+          609,
+          234
+        ]
+      }
+    ]
+  },
+  {
+    "id": "09_r2_purple_baseline_000001",
+    "trial": "09_r2_purple_baseline",
+    "file": "09_r2_purple_baseline_000001.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/09_r2_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000001.jpg",
+    "sha256": "f4e1684b379e66fb3e9dd0c18c3033741ec819c8929d11fc6f44822a8c874554",
+    "stamp": 1793010471.6050215,
+    "objects_stamp": 1793010471.6050215,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.9638671875,
+        "center": [
+          182,
+          210
+        ],
+        "bbox": [
+          165,
+          191,
+          200,
+          233
+        ]
+      },
+      {
+        "name": "purple_balloon",
+        "score": 0.9228515625,
+        "center": [
+          553,
+          217
+        ],
+        "bbox": [
+          539,
+          202,
+          569,
+          235
+        ]
+      }
+    ]
+  },
+  {
+    "id": "09_r2_purple_baseline_000011",
+    "trial": "09_r2_purple_baseline",
+    "file": "09_r2_purple_baseline_000011.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/09_r2_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000011.jpg",
+    "sha256": "674b89dca83e48fa9d209478e9cc02a46e2fd58872e2d4c2e00796b24bc769b3",
+    "stamp": 1793010481.9090214,
+    "objects_stamp": 1793010481.9090214,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.97314453125,
+        "center": [
+          29,
+          177
+        ],
+        "bbox": [
+          0,
+          137,
+          68,
+          225
+        ]
+      }
+    ]
+  },
+  {
+    "id": "09_r2_purple_baseline_000031",
+    "trial": "09_r2_purple_baseline",
+    "file": "09_r2_purple_baseline_000031.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/09_r2_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000031.jpg",
+    "sha256": "476a88bfb55cb8e1ca51aa55142a6bf10d1cf58500907ceddccab5202a35b96d",
+    "stamp": 1793010501.9150214,
+    "objects_stamp": 1793010501.9150214,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.91357421875,
+        "center": [
+          510,
+          263
+        ],
+        "bbox": [
+          500,
+          249,
+          521,
+          278
+        ]
+      }
+    ]
+  },
+  {
+    "id": "09_r2_purple_baseline_000051",
+    "trial": "09_r2_purple_baseline",
+    "file": "09_r2_purple_baseline_000051.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/09_r2_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000051.jpg",
+    "sha256": "c40bc5bd28bf15c6e994e2f20040283f190d46c51b92f5c63d3d3848d42b6811",
+    "stamp": 1793010521.9150214,
+    "objects_stamp": 1793010521.9150214,
+    "proposals": [
+      {
+        "name": "blue_balloon",
+        "score": 0.91162109375,
+        "center": [
+          419,
+          363
+        ],
+        "bbox": [
+          389,
+          328,
+          451,
+          408
+        ]
+      }
+    ]
+  },
+  {
+    "id": "09_r2_purple_baseline_000071",
+    "trial": "09_r2_purple_baseline",
+    "file": "09_r2_purple_baseline_000071.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/09_r2_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000071.jpg",
+    "sha256": "9f5a5524aa2e63b441da7515f4187667ead9060b4bb81103cd13f982d2615c06",
+    "stamp": 1793010541.9160216,
+    "objects_stamp": 1793010541.9160216,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.96728515625,
+        "center": [
+          30,
+          341
+        ],
+        "bbox": [
+          0,
+          317,
+          71,
+          392
+        ]
+      }
+    ]
+  },
+  {
+    "id": "09_r2_purple_baseline_000081",
+    "trial": "09_r2_purple_baseline",
+    "file": "09_r2_purple_baseline_000081.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/09_r2_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000081.jpg",
+    "sha256": "1745e62c91d0aa8711f69dd7a750e60671b1b0c463a9158687d68cf8be8dc528",
+    "stamp": 1793010551.9160216,
+    "objects_stamp": 1793010551.9160216,
+    "proposals": [
+      {
+        "name": "blue_balloon",
+        "score": 0.9052734375,
+        "center": [
+          145,
+          320
+        ],
+        "bbox": [
+          111,
+          283,
+          181,
+          367
+        ]
+      }
+    ]
+  },
+  {
+    "id": "09_r2_purple_baseline_000091",
+    "trial": "09_r2_purple_baseline",
+    "file": "09_r2_purple_baseline_000091.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/09_r2_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000091.jpg",
+    "sha256": "82b5b8a352d89490eb46a57e52b30fd77cf985f4c6ca71083c69f15537844c42",
+    "stamp": 1793010561.9160216,
+    "objects_stamp": 1793010561.9160216,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.9658203125,
+        "center": [
+          132,
+          332
+        ],
+        "bbox": [
+          92,
+          288,
+          173,
+          381
+        ]
+      }
+    ]
+  },
+  {
+    "id": "09_r2_purple_baseline_000101",
+    "trial": "09_r2_purple_baseline",
+    "file": "09_r2_purple_baseline_000101.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/09_r2_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000101.jpg",
+    "sha256": "7014203c3422525d73f04d8a64e94a4f3e3630731024d74673f15c1bd91a94f8",
+    "stamp": 1793010563.9160216,
+    "objects_stamp": 1793010563.9160216,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.95166015625,
+        "center": [
+          140,
+          233
+        ],
+        "bbox": [
+          47,
+          131,
+          232,
+          348
+        ]
+      }
+    ]
+  },
+  {
+    "id": "09_r2_purple_baseline_000111",
+    "trial": "09_r2_purple_baseline",
+    "file": "09_r2_purple_baseline_000111.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/09_r2_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000111.jpg",
+    "sha256": "d06c6be4506b06593dc59feab44c1a31b9f404ab5ff92d65c3c0c3198147b9c6",
+    "stamp": 1793010565.9160216,
+    "objects_stamp": 1793010565.9160216,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.97900390625,
+        "center": [
+          61,
+          252
+        ],
+        "bbox": [
+          0,
+          159,
+          141,
+          356
+        ]
+      }
+    ]
+  },
+  {
+    "id": "09_r2_purple_baseline_000131",
+    "trial": "09_r2_purple_baseline",
+    "file": "09_r2_purple_baseline_000131.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/09_r2_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000131.jpg",
+    "sha256": "56e04861417cdd1f4dcd8937193bf8e6d3f15250a74d4859d4bb98e5c025a317",
+    "stamp": 1793010569.9160216,
+    "objects_stamp": 1793010569.9160216,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.951171875,
+        "center": [
+          389,
+          230
+        ],
+        "bbox": [
+          368,
+          205,
+          410,
+          260
+        ]
+      }
+    ]
+  },
+  {
+    "id": "09_r2_purple_baseline_000141",
+    "trial": "09_r2_purple_baseline",
+    "file": "09_r2_purple_baseline_000141.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/09_r2_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000141.jpg",
+    "sha256": "d70d3a6760499371eaf0f5d1d77c565d73d1e2e26040b8e24dc35028375afc6a",
+    "stamp": 1793010571.9150214,
+    "objects_stamp": 1793010571.9150214,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.90185546875,
+        "center": [
+          346,
+          230
+        ],
+        "bbox": [
+          332,
+          212,
+          362,
+          252
+        ]
+      }
+    ]
+  },
+  {
+    "id": "09_r2_purple_baseline_000161",
+    "trial": "09_r2_purple_baseline",
+    "file": "09_r2_purple_baseline_000161.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/09_r2_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000161.jpg",
+    "sha256": "339f38bffafa880972275a25b8dfb34f1f8c8b727e128040a2cf3a486ece7b24",
+    "stamp": 1793010575.9150214,
+    "objects_stamp": 1793010575.9150214,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.9208984375,
+        "center": [
+          435,
+          228
+        ],
+        "bbox": [
+          419,
+          210,
+          452,
+          252
+        ]
+      }
+    ]
+  },
+  {
+    "id": "09_r2_purple_baseline_000171",
+    "trial": "09_r2_purple_baseline",
+    "file": "09_r2_purple_baseline_000171.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/09_r2_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000171.jpg",
+    "sha256": "076ef341af00bca7fe8300680ec0de5092e5abb53a290692352d2bd72d731bd6",
+    "stamp": 1793010577.9170215,
+    "objects_stamp": 1793010577.9170215,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.97265625,
+        "center": [
+          303,
+          228
+        ],
+        "bbox": [
+          281,
+          200,
+          326,
+          259
+        ]
+      }
+    ]
+  },
+  {
+    "id": "09_r2_purple_baseline_000181",
+    "trial": "09_r2_purple_baseline",
+    "file": "09_r2_purple_baseline_000181.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/09_r2_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000181.jpg",
+    "sha256": "1cdf19dc0afac13c60ac2912e0e58224dee6daf1f3c30293dbb8650a42f89bbf",
+    "stamp": 1793010579.9160216,
+    "objects_stamp": 1793010579.9160216,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.97998046875,
+        "center": [
+          195,
+          227
+        ],
+        "bbox": [
+          129,
+          150,
+          262,
+          314
+        ]
+      }
+    ]
+  },
+  {
+    "id": "09_r2_purple_baseline_000221",
+    "trial": "09_r2_purple_baseline",
+    "file": "09_r2_purple_baseline_000221.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/09_r2_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000221.jpg",
+    "sha256": "73d1a65a12303d93da89db2e8a98c7ea8feeaec44129430e41bf411d53b52232",
+    "stamp": 1793010587.9160216,
+    "objects_stamp": 1793010587.9160216,
+    "proposals": [
+      {
+        "name": "blue_balloon",
+        "score": 0.98291015625,
+        "center": [
+          140,
+          354
+        ],
+        "bbox": [
+          91,
+          298,
+          190,
+          416
+        ]
+      }
+    ]
+  },
+  {
+    "id": "09_r2_purple_baseline_000261",
+    "trial": "09_r2_purple_baseline",
+    "file": "09_r2_purple_baseline_000261.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/09_r2_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000261.jpg",
+    "sha256": "0b410a26aefe4a55ea7733ff7f1c7cef0e4cba440c57a1562dbe2725cef753f7",
+    "stamp": 1793010595.9160216,
+    "objects_stamp": 1793010595.9160216,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.9443359375,
+        "center": [
+          106,
+          244
+        ],
+        "bbox": [
+          88,
+          229,
+          127,
+          273
+        ]
+      }
+    ]
+  },
+  {
+    "id": "09_r2_purple_baseline_000281",
+    "trial": "09_r2_purple_baseline",
+    "file": "09_r2_purple_baseline_000281.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/09_r2_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000281.jpg",
+    "sha256": "c041d829a9da501ee39a9ee86cdd3e34916a2dc256dcf7f07860a456975d720f",
+    "stamp": 1793010599.9170215,
+    "objects_stamp": 1793010599.9170215,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.9658203125,
+        "center": [
+          570,
+          213
+        ],
+        "bbox": [
+          555,
+          197,
+          587,
+          233
+        ]
+      },
+      {
+        "name": "red_balloon",
+        "score": 0.9189453125,
+        "center": [
+          202,
+          212
+        ],
+        "bbox": [
+          188,
+          197,
+          217,
+          232
+        ]
+      }
+    ]
+  },
+  {
+    "id": "09_r2_purple_baseline_000291",
+    "trial": "09_r2_purple_baseline",
+    "file": "09_r2_purple_baseline_000291.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/09_r2_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000291.jpg",
+    "sha256": "451a3cfe59df38485e4bdfded5b4a58250cafadcdeb0f323a3b886f456288096",
+    "stamp": 1793010601.9160216,
+    "objects_stamp": 1793010601.9160216,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.9326171875,
+        "center": [
+          153,
+          203
+        ],
+        "bbox": [
+          132,
+          180,
+          175,
+          230
+        ]
+      },
+      {
+        "name": "purple_balloon",
+        "score": 0.88330078125,
+        "center": [
+          522,
+          220
+        ],
+        "bbox": [
+          511,
+          207,
+          536,
+          235
+        ]
+      }
+    ]
+  },
+  {
+    "id": "09_r2_purple_baseline_000301",
+    "trial": "09_r2_purple_baseline",
+    "file": "09_r2_purple_baseline_000301.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/09_r2_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000301.jpg",
+    "sha256": "e172f187b887f16a5539b433de39a9b4b1f3c98fb81f47d404de60bacd562f88",
+    "stamp": 1793010603.9170215,
+    "objects_stamp": 1793010603.9170215,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.9638671875,
+        "center": [
+          58,
+          183
+        ],
+        "bbox": [
+          21,
+          146,
+          96,
+          226
+        ]
+      },
+      {
+        "name": "purple_balloon",
+        "score": 0.91796875,
+        "center": [
+          541,
+          219
+        ],
+        "bbox": [
+          529,
+          204,
+          555,
+          235
+        ]
+      }
+    ]
+  },
+  {
+    "id": "09_r2_purple_baseline_000311",
+    "trial": "09_r2_purple_baseline",
+    "file": "09_r2_purple_baseline_000311.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/09_r2_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000311.jpg",
+    "sha256": "e13190ff7ab03360c87dc2760516564b8ef7483a70b17956dc672cc220486edd",
+    "stamp": 1793010613.9290216,
+    "objects_stamp": 1793010613.9290216,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.935546875,
+        "center": [
+          145,
+          201
+        ],
+        "bbox": [
+          123,
+          177,
+          168,
+          229
+        ]
+      }
+    ]
+  },
+  {
+    "id": "12_r2_blue_baseline_000001",
+    "trial": "12_r2_blue_baseline",
+    "file": "12_r2_blue_baseline_000001.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/12_r2_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000001.jpg",
+    "sha256": "854948d83718e96b009bb236bc4b7439b4124f5560c3e567ac635e7ecdfdeb9b",
+    "stamp": 1793011364.9500258,
+    "objects_stamp": 1793011364.9500258,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.92529296875,
+        "center": [
+          210,
+          216
+        ],
+        "bbox": [
+          197,
+          201,
+          224,
+          233
+        ]
+      }
+    ]
+  },
+  {
+    "id": "12_r2_blue_baseline_000011",
+    "trial": "12_r2_blue_baseline",
+    "file": "12_r2_blue_baseline_000011.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/12_r2_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000011.jpg",
+    "sha256": "87ff5dd3e6c7ee4446e086c6902bb076e0ec3d1f80722e86140be40ff813cf30",
+    "stamp": 1793011375.8800259,
+    "objects_stamp": 1793011375.8800259,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.9111328125,
+        "center": [
+          533,
+          219
+        ],
+        "bbox": [
+          521,
+          205,
+          547,
+          234
+        ]
+      }
+    ]
+  },
+  {
+    "id": "12_r2_blue_baseline_000021",
+    "trial": "12_r2_blue_baseline",
+    "file": "12_r2_blue_baseline_000021.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/12_r2_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000021.jpg",
+    "sha256": "9fab096d8f748d5fcd1cfe2f3d144d8c236d391de30f5c8c62ce6acf9a0efd50",
+    "stamp": 1793011385.845026,
+    "objects_stamp": 1793011385.845026,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.884765625,
+        "center": [
+          218,
+          218
+        ],
+        "bbox": [
+          207,
+          204,
+          231,
+          234
+        ]
+      }
+    ]
+  },
+  {
+    "id": "12_r2_blue_baseline_000031",
+    "trial": "12_r2_blue_baseline",
+    "file": "12_r2_blue_baseline_000031.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/12_r2_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000031.jpg",
+    "sha256": "6e6590f8864ac718f8a3a295bcbfa22ffa448d8fe813715765482be2a22df3ba",
+    "stamp": 1793011395.771026,
+    "objects_stamp": 1793011395.771026,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.96240234375,
+        "center": [
+          82,
+          204
+        ],
+        "bbox": [
+          51,
+          171,
+          115,
+          242
+        ]
+      },
+      {
+        "name": "purple_balloon",
+        "score": 0.9208984375,
+        "center": [
+          541,
+          225
+        ],
+        "bbox": [
+          528,
+          210,
+          556,
+          241
+        ]
+      }
+    ]
+  },
+  {
+    "id": "12_r2_blue_baseline_000051",
+    "trial": "12_r2_blue_baseline",
+    "file": "12_r2_blue_baseline_000051.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/12_r2_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000051.jpg",
+    "sha256": "1433d897124a60e276d42b2a72a05e5ec82ce5befd7f1348cb258a28fc424a79",
+    "stamp": 1793011415.866026,
+    "objects_stamp": 1793011415.866026,
+    "proposals": [
+      {
+        "name": "blue_balloon",
+        "score": 0.81982421875,
+        "center": [
+          16,
+          320
+        ],
+        "bbox": [
+          0,
+          300,
+          39,
+          353
+        ]
+      }
+    ]
+  },
+  {
+    "id": "12_r2_blue_baseline_000071",
+    "trial": "12_r2_blue_baseline",
+    "file": "12_r2_blue_baseline_000071.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/12_r2_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000071.jpg",
+    "sha256": "b4485e7151bac3bbba3712593ecf1d7d2cc3cdcd16553a7eb570bad1da3dad10",
+    "stamp": 1793011435.883026,
+    "objects_stamp": 1793011435.883026,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.88818359375,
+        "center": [
+          150,
+          336
+        ],
+        "bbox": [
+          130,
+          313,
+          172,
+          364
+        ]
+      }
+    ]
+  },
+  {
+    "id": "12_r2_blue_baseline_000081",
+    "trial": "12_r2_blue_baseline",
+    "file": "12_r2_blue_baseline_000081.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/12_r2_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000081.jpg",
+    "sha256": "21ccaea441346c9ef7552caa81e76d8eea7580bb1886701d1a4e55a011050294",
+    "stamp": 1793011445.853026,
+    "objects_stamp": 1793011445.853026,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.94775390625,
+        "center": [
+          110,
+          337
+        ],
+        "bbox": [
+          80,
+          306,
+          140,
+          373
+        ]
+      }
+    ]
+  },
+  {
+    "id": "12_r2_blue_baseline_000091",
+    "trial": "12_r2_blue_baseline",
+    "file": "12_r2_blue_baseline_000091.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/12_r2_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000091.jpg",
+    "sha256": "05494a4b6752d520b146e614181704eb273e6b6882fbda3ef3d33b6ba1349dd3",
+    "stamp": 1793011455.852026,
+    "objects_stamp": 1793011455.852026,
+    "proposals": [
+      {
+        "name": "blue_balloon",
+        "score": 0.9248046875,
+        "center": [
+          86,
+          340
+        ],
+        "bbox": [
+          47,
+          303,
+          128,
+          393
+        ]
+      }
+    ]
+  },
+  {
+    "id": "12_r2_blue_baseline_000101",
+    "trial": "12_r2_blue_baseline",
+    "file": "12_r2_blue_baseline_000101.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/12_r2_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000101.jpg",
+    "sha256": "716f88de2354c9d276bbbf080d0644bc327d196226f31de95b62144af16b3f80",
+    "stamp": 1793011464.2780259,
+    "objects_stamp": 1793011464.2780259,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.95458984375,
+        "center": [
+          529,
+          272
+        ],
+        "bbox": [
+          513,
+          257,
+          545,
+          293
+        ]
+      },
+      {
+        "name": "blue_balloon",
+        "score": 0.896484375,
+        "center": [
+          284,
+          284
+        ],
+        "bbox": [
+          263,
+          262,
+          303,
+          312
+        ]
+      }
+    ]
+  },
+  {
+    "id": "12_r2_blue_baseline_000111",
+    "trial": "12_r2_blue_baseline",
+    "file": "12_r2_blue_baseline_000111.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/12_r2_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000111.jpg",
+    "sha256": "202e51a63044c11d42820d2767fde38c7470373143279d67d11600ff638f49ca",
+    "stamp": 1793011466.2780259,
+    "objects_stamp": 1793011466.2780259,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.9580078125,
+        "center": [
+          508,
+          209
+        ],
+        "bbox": [
+          491,
+          192,
+          526,
+          232
+        ]
+      },
+      {
+        "name": "blue_balloon",
+        "score": 0.8408203125,
+        "center": [
+          316,
+          211
+        ],
+        "bbox": [
+          300,
+          191,
+          333,
+          233
+        ]
+      }
+    ]
+  },
+  {
+    "id": "12_r2_blue_baseline_000121",
+    "trial": "12_r2_blue_baseline",
+    "file": "12_r2_blue_baseline_000121.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/12_r2_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000121.jpg",
+    "sha256": "f20e356d0bb5e83bc362d3874d19f2ad6dd5bd1aef4e16953c1683af85affef5",
+    "stamp": 1793011468.277026,
+    "objects_stamp": 1793011468.277026,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.9560546875,
+        "center": [
+          610,
+          253
+        ],
+        "bbox": [
+          572,
+          211,
+          640,
+          306
+        ]
+      },
+      {
+        "name": "blue_balloon",
+        "score": 0.94970703125,
+        "center": [
+          296,
+          259
+        ],
+        "bbox": [
+          246,
+          201,
+          337,
+          320
+        ]
+      }
+    ]
+  },
+  {
+    "id": "12_r2_blue_baseline_000141",
+    "trial": "12_r2_blue_baseline",
+    "file": "12_r2_blue_baseline_000141.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/12_r2_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000141.jpg",
+    "sha256": "71ffdd7a507e2a3913b0c348966c9c046fe9e1320ff8fb9c3967d104a1cad662",
+    "stamp": 1793011472.2780259,
+    "objects_stamp": 1793011472.2780259,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.9521484375,
+        "center": [
+          614,
+          193
+        ],
+        "bbox": [
+          576,
+          120,
+          640,
+          275
+        ]
+      }
+    ]
+  },
+  {
+    "id": "12_r2_blue_baseline_000151",
+    "trial": "12_r2_blue_baseline",
+    "file": "12_r2_blue_baseline_000151.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/12_r2_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000151.jpg",
+    "sha256": "b11d47424b71eeeec3801e7a1e16a61c776f57c5c7773990d5d3a0e5044dd854",
+    "stamp": 1793011474.2780259,
+    "objects_stamp": 1793011474.2780259,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.97412109375,
+        "center": [
+          514,
+          226
+        ],
+        "bbox": [
+          472,
+          181,
+          556,
+          278
+        ]
+      }
+    ]
+  },
+  {
+    "id": "12_r2_blue_baseline_000161",
+    "trial": "12_r2_blue_baseline",
+    "file": "12_r2_blue_baseline_000161.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/12_r2_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000161.jpg",
+    "sha256": "949414c84d659e9e1ece312aa6f56f431d54dd1d67da910dfa80bc6e67041005",
+    "stamp": 1793011476.277026,
+    "objects_stamp": 1793011476.277026,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.962890625,
+        "center": [
+          428,
+          247
+        ],
+        "bbox": [
+          399,
+          213,
+          459,
+          289
+        ]
+      }
+    ]
+  },
+  {
+    "id": "12_r2_blue_baseline_000171",
+    "trial": "12_r2_blue_baseline",
+    "file": "12_r2_blue_baseline_000171.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/12_r2_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000171.jpg",
+    "sha256": "5cb6d93e138b8f45f877b38ac872974cf00f1e37cba9c79ab3d6fbc622b83550",
+    "stamp": 1793011478.2750258,
+    "objects_stamp": 1793011478.2750258,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.94580078125,
+        "center": [
+          345,
+          263
+        ],
+        "bbox": [
+          323,
+          234,
+          369,
+          296
+        ]
+      }
+    ]
+  },
+  {
+    "id": "12_r2_blue_baseline_000201",
+    "trial": "12_r2_blue_baseline",
+    "file": "12_r2_blue_baseline_000201.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/12_r2_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000201.jpg",
+    "sha256": "d09205bf240fa8f4cc8fdb987918805b0d577985b097c3f1e1ed539edc365bd3",
+    "stamp": 1793011484.2750258,
+    "objects_stamp": 1793011484.2750258,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.9716796875,
+        "center": [
+          57,
+          174
+        ],
+        "bbox": [
+          15,
+          133,
+          101,
+          225
+        ]
+      }
+    ]
+  },
+  {
+    "id": "12_r2_blue_baseline_000211",
+    "trial": "12_r2_blue_baseline",
+    "file": "12_r2_blue_baseline_000211.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/12_r2_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000211.jpg",
+    "sha256": "5bffd0bd6b5e83d270cd834815d46c1306c89e29bfc9c87a488a27663f08945c",
+    "stamp": 1793011487.080026,
+    "objects_stamp": 1793011487.080026,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.94189453125,
+        "center": [
+          220,
+          211
+        ],
+        "bbox": [
+          204,
+          193,
+          237,
+          233
+        ]
+      }
+    ]
+  },
+  {
+    "id": "12_r2_blue_baseline_000221",
+    "trial": "12_r2_blue_baseline",
+    "file": "12_r2_blue_baseline_000221.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/12_r2_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000221.jpg",
+    "sha256": "0431ceb4c46f73391c844b2f2e26e5a7ea3426023387fb88f33365e3120614ef",
+    "stamp": 1793011497.169026,
+    "objects_stamp": 1793011497.169026,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.95263671875,
+        "center": [
+          618,
+          214
+        ],
+        "bbox": [
+          600,
+          196,
+          636,
+          234
+        ]
+      },
+      {
+        "name": "red_balloon",
+        "score": 0.85400390625,
+        "center": [
+          10,
+          158
+        ],
+        "bbox": [
+          0,
+          110,
+          34,
+          224
+        ]
+      }
+    ]
+  },
+  {
+    "id": "13_r3_red_baseline_000001",
+    "trial": "13_r3_red_baseline",
+    "file": "13_r3_red_baseline_000001.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/13_r3_red_baseline.tar.gz",
+    "member": "session/audit/frames/000001.jpg",
+    "sha256": "dfbb2ad41eadd72bd027cc30298362d74edd265072bf05162497e271e0f2d7f8",
+    "stamp": 1793011619.730034,
+    "objects_stamp": 1793011619.730034,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.92724609375,
+        "center": [
+          583,
+          214
+        ],
+        "bbox": [
+          567,
+          197,
+          601,
+          233
+        ]
+      },
+      {
+        "name": "red_balloon",
+        "score": 0.8447265625,
+        "center": [
+          232,
+          221
+        ],
+        "bbox": [
+          222,
+          208,
+          243,
+          235
+        ]
+      }
+    ]
+  },
+  {
+    "id": "13_r3_red_baseline_000021",
+    "trial": "13_r3_red_baseline",
+    "file": "13_r3_red_baseline_000021.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/13_r3_red_baseline.tar.gz",
+    "member": "session/audit/frames/000021.jpg",
+    "sha256": "77435d976d063849b9aa493cf6cae28769b1423e2039c98835a5895c14767351",
+    "stamp": 1793011640.1110342,
+    "objects_stamp": 1793011640.1110342,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.88818359375,
+        "center": [
+          212,
+          216
+        ],
+        "bbox": [
+          200,
+          201,
+          224,
+          234
+        ]
+      }
+    ]
+  },
+  {
+    "id": "13_r3_red_baseline_000031",
+    "trial": "13_r3_red_baseline",
+    "file": "13_r3_red_baseline_000031.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/13_r3_red_baseline.tar.gz",
+    "member": "session/audit/frames/000031.jpg",
+    "sha256": "df348e71cc899d598f3122a4ac8afed654781564914dccb405565d927fc3f55b",
+    "stamp": 1793011650.0550342,
+    "objects_stamp": 1793011650.0550342,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.927734375,
+        "center": [
+          567,
+          215
+        ],
+        "bbox": [
+          553,
+          200,
+          585,
+          234
+        ]
+      },
+      {
+        "name": "red_balloon",
+        "score": 0.91845703125,
+        "center": [
+          187,
+          211
+        ],
+        "bbox": [
+          170,
+          193,
+          203,
+          232
+        ]
+      }
+    ]
+  },
+  {
+    "id": "13_r3_red_baseline_000041",
+    "trial": "13_r3_red_baseline",
+    "file": "13_r3_red_baseline_000041.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/13_r3_red_baseline.tar.gz",
+    "member": "session/audit/frames/000041.jpg",
+    "sha256": "46f62f94d7e2b2edc635dfbfd3fd6672359d5faaa4232ae5c34f9d1bf5fd9a62",
+    "stamp": 1793011660.040034,
+    "objects_stamp": 1793011660.040034,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.94970703125,
+        "center": [
+          66,
+          185
+        ],
+        "bbox": [
+          32,
+          151,
+          102,
+          227
+        ]
+      },
+      {
+        "name": "purple_balloon",
+        "score": 0.9462890625,
+        "center": [
+          578,
+          214
+        ],
+        "bbox": [
+          562,
+          198,
+          596,
+          234
+        ]
+      }
+    ]
+  },
+  {
+    "id": "13_r3_red_baseline_000051",
+    "trial": "13_r3_red_baseline",
+    "file": "13_r3_red_baseline_000051.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/13_r3_red_baseline.tar.gz",
+    "member": "session/audit/frames/000051.jpg",
+    "sha256": "2b49e179090858844670af918a80cc95b6cc18b7b0bca63aa1e668e2d48a7248",
+    "stamp": 1793011670.030034,
+    "objects_stamp": 1793011670.030034,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.81982421875,
+        "center": [
+          215,
+          269
+        ],
+        "bbox": [
+          202,
+          256,
+          228,
+          289
+        ]
+      }
+    ]
+  },
+  {
+    "id": "13_r3_red_baseline_000061",
+    "trial": "13_r3_red_baseline",
+    "file": "13_r3_red_baseline_000061.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/13_r3_red_baseline.tar.gz",
+    "member": "session/audit/frames/000061.jpg",
+    "sha256": "c08819dd7ecb247a3779d95a216510b53159376b5ad0a947d8c0e1397afd3400",
+    "stamp": 1793011680.0310342,
+    "objects_stamp": 1793011680.0310342,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.9326171875,
+        "center": [
+          507,
+          304
+        ],
+        "bbox": [
+          491,
+          287,
+          525,
+          327
+        ]
+      }
+    ]
+  },
+  {
+    "id": "13_r3_red_baseline_000071",
+    "trial": "13_r3_red_baseline",
+    "file": "13_r3_red_baseline_000071.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/13_r3_red_baseline.tar.gz",
+    "member": "session/audit/frames/000071.jpg",
+    "sha256": "f8063b663a576571a66c82174b664da5fdd145b41a86be916f5680cc3ece703b",
+    "stamp": 1793011690.1310341,
+    "objects_stamp": 1793011690.1310341,
+    "proposals": [
+      {
+        "name": "blue_balloon",
+        "score": 0.82763671875,
+        "center": [
+          451,
+          341
+        ],
+        "bbox": [
+          425,
+          311,
+          479,
+          379
+        ]
+      }
+    ]
+  },
+  {
+    "id": "13_r3_red_baseline_000101",
+    "trial": "13_r3_red_baseline",
+    "file": "13_r3_red_baseline_000101.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/13_r3_red_baseline.tar.gz",
+    "member": "session/audit/frames/000101.jpg",
+    "sha256": "8451a94e274f8406c81f90f4df653d1b7d11370045c57361e788216a7faedb47",
+    "stamp": 1793011720.1640341,
+    "objects_stamp": 1793011720.1640341,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.921875,
+        "center": [
+          141,
+          325
+        ],
+        "bbox": [
+          118,
+          304,
+          169,
+          363
+        ]
+      }
+    ]
+  },
+  {
+    "id": "13_r3_red_baseline_000161",
+    "trial": "13_r3_red_baseline",
+    "file": "13_r3_red_baseline_000161.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/13_r3_red_baseline.tar.gz",
+    "member": "session/audit/frames/000161.jpg",
+    "sha256": "de3fee5cb4271359a30f225a65d2aecfdc3afd77c33204e06c6399c2fc9af4ef",
+    "stamp": 1793011740.9660342,
+    "objects_stamp": 1793011740.9660342,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.96728515625,
+        "center": [
+          257,
+          259
+        ],
+        "bbox": [
+          238,
+          240,
+          276,
+          292
+        ]
+      }
+    ]
+  },
+  {
+    "id": "13_r3_red_baseline_000171",
+    "trial": "13_r3_red_baseline",
+    "file": "13_r3_red_baseline_000171.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/13_r3_red_baseline.tar.gz",
+    "member": "session/audit/frames/000171.jpg",
+    "sha256": "e8e852e13c7c136ec8f924b2fed60c8ef410226867b4d1ff1c2ef59661f52b28",
+    "stamp": 1793011742.9650342,
+    "objects_stamp": 1793011742.9650342,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.91064453125,
+        "center": [
+          300,
+          253
+        ],
+        "bbox": [
+          288,
+          239,
+          316,
+          277
+        ]
+      }
+    ]
+  },
+  {
+    "id": "13_r3_red_baseline_000181",
+    "trial": "13_r3_red_baseline",
+    "file": "13_r3_red_baseline_000181.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/13_r3_red_baseline.tar.gz",
+    "member": "session/audit/frames/000181.jpg",
+    "sha256": "8bba38688d14048d1ca88bf4c23ffcb786e0951a1f3bb93826217bda0ae46ad1",
+    "stamp": 1793011744.9660342,
+    "objects_stamp": 1793011744.9660342,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.97021484375,
+        "center": [
+          332,
+          255
+        ],
+        "bbox": [
+          307,
+          229,
+          357,
+          296
+        ]
+      }
+    ]
+  },
+  {
+    "id": "13_r3_red_baseline_000191",
+    "trial": "13_r3_red_baseline",
+    "file": "13_r3_red_baseline_000191.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/13_r3_red_baseline.tar.gz",
+    "member": "session/audit/frames/000191.jpg",
+    "sha256": "5caabd29a3e70999fffaa4cadef3484638a0da13fd898e56a76a50e16b530e63",
+    "stamp": 1793011746.7650342,
+    "objects_stamp": 1793011746.7650342,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.9755859375,
+        "center": [
+          365,
+          253
+        ],
+        "bbox": [
+          315,
+          193,
+          420,
+          332
+        ]
+      }
+    ]
+  },
+  {
+    "id": "13_r3_red_baseline_000241",
+    "trial": "13_r3_red_baseline",
+    "file": "13_r3_red_baseline_000241.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/13_r3_red_baseline.tar.gz",
+    "member": "session/audit/frames/000241.jpg",
+    "sha256": "448e21e6cd5d51b59762faafff4055dcdd2af1cdc4ff091178f82f74adbb7adc",
+    "stamp": 1793011756.6660342,
+    "objects_stamp": 1793011756.6660342,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.93359375,
+        "center": [
+          118,
+          250
+        ],
+        "bbox": [
+          102,
+          232,
+          133,
+          272
+        ]
+      }
+    ]
+  },
+  {
+    "id": "13_r3_red_baseline_000261",
+    "trial": "13_r3_red_baseline",
+    "file": "13_r3_red_baseline_000261.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/13_r3_red_baseline.tar.gz",
+    "member": "session/audit/frames/000261.jpg",
+    "sha256": "068b93a39cc221e8114a840a275aea7db92f84a272bf52dda4f0fef33592619c",
+    "stamp": 1793011760.6660342,
+    "objects_stamp": 1793011760.6660342,
+    "proposals": [
+      {
+        "name": "blue_balloon",
+        "score": 0.93408203125,
+        "center": [
+          94,
+          267
+        ],
+        "bbox": [
+          55,
+          226,
+          134,
+          314
+        ]
+      }
+    ]
+  },
+  {
+    "id": "13_r3_red_baseline_000271",
+    "trial": "13_r3_red_baseline",
+    "file": "13_r3_red_baseline_000271.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/13_r3_red_baseline.tar.gz",
+    "member": "session/audit/frames/000271.jpg",
+    "sha256": "83173e15aa598ba8663720c57a66053d3b7ec87cf4c41c1b345e548984faf8c1",
+    "stamp": 1793011762.665034,
+    "objects_stamp": 1793011762.665034,
+    "proposals": [
+      {
+        "name": "blue_balloon",
+        "score": 0.92431640625,
+        "center": [
+          136,
+          266
+        ],
+        "bbox": [
+          95,
+          223,
+          176,
+          318
+        ]
+      }
+    ]
+  },
+  {
+    "id": "13_r3_red_baseline_000341",
+    "trial": "13_r3_red_baseline",
+    "file": "13_r3_red_baseline_000341.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/13_r3_red_baseline.tar.gz",
+    "member": "session/audit/frames/000341.jpg",
+    "sha256": "d13f52fabf584f56572880a01c32dce962f44c5240115b12e674774c70803f82",
+    "stamp": 1793011776.665034,
+    "objects_stamp": 1793011776.665034,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.94580078125,
+        "center": [
+          41,
+          249
+        ],
+        "bbox": [
+          24,
+          230,
+          61,
+          271
+        ]
+      }
+    ]
+  },
+  {
+    "id": "13_r3_red_baseline_000371",
+    "trial": "13_r3_red_baseline",
+    "file": "13_r3_red_baseline_000371.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/13_r3_red_baseline.tar.gz",
+    "member": "session/audit/frames/000371.jpg",
+    "sha256": "f432fd0c310cd24be4b31b51bff42f58d38117252d3438a41171f52e5e669a91",
+    "stamp": 1793011782.6660342,
+    "objects_stamp": 1793011782.6660342,
+    "proposals": [
+      {
+        "name": "blue_balloon",
+        "score": 0.8515625,
+        "center": [
+          225,
+          265
+        ],
+        "bbox": [
+          202,
+          236,
+          249,
+          298
+        ]
+      }
+    ]
+  },
+  {
+    "id": "13_r3_red_baseline_000441",
+    "trial": "13_r3_red_baseline",
+    "file": "13_r3_red_baseline_000441.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/13_r3_red_baseline.tar.gz",
+    "member": "session/audit/frames/000441.jpg",
+    "sha256": "5c244210c1685a90391c1fe5aef3b3c1876838dedf7058a8dc11702cff769090",
+    "stamp": 1793011802.5900342,
+    "objects_stamp": 1793011802.5900342,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.89404296875,
+        "center": [
+          545,
+          217
+        ],
+        "bbox": [
+          531,
+          202,
+          561,
+          235
+        ]
+      }
+    ]
+  },
+  {
+    "id": "16_r3_purple_baseline_000001",
+    "trial": "16_r3_purple_baseline",
+    "file": "16_r3_purple_baseline_000001.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/16_r3_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000001.jpg",
+    "sha256": "76f9cd5b9e79125730110e68af5cbd7f2c3c77fb29be40b72dd64672b0ddaff4",
+    "stamp": 1793012526.9700387,
+    "objects_stamp": 1793012526.9700387,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.9501953125,
+        "center": [
+          579,
+          214
+        ],
+        "bbox": [
+          563,
+          198,
+          597,
+          233
+        ]
+      }
+    ]
+  },
+  {
+    "id": "16_r3_purple_baseline_000021",
+    "trial": "16_r3_purple_baseline",
+    "file": "16_r3_purple_baseline_000021.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/16_r3_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000021.jpg",
+    "sha256": "99f7334714e6ecd9210cd4792b3e763a93d6672027ac3ce452e41abb515c7f33",
+    "stamp": 1793012548.1200385,
+    "objects_stamp": 1793012548.1200385,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.92919921875,
+        "center": [
+          548,
+          218
+        ],
+        "bbox": [
+          535,
+          203,
+          563,
+          235
+        ]
+      }
+    ]
+  },
+  {
+    "id": "16_r3_purple_baseline_000091",
+    "trial": "16_r3_purple_baseline",
+    "file": "16_r3_purple_baseline_000091.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/16_r3_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000091.jpg",
+    "sha256": "8446c98223c87e132273c40762d1dd9544c73c1163e07afb9e17a43a3df58d7d",
+    "stamp": 1793012619.1870387,
+    "objects_stamp": 1793012619.1870387,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.87060546875,
+        "center": [
+          557,
+          334
+        ],
+        "bbox": [
+          532,
+          309,
+          584,
+          366
+        ]
+      }
+    ]
+  },
+  {
+    "id": "16_r3_purple_baseline_000111",
+    "trial": "16_r3_purple_baseline",
+    "file": "16_r3_purple_baseline_000111.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/16_r3_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000111.jpg",
+    "sha256": "ef4fc9b402cb37606b834e2a4930eb62c9a4dca254f2e41f968e3089d52bda2c",
+    "stamp": 1793012634.6030385,
+    "objects_stamp": 1793012634.6030385,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.98291015625,
+        "center": [
+          160,
+          374
+        ],
+        "bbox": [
+          115,
+          322,
+          205,
+          432
+        ]
+      }
+    ]
+  },
+  {
+    "id": "16_r3_purple_baseline_000121",
+    "trial": "16_r3_purple_baseline",
+    "file": "16_r3_purple_baseline_000121.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/16_r3_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000121.jpg",
+    "sha256": "5dda32cda27d9db06b0a5719ec83dba58a57372f781adf3de88d6f9ec5bc7f12",
+    "stamp": 1793012636.6030385,
+    "objects_stamp": 1793012636.6030385,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.88720703125,
+        "center": [
+          354,
+          252
+        ],
+        "bbox": [
+          338,
+          233,
+          370,
+          277
+        ]
+      }
+    ]
+  },
+  {
+    "id": "16_r3_purple_baseline_000141",
+    "trial": "16_r3_purple_baseline",
+    "file": "16_r3_purple_baseline_000141.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/16_r3_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000141.jpg",
+    "sha256": "de0abfe24c2b719a51fc3ef0097dcce139343a0ebecf7dc39828f71842d35237",
+    "stamp": 1793012640.7020385,
+    "objects_stamp": 1793012640.7020385,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.97021484375,
+        "center": [
+          261,
+          256
+        ],
+        "bbox": [
+          222,
+          207,
+          302,
+          312
+        ]
+      }
+    ]
+  },
+  {
+    "id": "16_r3_purple_baseline_000161",
+    "trial": "16_r3_purple_baseline",
+    "file": "16_r3_purple_baseline_000161.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/16_r3_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000161.jpg",
+    "sha256": "fc5127646f48c16e61788835227f8175d07322d6b5d9c00f3606dafd25d2015a",
+    "stamp": 1793012644.6030385,
+    "objects_stamp": 1793012644.6030385,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.97314453125,
+        "center": [
+          527,
+          197
+        ],
+        "bbox": [
+          397,
+          43,
+          640,
+          366
+        ]
+      }
+    ]
+  },
+  {
+    "id": "16_r3_purple_baseline_000241",
+    "trial": "16_r3_purple_baseline",
+    "file": "16_r3_purple_baseline_000241.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/16_r3_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000241.jpg",
+    "sha256": "559565d31074dcc403a61dc486d168bce79f2091a6ddfa60e864395371d7b8cd",
+    "stamp": 1793012660.2050385,
+    "objects_stamp": 1793012660.2050385,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.935546875,
+        "center": [
+          154,
+          197
+        ],
+        "bbox": [
+          131,
+          174,
+          176,
+          226
+        ]
+      }
+    ]
+  },
+  {
+    "id": "16_r3_purple_baseline_000251",
+    "trial": "16_r3_purple_baseline",
+    "file": "16_r3_purple_baseline_000251.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/16_r3_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000251.jpg",
+    "sha256": "3c00ae5ae64a367b1c7e6dbf0db1fec145129811556f3ced72367b5c27354f09",
+    "stamp": 1793012662.2080386,
+    "objects_stamp": 1793012662.2080386,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.9580078125,
+        "center": [
+          612,
+          212
+        ],
+        "bbox": [
+          594,
+          194,
+          632,
+          233
+        ]
+      }
+    ]
+  },
+  {
+    "id": "16_r3_purple_baseline_000261",
+    "trial": "16_r3_purple_baseline",
+    "file": "16_r3_purple_baseline_000261.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/16_r3_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000261.jpg",
+    "sha256": "13be3650520e668d785f3930ae94b0e04884d214745ec1586598d939803e2c2c",
+    "stamp": 1793012665.8010385,
+    "objects_stamp": 1793012665.8010385,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.97021484375,
+        "center": [
+          173,
+          206
+        ],
+        "bbox": [
+          154,
+          185,
+          193,
+          232
+        ]
+      },
+      {
+        "name": "purple_balloon",
+        "score": 0.884765625,
+        "center": [
+          526,
+          221
+        ],
+        "bbox": [
+          516,
+          208,
+          537,
+          234
+        ]
+      }
+    ]
+  },
+  {
+    "id": "16_r3_purple_baseline_000271",
+    "trial": "16_r3_purple_baseline",
+    "file": "16_r3_purple_baseline_000271.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/16_r3_purple_baseline.tar.gz",
+    "member": "session/audit/frames/000271.jpg",
+    "sha256": "f1a7c5f1e54650eacb6fca421da66c98a07e7582707867a10ecaa3f69b79a7a9",
+    "stamp": 1793012675.7860386,
+    "objects_stamp": 1793012675.7860386,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.96337890625,
+        "center": [
+          615,
+          212
+        ],
+        "bbox": [
+          596,
+          194,
+          635,
+          234
+        ]
+      }
+    ]
+  },
+  {
+    "id": "17_r3_blue_baseline_000001",
+    "trial": "17_r3_blue_baseline",
+    "file": "17_r3_blue_baseline_000001.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/17_r3_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000001.jpg",
+    "sha256": "841fd3ab55aae564a58e8157693b432fb8621bb5e297165b8e50e68ad403bc48",
+    "stamp": 1793012797.9460254,
+    "objects_stamp": 1793012797.9460254,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.931640625,
+        "center": [
+          136,
+          200
+        ],
+        "bbox": [
+          114,
+          176,
+          161,
+          229
+        ]
+      },
+      {
+        "name": "purple_balloon",
+        "score": 0.92822265625,
+        "center": [
+          540,
+          218
+        ],
+        "bbox": [
+          528,
+          204,
+          554,
+          234
+        ]
+      }
+    ]
+  },
+  {
+    "id": "17_r3_blue_baseline_000021",
+    "trial": "17_r3_blue_baseline",
+    "file": "17_r3_blue_baseline_000021.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/17_r3_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000021.jpg",
+    "sha256": "22c551995e4dbc0a788c3982cc42f7aff1500b28573f30598c25d0bfc52fa0a9",
+    "stamp": 1793012818.8900254,
+    "objects_stamp": 1793012818.8900254,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.95458984375,
+        "center": [
+          573,
+          215
+        ],
+        "bbox": [
+          556,
+          200,
+          590,
+          234
+        ]
+      }
+    ]
+  },
+  {
+    "id": "17_r3_blue_baseline_000041",
+    "trial": "17_r3_blue_baseline",
+    "file": "17_r3_blue_baseline_000041.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/17_r3_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000041.jpg",
+    "sha256": "70c8e76600a591118548741dd7780bba04d7bfd5b148217312700d68b5b09717",
+    "stamp": 1793012838.7980254,
+    "objects_stamp": 1793012838.7980254,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.85693359375,
+        "center": [
+          517,
+          221
+        ],
+        "bbox": [
+          507,
+          208,
+          528,
+          235
+        ]
+      }
+    ]
+  },
+  {
+    "id": "17_r3_blue_baseline_000071",
+    "trial": "17_r3_blue_baseline",
+    "file": "17_r3_blue_baseline_000071.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/17_r3_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000071.jpg",
+    "sha256": "9c90766e80b610b2f9a3da9a9fe62741bd01ac4169db82ab2461870a120f91f3",
+    "stamp": 1793012868.9130254,
+    "objects_stamp": 1793012868.9130254,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.91650390625,
+        "center": [
+          197,
+          399
+        ],
+        "bbox": [
+          180,
+          379,
+          215,
+          424
+        ]
+      }
+    ]
+  },
+  {
+    "id": "17_r3_blue_baseline_000081",
+    "trial": "17_r3_blue_baseline",
+    "file": "17_r3_blue_baseline_000081.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/17_r3_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000081.jpg",
+    "sha256": "9783c9856e148b1b20705411b77cbc0c7a1d33c03f2f145a311cf5e7704e4561",
+    "stamp": 1793012878.9100254,
+    "objects_stamp": 1793012878.9100254,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.95947265625,
+        "center": [
+          617,
+          387
+        ],
+        "bbox": [
+          588,
+          356,
+          640,
+          439
+        ]
+      }
+    ]
+  },
+  {
+    "id": "17_r3_blue_baseline_000101",
+    "trial": "17_r3_blue_baseline",
+    "file": "17_r3_blue_baseline_000101.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/17_r3_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000101.jpg",
+    "sha256": "919e000596bbd0c21c35c8f90c98344a9bec897335ebbc21950aebea173a6fce",
+    "stamp": 1793012898.9080253,
+    "objects_stamp": 1793012898.9080253,
+    "proposals": [
+      {
+        "name": "blue_balloon",
+        "score": 0.9306640625,
+        "center": [
+          468,
+          356
+        ],
+        "bbox": [
+          423,
+          307,
+          514,
+          418
+        ]
+      }
+    ]
+  },
+  {
+    "id": "17_r3_blue_baseline_000121",
+    "trial": "17_r3_blue_baseline",
+    "file": "17_r3_blue_baseline_000121.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/17_r3_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000121.jpg",
+    "sha256": "c60cf7f763e431308cec80bd292ed28aa4949b7faf2753587bc51f860d11bc96",
+    "stamp": 1793012903.6120253,
+    "objects_stamp": 1793012903.6120253,
+    "proposals": [
+      {
+        "name": "blue_balloon",
+        "score": 0.93017578125,
+        "center": [
+          403,
+          253
+        ],
+        "bbox": [
+          358,
+          204,
+          443,
+          314
+        ]
+      }
+    ]
+  },
+  {
+    "id": "17_r3_blue_baseline_000131",
+    "trial": "17_r3_blue_baseline",
+    "file": "17_r3_blue_baseline_000131.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/17_r3_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000131.jpg",
+    "sha256": "78f66458568edc0a56f8b2c728a341b39ed26402e5b1e9d180b6397e26799a42",
+    "stamp": 1793012905.4130254,
+    "objects_stamp": 1793012905.4130254,
+    "proposals": [
+      {
+        "name": "blue_balloon",
+        "score": 0.95703125,
+        "center": [
+          392,
+          255
+        ],
+        "bbox": [
+          349,
+          205,
+          437,
+          320
+        ]
+      },
+      {
+        "name": "purple_balloon",
+        "score": 0.94580078125,
+        "center": [
+          612,
+          241
+        ],
+        "bbox": [
+          585,
+          219,
+          640,
+          275
+        ]
+      }
+    ]
+  },
+  {
+    "id": "17_r3_blue_baseline_000141",
+    "trial": "17_r3_blue_baseline",
+    "file": "17_r3_blue_baseline_000141.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/17_r3_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000141.jpg",
+    "sha256": "a6d9862f0b45cacbf1d41bf5e337f9296e9555d33ad4f2a0c02cba48016bdade",
+    "stamp": 1793012907.3030252,
+    "objects_stamp": 1793012907.3030252,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.95068359375,
+        "center": [
+          448,
+          283
+        ],
+        "bbox": [
+          414,
+          243,
+          484,
+          330
+        ]
+      },
+      {
+        "name": "blue_balloon",
+        "score": 0.90185546875,
+        "center": [
+          334,
+          305
+        ],
+        "bbox": [
+          282,
+          237,
+          391,
+          383
+        ]
+      }
+    ]
+  },
+  {
+    "id": "17_r3_blue_baseline_000151",
+    "trial": "17_r3_blue_baseline",
+    "file": "17_r3_blue_baseline_000151.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/17_r3_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000151.jpg",
+    "sha256": "a17cd2c3de44c50a2ff03a1dc5874771825ff1b8960b4df35c6e32f6cf89a2ea",
+    "stamp": 1793012908.7170253,
+    "objects_stamp": 1793012908.7170253,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.958984375,
+        "center": [
+          499,
+          246
+        ],
+        "bbox": [
+          470,
+          216,
+          528,
+          284
+        ]
+      },
+      {
+        "name": "blue_balloon",
+        "score": 0.95458984375,
+        "center": [
+          256,
+          254
+        ],
+        "bbox": [
+          220,
+          207,
+          294,
+          303
+        ]
+      }
+    ]
+  },
+  {
+    "id": "17_r3_blue_baseline_000201",
+    "trial": "17_r3_blue_baseline",
+    "file": "17_r3_blue_baseline_000201.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/17_r3_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000201.jpg",
+    "sha256": "4d40ed7e467d3a43535a119b807d5be4b67401ff8e763680210ad0f79113d4a8",
+    "stamp": 1793012918.7230253,
+    "objects_stamp": 1793012918.7230253,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.9580078125,
+        "center": [
+          236,
+          255
+        ],
+        "bbox": [
+          213,
+          226,
+          261,
+          288
+        ]
+      }
+    ]
+  },
+  {
+    "id": "17_r3_blue_baseline_000221",
+    "trial": "17_r3_blue_baseline",
+    "file": "17_r3_blue_baseline_000221.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/17_r3_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000221.jpg",
+    "sha256": "485ab4278412db7dcf78702aed0c06ca7c82e4ca332639179a72b224bc106de9",
+    "stamp": 1793012922.7230253,
+    "objects_stamp": 1793012922.7230253,
+    "proposals": [
+      {
+        "name": "purple_balloon",
+        "score": 0.83349609375,
+        "center": [
+          384,
+          260
+        ],
+        "bbox": [
+          371,
+          244,
+          398,
+          278
+        ]
+      }
+    ]
+  },
+  {
+    "id": "17_r3_blue_baseline_000231",
+    "trial": "17_r3_blue_baseline",
+    "file": "17_r3_blue_baseline_000231.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/17_r3_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000231.jpg",
+    "sha256": "1e4c1a8633cfc1b83043093618428327dab031445fe4337928b4e2f986cb43ca",
+    "stamp": 1793012924.7230253,
+    "objects_stamp": 1793012924.7230253,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.95361328125,
+        "center": [
+          184,
+          258
+        ],
+        "bbox": [
+          167,
+          239,
+          203,
+          281
+        ]
+      }
+    ]
+  },
+  {
+    "id": "17_r3_blue_baseline_000241",
+    "trial": "17_r3_blue_baseline",
+    "file": "17_r3_blue_baseline_000241.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/17_r3_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000241.jpg",
+    "sha256": "1253a161193b71a1de66523276be0338b5590fc63a6c91374b70bf4449d637fb",
+    "stamp": 1793012926.7230253,
+    "objects_stamp": 1793012926.7230253,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.93408203125,
+        "center": [
+          129,
+          197
+        ],
+        "bbox": [
+          105,
+          173,
+          154,
+          229
+        ]
+      }
+    ]
+  },
+  {
+    "id": "17_r3_blue_baseline_000251",
+    "trial": "17_r3_blue_baseline",
+    "file": "17_r3_blue_baseline_000251.jpg",
+    "archive": "v4_innovation_timing/multimodal_3_3/evidence/v2/trials/17_r3_blue_baseline.tar.gz",
+    "member": "session/audit/frames/000251.jpg",
+    "sha256": "9a9235806598d06d36da12abe0514c089aab646f603773be3bdb66dd4df335b1",
+    "stamp": 1793012928.7230253,
+    "objects_stamp": 1793012928.7230253,
+    "proposals": [
+      {
+        "name": "red_balloon",
+        "score": 0.8603515625,
+        "center": [
+          8,
+          163
+        ],
+        "bbox": [
+          0,
+          120,
+          28,
+          216
+        ]
+      }
+    ]
+  }
+]

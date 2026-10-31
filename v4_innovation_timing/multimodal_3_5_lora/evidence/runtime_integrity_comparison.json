@@ -1,0 +1,20 @@
+{
+  "runtime_files_checked": 26,
+  "changed_files": [],
+  "demo_packages_before": {
+    "torch": "2.3.1",
+    "transformers": "4.44.2",
+    "accelerate": "1.2.1",
+    "numpy": "1.23.5"
+  },
+  "demo_packages_after": {
+    "torch": "2.3.1",
+    "transformers": "4.44.2",
+    "accelerate": "1.2.1",
+    "numpy": "1.23.5"
+  },
+  "base_weights_before": "8e8f58b9e1c1bc8fed578e7772204565cc4caa48e363983bb7e86db72430faa8",
+  "base_weights_after": "8e8f58b9e1c1bc8fed578e7772204565cc4caa48e363983bb7e86db72430faa8",
+  "official_training_tracked_diff": "",
+  "passed": true
+}

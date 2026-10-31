@@ -1,0 +1,6 @@
+__pycache__/
+evidence/diagnosis/red_all/*.png
+evidence/diagnosis/review/*.png
+evidence/diagnosis/tile_examples/*/*.png
+evidence/red_probe_input/images/*.png
+evidence/red_probe_input.tar.gz

@@ -1,0 +1,1 @@
+{"lora_B_tensors": 62, "key": "base_model.model.llm.model.layers.0.self_attn.o_proj.lora_B.weight", "max_abs": 0.00013637542724609375, "nonzero": 163840}

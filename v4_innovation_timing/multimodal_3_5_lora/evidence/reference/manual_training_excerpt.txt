@@ -1,0 +1,499 @@
+例如使用九格大模型构造数据
+
+SQL
+# 数据构造示例
+"""
+Name chat.py
+Date 2025/5/6 11:20
+Version 1.0
+TODO:
+"""
+
+import torch
+from PIL import Image
+from transformers import AutoModel, AutoTokenizer
+
+if __name__ == '__main__':
+    prompt = f"""### 背景 ###
+        您需要对图片中的内容进行识别。
+        并大致确定它们在图中的位置。烟雾弹、弹夹、军用手电筒、手雷、剩余的其他需要识别出的物品（务必推测其物体具体是什么）
+        要求输出格式
+        {{
+          "id": "1",
+          "image": "/root/data/1.png",
+          "conversations": [
+            {{
+              "role": "user",
+              "content": "图中机械臂托盘里有哪些物品？"
+            }},
+            {{
+              "role": "assistant",
+              "content": "烟雾弹、弹夹、军用手电筒、手雷，以及另一枚横放的烟雾弹。"
+            }},
+            {{
+              "role": "user",
+              "content": "手雷在托盘的什么位置？"
+            }},
+            {{
+              "role": "assistant",
+              "content": "右上角附近。"
+            }}
+            ...
+          ]
+        }}
+    """
+
+    model_file = '/root/gpufree-data/FM9G4B-V'
+    model = AutoModel.from_pretrained(model_file, trust_remote_code=True,
+        attn_implementation='sdpa', torch_dtype=torch.bfloat16)
+    model = model.eval().cuda()
+    tokenizer = AutoTokenizer.from_pretrained(model_file, trust_remote_code=True)
+
+    image = Image.open('data/1.png').convert('RGB')
+
+    msgs = [{'role': 'user', 'content': [image, prompt]}]
+
+    res = model.chat(
+        image=None,
+        msgs=msgs,
+        tokenizer=tokenizer
+    )
+    print("\n", "="*100, "\n")
+    print(res)
+
+
+    # 第二轮聊天，传递多轮对话的历史信息
+    msgs.append({"role": "assistant", "content": [res]})
+    msgs.append({"role": "user", "content": ["对图片中的内容进行识别。并大致确定它们在图中的位置。烟雾弹、弹夹、军用手电筒、手雷、剩余的其他需要识别出的物品（务必推测其物体具体是什么），并按照输出格式输出"]})
+
+    answer = model.chat(
+        image=None,
+        msgs=msgs,
+        tokenizer=tokenizer
+    )
+    print("\n", "="*100, "\n")
+    print(answer)
+
+
+    ## 流式输出，设置：
+    # sampling=True
+    # stream=True
+    ## 返回一个生成器
+    msgs = [{'role': 'user', 'content': [image, prompt]}]
+    res = model.chat(
+        image=None,
+        msgs=msgs,
+        tokenizer=tokenizer,
+        sampling=True,
+        stream=True
+    )
+    print("\n", "="*100, "\n")
+    generated_text = ""
+    for new_text in res:
+        generated_text += new_text
+        print(new_text, flush=True, end='')
+
+输入为一张图片
+
+
+
+输出：已经构造好的训练数据集
+
+JSON
+根据图片中的内容，机械臂托盘里有以下物品：
+1. 烟雾弹（位于左上角附近）
+2. 弹夹（位于右上角附近）
+3. 军用手电筒（位于中间偏右的位置）
+4. 手雷（位于右下角附近）
+5. 另一枚横放的烟雾弹（位于中间偏左的位置）
+
+以下是符合要求的输出格式：
+
+```json
+{
+ "id": "1",
+ "image": "/root/data/1.png",
+ "conversations": [
+   {
+     "role": "user",
+     "content": "图中机械臂托盘里有哪些物品？"
+   },
+   {
+     "role": "assistant",
+     "content": "烟雾弹、弹夹、军用手电筒、手雷，以及另一枚横放的烟雾弹。"
+   },
+   {
+     "role": "user",
+     "content": "手雷在托盘的什么位置？"
+   },
+   {
+     "role": "assistant",
+     "content": "右下角附近。"
+   }
+ ]
+}
+```
+
+3.1.2 单图训练
+
+只需输入一张图片，conversation中以user-assistant为一个问答对，可以构造多轮对话
+
+JSON
+{
+      "id": "10",
+      "image": "/root/data/10.png",
+      "conversations": [
+        {
+          "role": "user",
+          "content": "图中机械臂托盘里有哪些物品？"
+        },
+        {
+          "role": "assistant",
+          "content": "烟雾弹、弹夹、军用手电筒、手雷、另一枚横放的烟雾弹，以及上部居中的绿色扁平矩形片（推测为战术标识板或小型医疗绷带包）。"
+        },
+        {
+          "role": "user",
+          "content": "手雷在托盘的什么位置？"
+        },
+        {
+          "role": "assistant",
+          "content": "右上角附近。"
+        },
+        {
+          "role": "user",
+          "content": "弹夹位于哪里？"
+        },
+        {
+          "role": "assistant",
+          "content": "右下区域，靠近托盘边缘。"
+        },
+        {
+          "role": "user",
+          "content": "军用手电筒在哪儿？"
+        },
+        {
+          "role": "assistant",
+          "content": "上中偏左，横向放置。"
+        },
+        {
+          "role": "user",
+          "content": "两枚烟雾弹分别位于哪里？"
+        },
+        {
+          "role": "assistant",
+          "content": "一枚竖直放在左上靠边位置，另一枚横放在中下偏左、机械臂前方。"
+        }
+      ]
+    },
+
+3.1.3 多图训练
+
+可以一条数据输入多张图片，可以通过插入标签来确定图片在文本中的位置
+
+JSON
+[
+    { 
+        "id": "1",
+        "image": { 
+            "<image_00>": "/root/CPM-9G-8B/FM9G4B-V/inference/step.jpg", 
+            "<image_01>": "/root/CPM-9G-8B/FM9G4B-V/inference/step.jpg" 
+        }, 
+        "conversations": [ 
+            {
+                "role": "user", 
+                "content": "比较<image_00>和<image_01>的不同"
+            }, 
+            {
+                "role": "assistant", 
+                "content": "左图是狗，右图是猫。"
+            } 
+        ] 
+    },
+    ...
+]
+
+3.2. 微调训练
+
+3.2.1 主流PEFT (Parameter-Efficient Fine-Tuning, 参数高效微调) 方法介绍
+
+方法
+
+
+
+核心思想
+
+优点
+
+缺点
+
+LoRA
+
+
+
+
+
+在权重矩阵旁并联一个低秩小矩阵，只训练小矩阵。
+
+
+
+效果好、速度快、通用性强、社区支持最广。权重文件小（MB级）。
+
+相比全量微调，对显存的节省有限（因为原模型仍需以16位加载）。
+
+QLoRA
+
+
+
+
+
+
+
+量化 (Quantization) + LoRA。先将大模型权重量化成4位来大幅减少显存占用，然后在这4位的模型上应用LoRA进行训练。
+
+极大降低显存需求，可以在消费级显卡（如24GB/40GB）上微调非常大的模型（如70B）。训练效果几乎与16位LoRA持平。**是当前微调大模型的黄金标准**。
+
+训练速度比标准LoRA稍慢一些（因为有量化/反量化的计算开销）。对极小模型效果可能不如LoRA。
+
+Prefix-Tuning
+
+
+
+
+
+
+
+在输入前加入可训练的“虚拟Token”（前缀）。
+
+对生成式任务效果好。不改变原模型结构。
+
+训练可能不稳定，超参数难调。性能上限通常不如LoRA。
+
+P-Tuning (v2)
+
+
+
+
+
+Prefix-Tuning的改进版，在模型的每一层都加入虚拟Token。
+
+在NLU任务上表现优异，尤其是在中小模型上。
+
+
+
+配置比LoRA复杂，通用性稍弱。
+
+比赛方提供了LoRA微调相关代码
+
+3.2.1 LoRA 训练
+
+LoRA方法是通过在模型关键层（如注意力层）插入低秩矩阵，仅训练这些低秩矩阵，冻结预训练模型其他参数的方法实现预训练模型对下游任务的适配，官方提供原生LoRA微调相关脚本，可以满足在24GB显卡上的微调需求。
+
+LoRA 参数
+
+参数
+
+作用
+
+建议值范围
+
+lora_r
+
+LoRA 低秩维度，控制模型容量
+
+4~64
+
+lora_alpha
+
+缩放因子，影响参数更新幅度
+
+通常为lora_r的 2 倍
+
+lora_dropout
+
+防止过拟合的 dropout 率
+
+0~0.1
+
+lora_target_modules
+
+插入LoRA层的模块
+
+
+
+ q_lora
+
+是否启用 QLoRA
+
+True / False
+
+
+
+Bash
+finetune_lora.sh
+# #!/bin/bash
+GPUS_PER_NODE=1
+NNODES=1
+NODE_RANK=0
+MASTER_ADDR=localhost
+MASTER_PORT=6012
+
+MODEL="xxxx/FM9G4B-V"
+DATA="FM9G4B-V/finetune/data.json"
+EVAL_DATA="FM9G4B-V/finetune/data.json"
+
+MODEL_MAX_Length=2048 # if conduct multi-images sft, please set MODEL_MAX_Length=4096
+
+DISTRIBUTED_ARGS="
+    --nproc_per_node $GPUS_PER_NODE \
+    --nnodes $NNODES \
+    --node_rank $NODE_RANK \
+    --master_addr $MASTER_ADDR \
+    --master_port $MASTER_PORT
+"
+torchrun $DISTRIBUTED_ARGS finetune.py  \
+    --model_name_or_path $MODEL \
+    --data_path $DATA \
+    --eval_data_path $EVAL_DATA \
+    --remove_unused_columns false \
+    --label_names "labels" \
+    --prediction_loss_only false \
+    --bf16 false \
+    --bf16_full_eval false \
+    --fp16 true \
+    --fp16_full_eval true \
+    --do_train \
+    --do_eval \
+    --tune_vision true \
+    --tune_llm false \
+    --use_lora true \
+    --lora_target_modules "llm\..*layers\.\d+\.self_attn\.(q_proj|k_proj|v_proj|o_proj)" \
+    --model_max_length $MODEL_MAX_Length \
+    --max_slice_nums 9 \
+    --max_steps 10000 \
+    --eval_steps 1000 \
+    --output_dir output/output__lora \
+    --logging_dir output/output_lora \
+    --logging_strategy "steps" \
+    --per_device_train_batch_size 1 \
+    --per_device_eval_batch_size 1 \
+    --gradient_accumulation_steps 1 \
+    --evaluation_strategy "steps" \
+    --save_strategy "steps" \
+    --save_steps 1000 \
+    --save_total_limit 10 \
+    --learning_rate 1e-6 \
+    --weight_decay 0.1 \
+    --adam_beta2 0.95 \
+    --warmup_ratio 0.01 \
+    --lr_scheduler_type "cosine" \
+    --logging_steps 1 \
+    --gradient_checkpointing true \
+    --deepspeed ds_config_zero2.json \
+    --report_to "tensorboard" 
+
+相关参数含义
+
+Markdown
+# -- 1. 分布式训练环境配置 --
+# GPUS_PER_NODE=1                 # 设置每个计算节点（服务器/机器）上要使用的GPU数量。
+# NNODES=1                        # 设置用于分布式训练的总节点数。此处为1，表示单节点训练。
+# NODE_RANK=0                     # 当前节点的排名（ID），从0开始。在单节点训练中，此值始终为0。
+# MASTER_ADDR=localhost           # 主节点的网络地址。对于单节点训练，使用'localhost'即可。
+# MASTER_PORT=6012                # 主节点用于各进程间通信的端口号。
+#
+# -- 2. 模型与数据路径配置 --
+# MODEL="xxxx/FM9G4B-V"           # 指定预训练模型的路径（本地文件夹）或其在Hugging Face Hub上的名称/ID。
+# DATA="FM9G4B-V/finetune/data.json" # 指定训练数据集的JSON文件路径。
+# EVAL_DATA="FM9G4B-V/finetune/data.json" # 指定评估（验证）数据集的JSON文件路径。
+#
+# -- 3. 模型参数配置 --
+# MODEL_MAX_Length=2048           # 设置模型处理的最大序列长度（token数量）。
+# # if conduct multi-images sft, please set MODEL_MAX_Length=4096 # 原始注释：提示在多图像SFT场景下，应将此值设为4096。
+#
+# -- 4. 构建分布式启动参数 --
+# DISTRIBUTED_ARGS="              # 定义一个多行字符串变量，用于存储torchrun的分布式参数。
+#     --nproc_per_node $GPUS_PER_NODE \ # 每个节点启动的进程数，通常等于该节点的GPU数量。
+#     --nnodes $NNODES \                # 训练的总节点数。
+#     --node_rank $NODE_RANK \          # 当前节点的排名。
+#     --master_addr $MASTER_ADDR \      # 主节点的地址。
+#     --master_port $MASTER_PORT        # 主节点的端口。
+# "
+#
+# -- 5. 启动训练脚本并传入所有参数 --
+# torchrun $DISTRIBUTED_ARGS finetune.py  \ # 使用torchrun启动分布式训练，传入分布式参数和主脚本`finetune.py`。
+#
+# -- a. 模型与数据参数 --
+#     --model_name_or_path $MODEL \         # 【模型】指定要加载的预训练模型。
+#     --data_path $DATA \                 # 【数据】指定训练数据集路径。
+#     --eval_data_path $EVAL_DATA \         # 【数据】指定评估数据集路径。
+#     --remove_unused_columns false \     # 【数据】不移除数据集中模型forward函数未使用的列。
+#     --label_names "labels" \            # 【数据】指定数据集中标签列的名称。
+#
+# -- b. 训练与评估精度参数 --
+#     --prediction_loss_only false \      # 【评估】评估时不仅计算loss，还计算其他指标。
+#     --bf16 false \                      # 【精度】禁用BF16混合精度训练。
+#     --bf16_full_eval false \            # 【精度】评估时也禁用BF16。
+#     --fp16 true \                       # 【精度】启用FP16（半精度）混合精度训练，以减少显存消耗。
+#     --fp16_full_eval true \             # 【精度】评估时也使用FP16。
+#
+# -- c. 训练策略与微调方法参数 --
+#     --do_train \                        # 【模式】执行训练。
+#     --do_eval \                         # 【模式】在训练过程中执行评估。
+#     --tune_vision true \                # 【微调】微调模型的视觉编码器部分。
+#     --tune_llm false \                  # 【微调】不微调整个大语言模型（因为下面使用了LoRA）。
+#     --use_lora true \                   # 【微调】使用LoRA（Low-Rank Adaptation）进行高效参数微调。
+#     --lora_target_modules "..." \       # 【微调】指定LoRA作用的目标模块（LLM自注意力层中的Q,K,V,O投影层）。
+#
+# -- d. 模型与训练配置参数 --
+#     --model_max_length $MODEL_MAX_Length \ # 【模型配置】设置模型的最大序列长度。
+#     --max_slice_nums 9 \                # 【模型配置】（特定于模型）设置最大图像切片数。
+#     --max_steps 10000 \                 # 【训练配置】设置训练总步数上限。
+#     --eval_steps 1000 \                 # 【训练配置】每隔1000步执行一次评估。
+#     --output_dir output/output__lora \    # 【路径】模型检查点和最终输出的保存目录。
+#     --logging_dir output/output_lora \    # 【路径】日志文件（如TensorBoard日志）的保存目录。
+#
+# -- e. 批处理与日志/保存策略参数 --
+#     --logging_strategy "steps" \        # 【策略】按固定步数记录日志。
+#     --per_device_train_batch_size 1 \   # 【批处理】每个GPU的训练批量大小。
+#     --per_device_eval_batch_size 1 \    # 【批处理】每个GPU的评估批量大小。
+#     --gradient_accumulation_steps 1 \   # 【批处理】梯度累积步数，有效批大小 = N_GPU * batch_size * grad_acc_steps。
+#     --evaluation_strategy "steps" \     # 【策略】按固定步数进行评估。
+#     --save_strategy "steps" \           # 【策略】按固定步数保存模型。
+#     --save_steps 1000 \                 # 【策略】每隔1000步保存一次模型检查点。
+#     --save_total_limit 10 \             # 【策略】最多保存10个检查点，会删除旧的。
+#
+# -- f. 优化器与学习率调度器参数 --
+#     --learning_rate 1e-6 \              # 【优化器】设置学习率。
+#     --weight_decay 0.1 \                # 【优化器】设置权重衰减系数。
+#     --adam_beta2 0.95 \                 # 【优化器】设置AdamW优化器的beta2参数。
+#     --warmup_ratio 0.01 \               # 【学习率】学习率预热阶段占总步数的比例。
+#     --lr_scheduler_type "cosine" \      # 【学习率】使用余弦退火学习率调度器。
+#
+# -- g. 性能与报告参数 --
+#     --logging_steps 1 \                 # 【性能】每1步记录一次训练日志。
+#     --gradient_checkpointing true \     # 【性能】启用梯度检查点，用计算时间换取显存。
+#     --deepspeed ds_config_zero2.json \    # 【性能】指定DeepSpeed配置文件以启用其优化功能。
+#     --report_to "tensorboard"           # 【报告】将训练指标汇报到TensorBoard。
+#
+# ==================================================================================================
+
+
+
+
+Lora训练执行
+
+Shell
+#切换到FM9G4B-V/finetune 目录下
+cd FM9G4B-V/finetune
+
+#修改finetune_ds.sh代码中以下参数，按照data.json格式准备训练数据
+MODEL="pytorch_model.bin文件**所在目录**的路径"
+DATA="FM9G4B-V/finetune/data.json"
+EVAL_DATA="FM9G4B-V/finetune/data.json"   
+
+#新建并运行训练脚本
+bash finetune_lora.sh
+
+
+
+飞书链接：https://my.feishu.cn/wiki/QZl3wBluPiWh7ZkrqZocB7wJngc?from=from_copylink

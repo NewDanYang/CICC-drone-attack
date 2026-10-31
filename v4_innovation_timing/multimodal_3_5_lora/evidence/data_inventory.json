@@ -1,0 +1,66 @@
+{
+  "frozen_at": "2026-10-26T14:48:50.194892+00:00",
+  "reviewer": "single AI visual reviewer; not independent blind human annotation",
+  "excluded_proposals": [
+    {
+      "pool_index": 26,
+      "reason": "red fragment mislabeled blue"
+    }
+  ],
+  "bbox_quality": "offline detector proposals visually checked for balloon body, not independently traced pixel gold",
+  "split_rule": "entire round-1 trials train; round-2 validation; round-3 held-out test; no exact image hash shared",
+  "summary": {
+    "train": {
+      "images": 65,
+      "positive": {
+        "purple": 31,
+        "red": 29,
+        "blue": 8
+      },
+      "negative": {
+        "red": 4,
+        "blue": 4,
+        "purple": 4
+      }
+    },
+    "validation": {
+      "images": 65,
+      "positive": {
+        "purple": 31,
+        "red": 20,
+        "blue": 13
+      },
+      "negative": {
+        "red": 4,
+        "blue": 4,
+        "purple": 4
+      }
+    },
+    "test": {
+      "images": 59,
+      "positive": {
+        "purple": 26,
+        "red": 20,
+        "blue": 9
+      },
+      "negative": {
+        "red": 4,
+        "blue": 4,
+        "purple": 4
+      }
+    }
+  },
+  "files": {
+    "cases.json": "5a199edcb8cce34e1eac7d888b915b6a77681f2861cac2277d0784b8dcb76641",
+    "pool.json": "2e8027b154c81574caa465256ff03dc7bb33877377b26442378d0b466a336cf6",
+    "test.json": "4c670007cec4d9db827a12f092dc1e67e13758156b1ebd87f6777f7a3849c07f",
+    "train.json": "68d4237b9d0db08e2a791e1ec16483fcdd90b6fc1ef159449ffc5104e5ce8d6e",
+    "validation.json": "9d86537b5c12ebdeb3608d2253ce9e7e2d718a17e62a5f010e221dfbd9f77ec8"
+  },
+  "qa_records": {
+    "train": 160,
+    "validation": 152,
+    "test": 134
+  },
+  "unique_images_total": 189
+}

@@ -1,0 +1,499 @@
+[
+  {
+    "trial": "06_r1_blue_candidate",
+    "decision": "056eb3f746a1",
+    "color": "blue",
+    "source_sha256": "d02e6d636c56d1452a9eeec9482a92419c2e2ae8e76cb7ac2c8b54fae35765da",
+    "image": "06_r1_blue_candidate__056eb3f746a1.png"
+  },
+  {
+    "trial": "06_r1_blue_candidate",
+    "decision": "1c594737442c",
+    "color": "blue",
+    "source_sha256": "134a12a94f825f679000ec0035520ff8c19b1c3d7f9179849d7a92a4a6638cb8",
+    "image": "06_r1_blue_candidate__1c594737442c.png"
+  },
+  {
+    "trial": "06_r1_blue_candidate",
+    "decision": "1cac9a2b8dd1",
+    "color": "blue",
+    "source_sha256": "44c25961348fc2617ff4d75fc153ebcd18e4fb74bcdb68d6c130995c7ee1757c",
+    "image": "06_r1_blue_candidate__1cac9a2b8dd1.png"
+  },
+  {
+    "trial": "06_r1_blue_candidate",
+    "decision": "519224fcd667",
+    "color": "blue",
+    "source_sha256": "725dec506937fabf31f9e422ea3338b24ba5698b10132fff150eb7722fd70b0a",
+    "image": "06_r1_blue_candidate__519224fcd667.png"
+  },
+  {
+    "trial": "06_r1_blue_candidate",
+    "decision": "a7aff82db6cc",
+    "color": "blue",
+    "source_sha256": "687d28bb253b9be1ceecb4a900034d0eea5a33607ea12500aaedf3ebe15e2e37",
+    "image": "06_r1_blue_candidate__a7aff82db6cc.png"
+  },
+  {
+    "trial": "06_r1_blue_candidate",
+    "decision": "b72b3622c8c5",
+    "color": "blue",
+    "source_sha256": "363d50780bd3d9a0a1b28a6d24f7e10e0a3bfd47d416947d9c8e8c722cd766f5",
+    "image": "06_r1_blue_candidate__b72b3622c8c5.png"
+  },
+  {
+    "trial": "06_r1_blue_candidate",
+    "decision": "caa3b7131278",
+    "color": "blue",
+    "source_sha256": "78549cbd53f0f915463132d0f9d47cffcb0ed1d44da8593e0952d3b13d5845ac",
+    "image": "06_r1_blue_candidate__caa3b7131278.png"
+  },
+  {
+    "trial": "06_r1_blue_candidate",
+    "decision": "cfebe055f1eb",
+    "color": "blue",
+    "source_sha256": "2383974340f3cb6ee9122953502ccc15fbd3b31420edca16d76b2784ff78c492",
+    "image": "06_r1_blue_candidate__cfebe055f1eb.png"
+  },
+  {
+    "trial": "06_r1_blue_candidate",
+    "decision": "e156ce975466",
+    "color": "blue",
+    "source_sha256": "6b74eda0a06480551619cdc6549a3288595c756928a636d46282c51ab3e85bff",
+    "image": "06_r1_blue_candidate__e156ce975466.png"
+  },
+  {
+    "trial": "11_r2_blue_candidate",
+    "decision": "03e5f905c474",
+    "color": "blue",
+    "source_sha256": "978323c94f9cd18bd170eb0e951e59d9ecdd853429cdfdfc1e0558286dca12af",
+    "image": "11_r2_blue_candidate__03e5f905c474.png"
+  },
+  {
+    "trial": "11_r2_blue_candidate",
+    "decision": "278bbae8a9aa",
+    "color": "blue",
+    "source_sha256": "3e3d1a745c47d4615b4ef36046b11e9e4a180d3de94de2bdd675a98be036d776",
+    "image": "11_r2_blue_candidate__278bbae8a9aa.png"
+  },
+  {
+    "trial": "11_r2_blue_candidate",
+    "decision": "43011c64ebf4",
+    "color": "blue",
+    "source_sha256": "c93b3cbc96955083f51cd90e9cc3adefb9e9b3ed802696ac3faa4d701e6c1022",
+    "image": "11_r2_blue_candidate__43011c64ebf4.png"
+  },
+  {
+    "trial": "11_r2_blue_candidate",
+    "decision": "81131475283f",
+    "color": "blue",
+    "source_sha256": "95c8e667c4074b68d926bd987658c1c66be6d5205fde0fab169152b3372fafeb",
+    "image": "11_r2_blue_candidate__81131475283f.png"
+  },
+  {
+    "trial": "11_r2_blue_candidate",
+    "decision": "bd4e84429683",
+    "color": "blue",
+    "source_sha256": "3d097cd05879267de881e40817543fb9678c9867ffabf29814a0e5f9c3b7e485",
+    "image": "11_r2_blue_candidate__bd4e84429683.png"
+  },
+  {
+    "trial": "11_r2_blue_candidate",
+    "decision": "e386e9cd4b82",
+    "color": "blue",
+    "source_sha256": "00dba6c44b4f5535a4e3ec537dc0a41c55114ecf66ff8bbea17b1915b1b528ec",
+    "image": "11_r2_blue_candidate__e386e9cd4b82.png"
+  },
+  {
+    "trial": "11_r2_blue_candidate",
+    "decision": "ed86cee910d6",
+    "color": "blue",
+    "source_sha256": "150d5b09d9e3a9f1cc6b5e3f2658525c69e912949ff0b37269d004f53e2d7e04",
+    "image": "11_r2_blue_candidate__ed86cee910d6.png"
+  },
+  {
+    "trial": "11_r2_blue_candidate",
+    "decision": "eed657ac8a05",
+    "color": "blue",
+    "source_sha256": "2dd884404e526e01072bf610fd3486e61ea4ed21be241865038d53390ac64905",
+    "image": "11_r2_blue_candidate__eed657ac8a05.png"
+  },
+  {
+    "trial": "11_r2_blue_candidate",
+    "decision": "f081cd57c016",
+    "color": "blue",
+    "source_sha256": "c645fd7b3195b63ab80f857d3b3efcd0074f72df659aedf02d7e7b0b5f8b2ea0",
+    "image": "11_r2_blue_candidate__f081cd57c016.png"
+  },
+  {
+    "trial": "18_r3_blue_candidate",
+    "decision": "4d75c03acb66",
+    "color": "blue",
+    "source_sha256": "1b29eee6b05afb9a6e605ff25ae24233b51c563d82c97558b53cf0a3be4d9b6f",
+    "image": "18_r3_blue_candidate__4d75c03acb66.png"
+  },
+  {
+    "trial": "18_r3_blue_candidate",
+    "decision": "520f21382ca8",
+    "color": "blue",
+    "source_sha256": "37962f959115a8453432f3db7bd4193df187a253277b7ad8bcf41709a310c5e4",
+    "image": "18_r3_blue_candidate__520f21382ca8.png"
+  },
+  {
+    "trial": "18_r3_blue_candidate",
+    "decision": "5eaaaaf1c49b",
+    "color": "blue",
+    "source_sha256": "6155b2a1eeb83858d898afc0c608214620163fab5e1457ba41c1d8323857c0db",
+    "image": "18_r3_blue_candidate__5eaaaaf1c49b.png"
+  },
+  {
+    "trial": "18_r3_blue_candidate",
+    "decision": "67896389fd11",
+    "color": "blue",
+    "source_sha256": "9c8e925e83df0685edcb1a8d7fec1f158aca31e469643897cd158002e42c42c3",
+    "image": "18_r3_blue_candidate__67896389fd11.png"
+  },
+  {
+    "trial": "18_r3_blue_candidate",
+    "decision": "6a6555b3d8f1",
+    "color": "blue",
+    "source_sha256": "10e52f4377ea2529eeb15b24c698522a0545ecd5df521671657b427e22c559fd",
+    "image": "18_r3_blue_candidate__6a6555b3d8f1.png"
+  },
+  {
+    "trial": "18_r3_blue_candidate",
+    "decision": "72628a20b69f",
+    "color": "blue",
+    "source_sha256": "59c0cf12338dd3bba0793f40e9b0a887bcff42d7810f55aa7fb4fa658ba479b3",
+    "image": "18_r3_blue_candidate__72628a20b69f.png"
+  },
+  {
+    "trial": "18_r3_blue_candidate",
+    "decision": "87658a9c3637",
+    "color": "blue",
+    "source_sha256": "67fe967e1d3ca439b9c1d7c6415243e99cbe2c287f353ea1cf02d872583e7927",
+    "image": "18_r3_blue_candidate__87658a9c3637.png"
+  },
+  {
+    "trial": "18_r3_blue_candidate",
+    "decision": "dbc7dd182b2e",
+    "color": "blue",
+    "source_sha256": "05d604bebb39b2e8b1f8598344db9408a3158aaf3df5cf95f451addc65fdf8c2",
+    "image": "18_r3_blue_candidate__dbc7dd182b2e.png"
+  },
+  {
+    "trial": "03_r1_purple_candidate",
+    "decision": "044c40b0a1d3",
+    "color": "purple",
+    "source_sha256": "fc5448c0a4b3e38e337d184ecf5b6e71acbc48156b2a4c1448593621ca90d4a1",
+    "image": "03_r1_purple_candidate__044c40b0a1d3.png"
+  },
+  {
+    "trial": "03_r1_purple_candidate",
+    "decision": "348d1da7b9e8",
+    "color": "purple",
+    "source_sha256": "bae411543ef86d2bfef28eba8ffe178e7264249ee51f46ac30b135f8d7f2ba4d",
+    "image": "03_r1_purple_candidate__348d1da7b9e8.png"
+  },
+  {
+    "trial": "03_r1_purple_candidate",
+    "decision": "3ba303e356da",
+    "color": "purple",
+    "source_sha256": "a8e08d3062ba8bb7cb84df8ebabc68d27265429a6d8ce3df3c469633e81abbc0",
+    "image": "03_r1_purple_candidate__3ba303e356da.png"
+  },
+  {
+    "trial": "03_r1_purple_candidate",
+    "decision": "415323fcdec9",
+    "color": "purple",
+    "source_sha256": "7111e926b03901ea2636108e59d833eb7758cfe50ac465b1f4070f4fe9bc1c82",
+    "image": "03_r1_purple_candidate__415323fcdec9.png"
+  },
+  {
+    "trial": "03_r1_purple_candidate",
+    "decision": "415a698745e9",
+    "color": "purple",
+    "source_sha256": "53639933e7e877d6929e59e71156420c70baed458fc4434dd24e95e4cb5d2d14",
+    "image": "03_r1_purple_candidate__415a698745e9.png"
+  },
+  {
+    "trial": "03_r1_purple_candidate",
+    "decision": "5535567c16e2",
+    "color": "purple",
+    "source_sha256": "c47e1bfc74204c04decc997835a9716c7877fce0a0286691af6aea658cfd8857",
+    "image": "03_r1_purple_candidate__5535567c16e2.png"
+  },
+  {
+    "trial": "03_r1_purple_candidate",
+    "decision": "5aedbb4c0185",
+    "color": "purple",
+    "source_sha256": "faf48f5357a6ceaa5346ff2b3a767637315425913b0ab45e940211d9d2cd53f3",
+    "image": "03_r1_purple_candidate__5aedbb4c0185.png"
+  },
+  {
+    "trial": "03_r1_purple_candidate",
+    "decision": "9e25b574634a",
+    "color": "purple",
+    "source_sha256": "996152949c6d2bc330516d9cd9e270eb98a5067fe30d6f1474e8b075cff4a268",
+    "image": "03_r1_purple_candidate__9e25b574634a.png"
+  },
+  {
+    "trial": "03_r1_purple_candidate",
+    "decision": "e6e238e965a0",
+    "color": "purple",
+    "source_sha256": "916fff1317e654c6a22b0dbcd56ed93036a0a5b0076aa3b9206e2f46f3b5e79b",
+    "image": "03_r1_purple_candidate__e6e238e965a0.png"
+  },
+  {
+    "trial": "10_r2_purple_candidate",
+    "decision": "109a41e74cc1",
+    "color": "purple",
+    "source_sha256": "f914626026f2285b5a6385300c9835f7304f70446ae235208eebd85c792e4613",
+    "image": "10_r2_purple_candidate__109a41e74cc1.png"
+  },
+  {
+    "trial": "10_r2_purple_candidate",
+    "decision": "188bdaf293e5",
+    "color": "purple",
+    "source_sha256": "2b6617d55e4f857e29dc24aa57a88d6c3cb29c0c771e9c906c547acc2840b670",
+    "image": "10_r2_purple_candidate__188bdaf293e5.png"
+  },
+  {
+    "trial": "10_r2_purple_candidate",
+    "decision": "4029f8ffe730",
+    "color": "purple",
+    "source_sha256": "316b015279ec6c8b82218b5c4bb674f8ccc91df415c5f9eaa7431a95169e168b",
+    "image": "10_r2_purple_candidate__4029f8ffe730.png"
+  },
+  {
+    "trial": "10_r2_purple_candidate",
+    "decision": "40a931d7dade",
+    "color": "purple",
+    "source_sha256": "436062740d67ed56de2493205c81311fc8eed532b91c66ccdb94a33bc98c64ad",
+    "image": "10_r2_purple_candidate__40a931d7dade.png"
+  },
+  {
+    "trial": "10_r2_purple_candidate",
+    "decision": "529aac62f0a5",
+    "color": "purple",
+    "source_sha256": "db494de31c95d17cefd8768ac9831c762e3677fab4d76d8ba862f5fd705718e6",
+    "image": "10_r2_purple_candidate__529aac62f0a5.png"
+  },
+  {
+    "trial": "10_r2_purple_candidate",
+    "decision": "5ed9772bba35",
+    "color": "purple",
+    "source_sha256": "4e98789a481edc1ea6fa5d654d913da4a18fb9d49cfbc19d03b8c3fc1e8ddbd7",
+    "image": "10_r2_purple_candidate__5ed9772bba35.png"
+  },
+  {
+    "trial": "10_r2_purple_candidate",
+    "decision": "642fbd6f1545",
+    "color": "purple",
+    "source_sha256": "4644a18dfcd586abc935dcd47b1c08b3d2182cc242bca67b78c4851f58c3facc",
+    "image": "10_r2_purple_candidate__642fbd6f1545.png"
+  },
+  {
+    "trial": "10_r2_purple_candidate",
+    "decision": "6a9a862eb15f",
+    "color": "purple",
+    "source_sha256": "db918b508c5c552c31f5b7e02840594735e1f459b6cc2d5e601756142214247b",
+    "image": "10_r2_purple_candidate__6a9a862eb15f.png"
+  },
+  {
+    "trial": "10_r2_purple_candidate",
+    "decision": "8b198053a4e2",
+    "color": "purple",
+    "source_sha256": "292568390d87d4ef4455b1425ca3568acd025754ce4f34c1ecb18ba7c642fb54",
+    "image": "10_r2_purple_candidate__8b198053a4e2.png"
+  },
+  {
+    "trial": "10_r2_purple_candidate",
+    "decision": "95fed91933a7",
+    "color": "purple",
+    "source_sha256": "f3cfb2f7a7cb14895f79d05e41941bbb31b1ec7955ae7cbc034f7b8a78cb837a",
+    "image": "10_r2_purple_candidate__95fed91933a7.png"
+  },
+  {
+    "trial": "10_r2_purple_candidate",
+    "decision": "c129ed4bb8d5",
+    "color": "purple",
+    "source_sha256": "a889bb37a38f5145f9ea75d3b68c1414170ff48a4e073bc715425ed26f394b5a",
+    "image": "10_r2_purple_candidate__c129ed4bb8d5.png"
+  },
+  {
+    "trial": "15_r3_purple_candidate",
+    "decision": "2ea6e72b9c44",
+    "color": "purple",
+    "source_sha256": "35e6dc3b8a30fe2b4921ded5571e1470d175cf70f30e1ef42bc9b96c5ddd78dd",
+    "image": "15_r3_purple_candidate__2ea6e72b9c44.png"
+  },
+  {
+    "trial": "15_r3_purple_candidate",
+    "decision": "320c80407c80",
+    "color": "purple",
+    "source_sha256": "eea63a286229d6697e65b9ea247f18e2e851902402045596a7fdaaa0859887ff",
+    "image": "15_r3_purple_candidate__320c80407c80.png"
+  },
+  {
+    "trial": "15_r3_purple_candidate",
+    "decision": "438f0747b9b3",
+    "color": "purple",
+    "source_sha256": "e170dfd9b40e9d3b45bc5f849a56f5f836755e9ab5f288d5871ffc3583eaf5b3",
+    "image": "15_r3_purple_candidate__438f0747b9b3.png"
+  },
+  {
+    "trial": "15_r3_purple_candidate",
+    "decision": "51ba0ca03cdb",
+    "color": "purple",
+    "source_sha256": "8aab44b452d9a5ba2b5c41faf63d6aadf8369a7324f050b20a6789837aaea709",
+    "image": "15_r3_purple_candidate__51ba0ca03cdb.png"
+  },
+  {
+    "trial": "15_r3_purple_candidate",
+    "decision": "a2437d23d7da",
+    "color": "purple",
+    "source_sha256": "ca0d332cb447a63ec950f4fb5466f8f12a79fde10c0da0e2a2df1305be982a60",
+    "image": "15_r3_purple_candidate__a2437d23d7da.png"
+  },
+  {
+    "trial": "15_r3_purple_candidate",
+    "decision": "a8f46dc73a18",
+    "color": "purple",
+    "source_sha256": "ec9a68fe541c5453ea7277c50d480de2cb88863f35b2bbed17e7af3829e1e02f",
+    "image": "15_r3_purple_candidate__a8f46dc73a18.png"
+  },
+  {
+    "trial": "15_r3_purple_candidate",
+    "decision": "aaae3d0e877f",
+    "color": "purple",
+    "source_sha256": "d9433786e958f8484cbcb3a98d940bf4e6b91dddba3fa2d6c654e40e18679d87",
+    "image": "15_r3_purple_candidate__aaae3d0e877f.png"
+  },
+  {
+    "trial": "02_r1_red_candidate",
+    "decision": "14bc4e0b79d3",
+    "color": "red",
+    "source_sha256": "2e55e0be42cdfdefae00b1ac3d448e4c3d9635de67db966b541f9dccf8bdc133",
+    "image": "02_r1_red_candidate__14bc4e0b79d3.png"
+  },
+  {
+    "trial": "02_r1_red_candidate",
+    "decision": "4ee96fc5132d",
+    "color": "red",
+    "source_sha256": "41c85ec950df378a242ef9a1d31e82899cda90f40f96783da2f4f444225ab40c",
+    "image": "02_r1_red_candidate__4ee96fc5132d.png"
+  },
+  {
+    "trial": "02_r1_red_candidate",
+    "decision": "54a5442fc26f",
+    "color": "red",
+    "source_sha256": "d14ce093b379d556864982c5b80de7cf24d393c663e8e56cebed0938d506cc8f",
+    "image": "02_r1_red_candidate__54a5442fc26f.png"
+  },
+  {
+    "trial": "02_r1_red_candidate",
+    "decision": "731b6ca3a728",
+    "color": "red",
+    "source_sha256": "327757014c6ad1e3e27ea8d2b45a7b0afe29595a44482911a6493fc297e68688",
+    "image": "02_r1_red_candidate__731b6ca3a728.png"
+  },
+  {
+    "trial": "02_r1_red_candidate",
+    "decision": "922939883b75",
+    "color": "red",
+    "source_sha256": "bcf59dd0c47fa71b7d15eed40084fff267116087f2e11c7a312bef12898e9f98",
+    "image": "02_r1_red_candidate__922939883b75.png"
+  },
+  {
+    "trial": "02_r1_red_candidate",
+    "decision": "fc6853a108dd",
+    "color": "red",
+    "source_sha256": "204a856a4530ffe96e3fb294dcaa4079ed2e49cf2e7c0895ac503965753634f4",
+    "image": "02_r1_red_candidate__fc6853a108dd.png"
+  },
+  {
+    "trial": "07_r2_red_candidate",
+    "decision": "0721001fb1ca",
+    "color": "red",
+    "source_sha256": "66f663e04f9c4b7ef9d96833be276db86cf6286ac0f8400e5269d1d4d85ffecf",
+    "image": "07_r2_red_candidate__0721001fb1ca.png"
+  },
+  {
+    "trial": "07_r2_red_candidate",
+    "decision": "21d9288bc848",
+    "color": "red",
+    "source_sha256": "fb1787e21b33f6c43b3a2a9a5ea632578ebf008bab94df757df1113414d1f809",
+    "image": "07_r2_red_candidate__21d9288bc848.png"
+  },
+  {
+    "trial": "07_r2_red_candidate",
+    "decision": "3e118efccbec",
+    "color": "red",
+    "source_sha256": "a516dbf3fa95b4add6ccfefe94340edc860eb7ab11aae99c04f851744bb7e537",
+    "image": "07_r2_red_candidate__3e118efccbec.png"
+  },
+  {
+    "trial": "07_r2_red_candidate",
+    "decision": "b0abff199e2e",
+    "color": "red",
+    "source_sha256": "4723a6057cf1e3e783d206fd8ff549ee786a1c9b278703fff4992abb7e731d6c",
+    "image": "07_r2_red_candidate__b0abff199e2e.png"
+  },
+  {
+    "trial": "07_r2_red_candidate",
+    "decision": "d4ba4d204dc6",
+    "color": "red",
+    "source_sha256": "2a281bcf7b301ed95b953cba7c4eab42c6207750565c59321f09a23ecbc949b3",
+    "image": "07_r2_red_candidate__d4ba4d204dc6.png"
+  },
+  {
+    "trial": "14_r3_red_candidate",
+    "decision": "000ca70e5693",
+    "color": "red",
+    "source_sha256": "2cb77513b0a464f4644657b7bd1536cd8d50b6cb5d3d4dc9da8bdd7b925c364c",
+    "image": "14_r3_red_candidate__000ca70e5693.png"
+  },
+  {
+    "trial": "14_r3_red_candidate",
+    "decision": "4e237bab2ee0",
+    "color": "red",
+    "source_sha256": "b85399b49d0e13f1a06c47eb43a522cfca12f12ec8fdeb58b6953f7df87d1f19",
+    "image": "14_r3_red_candidate__4e237bab2ee0.png"
+  },
+  {
+    "trial": "14_r3_red_candidate",
+    "decision": "64916cd265b2",
+    "color": "red",
+    "source_sha256": "4367387a0c3f7a581c74f55aa451898e28a89747e090e5aa4ae8baec8e7ce846",
+    "image": "14_r3_red_candidate__64916cd265b2.png"
+  },
+  {
+    "trial": "14_r3_red_candidate",
+    "decision": "b58b14e0d0db",
+    "color": "red",
+    "source_sha256": "984d83a19c0a3d9a63ff4d05896f66f4fc990a520713a63d0e3ad8002fec60d8",
+    "image": "14_r3_red_candidate__b58b14e0d0db.png"
+  },
+  {
+    "trial": "14_r3_red_candidate",
+    "decision": "d270ad687e51",
+    "color": "red",
+    "source_sha256": "9d547a68ce7b5fbbfb41993d02f9668d12624dee435b36dc374a1fd46a4b205f",
+    "image": "14_r3_red_candidate__d270ad687e51.png"
+  },
+  {
+    "trial": "14_r3_red_candidate",
+    "decision": "dbc198609132",
+    "color": "red",
+    "source_sha256": "07020584372db567c1ad91042fee8a2981ee55225fad4b18a756bdb26ff4c1fb",
+    "image": "14_r3_red_candidate__dbc198609132.png"
+  },
+  {
+    "trial": "14_r3_red_candidate",
+    "decision": "f27583a85fe9",
+    "color": "red",
+    "source_sha256": "47f0a4dcdaf8705f4482a779d905f70e5225cf6383317af43632ce780e57a0c4",
+    "image": "14_r3_red_candidate__f27583a85fe9.png"
+  }
+]

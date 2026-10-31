@@ -1,0 +1,14 @@
+{
+  "package_manifest_sha256": "f0eb35a145470c6015627227a994c6a34cc9e701412c2bff1802797dccd1eaae",
+  "sessions": {
+    "red": "/home/ubuntu/tcei_baseline_tools/results/multimodal_v2_demo5_red_20261026",
+    "purple": "/home/ubuntu/tcei_baseline_tools/results/multimodal_v2_demo5_purple_20261026",
+    "blue": "/home/ubuntu/tcei_baseline_tools/results/multimodal_v2_demo_blue_20261026"
+  },
+  "review": {
+    "red": {"decision": "498283974fcf", "actual_window": "audit/screenshots/window_0001.png", "observed_target": "red balloon inside propagated box", "control": "center(370,323), ALIGN yaw negative and descend; actual body frame command recorded", "physical_result": "unknown: postflight GC crashed UE after earlier payload requests"},
+    "purple": {"decision": "4e155bb9db22", "actual_window": "audit/screenshots/window_0002.png", "observed_target": "purple balloon inside propagated box; also seen in window_0003", "control": "center(502,229), ALIGN yaw negative; actual body frame command recorded", "counterexample": "earlier decision beb8eec5c343 drifted to wall in window_0001", "physical_result": "all 3 actors remained; target missed"},
+    "blue": {"decision": "6b0208e5abda", "actual_window": "audit/screenshots/window_0001.png", "observed_target": "blue balloon inside propagated box", "control": "model decision linked to pixel consumption, original servo and wire command in control_links.json", "physical_result": "3 to 1 actors, at least one extra removal; removed colors unknown"}
+  },
+  "scope": "Three demonstrations prove real recognition-to-control and real window examples, NOT reliable tracking, successful hits, 3.1 acceptance or full 10 point compliance. All adverse evidence remains included. Demos excluded from 3.3 denominator."
+}

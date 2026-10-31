@@ -1,0 +1,12 @@
+{
+  "model": "/home/ubuntu/model/FM9G4B-V",
+  "adapter": "None",
+  "split": "validation",
+  "cases_sha256": "bf83cbd3985c4b15f1121aa35f82c23e3b06af13c4acf286eada8dbb5078392e",
+  "max_new_tokens": 128,
+  "sampling": false,
+  "num_beams": 1,
+  "dtype": "bfloat16",
+  "slice_nums": "default=9",
+  "model_instance": 140218142389008
+}

@@ -1,0 +1,40 @@
+{
+  "package_md5_checks": {
+    "v2/localizer.py": true,
+    "v2/tracking.py": true,
+    "v2/runtime.py": true,
+    "v2/refinement.py": true,
+    "v2/geometry.py": true,
+    "v2/multimodal_target_tracker.h": true,
+    "v2/multimodal_target_tracker.cpp": true,
+    "v2/entry_main.py.txt": true,
+    "v2/mission_once.py": true,
+    "v2/bt_ros.cpp": true,
+    "patches/deploy_v2.py": true,
+    "patches/build_v2.sh": true,
+    "patches/patch_v2_sources.py": true,
+    "tools/test_v2_guards.py": true,
+    "tools/run_one_v2.sh": true,
+    "tools/switch_condition_v2.sh": true,
+    "tools/postflight_snapshot_v2.py": true,
+    "tools/observe_trial_v2.py": true,
+    "tools/summarize_session_v2.py": true,
+    "tools/decision_table_v2.py": true,
+    "tools/inspect_stage_v2.py": true
+  },
+  "unchanged_command_helpers": [
+    "balloon_command_missing",
+    "command_balloon_colors",
+    "command_problems",
+    "expected_balloon_color",
+    "generate_commands",
+    "generate_validated_commands",
+    "load_model",
+    "retry_prompt",
+    "single_action_problems"
+  ],
+  "bt_change": "exactly one TargetTracker tag replaced; original tree/control structure intact",
+  "baseline_entry_md5": "fca24bf1142ca8cddfb9e8d39c387a43",
+  "candidate_entry_md5": "de03cd1a5687f7bc0664ea52f3cd095f",
+  "manifest_sha256": "f0eb35a145470c6015627227a994c6a34cc9e701412c2bff1802797dccd1eaae"
+}

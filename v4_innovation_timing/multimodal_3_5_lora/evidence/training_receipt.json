@@ -1,0 +1,108 @@
+{
+  "final_step": 1200,
+  "selected_step": 800,
+  "selected_checkpoint": "/root/gpufree-data/tcei_lora35/output_lora/checkpoint-800",
+  "best_validation_loss": 0.3836514353752136,
+  "validation_curve": [
+    {
+      "epoch": 1.25,
+      "eval_loss": 0.49267035722732544,
+      "eval_runtime": 32.5399,
+      "eval_samples_per_second": 4.671,
+      "eval_steps_per_second": 4.671,
+      "step": 200
+    },
+    {
+      "epoch": 2.5,
+      "eval_loss": 0.411433607339859,
+      "eval_runtime": 31.9947,
+      "eval_samples_per_second": 4.751,
+      "eval_steps_per_second": 4.751,
+      "step": 400
+    },
+    {
+      "epoch": 3.75,
+      "eval_loss": 0.39089906215667725,
+      "eval_runtime": 32.5064,
+      "eval_samples_per_second": 4.676,
+      "eval_steps_per_second": 4.676,
+      "step": 600
+    },
+    {
+      "epoch": 5.0,
+      "eval_loss": 0.3836514353752136,
+      "eval_runtime": 32.2184,
+      "eval_samples_per_second": 4.718,
+      "eval_steps_per_second": 4.718,
+      "step": 800
+    },
+    {
+      "epoch": 6.25,
+      "eval_loss": 0.3944827616214752,
+      "eval_runtime": 32.6372,
+      "eval_samples_per_second": 4.657,
+      "eval_steps_per_second": 4.657,
+      "step": 1000
+    },
+    {
+      "epoch": 7.5,
+      "eval_loss": 0.393627792596817,
+      "eval_runtime": 32.2306,
+      "eval_samples_per_second": 4.716,
+      "eval_steps_per_second": 4.716,
+      "step": 1200
+    }
+  ],
+  "final_metrics": [
+    {
+      "epoch": 7.5,
+      "step": 1200,
+      "total_flos": 1.1498101777891328e+16,
+      "train_loss": 0.3892846555054651,
+      "train_runtime": 4205.9717,
+      "train_samples_per_second": 2.378,
+      "train_steps_per_second": 2.378
+    }
+  ],
+  "peak_total_gpu_mib": 15578,
+  "peak_training_rss_mib": 27055.0859375,
+  "monitored_seconds": 4224.289664983749,
+  "torch_peak": {
+    "event": "exit",
+    "step": null,
+    "elapsed_s": 4224.353137016296,
+    "peak_allocated_bytes": 13572142080,
+    "peak_reserved_bytes": 15034482688
+  },
+  "training_budget": {
+    "first_effective_training_start": 1793029703.9464514,
+    "deadline": 1793116103.9464514
+  },
+  "artifacts": {
+    "/root/gpufree-data/tcei_lora35/output_lora/checkpoint-800/adapter_config.json": {
+      "bytes": 903,
+      "sha256": "441711bf0d35870cfc3e8490d2709a34c1380c1f38325bad32f9eebe2fb89c48",
+      "md5": "fd848ec06dd7b28054e9583de24e44ff"
+    },
+    "/root/gpufree-data/tcei_lora35/output_lora/checkpoint-800/adapter_model.safetensors": {
+      "bytes": 1298827704,
+      "sha256": "696615aa92f09dc3be22db8e84ed9d8201b9375789e20140dceb0dc38a46ff73",
+      "md5": "dac2201c837e6406a0534180f5563b79"
+    },
+    "/root/gpufree-data/tcei_lora35/output_lora/checkpoint-800/trainer_state.json": {
+      "bytes": 129116,
+      "sha256": "272c8b09d872fcb62ba1baebf95290269152445fb65d7d7e0610dfd14fc19552",
+      "md5": "83df4c363b4f9794ec34d80647ca2a26"
+    },
+    "/root/gpufree-data/tcei_lora35/output_lora/checkpoint-800/experiment_complete.json": {
+      "bytes": 140,
+      "sha256": "3593f2a65ec5377420962a5418931200831eccf7ba549b22f868eb2e3a35f637",
+      "md5": "c5ceb390c58ace742e4ec9f5ea4b7427"
+    },
+    "/root/gpufree-data/tcei_lora35/output_lora/adapter_model.safetensors": {
+      "bytes": 1298827704,
+      "sha256": "696615aa92f09dc3be22db8e84ed9d8201b9375789e20140dceb0dc38a46ff73",
+      "md5": "dac2201c837e6406a0534180f5563b79"
+    }
+  }
+}

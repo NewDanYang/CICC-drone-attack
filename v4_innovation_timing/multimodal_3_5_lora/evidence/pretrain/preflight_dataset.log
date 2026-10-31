@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/root/gpufree-data/tcei_lora35/tools/preflight_dataset.py", line 20, in <module>
+    out=preprocess({'<image>':Image.open(row['image']).convert('RGB')},row['conversations'],tok,transform,
+  File "/root/gpufree-data/tcei_lora35/official/FM9G4B-V/finetune/dataset.py", line 298, in preprocess
+    input_dict = conversation_to_ids(conversations, tokenizer, new_schema, max_length)
+  File "/root/gpufree-data/tcei_lora35/official/FM9G4B-V/finetune/dataset.py", line 131, in conversation_to_ids
+    ids = torch.from_numpy(np.hstack(input_ids, dtype=np.int32))
+  File "<__array_function__ internals>", line 179, in hstack
+TypeError: _vhstack_dispatcher() got an unexpected keyword argument 'dtype'
