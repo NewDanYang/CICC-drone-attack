@@ -1,0 +1,35 @@
+{
+ "05_r1_blue_baseline": {
+  "frames": 145,
+  "visible": 64,
+  "centre_ok": 48,
+  "published": 54,
+  "centre_pct": 75.0,
+  "precision_pct": 88.9,
+  "false_publish_absent": "27/72",
+  "inference_errors": 0,
+  "audit_path": "/tmp/p12e_runtime_truth/20261031T161443_b796e4/audit.jsonl"
+ },
+ "09_r2_purple_baseline": {
+  "frames": 220,
+  "visible": 126,
+  "centre_ok": 63,
+  "published": 81,
+  "centre_pct": 50.0,
+  "precision_pct": 77.8,
+  "false_publish_absent": "3/56",
+  "inference_errors": 0,
+  "audit_path": "/tmp/p12e_runtime_truth/20261031T161527_96a15b/audit.jsonl"
+ },
+ "13_r3_red_baseline": {
+  "frames": 254,
+  "visible": 47,
+  "centre_ok": 32,
+  "published": 38,
+  "centre_pct": 68.1,
+  "precision_pct": 84.2,
+  "false_publish_absent": "0/57",
+  "inference_errors": 0,
+  "audit_path": "/tmp/p12e_runtime_truth/20261031T161623_c795c9/audit.jsonl"
+ }
+}
