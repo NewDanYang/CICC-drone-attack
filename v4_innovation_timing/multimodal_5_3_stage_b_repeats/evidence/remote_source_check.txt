@@ -1,0 +1,7 @@
+remote_root=/home/ubuntu/multimodal_v2/stage_b_repeats_20261101
+55f29f622af3b308b6829bedac434630  v2/presence.py
+d1fde2bfa8da630393d5009c0e55f49f  v2/runtime.py
+2781aca42162e64f1d0ad68772b16799  v2/tracking.py
+afa58a1cdb2b431a43148dd2c6178549  tools/validate_runtime_vs_truth.py
+582b8d9f6b9ae879d4d53ff7ccdafedd  tools/run_variance_matrix.sh
+runtime_scan=clean
