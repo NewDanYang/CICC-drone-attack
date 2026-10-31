@@ -1,0 +1,7 @@
+{
+  "event": "exit",
+  "step": null,
+  "elapsed_s": 407.1271674633026,
+  "peak_allocated_bytes": 10439915008,
+  "peak_reserved_bytes": 11085545472
+}

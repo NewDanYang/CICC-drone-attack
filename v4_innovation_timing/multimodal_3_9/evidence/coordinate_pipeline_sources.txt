@@ -1,0 +1,16 @@
+3.8 label construction (build_selfcheck20.py):
+  vals = round(v * (1000 / 640 if x-coordinate else 1000 / 480))
+  answer = <box>x1 y1 x2 y2</box>
+
+3.8 scoring (evaluate_native_box.py):
+  px = box[i] * (640 / 1000 if x-coordinate else 480 / 1000)
+  geometry is computed in original 640x480 pixel space.
+
+Official FM9G4B-V training preprocessing inspected on server:
+  /root/gpufree-data/mm36_lora_v2/official/FM9G4B-V/finetune/dataset.py
+  uses slice_image(image, max_slice_nums=9, scale_resolution=448, patch_size=14).
+  Its find_best_resize/get_refine_size/split_to_patches logic matches the loaded
+  FM9GVImageProcessor used in audit_coord_frame.py.
+
+No coordinate conversion is applied to the text labels by the official dataset
+loader; the text target remains the normalized 0-1000 values constructed above.

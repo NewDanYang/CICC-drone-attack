@@ -1,0 +1,282 @@
+[
+  {
+    "id": "run3_00439_red_selfcheck_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00439.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "Locate the visible red balloon in this image. Output only the native format <box>x1 y1 x2 y2</box>, with integer coordinates normalized to 0-1000, where x increases right and y increases down. If the target is not visible, output <box>None</box>."
+      },
+      {
+        "role": "assistant",
+        "content": "<box>809 208 969 452</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00434_red_selfcheck_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00434.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "Locate the visible red balloon in this image. Output only the native format <box>x1 y1 x2 y2</box>, with integer coordinates normalized to 0-1000, where x increases right and y increases down. If the target is not visible, output <box>None</box>."
+      },
+      {
+        "role": "assistant",
+        "content": "<box>605 729 686 967</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00431_red_selfcheck_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00431.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "Locate the visible red balloon in this image. Output only the native format <box>x1 y1 x2 y2</box>, with integer coordinates normalized to 0-1000, where x increases right and y increases down. If the target is not visible, output <box>None</box>."
+      },
+      {
+        "role": "assistant",
+        "content": "<box>900 721 1000 952</box>"
+      }
+    ]
+  },
+  {
+    "id": "run7_00478_red_selfcheck_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run7_frame_00478.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "Locate the visible red balloon in this image. Output only the native format <box>x1 y1 x2 y2</box>, with integer coordinates normalized to 0-1000, where x increases right and y increases down. If the target is not visible, output <box>None</box>."
+      },
+      {
+        "role": "assistant",
+        "content": "<box>600 260 709 465</box>"
+      }
+    ]
+  },
+  {
+    "id": "run7_00490_red_selfcheck_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run7_frame_00490.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "Locate the visible red balloon in this image. Output only the native format <box>x1 y1 x2 y2</box>, with integer coordinates normalized to 0-1000, where x increases right and y increases down. If the target is not visible, output <box>None</box>."
+      },
+      {
+        "role": "assistant",
+        "content": "<box>858 256 991 460</box>"
+      }
+    ]
+  },
+  {
+    "id": "run7_00484_red_selfcheck_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run7_frame_00484.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "Locate the visible red balloon in this image. Output only the native format <box>x1 y1 x2 y2</box>, with integer coordinates normalized to 0-1000, where x increases right and y increases down. If the target is not visible, output <box>None</box>."
+      },
+      {
+        "role": "assistant",
+        "content": "<box>553 258 662 456</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00002_red_selfcheck_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00002.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "Locate the visible red balloon in this image. Output only the native format <box>x1 y1 x2 y2</box>, with integer coordinates normalized to 0-1000, where x increases right and y increases down. If the target is not visible, output <box>None</box>."
+      },
+      {
+        "role": "assistant",
+        "content": "<box>0 267 56 454</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00432_purple_selfcheck_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00432.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "Locate the visible purple balloon in this image. Output only the native format <box>x1 y1 x2 y2</box>, with integer coordinates normalized to 0-1000, where x increases right and y increases down. If the target is not visible, output <box>None</box>."
+      },
+      {
+        "role": "assistant",
+        "content": "<box>800 729 922 967</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00171_purple_selfcheck_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00171.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "Locate the visible purple balloon in this image. Output only the native format <box>x1 y1 x2 y2</box>, with integer coordinates normalized to 0-1000, where x increases right and y increases down. If the target is not visible, output <box>None</box>."
+      },
+      {
+        "role": "assistant",
+        "content": "<box>147 765 189 902</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00178_purple_selfcheck_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00178.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "Locate the visible purple balloon in this image. Output only the native format <box>x1 y1 x2 y2</box>, with integer coordinates normalized to 0-1000, where x increases right and y increases down. If the target is not visible, output <box>None</box>."
+      },
+      {
+        "role": "assistant",
+        "content": "<box>403 788 442 919</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00176_purple_selfcheck_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00176.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "Locate the visible purple balloon in this image. Output only the native format <box>x1 y1 x2 y2</box>, with integer coordinates normalized to 0-1000, where x increases right and y increases down. If the target is not visible, output <box>None</box>."
+      },
+      {
+        "role": "assistant",
+        "content": "<box>348 777 378 904</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00169_purple_selfcheck_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00169.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "Locate the visible purple balloon in this image. Output only the native format <box>x1 y1 x2 y2</box>, with integer coordinates normalized to 0-1000, where x increases right and y increases down. If the target is not visible, output <box>None</box>."
+      },
+      {
+        "role": "assistant",
+        "content": "<box>61 775 95 896</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00173_purple_selfcheck_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00173.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "Locate the visible purple balloon in this image. Output only the native format <box>x1 y1 x2 y2</box>, with integer coordinates normalized to 0-1000, where x increases right and y increases down. If the target is not visible, output <box>None</box>."
+      },
+      {
+        "role": "assistant",
+        "content": "<box>248 775 270 879</box>"
+      }
+    ]
+  },
+  {
+    "id": "run7_00157_purple_selfcheck_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run7_frame_00157.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "Locate the visible purple balloon in this image. Output only the native format <box>x1 y1 x2 y2</box>, with integer coordinates normalized to 0-1000, where x increases right and y increases down. If the target is not visible, output <box>None</box>."
+      },
+      {
+        "role": "assistant",
+        "content": "<box>459 754 520 858</box>"
+      }
+    ]
+  },
+  {
+    "id": "run7_00034_blue_selfcheck_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run7_frame_00034.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "Locate the visible blue balloon in this image. Output only the native format <box>x1 y1 x2 y2</box>, with integer coordinates normalized to 0-1000, where x increases right and y increases down. If the target is not visible, output <box>None</box>."
+      },
+      {
+        "role": "assistant",
+        "content": "<box>638 548 672 610</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00035_blue_selfcheck_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00035.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "Locate the visible blue balloon in this image. Output only the native format <box>x1 y1 x2 y2</box>, with integer coordinates normalized to 0-1000, where x increases right and y increases down. If the target is not visible, output <box>None</box>."
+      },
+      {
+        "role": "assistant",
+        "content": "<box>809 512 850 571</box>"
+      }
+    ]
+  },
+  {
+    "id": "run7_00052_blue_selfcheck_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run7_frame_00052.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "Locate the visible blue balloon in this image. Output only the native format <box>x1 y1 x2 y2</box>, with integer coordinates normalized to 0-1000, where x increases right and y increases down. If the target is not visible, output <box>None</box>."
+      },
+      {
+        "role": "assistant",
+        "content": "<box>516 567 547 625</box>"
+      }
+    ]
+  },
+  {
+    "id": "run7_00325_blue_selfcheck_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run7_frame_00325.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "Locate the visible blue balloon in this image. Output only the native format <box>x1 y1 x2 y2</box>, with integer coordinates normalized to 0-1000, where x increases right and y increases down. If the target is not visible, output <box>None</box>."
+      },
+      {
+        "role": "assistant",
+        "content": "<box>258 585 291 642</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00046_blue_selfcheck_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00046.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "Locate the visible blue balloon in this image. Output only the native format <box>x1 y1 x2 y2</box>, with integer coordinates normalized to 0-1000, where x increases right and y increases down. If the target is not visible, output <box>None</box>."
+      },
+      {
+        "role": "assistant",
+        "content": "<box>592 583 623 640</box>"
+      }
+    ]
+  },
+  {
+    "id": "run3_00047_blue_selfcheck_native",
+    "image": "/root/gpufree-data/mm36_lora_v2/data/images/run3_frame_00047.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "Locate the visible blue balloon in this image. Output only the native format <box>x1 y1 x2 y2</box>, with integer coordinates normalized to 0-1000, where x increases right and y increases down. If the target is not visible, output <box>None</box>."
+      },
+      {
+        "role": "assistant",
+        "content": "<box>575 583 608 640</box>"
+      }
+    ]
+  }
+]

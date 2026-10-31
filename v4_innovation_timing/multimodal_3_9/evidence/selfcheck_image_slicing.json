@@ -1,0 +1,2099 @@
+{
+  "model": "/home/ubuntu/model/FM9G4B-V",
+  "processor_class": "FM9GVProcessor",
+  "image_processor_class": "FM9GVImageProcessor",
+  "config": {
+    "max_slice_nums": 9,
+    "scale_resolution": 448,
+    "patch_size": 14,
+    "slice_mode": true
+  },
+  "n": 20,
+  "geometry_pass": 15,
+  "geometry_fail": 5,
+  "processing_signature_counts": {
+    "{\"grid_xy\": [2, 1], \"patch_sizes_wh\": [[364, 546], [364, 546]], \"processor_tgt_sizes_hw\": [[28, 37], [39, 26], [39, 26]], \"refined_image_size_wh\": [728, 546], \"source_image_size_wh\": [518, 392]}": 20
+  },
+  "items": [
+    {
+      "id": "run3_00439_red_selfcheck_native",
+      "color": "red",
+      "geometry_pass": true,
+      "original_size_wh": [
+        640,
+        480
+      ],
+      "label_bbox_px": [
+        518,
+        100,
+        620,
+        217
+      ],
+      "predicted_bbox_px": [
+        517.76,
+        99.84,
+        620.16,
+        216.95999999999998
+      ],
+      "center_error_px": 0.10770329614269768,
+      "iou": 0.9943946771438059,
+      "processor_config": {
+        "max_slice_nums": 9,
+        "scale_resolution": 448,
+        "patch_size": 14,
+        "slice_mode": true
+      },
+      "grid_xy": [
+        2,
+        1
+      ],
+      "source_image_size_wh": [
+        518,
+        392
+      ],
+      "patch_count": 2,
+      "patch_sizes_wh": [
+        [
+          364,
+          546
+        ],
+        [
+          364,
+          546
+        ]
+      ],
+      "refined_image_size_wh": [
+        728,
+        546
+      ],
+      "patch_boxes_refined_xyxy": [
+        [
+          0,
+          0,
+          364,
+          546
+        ],
+        [
+          364,
+          0,
+          728,
+          546
+        ]
+      ],
+      "processor_pixel_value_count": 3,
+      "processor_pixel_value_shapes": [
+        [
+          3,
+          14,
+          14504
+        ],
+        [
+          3,
+          14,
+          14196
+        ],
+        [
+          3,
+          14,
+          14196
+        ]
+      ],
+      "processor_tgt_sizes_hw": [
+        [
+          28,
+          37
+        ],
+        [
+          39,
+          26
+        ],
+        [
+          39,
+          26
+        ]
+      ],
+      "processor_image_sizes_wh": [
+        [
+          640,
+          480
+        ]
+      ]
+    },
+    {
+      "id": "run3_00434_red_selfcheck_native",
+      "color": "red",
+      "geometry_pass": true,
+      "original_size_wh": [
+        640,
+        480
+      ],
+      "label_bbox_px": [
+        387,
+        350,
+        439,
+        464
+      ],
+      "predicted_bbox_px": [
+        387.2,
+        349.91999999999996,
+        439.04,
+        464.15999999999997
+      ],
+      "center_error_px": 0.12649110640672798,
+      "iou": 0.993305031238343,
+      "processor_config": {
+        "max_slice_nums": 9,
+        "scale_resolution": 448,
+        "patch_size": 14,
+        "slice_mode": true
+      },
+      "grid_xy": [
+        2,
+        1
+      ],
+      "source_image_size_wh": [
+        518,
+        392
+      ],
+      "patch_count": 2,
+      "patch_sizes_wh": [
+        [
+          364,
+          546
+        ],
+        [
+          364,
+          546
+        ]
+      ],
+      "refined_image_size_wh": [
+        728,
+        546
+      ],
+      "patch_boxes_refined_xyxy": [
+        [
+          0,
+          0,
+          364,
+          546
+        ],
+        [
+          364,
+          0,
+          728,
+          546
+        ]
+      ],
+      "processor_pixel_value_count": 3,
+      "processor_pixel_value_shapes": [
+        [
+          3,
+          14,
+          14504
+        ],
+        [
+          3,
+          14,
+          14196
+        ],
+        [
+          3,
+          14,
+          14196
+        ]
+      ],
+      "processor_tgt_sizes_hw": [
+        [
+          28,
+          37
+        ],
+        [
+          39,
+          26
+        ],
+        [
+          39,
+          26
+        ]
+      ],
+      "processor_image_sizes_wh": [
+        [
+          640,
+          480
+        ]
+      ]
+    },
+    {
+      "id": "run3_00431_red_selfcheck_native",
+      "color": "red",
+      "geometry_pass": true,
+      "original_size_wh": [
+        640,
+        480
+      ],
+      "label_bbox_px": [
+        576,
+        346,
+        640,
+        457
+      ],
+      "predicted_bbox_px": [
+        576.0,
+        346.08,
+        640.0,
+        457.91999999999996
+      ],
+      "center_error_px": 0.5,
+      "iou": 0.9910650464617589,
+      "processor_config": {
+        "max_slice_nums": 9,
+        "scale_resolution": 448,
+        "patch_size": 14,
+        "slice_mode": true
+      },
+      "grid_xy": [
+        2,
+        1
+      ],
+      "source_image_size_wh": [
+        518,
+        392
+      ],
+      "patch_count": 2,
+      "patch_sizes_wh": [
+        [
+          364,
+          546
+        ],
+        [
+          364,
+          546
+        ]
+      ],
+      "refined_image_size_wh": [
+        728,
+        546
+      ],
+      "patch_boxes_refined_xyxy": [
+        [
+          0,
+          0,
+          364,
+          546
+        ],
+        [
+          364,
+          0,
+          728,
+          546
+        ]
+      ],
+      "processor_pixel_value_count": 3,
+      "processor_pixel_value_shapes": [
+        [
+          3,
+          14,
+          14504
+        ],
+        [
+          3,
+          14,
+          14196
+        ],
+        [
+          3,
+          14,
+          14196
+        ]
+      ],
+      "processor_tgt_sizes_hw": [
+        [
+          28,
+          37
+        ],
+        [
+          39,
+          26
+        ],
+        [
+          39,
+          26
+        ]
+      ],
+      "processor_image_sizes_wh": [
+        [
+          640,
+          480
+        ]
+      ]
+    },
+    {
+      "id": "run7_00478_red_selfcheck_native",
+      "color": "red",
+      "geometry_pass": false,
+      "original_size_wh": [
+        640,
+        480
+      ],
+      "label_bbox_px": [
+        384,
+        125,
+        454,
+        223
+      ],
+      "predicted_bbox_px": [
+        417.92,
+        123.83999999999999,
+        506.88,
+        218.88
+      ],
+      "center_error_px": 43.480220790607746,
+      "iou": 0.28397996976416295,
+      "processor_config": {
+        "max_slice_nums": 9,
+        "scale_resolution": 448,
+        "patch_size": 14,
+        "slice_mode": true
+      },
+      "grid_xy": [
+        2,
+        1
+      ],
+      "source_image_size_wh": [
+        518,
+        392
+      ],
+      "patch_count": 2,
+      "patch_sizes_wh": [
+        [
+          364,
+          546
+        ],
+        [
+          364,
+          546
+        ]
+      ],
+      "refined_image_size_wh": [
+        728,
+        546
+      ],
+      "patch_boxes_refined_xyxy": [
+        [
+          0,
+          0,
+          364,
+          546
+        ],
+        [
+          364,
+          0,
+          728,
+          546
+        ]
+      ],
+      "processor_pixel_value_count": 3,
+      "processor_pixel_value_shapes": [
+        [
+          3,
+          14,
+          14504
+        ],
+        [
+          3,
+          14,
+          14196
+        ],
+        [
+          3,
+          14,
+          14196
+        ]
+      ],
+      "processor_tgt_sizes_hw": [
+        [
+          28,
+          37
+        ],
+        [
+          39,
+          26
+        ],
+        [
+          39,
+          26
+        ]
+      ],
+      "processor_image_sizes_wh": [
+        [
+          640,
+          480
+        ]
+      ]
+    },
+    {
+      "id": "run7_00490_red_selfcheck_native",
+      "color": "red",
+      "geometry_pass": true,
+      "original_size_wh": [
+        640,
+        480
+      ],
+      "label_bbox_px": [
+        549,
+        123,
+        634,
+        221
+      ],
+      "predicted_bbox_px": [
+        549.12,
+        118.08,
+        634.24,
+        220.79999999999998
+      ],
+      "center_error_px": 2.5663203229526967,
+      "iou": 0.9463082180487438,
+      "processor_config": {
+        "max_slice_nums": 9,
+        "scale_resolution": 448,
+        "patch_size": 14,
+        "slice_mode": true
+      },
+      "grid_xy": [
+        2,
+        1
+      ],
+      "source_image_size_wh": [
+        518,
+        392
+      ],
+      "patch_count": 2,
+      "patch_sizes_wh": [
+        [
+          364,
+          546
+        ],
+        [
+          364,
+          546
+        ]
+      ],
+      "refined_image_size_wh": [
+        728,
+        546
+      ],
+      "patch_boxes_refined_xyxy": [
+        [
+          0,
+          0,
+          364,
+          546
+        ],
+        [
+          364,
+          0,
+          728,
+          546
+        ]
+      ],
+      "processor_pixel_value_count": 3,
+      "processor_pixel_value_shapes": [
+        [
+          3,
+          14,
+          14504
+        ],
+        [
+          3,
+          14,
+          14196
+        ],
+        [
+          3,
+          14,
+          14196
+        ]
+      ],
+      "processor_tgt_sizes_hw": [
+        [
+          28,
+          37
+        ],
+        [
+          39,
+          26
+        ],
+        [
+          39,
+          26
+        ]
+      ],
+      "processor_image_sizes_wh": [
+        [
+          640,
+          480
+        ]
+      ]
+    },
+    {
+      "id": "run7_00484_red_selfcheck_native",
+      "color": "red",
+      "geometry_pass": true,
+      "original_size_wh": [
+        640,
+        480
+      ],
+      "label_bbox_px": [
+        354,
+        124,
+        424,
+        219
+      ],
+      "predicted_bbox_px": [
+        353.92,
+        124.8,
+        423.68,
+        220.32
+      ],
+      "center_error_px": 1.0787029248129443,
+      "iou": 0.9724779732758853,
+      "processor_config": {
+        "max_slice_nums": 9,
+        "scale_resolution": 448,
+        "patch_size": 14,
+        "slice_mode": true
+      },
+      "grid_xy": [
+        2,
+        1
+      ],
+      "source_image_size_wh": [
+        518,
+        392
+      ],
+      "patch_count": 2,
+      "patch_sizes_wh": [
+        [
+          364,
+          546
+        ],
+        [
+          364,
+          546
+        ]
+      ],
+      "refined_image_size_wh": [
+        728,
+        546
+      ],
+      "patch_boxes_refined_xyxy": [
+        [
+          0,
+          0,
+          364,
+          546
+        ],
+        [
+          364,
+          0,
+          728,
+          546
+        ]
+      ],
+      "processor_pixel_value_count": 3,
+      "processor_pixel_value_shapes": [
+        [
+          3,
+          14,
+          14504
+        ],
+        [
+          3,
+          14,
+          14196
+        ],
+        [
+          3,
+          14,
+          14196
+        ]
+      ],
+      "processor_tgt_sizes_hw": [
+        [
+          28,
+          37
+        ],
+        [
+          39,
+          26
+        ],
+        [
+          39,
+          26
+        ]
+      ],
+      "processor_image_sizes_wh": [
+        [
+          640,
+          480
+        ]
+      ]
+    },
+    {
+      "id": "run3_00002_red_selfcheck_native",
+      "color": "red",
+      "geometry_pass": true,
+      "original_size_wh": [
+        640,
+        480
+      ],
+      "label_bbox_px": [
+        0,
+        128,
+        36,
+        218
+      ],
+      "predicted_bbox_px": [
+        0.0,
+        127.19999999999999,
+        35.84,
+        217.92
+      ],
+      "center_error_px": 0.4472135954999554,
+      "iou": 0.9859456072680279,
+      "processor_config": {
+        "max_slice_nums": 9,
+        "scale_resolution": 448,
+        "patch_size": 14,
+        "slice_mode": true
+      },
+      "grid_xy": [
+        2,
+        1
+      ],
+      "source_image_size_wh": [
+        518,
+        392
+      ],
+      "patch_count": 2,
+      "patch_sizes_wh": [
+        [
+          364,
+          546
+        ],
+        [
+          364,
+          546
+        ]
+      ],
+      "refined_image_size_wh": [
+        728,
+        546
+      ],
+      "patch_boxes_refined_xyxy": [
+        [
+          0,
+          0,
+          364,
+          546
+        ],
+        [
+          364,
+          0,
+          728,
+          546
+        ]
+      ],
+      "processor_pixel_value_count": 3,
+      "processor_pixel_value_shapes": [
+        [
+          3,
+          14,
+          14504
+        ],
+        [
+          3,
+          14,
+          14196
+        ],
+        [
+          3,
+          14,
+          14196
+        ]
+      ],
+      "processor_tgt_sizes_hw": [
+        [
+          28,
+          37
+        ],
+        [
+          39,
+          26
+        ],
+        [
+          39,
+          26
+        ]
+      ],
+      "processor_image_sizes_wh": [
+        [
+          640,
+          480
+        ]
+      ]
+    },
+    {
+      "id": "run3_00432_purple_selfcheck_native",
+      "color": "purple",
+      "geometry_pass": true,
+      "original_size_wh": [
+        640,
+        480
+      ],
+      "label_bbox_px": [
+        512,
+        350,
+        590,
+        464
+      ],
+      "predicted_bbox_px": [
+        512.0,
+        349.91999999999996,
+        590.08,
+        464.15999999999997
+      ],
+      "center_error_px": 0.05656854249487235,
+      "iou": 0.9968767220002748,
+      "processor_config": {
+        "max_slice_nums": 9,
+        "scale_resolution": 448,
+        "patch_size": 14,
+        "slice_mode": true
+      },
+      "grid_xy": [
+        2,
+        1
+      ],
+      "source_image_size_wh": [
+        518,
+        392
+      ],
+      "patch_count": 2,
+      "patch_sizes_wh": [
+        [
+          364,
+          546
+        ],
+        [
+          364,
+          546
+        ]
+      ],
+      "refined_image_size_wh": [
+        728,
+        546
+      ],
+      "patch_boxes_refined_xyxy": [
+        [
+          0,
+          0,
+          364,
+          546
+        ],
+        [
+          364,
+          0,
+          728,
+          546
+        ]
+      ],
+      "processor_pixel_value_count": 3,
+      "processor_pixel_value_shapes": [
+        [
+          3,
+          14,
+          14504
+        ],
+        [
+          3,
+          14,
+          14196
+        ],
+        [
+          3,
+          14,
+          14196
+        ]
+      ],
+      "processor_tgt_sizes_hw": [
+        [
+          28,
+          37
+        ],
+        [
+          39,
+          26
+        ],
+        [
+          39,
+          26
+        ]
+      ],
+      "processor_image_sizes_wh": [
+        [
+          640,
+          480
+        ]
+      ]
+    },
+    {
+      "id": "run3_00171_purple_selfcheck_native",
+      "color": "purple",
+      "geometry_pass": true,
+      "original_size_wh": [
+        640,
+        480
+      ],
+      "label_bbox_px": [
+        94,
+        367,
+        121,
+        433
+      ],
+      "predicted_bbox_px": [
+        94.08,
+        367.2,
+        120.96000000000001,
+        432.96
+      ],
+      "center_error_px": 0.08246211251234026,
+      "iou": 0.9919353535353538,
+      "processor_config": {
+        "max_slice_nums": 9,
+        "scale_resolution": 448,
+        "patch_size": 14,
+        "slice_mode": true
+      },
+      "grid_xy": [
+        2,
+        1
+      ],
+      "source_image_size_wh": [
+        518,
+        392
+      ],
+      "patch_count": 2,
+      "patch_sizes_wh": [
+        [
+          364,
+          546
+        ],
+        [
+          364,
+          546
+        ]
+      ],
+      "refined_image_size_wh": [
+        728,
+        546
+      ],
+      "patch_boxes_refined_xyxy": [
+        [
+          0,
+          0,
+          364,
+          546
+        ],
+        [
+          364,
+          0,
+          728,
+          546
+        ]
+      ],
+      "processor_pixel_value_count": 3,
+      "processor_pixel_value_shapes": [
+        [
+          3,
+          14,
+          14504
+        ],
+        [
+          3,
+          14,
+          14196
+        ],
+        [
+          3,
+          14,
+          14196
+        ]
+      ],
+      "processor_tgt_sizes_hw": [
+        [
+          28,
+          37
+        ],
+        [
+          39,
+          26
+        ],
+        [
+          39,
+          26
+        ]
+      ],
+      "processor_image_sizes_wh": [
+        [
+          640,
+          480
+        ]
+      ]
+    },
+    {
+      "id": "run3_00178_purple_selfcheck_native",
+      "color": "purple",
+      "geometry_pass": false,
+      "original_size_wh": [
+        640,
+        480
+      ],
+      "label_bbox_px": [
+        258,
+        378,
+        283,
+        441
+      ],
+      "predicted_bbox_px": [
+        222.72,
+        376.8,
+        236.8,
+        415.2
+      ],
+      "center_error_px": 42.91849950778802,
+      "iou": 0.0,
+      "processor_config": {
+        "max_slice_nums": 9,
+        "scale_resolution": 448,
+        "patch_size": 14,
+        "slice_mode": true
+      },
+      "grid_xy": [
+        2,
+        1
+      ],
+      "source_image_size_wh": [
+        518,
+        392
+      ],
+      "patch_count": 2,
+      "patch_sizes_wh": [
+        [
+          364,
+          546
+        ],
+        [
+          364,
+          546
+        ]
+      ],
+      "refined_image_size_wh": [
+        728,
+        546
+      ],
+      "patch_boxes_refined_xyxy": [
+        [
+          0,
+          0,
+          364,
+          546
+        ],
+        [
+          364,
+          0,
+          728,
+          546
+        ]
+      ],
+      "processor_pixel_value_count": 3,
+      "processor_pixel_value_shapes": [
+        [
+          3,
+          14,
+          14504
+        ],
+        [
+          3,
+          14,
+          14196
+        ],
+        [
+          3,
+          14,
+          14196
+        ]
+      ],
+      "processor_tgt_sizes_hw": [
+        [
+          28,
+          37
+        ],
+        [
+          39,
+          26
+        ],
+        [
+          39,
+          26
+        ]
+      ],
+      "processor_image_sizes_wh": [
+        [
+          640,
+          480
+        ]
+      ]
+    },
+    {
+      "id": "run3_00176_purple_selfcheck_native",
+      "color": "purple",
+      "geometry_pass": true,
+      "original_size_wh": [
+        640,
+        480
+      ],
+      "label_bbox_px": [
+        223,
+        373,
+        242,
+        434
+      ],
+      "predicted_bbox_px": [
+        222.72,
+        372.0,
+        236.8,
+        432.96
+      ],
+      "center_error_px": 2.9236962906567454,
+      "iou": 0.6954111243189167,
+      "processor_config": {
+        "max_slice_nums": 9,
+        "scale_resolution": 448,
+        "patch_size": 14,
+        "slice_mode": true
+      },
+      "grid_xy": [
+        2,
+        1
+      ],
+      "source_image_size_wh": [
+        518,
+        392
+      ],
+      "patch_count": 2,
+      "patch_sizes_wh": [
+        [
+          364,
+          546
+        ],
+        [
+          364,
+          546
+        ]
+      ],
+      "refined_image_size_wh": [
+        728,
+        546
+      ],
+      "patch_boxes_refined_xyxy": [
+        [
+          0,
+          0,
+          364,
+          546
+        ],
+        [
+          364,
+          0,
+          728,
+          546
+        ]
+      ],
+      "processor_pixel_value_count": 3,
+      "processor_pixel_value_shapes": [
+        [
+          3,
+          14,
+          14504
+        ],
+        [
+          3,
+          14,
+          14196
+        ],
+        [
+          3,
+          14,
+          14196
+        ]
+      ],
+      "processor_tgt_sizes_hw": [
+        [
+          28,
+          37
+        ],
+        [
+          39,
+          26
+        ],
+        [
+          39,
+          26
+        ]
+      ],
+      "processor_image_sizes_wh": [
+        [
+          640,
+          480
+        ]
+      ]
+    },
+    {
+      "id": "run3_00169_purple_selfcheck_native",
+      "color": "purple",
+      "geometry_pass": true,
+      "original_size_wh": [
+        640,
+        480
+      ],
+      "label_bbox_px": [
+        39,
+        372,
+        61,
+        430
+      ],
+      "predicted_bbox_px": [
+        39.04,
+        372.0,
+        60.800000000000004,
+        430.08
+      ],
+      "center_error_px": 0.0894427190999738,
+      "iou": 0.9877433670428312,
+      "processor_config": {
+        "max_slice_nums": 9,
+        "scale_resolution": 448,
+        "patch_size": 14,
+        "slice_mode": true
+      },
+      "grid_xy": [
+        2,
+        1
+      ],
+      "source_image_size_wh": [
+        518,
+        392
+      ],
+      "patch_count": 2,
+      "patch_sizes_wh": [
+        [
+          364,
+          546
+        ],
+        [
+          364,
+          546
+        ]
+      ],
+      "refined_image_size_wh": [
+        728,
+        546
+      ],
+      "patch_boxes_refined_xyxy": [
+        [
+          0,
+          0,
+          364,
+          546
+        ],
+        [
+          364,
+          0,
+          728,
+          546
+        ]
+      ],
+      "processor_pixel_value_count": 3,
+      "processor_pixel_value_shapes": [
+        [
+          3,
+          14,
+          14504
+        ],
+        [
+          3,
+          14,
+          14196
+        ],
+        [
+          3,
+          14,
+          14196
+        ]
+      ],
+      "processor_tgt_sizes_hw": [
+        [
+          28,
+          37
+        ],
+        [
+          39,
+          26
+        ],
+        [
+          39,
+          26
+        ]
+      ],
+      "processor_image_sizes_wh": [
+        [
+          640,
+          480
+        ]
+      ]
+    },
+    {
+      "id": "run3_00173_purple_selfcheck_native",
+      "color": "purple",
+      "geometry_pass": false,
+      "original_size_wh": [
+        640,
+        480
+      ],
+      "label_bbox_px": [
+        159,
+        372,
+        173,
+        422
+      ],
+      "predicted_bbox_px": [
+        158.72,
+        367.2,
+        172.8,
+        393.12
+      ],
+      "center_error_px": 16.84171012694379,
+      "iou": 0.37680272052557146,
+      "processor_config": {
+        "max_slice_nums": 9,
+        "scale_resolution": 448,
+        "patch_size": 14,
+        "slice_mode": true
+      },
+      "grid_xy": [
+        2,
+        1
+      ],
+      "source_image_size_wh": [
+        518,
+        392
+      ],
+      "patch_count": 2,
+      "patch_sizes_wh": [
+        [
+          364,
+          546
+        ],
+        [
+          364,
+          546
+        ]
+      ],
+      "refined_image_size_wh": [
+        728,
+        546
+      ],
+      "patch_boxes_refined_xyxy": [
+        [
+          0,
+          0,
+          364,
+          546
+        ],
+        [
+          364,
+          0,
+          728,
+          546
+        ]
+      ],
+      "processor_pixel_value_count": 3,
+      "processor_pixel_value_shapes": [
+        [
+          3,
+          14,
+          14504
+        ],
+        [
+          3,
+          14,
+          14196
+        ],
+        [
+          3,
+          14,
+          14196
+        ]
+      ],
+      "processor_tgt_sizes_hw": [
+        [
+          28,
+          37
+        ],
+        [
+          39,
+          26
+        ],
+        [
+          39,
+          26
+        ]
+      ],
+      "processor_image_sizes_wh": [
+        [
+          640,
+          480
+        ]
+      ]
+    },
+    {
+      "id": "run7_00157_purple_selfcheck_native",
+      "color": "purple",
+      "geometry_pass": false,
+      "original_size_wh": [
+        640,
+        480
+      ],
+      "label_bbox_px": [
+        294,
+        362,
+        333,
+        412
+      ],
+      "predicted_bbox_px": [
+        293.76,
+        375.84,
+        332.8,
+        441.12
+      ],
+      "center_error_px": 21.48112659987834,
+      "iou": 0.4532377596136255,
+      "processor_config": {
+        "max_slice_nums": 9,
+        "scale_resolution": 448,
+        "patch_size": 14,
+        "slice_mode": true
+      },
+      "grid_xy": [
+        2,
+        1
+      ],
+      "source_image_size_wh": [
+        518,
+        392
+      ],
+      "patch_count": 2,
+      "patch_sizes_wh": [
+        [
+          364,
+          546
+        ],
+        [
+          364,
+          546
+        ]
+      ],
+      "refined_image_size_wh": [
+        728,
+        546
+      ],
+      "patch_boxes_refined_xyxy": [
+        [
+          0,
+          0,
+          364,
+          546
+        ],
+        [
+          364,
+          0,
+          728,
+          546
+        ]
+      ],
+      "processor_pixel_value_count": 3,
+      "processor_pixel_value_shapes": [
+        [
+          3,
+          14,
+          14504
+        ],
+        [
+          3,
+          14,
+          14196
+        ],
+        [
+          3,
+          14,
+          14196
+        ]
+      ],
+      "processor_tgt_sizes_hw": [
+        [
+          28,
+          37
+        ],
+        [
+          39,
+          26
+        ],
+        [
+          39,
+          26
+        ]
+      ],
+      "processor_image_sizes_wh": [
+        [
+          640,
+          480
+        ]
+      ]
+    },
+    {
+      "id": "run7_00034_blue_selfcheck_native",
+      "color": "blue",
+      "geometry_pass": true,
+      "original_size_wh": [
+        640,
+        480
+      ],
+      "label_bbox_px": [
+        408,
+        263,
+        430,
+        293
+      ],
+      "predicted_bbox_px": [
+        408.32,
+        263.03999999999996,
+        428.8,
+        292.8
+      ],
+      "center_error_px": 0.44721359549996303,
+      "iou": 0.9234618181818205,
+      "processor_config": {
+        "max_slice_nums": 9,
+        "scale_resolution": 448,
+        "patch_size": 14,
+        "slice_mode": true
+      },
+      "grid_xy": [
+        2,
+        1
+      ],
+      "source_image_size_wh": [
+        518,
+        392
+      ],
+      "patch_count": 2,
+      "patch_sizes_wh": [
+        [
+          364,
+          546
+        ],
+        [
+          364,
+          546
+        ]
+      ],
+      "refined_image_size_wh": [
+        728,
+        546
+      ],
+      "patch_boxes_refined_xyxy": [
+        [
+          0,
+          0,
+          364,
+          546
+        ],
+        [
+          364,
+          0,
+          728,
+          546
+        ]
+      ],
+      "processor_pixel_value_count": 3,
+      "processor_pixel_value_shapes": [
+        [
+          3,
+          14,
+          14504
+        ],
+        [
+          3,
+          14,
+          14196
+        ],
+        [
+          3,
+          14,
+          14196
+        ]
+      ],
+      "processor_tgt_sizes_hw": [
+        [
+          28,
+          37
+        ],
+        [
+          39,
+          26
+        ],
+        [
+          39,
+          26
+        ]
+      ],
+      "processor_image_sizes_wh": [
+        [
+          640,
+          480
+        ]
+      ]
+    },
+    {
+      "id": "run3_00035_blue_selfcheck_native",
+      "color": "blue",
+      "geometry_pass": false,
+      "original_size_wh": [
+        640,
+        480
+      ],
+      "label_bbox_px": [
+        518,
+        246,
+        544,
+        274
+      ],
+      "predicted_bbox_px": [
+        517.76,
+        263.03999999999996,
+        538.88,
+        292.8
+      ],
+      "center_error_px": 18.119293584464017,
+      "iou": 0.20293301400105615,
+      "processor_config": {
+        "max_slice_nums": 9,
+        "scale_resolution": 448,
+        "patch_size": 14,
+        "slice_mode": true
+      },
+      "grid_xy": [
+        2,
+        1
+      ],
+      "source_image_size_wh": [
+        518,
+        392
+      ],
+      "patch_count": 2,
+      "patch_sizes_wh": [
+        [
+          364,
+          546
+        ],
+        [
+          364,
+          546
+        ]
+      ],
+      "refined_image_size_wh": [
+        728,
+        546
+      ],
+      "patch_boxes_refined_xyxy": [
+        [
+          0,
+          0,
+          364,
+          546
+        ],
+        [
+          364,
+          0,
+          728,
+          546
+        ]
+      ],
+      "processor_pixel_value_count": 3,
+      "processor_pixel_value_shapes": [
+        [
+          3,
+          14,
+          14504
+        ],
+        [
+          3,
+          14,
+          14196
+        ],
+        [
+          3,
+          14,
+          14196
+        ]
+      ],
+      "processor_tgt_sizes_hw": [
+        [
+          28,
+          37
+        ],
+        [
+          39,
+          26
+        ],
+        [
+          39,
+          26
+        ]
+      ],
+      "processor_image_sizes_wh": [
+        [
+          640,
+          480
+        ]
+      ]
+    },
+    {
+      "id": "run7_00052_blue_selfcheck_native",
+      "color": "blue",
+      "geometry_pass": true,
+      "original_size_wh": [
+        640,
+        480
+      ],
+      "label_bbox_px": [
+        330,
+        272,
+        350,
+        300
+      ],
+      "predicted_bbox_px": [
+        330.24,
+        272.15999999999997,
+        350.08,
+        300.0
+      ],
+      "center_error_px": 0.1788854381999476,
+      "iou": 0.9784627993807498,
+      "processor_config": {
+        "max_slice_nums": 9,
+        "scale_resolution": 448,
+        "patch_size": 14,
+        "slice_mode": true
+      },
+      "grid_xy": [
+        2,
+        1
+      ],
+      "source_image_size_wh": [
+        518,
+        392
+      ],
+      "patch_count": 2,
+      "patch_sizes_wh": [
+        [
+          364,
+          546
+        ],
+        [
+          364,
+          546
+        ]
+      ],
+      "refined_image_size_wh": [
+        728,
+        546
+      ],
+      "patch_boxes_refined_xyxy": [
+        [
+          0,
+          0,
+          364,
+          546
+        ],
+        [
+          364,
+          0,
+          728,
+          546
+        ]
+      ],
+      "processor_pixel_value_count": 3,
+      "processor_pixel_value_shapes": [
+        [
+          3,
+          14,
+          14504
+        ],
+        [
+          3,
+          14,
+          14196
+        ],
+        [
+          3,
+          14,
+          14196
+        ]
+      ],
+      "processor_tgt_sizes_hw": [
+        [
+          28,
+          37
+        ],
+        [
+          39,
+          26
+        ],
+        [
+          39,
+          26
+        ]
+      ],
+      "processor_image_sizes_wh": [
+        [
+          640,
+          480
+        ]
+      ]
+    },
+    {
+      "id": "run7_00325_blue_selfcheck_native",
+      "color": "blue",
+      "geometry_pass": true,
+      "original_size_wh": [
+        640,
+        480
+      ],
+      "label_bbox_px": [
+        165,
+        281,
+        186,
+        308
+      ],
+      "predicted_bbox_px": [
+        165.12,
+        281.76,
+        186.24,
+        308.15999999999997
+      ],
+      "center_error_px": 0.4939635614091222,
+      "iou": 0.9500836517092421,
+      "processor_config": {
+        "max_slice_nums": 9,
+        "scale_resolution": 448,
+        "patch_size": 14,
+        "slice_mode": true
+      },
+      "grid_xy": [
+        2,
+        1
+      ],
+      "source_image_size_wh": [
+        518,
+        392
+      ],
+      "patch_count": 2,
+      "patch_sizes_wh": [
+        [
+          364,
+          546
+        ],
+        [
+          364,
+          546
+        ]
+      ],
+      "refined_image_size_wh": [
+        728,
+        546
+      ],
+      "patch_boxes_refined_xyxy": [
+        [
+          0,
+          0,
+          364,
+          546
+        ],
+        [
+          364,
+          0,
+          728,
+          546
+        ]
+      ],
+      "processor_pixel_value_count": 3,
+      "processor_pixel_value_shapes": [
+        [
+          3,
+          14,
+          14504
+        ],
+        [
+          3,
+          14,
+          14196
+        ],
+        [
+          3,
+          14,
+          14196
+        ]
+      ],
+      "processor_tgt_sizes_hw": [
+        [
+          28,
+          37
+        ],
+        [
+          39,
+          26
+        ],
+        [
+          39,
+          26
+        ]
+      ],
+      "processor_image_sizes_wh": [
+        [
+          640,
+          480
+        ]
+      ]
+    },
+    {
+      "id": "run3_00046_blue_selfcheck_native",
+      "color": "blue",
+      "geometry_pass": true,
+      "original_size_wh": [
+        640,
+        480
+      ],
+      "label_bbox_px": [
+        379,
+        280,
+        399,
+        307
+      ],
+      "predicted_bbox_px": [
+        378.88,
+        279.84,
+        396.8,
+        307.2
+      ],
+      "center_error_px": 1.160172400981822,
+      "iou": 0.8743090666177668,
+      "processor_config": {
+        "max_slice_nums": 9,
+        "scale_resolution": 448,
+        "patch_size": 14,
+        "slice_mode": true
+      },
+      "grid_xy": [
+        2,
+        1
+      ],
+      "source_image_size_wh": [
+        518,
+        392
+      ],
+      "patch_count": 2,
+      "patch_sizes_wh": [
+        [
+          364,
+          546
+        ],
+        [
+          364,
+          546
+        ]
+      ],
+      "refined_image_size_wh": [
+        728,
+        546
+      ],
+      "patch_boxes_refined_xyxy": [
+        [
+          0,
+          0,
+          364,
+          546
+        ],
+        [
+          364,
+          0,
+          728,
+          546
+        ]
+      ],
+      "processor_pixel_value_count": 3,
+      "processor_pixel_value_shapes": [
+        [
+          3,
+          14,
+          14504
+        ],
+        [
+          3,
+          14,
+          14196
+        ],
+        [
+          3,
+          14,
+          14196
+        ]
+      ],
+      "processor_tgt_sizes_hw": [
+        [
+          28,
+          37
+        ],
+        [
+          39,
+          26
+        ],
+        [
+          39,
+          26
+        ]
+      ],
+      "processor_image_sizes_wh": [
+        [
+          640,
+          480
+        ]
+      ]
+    },
+    {
+      "id": "run3_00047_blue_selfcheck_native",
+      "color": "blue",
+      "geometry_pass": true,
+      "original_size_wh": [
+        640,
+        480
+      ],
+      "label_bbox_px": [
+        368,
+        280,
+        389,
+        307
+      ],
+      "predicted_bbox_px": [
+        364.8,
+        279.84,
+        384.0,
+        307.2
+      ],
+      "center_error_px": 4.1000487801976435,
+      "iou": 0.6542361792607132,
+      "processor_config": {
+        "max_slice_nums": 9,
+        "scale_resolution": 448,
+        "patch_size": 14,
+        "slice_mode": true
+      },
+      "grid_xy": [
+        2,
+        1
+      ],
+      "source_image_size_wh": [
+        518,
+        392
+      ],
+      "patch_count": 2,
+      "patch_sizes_wh": [
+        [
+          364,
+          546
+        ],
+        [
+          364,
+          546
+        ]
+      ],
+      "refined_image_size_wh": [
+        728,
+        546
+      ],
+      "patch_boxes_refined_xyxy": [
+        [
+          0,
+          0,
+          364,
+          546
+        ],
+        [
+          364,
+          0,
+          728,
+          546
+        ]
+      ],
+      "processor_pixel_value_count": 3,
+      "processor_pixel_value_shapes": [
+        [
+          3,
+          14,
+          14504
+        ],
+        [
+          3,
+          14,
+          14196
+        ],
+        [
+          3,
+          14,
+          14196
+        ]
+      ],
+      "processor_tgt_sizes_hw": [
+        [
+          28,
+          37
+        ],
+        [
+          39,
+          26
+        ],
+        [
+          39,
+          26
+        ]
+      ],
+      "processor_image_sizes_wh": [
+        [
+          640,
+          480
+        ]
+      ]
+    }
+  ]
+}

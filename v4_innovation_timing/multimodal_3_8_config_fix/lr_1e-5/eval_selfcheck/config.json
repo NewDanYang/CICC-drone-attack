@@ -1,0 +1,9 @@
+{
+  "model": "/home/ubuntu/model/FM9G4B-V",
+  "adapter": "/root/gpufree-data/mm38_config_fix/lr_1e-5/output_lora",
+  "format": "native_box",
+  "split": "selfcheck",
+  "cases_sha256": "3cf94e75ad3574d63753776d9070a1d594a773168906cea86bda0fcc5c6a30a0",
+  "max_new_tokens": 128,
+  "sampling": false
+}

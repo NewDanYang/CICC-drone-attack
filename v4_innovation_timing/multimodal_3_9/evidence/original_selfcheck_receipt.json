@@ -1,0 +1,33 @@
+{
+  "task": "3.8 20-sample corrected-config overfit self-check",
+  "n": 20,
+  "positive_by_color": {
+    "red": 7,
+    "purple": 7,
+    "blue": 6
+  },
+  "format": "native_box",
+  "selected_ids": [
+    "run3_00439_red_selfcheck_native",
+    "run3_00434_red_selfcheck_native",
+    "run3_00431_red_selfcheck_native",
+    "run7_00478_red_selfcheck_native",
+    "run7_00490_red_selfcheck_native",
+    "run7_00484_red_selfcheck_native",
+    "run3_00002_red_selfcheck_native",
+    "run3_00432_purple_selfcheck_native",
+    "run3_00171_purple_selfcheck_native",
+    "run3_00178_purple_selfcheck_native",
+    "run3_00176_purple_selfcheck_native",
+    "run3_00169_purple_selfcheck_native",
+    "run3_00173_purple_selfcheck_native",
+    "run7_00157_purple_selfcheck_native",
+    "run7_00034_blue_selfcheck_native",
+    "run3_00035_blue_selfcheck_native",
+    "run7_00052_blue_selfcheck_native",
+    "run7_00325_blue_selfcheck_native",
+    "run3_00046_blue_selfcheck_native",
+    "run3_00047_blue_selfcheck_native"
+  ],
+  "source_cases_sha256": "34caabaa583d4df96f86a2546cce240f2220ff94d3657caf017450efaa23a9b0"
+}

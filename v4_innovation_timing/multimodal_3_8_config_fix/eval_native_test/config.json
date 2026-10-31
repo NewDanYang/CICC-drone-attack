@@ -1,0 +1,8 @@
+{
+  "model": "/home/ubuntu/model/FM9G4B-V",
+  "format": "native_box",
+  "split": "test",
+  "cases_sha256": "34caabaa583d4df96f86a2546cce240f2220ff94d3657caf017450efaa23a9b0",
+  "max_new_tokens": 128,
+  "sampling": false
+}

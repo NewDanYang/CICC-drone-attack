@@ -1,0 +1,362 @@
+[
+  {
+    "id": "run3_00439_red_selfcheck_native",
+    "color": "red",
+    "present": true,
+    "clipped": false,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": true,
+    "iou": 0.6711046973174886,
+    "center_error_px": 18.079878318174597,
+    "predicted_bbox_px": [
+      513.92,
+      122.88,
+      614.4,
+      228.95999999999998
+    ],
+    "center_error_threshold_px": 31.043839968663676
+  },
+  {
+    "id": "run3_00434_red_selfcheck_native",
+    "color": "red",
+    "present": true,
+    "clipped": false,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": true,
+    "iou": 0.993305031238343,
+    "center_error_px": 0.12649110640672798,
+    "predicted_bbox_px": [
+      387.2,
+      349.91999999999996,
+      439.04,
+      464.15999999999997
+    ],
+    "center_error_threshold_px": 25.059928172283335
+  },
+  {
+    "id": "run3_00431_red_selfcheck_native",
+    "color": "red",
+    "present": true,
+    "clipped": true,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": true,
+    "iou": 0.9123798352025639,
+    "center_error_px": 2.608371139236079,
+    "predicted_bbox_px": [
+      581.12,
+      346.08,
+      640.0,
+      457.91999999999996
+    ],
+    "center_error_threshold_px": 25.62576828116574
+  },
+  {
+    "id": "run7_00478_red_selfcheck_native",
+    "color": "red",
+    "present": true,
+    "clipped": false,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": true,
+    "iou": 0.8407472069295655,
+    "center_error_px": 3.3363453058698718,
+    "predicted_bbox_px": [
+      385.92,
+      123.83999999999999,
+      448.0,
+      218.88
+    ],
+    "center_error_threshold_px": 24.08651074771936
+  },
+  {
+    "id": "run7_00490_red_selfcheck_native",
+    "color": "red",
+    "present": true,
+    "clipped": false,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": true,
+    "iou": 0.7961921715910818,
+    "center_error_px": 7.924872238717796,
+    "predicted_bbox_px": [
+      544.0,
+      118.08,
+      624.0,
+      220.79999999999998
+    ],
+    "center_error_threshold_px": 25.945327132260253
+  },
+  {
+    "id": "run7_00484_red_selfcheck_native",
+    "color": "red",
+    "present": true,
+    "clipped": false,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": false,
+    "iou": 0.4042753781201783,
+    "center_error_px": 27.96035049851847,
+    "predicted_bbox_px": [
+      385.92,
+      123.83999999999999,
+      448.0,
+      218.88
+    ],
+    "center_error_threshold_px": 23.600847442411894
+  },
+  {
+    "id": "run3_00002_red_selfcheck_native",
+    "color": "red",
+    "present": true,
+    "clipped": true,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": true,
+    "iou": 0.8717008544052024,
+    "center_error_px": 4.554558156396742,
+    "predicted_bbox_px": [
+      0.0,
+      128.16,
+      37.12,
+      208.79999999999998
+    ],
+    "center_error_threshold_px": 19.386593305684215
+  },
+  {
+    "id": "run3_00432_purple_selfcheck_native",
+    "color": "purple",
+    "present": true,
+    "clipped": false,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": false,
+    "iou": 0.4366646415552854,
+    "center_error_px": 28.567113959936503,
+    "predicted_bbox_px": [
+      544.0,
+      349.91999999999996,
+      615.04,
+      460.79999999999995
+    ],
+    "center_error_threshold_px": 27.626074639731215
+  },
+  {
+    "id": "run3_00171_purple_selfcheck_native",
+    "color": "purple",
+    "present": true,
+    "clipped": false,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": true,
+    "iou": 0.6646905486766984,
+    "center_error_px": 4.545283269500371,
+    "predicted_bbox_px": [
+      101.12,
+      364.8,
+      122.88,
+      433.91999999999996
+    ],
+    "center_error_threshold_px": 14.261837188805655
+  },
+  {
+    "id": "run3_00178_purple_selfcheck_native",
+    "color": "purple",
+    "present": true,
+    "clipped": false,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": true,
+    "iou": 0.7926017023039145,
+    "center_error_px": 2.8812497288503436,
+    "predicted_bbox_px": [
+      257.92,
+      378.24,
+      288.0,
+      437.76
+    ],
+    "center_error_threshold_px": 13.555810562264435
+  },
+  {
+    "id": "run3_00176_purple_selfcheck_native",
+    "color": "purple",
+    "present": true,
+    "clipped": false,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": false,
+    "iou": 0.24038873411258344,
+    "center_error_px": 16.609033686521332,
+    "predicted_bbox_px": [
+      229.12,
+      364.8,
+      268.8,
+      437.76
+    ],
+    "center_error_threshold_px": 12.77810627597063
+  },
+  {
+    "id": "run3_00169_purple_selfcheck_native",
+    "color": "purple",
+    "present": true,
+    "clipped": false,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": false,
+    "iou": 0.5484338557993726,
+    "center_error_px": 12.920247675644628,
+    "predicted_bbox_px": [
+      39.04,
+      372.0,
+      60.800000000000004,
+      404.15999999999997
+    ],
+    "center_error_threshold_px": 12.40644993541666
+  },
+  {
+    "id": "run3_00173_purple_selfcheck_native",
+    "color": "purple",
+    "present": true,
+    "clipped": false,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": false,
+    "iou": 0.2390508078470145,
+    "center_error_px": 11.94581098126034,
+    "predicted_bbox_px": [
+      165.12,
+      364.8,
+      186.24,
+      415.2
+    ],
+    "center_error_threshold_px": 10.384603988597737
+  },
+  {
+    "id": "run7_00157_purple_selfcheck_native",
+    "color": "purple",
+    "present": true,
+    "clipped": false,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": false,
+    "iou": 0.06794978296832313,
+    "center_error_px": 38.91503051521351,
+    "predicted_bbox_px": [
+      325.76,
+      365.76,
+      375.04,
+      432.96
+    ],
+    "center_error_threshold_px": 12.682271089990152
+  },
+  {
+    "id": "run7_00034_blue_selfcheck_native",
+    "color": "blue",
+    "present": true,
+    "clipped": false,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": true,
+    "iou": 0.8671161981660841,
+    "center_error_px": 2.009975124224177,
+    "predicted_bbox_px": [
+      408.32,
+      259.2,
+      430.08,
+      292.8
+    ],
+    "center_error_threshold_px": 8
+  },
+  {
+    "id": "run3_00035_blue_selfcheck_native",
+    "color": "blue",
+    "present": true,
+    "clipped": false,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": true,
+    "iou": 0.5907169003937084,
+    "center_error_px": 5.264370807608467,
+    "predicted_bbox_px": [
+      513.92,
+      249.12,
+      538.88,
+      276.0
+    ],
+    "center_error_threshold_px": 8
+  },
+  {
+    "id": "run7_00052_blue_selfcheck_native",
+    "color": "blue",
+    "present": true,
+    "clipped": false,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": false,
+    "iou": 0.0,
+    "center_error_px": 28.408449447303575,
+    "predicted_bbox_px": [
+      359.04,
+      275.03999999999996,
+      377.6,
+      301.44
+    ],
+    "center_error_threshold_px": 8
+  },
+  {
+    "id": "run7_00325_blue_selfcheck_native",
+    "color": "blue",
+    "present": true,
+    "clipped": false,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": true,
+    "iou": 0.8340922828934101,
+    "center_error_px": 1.5033296378372922,
+    "predicted_bbox_px": [
+      167.04,
+      279.84,
+      186.24,
+      307.2
+    ],
+    "center_error_threshold_px": 8
+  },
+  {
+    "id": "run3_00046_blue_selfcheck_native",
+    "color": "blue",
+    "present": true,
+    "clipped": false,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": false,
+    "iou": 0.39516297955303453,
+    "center_error_px": 9.411248588789885,
+    "predicted_bbox_px": [
+      385.92,
+      278.88,
+      410.88,
+      307.2
+    ],
+    "center_error_threshold_px": 8
+  },
+  {
+    "id": "run3_00047_blue_selfcheck_native",
+    "color": "blue",
+    "present": true,
+    "clipped": false,
+    "bbox_valid": true,
+    "bbox_nonempty": true,
+    "geometry_pass": false,
+    "iou": 0.06984084752321948,
+    "center_error_px": 19.90531587290187,
+    "predicted_bbox_px": [
+      385.92,
+      278.88,
+      410.88,
+      307.2
+    ],
+    "center_error_threshold_px": 8
+  }
+]

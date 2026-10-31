@@ -1,0 +1,55 @@
+{
+  "overall": {
+    "n": 20,
+    "positive": 20,
+    "negative": 0,
+    "geometry_hits": 16,
+    "bbox_negative_errors": 0,
+    "median_center_error_px": 1.7349875621120783
+  },
+  "colors": {
+    "red": {
+      "n": 7,
+      "positive": 7,
+      "negative": 0,
+      "geometry_hits": 6,
+      "bbox_negative_errors": 0,
+      "median_center_error_px": 1.4599999999999795
+    },
+    "purple": {
+      "n": 7,
+      "positive": 7,
+      "negative": 0,
+      "geometry_hits": 4,
+      "bbox_negative_errors": 0,
+      "median_center_error_px": 8.861106025773546
+    },
+    "blue": {
+      "n": 6,
+      "positive": 6,
+      "negative": 0,
+      "geometry_hits": 6,
+      "bbox_negative_errors": 0,
+      "median_center_error_px": 0.7705733789212562
+    }
+  },
+  "clipped": {
+    "n": 3,
+    "positive": 3,
+    "negative": 0,
+    "geometry_hits": 3,
+    "bbox_negative_errors": 0,
+    "median_center_error_px": 1.442775103749714
+  },
+  "unclipped": {
+    "n": 17,
+    "positive": 17,
+    "negative": 0,
+    "geometry_hits": 13,
+    "bbox_negative_errors": 0,
+    "median_center_error_px": 2.3867970169245605
+  },
+  "median_call_latency_s": 1.6661924556829035,
+  "peak_allocated_bytes": 10234466304,
+  "peak_reserved_bytes": 10754195456
+}

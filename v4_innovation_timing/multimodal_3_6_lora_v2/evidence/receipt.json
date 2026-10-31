@@ -1,0 +1,23 @@
+{
+  "summary": {
+    "train": {
+      "red": 31,
+      "purple": 23,
+      "blue": 37
+    },
+    "validation": {
+      "red": 6,
+      "purple": 10,
+      "blue": 11
+    },
+    "test": {
+      "red": 6,
+      "purple": 10,
+      "blue": 10
+    }
+  },
+  "images": 138,
+  "sha256": "a5d558ac841b80e3ff9742ea08d09aa3488c0da2aedbaae928062ac172ad4440",
+  "review": "same reviewer blind second pass on raw contact sheets; no independent second annotator",
+  "speed_filter": "all positive annotations selected from odometry speed <=0.35 m/s; raw rejected captures retained separately"
+}
