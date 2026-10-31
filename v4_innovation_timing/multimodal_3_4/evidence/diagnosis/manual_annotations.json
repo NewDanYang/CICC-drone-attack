@@ -1,0 +1,1599 @@
+{
+  "reviewed_at": "2026-10-26T11:57:34.747941+00:00",
+  "reviewer": "single AI visual reviewer; no independent second annotation",
+  "scope": "all 102 red initialization frames plus preselected blue/purple frames; correlated frames, diagnostic only",
+  "blindness": "Contact sheets hide model answers/outcomes; prior project results and selection policy known; not an independent blind acceptance set",
+  "bbox_note": "Visible balloon body only, excluding car/string; manually read from source PNG, approximately +/-4 px; clipped source is distinguished from tile clipping",
+  "rows": [
+    {
+      "decision": "54a5442fc26f",
+      "trial": "02_r1_red_candidate",
+      "color": "red",
+      "review_number": "R001",
+      "source_sha256": "d14ce093b379d556864982c5b80de7cf24d393c663e8e56cebed0938d506cc8f",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "88cb8f04a63d",
+      "trial": "02_r1_red_candidate",
+      "color": "red",
+      "review_number": "R002",
+      "source_sha256": "6d5f926249c260a8800cd664d184fbd7eecbbc622be084b92e71439fbde2af5d",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "38bfed794a57",
+      "trial": "02_r1_red_candidate",
+      "color": "red",
+      "review_number": "R003",
+      "source_sha256": "c46c7d94500aea6d98089d94f9fcafd2192c9a9d36b88891b503778157a1bf2a",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "4451ac169eac",
+      "trial": "02_r1_red_candidate",
+      "color": "red",
+      "review_number": "R004",
+      "source_sha256": "d89a8fe565296de5436077ea64c31948f97377b040290000bc517907b44c3f84",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "16da2f570da5",
+      "trial": "02_r1_red_candidate",
+      "color": "red",
+      "review_number": "R005",
+      "source_sha256": "01f2531ab69cc3221cd5dd742c7730ae040868c7d4dee5e0bf547f40efc6abc4",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "06fea97ad873",
+      "trial": "02_r1_red_candidate",
+      "color": "red",
+      "review_number": "R006",
+      "source_sha256": "2cce04b21bd283fd19e07f93f38cccc68682ae5899d1494fc48a269e5e865a60",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "922939883b75",
+      "trial": "02_r1_red_candidate",
+      "color": "red",
+      "review_number": "R007",
+      "source_sha256": "bcf59dd0c47fa71b7d15eed40084fff267116087f2e11c7a312bef12898e9f98",
+      "visibility": "visible",
+      "visible_bbox": [
+        0,
+        306,
+        19,
+        357
+      ],
+      "original_frame_clipped": true
+    },
+    {
+      "decision": "b24228639a49",
+      "trial": "02_r1_red_candidate",
+      "color": "red",
+      "review_number": "R008",
+      "source_sha256": "b37e932d6d3a4a0df06c4a92992e2241aaef37208e5473cf6ef86f2e9febcdf1",
+      "visibility": "visible",
+      "visible_bbox": [
+        270,
+        283,
+        299,
+        324
+      ],
+      "original_frame_clipped": false
+    },
+    {
+      "decision": "1a087697695e",
+      "trial": "02_r1_red_candidate",
+      "color": "red",
+      "review_number": "R009",
+      "source_sha256": "e8f3408599e6751fcd35ff3a14a078b54661d999087fa665c398b4cc80ce4932",
+      "visibility": "visible",
+      "visible_bbox": [
+        481,
+        286,
+        514,
+        328
+      ],
+      "original_frame_clipped": false
+    },
+    {
+      "decision": "de6237b2f849",
+      "trial": "02_r1_red_candidate",
+      "color": "red",
+      "review_number": "R010",
+      "source_sha256": "af963cb5b9493fc4be352f6e9904d520de631f1f510fa99dbe314ff850b4ae55",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "731b6ca3a728",
+      "trial": "02_r1_red_candidate",
+      "color": "red",
+      "review_number": "R011",
+      "source_sha256": "327757014c6ad1e3e27ea8d2b45a7b0afe29595a44482911a6493fc297e68688",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "2bca3360f89e",
+      "trial": "02_r1_red_candidate",
+      "color": "red",
+      "review_number": "R012",
+      "source_sha256": "e3a1ba3c1c7ff661072608d6636b3b83bd8bd61f28b904e5a719e38b664ece66",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "77b634c6455b",
+      "trial": "02_r1_red_candidate",
+      "color": "red",
+      "review_number": "R013",
+      "source_sha256": "d5d86ef10d9234772decf3a63d397ff6ba7efebb497bf1a2330fe56c639800f5",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "0389478838dd",
+      "trial": "02_r1_red_candidate",
+      "color": "red",
+      "review_number": "R014",
+      "source_sha256": "0102c768039188143ecbeb19c536f08c26b88a539029cdcb3075f58bf8787c30",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "621cd510d8f3",
+      "trial": "02_r1_red_candidate",
+      "color": "red",
+      "review_number": "R015",
+      "source_sha256": "052f610480e35ef17473806422c39a93d45f024a71610b0b543b2532f86f9864",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "6460b02cc567",
+      "trial": "02_r1_red_candidate",
+      "color": "red",
+      "review_number": "R016",
+      "source_sha256": "b425964eff79f6eed1929fff0442ccbd7b9a39900b0abe28e1bf2f9f00b0703a",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "c103e93ad060",
+      "trial": "02_r1_red_candidate",
+      "color": "red",
+      "review_number": "R017",
+      "source_sha256": "1e8c2e957407a5061c6e4a9fdb12493c7d1909ecacb9db1113bb6f79e58776f7",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "14bc4e0b79d3",
+      "trial": "02_r1_red_candidate",
+      "color": "red",
+      "review_number": "R018",
+      "source_sha256": "2e55e0be42cdfdefae00b1ac3d448e4c3d9635de67db966b541f9dccf8bdc133",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "f4df90a32e33",
+      "trial": "02_r1_red_candidate",
+      "color": "red",
+      "review_number": "R019",
+      "source_sha256": "d1271cd476b52cbade46674dbecb99b5d0a19020d3fd73e2fb0d924a70696a72",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "67b6ac72b820",
+      "trial": "02_r1_red_candidate",
+      "color": "red",
+      "review_number": "R020",
+      "source_sha256": "1ce45360b217bb11eafd5166b07f77547857e90ea23d714ffc56339cc8210acb",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "34bb3292a5dc",
+      "trial": "02_r1_red_candidate",
+      "color": "red",
+      "review_number": "R021",
+      "source_sha256": "796e351f11ae33b9a8f92d67f3dad7ba1697ab84fdf1da860ed9d57eaa252cf2",
+      "visibility": "uncertain",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "59541d937721",
+      "trial": "02_r1_red_candidate",
+      "color": "red",
+      "review_number": "R022",
+      "source_sha256": "3f4aa079b996fcf388caba25d8e86259dd6012265ef1bcb62a4004e9908dfc9a",
+      "visibility": "visible",
+      "visible_bbox": [
+        159,
+        287,
+        194,
+        331
+      ],
+      "original_frame_clipped": false
+    },
+    {
+      "decision": "e3ae8593a630",
+      "trial": "02_r1_red_candidate",
+      "color": "red",
+      "review_number": "R023",
+      "source_sha256": "dde8b89fef899865b79eea15ad4b9f82ef90a83f1a40037a756e9458307421e9",
+      "visibility": "visible",
+      "visible_bbox": [
+        368,
+        286,
+        398,
+        324
+      ],
+      "original_frame_clipped": false
+    },
+    {
+      "decision": "d454e486ccc3",
+      "trial": "02_r1_red_candidate",
+      "color": "red",
+      "review_number": "R024",
+      "source_sha256": "e74a0b7f1e70482702287f810a56dd3422498ac2d331b12caaf881918eea95c3",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "3d06be3fec81",
+      "trial": "02_r1_red_candidate",
+      "color": "red",
+      "review_number": "R025",
+      "source_sha256": "2fb704c8992c1ca43c9775365bd6eb6ec8c2b606322a4e5f651601d43221f492",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "73950f16ccef",
+      "trial": "02_r1_red_candidate",
+      "color": "red",
+      "review_number": "R026",
+      "source_sha256": "cc899a91310f92206601fa2becd9d0a582c40eea90e1e7c3af19a9495cbc2052",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "fc6853a108dd",
+      "trial": "02_r1_red_candidate",
+      "color": "red",
+      "review_number": "R027",
+      "source_sha256": "204a856a4530ffe96e3fb294dcaa4079ed2e49cf2e7c0895ac503965753634f4",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "580d241609ee",
+      "trial": "02_r1_red_candidate",
+      "color": "red",
+      "review_number": "R028",
+      "source_sha256": "8a0aefe79dd6d289d2b39901f9605c4f12041beee149e872078d8fc52a349eea",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "a810ef154ee1",
+      "trial": "02_r1_red_candidate",
+      "color": "red",
+      "review_number": "R029",
+      "source_sha256": "8e854f50467404705e0883ada118a9e57ea4ffbf1343ca2f25f32247df2646cd",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "3bc947c1aaa6",
+      "trial": "02_r1_red_candidate",
+      "color": "red",
+      "review_number": "R030",
+      "source_sha256": "439ee3f18baf5a15a75f41baee7f8a647de28363266cfb3706005f9fa637703f",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "cdf7cb8827ee",
+      "trial": "02_r1_red_candidate",
+      "color": "red",
+      "review_number": "R031",
+      "source_sha256": "65a36c6f73034e21e50d2a38e0ecd965d8dbfc90bd38267c5684088921ddd855",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "9b4984a884f0",
+      "trial": "02_r1_red_candidate",
+      "color": "red",
+      "review_number": "R032",
+      "source_sha256": "8d59cd10cebc7dea66f811efc9cbabc923428db433281153a041682bb82850be",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "8e832ab0b905",
+      "trial": "02_r1_red_candidate",
+      "color": "red",
+      "review_number": "R033",
+      "source_sha256": "6f78af1a9296e2367993ab7af2cacc006a0f46816c505c2578dba17dca8b560f",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "4ee96fc5132d",
+      "trial": "02_r1_red_candidate",
+      "color": "red",
+      "review_number": "R034",
+      "source_sha256": "41c85ec950df378a242ef9a1d31e82899cda90f40f96783da2f4f444225ab40c",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "21d9288bc848",
+      "trial": "07_r2_red_candidate",
+      "color": "red",
+      "review_number": "R035",
+      "source_sha256": "fb1787e21b33f6c43b3a2a9a5ea632578ebf008bab94df757df1113414d1f809",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "ca6763e60166",
+      "trial": "07_r2_red_candidate",
+      "color": "red",
+      "review_number": "R036",
+      "source_sha256": "5d26f20279f2add5dc3f8e2826a4195f7c1ab6928d24747fc66a3d26873a15a1",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "4cf05a8299a5",
+      "trial": "07_r2_red_candidate",
+      "color": "red",
+      "review_number": "R037",
+      "source_sha256": "c696a5691e062e422b8cfa00a684b9deaaa7eaf2cb744ed0e8d11d534f6e4ecf",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "ae826c4b4a2f",
+      "trial": "07_r2_red_candidate",
+      "color": "red",
+      "review_number": "R038",
+      "source_sha256": "27fbdbb7e3b42ff84a21d4a30aa6d3e107af05aba0e13c9d31e925cb2ee48bf9",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "c30e991d9913",
+      "trial": "07_r2_red_candidate",
+      "color": "red",
+      "review_number": "R039",
+      "source_sha256": "651bbef250ba91993638d0564a59d247e1c54fa61798f7e811ed48f6a0569ff7",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "737c90773055",
+      "trial": "07_r2_red_candidate",
+      "color": "red",
+      "review_number": "R040",
+      "source_sha256": "207e5845ea2266b5905b295ca189fa7a96cde98d8b1f70a2c6ab0062d7972184",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "2f887e093c77",
+      "trial": "07_r2_red_candidate",
+      "color": "red",
+      "review_number": "R041",
+      "source_sha256": "4e8c81ee334a0b3762f609071f10f0f0b571df7ab0b733e16b4ab907b89aef64",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "c08d2ee618b4",
+      "trial": "07_r2_red_candidate",
+      "color": "red",
+      "review_number": "R042",
+      "source_sha256": "d6e3960c447327dc6d83882a1577e82a5fef56d73f5e82ff446c782948bb242b",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "e9daf968ea40",
+      "trial": "07_r2_red_candidate",
+      "color": "red",
+      "review_number": "R043",
+      "source_sha256": "7ca1f0611740f00bb54563f970d889d1ed0dbbb0b1598ab17d9cb7b0f02f22c2",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "d4ba4d204dc6",
+      "trial": "07_r2_red_candidate",
+      "color": "red",
+      "review_number": "R044",
+      "source_sha256": "2a281bcf7b301ed95b953cba7c4eab42c6207750565c59321f09a23ecbc949b3",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "e81612d549d8",
+      "trial": "07_r2_red_candidate",
+      "color": "red",
+      "review_number": "R045",
+      "source_sha256": "b86a3e5ec02e98a7236cca1a6dc5727820e77409540160c882f20651c07fc617",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "7306accfd746",
+      "trial": "07_r2_red_candidate",
+      "color": "red",
+      "review_number": "R046",
+      "source_sha256": "b8895904327c46eb6b3ef96bf9257052a6fbac735145f4956352dd8b13adb262",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "484ccd0559de",
+      "trial": "07_r2_red_candidate",
+      "color": "red",
+      "review_number": "R047",
+      "source_sha256": "2f1a972603bf70c2af5f3fede44bdf465bf23a27d246954563b5d8c0763c9244",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "a4e9328cc706",
+      "trial": "07_r2_red_candidate",
+      "color": "red",
+      "review_number": "R048",
+      "source_sha256": "b8025405794156bcc88458263a82eeb69368ff48f18eb78d2f1992b17c1a7f24",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "3910fd98532b",
+      "trial": "07_r2_red_candidate",
+      "color": "red",
+      "review_number": "R049",
+      "source_sha256": "39a74978d976a5f0adcd8d509de09278b0454187d09a66ee02407ca5e5b531f2",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "ceaa6898cf19",
+      "trial": "07_r2_red_candidate",
+      "color": "red",
+      "review_number": "R050",
+      "source_sha256": "aebe4dfaa00d465dfb52674e041b126bfdb43db5e01cf9bee6cb6a0e3f9e30c8",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "ba733df55879",
+      "trial": "07_r2_red_candidate",
+      "color": "red",
+      "review_number": "R051",
+      "source_sha256": "c653086c57b1a648101eb08073b4515bf906ab48eb8bc3f7bd132b7e401ae45e",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "b32dca676dfe",
+      "trial": "07_r2_red_candidate",
+      "color": "red",
+      "review_number": "R052",
+      "source_sha256": "4fb8526630b04b0064c7ba4052cdfde50e84507e4ae3aa1bff502fa22fa3ab7c",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "0721001fb1ca",
+      "trial": "07_r2_red_candidate",
+      "color": "red",
+      "review_number": "R053",
+      "source_sha256": "66f663e04f9c4b7ef9d96833be276db86cf6286ac0f8400e5269d1d4d85ffecf",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "61c38f0700b0",
+      "trial": "07_r2_red_candidate",
+      "color": "red",
+      "review_number": "R054",
+      "source_sha256": "bf5b60144fba5b825ce21f85a171ee8e41670b0291fce7f54919071b14653e6f",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "b0dc4493ded6",
+      "trial": "07_r2_red_candidate",
+      "color": "red",
+      "review_number": "R055",
+      "source_sha256": "9ac004556945f539e30f1c7aca8821b90285367ef9a922a66d22f743f2c1f4b4",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "c6d2328a5e45",
+      "trial": "07_r2_red_candidate",
+      "color": "red",
+      "review_number": "R056",
+      "source_sha256": "bc723626de1f66571c1a8f16de1c17f4c7b01db1ca29fb488f6553a941784779",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "47e8fa9f4ba6",
+      "trial": "07_r2_red_candidate",
+      "color": "red",
+      "review_number": "R057",
+      "source_sha256": "65b331bbc8dbc5f3cde90c0adddf56820825c1dc70c0d4aa95d425f94864ea90",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "cd7f6db42796",
+      "trial": "07_r2_red_candidate",
+      "color": "red",
+      "review_number": "R058",
+      "source_sha256": "769690e7d7d259f67e4cce9d2bcdd3e92179eb125005820a1506ce47f3101ad9",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "3b0880f8aaf0",
+      "trial": "07_r2_red_candidate",
+      "color": "red",
+      "review_number": "R059",
+      "source_sha256": "b6729cf27f6cc3cc74889a0536db333c989275eb894497eb3500bd1428a6016f",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "7376f6551a4a",
+      "trial": "07_r2_red_candidate",
+      "color": "red",
+      "review_number": "R060",
+      "source_sha256": "c4f9c246190c7bbf8a5d1530372e6b2cecd869d8f3508d9434cf1db5cccb2ea5",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "3e118efccbec",
+      "trial": "07_r2_red_candidate",
+      "color": "red",
+      "review_number": "R061",
+      "source_sha256": "a516dbf3fa95b4add6ccfefe94340edc860eb7ab11aae99c04f851744bb7e537",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "5f0f65974b46",
+      "trial": "07_r2_red_candidate",
+      "color": "red",
+      "review_number": "R062",
+      "source_sha256": "e9387c0621e484d11d52195183a958bea990c54ae4412f31882d54749343ebaa",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "883488c4f9ed",
+      "trial": "07_r2_red_candidate",
+      "color": "red",
+      "review_number": "R063",
+      "source_sha256": "47810cca98548a2ef930f68558a3c9bef7a4c05922b8f6eb711feb8c70da40e0",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "9308972ff563",
+      "trial": "07_r2_red_candidate",
+      "color": "red",
+      "review_number": "R064",
+      "source_sha256": "2c00aa2e08248d509b48bc427fbdd784b96e94338a9fd2962e0d0f4a22f6c41e",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "c76858c31db0",
+      "trial": "07_r2_red_candidate",
+      "color": "red",
+      "review_number": "R065",
+      "source_sha256": "f7d233ef1574eda3c329b2be5323be45e9854ca993e8585f151ce04a91a36a9b",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "163f08b49707",
+      "trial": "07_r2_red_candidate",
+      "color": "red",
+      "review_number": "R066",
+      "source_sha256": "466c5e315b0a46e9d4cd16e383c33325ab83629da1a51d79edad04ca1361713a",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "e3813f0304ec",
+      "trial": "07_r2_red_candidate",
+      "color": "red",
+      "review_number": "R067",
+      "source_sha256": "62841b32c97a2271fd637c2a73a05975f34947a61a91c6bd7b6be582a73321f9",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "97e02185f345",
+      "trial": "07_r2_red_candidate",
+      "color": "red",
+      "review_number": "R068",
+      "source_sha256": "21444ad83d2b724a949817d5bee23d85fa321034820170789580b33702abcbeb",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "0d084b2612dd",
+      "trial": "07_r2_red_candidate",
+      "color": "red",
+      "review_number": "R069",
+      "source_sha256": "13c7af0cae9abe504be6c401eccc5bd70b3e7dbbde23c2a8e22a312b6c46c40b",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "b0abff199e2e",
+      "trial": "07_r2_red_candidate",
+      "color": "red",
+      "review_number": "R070",
+      "source_sha256": "4723a6057cf1e3e783d206fd8ff549ee786a1c9b278703fff4992abb7e731d6c",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "64916cd265b2",
+      "trial": "14_r3_red_candidate",
+      "color": "red",
+      "review_number": "R071",
+      "source_sha256": "4367387a0c3f7a581c74f55aa451898e28a89747e090e5aa4ae8baec8e7ce846",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "dcaa4f11536e",
+      "trial": "14_r3_red_candidate",
+      "color": "red",
+      "review_number": "R072",
+      "source_sha256": "4bf41368a6c44523fad1664cf4192b4468ee65432abee010e80dd1b05b39b0e0",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "80ccc9b0e9c0",
+      "trial": "14_r3_red_candidate",
+      "color": "red",
+      "review_number": "R073",
+      "source_sha256": "dfa653176ea0ccdf432e2f1fb51427cc62bfdbe9b139c2525e1c4df01380900a",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "97862326efb9",
+      "trial": "14_r3_red_candidate",
+      "color": "red",
+      "review_number": "R074",
+      "source_sha256": "9f0106cb33193401482166d8aff0b9ded2b93d34203dde7a70279e2998327c5a",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "77844d113f29",
+      "trial": "14_r3_red_candidate",
+      "color": "red",
+      "review_number": "R075",
+      "source_sha256": "dbaa40627122098aca851356e8a09a5be0b7efe5613b0dafa0c7cd3e8151abfe",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "f78afa3b4121",
+      "trial": "14_r3_red_candidate",
+      "color": "red",
+      "review_number": "R076",
+      "source_sha256": "e5446862283b2c3d864439e20e1610c6664f918a2ce808936382762679aa426f",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "d6fbc9372897",
+      "trial": "14_r3_red_candidate",
+      "color": "red",
+      "review_number": "R077",
+      "source_sha256": "967b00e987c2ebb90247f28926888e00052fc5c6389f356ecdb61f6e04638b4d",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "4e237bab2ee0",
+      "trial": "14_r3_red_candidate",
+      "color": "red",
+      "review_number": "R078",
+      "source_sha256": "b85399b49d0e13f1a06c47eb43a522cfca12f12ec8fdeb58b6953f7df87d1f19",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "1f20a3a5fbcd",
+      "trial": "14_r3_red_candidate",
+      "color": "red",
+      "review_number": "R079",
+      "source_sha256": "f0dd29eab855b994efb0fd9fe7a95304ab6d0952f1e15f226534f33940ef25b2",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "d270ad687e51",
+      "trial": "14_r3_red_candidate",
+      "color": "red",
+      "review_number": "R080",
+      "source_sha256": "9d547a68ce7b5fbbfb41993d02f9668d12624dee435b36dc374a1fd46a4b205f",
+      "visibility": "visible",
+      "visible_bbox": [
+        332,
+        402,
+        443,
+        480
+      ],
+      "original_frame_clipped": true
+    },
+    {
+      "decision": "f27583a85fe9",
+      "trial": "14_r3_red_candidate",
+      "color": "red",
+      "review_number": "R081",
+      "source_sha256": "47f0a4dcdaf8705f4482a779d905f70e5225cf6383317af43632ce780e57a0c4",
+      "visibility": "visible",
+      "visible_bbox": [
+        605,
+        344,
+        640,
+        431
+      ],
+      "original_frame_clipped": true
+    },
+    {
+      "decision": "b649b14b660a",
+      "trial": "14_r3_red_candidate",
+      "color": "red",
+      "review_number": "R082",
+      "source_sha256": "1414f72123bfe2b0216228ef008b0110bb7ae0059f2cf58b542e3dbad15d6649",
+      "visibility": "visible",
+      "visible_bbox": [
+        503,
+        254,
+        545,
+        302
+      ],
+      "original_frame_clipped": false
+    },
+    {
+      "decision": "a01f1892b74e",
+      "trial": "14_r3_red_candidate",
+      "color": "red",
+      "review_number": "R083",
+      "source_sha256": "7b2857e9e685a633dde7f417c424af5f7f17ad166fff4e4505758bf1e2b844e0",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "82d2c2e42803",
+      "trial": "14_r3_red_candidate",
+      "color": "red",
+      "review_number": "R084",
+      "source_sha256": "6466f95ef59063e85408f0d7d42b5a0ad98542a4263749056e8f532531cbb025",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "a076fc2fc70c",
+      "trial": "14_r3_red_candidate",
+      "color": "red",
+      "review_number": "R085",
+      "source_sha256": "303276fb74610f9bb4a87ea3cda9ddcf1df0eed11e33c82cdde3ffe08618a6b6",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "60e3a2f15167",
+      "trial": "14_r3_red_candidate",
+      "color": "red",
+      "review_number": "R086",
+      "source_sha256": "b82c3b5f252856bc9a071411c973dad386398b7157dbe721e29101144240c04c",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "7008d81fb5a1",
+      "trial": "14_r3_red_candidate",
+      "color": "red",
+      "review_number": "R087",
+      "source_sha256": "24362d5866bf481f9bfb8f1dd70cf3a79526802f4446143e670aa008092d0c3f",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "000ca70e5693",
+      "trial": "14_r3_red_candidate",
+      "color": "red",
+      "review_number": "R088",
+      "source_sha256": "2cb77513b0a464f4644657b7bd1536cd8d50b6cb5d3d4dc9da8bdd7b925c364c",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "02e4b4a94d61",
+      "trial": "14_r3_red_candidate",
+      "color": "red",
+      "review_number": "R089",
+      "source_sha256": "08d44c7319be599fe7302f9015be521911ca11a7ebc6d5ae5ea370cf8c7613f9",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "790c04476cb8",
+      "trial": "14_r3_red_candidate",
+      "color": "red",
+      "review_number": "R090",
+      "source_sha256": "9534b2b95470d6623f034e171fc04a274b8d84d858ce9c5e3213a72fe6fcb09d",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "08c064fc7b48",
+      "trial": "14_r3_red_candidate",
+      "color": "red",
+      "review_number": "R091",
+      "source_sha256": "d924b2aab5c879cf380fa7dfdacc126777274d36388a39fe8301345dd08b801d",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "c59019738295",
+      "trial": "14_r3_red_candidate",
+      "color": "red",
+      "review_number": "R092",
+      "source_sha256": "21247af7dbd0cf28170306047402430a79e94f04d504286fc9ac73dc76f1837a",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "95179fb39bc1",
+      "trial": "14_r3_red_candidate",
+      "color": "red",
+      "review_number": "R093",
+      "source_sha256": "ec006381fc20e671efe40c59aa9f66830e9156cc0889ca9fe87f8f81a3581896",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "79f298c8fd14",
+      "trial": "14_r3_red_candidate",
+      "color": "red",
+      "review_number": "R094",
+      "source_sha256": "1837c32417baf814e83b547cb5bfc7a45a10169be8156d4e056dc880143a7771",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "dbc198609132",
+      "trial": "14_r3_red_candidate",
+      "color": "red",
+      "review_number": "R095",
+      "source_sha256": "07020584372db567c1ad91042fee8a2981ee55225fad4b18a756bdb26ff4c1fb",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "c06ecea62174",
+      "trial": "14_r3_red_candidate",
+      "color": "red",
+      "review_number": "R096",
+      "source_sha256": "38a62038d13fb3d522bbe73069130ca495165a7ac92e18765cd1376c93a96880",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "7868cba33cdb",
+      "trial": "14_r3_red_candidate",
+      "color": "red",
+      "review_number": "R097",
+      "source_sha256": "ad665c65594fafc7a589ba7ec5083abe8c7244dc7a766f3cc99e0dd2177e711c",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "181406f1acb0",
+      "trial": "14_r3_red_candidate",
+      "color": "red",
+      "review_number": "R098",
+      "source_sha256": "89e292dd2187a7918930692abc4fec616f08b861173e1a130017e2913876bde8",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "e9c11de6b34e",
+      "trial": "14_r3_red_candidate",
+      "color": "red",
+      "review_number": "R099",
+      "source_sha256": "d65e10d384fb6cb65766cd7a8f03d3323f99edefa6ab04669ae57cf52c9bd57b",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "571e139b176d",
+      "trial": "14_r3_red_candidate",
+      "color": "red",
+      "review_number": "R100",
+      "source_sha256": "8b66af8adbbca7362ac47bbc08b6ce61286073534e2ba667f9559be1ee28a87b",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "06ab817b2237",
+      "trial": "14_r3_red_candidate",
+      "color": "red",
+      "review_number": "R101",
+      "source_sha256": "4ba8cf40d005c95eea8f04110015fae71fccf8d812b24f9e193ff37d336de986",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "b58b14e0d0db",
+      "trial": "14_r3_red_candidate",
+      "color": "red",
+      "review_number": "R102",
+      "source_sha256": "984d83a19c0a3d9a63ff4d05896f66f4fc990a520713a63d0e3ad8002fec60d8",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "056eb3f746a1",
+      "trial": "06_r1_blue_candidate",
+      "color": "blue",
+      "review_number": "01",
+      "source_sha256": "d02e6d636c56d1452a9eeec9482a92419c2e2ae8e76cb7ac2c8b54fae35765da",
+      "visibility": "visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "1c594737442c",
+      "trial": "06_r1_blue_candidate",
+      "color": "blue",
+      "review_number": "02",
+      "source_sha256": "134a12a94f825f679000ec0035520ff8c19b1c3d7f9179849d7a92a4a6638cb8",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "1cac9a2b8dd1",
+      "trial": "06_r1_blue_candidate",
+      "color": "blue",
+      "review_number": "03",
+      "source_sha256": "44c25961348fc2617ff4d75fc153ebcd18e4fb74bcdb68d6c130995c7ee1757c",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "519224fcd667",
+      "trial": "06_r1_blue_candidate",
+      "color": "blue",
+      "review_number": "04",
+      "source_sha256": "725dec506937fabf31f9e422ea3338b24ba5698b10132fff150eb7722fd70b0a",
+      "visibility": "visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "a7aff82db6cc",
+      "trial": "06_r1_blue_candidate",
+      "color": "blue",
+      "review_number": "05",
+      "source_sha256": "687d28bb253b9be1ceecb4a900034d0eea5a33607ea12500aaedf3ebe15e2e37",
+      "visibility": "visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "b72b3622c8c5",
+      "trial": "06_r1_blue_candidate",
+      "color": "blue",
+      "review_number": "06",
+      "source_sha256": "363d50780bd3d9a0a1b28a6d24f7e10e0a3bfd47d416947d9c8e8c722cd766f5",
+      "visibility": "visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "caa3b7131278",
+      "trial": "06_r1_blue_candidate",
+      "color": "blue",
+      "review_number": "07",
+      "source_sha256": "78549cbd53f0f915463132d0f9d47cffcb0ed1d44da8593e0952d3b13d5845ac",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "cfebe055f1eb",
+      "trial": "06_r1_blue_candidate",
+      "color": "blue",
+      "review_number": "08",
+      "source_sha256": "2383974340f3cb6ee9122953502ccc15fbd3b31420edca16d76b2784ff78c492",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "e156ce975466",
+      "trial": "06_r1_blue_candidate",
+      "color": "blue",
+      "review_number": "09",
+      "source_sha256": "6b74eda0a06480551619cdc6549a3288595c756928a636d46282c51ab3e85bff",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "03e5f905c474",
+      "trial": "11_r2_blue_candidate",
+      "color": "blue",
+      "review_number": "10",
+      "source_sha256": "978323c94f9cd18bd170eb0e951e59d9ecdd853429cdfdfc1e0558286dca12af",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "278bbae8a9aa",
+      "trial": "11_r2_blue_candidate",
+      "color": "blue",
+      "review_number": "11",
+      "source_sha256": "3e3d1a745c47d4615b4ef36046b11e9e4a180d3de94de2bdd675a98be036d776",
+      "visibility": "visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "43011c64ebf4",
+      "trial": "11_r2_blue_candidate",
+      "color": "blue",
+      "review_number": "12",
+      "source_sha256": "c93b3cbc96955083f51cd90e9cc3adefb9e9b3ed802696ac3faa4d701e6c1022",
+      "visibility": "visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "81131475283f",
+      "trial": "11_r2_blue_candidate",
+      "color": "blue",
+      "review_number": "13",
+      "source_sha256": "95c8e667c4074b68d926bd987658c1c66be6d5205fde0fab169152b3372fafeb",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "bd4e84429683",
+      "trial": "11_r2_blue_candidate",
+      "color": "blue",
+      "review_number": "14",
+      "source_sha256": "3d097cd05879267de881e40817543fb9678c9867ffabf29814a0e5f9c3b7e485",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "e386e9cd4b82",
+      "trial": "11_r2_blue_candidate",
+      "color": "blue",
+      "review_number": "15",
+      "source_sha256": "00dba6c44b4f5535a4e3ec537dc0a41c55114ecf66ff8bbea17b1915b1b528ec",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "ed86cee910d6",
+      "trial": "11_r2_blue_candidate",
+      "color": "blue",
+      "review_number": "16",
+      "source_sha256": "150d5b09d9e3a9f1cc6b5e3f2658525c69e912949ff0b37269d004f53e2d7e04",
+      "visibility": "visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "eed657ac8a05",
+      "trial": "11_r2_blue_candidate",
+      "color": "blue",
+      "review_number": "17",
+      "source_sha256": "2dd884404e526e01072bf610fd3486e61ea4ed21be241865038d53390ac64905",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "f081cd57c016",
+      "trial": "11_r2_blue_candidate",
+      "color": "blue",
+      "review_number": "18",
+      "source_sha256": "c645fd7b3195b63ab80f857d3b3efcd0074f72df659aedf02d7e7b0b5f8b2ea0",
+      "visibility": "visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "4d75c03acb66",
+      "trial": "18_r3_blue_candidate",
+      "color": "blue",
+      "review_number": "19",
+      "source_sha256": "1b29eee6b05afb9a6e605ff25ae24233b51c563d82c97558b53cf0a3be4d9b6f",
+      "visibility": "visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "520f21382ca8",
+      "trial": "18_r3_blue_candidate",
+      "color": "blue",
+      "review_number": "20",
+      "source_sha256": "37962f959115a8453432f3db7bd4193df187a253277b7ad8bcf41709a310c5e4",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "5eaaaaf1c49b",
+      "trial": "18_r3_blue_candidate",
+      "color": "blue",
+      "review_number": "21",
+      "source_sha256": "6155b2a1eeb83858d898afc0c608214620163fab5e1457ba41c1d8323857c0db",
+      "visibility": "uncertain",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "67896389fd11",
+      "trial": "18_r3_blue_candidate",
+      "color": "blue",
+      "review_number": "22",
+      "source_sha256": "9c8e925e83df0685edcb1a8d7fec1f158aca31e469643897cd158002e42c42c3",
+      "visibility": "visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "6a6555b3d8f1",
+      "trial": "18_r3_blue_candidate",
+      "color": "blue",
+      "review_number": "23",
+      "source_sha256": "10e52f4377ea2529eeb15b24c698522a0545ecd5df521671657b427e22c559fd",
+      "visibility": "visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "72628a20b69f",
+      "trial": "18_r3_blue_candidate",
+      "color": "blue",
+      "review_number": "24",
+      "source_sha256": "59c0cf12338dd3bba0793f40e9b0a887bcff42d7810f55aa7fb4fa658ba479b3",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "87658a9c3637",
+      "trial": "18_r3_blue_candidate",
+      "color": "blue",
+      "review_number": "25",
+      "source_sha256": "67fe967e1d3ca439b9c1d7c6415243e99cbe2c287f353ea1cf02d872583e7927",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "dbc7dd182b2e",
+      "trial": "18_r3_blue_candidate",
+      "color": "blue",
+      "review_number": "26",
+      "source_sha256": "05d604bebb39b2e8b1f8598344db9408a3158aaf3df5cf95f451addc65fdf8c2",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "044c40b0a1d3",
+      "trial": "03_r1_purple_candidate",
+      "color": "purple",
+      "review_number": "27",
+      "source_sha256": "fc5448c0a4b3e38e337d184ecf5b6e71acbc48156b2a4c1448593621ca90d4a1",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "348d1da7b9e8",
+      "trial": "03_r1_purple_candidate",
+      "color": "purple",
+      "review_number": "28",
+      "source_sha256": "bae411543ef86d2bfef28eba8ffe178e7264249ee51f46ac30b135f8d7f2ba4d",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "3ba303e356da",
+      "trial": "03_r1_purple_candidate",
+      "color": "purple",
+      "review_number": "29",
+      "source_sha256": "a8e08d3062ba8bb7cb84df8ebabc68d27265429a6d8ce3df3c469633e81abbc0",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "415323fcdec9",
+      "trial": "03_r1_purple_candidate",
+      "color": "purple",
+      "review_number": "30",
+      "source_sha256": "7111e926b03901ea2636108e59d833eb7758cfe50ac465b1f4070f4fe9bc1c82",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "415a698745e9",
+      "trial": "03_r1_purple_candidate",
+      "color": "purple",
+      "review_number": "31",
+      "source_sha256": "53639933e7e877d6929e59e71156420c70baed458fc4434dd24e95e4cb5d2d14",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "5535567c16e2",
+      "trial": "03_r1_purple_candidate",
+      "color": "purple",
+      "review_number": "32",
+      "source_sha256": "c47e1bfc74204c04decc997835a9716c7877fce0a0286691af6aea658cfd8857",
+      "visibility": "visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "5aedbb4c0185",
+      "trial": "03_r1_purple_candidate",
+      "color": "purple",
+      "review_number": "33",
+      "source_sha256": "faf48f5357a6ceaa5346ff2b3a767637315425913b0ab45e940211d9d2cd53f3",
+      "visibility": "visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "9e25b574634a",
+      "trial": "03_r1_purple_candidate",
+      "color": "purple",
+      "review_number": "34",
+      "source_sha256": "996152949c6d2bc330516d9cd9e270eb98a5067fe30d6f1474e8b075cff4a268",
+      "visibility": "visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "e6e238e965a0",
+      "trial": "03_r1_purple_candidate",
+      "color": "purple",
+      "review_number": "35",
+      "source_sha256": "916fff1317e654c6a22b0dbcd56ed93036a0a5b0076aa3b9206e2f46f3b5e79b",
+      "visibility": "uncertain",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "109a41e74cc1",
+      "trial": "10_r2_purple_candidate",
+      "color": "purple",
+      "review_number": "36",
+      "source_sha256": "f914626026f2285b5a6385300c9835f7304f70446ae235208eebd85c792e4613",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "188bdaf293e5",
+      "trial": "10_r2_purple_candidate",
+      "color": "purple",
+      "review_number": "37",
+      "source_sha256": "2b6617d55e4f857e29dc24aa57a88d6c3cb29c0c771e9c906c547acc2840b670",
+      "visibility": "visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "4029f8ffe730",
+      "trial": "10_r2_purple_candidate",
+      "color": "purple",
+      "review_number": "38",
+      "source_sha256": "316b015279ec6c8b82218b5c4bb674f8ccc91df415c5f9eaa7431a95169e168b",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "40a931d7dade",
+      "trial": "10_r2_purple_candidate",
+      "color": "purple",
+      "review_number": "39",
+      "source_sha256": "436062740d67ed56de2493205c81311fc8eed532b91c66ccdb94a33bc98c64ad",
+      "visibility": "visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "529aac62f0a5",
+      "trial": "10_r2_purple_candidate",
+      "color": "purple",
+      "review_number": "40",
+      "source_sha256": "db494de31c95d17cefd8768ac9831c762e3677fab4d76d8ba862f5fd705718e6",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "5ed9772bba35",
+      "trial": "10_r2_purple_candidate",
+      "color": "purple",
+      "review_number": "41",
+      "source_sha256": "4e98789a481edc1ea6fa5d654d913da4a18fb9d49cfbc19d03b8c3fc1e8ddbd7",
+      "visibility": "visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "642fbd6f1545",
+      "trial": "10_r2_purple_candidate",
+      "color": "purple",
+      "review_number": "42",
+      "source_sha256": "4644a18dfcd586abc935dcd47b1c08b3d2182cc242bca67b78c4851f58c3facc",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "6a9a862eb15f",
+      "trial": "10_r2_purple_candidate",
+      "color": "purple",
+      "review_number": "43",
+      "source_sha256": "db918b508c5c552c31f5b7e02840594735e1f459b6cc2d5e601756142214247b",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "8b198053a4e2",
+      "trial": "10_r2_purple_candidate",
+      "color": "purple",
+      "review_number": "44",
+      "source_sha256": "292568390d87d4ef4455b1425ca3568acd025754ce4f34c1ecb18ba7c642fb54",
+      "visibility": "visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "95fed91933a7",
+      "trial": "10_r2_purple_candidate",
+      "color": "purple",
+      "review_number": "45",
+      "source_sha256": "f3cfb2f7a7cb14895f79d05e41941bbb31b1ec7955ae7cbc034f7b8a78cb837a",
+      "visibility": "visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "c129ed4bb8d5",
+      "trial": "10_r2_purple_candidate",
+      "color": "purple",
+      "review_number": "46",
+      "source_sha256": "a889bb37a38f5145f9ea75d3b68c1414170ff48a4e073bc715425ed26f394b5a",
+      "visibility": "visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "2ea6e72b9c44",
+      "trial": "15_r3_purple_candidate",
+      "color": "purple",
+      "review_number": "47",
+      "source_sha256": "35e6dc3b8a30fe2b4921ded5571e1470d175cf70f30e1ef42bc9b96c5ddd78dd",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "320c80407c80",
+      "trial": "15_r3_purple_candidate",
+      "color": "purple",
+      "review_number": "48",
+      "source_sha256": "eea63a286229d6697e65b9ea247f18e2e851902402045596a7fdaaa0859887ff",
+      "visibility": "visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "438f0747b9b3",
+      "trial": "15_r3_purple_candidate",
+      "color": "purple",
+      "review_number": "49",
+      "source_sha256": "e170dfd9b40e9d3b45bc5f849a56f5f836755e9ab5f288d5871ffc3583eaf5b3",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "51ba0ca03cdb",
+      "trial": "15_r3_purple_candidate",
+      "color": "purple",
+      "review_number": "50",
+      "source_sha256": "8aab44b452d9a5ba2b5c41faf63d6aadf8369a7324f050b20a6789837aaea709",
+      "visibility": "visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "a2437d23d7da",
+      "trial": "15_r3_purple_candidate",
+      "color": "purple",
+      "review_number": "51",
+      "source_sha256": "ca0d332cb447a63ec950f4fb5466f8f12a79fde10c0da0e2a2df1305be982a60",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "a8f46dc73a18",
+      "trial": "15_r3_purple_candidate",
+      "color": "purple",
+      "review_number": "52",
+      "source_sha256": "ec9a68fe541c5453ea7277c50d480de2cb88863f35b2bbed17e7af3829e1e02f",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    },
+    {
+      "decision": "aaae3d0e877f",
+      "trial": "15_r3_purple_candidate",
+      "color": "purple",
+      "review_number": "53",
+      "source_sha256": "d9433786e958f8484cbcb3a98d940bf4e6b91dddba3fa2d6c654e40e18679d87",
+      "visibility": "not_visible",
+      "visible_bbox": null,
+      "original_frame_clipped": null
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+def main():
+    import queue
+    import threading
+    from transformers import AutoProcessor
+    from fm9g_perception.runtime import PerceptionBridge
+    rospy.init_node("mission_once", anonymous=True)
+    pub = rospy.Publisher("/mission_command", String, queue_size=10)
+    rospy.sleep(1.0)
+    # The container exposes 128 host CPUs but has a 14 CPU quota. Sustained
+    # perception must not create a host-sized CPU pool alongside the simulator.
+    torch.set_num_threads(2)
+    torch.set_num_interop_threads(1)
+    model, tokenizer, base_msgs = load_model()
+    processor = getattr(model, "processor", None)
+    if processor is None:
+        processor = AutoProcessor.from_pretrained(
+            os.path.join(os.path.dirname(os.path.abspath(__file__)), "FM9G4B-V"),
+            trust_remote_code=True, local_files_only=True)
+    model_lock = threading.Lock()
+    bridge = PerceptionBridge(model, tokenizer, processor, model_lock)
+    tasks = queue.Queue()
+    argv_mode = len(sys.argv) > 1
+    if argv_mode:
+        tasks.put(" ".join(sys.argv[1:]))
+    else:
+        def read_tasks():
+            while not rospy.is_shutdown():
+                try:
+                    task = input("任务描述（quit退出）> ").strip()
+                except (EOFError, KeyboardInterrupt):
+                    return
+                tasks.put(task)
+                if task.lower() in ("quit", "exit", "q"):
+                    return
+        threading.Thread(target=read_tasks, daemon=True, name="mission-input").start()
+    try:
+        while not rospy.is_shutdown():
+            try:
+                task = tasks.get_nowait()
+            except queue.Empty:
+                task = None
+            if task is not None:
+                if task.lower() in ("quit", "exit", "q"):
+                    break
+                if task:
+                    bridge.result_seen = False
+                    print(f"\n[任务] {task}", flush=True)
+                    try:
+                        with model_lock:
+                            commands = generate_validated_commands(model, tokenizer, base_msgs, task)
+                        if commands:
+                            print(f"\n[生成的指令序列]\n{commands}\n", flush=True)
+                            pub.publish(String(data=commands))
+                            rospy.loginfo("指令已发送到 /mission_command")
+                        elif argv_mode:
+                            break
+                    except RuntimeError as exc:
+                        print(f"[错误] 推理失败: {exc}", flush=True)
+                        torch.cuda.empty_cache()
+                        if argv_mode:
+                            break
+            bridge.refresh_window()
+            if argv_mode and bridge.result_seen:
+                break
+            time.sleep(0.03)
+    finally:
+        bridge.close()
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,25 @@
+{
+  "package_md5": {
+    "v2/localizer.py": "8d329caed84b8d1c7eb4c7c20c3fb06f",
+    "v2/tracking.py": "96a1683400e98c7f8fb898a53f3f2434",
+    "v2/runtime.py": "d6f65f166b8ecda4de0b7c1126fa3c2e",
+    "v2/refinement.py": "af0ad29d1fa4a43fc4e18e77fdeb30cf",
+    "v2/geometry.py": "58db79f8cb33c10c6bc4d7aad60e54dc",
+    "v2/multimodal_target_tracker.h": "ce0da2ff3f9cb9635fb8fd4653a93ef3",
+    "v2/multimodal_target_tracker.cpp": "092fe8df8991ef5e2bb510ce5650c731",
+    "v2/entry_main.py.txt": "20372f89b109a9b79b28635b037231fc",
+    "v2/mission_once.py": "de03cd1a5687f7bc0664ea52f3cd095f",
+    "v2/bt_ros.cpp": "9a1e8d2a5913968b1c2300cad1dc02f7",
+    "patches/deploy_v2.py": "f1e8eab4d9b9bf06188d00502f81f263",
+    "patches/build_v2.sh": "f9d0833b578846b29881dab1d0e9eea1",
+    "patches/patch_v2_sources.py": "2705c7a85d484a59b46db58116a1902a",
+    "tools/test_v2_guards.py": "2aefb687f6a683daef345295b440e628",
+    "tools/run_one_v2.sh": "a39e56641c332aff59d583f08efda609",
+    "tools/switch_condition_v2.sh": "5616de16af6326de1bbc2b7bd6d24a5a",
+    "tools/postflight_snapshot_v2.py": "7b739c2cd203204df7c4602469506a1f",
+    "tools/observe_trial_v2.py": "1ccb3470d0b17f497e84769995d35387",
+    "tools/summarize_session_v2.py": "f4d4d1778fb4daa790b9228b6bf6d76d",
+    "tools/decision_table_v2.py": "d41f957a145d66b9c858fac66d5dec5e",
+    "tools/inspect_stage_v2.py": "6dd28d5cad74bcae7fe26da3d7a25a25"
+  }
+}

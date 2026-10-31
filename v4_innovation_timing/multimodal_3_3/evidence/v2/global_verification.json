@@ -1,0 +1,21 @@
+{
+  "global_sha256": "e35bf1061e2c6b4e7b4f8b624d5d28af3e05426e44413bbc218fd63dbc4f94bd",
+  "global_checked_members": 568,
+  "original_plan_preserved_except_documented_budget_pause": true,
+  "executed_frozen_tool_hashes_match": true,
+  "unique_original_flight_runs": 18,
+  "full_positive_rgb_frames_crosschecked": 496,
+  "positive_rgb_sessions": [
+    {
+      "session": "12_r2_blue_baseline",
+      "full_rgb_frames": 223
+    },
+    {
+      "session": "17_r3_blue_baseline",
+      "full_rgb_frames": 273
+    }
+  ],
+  "single_archives_verified": 18,
+  "single_archive_checked_files": 2181,
+  "all_18_outer_receipts_match": true
+}
