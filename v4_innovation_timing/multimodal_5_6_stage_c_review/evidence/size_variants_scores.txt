@@ -1,0 +1,6 @@
+.scratch/fm/p12e: centre 357/494=72.3%  precision 93.5%  area_med 0.65  big_area_med 0.36  in_servo_tol 194/382  tail_max 8  fp_absent 45/635  misses: acq 93 wrong 25 dropped 19  blue:111/143 purple:154/242 red:92/109
+.scratch/fm/p12g_f0_b0: centre 354/494=71.7%  precision 92.4%  area_med 0.63  big_area_med 0.30  in_servo_tol 200/383  tail_max 12  fp_absent 48/635  misses: acq 82 wrong 29 dropped 29  blue:102/143 purple:161/242 red:91/109
+.scratch/fm/p12h_e1_t0: centre 323/494=65.4%  precision 90.2%  area_med 0.69  big_area_med 0.31  in_servo_tol 202/358  tail_max 2  fp_absent 34/635  misses: acq 76 wrong 35 dropped 60  blue:80/143 purple:155/242 red:88/109
+.scratch/fm/p12h_e0_t1: centre 345/494=69.8%  precision 91.3%  area_med 0.57  big_area_med 0.31  in_servo_tol 174/378  tail_max 7  fp_absent 33/635  misses: acq 87 wrong 33 dropped 29  blue:102/143 purple:158/242 red:85/109
+.scratch/fm/p12h_e1_t1: centre 321/494=65.0%  precision 89.7%  area_med 0.57  big_area_med 0.28  in_servo_tol 188/358  tail_max 7  fp_absent 38/635  misses: acq 75 wrong 37 dropped 61  blue:86/143 purple:149/242 red:86/109
+.scratch/fm/p12i_g1.6: centre 322/494=65.2%  precision 80.5%  area_med 0.76  big_area_med 0.38  in_servo_tol 198/400  tail_max 22  fp_absent 66/635  misses: acq 72 wrong 78 dropped 22  blue:62/143 purple:167/242 red:93/109
