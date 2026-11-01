@@ -1,5 +1,5 @@
---- frozen/visual_servo.cpp
-+++ trial20/visual_servo.cpp
+--- frozen_20261101/visual_servo.cpp
++++ trial_20/visual_servo.cpp
 @@ -34,13 +34,13 @@
               InputPort<double>("k_p_yaw_rate", 0.003, "偏航角速度 P 增益 (rad/s per pixel)"),
               InputPort<double>("k_d_yaw_rate", 0.008, "偏航角速度 D 增益"),

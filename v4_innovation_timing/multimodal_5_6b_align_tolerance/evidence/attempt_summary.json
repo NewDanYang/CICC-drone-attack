@@ -1,0 +1,130 @@
+[
+  {
+    "attempt": "attempt20",
+    "color": "red",
+    "trial_dir": "20261101T153622_red_A0",
+    "counts": {
+      "Visual Servo Started": 0,
+      "Aligned!": 0,
+      "SPRINT_START": 0,
+      "APPROACHING": 0,
+      "checkArrival": 153
+    },
+    "last_checkArrival": {
+      "wall_time": "2026-11-01T07:41:42.428+00:00",
+      "message": "[checkArrival] odom=(2.89,-1.09,0.89) target=(4.30,1.00,0.70) dist=2.527 tol=0.15"
+    },
+    "observer": {
+      "run_id": "20261101T153627_a06a91",
+      "target_color": "red",
+      "start_time": "2026-11-01T07:36:43.119+00:00",
+      "end_time": "2026-11-01T07:41:43.254+00:00",
+      "total_time": "300.135",
+      "elapsed_time": "300.135",
+      "bt_success": "",
+      "mission_success": "false",
+      "end_status": "stuck",
+      "takeoff_status": "success",
+      "cross_frame_status": "success",
+      "detect_aruco_status": "success",
+      "return_cross_frame_status": "success",
+      "hit_balloon_status": "",
+      "land_status": "",
+      "aruco_detect_time": "0.117",
+      "balloon_search_time": "",
+      "failure_stage": "hit_balloon",
+      "failure_reason": "mission_timeout: no /mission_result received",
+      "safety_boundary_triggered": "false",
+      "boundary_first_time": "",
+      "boundary_first_position": "",
+      "boundary_violation_count": "0",
+      "boundary_recovered": "",
+      "notes": "mission_command received as text; checkArrival made no progress for 20.1s at target (4.3, 1.0, 0.7); mission timeout after 300.0 seconds; no terminal /mission_result received; bt_planning_controls=[{\"goal\":\"{frame_center}\",\"offset_z\":\"1.000000\",\"kind\":\"frame_outbound\"},{\"goal\":\"{frame_center}\",\"offset_z\":\"\",\"kind\":\"frame_return\"},{\"goal\":\"4.3;1.0;0.7\",\"offset_z\":\"\",\"kind\":\"other\"}]; rosout_events_logged; setpoint_samples=15006; target_detection_messages=3077"
+    },
+    "audit_kinds": [
+      "processor_input",
+      "presence_warmup",
+      "ready",
+      "camera_contract",
+      "closed"
+    ],
+    "model_ready": {
+      "kind": "ready",
+      "image_topic": "/rflysim/sensor1/img_rgb",
+      "model_instance": 139793087305792,
+      "output": "/home/ubuntu/tcei_baseline_tools/results/multimodal_v2/20261101T073637_fbfcf6",
+      "semantic_hold_s": 12.0,
+      "frame_hold_s": 0.35,
+      "torch_threads": 2,
+      "torch_interop_threads": 1,
+      "opencv_threads": 2,
+      "pid": 10722,
+      "wall_time": "2026-11-01T07:36:40.078890+00:00",
+      "monotonic": 3636220.009706851
+    }
+  },
+  {
+    "attempt": "attempt30",
+    "color": "purple",
+    "trial_dir": "20261101T154543_purple_A0",
+    "counts": {
+      "Visual Servo Started": 0,
+      "Aligned!": 0,
+      "SPRINT_START": 0,
+      "APPROACHING": 0,
+      "checkArrival": 162
+    },
+    "last_checkArrival": {
+      "wall_time": "2026-11-01T07:51:11.882+00:00",
+      "message": "[checkArrival] odom=(2.93,-1.10,0.87) target=(4.30,1.00,0.70) dist=2.512 tol=0.15"
+    },
+    "observer": {
+      "run_id": "20261101T154548_1c9c9e",
+      "target_color": "purple",
+      "start_time": "2026-11-01T07:46:12.209+00:00",
+      "end_time": "2026-11-01T07:51:12.322+00:00",
+      "total_time": "300.113",
+      "elapsed_time": "300.113",
+      "bt_success": "",
+      "mission_success": "false",
+      "end_status": "stuck",
+      "takeoff_status": "",
+      "cross_frame_status": "",
+      "detect_aruco_status": "",
+      "return_cross_frame_status": "",
+      "hit_balloon_status": "",
+      "land_status": "",
+      "aruco_detect_time": "",
+      "balloon_search_time": "",
+      "failure_stage": "takeoff",
+      "failure_reason": "mission_timeout: no /mission_result received",
+      "safety_boundary_triggered": "false",
+      "boundary_first_time": "",
+      "boundary_first_position": "",
+      "boundary_violation_count": "0",
+      "boundary_recovered": "",
+      "notes": "checkArrival made no progress for 20.0s at target (4.3, 1.0, 0.7); mission_command received as text; mission timeout after 300.0 seconds; no terminal /mission_result received; rosout_events_logged; setpoint_samples=16199; target_detection_messages=3276"
+    },
+    "audit_kinds": [
+      "processor_input",
+      "presence_warmup",
+      "ready",
+      "camera_contract",
+      "closed"
+    ],
+    "model_ready": {
+      "kind": "ready",
+      "image_topic": "/rflysim/sensor1/img_rgb",
+      "model_instance": 140433211742272,
+      "output": "/home/ubuntu/tcei_baseline_tools/results/multimodal_v2/20261101T074602_134622",
+      "semantic_hold_s": 12.0,
+      "frame_hold_s": 0.35,
+      "torch_threads": 2,
+      "torch_interop_threads": 1,
+      "opencv_threads": 2,
+      "pid": 21432,
+      "wall_time": "2026-11-01T07:46:04.650241+00:00",
+      "monotonic": 3636784.581051422
+    }
+  }
+]

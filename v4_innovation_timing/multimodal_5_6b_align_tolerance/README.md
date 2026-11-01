@@ -1,5 +1,5 @@
 # multimodal_5_6b_align_tolerance
 
-This directory records the visual-servo tolerance task from `docs/astra-handoff-fm9g-visualservo-tolerance.md`.
+This directory records the two permitted visual-servo tolerance trials and the red/purple loss-rule backtest from `docs/astra-handoff-fm9g-visualservo-tolerance.md`.
 
-The server was unreachable on 2026-11-01, so no remote source, build, or flight trial was changed. The local report documents the connection evidence, the exact dry-run diff for the 20 px candidate, and the red/purple historical loss-rule backtest. Stage D remains paused.
+The 20/20 red and 30/30 purple trials both stopped before VisualServo at the shared pre-balloon target `(4.3, 1.0, 0.7)`. Neither produced a `Visual Servo Started`, `Aligned!`, or `SPRINT_START` event, so the tolerance hypothesis was not observed. The server was restored to the frozen source and plugin hashes after both trials. The red/purple near-contact completion rule remains undeployed because historical evidence shows premature-completion risk.

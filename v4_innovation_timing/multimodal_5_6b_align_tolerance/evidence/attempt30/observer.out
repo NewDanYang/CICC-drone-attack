@@ -1,0 +1,34 @@
+run_id=20261101T154548_1c9c9e
+natural_language_task=飞机起飞，然后穿过框，再去识别二维码，然后再穿回框，接着去打击紫色气球，完成后就回到起点并降落；
+v21_telemetry_log=/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261101T154543_purple_A0/20261101T154548_9cee74_purple_telemetry.jsonl
+v21_planning_summary=/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261101T154543_purple_A0/planning_runs.csv
+Observer ready: waiting for first /mission_command; timing starts automatically.
+{
+  "run_id": "20261101T154548_1c9c9e",
+  "target_color": "purple",
+  "start_time": "2026-11-01T07:46:12.209+00:00",
+  "end_time": "2026-11-01T07:51:12.322+00:00",
+  "total_time": "300.113",
+  "elapsed_time": "300.113",
+  "bt_success": "",
+  "mission_success": "false",
+  "end_status": "stuck",
+  "takeoff_status": "",
+  "cross_frame_status": "",
+  "detect_aruco_status": "",
+  "return_cross_frame_status": "",
+  "hit_balloon_status": "",
+  "land_status": "",
+  "aruco_detect_time": "",
+  "balloon_search_time": "",
+  "failure_stage": "takeoff",
+  "failure_reason": "mission_timeout: no /mission_result received",
+  "safety_boundary_triggered": "false",
+  "boundary_first_time": "",
+  "boundary_first_position": "",
+  "boundary_violation_count": "0",
+  "boundary_recovered": "",
+  "notes": "checkArrival made no progress for 20.0s at target (4.3, 1.0, 0.7); mission_command received as text; mission timeout after 300.0 seconds; no terminal /mission_result received; rosout_events_logged; setpoint_samples=16199; target_detection_messages=3276"
+}
+csv=/home/ubuntu/tcei_baseline_tools/results/baseline_runs.csv
+raw_log=/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261101T154543_purple_A0/logs/20261101T154548_9cee74_purple.jsonl

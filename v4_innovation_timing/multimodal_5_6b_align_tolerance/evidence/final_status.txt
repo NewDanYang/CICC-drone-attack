@@ -1,0 +1,7 @@
+final_state=frozen
+source=/home/ubuntu/catkin_ws/src/mission_pkg/src/nodes/action/visual_servo.cpp
+header=/home/ubuntu/catkin_ws/src/mission_pkg/include/nodes/action/visual_servo.h
+plugin=/home/ubuntu/catkin_ws/devel/lib/visual_servo.so
+a63b57fa127a23cd8bb8e647f078ff21  /home/ubuntu/catkin_ws/src/mission_pkg/src/nodes/action/visual_servo.cpp
+d3324b0458b2160102f9bbf44546d035  /home/ubuntu/catkin_ws/src/mission_pkg/include/nodes/action/visual_servo.h
+6ddfa7c180ae18f5097efd95d369b97f  /home/ubuntu/catkin_ws/devel/lib/visual_servo.so

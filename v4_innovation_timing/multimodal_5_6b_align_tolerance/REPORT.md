@@ -2,46 +2,89 @@
 
 日期：2026-11-01（Asia/Shanghai）
 
-## 当前状态
+## 结论
 
-本任务未能进入服务器试验阶段。按 `AGENTS.md` 使用 `v3_stability/tools/srvctl.py` 检查 `120.209.70.195:30316`，两轮连接均在 6 次重试后返回 `Unable to connect to port 30316`。因此没有执行远程命令，没有清锁、没有修改服务器源码、没有编译、没有起飞，也没有把离线回放当作实飞结论。连接证据见 [`evidence/server_access.txt`](evidence/server_access.txt)。阶段 D 保持暂停。
+本任务按交接要求完成了两次、且仅两次单局尝试：
 
-本任务开始前最近一次封存记录中的冻结版本为：
+1. 红色 `deadzone_yaw=20.0`、`deadzone_vz=20.0`；
+2. 回滚冻结版后，紫色 `deadzone_yaw=30.0`、`deadzone_vz=30.0`。
 
-- `visual_servo.cpp`: `e440050ecfc06657d5ac4b472411fef6`
+两局都没有进入 VisualServo：原始 rosout 中 `Visual Servo Started=0`、`Aligned!=0`、`SPRINT_START=0`。两局均在前置导航到 `(4.30, 1.00, 0.70)` 时卡住，5 分钟超时。因此不能把这两局解释成“20 px 不收敛”或“30 px 不收敛”；容差假设在本次实飞中**没有获得有效观测**。任务报告不选择三项容差结论中的任何一项，原因是 ALIGN 根本没有执行。
+
+红紫近距离丢失规则的结论仍为：**回测发现误触发风险，未部署**。最终服务器已恢复冻结版本，阶段 D 继续暂停，等待人类决定是否先修复前置 `(4.3, 1.0, 0.7)` 航点停滞。
+
+## 版本、备份和编译证据
+
+服务器启动前没有正式试验锁；仅发现一个无 PX4 进程对应的 `/tmp/px4_lock-1`，确认无 PX4 进程后清除。冻结版本为：
+
+- `visual_servo.cpp`: `a63b57fa127a23cd8bb8e647f078ff21`
 - `visual_servo.h`: `d3324b0458b2160102f9bbf44546d035`
+- `visual_servo.so`: `6ddfa7c180ae18f5097efd95d369b97f`
 
-本地封存快照和 MD5 见 [`evidence/frozen_snapshot_md5.txt`](evidence/frozen_snapshot_md5.txt)。本任务没有改动这两份文件。
+两次修改均由 MD5 守卫脚本执行，并分别备份到服务器：
 
-## 容差试验
+- `/home/ubuntu/visualservo_tolerance_backup_20261101_20px/`
+- `/home/ubuntu/visualservo_tolerance_backup_20261101_30px/`
 
-交接要求的两次实飞均尚未执行：
+|版本|源码 MD5|插件 MD5|编译结果|
+|---|---|---|---|
+|冻结|`a63b57fa...`|`6ddfa7c1...`|已核对|
+|20/20|`b8f4201d684e4386b9e003500902bd47`|`bc9b1f5327472840f663da536acf684b`|`catkin_make --pkg mission_pkg` 成功|
+|30/30|`6fbb6a2c288165f276c0302fe21fcf5f`|`51c3f7a470b58d393bb2671c4f28ad90`|`catkin_make --pkg mission_pkg` 成功|
+|最终恢复|`a63b57fa...`|`6ddfa7c1...`|恢复后重新编译并核对|
 
-| 尝试 | 预期改动 | 编译 | 实飞 | `[VisualServo]: Aligned!` |
-|---|---|---|---|---|
-| 1 | `deadzone_yaw=20.0`、`deadzone_vz=20.0` | 未执行 | 未执行 | 无结果 |
-| 2 | 仅第一次未收敛时使用 `30.0/30.0` | 未执行 | 未执行 | 无结果 |
+两个候选补丁的静态差分只改变两个 InputPort 默认值：
 
-第一次尝试的定点差分已在本地做静态核对，只有两个 InputPort 默认值变化，见 [`evidence/deadzone_20_dryrun.diff`](evidence/deadzone_20_dryrun.diff)。这不是编译或行为证据，不能替代服务器上的备份、`catkin_make --pkg mission_pkg`、二进制 MD5 核对和红色台架局。
+- [`deadzone_20_dryrun.diff`](evidence/deadzone_20_dryrun.diff)
+- [`deadzone_30_dryrun.diff`](evidence/deadzone_30_dryrun.diff)
 
-因此容差结论不是“20 px 收敛”“30 px 收敛”或“两次均未收敛”中的任何一个；真实结果待服务器恢复后再按交接流程取得。
+最终状态见 [`final_status.txt`](evidence/final_status.txt)，恢复编译日志见 [`final_rollback_compile.log`](evidence/final_rollback_compile.log)。
+
+## 第一次尝试：20/20 红色
+
+试验目录：服务器 `/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261101T153622_red_A0/`。
+
+- 任务时间：`2026-11-01T07:36:43.119Z` 至 `07:41:43.254Z`，`300.135 s`。
+- `takeoff`、穿框、ArUco、回穿在观测器中被记录为成功；进入气球阶段前停滞。
+- `checkArrival` 连续检查目标 `(4.30, 1.00, 0.70)`，末次观测无人机位置约 `(2.89, -1.09, 0.89)`，距离 `2.527 m`，容差 `0.15 m`。
+- `Visual Servo Started=0`、`Aligned!=0`、`SPRINT_START=0`。
+- 观测器结果是 `mission_timeout: no /mission_result received`，不能作为 VisualServo 失败证据。
+
+原始证据：
+
+- [`trial_rosout.jsonl.gz`](evidence/attempt20/trial_rosout.jsonl.gz)
+- [`telemetry.jsonl.gz`](evidence/attempt20/telemetry.jsonl.gz)
+- [`mission_once.out`](evidence/attempt20/mission_once.out)
+- [`observer.out`](evidence/attempt20/observer.out)
+- [`audit.jsonl`](evidence/attempt20/audit.jsonl)
+- [`compile.log`](evidence/attempt20/compile.log)
+- [`rollback_compile.log`](evidence/attempt20/rollback_compile.log)
+
+审计只包含 `processor_input`、`presence_warmup`、`ready`、`camera_contract`、`closed`，没有视觉伺服窗口；这与原始 rosout 一致。
+
+## 第二次尝试：30/30 紫色
+
+第一次结束后先回滚到冻结源码和二进制，再编译确认，然后才部署 30/30。试验目录：服务器 `/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261101T154543_purple_A0/`。
+
+- 任务时间：`2026-11-01T07:46:12.209Z` 至 `07:51:12.322Z`，`300.113 s`。
+- 同样停在目标 `(4.30, 1.00, 0.70)`，末次 `checkArrival` 位置约 `(2.93, -1.10, 0.87)`，距离 `2.512 m`，容差 `0.15 m`。
+- `Visual Servo Started=0`、`Aligned!=0`、`SPRINT_START=0`。
+- 观测器将该局归类为 `takeoff` 停滞，但原始 `checkArrival` 日志显示是前置目标未到达；没有证据表明容差参数被执行。
+
+原始证据：
+
+- [`trial_rosout.jsonl.gz`](evidence/attempt30/trial_rosout.jsonl.gz)
+- [`telemetry.jsonl.gz`](evidence/attempt30/telemetry.jsonl.gz)
+- [`mission_once.out`](evidence/attempt30/mission_once.out)
+- [`observer.out`](evidence/attempt30/observer.out)
+- [`audit.jsonl`](evidence/attempt30/audit.jsonl)
+- [`compile.log`](evidence/attempt30/compile.log)
+
+两局的机器可读摘要见 [`attempt_summary.json`](evidence/attempt_summary.json)。
 
 ## 红紫近距离丢失规则回测
 
-在不改代码的前提下，回放了本地封存对照中的红紫日志：
-
-- `v3_stability/reports/hit_balloon_part1_1.1/evidence/batch*/r*_{red,purple}_a1/rosout_events.jsonl`
-- `v3_stability/reports/hit_balloon_part1_1.3/evidence/batch1/r*_{red,purple}_a1/rosout_events.jsonl`
-- 对应的 `judgement.json`、`scene_snapshots.jsonl` 和真实帧目录保留在原始证据目录。
-
-脚本和逐局结果：
-
-- [`tools_rule_backtest_summary.py`](tools_rule_backtest_summary.py)
-- [`evidence/rule_backtest_summary.csv`](evidence/rule_backtest_summary.csv)
-- [`evidence/rule_backtest.json`](evidence/rule_backtest.json)
-- [`evidence/rule_backtest_summary.md`](evidence/rule_backtest_summary.md)
-
-提议扩展规则为：
+离线回测没有改代码，使用 3.3 封存对照及 1.6 历史验收证据。规则条件为：
 
 ```text
 max_area_ratio >= 0.30
@@ -49,22 +92,23 @@ last_ratio >= 0.50 * 0.08 = 0.04
 lost_seconds <= data_timeout + 0.25 = 1.25 s
 ```
 
-回放发现至少一个需要阻止部署的风险窗口：
+关键风险窗口仍然成立：
 
-- `hit_balloon_part1_1.3 / batch1 / r3_purple_a1`
-- 首次满足面积条件的丢失窗口：`2026-10-15T17:54:46.395+00:00`
-- 最近的 VisualServo 面积日志：`35.5%`，因此 `max_area_ratio` 和 `last_ratio` 都达到建议门槛
-- 没有 `SPRINT_START`
-- 目标 Actor 的下一次场景快照直到 `2026-10-15T17:55:59.114+00:00` 才消失，期间没有记录到重新追踪
+- `hit_balloon_part1_1.3 / batch1 / r3_purple_a1`：丢失前面积 `35.5%`，无 `SPRINT_START`；Actor 快照约 73 秒后才显示目标消失。
+- 1.6 `B_v3/r1_purple_a1`：`61.9%`，无冲刺，Actor 删除延迟约 `58.7 s`。
+- 1.6 `purple_forward/r1_purple_a1`：`65.8%`，无冲刺，延迟约 `87.9 s`。
+- 1.6 `purple_forward/r2_purple_a1`：`54.9%`，无冲刺，延迟约 `41.0 s`。
 
-旧日志没有把 `last_valid_detection_time_` 或 `lost_seconds` 直接打印出来；`Target lost` 只说明已经跨过 `data_timeout=1.0 s`。这使得该窗口不能证明目标已被击破，却足以说明按现有证据不能排除“近距离遮挡/短暂丢失后提前返回成功”的风险。另有两个高面积终止窗口：`batch2/r1_purple_a1` 的 `38.7%` 和 `batch2/r1_red_a1` 的 `31.6%`；它们同样没有后续追踪恢复，相关 Actor 删除证据也只给出了最终场景状态，不能用于证明规则在丢失瞬间安全。
+这些窗口不能证明目标在第一次视觉丢失时已被击破，因此扩展红紫规则可能提前返回成功。逐局结果见：
 
-规则任务结论：**回测发现误触发风险，未部署红紫扩展**。服务器不可达期间没有改 `visual_servo.cpp`、没有备份/编译、没有启动节点。阶段 D 不应加载一个未经过实际编译与实飞确认的红紫规则。
+- [`rule_backtest_summary.md`](evidence/rule_backtest_summary.md)
+- [`rule_backtest_summary.csv`](evidence/rule_backtest_summary.csv)
+- [`historical_extra_qualifying_windows.csv`](evidence/historical_extra_qualifying_windows.csv)
 
-## 后续解锁条件
+规则结论为**未部署**，服务器最终源码中没有红紫扩展。
 
-服务器恢复后，应从冻结版本重新开始：先检查 `/tmp/tcei_formal_trial.lock`、`/tmp/tcei_sim_environment.lock` 和 `/tmp/px4_lock-*`，记录源码与二进制 MD5；只改 `20/20`，编译并跑一局红色台架；只有第一次没有 `Aligned!` 才回滚并进行第二次 `30/30` 紫色台架。无论结果如何，结束时都要恢复冻结源码和二进制，再由人类决定是否重新冻结某个容差值。当前没有进入阶段 D。
+## 收尾和下一步边界
 
-### 补充历史验收局
+两次尝试结束后，服务器已停止仿真节点，清理正式试验锁、仿真锁和 PX4 临时锁；最终源码和插件 MD5 已恢复到冻结值。没有进行第三次碰运气测试，也没有开始阶段 D。
 
-另外抽查了 1.6 的红紫历史证据包。三个紫色局在无 `SPRINT_START` 的情况下达到高面积后丢失：`B_v3/r1` 为 `61.9%`，丢失时间 `18:34:20.155`，Actor 快照在 `18:35:18.899` 才显示目标消失；`purple_forward/r1` 为 `65.8%`，丢失 `14:36:13.699`，Actor 消失 `14:37:41.614`；`purple_forward/r2` 为 `54.9%`，丢失 `14:43:07.442`，Actor 消失 `14:43:48.405`。这些窗口的延迟分别约 `58.7 s`、`87.9 s`、`41.0 s`，均足以说明“面积达到门槛后立即把丢失当成完成”缺少独立时刻证据。逐局索引见 [`evidence/historical_extra_qualifying_windows.csv`](evidence/historical_extra_qualifying_windows.csv)，原始包仍在 `v3_stability/reports/hit_balloon_part1_1.6/`。
+如果继续研究，下一步应先单独定位 `(4.3, 1.0, 0.7)` 前置航点停滞，再重新安排容差台架；不能使用本次两局作为 20/30 像素收敛率证据。

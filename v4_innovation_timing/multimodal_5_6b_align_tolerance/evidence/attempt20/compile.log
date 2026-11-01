@@ -1,0 +1,136 @@
+[  0%] Built target uuid_msgs_generate_messages_eus
+[  0%] Built target lexy_file
+[  0%] Built target geometry_msgs_generate_messages_nodejs
+[  2%] Built target minitrace
+[  2%] Built target geometry_msgs_generate_messages_cpp
+[  2%] Built target geometry_msgs_generate_messages_py
+[  2%] Built target _common_msgs_generate_messages_check_deps_Aruco
+[  2%] Built target _common_msgs_generate_messages_check_deps_DetEnable
+[  2%] Built target std_msgs_generate_messages_py
+[  2%] Built target _common_msgs_generate_messages_check_deps_Objects
+[  2%] Built target _common_msgs_generate_messages_check_deps_Obj
+[  2%] Built target _common_msgs_generate_messages_check_deps_MissionState
+[  2%] Built target _common_msgs_generate_messages_check_deps_TgtCtrl
+[  2%] Built target geometry_msgs_generate_messages_lisp
+[  2%] Built target std_msgs_generate_messages_eus
+[  2%] Built target geometry_msgs_generate_messages_eus
+[  2%] Built target std_msgs_generate_messages_nodejs
+[  2%] Built target std_msgs_generate_messages_lisp
+[  2%] Built target std_msgs_generate_messages_cpp
+[  4%] Built target common_msgs_generate_messages_eus
+[  4%] Built target _quadrotor_msgs_generate_messages_check_deps_Serial
+[  4%] Built target _quadrotor_msgs_generate_messages_check_deps_Odometry
+[  4%] Built target _quadrotor_msgs_generate_messages_check_deps_TRPYCommand
+[  4%] Built target _quadrotor_msgs_generate_messages_check_deps_LQRTrajectory
+[  4%] Built target _quadrotor_msgs_generate_messages_check_deps_Corrections
+[  4%] Built target _quadrotor_msgs_generate_messages_check_deps_StatusData
+[  4%] Built target nav_msgs_generate_messages_py
+[  4%] Built target _quadrotor_msgs_generate_messages_check_deps_SO3Command
+[  4%] Built target _quadrotor_msgs_generate_messages_check_deps_OutputData
+[  4%] Built target _quadrotor_msgs_generate_messages_check_deps_PositionCommand
+[  4%] Built target _quadrotor_msgs_generate_messages_check_deps_AuxCommand
+[  4%] Built target _quadrotor_msgs_generate_messages_check_deps_Gains
+[  4%] Built target _quadrotor_msgs_generate_messages_check_deps_PolynomialTrajectory
+[  4%] Built target nav_msgs_generate_messages_lisp
+[  4%] Built target _quadrotor_msgs_generate_messages_check_deps_PPROutputData
+[  4%] Built target nav_msgs_generate_messages_cpp
+[  4%] Built target nav_msgs_generate_messages_eus
+[  4%] Built target roscpp_generate_messages_cpp
+[  4%] Built target rosgraph_msgs_generate_messages_py
+[  4%] Built target roscpp_generate_messages_lisp
+[  4%] Built target actionlib_msgs_generate_messages_nodejs
+[  4%] Built target rosgraph_msgs_generate_messages_eus
+[  4%] Built target rosgraph_msgs_generate_messages_cpp
+[  4%] Built target roscpp_generate_messages_nodejs
+[  4%] Built target roscpp_generate_messages_py
+[  4%] Built target roscpp_generate_messages_eus
+[  4%] Built target actionlib_msgs_generate_messages_eus
+[  4%] Built target rosgraph_msgs_generate_messages_lisp
+[  4%] Built target nav_msgs_generate_messages_nodejs
+[  4%] Built target actionlib_msgs_generate_messages_cpp
+[  4%] Built target actionlib_msgs_generate_messages_lisp
+[  4%] Built target rosgraph_msgs_generate_messages_nodejs
+[  4%] Built target actionlib_msgs_generate_messages_py
+[ 12%] Built target quadrotor_msgs_generate_messages_nodejs
+[ 12%] Built target sensor_msgs_generate_messages_cpp
+[ 12%] Built target sensor_msgs_generate_messages_eus
+[ 12%] Built target sensor_msgs_generate_messages_lisp
+[ 12%] Built target sensor_msgs_generate_messages_nodejs
+[ 12%] Built target sensor_msgs_generate_messages_py
+[ 12%] Built target visualization_msgs_generate_messages_py
+[ 12%] Built target visualization_msgs_generate_messages_nodejs
+[ 12%] Built target visualization_msgs_generate_messages_eus
+[ 12%] Built target visualization_msgs_generate_messages_lisp
+[ 12%] Built target visualization_msgs_generate_messages_cpp
+[ 14%] Built target cv_bridge
+[ 14%] Built target tf2_msgs_generate_messages_py
+[ 14%] Built target tf2_msgs_generate_messages_nodejs
+[ 14%] Built target actionlib_generate_messages_lisp
+[ 14%] Built target actionlib_generate_messages_eus
+[ 14%] Built target tf2_msgs_generate_messages_lisp
+[ 14%] Built target actionlib_generate_messages_py
+[ 14%] Built target actionlib_generate_messages_nodejs
+[ 14%] Built target tf2_msgs_generate_messages_cpp
+[ 14%] Built target actionlib_generate_messages_cpp
+[ 14%] Built target tf2_msgs_generate_messages_eus
+[ 14%] Built target std_srvs_generate_messages_lisp
+[ 14%] Built target std_srvs_generate_messages_cpp
+[ 14%] Built target std_srvs_generate_messages_eus
+[ 14%] Built target std_srvs_generate_messages_py
+[ 14%] Built target std_srvs_generate_messages_nodejs
+[ 14%] Built target geographic_msgs_generate_messages_lisp
+[ 14%] Built target uuid_msgs_generate_messages_lisp
+[ 14%] Built target geographic_msgs_generate_messages_py
+[ 14%] Built target geographic_msgs_generate_messages_eus
+[ 14%] Built target geographic_msgs_generate_messages_nodejs
+[ 14%] Built target mavros_msgs_generate_messages_nodejs
+[ 14%] Built target uuid_msgs_generate_messages_nodejs
+[ 14%] Built target mavros_msgs_generate_messages_lisp
+[ 14%] Built target uuid_msgs_generate_messages_cpp
+[ 14%] Built target mavros_msgs_generate_messages_eus
+[ 14%] Built target mavros_msgs_generate_messages_cpp
+[ 14%] Built target geographic_msgs_generate_messages_cpp
+[ 14%] Built target uuid_msgs_generate_messages_py
+[ 14%] Built target mavros_msgs_generate_messages_py
+[ 16%] Built target common_msgs_generate_messages_py
+[ 38%] Built target behaviortree_cpp
+[ 42%] Built target common_msgs_generate_messages_nodejs
+[ 46%] Built target common_msgs_generate_messages_lisp
+[ 51%] Built target common_msgs_generate_messages_cpp
+[ 57%] Built target quadrotor_msgs_generate_messages_py
+[ 63%] Built target quadrotor_msgs_generate_messages_lisp
+[ 69%] Built target quadrotor_msgs_generate_messages_cpp
+[ 77%] Built target quadrotor_msgs_generate_messages_eus
+[ 79%] Built target decode_msgs
+[ 81%] Built target encode_msgs
+[ 81%] Built target mavros_cnt
+[ 83%] Built target aruco_detect_node
+[ 85%] Built target drone_base
+[ 89%] Built target bt_ros
+[ 89%] Built target target_det_base
+[ 91%] Built target target_tracker
+[ 91%] Built target multimodal_target_tracker
+[ 91%] Built target takeoff
+Scanning dependencies of target visual_servo
+[ 93%] Building CXX object mission_pkg/CMakeFiles/visual_servo.dir/src/nodes/action/visual_servo.cpp.o
+[ 93%] Built target goto
+[ 95%] Built target wait_for_stable_position
+[ 97%] Built target matchctrlchoose
+[ 97%] Built target wait_for_horizontal_position
+[100%] Built target land
+[100%] Built target planning_control
+[100%] Built target aruco_detector
+[100%] Built target target_locator
+[100%] Linking CXX shared library /home/ubuntu/catkin_ws/devel/lib/visual_servo.so
+[100%] Built target visual_servo
+Base path: /home/ubuntu/catkin_ws
+Source space: /home/ubuntu/catkin_ws/src
+Build space: /home/ubuntu/catkin_ws/build
+Devel space: /home/ubuntu/catkin_ws/devel
+Install space: /home/ubuntu/catkin_ws/install
+####
+#### Running command: "make cmake_check_build_system" in "/home/ubuntu/catkin_ws/build"
+####
+####
+#### Running command: "make -j2" in "/home/ubuntu/catkin_ws/build/mission_pkg"
+####
