@@ -1,3 +1,5 @@
+> **暂停：先完成 `docs/astra-handoff-fm9g-visualservo-tolerance.md`，再回到这份文档。** 阶段 C 唯一一局实飞显示候选在当前对齐容差下几乎不可能进入 APPROACH；在确认容差调整方向之前跑这里的 9+9 没有意义。
+
 # Astra 交接：阶段 D 固定版本回归（5.5 → 5.7）
 
 开始前请读：`v4_innovation_timing/multimodal_5_6_stage_c_review/REPORT.md`（我对你阶段 C 单局的复核）、3.3 `protocol_v2.md`（分支 `origin/codex/multimodal-32-corrected`）、`docs/astra-handoff-fm9g-presence-sweep.md` 第 5 节。
