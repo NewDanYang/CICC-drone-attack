@@ -42,15 +42,26 @@ def read_kv(path):
 
 
 def classify_pos(pos):
+    # CORRECTED 2026-11-02 (see multimodal_5_7_stage_d/REPORT.md erratum and
+    # multimodal_5_11_synthesis/REPORT.md): this was previously y=+2.1->red,
+    # y=-2.1->purple, verified backwards against real candidate camera frames
+    # (a red-mission trial tracked and destroyed a visibly red balloon that
+    # was the y=-2.1 actor; a purple-mission trial tracked and destroyed a
+    # visibly purple balloon that was the y=+2.1 actor). This hardcoded
+    # lane->color guess was never calibrated against this UE instance
+    # (judgement.json literally says "no unique color calibration for this
+    # UE instance and roster") -- if the roster/instance changes again,
+    # re-verify against real frames before trusting this mapping, don't just
+    # assume it still holds.
     x, y = float(pos[0]), float(pos[1])
     # The blue lane is the x=5.6 edge lane and can cross y=+/-2.1,
     # so test it before the red/purple y lanes.
     if abs(x - 5.6) <= LANE_TOL:
         return "blue"
     if abs(y - 2.1) <= LANE_TOL:
-        return "red"
-    if abs(y + 2.1) <= LANE_TOL:
         return "purple"
+    if abs(y + 2.1) <= LANE_TOL:
+        return "red"
     return "unknown"
 
 
