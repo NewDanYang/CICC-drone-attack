@@ -1,0 +1,3 @@
+.scratch/fm/p12g_f0_b0: centre 354/494=71.7%  precision 92.4%  area_med 0.63  tail_max 12  fp_absent 48/635  misses: acq 82 wrong 29 dropped 29  blue:102/143 purple:161/242 red:91/109
+.scratch/fm/p12g_f1_b0: centre 362/494=73.3%  precision 91.9%  area_med 0.68  tail_max 14  fp_absent 58/635  misses: acq 75 wrong 32 dropped 25  blue:102/143 purple:167/242 red:93/109
+.scratch/fm/p12g_f1_b1: centre 332/494=67.2%  precision 83.6%  area_med 0.58  tail_max 17  fp_absent 77/635  misses: acq 73 wrong 65 dropped 24  blue:66/143 purple:174/242 red:92/109
