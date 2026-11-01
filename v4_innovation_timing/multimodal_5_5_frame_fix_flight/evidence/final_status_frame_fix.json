@@ -1,0 +1,14 @@
+{
+  "mode": "candidate",
+  "runtime_before_md5": "d1fde2bfa8da630393d5009c0e55f49f",
+  "runtime_after_md5": "5026dcf152790e962b11ebee577fb792",
+  "stage_b_runtime": "/home/ubuntu/multimodal_v2/p12e_stage_b/v2/runtime.py",
+  "loaded_runtime": "/home/ubuntu/model/fm9g_perception/runtime.py",
+  "mission_md5": "de03cd1a5687f7bc0664ea52f3cd095f",
+  "bt_md5": "9a1e8d2a5913968b1c2300cad1dc02f7",
+  "plugin_md5": "2a2e1b7fc0b2ca37291ecbef97ade06f",
+  "binary_md5": "1f1592dc8d33613bf4b772a4eb2f6dfb",
+  "backup": "/home/ubuntu/multimodal_v2/p12e_backup_20261031/frame_fix_pre_runtime_20261101",
+  "catkin_make": "not_required_python_only",
+  "deployed_at": "2026-11-01 Asia/Shanghai"
+}

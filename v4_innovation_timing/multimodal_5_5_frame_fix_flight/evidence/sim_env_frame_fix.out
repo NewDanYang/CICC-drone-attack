@@ -1,0 +1,485 @@
+ros
+100139
+---------------
+killed 100139
+---------------
+python3: no process found
+[0;36m============================================[0m
+[0;36m  仿真环境启动脚本 (Visual Servo Balloon)  [0m
+[0;36m============================================[0m
+[1;33m工作空间: /home/ubuntu/catkin_ws[0m
+[0;32m[OK] Sourced devel/setup.bash[0m
+[1;33m[WARN] RflySim SDK not found at /mnt/c/PX4PSP/RflySimAPIs/RflySimSDK[0m
+
+[0;32m[0/9] 确保 roscore 已启动 ...[0m
+[1;33m      rosmaster 未运行，正在启动 roscore ...[0m
+[0;32m      roscore PID: 100178[0m
+[0;32m      roscore 已就绪[0m
+
+[0;32m[1/11] 启动大模型 LLM [独立 xterm] ...模型加载需要10-30秒[0m
+[0;32m      LLM PID: 100486[0m
+[1;33m      等待大模型加载 (10s)...[0m
+
+[0;32m[2/11] 启动 YOLO 目标检测 + 气球颜色分类 [独立 xterm] ...[0m
+[0;32m      PID: 101215[0m
+
+[0;32m[3/11] 启动 MAVROS ...[0m
+[1;33m      FCU URL: udp://:20101@[0m
+
+[0;32m[4/11] 启动传感器 (main.py) ...[0m
+[1;33m      VisionCapture + 传感器数据发布[0m
+[0;32m      PID: 101216[0m
+[1;33m      等待初始化 (5s)...[0m
+
+[0;32m[5/11] 加载场景地图 (AgentContestMap.py) ...[0m
+[0;32m      PID: 101877[0m
+[0m[INFO] [1793505655.134665804]: FCU URL: udp://:20101@127.0.0.1:20100[0m
+[0m[INFO] [1793505655.137440766]: udp0: Bind address: 0.0.0.0:20101[0m
+[0m[INFO] [1793505655.137483682]: udp0: Remote address: 127.0.0.1:20100[0m
+[0m[INFO] [1793505655.137531219]: GCS bridge disabled[0m
+[0m[INFO] [1793505655.145606017]: Plugin 3dr_radio loaded[0m
+[0m[INFO] [1793505655.146292523]: Plugin 3dr_radio initialized[0m
+[0m[INFO] [1793505655.146337802]: Plugin actuator_control loaded[0m
+[0m[INFO] [1793505655.147549840]: Plugin actuator_control initialized[0m
+[0m[INFO] [1793505655.151056861]: Plugin adsb loaded[0m
+[0m[INFO] [1793505655.152441605]: Plugin adsb initialized[0m
+[0m[INFO] [1793505655.152528119]: Plugin altitude loaded[0m
+[0m[INFO] [1793505655.152962263]: Plugin altitude initialized[0m
+[0m[INFO] [1793505655.153022264]: Plugin cam_imu_sync loaded[0m
+[0m[INFO] [1793505655.153288516]: Plugin cam_imu_sync initialized[0m
+[0m[INFO] [1793505655.153362743]: Plugin camera loaded[0m
+[0m[INFO] [1793505655.153616077]: Plugin camera initialized[0m
+[0m[INFO] [1793505655.153679446]: Plugin cellular_status loaded[0m
+[0m[INFO] [1793505655.154655839]: Plugin cellular_status initialized[0m
+[0m[INFO] [1793505655.154728106]: Plugin command loaded[0m
+[0m[INFO] [1793505655.158008967]: Plugin command initialized[0m
+[0m[INFO] [1793505655.158074399]: Plugin companion_process_status loaded[0m
+[0m[INFO] [1793505655.159030739]: Plugin companion_process_status initialized[0m
+[0m[INFO] [1793505655.159072498]: Plugin debug_value loaded[0m
+[0m[INFO] [1793505655.161160020]: Plugin debug_value initialized[0m
+[0m[INFO] [1793505655.161174198]: Plugin distance_sensor blacklisted[0m
+[0m[INFO] [1793505655.161244502]: Plugin esc_status loaded[0m
+[0m[INFO] [1793505655.161753156]: Plugin esc_status initialized[0m
+[0m[INFO] [1793505655.161798303]: Plugin esc_telemetry loaded[0m
+[0m[INFO] [1793505655.162037189]: Plugin esc_telemetry initialized[0m
+[0m[INFO] [1793505655.162094349]: Plugin fake_gps loaded[0m
+[0m[INFO] [1793505655.168904791]: Plugin fake_gps initialized[0m
+[0m[INFO] [1793505655.169026140]: Plugin ftp loaded[0m
+[0m[INFO] [1793505655.174124008]: Plugin ftp initialized[0m
+[0m[INFO] [1793505655.174223063]: Plugin geofence loaded[0m
+[0m[INFO] [1793505655.175600359]: Plugin geofence initialized[0m
+[0m[INFO] [1793505655.175674017]: Plugin global_position loaded[0m
+[0m[INFO] [1793505655.184396647]: Plugin global_position initialized[0m
+[0m[INFO] [1793505655.184471669]: Plugin gps_input loaded[0m
+[0m[INFO] [1793505655.185952490]: Plugin gps_input initialized[0m
+[0m[INFO] [1793505655.186008388]: Plugin gps_rtk loaded[0m
+[0m[INFO] [1793505655.187473003]: Plugin gps_rtk initialized[0m
+[0m[INFO] [1793505655.187516502]: Plugin gps_status loaded[0m
+[0m[INFO] [1793505655.188395239]: Plugin gps_status initialized[0m
+[0m[INFO] [1793505655.188442173]: Plugin guided_target loaded[0m
+[0m[INFO] [1793505655.190229700]: Plugin guided_target initialized[0m
+[0m[INFO] [1793505655.190278573]: Plugin hil loaded[0m
+[0m[INFO] [1793505655.195788030]: Plugin hil initialized[0m
+[0m[INFO] [1793505655.195869379]: Plugin home_position loaded[0m
+[0m[INFO] [1793505655.197512690]: Plugin home_position initialized[0m
+[0m[INFO] [1793505655.197587927]: Plugin imu loaded[0m
+[0m[INFO] [1793505655.200676774]: Plugin imu initialized[0m
+[0m[INFO] [1793505655.200738401]: Plugin landing_target loaded[0m
+[0m[INFO] [1793505655.206249528]: Plugin landing_target initialized[0m
+[0m[INFO] [1793505655.206317400]: Plugin local_position loaded[0m
+[0m[INFO] [1793505655.209085790]: Plugin local_position initialized[0m
+[0m[INFO] [1793505655.209131582]: Plugin log_transfer loaded[0m
+[0m[INFO] [1793505655.210432549]: Plugin log_transfer initialized[0m
+[0m[INFO] [1793505655.210481817]: Plugin mag_calibration_status loaded[0m
+[0m[INFO] [1793505655.210924168]: Plugin mag_calibration_status initialized[0m
+[0m[INFO] [1793505655.210977559]: Plugin manual_control loaded[0m
+[0m[INFO] [1793505655.212101028]: Plug[33m[WARN] [1793505655.216066596]: Could not retrive negate_measured_roll parameter value, using default (0)[0m
+[33m[WARN] [1793505655.216243087]: Could not retrive negate_measured_pitch parameter value, using default (0)[0m
+[33m[WARN] [1793505655.216397477]: Could not retrive negate_measured_yaw parameter value, using default (0)[0m
+[33m[WARN] [1793505655.216953891]: Could not retrive debounce_s parameter value, using default (4.000000)[0m
+[33m[WARN] [1793505655.217104806]: Could not retrive err_threshold_deg parameter value, using default (10.000000)[0m
+in manual_control initialized[0m
+[0m[INFO] [1793505655.212182492]: Plugin mocap_pose_estimate loaded[0m
+[0m[INFO] [1793505655.213836000]: Plugin mocap_pose_estimate initialized[0m
+[0m[INFO] [1793505655.213892037]: Plugin mount_control loaded[0m
+[0m[INFO] [1793505655.217133581]: Plugin mount_control initialized[0m
+[0m[INFO] [1793505655.217193847]: Plugin nav_controller_output loaded[0m
+[0m[INFO] [1793505655.217564289]: Plugin nav_controller_output initialized[0m
+[0m[INFO] [1793505655.217613502]: Plugin obstacle_distance loaded[0m
+[0m[INFO] [1793505655.218692512]: Plugin obstacle_distance initialized[0m
+[0m[INFO] [1793505655.218739390]: Plugin odom loaded[0m
+[0m[INFO] [1793505655.220693290]: Plugin odom initialized[0m
+[0m[INFO] [1793505655.220747412]: Plugin onboard_computer_status loaded[0m
+[0m[INFO] [1793505655.221669047]: Plugin onboard_computer_status initialized[0m
+[0m[INFO] [1793505655.221722501]: Plugin param loaded[0m
+[0m[INFO] [1793505655.222799218]: Plugin param initialized[0m
+[0m[INFO] [1793505655.222843502]: Plugin play_tune loaded[0m
+[0m[INFO] [1793505655.223721291]: Plugin play_tune initialized[0m
+[0m[INFO] [1793505655.223764248]: Plugin px4flow loaded[0m
+[0m[INFO] [1793505655.226452920]: Plugin px4flow initialized[0m
+[0m[INFO] [1793505655.226518667]: Plugin rallypoint loaded[0m
+[0m[INFO] [1793505655.227665044]: Plugin rallypoint initialized[0m
+[0m[INFO] [1793505655.227678069]: Plugin rangefinder blacklisted[0m
+[0m[INFO] [1793505655.227741452]: Plugin rc_io loaded[0m
+[0m[INFO] [1793505655.229102878]: Plugin rc_io initialized[0m
+[0m[INFO] [1793505655.229115915]: Plugin safety_area blacklisted[0m
+[0m[INFO] [1793505655.229173840]: Plugin setpoint_accel loaded[0m
+[0m[INFO] [1793505655.230418344]: Plugin setpoint_accel initialized[0m
+[0m[INFO] [1793505655.230490660]: Plugin setpoint_attitude loaded[0m
+[0m[INFO] [1793505655.234048496]: Plugin setpoint_attitude initialized[0m
+[0m[INFO] [1793505655.234109722]: Plugin setpoint_position loaded[0m
+[0m[INFO] [1793505655.240681699]: Plugin setpoint_position initialized[0m
+[0m[INFO] [1793505655.240795930]: Plugin setpoint_raw loaded[0m
+[0m[INFO] [1793505655.244475520]: Plugin setpoint_raw initialized[0m
+[0m[INFO] [1793505655.244565195]: Plugin setpoint_trajectory loaded[0m
+[0m[INFO] [1793505655.246728583]: Plugin setpoint_trajectory initialized[0m
+[0m[INFO] [1793505655.246820756]: Plugin setpoint_velocity loaded[0m
+[0m[INFO] [1793505655.249938913]: Plugin setpoint_velocity initialized[0m
+[0m[INFO] [1793505655.250073916]: Plugin sys_status loaded[0m
+[0m[INFO] [1793505655.254989817]: Plugin sys_status initialized[0m
+[0m[INFO] [1793505655.255073127]: Plugin sys_time loaded[0m
+[0m[INFO] [1793505655.257241699]: TM: Timesync mode: MAVLINK[0m
+[0m[INFO] [1793505655.257408044]: TM: Not publishing sim time[0m
+[0m[INFO] [1793505655.257902209]: Plugin sys_time initialized[0m
+[0m[INFO] [1793505655.257964707]: Plugin terrain loaded[0m
+[0m[INFO] [1793505655.258192227]: Plugin terrain initialized[0m
+[0m[INFO] [1793505655.258236805]: Plugin trajectory loaded[0m
+[0m[INFO] [1793505655.260316090]: Plugin trajectory initialized[0m
+[0m[INFO] [1793505655.260403854]: Plugin tunnel loaded[0m
+[0m[INFO] [1793505655.261626343]: Plugin tunnel initialized[0m
+[0m[INFO] [1793505655.261677146]: Plugin vfr_hud loaded[0m
+[0m[INFO] [1793505655.261934164]: Plugin vfr_hud initialized[0m
+[0m[INFO] [1793505655.261945134]: Plugin vibration blacklisted[0m
+[0m[INFO] [1793505655.261990485]: Plugin vision_pose_estimate loaded[0m
+[0m[INFO] [1793505655.264850958]: Plugin vision_pose_estimate initialized[0m
+[0m[INFO] [1793505655.264894135]: Plugin vision_speed_estimate loaded[0m
+[0m[INFO] [1793505655.266348622]: Plugin vision_speed_estimate initialized[0m
+[0m[INFO] [1793505655.266403081]: Plugin waypoint loaded[0m
+[0m[INFO] [1793505655.268233154]: Plugin waypoint initialized[0m
+[0m[INFO] [1793505655.268251791]: Plugin wheel_odometry blacklisted[0m
+[0m[INFO] [1793505655.268306693]: Plugin wind_estimation 
+[0;32m[6/11] 启动点云坐标转换 (cloud_transform) ...[0m
+[0;32m      PID: 102323[0m
+
+[0;32m[7/11] 启动 ArUco 识别节点 [独立 xterm] ...[0m
+[0;32m      PID: 102619[0m
+
+[0;32m[8/11] 启动 Ego-Planner [独立 xterm] ...[0m
+[0;32m      PID: 102941[0m
+
+[1;33m等待 YOLO 模型加载完成 ...[0m
+[0;32m[OK] YOLO 模型已加载完成！(0s)[0m
+
+[0;32m[9/11] 启动 LLM 任务节点 [独立 xterm] ...[0m
+[0;32m      PID: 103296[0m
+
+[0;32m[10/11] 启动 Setpoint Monitor [独立 xterm] ...[0m
+[0;32m      Setpoint Monitor PID: 103431[0m
+
+[0;32m[11/11] 启动 ROS 节点资源监控 [独立 xterm] ...[0m
+[0;32m      ROS Node Monitor PID: 103432[0m
+
+[0;36m============================================[0m
+[0;36m  所有节点已启动！[0m
+[0;36m============================================[0m
+
+[1;33m>>> 在其他终端中发送指令 <<<[0m
+
+  [0;32m# 发送指令：[0m
+  # 起飞 + 穿框 + 降落
+  rostopic pub /mission_command std_msgs/String "data: '{"commands":["takeoff","cross_frame","land"]}'" --once
+
+  # 起飞 + 刺红色气球 + 降落
+  rostopic pub /mission_command std_msgs/String "data: '{"commands":["takeoff","hit_balloon:red","land"]}'" --once
+
+  # 中止当前任务
+  rostopic pub /mission_abort std_msgs/String "data: 'abort'" --once
+
+  # 查看执行结果
+  rostopic echo /mission_result
+
+[0;36m============================================[0m
+[1;33m按 Ctrl+C 关闭所有后台进程[0m
+current ros environment noetic
+current ros environment noetic
+No Redis labs
+HostIP is 100.119.179.179
+Start listening CopterSim heartbeat Msg ...
+Got time msg from CopterSim # 1 , running on this PC
+End listening CopterSim heartbeat.
+Got 1 CopterSim on the LAN.
+Request CopterSim Send data.
+True True
+127.0.0.1
+ret:  []
+1
+roslaunch mavros px4.launch tgt_system:=1 fcu_url:="udp://:20101@127.0.0.1:20100"
+使用默认的全局坐标系下的frame_id:map
+Json use relative path mode
+Got 3 vision sensors from json
+Start lisening to timeStmp Msg
+Got time msg from CopterSim # 1 , running on this PC
+Got CopterSim time Data for img
+Got start time for SeqID # 0
+Got start time for SeqID # 1
+Got start time for SeqID # 2
+Start Image Reciver
+Start lisening to IMU Msg
+[WARN] [1793505668.419057]: [CloudTransform] 还未收到 odom 数据，跳过
+
+[0;31m正在关闭所有进程...[0m
+... logging to /tmp/tcei_sim_environment/ros_home/.ros/log/cb780900-d5a8-11f1-9111-26d98f2051b5/roslaunch-gpufree-container-102077.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;/opt/ros/noetic/share/mavros/launch/px4.launch
+[1mstarted roslaunch server http://gpufree-container:41199/[0m
+
+SUMMARY
+========
+
+CLEAR PARAMETERS
+ * /mavros/
+
+PARAMETERS
+ * /mavros/camera/frame_id: base_link
+ * /mavros/cmd/use_comp_id_system_control: False
+ * /mavros/conn/heartbeat_rate: 1.0
+ * /mavros/conn/system_time_rate: 1.0
+ * /mavros/conn/timeout: 10.0
+ * /mavros/conn/timesync_rate: 10.0
+ * /mavros/distance_sensor/hrlv_ez4_pub/field_of_view: 0.0
+ * /mavros/distance_sensor/hrlv_ez4_pub/frame_id: hrlv_ez4_sonar
+ * /mavros/distance_sensor/hrlv_ez4_pub/id: 0
+ * /mavros/distance_sensor/hrlv_ez4_pub/orientation: PITCH_270
+ * /mavros/distance_sensor/hrlv_ez4_pub/send_tf: True
+ * /mavros/distance_sensor/hrlv_ez4_pub/sensor_position/x: 0.0
+ * /mavros/distance_sensor/hrlv_ez4_pub/sensor_position/y: 0.0
+ * /mavros/distance_sensor/hrlv_ez4_pub/sensor_position/z: -0.1
+ * /mavros/distance_sensor/laser_1_sub/id: 3
+ * /mavros/distance_sensor/laser_1_sub/orientation: PITCH_270
+ * /mavros/distance_sensor/laser_1_sub/subscriber: True
+ * /mavros/distance_sensor/lidarlite_pub/field_of_view: 0.0
+ * /mavros/distance_sensor/lidarlite_pub/frame_id: lidarlite_laser
+ * /mavros/distance_sensor/lidarlite_pub/id: 1
+ * /mavros/distance_sensor/lidarlite_pub/orientation: PITCH_270
+ * /mavros/distance_sensor/lidarlite_pub/send_tf: True
+ * /mavros/distance_sensor/lidarlite_pub/sensor_position/x: 0.0
+ * /mavros/distance_sensor/lidarlite_pub/sensor_position/y: 0.0
+ * /mavros/distance_sensor/lidarlite_pub/sensor_position/z: -0.1
+ * /mavros/distance_sensor/sonar_1_sub/horizontal_fov_ratio: 1.0
+ * /mavros/distance_sensor/sonar_1_sub/id: 2
+ * /mavros/distance_sensor/sonar_1_sub/orientation: PITCH_270
+ * /mavros/distance_sensor/sonar_1_sub/subscriber: True
+ * /mavros/distance_sensor/sonar_1_sub/vertical_fov_ratio: 1.0
+ * /mavros/fake_gps/eph: 2.0
+ * /mavros/fake_gps/epv: 2.0
+ * /mavros/fake_gps/fix_type: 3
+ * /mavros/fake_gps/geo_origin/alt: 408.0
+ * /mavros/fake_gps/geo_origin/lat: 47.3667
+ * /mavros/fake_gps/geo_origin/lon: 8.55
+ * /mavros/fake_gps/gps_rate: 5.0
+ * /mavros/fake_gps/mocap_transform: True
+ * /mavros/fake_gps/satellites_visible: 5
+ * /mavros/fake_gps/tf/child_frame_id: fix
+ * /mavros/fake_gps/tf/frame_id: map
+ * /mavros/fake_gps/tf/listen: False
+ * /mavros/fake_gps/tf/rate_limit: 10.0
+ * /mavros/fake_gps/tf/send: False
+ * /mavros/fake_gps/use_mocap: True
+ * /mavros/fake_gps/use_vision: False
+ * /mavros/fcu_protocol: v2.0
+ * /mavros/fcu_url: udp://:20101@127....
+ * /mavros/gcs_url: 
+ * /mavros/global_position/child_frame_id: base_link
+ * /mavros/global_position/frame_id: map
+ * /mavros/global_position/gps_uere: 1.0
+ * /mavros/global_position/rot_covariance: 99999.0
+ * /mavros/global_position/tf/child_frame_id: base_link
+ * /mavros/global_position/tf/frame_id: map
+ * /mavros/global_position/tf/global_frame_id: earth
+ * /mavros/global_position/tf/send: False
+ * /mavros/global_position/use_relative_alt: True
+ * /mavros/image/frame_id: px4flow
+ * /mavros/imu/angular_velocity_stdev: 0.0003490659 // 0...
+ * /mavros/imu/frame_id: base_link
+ * /mavros/imu/linear_acceleration_stdev: 0.0003
+ * /mavros/imu/magnetic_stdev: 0.0
+ * /mavros/imu/orientation_stdev: 1.0
+ * /mavros/landing_target/camera/fov_x: 2.0071286398
+ * /mavros/landing_target/camera/fov_y: 2.0071286398
+ * /mavros/landing_target/image/height: 480
+ * /mavros/landing_target/image/width: 640
+ * /mavros/landing_target/land_target_type: VISION_FIDUCIAL
+ * /mavros/landing_target/listen_lt: False
+ * /mavros/landing_target/mav_frame: LOCAL_NED
+ * /mavros/landing_target/target_size/x: 0.3
+ * /mavros/landing_target/target_size/y: 0.3
+ * /mavros/landing_target/tf/child_frame_id: camera_center
+ * /mavros/landing_target/tf/frame_id: landing_target
+ * /mavros/landing_target/tf/listen: False
+ * /mavros/landing_target/tf/rate_limit: 10.0
+ * /mavros/landing_target/tf/send: True
+ * /mavros/local_position/frame_id: map
+ * /mavros/local_position/tf/child_frame_id: base_link
+ * /mavros/local_position/tf/frame_id: map
+ * /mavros/local_position/tf/send: False
+ * /mavros/local_position/tf/send_fcu: False
+ * /mavros/mission/pull_after_gcs: True
+ * /mavros/mission/use_mission_item_int: True
+ * /mavros/mocap/use_pose: True
+ * /mavros/mocap/use_tf: False
+ * /mavros/mount/debounce_s: 4.0
+ * /mavros/mount/err_threshold_deg: 10.0
+ * /mavros/mount/negate_measured_pitch: False
+ * /mavros/mount/negate_measured_roll: False
+ * /mavros/mount/negate_measured_yaw: False
+ * /mavros/odometry/fcu/map_id_des: map
+ * /mavros/odometry/fcu/odom_child_id_des: base_link
+ * /mavros/odometry/fcu/odom_parent_id_des: odom
+ * /mavros/plugin_blacklist: ['safety_area', '...
+ * /mavros/plugin_whitelist: []
+ * /mavros/px4flow/frame_id: px4flow
+ * /mavros/px4flow/ranger_fov: 0.118682
+ * /mavros/px4flow/ranger_max_range: 5.0
+ * /mavros/px4flow/ranger_min_range: 0.3
+ * /mavros/safety_area/p1/x: 1.0
+ * /mavros/safety_area/p1/y: 1.0
+ * /mavros/safety_area/p1/z: 1.0
+ * /mavros/safety_area/p2/x: -1.0
+ * /mavros/safety_area/p2/y: -1.0
+ * /mavros/safety_area/p2/z: -1.0
+ * /mavros/setpoint_accel/send_force: False
+ * /mavros/setpoint_attitude/reverse_thrust: False
+ * /mavros/setpoint_attitude/tf/child_frame_id: target_attitude
+ * /mavros/setpoint_attitude/tf/frame_id: map
+ * /mavros/setpoint_attitude/tf/listen: False
+ * /mavros/setpoint_attitude/tf/rate_limit: 50.0
+ * /mavros/setpoint_attitude/use_quaternion: False
+ * /mavros/setpoint_position/mav_frame: LOCAL_NED
+ * /mavros/setpoint_position/tf/child_frame_id: target_position
+ * /mavros/setpoint_position/tf/frame_id: map
+ * /mavros/setpoint_position/tf/listen: False
+ * /mavros/setpoint_position/tf/rate_limit: 50.0
+ * /mavros/setpoint_raw/thrust_scaling: 1.0
+ * /mavros/setpoint_velocity/mav_frame: LOCAL_NED
+ * /mavros/startup_px4_usb_quirk: False
+ * /mavros/sys/disable_diag: False
+ * /mavros/sys/min_voltage: 10.0
+ * /mavros/target_component_id: 1
+ * /mavros/target_system_id: 1
+ * /mavros/tdr_radio/low_rssi: 40
+ * /mavros/time/time_ref_source: fcu
+ * /mavros/time/timesync_avg_alpha: 0.6
+ * /mavros/time/timesync_mode: MAVLINK
+ * /mavros/vibration/frame_id: base_link
+ * /mavros/vision_pose/tf/child_frame_id: vision_estimate
+ * /mavros/vision_pose/tf/frame_id: odom
+ * /mavros/vision_pose/tf/listen: False
+ * /mavros/vision_pose/tf/rate_limit: 10.0
+ * /mavros/vision_speed/listen_twist: True
+ * /mavros/vision_speed/twist_cov: True
+ * /mavros/wheel_odometry/child_frame_id: base_link
+ * /mavros/wheel_odometry/count: 2
+ * /mavros/wheel_odometry/frame_id: odom
+ * /mavros/wheel_odometry/send_raw: True
+ * /mavros/wheel_odometry/send_twist: False
+ * /mavros/wheel_odometry/tf/child_frame_id: base_link
+ * /mavros/wheel_odometry/tf/frame_id: odom
+ * /mavros/wheel_odometry/tf/send: False
+ * /mavros/wheel_odometry/use_rpm: False
+ * /mavros/wheel_odometry/vel_error: 0.1
+ * /mavros/wheel_odometry/wheel0/radius: 0.05
+ * /mavros/wheel_odometry/wheel0/x: 0.0
+ * /mavros/wheel_odometry/wheel0/y: -0.15
+ * /mavros/wheel_odometry/wheel1/radius: 0.05
+ * /mavros/wheel_odometry/wheel1/x: 0.0
+ * /mavros/wheel_odometry/wheel1/y: 0.15
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+
+NODES
+  /
+    mavros (mavros/mavros_node)
+
+[1mROS_MASTER_URI=http://localhost:11311[0m
+]2;/opt/ros/noetic/share/mavros/launch/px4.launch http://localhost:11311
+[1mprocess[mavros-1]: started with pid [102302][0m
+[mavros-1] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[0;32m所有进程已关闭。[0m
+... logging to /tmp/tcei_sim_environment/ros_home/.ros/log/cb780900-d5a8-11f1-9111-26d98f2051b5/roslaunch-gpufree-container-100178.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;roscore
+[1mstarted roslaunch server http://gpufree-container:41357/[0m
+ros_comm version 1.17.4
+
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+
+NODES
+
+auto-starting new master
+[1mprocess[master]: started with pid [100258][0m
+[1mROS_MASTER_URI=http://gpufree-container:11311/[0m
+]2;roscore http://gpufree-container:11311/
+[1msetting /run_id to cb780900-d5a8-11f1-9111-26d98f2051b5[0m
+[1mprocess[rosout-1]: started with pid [100471][0m
+started core service [/rosout]
+[rosout-1] killing on exit
+[master] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[INFO] [1793505657.041433]: [CloudTransform] 节点已启动
+[INFO] [1793505657.042251]: [CloudTransform]   odom  : /rflysim/uav1/local/odom
+[INFO] [1793505657.042943]: [CloudTransform]   cloud in : /rflysim/sensor0/Depth_Cloud
+[INFO] [1793505657.043572]: [CloudTransform]   cloud out: /cloud_registered
+[INFO] [1793505657.044311]: [CloudTransform]   sensor offset: [0.200, 0.000, 0.000]
+[INFO] [1793505657.044961]: [CloudTransform]   sensor angles: [0.0, 0.0, 0.0] deg
+[INFO] [1793505657.045679]: [CloudTransform]   cloud_in_sensor_frame: True
+... logging to /tmp/tcei_sim_environment/ros_home/.ros/log/cb780900-d5a8-11f1-9111-26d98f2051b5/roslaunch-gpufree-container-102323.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;/home/ubuntu/catkin_ws/src/sensor_pkg/launch/cloud_transform.launch
+[1mstarted roslaunch server http://gpufree-container:45053/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /cloud_transform_node/cloud_in: /rflysim/sensor0/...
+ * /cloud_transform_node/cloud_in_sensor_frame: True
+ * /cloud_transform_node/cloud_out: /cloud_registered
+ * /cloud_transform_node/frame_id: world
+ * /cloud_transform_node/odom_topic: /rflysim/uav1/loc...
+ * /cloud_transform_node/sensor_ang_pitch: 0.0
+ * /cloud_transform_node/sensor_ang_roll: 0.0
+ * /cloud_transform_node/sensor_ang_yaw: 0.0
+ * /cloud_transform_node/sensor_pos_x: 0.2
+ * /cloud_transform_node/sensor_pos_y: 0.0
+ * /cloud_transform_node/sensor_pos_z: 0.0
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+
+NODES
+  /
+    cloud_transform_node (sensor_pkg/cloud_transform_node.py)
+
+[1mROS_MASTER_URI=http://localhost:11311[0m
+]2;/home/ubuntu/catkin_ws/src/sensor_pkg/launch/cloud_transform.launch http://localhost:11311
+[1mprocess[cloud_transform_node-1]: started with pid [102404][0m
+[cloud_transform_node-1] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m

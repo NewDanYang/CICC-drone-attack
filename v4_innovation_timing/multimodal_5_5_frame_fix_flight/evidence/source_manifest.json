@@ -1,0 +1,11 @@
+{
+  "remote_isolated_root": "/home/ubuntu/multimodal_v2/frame_consistent_20261101",
+  "candidate_runtime": "/home/ubuntu/multimodal_v2/p12e_stage_b/v2/runtime.py",
+  "package_md5": {
+    "runtime": "5026dcf152790e962b11ebee577fb792",
+    "presence": "f8574a4a1b64d7551f95944b9f2e792b",
+    "tracking": "596009abe3dc4e6bea0c07e372ba239e",
+    "validator": "afa58a1cdb2b431a43148dd2c6178549",
+    "runner": "14b81427765f121d9592dcc5c1d93058"
+  }
+}

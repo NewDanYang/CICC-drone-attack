@@ -1,0 +1,27 @@
+diff --git a/v4_innovation_timing/multimodal_5_5_frame_fix_flight/evidence/runtime_before.py b/v4_innovation_timing/multimodal_5_5_frame_fix_flight/v2/runtime.py
+index cf47527..c4ded74 100644
+--- a/v4_innovation_timing/multimodal_5_5_frame_fix_flight/evidence/runtime_before.py
++++ b/v4_innovation_timing/multimodal_5_5_frame_fix_flight/v2/runtime.py
+@@ -189,12 +189,22 @@ class PerceptionBridge:
+                 # acquire while the tracker thread is still initializing.
+                 if self.pending is not None:
+                     continue
+                 frame=self.frames[-1]
+                 epoch,session,color=self.epoch,self.session,self.color
+                 current=self.model_track.copy() if self.model_track else None
++                if current:
++                    # Sweep the exact frame the tracked box belongs to.  Using the
++                    # newest frame with a box from an older frame misplaces the
++                    # sweep window whenever the tracking thread lags by a frame.
++                    matched=next((f for f in reversed(self.frames)
++                                  if f.seq==current["seq"]),None)
++                    if matched is None:
++                        current=None
++                    else:
++                        frame=matched
+                 if frame.seq==self.last_inference_seq:
+                     continue
+                 self.last_inference_seq=frame.seq
+             decision=uuid.uuid4().hex[:12]
+             image=PILImage.fromarray(cv2.cvtColor(frame.bgr,cv2.COLOR_BGR2RGB))
+             image_path=self.output/'images'/(decision+'.png')
