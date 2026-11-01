@@ -1,0 +1,20 @@
+[1/2] starting SITL: /home/ubuntu/PX4PSP/SITLRun.sh
+SITL wrapper pid=214492 log=/tmp/tcei_sim_environment/sitl.out
+waiting 20s before starting sim_env_start.sh
+[OK] SITL startup delay complete
+checking RflySim3D
+RflySim3D is absent; starting it as ubuntu on DISPLAY=:20
+[OK] RflySim3D is running
+[2/2] starting simulation environment: /home/ubuntu/catkin_ws/sim_env_start.sh
+sim_env_start.sh wrapper pid=216481 log=/tmp/tcei_sim_environment/sim_env.out
+waiting for ROS environment and /rflysim/uav1/local/odom readiness (timeout 240s)
+./start_sim_environment.sh: line 251: 216484 Killed                  rostopic list > /dev/null 2>&1
+[OK] ROS graph and RflySim odom publisher are ready
+checking MAVROS node
+[OK] MAVROS node already exists
+waiting for MAVROS node (timeout 60s)
+waiting for MAVROS connected=true (timeout 60s)
+[OK] MAVROS connected
+environment_started=1
+state_dir=/tmp/tcei_sim_environment
+Run one trial at a time with: run_formal_trial.sh <red|purple|blue>
