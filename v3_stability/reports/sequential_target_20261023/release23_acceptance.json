@@ -1,0 +1,55 @@
+{
+  "qualification_date_utc": "2026-11-01",
+  "scope": "Red-balloon sequential-command indoor simulator release",
+  "technical_simulation_qualification_passed": true,
+  "full_competition_acceptance_passed": false,
+  "review_handoff_acceptance_passed": true,
+  "human_entered_rounds_completed": 2,
+  "agent_operated_fresh_scene_rounds_completed": 2,
+  "round_operator_policy": "Agent-entered interactive rounds accepted for this 2.3 colleague review handoff; not a human competition demonstration.",
+  "official_score_claimed": false,
+  "executor_sha256": "515bac2b2bb8f10f54b255f07fce1d27a8eef345dabbfbce6ff3db7877186316",
+  "visual_servo_plugin_sha256": "7bfcbcbec8758023efc2ea48924d6dd04306cf05b2785a96583dd0038882f0d1",
+  "manifest_checks_local_and_remote_passed": true,
+  "target_build_exit": 0,
+  "plugin_preflight_passed": true,
+  "offline_checks": {"passed": 156, "failed": 0, "skipped": 0},
+  "isolated_ros_fault_cases": {"passed": 14, "failed": 0, "evidence": "release23_mock_summary.json"},
+  "rounds": [
+    {
+      "id": "release23",
+      "stage_successes": 6,
+      "balloon_command_s": 31.574,
+      "balloon_runtime_reason": "ATTEMPTED_UNVERIFIED",
+      "simulator_burst_visually_confirmed": true,
+      "completion_path": "close loss with fixed-position reacquisition hold",
+      "hold_s": 0.607945,
+      "normal_landing_and_disarm_observed": true,
+      "client_first_accept_to_final_success_s": 254.635,
+      "video_duration_s": 294.1,
+      "max_recorded_setpoint_gap_s": 0.027125120162963867,
+      "evidence": ["release23_model.log", "release23_mission.log", "release23_video.mp4", "release23.bag", "release23_contact_detail.png", "release23_telemetry_summary.json"]
+    },
+    {
+      "id": "release23b",
+      "stage_successes": 6,
+      "balloon_command_s": 24.653,
+      "balloon_runtime_reason": "ATTEMPTED_UNVERIFIED",
+      "simulator_burst_visually_confirmed": true,
+      "completion_path": "sprint loss abort and hold to original sprint deadline",
+      "sprint_state_s": 1.205250,
+      "normal_landing_and_disarm_observed": true,
+      "client_first_accept_to_final_success_s": 228.581,
+      "video_duration_s": 268.7,
+      "max_recorded_setpoint_gap_s": 0.026209354400634766,
+      "evidence": ["release23b_model.log", "release23b_mission.log", "release23b_video.mp4", "release23b.bag", "release23b_contact_detail.png", "release23b_telemetry_summary.json"]
+    }
+  ],
+  "remaining_gates": [
+    "Exact official instruction wording acceptance against the real model",
+    "Purple/blue and broader reliability qualification before making those claims",
+    "Human competition demonstration if required by the organizers"
+  ],
+  "known_language_limit": "反向穿过方框 rejected safely; 逆序穿越方框 accepted",
+  "git_publish_performed": false
+}

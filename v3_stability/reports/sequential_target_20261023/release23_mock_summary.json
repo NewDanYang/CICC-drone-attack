@@ -1,0 +1,62 @@
+{
+  "scope": "isolated mocked ROS; no PX4/MAVROS or flight",
+  "results": [
+    {
+      "case": "protocol",
+      "passed": true
+    },
+    {
+      "case": "takeoff_success",
+      "passed": true
+    },
+    {
+      "case": "stale_odom",
+      "passed": true
+    },
+    {
+      "case": "invalid_odom",
+      "passed": true
+    },
+    {
+      "case": "timeout",
+      "passed": true
+    },
+    {
+      "case": "normal_land",
+      "passed": true
+    },
+    {
+      "case": "emergency_land",
+      "passed": true
+    },
+    {
+      "case": "mode_denied",
+      "passed": true
+    },
+    {
+      "case": "mode_unenacted",
+      "passed": true
+    },
+    {
+      "case": "stale_state",
+      "passed": true
+    },
+    {
+      "case": "land_abort",
+      "passed": true
+    },
+    {
+      "case": "emergency_stale_odom",
+      "passed": true
+    },
+    {
+      "case": "state_1hz",
+      "passed": true
+    },
+    {
+      "case": "state_source_stale",
+      "passed": true
+    }
+  ],
+  "executor_sha256": "515bac2b2bb8f10f54b255f07fce1d27a8eef345dabbfbce6ff3db7877186316"
+}
