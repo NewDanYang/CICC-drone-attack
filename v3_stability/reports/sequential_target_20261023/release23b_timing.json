@@ -1,0 +1,219 @@
+{
+  "schema_version": 1,
+  "timing_source": "controller LLMSequence BT timestamps (seconds, millisecond precision)",
+  "model_timestamps_available": false,
+  "model_statuses_correlated": true,
+  "model_validation_retry_count": 0,
+  "model_validation_retries": [],
+  "model_requests": [
+    {
+      "command": "takeoff",
+      "request_id": "f994ec14ae5d4e59b72809c888b4c791",
+      "epoch": "704610303c163b6aba2e914077b0cbfa",
+      "accepted": true,
+      "status": "SUCCESS",
+      "reason": "",
+      "line": 28
+    },
+    {
+      "command": "cross_frame",
+      "request_id": "c74401fffcc148b3b3c7b2aff671744e",
+      "epoch": "704610303c163b6aba2e914077b0cbfa",
+      "accepted": true,
+      "status": "SUCCESS",
+      "reason": "",
+      "line": 45
+    },
+    {
+      "command": "detect_aruco",
+      "request_id": "2fafc62bf33a48d7aaef87b87eb4bcb6",
+      "epoch": "704610303c163b6aba2e914077b0cbfa",
+      "accepted": true,
+      "status": "SUCCESS",
+      "reason": "",
+      "line": 62
+    },
+    {
+      "command": "return_cross_frame",
+      "request_id": "19d201c85f2645dd99d602d79a2c0711",
+      "epoch": "704610303c163b6aba2e914077b0cbfa",
+      "accepted": true,
+      "status": "SUCCESS",
+      "reason": "",
+      "line": 79
+    },
+    {
+      "command": "hit_balloon:red",
+      "request_id": "3cb5db6464f64453a3d938a9b99027bb",
+      "epoch": "704610303c163b6aba2e914077b0cbfa",
+      "accepted": true,
+      "status": "SUCCESS",
+      "reason": "ATTEMPTED_UNVERIFIED",
+      "line": 96
+    },
+    {
+      "command": "land",
+      "request_id": "e77a375445094b1eb11cfe9ca0edd546",
+      "epoch": "704610303c163b6aba2e914077b0cbfa",
+      "accepted": true,
+      "status": "SUCCESS",
+      "reason": "",
+      "line": 113
+    }
+  ],
+  "stages": [
+    {
+      "start_timestamp": "1793518864.932",
+      "terminal_timestamp": "1793518882.901",
+      "start_line": 111,
+      "terminal_line": 124,
+      "segment": 2,
+      "epoch": "704610303c163b6aba2e914077b0cbfa",
+      "bt_outcome": "SUCCESS",
+      "command": "takeoff",
+      "execution_s": 17.969,
+      "model_outcome": "SUCCESS",
+      "outcome": "SUCCESS",
+      "model_reason": "",
+      "request_id": "f994ec14ae5d4e59b72809c888b4c791"
+    },
+    {
+      "start_timestamp": "1793518905.552",
+      "terminal_timestamp": "1793518928.530",
+      "start_line": 126,
+      "terminal_line": 164,
+      "segment": 2,
+      "epoch": "704610303c163b6aba2e914077b0cbfa",
+      "bt_outcome": "SUCCESS",
+      "command": "cross_frame",
+      "execution_s": 22.978,
+      "model_outcome": "SUCCESS",
+      "outcome": "SUCCESS",
+      "model_reason": "",
+      "request_id": "c74401fffcc148b3b3c7b2aff671744e"
+    },
+    {
+      "start_timestamp": "1793518954.360",
+      "terminal_timestamp": "1793518959.128",
+      "start_line": 166,
+      "terminal_line": 193,
+      "segment": 2,
+      "epoch": "704610303c163b6aba2e914077b0cbfa",
+      "bt_outcome": "SUCCESS",
+      "command": "detect_aruco",
+      "execution_s": 4.768,
+      "model_outcome": "SUCCESS",
+      "outcome": "SUCCESS",
+      "model_reason": "",
+      "request_id": "2fafc62bf33a48d7aaef87b87eb4bcb6"
+    },
+    {
+      "start_timestamp": "1793518984.672",
+      "terminal_timestamp": "1793519007.418",
+      "start_line": 195,
+      "terminal_line": 230,
+      "segment": 2,
+      "epoch": "704610303c163b6aba2e914077b0cbfa",
+      "bt_outcome": "SUCCESS",
+      "command": "return_cross_frame",
+      "execution_s": 22.746,
+      "model_outcome": "SUCCESS",
+      "outcome": "SUCCESS",
+      "model_reason": "",
+      "request_id": "19d201c85f2645dd99d602d79a2c0711"
+    },
+    {
+      "start_timestamp": "1793519030.620",
+      "terminal_timestamp": "1793519055.255",
+      "start_line": 233,
+      "terminal_line": 280,
+      "segment": 2,
+      "epoch": "704610303c163b6aba2e914077b0cbfa",
+      "bt_outcome": "SUCCESS",
+      "command": "hit_balloon:red",
+      "execution_s": 24.635,
+      "model_outcome": "SUCCESS",
+      "outcome": "ATTEMPTED_UNVERIFIED",
+      "model_reason": "ATTEMPTED_UNVERIFIED",
+      "request_id": "3cb5db6464f64453a3d938a9b99027bb"
+    },
+    {
+      "start_timestamp": "1793519079.444",
+      "terminal_timestamp": "1793519093.502",
+      "start_line": 282,
+      "terminal_line": 295,
+      "segment": 2,
+      "epoch": "704610303c163b6aba2e914077b0cbfa",
+      "bt_outcome": "SUCCESS",
+      "command": "land",
+      "execution_s": 14.058,
+      "model_outcome": "SUCCESS",
+      "outcome": "SUCCESS",
+      "model_reason": "",
+      "request_id": "e77a375445094b1eb11cfe9ca0edd546"
+    }
+  ],
+  "idle_gaps": [
+    {
+      "after": "takeoff",
+      "before": "cross_frame",
+      "idle_s": 22.651,
+      "terminal_line": 124,
+      "next_start_line": 126
+    },
+    {
+      "after": "cross_frame",
+      "before": "detect_aruco",
+      "idle_s": 25.83,
+      "terminal_line": 164,
+      "next_start_line": 166
+    },
+    {
+      "after": "detect_aruco",
+      "before": "return_cross_frame",
+      "idle_s": 25.544,
+      "terminal_line": 193,
+      "next_start_line": 195
+    },
+    {
+      "after": "return_cross_frame",
+      "before": "hit_balloon:red",
+      "idle_s": 23.202,
+      "terminal_line": 230,
+      "next_start_line": 233
+    },
+    {
+      "after": "hit_balloon:red",
+      "before": "land",
+      "idle_s": 24.189,
+      "terminal_line": 280,
+      "next_start_line": 282
+    }
+  ],
+  "summary": {
+    "controller_sequence_complete": true,
+    "observed_execution_s": 107.154,
+    "observed_idle_s": 121.416,
+    "unmeasured_execution_count": 0,
+    "unmeasured_idle_count": 0,
+    "takeoff_start_to_final_land_s": 228.57,
+    "airborne_time_s": null,
+    "airborne_time_reason": "rosbags not installed; bag telemetry not analyzed"
+  },
+  "warnings": [],
+  "limitations": [
+    "Idle includes human confirmation, model generation, validation and transport; those components cannot be separated without timestamps.",
+    "Video duration is not flight time. Balloon BT success is ATTEMPTED_UNVERIFIED, not evidence of a burst.",
+    "Missing starts/terminals and restart or clock-reset boundaries are never interpolated."
+  ],
+  "sources": {
+    "mission_log": "/root/gpufree-data/cicc-2-3-20261023/release23b_nodes/mission.out",
+    "model_log": "/root/gpufree-data/cicc-2-3-20261023/release23b_model.log"
+  },
+  "bag": {
+    "path": "/root/gpufree-data/cicc-2-3-20261023/release23b.bag",
+    "topic": "/mavros/extended_state",
+    "airborne_time_s": null,
+    "reason": "rosbags not installed; bag telemetry not analyzed"
+  }
+}

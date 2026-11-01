@@ -1,0 +1,30 @@
+{
+  "record": "release23b",
+  "topic_counts": {
+    "/mavros/state": 269,
+    "/mission_ready": 270,
+    "/rflysim/uav1/local/odom": 5361,
+    "/objects": 1889,
+    "/mission_request": 6,
+    "/mission_status": 12,
+    "/mavros/setpoint_raw/local": 12584,
+    "/move_base_simple/goal": 3,
+    "/planning/pos_cmd": 20647,
+    "/aruco/detected_id": 1
+  },
+  "first_state": {
+    "t": 1793518848.5484579,
+    "armed": false,
+    "connected": true,
+    "mode": "AUTO.LOITER"
+  },
+  "last_state": {
+    "t": 1793519116.5326378,
+    "armed": false,
+    "connected": true,
+    "mode": "AUTO.LAND"
+  },
+  "armed_seen": true,
+  "disarm_after_arming": true,
+  "max_recorded_setpoint_gap_s": 0.026209354400634766
+}

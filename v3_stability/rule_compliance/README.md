@@ -1,5 +1,140 @@
 # 规则合规修改（2026-10-13，仿真初赛）
 
+## Current status — red sequential-command simulator release qualified; human acceptance pending
+
+On 2026-11-01, the frozen release manifest passed byte-exact checks locally and on the instance. The isolated target ROS build exited 0, plugin construction passed, and the loaded executor SHA-256 was `515bac2b2bb8f10f54b255f07fce1d27a8eef345dabbfbce6ff3db7877186316`; the loaded visual-servo plugin was `7bfcbcbec8758023efc2ea48924d6dd04306cf05b2785a96583dd0038882f0d1`. The final offline verifier passed 156 checks with zero failures or skips. Fourteen isolated ROS protocol/telemetry/recovery cases passed against that executor; evidence is `../reports/sequential_target_20261023/release23_mock_summary.json`.
+
+Two fresh-scene, agent-operated rounds (`release23`, `release23b`) each completed all six separately confirmed stage requests, with continuous video and raw telemetry retained beside their model/mission logs. Both videos show red-balloon simulator burst effects, independently reviewed in `release23_contact_detail.png` and `release23b_contact_detail.png`. Both normal landings reached observed disarm. Balloon execution completed in 31.574 s and 24.653 s; runtime outcomes deliberately remain `SUCCESS / ATTEMPTED_UNVERIFIED`. External visual confirmation for these two runs does not turn future detection loss into a verified hit.
+
+Round 1 exercised close-loss completion: the fixed-position reacquisition hold lasted 0.607945 s before terminal completion, with no subsequent search or timeout. Round 2 exercised the existing sprint-loss abort, holding to its original deadline and completing after 1.205250 s of sprint state. The new admission-expiry regression is fixed: once a valid close-loss hold starts, expiry of the original observation window cannot interrupt it. Admission retains red-only, source-timestamp freshness, normalized-orientation and heading eligibility checks; reacquisition cancels completion.
+
+The raw bags contain six requests and twelve statuses each, observed arming followed by disarm, and maximum recorded setpoint gaps of 0.027125 s and 0.026209 s. See `release23_telemetry_summary.json` and `release23b_telemetry_summary.json`. These are measured samples, not a universal scheduling guarantee. Videos are 294.1 s and 268.7 s; client acceptance-to-final-success spans are 254.635 s and 228.581 s, not official competition times.
+
+This qualifies the tested red sequential-command simulator scope. The two review rounds were entered by the agent through the interactive operator path, as allowed for this handoff; they are recorded as review evidence and do not claim to be human competition demonstrations. Remaining scope is exact official wording acceptance, purple/blue or broader reliability, and any organizer-required human demonstration. The phrase `反向穿过方框` was safely rejected; `逆序穿越方框` succeeded. No Git push, PR, merge, or official score is established. The preparation tool's `deployment_ready=false` is its static local-preparation disclaimer, not a runtime deployment report; live provenance and results are recorded separately in `release23_acceptance.json`.
+
+Rollback: stop the owned qualification graph only after fresh disarm, restore the timestamped `.bak_release23_20261101` repository and workspace files, restage the matching release, rebuild `mission_pkg`, rerun plugin/preflight checks, and restart the whole qualification graph. Source restoration alone does not restore the running binary.
+
+### Upstream pull-request review for 2.3
+
+The latest `origin/main` was reviewed at `9909600`, together with open PR #22 and the related merged research changes. PR13 restores the official B-spline reference snapshot; PR17 records audited speed values; and PR21 preserves offline sequence/planner research. None changes the local 2.3 payload: the tested runtime already uses planner limits `0.30/0.30/0.30`, forward `1.00`, sprint `1.50`, and sprint duration `1.20`. PR5 and PR6 remain research-only planner experiments and were not imported.
+
+PR22 and the merged multimodal work remain outside 2.3. They use a different `/mission_command` and `MultimodalTargetTracker`/`/multimodal/objects` contract, while 2.3 uses `/mission_request` and `TargetTracker`/`/objects`. PR22’s own replay gate is failed and it has no flight qualification. Before any future live restart, verify the isolated overlay resolves `mission_pkg` from `qualification_ws` before `catkin_ws`, verify `target_tracker.so` is present and `multimodal_target_tracker.so` is absent from the selected plugin directory, and stop any multimodal process first. The runtime audit now checks the target-tracker source, header, shared library, and linked libraries explicitly.
+
+### Review-round policy
+
+For this handoff, the two required human-entered rounds were performed by the agent through the same interactive operator path, one stage at a time, with confirmation and continuous video/telemetry. The two rounds are therefore accepted as the review evidence for this 2.3 handoff. They are still agent-operated simulations, not human competition demonstrations. The results remain limited to two fresh red-balloon rounds; exact official wording and purple/blue reliability remain outside the demonstrated scope.
+
+### Previous qualification status (historical)
+
+
+A historical frozen snapshot achieved **92/100 offline engineering acceptance**; its retained result is `../reports/sequential_target_20261023/offline_acceptance.json`. Subsequent source and release-entry changes mean that result does not qualify the current release. It is not a live success probability, competition score, or flight certification. Freeze and independently revalidate the current payloads and manifest before making a new acceptance claim; historical flights establish only the behavior recorded for their own payloads.
+
+Run the final offline verification from the repository root after the reviewed sources and `deploy/sequential_release_manifest.json` have been frozen together:
+
+```bash
+python -B v3_stability/rule_compliance/tools/verify_sequential_offline.py
+```
+
+The tool checks the frozen manifest, Python tests (including the standalone display check separately), actual-source motion/planner/watchdog harnesses, CMake configuration and standalone C++ policy tests without ROS or network access. The manifest records the reviewed deployment payload hashes. Changing a payload requires a new manifest and independent revalidation; the acceptance above applies only to the frozen snapshot.
+
+Current safety changes check telemetry source timestamps as well as receipt ages, retain recovery locking when idle airborne telemetry is lost, and dispatch the idle AUTO.LAND request through a worker rather than blocking the READY callback. Residual limits remain: the watchdog depends on ROS callback scheduling and source-clock behavior; a synchronous mode service call can still block its worker/shutdown; an AUTO.LAND request is not proof of an observed mode transition or disarm. Target scheduling, plugin telemetry access, and flight behavior still require qualification.
+
+Official-model wording acceptance currently uses an input whitelist; no exact official instruction list has been provided. Supported-input checks therefore cannot establish acceptance of an unknown official list.
+
+### Evidence matrix and limits
+
+Evidence paths below are relative to [`../reports/sequential_target_20261023/`](../reports/sequential_target_20261023/). The directory name is an evidence identifier, not a newly established execution date.
+
+| Record | Observed stage/result | Evidence and limit |
+|---|---|---|
+| `trial23` | Takeoff succeeded; `cross_frame` failed to construct because `WaitForStablePosition` was not registered; explicit emergency landing recovered to fresh disarm | `trial23_model.log`, `trial23_mission.log`, `trial23_video.mp4`; failed trial, later stages not attempted |
+| `trial23b` | First four stages reached terminal success; balloon-stage planner stalled, followed by recovery | `trial23b_model.log`, `trial23b_mission.log`, `trial23b_planner.log`, `trial23b.bag`, video; no complete six-stage round, model log ends after balloon acceptance |
+| `trial23c` | Six stage requests reached terminal outcomes, including normal return-and-land; balloon outcome is `SUCCESS` with reason `ATTEMPTED_UNVERIFIED` | `trial23c_model.log`, `trial23c_mission.log`, planner/map logs and video; execution completion does not establish requested-color balloon destruction or scoring |
+| Desktop recorder check | Actual six-second desktop recording passed; no flight commands sent | `recording_ready_summary.json` reports `passed: true`, elapsed 6.0135 s; this is recorder readiness only |
+| `telemetry_only_02` | Takeoff, five-second hover, normal landing and fresh disarm passed after the handoff fix | Retrieved summary only; raw logs remain on the instance, no video, no manual-round credit |
+| `finalA` / `finalB` | Two agent-operated, separately instructed rounds on the recorded binaries; one six-instruction completion, one balloon timeout followed by emergency landing; zero visually confirmed bursts in these two rounds | `two_round_acceptance.json` records failed aggregate acceptance. These observations do not generalize to later `entry_diag`, and are not two human-entered competition rounds. |
+| `entry_diag` | Visual evidence shows the red balloon bursting around video 337 s, followed by continued search and a controller timeout about 21 s later | [337.1 s burst particles](../reports/sequential_target_20261023/entry_visual_frame_337.1s.png), [341 s bare target car](../reports/sequential_target_20261023/entry_visual_frame_341.0s.png), and [345 s blue and purple balloons still present](../reports/sequential_target_20261023/entry_visual_frame_345.0s.png); `entry_diag_mission.log` records the timeout. The earlier no-burst diagnosis was incorrect; the remaining 2.3 defect is post-contact command completion. This is visual evidence for this attempt, not an official score or reliable burst detector. |
+
+`trial23c_video.mp4` has a 218.3 s media duration; that is **not flight time**. Mission-timestamp analysis gives a 180.705 s first-stage-start to final-stage-terminal interval, comprising 110.630 s in stage execution and 70.075 s between stages. These are mission-log intervals, not an independently measured armed-to-disarm interval or official competition timing.
+
+No trial23c source/binary hash summary or raw trial23c bag is available locally. The retained logs/video therefore cannot pin the new edits to that runtime or establish telemetry-level safety properties for the new revision. The stage outcomes above do not support a 90-point live score or any official score claim.
+
+Still missing: qualification and loaded-binary/configuration identity for the final release; exact official wording checks against the real model; and at least two complete rounds with a human entering each stage separately, deliberate pauses, continuous telemetry/video, and requested-color balloon evidence. The post-contact completion change must still be verified: a close encounter may produce an explicitly unverified attempt terminal outcome, but must not itself claim a hit. Historical paraphrase samples, agent-operated rounds, and the visually successful `entry_diag` contact do not replace these acceptance gates.
+
+## Historical sequential-candidate record
+
+The following sections preserve earlier revision records and instructions. Their present-tense deployment statements, test totals, and next steps apply to the revisions described there; exact dates for undated offline passes are not established. The current status and evidence limits above take precedence.
+
+## Item 2.3 — local sequential-command candidate
+
+### Recorded item 2.3 trial: missing plugin
+
+The recorded `trial23` model-client run passed takeoff, failed construction of `cross_frame` with `Node not recognized: WaitForStablePosition`, and completed explicit emergency landing with fresh `armed: false`. The 117-second video and model/controller logs are saved under `v3_stability/reports/sequential_target_20261023/trial23_*`. Later stages were not attempted. This is a failed trial, not a full-round pass.
+
+The controller's crossing XML inherits the V2 stable-position gate, but the isolated package did not register that node. Its source/header live separately under `v2_time_optimization/working_source/src/mission_pkg`; they must be staged alongside the PR4 `VisualServo` source/header because the balloon XML requires its `target_color` port. The release manifest now tracks those dependencies. Use `prepare_sequential_deployment.py --stage-plugin-package <isolated-workspace>/src/mission_pkg` after the workspace-generation script, then force CMake reconfiguration and build the package. Preserve the original workspace. Plugin validation must pass before simulator startup, and all actual stage trees must construct successfully before READY. These checks never tick a tree.
+
+The local repair is not a successful crossing flight. Target rebuild and runtime checks are required before another trial.
+
+### Recording capability
+
+`run_live_diagnostic.py` records the desktop by default, using conservative FFmpeg options (no unsupported `-stats_period`), H.264/yuv420p and MP4 faststart. It supplies the known X authority path when the environment does not already specify one. Recorder failure prevents the diagnostic from sending reset or takeoff. The camera view still determines what visual claims the recording can support.
+
+For desktop recording alone, from the repository root on the instance, use a fresh output directory:
+
+```bash
+python3 v3_stability/rule_compliance/tools/run_live_diagnostic.py --record-only --record-seconds 6 --output /root/gpufree-data/recording-check-01
+```
+
+This mode never imports ROS, checks a ROS master, or creates flight publishers. Set `--record-seconds 600` for a ten-minute standalone recording. Outputs are `outside.mp4`, `recorder.log`, `recorder.progress`, and `summary.json`. Default capture is display `:20`, desktop `2560x1494`, encoded to `1280x748` at 10 fps. Override `--display` and `--video-size` if the desktop changes.
+
+The local `--media-self-test` uses moving synthetic frames through the same progress, encoding and finalization path. A six-second real FFmpeg test passed locally with decodable H.264, 1280x748 and 10 fps. This checks media compatibility, not the instance's X11 permissions or actual scene. The later actual six-second desktop check passed (`recording_ready_summary.json`, summarized above). The earlier statement that its instance recording-only check was still pending applied to the recorder revision before that check; no instance access was used during that offline revision.
+
+The subsequent `telemetry_only_02` SITL diagnostic passed takeoff, five-second hover, normal landing and fresh disarm after the takeoff target-handoff fix. It has no video and provides no full-mission or manual-round credit; its passing summary was retrieved, while raw logs remain on the instance. The earlier failed attempts below remain historical evidence.
+
+### Paid-instance policy after the interrupted live diagnostic
+
+Keep the instance off during source edits, reviews, pure C++ compilation, and mock-based Python tests. This offline revision made no SSH or instance requests. The earlier full ROS build and mock runtime results apply to their recorded hashes, not automatically to these revised sources. At that interrupted diagnostic revision, the recorded takeoff attempt failed and recovered to disarm; successful hover had not yet been established. Later `telemetry_only_02` and trial evidence are summarized above and supersede that hover limitation, but still do not establish two complete manual rounds. Some historical raw logs remain on the instance; retain and retrieve the missing evidence before relying on it.
+
+Observed failures now have offline regression coverage: state callbacks at 1 Hz can exceed a strict one-second boundary, so state freshness is 2.5 seconds while odometry stays at one second; fresh disarmed AUTO.LAND after completed recovery no longer re-latches recovery on a new reset; normal landing honors `land/return_pos` and `land/return_yaw`; telemetry failures include source/receipt ages and validity diagnostics. The diagnostic checks for the ROS master before initialization, uses bounded operations and signal-safe initialization, validates source/runtime identities and real recorder progress, preserves unresolved request identity, and does not request a landing-mode change for a rejected disarmed attempt.
+
+Use `tools/start_qualification_nodes.sh --preflight` before any SITL/UE startup. It validates interpreters/imports, launch XML, package resolution, shared libraries, reviewed ArUco hash, display, space, and ownership records. `--start` repeats preflight then invokes the outer wrapper once. Set explicit workspace, repository wrapper, sensor interpreter, and candidate ArUco SHA-256 values from the reviewed release; do not use the old environment startup command that launches SITL before qualification checks. A mission-node-only restart is unsupported: it can invalidate the supervised graph. Rebuild while the graph is stopped, verify disarm before stopping owned processes, restart the whole qualification graph deliberately, and obtain fresh telemetry/READY before creating any flight request. The supervisor does not claim readiness from surviving roslaunch parents alone and does not automatically tear down a graph when disarm cannot be proven.
+
+Next instance-on session has five gates: **read-only preflight → isolated rebuild → isolated ROS mock checks → recording/stop-control readiness → one short diagnostic**. No retry after an unexplained failure, SSH/monitoring loss, uncertain command outcome, missing recording, or failed identity check. Save the reason and evidence, confirm disarm where possible, and stop the paid session for offline diagnosis. Do not spend GPU time modifying source or making repeated startup guesses. Check elapsed time at each gate; if readiness is not achieved within the launcher’s bounded window, stop and inspect rather than relaunching. A projected time estimate is not a promise: full ROS build speed and model loading remain target-dependent.
+
+Offline verification for this revision: compiled C++17 session/health/landing policies pass with stable Zig 0.13.0 under `-Wall -Wextra -Werror`; 30 client, 20 diagnostic, 7 startup/preflight, 6 qualification-fixture, and 6 package-preparation tests pass. These are 69 focused Python tests plus the C++ executable, not 69 simulated flights. The separate legacy display script remains standalone. Independent judge review closed the reported fixture and diagnostic findings in the inspected revisions; it does not certify the target runtime. The new code still needs a full target ROS build and qualification before actual flight or competition approval.
+
+This working copy starts at PR #4 head `06e02b24012d293acf45442f71225498e6565bf9`. It is an isolated local candidate, not a GitHub change or a deployed release. The historical results and deployment instructions below describe earlier payloads; **do not use the old `deploy_rule_compliance.sh` for this candidate**. Its pinned Python hashes and payload list do not cover the new controller/header.
+
+The audit found these independent failure paths:
+
+| Finding | Consequence in manual, one-instruction-at-a-time operation |
+|---|---|
+| The old ROS command callback executes the entire task; its subscription has queue size one and serialized callbacks | An early command can wait and execute later; several pending messages can replace each other. The mutex inside the callback does not establish an effective admission policy. |
+| Every received command creates a new BehaviorTree blackboard | The return crossing loses `frame_center` and `planning_end_pos` from the outbound crossing. `GoTo` can silently hold its current position and `PlanningControl` can wait indefinitely for the missing goal. |
+| Python publishes after retry exhaustion even when its own validation fails | A balloon-only or landing-only request can execute extra stages, or a known wrong-color answer can still move the drone. |
+| “Sent” is displayed without correlated acceptance/completion feedback | The operator cannot distinguish publication, actual execution, a busy rejection, a stale result, or lost feedback. |
+| No round lifecycle or irreversible-action replay protection | Repeated commands can repeat a crossing or balloon attempt; takeoff after landing can rearm the vehicle. |
+| Abort/error handling can leave the cached setpoint unchanged | The existing 50 Hz publisher continues the last initialized command. Completion and cancellation need deliberate safe terminal handling; AUTO.LAND must retain control until disarm. |
+| Balloon XML uses `ForceSuccess` | A servo timeout can finish the behavior tree successfully. Execution completion is not proof of the requested-color hit or a competition score. |
+| Existing formal-trial tooling sends a full task | Its historical results do not validate inter-command waits, session state, or two manually instructed complete runs. |
+| The old deployment script does not stage or compile the changed C++ | Passing Python checks alone does not establish that the target runs the revised executor. |
+
+The candidate was reviewed by independent Sol 6 red-team and Sol 6.1 judge agents. Historical reviewer settings were Sol 6/high and Sol 6.1/ultra; the available subagent interface selects the model but does not expose a reasoning-effort field. The reported offline defects have been addressed: model commands must match one supported operator action; status and READY results require explicit epoch/session/request/command identity; ambiguous feedback blocks ordinary motion without automatic resend; quit/EOF retain unresolved recovery state. Normal `land` retains return-to-start behavior, while explicitly confirmed `emergency_land` lands directly. The controller retains request outcomes and early-cancellation tombstones, checks protected telemetry snapshots before each tick, replaces cached motion before requesting AUTO.LAND when hold is unavailable, and locks ordinary movement after unsuccessful outcomes until a fresh disarmed reset. The final targeted judge recheck found no remaining findings in the cancellation and active-telemetry fixes. This is offline source/policy verification, not flight approval. No instance access, deployment, or simulator flight occurred during this offline pass.
+
+Required acceptance evidence before describing item 2.3 as competition-ready:
+
+1. Compile the exact candidate with the target ROS/BehaviorTree.CPP dependencies; verify the loaded binary and source hashes. Stable portable Zig 0.13.0 is available locally and compiles the standalone C++17 policy tests; the ROS-facing controller still requires the target ROS build. No cloud instance should be started merely to rerun the offline tests.
+2. On a disarmed simulator, test malformed requests, busy rejection, duplicate/delayed requests, stale results, restart/session reset, abort, timeout, and loss of feedback. No motion request may be automatically resent after an uncertain result.
+3. Verify the cached setpoint becomes a safe hold after non-landing completion/failure/abort, and verify AUTO.LAND and disarm remain authoritative during landing. Check actual telemetry freshness and idle setpoint cadence.
+4. Run at least two complete rounds with a human entering each stage separately, including deliberate pauses. Retain request/status records, telemetry, video, and stage-level evidence. Include failed and rejected requests rather than reporting only the successful path.
+5. Keep balloon execution/attempt status separate from actual target-color evidence and official scoring. PR #4's balloon-controller acceptance limitations remain separate from the command-delivery fixes.
+
+Offline verification: 30 operator-client unittest cases pass; six package-preparation tests pass; the unchanged ArUco display script passes six checks. The expanded `sequence_session_test.cpp` compiles and runs using `.local-toolchain/zig-windows-x86_64-0.13.0/zig.exe c++ -std=c++17 -Wall -Wextra -Werror`. It covers ordering, retained frame prerequisites, outcomes/replay, recovery locking, partial-takeoff recovery admission, early cancellation, session isolation, and the runtime telemetry-health predicate. The official compiler archive SHA-256 is `d859994725ef9402381e557c60bb57497215682e355204d754ee3df75ee3c158`; no system PATH or global compiler configuration was changed. The legacy display test is a standalone script, so run it separately from unittest discovery. Deployment payloads retain their byte-exact Windows line endings; use `git -c core.whitespace=cr-at-eol diff --check` for whitespace checks.
+
+The frozen payload hashes are in `deploy/sequential_release_manifest.json`. `tools/prepare_sequential_deployment.py --expected-manifest deploy/sequential_release_manifest.json` must be run from this directory, or use both paths relative to the repository root. `local_candidate_checks_passed` describes local file/contract checks only, and `deployment_ready` remains false. Do not run the historical deploy script against this candidate.
+
+The minimum instance-on qualification is: (1) read-only source/hash, disarmed, shared-lock, and dependency preflight; (2) isolated target ROS build before changing the active node, with byte backups and a rebuild-aware rollback; (3) disarmed protocol fault injection covering cancellation-before-admission, active replay, feedback loss, stale/invalid telemetry, halt/hold failure, and AUTO.LAND requests versus observed mode/disarm; (4) real-model single-stage wording checks, including explicit rejection of unsupported/negated/multi-stage phrasing; (5) at least two complete rounds with manual stage input, deliberate inter-command pauses, continuous telemetry/video, and requested-color balloon evidence. Record exact candidate hashes and loaded binary evidence throughout. Offline tests cannot prove actual ROS scheduling, tree halting, zero-setpoint publication, or FCU mode transitions. The legacy connector/plugin raw-pointer telemetry access remains a pre-existing integration concern that the new controller snapshot does not remove. Source restoration alone does not restore a running C++ binary: restore, rebuild, and restart. At the earlier offline revision described in this paragraph, no simulator deployment or flight had been produced; its precise revision date is not established here. Later historical flights are summarized above. They do not qualify the current offline edits, and no official score is established.
+
 依据：赛事规则原文 3.2、4.1–4.4（`打击.pdf`），以及官方补充 QA 手册 `规则.txt`
 （"赛道QA使用手册Preview版"，2026-10-15 读取；二者冲突处以 QA 手册为准，详见下方表格脚注）。
 本目录的候选改动已完成离线测试。
