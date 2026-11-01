@@ -4,3 +4,4 @@
 .scratch/fm/p12h_e0_t1: centre 345/494=69.8%  precision 91.3%  area_med 0.57  big_area_med 0.31  in_servo_tol 174/378  tail_max 7  fp_absent 33/635  misses: acq 87 wrong 33 dropped 29  blue:102/143 purple:158/242 red:85/109
 .scratch/fm/p12h_e1_t1: centre 321/494=65.0%  precision 89.7%  area_med 0.57  big_area_med 0.28  in_servo_tol 188/358  tail_max 7  fp_absent 38/635  misses: acq 75 wrong 37 dropped 61  blue:86/143 purple:149/242 red:86/109
 .scratch/fm/p12i_g1.6: centre 322/494=65.2%  precision 80.5%  area_med 0.76  big_area_med 0.38  in_servo_tol 198/400  tail_max 22  fp_absent 66/635  misses: acq 72 wrong 78 dropped 22  blue:62/143 purple:167/242 red:93/109
+p12i_g2.0: centre 327/494=66.2%  precision 81.8%  area_med 0.82  big_area_med 0.48  in_servo_tol 210/400  tail_max 7  fp_absent 50/635  misses: acq 72 wrong 73 dropped 22  blue:66/143 purple:168/242 red:93/109
