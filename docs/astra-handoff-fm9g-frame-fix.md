@@ -22,7 +22,7 @@
 
 ## 2. 任务 A：合入修复（预算 0.5 小时）
 
-1. 用 `v4_innovation_timing/multimodal_5_4_frame_consistency/v2/runtime.py`（md5 `5026dcf152790e962b11ebee577fb792`）替换阶段 B 候选的 runtime。先对比 diff，确认相对你的 `d1fde2bf…` 版本只多出第 195–204 行这 10 行；有任何其他差异立即停止并报告。
+1. 用修复版 runtime（md5 `5026dcf152790e962b11ebee577fb792`）替换阶段 B 候选的 runtime。从服务器 `/home/ubuntu/multimodal_v2/frame_consistent_20261101/v2/runtime.py` 直接复制，或用 `git show <commit>:v4_innovation_timing/multimodal_5_4_frame_consistency/v2/runtime.py`；**不要**从 Windows 检出的工作区复制，`core.autocrlf=true` 可能会把换行改成 CRLF，导致 md5 不一致。先对比 diff，确认相对你的 `d1fde2bf…` 版本只多出第 195–204 行这 10 行；有任何其他差异立即停止并报告。
 2. 部署到 `/home/ubuntu/multimodal_v2/p12e_stage_b/v2/runtime.py` 和实际加载路径 `/home/ubuntu/model/fm9g_perception/runtime.py`，前后记录 md5，并更新 `final_status` JSON。这是 Python 改动，**不需要** `catkin_make`。
 3. 跑 `validate_stage_b.py`，确认通过。
 
