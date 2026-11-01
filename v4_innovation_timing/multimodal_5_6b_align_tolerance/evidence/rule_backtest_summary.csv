@@ -1,0 +1,13 @@
+case,color,aligned_count,max_approach_area_pct,candidate_loss_time,last_logged_area_pct,max_logged_area_pct,observed_gap_s,next_tracking_wall_time,recovered_after_loss,source
+r1_purple_a1,purple,1,10.2,,,,,,,v3_stability/reports/hit_balloon_part1_1.1/evidence\batch1\r1_purple_a1\rosout_events.jsonl
+r1_red_a1,red,0,,,,,,,,v3_stability/reports/hit_balloon_part1_1.1/evidence\batch1\r1_red_a1\rosout_events.jsonl
+r2_purple_a1,purple,3,13.0,,,,,,,v3_stability/reports/hit_balloon_part1_1.1/evidence\batch1\r2_purple_a1\rosout_events.jsonl
+r2_red_a1,red,1,9.1,,,,,,,v3_stability/reports/hit_balloon_part1_1.1/evidence\batch1\r2_red_a1\rosout_events.jsonl
+r1_purple_a1,purple,1,38.7,2026-10-15T16:32:38.881+00:00,38.7,38.7,0.193,,False,v3_stability/reports/hit_balloon_part1_1.1/evidence\batch2\r1_purple_a1\rosout_events.jsonl
+r1_red_a1,red,2,31.6,2026-10-15T16:26:21.892+00:00,31.6,31.6,0.01,,False,v3_stability/reports/hit_balloon_part1_1.1/evidence\batch2\r1_red_a1\rosout_events.jsonl
+r1_purple_a1,purple,1,22.2,,,,,,,v3_stability/reports/hit_balloon_part1_1.3/evidence\batch1\r1_purple_a1\rosout_events.jsonl
+r1_red_a1,red,0,,,,,,,,v3_stability/reports/hit_balloon_part1_1.3/evidence\batch1\r1_red_a1\rosout_events.jsonl
+r2_purple_a1,purple,1,6.1,,,,,,,v3_stability/reports/hit_balloon_part1_1.3/evidence\batch1\r2_purple_a1\rosout_events.jsonl
+r2_red_a1,red,0,,,,,,,,v3_stability/reports/hit_balloon_part1_1.3/evidence\batch1\r2_red_a1\rosout_events.jsonl
+r3_purple_a1,purple,1,35.5,2026-10-15T17:54:46.395+00:00,35.5,35.5,0.051,,False,v3_stability/reports/hit_balloon_part1_1.3/evidence\batch1\r3_purple_a1\rosout_events.jsonl
+r3_red_a1,red,0,,,,,,,,v3_stability/reports/hit_balloon_part1_1.3/evidence\batch1\r3_red_a1\rosout_events.jsonl

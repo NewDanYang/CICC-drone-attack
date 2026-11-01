@@ -1,0 +1,18 @@
+--- frozen/visual_servo.cpp
++++ trial20/visual_servo.cpp
+@@ -34,13 +34,13 @@
+              InputPort<double>("k_p_yaw_rate", 0.003, "偏航角速度 P 增益 (rad/s per pixel)"),
+              InputPort<double>("k_d_yaw_rate", 0.008, "偏航角速度 D 增益"),
+              InputPort<double>("max_yaw_rate", 0.5, "最大偏航角速度 (rad/s)"),
+-             InputPort<double>("deadzone_yaw", 8.0, "偏航死区 (pixel)"),
++             InputPort<double>("deadzone_yaw", 20.0, "偏航死区 (pixel)"),
+              
+              // VZ PD 控制
+              InputPort<double>("k_p_vz", 0.002, "垂直速度 P 增益"),
+              InputPort<double>("k_d_vz", 0.006, "垂直速度 D 增益"),
+              InputPort<double>("max_vz", 0.3, "最大垂直速度 (m/s)"),
+-             InputPort<double>("deadzone_vz", 10.0, "垂直死区 (pixel)"),
++             InputPort<double>("deadzone_vz", 20.0, "垂直死区 (pixel)"),
+              
+              // 速度参数
+              InputPort<double>("forward_velocity", 0.35, "逼近阶段前进速度 (m/s)"),

@@ -1,0 +1,13 @@
+case,color,aligned_count,sprint_count,approach_log_count,max_approach_area_pct,loss_count,qualifying_loss_count,false_positive_recovery_count,source
+r1_purple_a1,purple,1,1,1,10.2,1,0,0,v3_stability/reports/hit_balloon_part1_1.1/evidence\batch1\r1_purple_a1\rosout_events.jsonl
+r1_red_a1,red,0,0,0,,48,0,0,v3_stability/reports/hit_balloon_part1_1.1/evidence\batch1\r1_red_a1\rosout_events.jsonl
+r2_purple_a1,purple,3,1,12,13.0,6,0,0,v3_stability/reports/hit_balloon_part1_1.1/evidence\batch1\r2_purple_a1\rosout_events.jsonl
+r2_red_a1,red,1,1,7,9.1,2,0,0,v3_stability/reports/hit_balloon_part1_1.1/evidence\batch1\r2_red_a1\rosout_events.jsonl
+r1_purple_a1,purple,1,0,7,38.7,36,29,0,v3_stability/reports/hit_balloon_part1_1.1/evidence\batch2\r1_purple_a1\rosout_events.jsonl
+r1_red_a1,red,2,0,7,31.6,41,37,0,v3_stability/reports/hit_balloon_part1_1.1/evidence\batch2\r1_red_a1\rosout_events.jsonl
+r1_purple_a1,purple,1,1,1,22.2,2,0,0,v3_stability/reports/hit_balloon_part1_1.3/evidence\batch1\r1_purple_a1\rosout_events.jsonl
+r1_red_a1,red,0,0,0,,49,0,0,v3_stability/reports/hit_balloon_part1_1.3/evidence\batch1\r1_red_a1\rosout_events.jsonl
+r2_purple_a1,purple,1,1,10,6.1,4,0,0,v3_stability/reports/hit_balloon_part1_1.3/evidence\batch1\r2_purple_a1\rosout_events.jsonl
+r2_red_a1,red,0,0,0,,42,0,0,v3_stability/reports/hit_balloon_part1_1.3/evidence\batch1\r2_red_a1\rosout_events.jsonl
+r3_purple_a1,purple,1,0,5,35.5,45,41,0,v3_stability/reports/hit_balloon_part1_1.3/evidence\batch1\r3_purple_a1\rosout_events.jsonl
+r3_red_a1,red,0,0,0,,45,0,0,v3_stability/reports/hit_balloon_part1_1.3/evidence\batch1\r3_red_a1\rosout_events.jsonl

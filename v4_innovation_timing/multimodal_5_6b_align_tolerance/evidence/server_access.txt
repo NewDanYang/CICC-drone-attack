@@ -1,0 +1,5 @@
+Task start: 2026-11-01 (Asia/Shanghai)
+Remote: root@120.209.70.195 -p 30316 via v3_stability/tools/srvctl.py
+Attempts: 2026-11-01 initial probe; 2026-11-01 retry after 30 s
+Result: SSH connect failed after 6 attempts: Unable to connect to port 30316 on 120.209.70.195
+No remote command was executed; no lock or source state was changed by this task.
