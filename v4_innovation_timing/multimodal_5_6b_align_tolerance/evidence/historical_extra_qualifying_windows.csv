@@ -1,0 +1,4 @@
+archive,case,color,first_qualifying_loss_wall_time,max_approach_area_pct,sprint_start,actor_removed_observed_at,actor_removal_delay_s,source_note
+v3_stability/reports/hit_balloon_part1_1.6/B_v3_purple_evidence.tar.gz,r1_purple_a1,purple,2026-10-17T18:34:20.155+00:00,61.9,,2026-10-17T18:35:18.898769+00:00,58.744,"near-contact loss; no sprint; archived actor snapshot later removed target"
+v3_stability/reports/hit_balloon_part1_1.6/purple_forward_evidence.tar.gz,r1_purple_a1,purple,2026-10-18T14:36:13.699+00:00,65.8,,2026-10-18T14:37:41.614005+00:00,87.915,"near-contact loss; no sprint; archived actor snapshot later removed target"
+v3_stability/reports/hit_balloon_part1_1.6/purple_forward_evidence.tar.gz,r2_purple_a1,purple,2026-10-18T14:43:07.442+00:00,54.9,,2026-10-18T14:43:48.404789+00:00,40.963,"near-contact loss; no sprint; archived actor snapshot later removed target"

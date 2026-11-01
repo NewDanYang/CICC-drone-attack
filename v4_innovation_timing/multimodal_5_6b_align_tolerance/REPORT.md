@@ -64,3 +64,7 @@ lost_seconds <= data_timeout + 0.25 = 1.25 s
 ## 后续解锁条件
 
 服务器恢复后，应从冻结版本重新开始：先检查 `/tmp/tcei_formal_trial.lock`、`/tmp/tcei_sim_environment.lock` 和 `/tmp/px4_lock-*`，记录源码与二进制 MD5；只改 `20/20`，编译并跑一局红色台架；只有第一次没有 `Aligned!` 才回滚并进行第二次 `30/30` 紫色台架。无论结果如何，结束时都要恢复冻结源码和二进制，再由人类决定是否重新冻结某个容差值。当前没有进入阶段 D。
+
+### 补充历史验收局
+
+另外抽查了 1.6 的红紫历史证据包。三个紫色局在无 `SPRINT_START` 的情况下达到高面积后丢失：`B_v3/r1` 为 `61.9%`，丢失时间 `18:34:20.155`，Actor 快照在 `18:35:18.899` 才显示目标消失；`purple_forward/r1` 为 `65.8%`，丢失 `14:36:13.699`，Actor 消失 `14:37:41.614`；`purple_forward/r2` 为 `54.9%`，丢失 `14:43:07.442`，Actor 消失 `14:43:48.405`。这些窗口的延迟分别约 `58.7 s`、`87.9 s`、`41.0 s`，均足以说明“面积达到门槛后立即把丢失当成完成”缺少独立时刻证据。逐局索引见 [`evidence/historical_extra_qualifying_windows.csv`](evidence/historical_extra_qualifying_windows.csv)，原始包仍在 `v3_stability/reports/hit_balloon_part1_1.6/`。
