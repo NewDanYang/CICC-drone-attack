@@ -32,9 +32,10 @@ def validate(curve,limits=(.3,.5,4.)):
     if not curve.segments:return 'empty_curve'
     for s in curve.segments:
         if not finite(s.duration) or s.duration<=0 or len(s.points)<4:return 'invalid_segment'
-        for p in s.points:
-            if len(p)!=3 or not all(finite(x) for x in p):return 'invalid_segment'
+        if any(len(p)!=3 or not all(finite(x) for x in p) for p in s.points):return 'invalid_segment'
+        current=s.points
         for order,cap in enumerate(limits,1):
-            if max(norm(x) for x in [derivative(s.points,s.duration)] if order==1) > cap:return 'velocity_bound'
+            current=derivative(current,s.duration)
+            if max(norm(x) for x in current)>cap:return ('velocity_bound','acceleration_bound','jerk_bound')[order-1]
     return 'dynamics_valid'
 def publication_gate(*args,**kwargs): return {'publish':False,'reasons':['offline_only_no_publication_interface']}
