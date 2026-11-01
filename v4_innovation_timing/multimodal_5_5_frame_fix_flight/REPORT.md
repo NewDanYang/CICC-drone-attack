@@ -59,18 +59,23 @@ cp /home/ubuntu/multimodal_v2/p12e_backup_20261031/frame_fix_pre_runtime_2026110
 
 因此 B 阶段的三色中位数、最差值和每局极差门槛全部通过。逐次原始 JSON 在 [`evidence/rounds`](evidence/rounds)，汇总在 [`variance_summary.json`](evidence/variance_summary.json)，逐行表在 [`all_trial_rows.csv`](evidence/all_trial_rows.csv)。55 份完整审计 JSONL 保留在服务器 `/home/ubuntu/multimodal_v2/frame_consistent_20261101/results/fix5_20261101/audits/`，文件清单见 [`raw_audits_manifest.txt`](evidence/raw_audits_manifest.txt)。
 
-## C. 红色台架尝试
+## C. MAVROS 修复与红色台架
 
-B 通过后按 AGENTS 要求设置 `DISPLAY=:20`、`XAUTHORITY=/home/ubuntu/.Xauthority`，启动官方 `start_sim_environment.sh`。两次独立启动都完成了 SITL、RflySim3D 和 ROS graph/`/rflysim/uav1/local/odom` 检查，但在 MAVROS `connected=true` 等待处超时：
+前两次环境启动在 MAVROS 连接处失败。复核 PX4 日志后发现真正原因是陈旧的 `/tmp/px4_lock-1`：PX4 报 `failed to create lock file: /tmp/px4_lock-1, Permission denied`，因此没有正常提供心跳，MAVROS 一直无法 `connected=true`。确认没有 PX4 进程后清理该临时锁，第三次启动成功出现 `MAVROS connected` 和 `environment_started=1`。启动日志在 [`sim_start_mavros_fix.log`](evidence/stage_c/sim_start_mavros_fix.log)。
 
-- `/tmp/sim_start_frame_fix.log`
-- `/tmp/sim_start_frame_fix_retry.log`
-- `/tmp/tcei_sim_environment/sim_env.out`
+随后执行一次红色正式台架：`20261101T121946_red_A0`。实现链路检查结果：
 
-两次都没有出现 `environment_started=1`，没有创建正式试验锁，没有生成 `formal_trials` 红色局，也没有执行 `run_formal_trial.sh red`。因此本轮没有 processor 图片批次、窗口框球、`MULTIMODAL_PIXEL`/`ALIGN` 链路或时延 P50/P90 证据；不能把这次环境超时写成模型或实现失败。
+- processor 图片契约通过：审计记录 `images_per_item=[1]`；
+- FM9G 模型调用 135 次，无 `inference_error`；
+- 产生 50 张窗口截图，其中 [`window_00001037.jpg`](evidence/stage_c/window_00001037.jpg) 明确看到红球和绿色 FM9G 框；
+- VisualServo 消费像素：telemetry 中 27 条 `MULTIMODAL_PIXEL`，7 条 `ALIGN/APPROACH` 相关日志；
+- 模型调用时延：中位数 **0.2666 s**，P90 **0.2808 s**，最大 **0.5903 s**，命令生成同时运行；
+- 没有模型进程退出或实现异常。
+
+该单局最终 `mission_success=false`、`failure_stage=hit_balloon`，但这次单局只用于台架链路验收，不能作为成功率统计；它证明 MAVROS 和九格→像素→VisualServo 链路已经跑通，未发现“0 张图、无像素消费、模型进程退出”等实现缺陷。完整审计和正式试验证据见 [`stage_c`](evidence/stage_c)，摘要见 [`stage_c_summary.json`](evidence/stage_c/stage_c_summary.json)。
 
 ## 结论
 
-修复版已经通过任务 B 的全部 55 次离线矩阵门槛，帧一致性修复保留。阶段 C 只完成了两次环境启动尝试，均被 MAVROS 连接故障阻断，未形成红色台架结果；因此当前可以认定 **B 已通过、C 待环境恢复后重试**，不能宣称已经进入阶段 D，也不能用这次环境失败否定实现。
+修复版已经通过任务 B 的全部 55 次离线矩阵门槛，帧一致性修复保留。清理陈旧 PX4 锁后，阶段 C 的环境和实现链路检查均完成；红色单局命中阶段失败，但没有发现实现缺陷。当前结论为 **B 通过，C 台架链路通过，可以进入阶段 D 的多局回归；单局命中结果不作为成功率结论**。
 
 已知未处理项保持不变：04 紫色局准确率稳定偏低；遮挡或快速平移后仍可能有短暂错误物体框。这些不是本轮新增缺陷。

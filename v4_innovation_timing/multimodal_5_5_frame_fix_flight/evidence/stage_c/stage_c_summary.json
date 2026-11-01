@@ -1,0 +1,39 @@
+{
+  "formal_trial": "20261101T121946_red_A0",
+  "mission_success": false,
+  "failure_stage": "hit_balloon",
+  "processor_image_contract": true,
+  "processor_contract_events": [
+    {
+      "kind": "processor_input",
+      "images_per_item": [
+        1
+      ],
+      "wall_time": "2026-11-01T04:20:04.498052+00:00",
+      "monotonic": 3624424.428866498
+    }
+  ],
+  "model_calls": 135,
+  "decisions": 132,
+  "decision_boxes": 8,
+  "window_frames": 50,
+  "presence_call_stages": {
+    "acquire_sweep": 2,
+    "acquire_tiles": 127,
+    "track_sweep": 6
+  },
+  "inference_errors": [],
+  "latency_s": {
+    "n": 135,
+    "median": 0.26661452604457736,
+    "p90": 0.28078864980489016,
+    "max": 0.5902744540944695
+  },
+  "pixel_log_count": 11,
+  "align_log_count": 0,
+  "environment_started": true,
+  "mavros_connected": true,
+  "note": "Single stage-C rig result; not a success-rate estimate.",
+  "align_log_count_telemetry": 7,
+  "pixel_log_count_telemetry": 27
+}
