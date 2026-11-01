@@ -1,0 +1,5 @@
+p12e (baseline, no fix):        centre 357/494=72.3%  precision 93.5%  area_med 0.65  big_area_med 0.36  tail_max 8  fp_absent 45/635
+p12j_retry (trigger>=1 edge):   centre 314/494=63.6%  precision 85.6%  area_med 0.75  big_area_med 0.33  tail_max 5  fp_absent 38/635
+p12k_retry2 (trigger>=2 edges): centre 350/494=70.9%  precision 91.6%  area_med 0.73  big_area_med 0.31  tail_max 9  fp_absent 49/635
+p12l_conf075 (+confidence>=0.75 gate on retry): centre 346/494=70.0%  precision 91.5%  area_med 0.78  big_area_med 0.31  tail_max 9  fp_absent 50/635
+p12m_persist (+2-consecutive-flags-before-trust gate): centre 347/494=70.2%  precision 91.8%  area_med 0.67  big_area_med 0.30  tail_max 3  fp_absent 38/635
