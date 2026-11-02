@@ -1,0 +1,92 @@
+def main():
+    """FM9G v8 entry: command generation + FM9G scene bridge (+ optional balloon bridge).
+
+    One model, one lock.  Command generation, scene inference and balloon
+    inference all serialise on `model_lock`.
+    """
+    import queue
+    import threading
+    import time
+    from transformers import AutoProcessor
+    from fm9g_scene.bridge import SceneBridge
+    from fm9g_scene.presence import FastPresence
+
+    rospy.init_node("mission_once", anonymous=True)
+    pub = rospy.Publisher("/mission_command", String, queue_size=10)
+    rospy.sleep(1.0)
+    torch.set_num_threads(2)
+    torch.set_num_interop_threads(1)
+
+    model, tokenizer, base_msgs = load_model()
+    processor = getattr(model, "processor", None)
+    if processor is None:
+        processor = AutoProcessor.from_pretrained(
+            os.path.join(os.path.dirname(os.path.abspath(__file__)), "FM9G4B-V"),
+            trust_remote_code=True, local_files_only=True)
+    model_lock = threading.Lock()
+
+    bridges = []
+    if os.environ.get("FM9G_BALLOON_BRIDGE", "0") == "1":
+        from fm9g_perception.runtime import PerceptionBridge
+        bridges.append(PerceptionBridge(model, tokenizer, processor, model_lock))
+    scene = SceneBridge(model, tokenizer, processor, model_lock,
+                        FastPresence(model, tokenizer, processor, res=224))
+    bridges.append(scene)
+
+    tasks = queue.Queue()
+    argv_mode = len(sys.argv) > 1
+    if argv_mode:
+        tasks.put(" ".join(sys.argv[1:]))
+    else:
+        def read_tasks():
+            while not rospy.is_shutdown():
+                try:
+                    task = input("任务描述（quit退出）> ").strip()
+                except (EOFError, KeyboardInterrupt):
+                    return
+                tasks.put(task)
+                if task.lower() in ("quit", "exit", "q"):
+                    return
+        threading.Thread(target=read_tasks, daemon=True, name="mission-input").start()
+
+    try:
+        while not rospy.is_shutdown():
+            try:
+                task = tasks.get_nowait()
+            except queue.Empty:
+                task = None
+            if task is not None:
+                if task.lower() in ("quit", "exit", "q"):
+                    break
+                if task:
+                    scene.result_seen = False
+                    print(f"\n[任务] {task}", flush=True)
+                    try:
+                        with model_lock:
+                            commands = generate_validated_commands(model, tokenizer, base_msgs, task)
+                        if commands:
+                            print(f"\n[生成的指令序列]\n{commands}\n", flush=True)
+                            pub.publish(String(data=commands))
+                            rospy.loginfo("指令已发送到 /mission_command")
+                        else:
+                            print("\n[错误] 大模型未返回有效指令。", flush=True)
+                            if argv_mode:
+                                break
+                    except RuntimeError as exc:
+                        print(f"[错误] 推理失败: {exc}", flush=True)
+                        torch.cuda.empty_cache()
+                        if argv_mode:
+                            break
+            for b in bridges:
+                if hasattr(b, "refresh_window"):
+                    b.refresh_window()
+            if argv_mode and scene.result_seen:
+                break
+            time.sleep(0.03)
+    finally:
+        for b in bridges:
+            b.close()
+
+
+if __name__ == "__main__":
+    main()
