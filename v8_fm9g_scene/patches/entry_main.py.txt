@@ -34,7 +34,18 @@ def main():
     bridges.append(scene)
 
     # Older baselines have no colour guard; use it when present.
-    generate = globals().get("generate_validated_commands") or generate_commands
+    base_generate = globals().get("generate_validated_commands") or generate_commands
+
+    def generate(model, tokenizer, base_msgs, task, attempts=3):
+        # The documented intermittent failure is a reply without a ```command
+        # block (sampling).  Re-ask the identical task at most twice; never
+        # substitutes or edits commands.
+        for attempt in range(attempts):
+            commands = base_generate(model, tokenizer, base_msgs, task)
+            if commands:
+                return commands
+            print(f"[命令生成] 第{attempt + 1}次未返回命令块，重试", flush=True)
+        return None
 
     tasks = queue.Queue()
     argv_mode = len(sys.argv) > 1

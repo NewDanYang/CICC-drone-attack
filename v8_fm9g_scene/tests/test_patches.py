@@ -34,7 +34,7 @@ def live_mission_bytes():
 
 def test_mission_patch_on_live_bytes():
     template = (V8 / 'patches/entry_main.py.txt').read_text(encoding='utf-8')
-    out, changed = patch_mission_once.patch(live_mission_bytes(), template)
+    out, changed = patch_mission_once.patch(live_mission_bytes(), template, greedy=True)
     assert changed == ['generate_commands', 'load_model']
     assert b'\r\n' in out and b'\r\r\n' not in out and out.count(b'\n') == out.count(b'\r\n')
     text = out.decode('utf-8')
@@ -58,3 +58,12 @@ def test_bt_patch_on_live_bytes():
     out = patch_bt_ros.patch(src)
     # deterministic output (server dry-run of the earlier timeouts gave deac4a1b...)
     assert hashlib.md5(out).hexdigest() == '18a8457fe4f204b4fd12fd32e81dceef'
+
+
+def test_default_patch_keeps_sampling_and_helpers():
+    template = (V8 / 'patches/entry_main.py.txt').read_text(encoding='utf-8')
+    out, changed = patch_mission_once.patch(live_mission_bytes(), template, greedy=False)
+    assert changed == []
+    text = out.decode('utf-8')
+    assert text.count('sampling=True, stream=True') == 2
+    assert 'attempts=3' in text

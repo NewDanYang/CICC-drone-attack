@@ -26,6 +26,29 @@ Caveat: with the size-depth fallback, a box that is too large **but square** sti
 then stopped only by `Fm9gLocate`'s expected-position check (as in the official TargetLocator).
 Box accuracy itself is what Gate 2 measures.
 
+## 0b. Server round 3 (2026-11-02) — Gate 1 passed, Gate 2 failed on every target
+
+Red capture (150 front + 150 down frames), default `scan`, zero-shot FM9G4B-V:
+
+| Target | Result | Median latency |
+|---|---|---|
+| square_frame | recall **0/104** vs YOLO; 19 accepted, all wrong (IoU<0.5); world std ~2 m | 9.3 s |
+| aruco_marker | recall **0/11** vs OpenCV | 2.7 s |
+| landing_pad | 3 accepted, all on carts/shadows | 2.1 s |
+| pillar | 0 accepted | 1.2 s |
+
+Down-camera convention: **PASS** (p90 spread 0.064 m over 0.6–1.0 m of motion).
+Why: FM9G's yes/no scores are flat across windows (frame window max 0.49–0.59 on almost every
+frame; marker max ≤0.36), i.e. zero-shot FM9G does not discriminate these targets at crop level.
+Also seen: the frame is partly hidden behind the brick column at the observation pose (visible
+part ~80×133 px), so "complete square" prompts and square windows were the wrong shape.
+Conclusion: zero-shot localisation is ruled out (native `<box>` in round 1, yes/no scan in
+round 3). Next step is the officially sanctioned LoRA fine-tune.
+
+Command generation: greedy 10/10 but slow (init reply ran to the token limit, 180 s load,
+two calls 235 s); sampling 10/10 at ~6.5 s/call (20/20 over rounds 2–3). Default reverted to
+sampling + at most 2 re-asks when a reply has no command block; `--greedy` is opt-in.
+
 ## 1. Why 6.3 failed (diagnosis from code + report numbers)
 
 | Evidence (6.3 REPORT) | Mechanism |

@@ -34,7 +34,7 @@ def functions(text):
             for n in ast.parse(text).body if isinstance(n, ast.FunctionDef)}
 
 
-def patch(data: bytes, template: str, greedy=True) -> bytes:
+def patch(data: bytes, template: str, greedy=False) -> bytes:
     bom = b'\xef\xbb\xbf' if data.startswith(b'\xef\xbb\xbf') else b''
     eol = eol_of(data)
     text = data[len(bom):].decode('utf-8').replace(eol.decode(), '\n')
@@ -75,7 +75,11 @@ def patch(data: bytes, template: str, greedy=True) -> bytes:
 
 if __name__ == '__main__':
     src, dst = Path(sys.argv[1]), Path(sys.argv[2])
-    greedy = '--keep-sampling' not in sys.argv
+    # Round 3: greedy was 10/10 but the init reply ran to the token limit
+    # (invented extra dialogue turns), load took 180 s and two calls 235 s, while
+    # the original sampling run was 10/10 at ~6.5 s/call (20/20 over rounds 2-3).
+    # Total time is scored, so sampling stays the default; --greedy opts in.
+    greedy = '--greedy' in sys.argv
     template = (Path(__file__).with_name('entry_main.py.txt')).read_text(encoding='utf-8')
     raw = src.read_bytes()
     out, changed = patch(raw, template, greedy)

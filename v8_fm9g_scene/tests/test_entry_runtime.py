@@ -17,8 +17,9 @@ COMMANDS = "takeoff\ncross_frame\ndetect_aruco\nreturn_cross_frame\nhit_balloon:
 
 
 class FakeModel:
-    def __init__(self):
+    def __init__(self, fail_first=0):
         self.calls = []
+        self.fail_first = fail_first
 
     def eval(self):
         return self
@@ -30,13 +31,23 @@ class FakeModel:
         # same constraint as FM9G4B-V modeling_fm9gv.py:319 (found on the server)
         assert sampling or not stream, "if use stream mode, make sure sampling=True"
         self.calls.append(sampling)
-        text = "好的" if len(msgs) == 1 else "```command\n" + COMMANDS + "\n```"
+        if len(msgs) == 1:
+            text = "好的"
+        elif self.fail_first > 0:
+            self.fail_first -= 1
+            text = "好的，请描述您的任务需求。"
+        else:
+            text = "```command\n" + COMMANDS + "\n```"
         return iter([text]) if stream else text
 
 
-@pytest.fixture
-def env(tmp_path, monkeypatch):
-    model = FakeModel()
+GREEDY = True  # unused; params on the fixture decide
+
+
+@pytest.fixture(params=[(True, 0), (False, 1)], ids=['greedy', 'sampling+retry'])
+def env(tmp_path, monkeypatch, request):
+    greedy, fail_first = request.param
+    model = FakeModel(fail_first)
     published, subs = [], {}
     tf = types.ModuleType('transformers')
     tf.AutoModel = types.SimpleNamespace(from_pretrained=lambda *a, **k: model)
@@ -84,10 +95,11 @@ def env(tmp_path, monkeypatch):
     (tmp_path / 'prompts').mkdir()
     (tmp_path / 'prompts' / 'mission_prompt.txt').write_text('PROMPT', encoding='utf-8')
     template = (tp.V8 / 'patches/entry_main.py.txt').read_text(encoding='utf-8')
-    out, _ = tp.patch_mission_once.patch(tp.live_mission_bytes(), template)
+    out, _ = tp.patch_mission_once.patch(tp.live_mission_bytes(), template, greedy=greedy)
     path = tmp_path / 'mission_once.py'
     path.write_bytes(out)
-    return types.SimpleNamespace(path=path, model=model, published=published, built=built)
+    return types.SimpleNamespace(path=path, model=model, published=published, built=built,
+                                 greedy=greedy, fail_first=fail_first)
 
 
 def test_patched_entry_publishes_and_exits(env, monkeypatch):
@@ -100,5 +112,8 @@ def test_patched_entry_publishes_and_exits(env, monkeypatch):
     t.join(timeout=10)
     assert not t.is_alive(), 'argv mode did not exit after mission_result'
     assert env.published == [('/mission_command', COMMANDS)]
-    assert env.model.calls == [False, False]          # init + command, both greedy
+    if env.greedy:
+        assert env.model.calls == [False, False]      # init + command, both greedy
+    else:
+        assert env.model.calls == [True, True, True]  # init, failed reply, retry
     assert 'scene' in env.built and env.built.get('closed')

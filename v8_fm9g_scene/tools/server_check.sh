@@ -43,18 +43,18 @@ if [[ ! -s "$OUT/mission_once.v8.py" || ! -s "$OUT/bt_ros.v8.cpp" ]]; then
 fi
 "$PY" -m py_compile "$OUT/mission_once.v8.py" || { echo "GATE1_STOP patched mission does not compile"; exit 4; }
 
-echo "== 3 command generation: original (sampling) vs v8 (greedy)"
+echo "== 3 command generation: original vs v8 (sampling + up to 2 retries on a missing command block)"
 cp "$MODEL/mission_once.py" "$MODEL/.mission_once_orig_check_$TS.py"
 cp "$OUT/mission_once.v8.py" "$MODEL/.mission_once_v8_check_$TS.py" 2>/dev/null
 ( cd "$MODEL" && timeout 600 "$PY" "$HERE/tools/command_check.py" --mission "$MODEL/.mission_once_orig_check_$TS.py" \
     --repeats 2 --out "$OUT/command_original.json" ) 2>&1 | tail -15
 if [[ -f "$MODEL/.mission_once_v8_check_$TS.py" ]]; then
   ( cd "$MODEL" && timeout 600 "$PY" "$HERE/tools/command_check.py" --mission "$MODEL/.mission_once_v8_check_$TS.py" \
-      --repeats 2 --out "$OUT/command_greedy.json" ) 2>&1 | tail -15
+      --repeats 2 --out "$OUT/command_v8.json" ) 2>&1 | tail -15
 fi
 rm -f "$MODEL/.mission_once_orig_check_$TS.py" "$MODEL/.mission_once_v8_check_$TS.py"
-if ! python3 -c "import json,sys; d=json.load(open(sys.argv[1])); sys.exit(0 if d['passed']>=9 else 1)" "$OUT/command_greedy.json" 2>/dev/null; then
-  echo "GATE1_STOP greedy command check missing or < 9/10"; tar -czf "$OUT.tar.gz" -C "$(dirname "$OUT")" "$(basename "$OUT")"; exit 4
+if ! python3 -c "import json,sys; d=json.load(open(sys.argv[1])); sys.exit(0 if d['passed']>=9 else 1)" "$OUT/command_v8.json" 2>/dev/null; then
+  echo "GATE1_STOP v8 command check missing or < 9/10"; tar -czf "$OUT.tar.gz" -C "$(dirname "$OUT")" "$(basename "$OUT")"; exit 4
 fi
 
 echo "== 4 FM9G recognition on real 6.3 frames"
@@ -72,7 +72,7 @@ tar -czf "$OUT.tar.gz" -C "$(dirname "$OUT")" "$(basename "$OUT")"
 python3 - "$OUT" <<'PYEOF'
 import json, sys, pathlib
 o = pathlib.Path(sys.argv[1]); res = {}
-for k in ('command_original', 'command_greedy'):
+for k in ('command_original', 'command_v8'):
     f = o / (k + '.json')
     res[k] = (json.loads(f.read_text())['passed'], json.loads(f.read_text())['total']) if f.exists() else 'missing'
 s = o / 'eval_images' / 'summary.json'
