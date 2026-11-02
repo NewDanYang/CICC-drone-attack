@@ -1,0 +1,20 @@
+pair	color	condition	trial_rc	trial_dir	status	md5_file
+1	red	candidate	2	/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261102T024343_red_A0	completed	/home/ubuntu/tcei_baseline_tools/results/stage_d_20261102_repeat/md5_p1_candidate_red.txt
+1	red	baseline	2	/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261102T025130_red_A0	completed	/home/ubuntu/tcei_baseline_tools/results/stage_d_20261102_repeat/md5_p1_baseline_red.txt
+1	purple	candidate	2	/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261102T025859_purple_A0	completed	/home/ubuntu/tcei_baseline_tools/results/stage_d_20261102_repeat/md5_p1_candidate_purple.txt
+1	purple	baseline	2	/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261102T030710_purple_A0	completed	/home/ubuntu/tcei_baseline_tools/results/stage_d_20261102_repeat/md5_p1_baseline_purple.txt
+1	blue	candidate	2	/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261102T031519_blue_A0	completed	/home/ubuntu/tcei_baseline_tools/results/stage_d_20261102_repeat/md5_p1_candidate_blue.txt
+1	blue	baseline	2	/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261102T032304_blue_A0	completed	/home/ubuntu/tcei_baseline_tools/results/stage_d_20261102_repeat/md5_p1_baseline_blue.txt
+2	red	candidate	2	/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261102T033220_red_A0	completed	/home/ubuntu/tcei_baseline_tools/results/stage_d_20261102_repeat/md5_p2_candidate_red.txt
+2	red	baseline	2	/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261102T034003_red_A0	completed	/home/ubuntu/tcei_baseline_tools/results/stage_d_20261102_repeat/md5_p2_baseline_red.txt
+2	purple	candidate	2	/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261102T034803_purple_A0	completed	/home/ubuntu/tcei_baseline_tools/results/stage_d_20261102_repeat/md5_p2_candidate_purple.txt
+2	purple	baseline	2	/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261102T035557_purple_A0	completed	/home/ubuntu/tcei_baseline_tools/results/stage_d_20261102_repeat/md5_p2_baseline_purple.txt
+2	blue	candidate	2	/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261102T040357_blue_A0	completed	/home/ubuntu/tcei_baseline_tools/results/stage_d_20261102_repeat/md5_p2_candidate_blue.txt
+2	blue	baseline	2	/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261102T041144_blue_A0	completed	/home/ubuntu/tcei_baseline_tools/results/stage_d_20261102_repeat/md5_p2_baseline_blue.txt
+3	red	candidate	2	/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261102T041915_red_A0	completed	/home/ubuntu/tcei_baseline_tools/results/stage_d_20261102_repeat/md5_p3_candidate_red.txt
+3	red	baseline	2	/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261102T042742_red_A0	completed	/home/ubuntu/tcei_baseline_tools/results/stage_d_20261102_repeat/md5_p3_baseline_red.txt
+3	purple	candidate	2	/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261102T043549_purple_A0	completed	/home/ubuntu/tcei_baseline_tools/results/stage_d_20261102_repeat/md5_p3_candidate_purple.txt
+3	purple	baseline	2	/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261102T044352_purple_A0	completed	/home/ubuntu/tcei_baseline_tools/results/stage_d_20261102_repeat/md5_p3_baseline_purple.txt
+3	blue	candidate	2	/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261102T045159_blue_A0	completed	/home/ubuntu/tcei_baseline_tools/results/stage_d_20261102_repeat/md5_p3_candidate_blue.txt
+3	blue	baseline	2	/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261102T050019_blue_A0	completed	/home/ubuntu/tcei_baseline_tools/results/stage_d_20261102_repeat/md5_p3_baseline_blue.txt
+COLLECTION_DONE	2026-11-02T05:05:25+08:00

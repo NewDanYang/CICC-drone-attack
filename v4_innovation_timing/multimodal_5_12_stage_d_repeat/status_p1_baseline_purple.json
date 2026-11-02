@@ -1,0 +1,14 @@
+{
+  "mode": "baseline",
+  "mission_md5": "fca24bf1142ca8cddfb9e8d39c387a43",
+  "bt_md5": "9b1cefe9dfa431418435f7f8f63a60ed",
+  "source_md5": {},
+  "plugin_md5": null,
+  "binary_md5": "abb5c49eb21b1b333d88677def4921ab",
+  "guards": {
+    "/home/ubuntu/catkin_ws/src/mission_pkg/launch/llm_mission.launch": "5550c580a4822e773a331bcef11f0c47",
+    "/home/ubuntu/catkin_ws/src/mission_pkg/include/base/drone_action_node.h": "c415ddd8243afcc64c181be45bdac5e3",
+    "/home/ubuntu/catkin_ws/src/mission_pkg/src/nodes/action/visual_servo.cpp": "a63b57fa127a23cd8bb8e647f078ff21",
+    "/home/ubuntu/catkin_ws/src/mission_pkg/include/nodes/action/visual_servo.h": "d3324b0458b2160102f9bbf44546d035"
+  }
+}

@@ -1,0 +1,189 @@
+[1/3] 加载模型...
+self.grid_size:  8
+self.num_queries:  64
+self.embed_dim:  2560
+self.num_heads:  16
+self.adaptive:  True
+self.max_size:  (70, 70)
+self.kv_dim:  1152
+[2/3] 注入提示词...
+/opt/conda/envs/demo/lib/python3.10/site-packages/transformers/models/auto/image_processing_auto.py:513: FutureWarning: The image_processor_class argument is deprecated and will be removed in v4.42. Please use `slow_image_processor_class`, or `fast_image_processor_class` instead
+  warnings.warn(
+The `seen_tokens` attribute is deprecated and will be removed in v4.41. Use the `cache_position` model input instead.
+[3/3] 模型就绪。
+
+[INFO] [1793564374.290891]: MULTIMODAL_V2_READY evidence=/home/ubuntu/tcei_baseline_tools/results/multimodal_v2/20261101T201932_ba2e9b image=/rflysim/sensor1/img_rgb
+
+[任务] 飞机起飞，然后穿过框，再去识别二维码，然后再穿回框，接着去打击红色气球，完成后就回到起点并降落；
+用户: 起飞，穿过框，识别二维码，再穿回来，去A区打红色气球，降落
+回答:
+{1. 解释思路
+任务分为六步：首先起飞到预设高度，然后识别方框并穿越，接着飞到二维码上方识别，再反向穿越方框返回，之后前往A区寻找红色气球并打击，最后返航降落。
+2. 控制命令
+```command
+takeoff
+cross_frame
+detect_aruco
+return_cross_frame
+hit_balloon:red
+land
+```}
+
+[生成的指令序列]
+takeoff
+cross_frame
+detect_aruco
+return_cross_frame
+hit_balloon:red
+land
+
+[INFO] [1793564383.679666]: 指令已发送到 /mission_command
+[INFO] [1793564446.354964]: MULTIMODAL_GATE_V2 action=start session=1793564446353761299_1 color=red
+[INFO] [1793564446.686468]: MULTIMODAL_DECISION_V2 id=5bae8be8ecb4 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.408
+[INFO] [1793564447.026532]: MULTIMODAL_DECISION_V2 id=6f7386d58fd9 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.334
+[INFO] [1793564447.338813]: MULTIMODAL_DECISION_V2 id=752cbb3bff52 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.477
+[INFO] [1793564447.657633]: MULTIMODAL_DECISION_V2 id=b146575ca73d session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.447
+[INFO] [1793564447.966311]: MULTIMODAL_DECISION_V2 id=b43502a5a884 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.440
+[INFO] [1793564448.282394]: MULTIMODAL_DECISION_V2 id=823b22f673ce session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.353
+[INFO] [1793564448.597819]: MULTIMODAL_DECISION_V2 id=2c4d1ca25611 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.455
+[INFO] [1793564448.912983]: MULTIMODAL_DECISION_V2 id=9105b4cd49ba session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.463
+[INFO] [1793564449.240304]: MULTIMODAL_DECISION_V2 id=61e0f2f9b613 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.324
+[INFO] [1793564449.554063]: MULTIMODAL_DECISION_V2 id=ba4052009d93 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.449
+[INFO] [1793564449.872799]: MULTIMODAL_DECISION_V2 id=8e86cf9b58ec session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.459
+[INFO] [1793564450.192131]: MULTIMODAL_DECISION_V2 id=d85b9e89a0d9 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.459
+[INFO] [1793564450.523823]: MULTIMODAL_DECISION_V2 id=fff19aaa2ccb session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.474
+[INFO] [1793564450.854284]: MULTIMODAL_DECISION_V2 id=579e622d33c1 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.338
+[INFO] [1793564451.177667]: MULTIMODAL_DECISION_V2 id=2c9fbd89ca24 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.454
+[INFO] [1793564451.504123]: MULTIMODAL_DECISION_V2 id=0e134e23a2af session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.465
+[INFO] [1793564451.842759]: MULTIMODAL_DECISION_V2 id=04595a35f4a9 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.346
+[INFO] [1793564452.176802]: MULTIMODAL_DECISION_V2 id=02341f627388 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.466
+[INFO] [1793564452.513820]: MULTIMODAL_DECISION_V2 id=dbe9bca0a94f session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.319
+[INFO] [1793564452.855028]: MULTIMODAL_DECISION_V2 id=36513a3a8f10 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.402
+[INFO] [1793564453.185134]: MULTIMODAL_DECISION_V2 id=c93166df9042 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.467
+[INFO] [1793564453.515607]: MULTIMODAL_DECISION_V2 id=a5f714f727ce session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.475
+[INFO] [1793564453.852548]: MULTIMODAL_DECISION_V2 id=0c501b137956 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.339
+[INFO] [1793564454.175529]: MULTIMODAL_DECISION_V2 id=150793cb349b session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.461
+[INFO] [1793564454.502706]: MULTIMODAL_DECISION_V2 id=f05e9f87226c session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.486
+[INFO] [1793564454.824630]: MULTIMODAL_DECISION_V2 id=267f843ff66a session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.482
+[INFO] [1793564455.155321]: MULTIMODAL_DECISION_V2 id=7dfadf525b31 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.462
+[INFO] [1793564455.507975]: MULTIMODAL_DECISION_V2 id=0a91b2de826f session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.351
+[INFO] [1793564455.849699]: MULTIMODAL_DECISION_V2 id=e1c5a9e75503 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.344
+[INFO] [1793564456.174702]: MULTIMODAL_DECISION_V2 id=cbeb4b43b0e3 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.462
+[INFO] [1793564456.524025]: MULTIMODAL_DECISION_V2 id=dc01942e9647 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.337
+[INFO] [1793564456.842477]: MULTIMODAL_DECISION_V2 id=2230591ec006 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.489
+[INFO] [1793564457.175647]: MULTIMODAL_DECISION_V2 id=c760ed2aeb70 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.570
+[INFO] [1793564457.512629]: MULTIMODAL_DECISION_V2 id=0a79aa5e6ee1 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.477
+[INFO] [1793564457.856762]: MULTIMODAL_DECISION_V2 id=c3a40806f73b session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.349
+[INFO] [1793564458.200084]: MULTIMODAL_DECISION_V2 id=7c4951bffb94 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.481
+[INFO] [1793564458.547250]: MULTIMODAL_DECISION_V2 id=f6519b37db4b session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.352
+[INFO] [1793564458.888105]: MULTIMODAL_DECISION_V2 id=667cb8dbe75e session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.478
+[INFO] [1793564459.246252]: MULTIMODAL_DECISION_V2 id=ae491099e433 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.521
+[INFO] [1793564459.618179]: MULTIMODAL_DECISION_V2 id=cf2b991a8676 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.505
+[INFO] [1793564459.962799]: MULTIMODAL_DECISION_V2 id=f861c3f0d1c3 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.473
+[INFO] [1793564460.335343]: MULTIMODAL_DECISION_V2 id=825d25bcefba session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.514
+[INFO] [1793564460.707893]: MULTIMODAL_DECISION_V2 id=efab0d74c14e session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.548
+[INFO] [1793564461.061360]: MULTIMODAL_DECISION_V2 id=94522a5dd773 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.490
+[INFO] [1793564461.431161]: MULTIMODAL_DECISION_V2 id=379cb3906f51 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.528
+[INFO] [1793564461.811623]: MULTIMODAL_DECISION_V2 id=d3fcd5d82487 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.522
+[INFO] [1793564462.158119]: MULTIMODAL_DECISION_V2 id=42099be40eca session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.483
+[INFO] [1793564462.533928]: MULTIMODAL_DECISION_V2 id=1f3b968ff553 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.521
+[INFO] [1793564462.874218]: MULTIMODAL_DECISION_V2 id=33c6443de694 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.521
+[INFO] [1793564463.221373]: MULTIMODAL_DECISION_V2 id=b32a911ee419 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.353
+[INFO] [1793564463.564355]: MULTIMODAL_DECISION_V2 id=dbc02f53ec1e session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.485
+[INFO] [1793564463.869248]: MULTIMODAL_DECISION_V2 id=d0dd84a7bbbc session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.454
+[INFO] [1793564464.194516]: MULTIMODAL_DECISION_V2 id=adfd17f37c46 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.452
+[INFO] [1793564464.511747]: MULTIMODAL_DECISION_V2 id=9c8e8dd400ec session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.455
+[INFO] [1793564464.838504]: MULTIMODAL_DECISION_V2 id=f63ba0e8eb1b session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.328
+[INFO] [1793564465.155239]: MULTIMODAL_DECISION_V2 id=149d8b8699c8 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.452
+[INFO] [1793564465.479114]: MULTIMODAL_DECISION_V2 id=d78681a202b5 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.448
+[INFO] [1793564465.806446]: MULTIMODAL_DECISION_V2 id=bf3852eff4a3 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.474
+[INFO] [1793564466.113124]: MULTIMODAL_DECISION_V2 id=96f19fb2790a session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.308
+[INFO] [1793564466.416380]: MULTIMODAL_DECISION_V2 id=4063deb6b31e session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.470
+[INFO] [1793564466.737765]: MULTIMODAL_DECISION_V2 id=e51c4eeba8db session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.454
+[INFO] [1793564467.053597]: MULTIMODAL_DECISION_V2 id=bf11214c3cc5 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.314
+[INFO] [1793564467.372174]: MULTIMODAL_DECISION_V2 id=3c2110903b5b session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.446
+[INFO] [1793564467.681406]: MULTIMODAL_DECISION_V2 id=9af905998bf2 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.419
+[INFO] [1793564467.980915]: MULTIMODAL_DECISION_V2 id=3aafd397bc7c session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.426
+[INFO] [1793564468.312421]: MULTIMODAL_DECISION_V2 id=7f9f0457e0ae session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.440
+[INFO] [1793564468.620174]: MULTIMODAL_DECISION_V2 id=d720eb737f00 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.458
+[INFO] [1793564468.948814]: MULTIMODAL_DECISION_V2 id=3802846039ec session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.329
+[INFO] [1793564469.279890]: MULTIMODAL_DECISION_V2 id=e5419993e9a5 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.500
+[INFO] [1793564469.615155]: MULTIMODAL_DECISION_V2 id=8e2c43a9c556 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.351
+[INFO] [1793564469.941631]: MULTIMODAL_DECISION_V2 id=76ddc095ab4f session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.471
+[INFO] [1793564470.264551]: MULTIMODAL_DECISION_V2 id=623c86feeef7 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.495
+[INFO] [1793564470.590412]: MULTIMODAL_DECISION_V2 id=df6aa92be20e session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.472
+[INFO] [1793564470.931017]: MULTIMODAL_DECISION_V2 id=a618be648261 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.339
+[INFO] [1793564471.268079]: MULTIMODAL_DECISION_V2 id=ea678d694e17 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.512
+[INFO] [1793564471.637408]: MULTIMODAL_DECISION_V2 id=cca3a3db8221 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.521
+[INFO] [1793564471.976090]: MULTIMODAL_DECISION_V2 id=4de13f528316 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.514
+[INFO] [1793564472.322099]: MULTIMODAL_DECISION_V2 id=a51de58c55b2 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.354
+[INFO] [1793564472.681684]: MULTIMODAL_DECISION_V2 id=b50991279d5d session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.506
+[INFO] [1793564473.046849]: MULTIMODAL_DECISION_V2 id=bcdee96523fb session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.374
+[INFO] [1793564473.410569]: MULTIMODAL_DECISION_V2 id=d97aed6ced89 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.529
+[INFO] [1793564473.766294]: MULTIMODAL_DECISION_V2 id=d4aeb3bb7971 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.485
+[INFO] [1793564474.130289]: MULTIMODAL_DECISION_V2 id=99ba42376ce8 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.508
+[INFO] [1793564474.474238]: MULTIMODAL_DECISION_V2 id=5de26687b54f session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.515
+[INFO] [1793564474.825614]: MULTIMODAL_DECISION_V2 id=46d88d405356 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.501
+[INFO] [1793564475.170583]: MULTIMODAL_DECISION_V2 id=119883411648 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.505
+[INFO] [1793564475.504959]: MULTIMODAL_DECISION_V2 id=227632dee60b session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.483
+[INFO] [1793564475.848100]: MULTIMODAL_DECISION_V2 id=d1aa75356d95 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.493
+[INFO] [1793564476.210440]: MULTIMODAL_DECISION_V2 id=972f41ee7145 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.493
+[INFO] [1793564476.554863]: MULTIMODAL_DECISION_V2 id=e7089953dea5 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.500
+[INFO] [1793564476.900360]: MULTIMODAL_DECISION_V2 id=a2420c1967d7 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.487
+[INFO] [1793564477.843283]: MULTIMODAL_DECISION_V2 id=a90b1a18b50e session=1793564446353761299_1 color=red mode=acquire bbox=[52.0, 417.35214214129763, 168.39202472161347, 480.0] age=0.949
+[INFO] [1793564478.314965]: MULTIMODAL_DECISION_V2 id=3091e2eac141 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.341
+[INFO] [1793564478.660344]: MULTIMODAL_DECISION_V2 id=17dd14c9a95a session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.487
+[INFO] [1793564478.997128]: MULTIMODAL_DECISION_V2 id=1cbcad6bcd06 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.478
+[INFO] [1793564479.357419]: MULTIMODAL_DECISION_V2 id=5582c4dabad3 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.499
+[INFO] [1793564479.722166]: MULTIMODAL_DECISION_V2 id=13a81e17a02b session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.491
+[INFO] [1793564480.081440]: MULTIMODAL_DECISION_V2 id=fcdf766a4a92 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.524
+[INFO] [1793564480.448837]: MULTIMODAL_DECISION_V2 id=c2b871fd8be6 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.520
+[INFO] [1793564480.820923]: MULTIMODAL_DECISION_V2 id=7a0e796cf5d8 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.545
+[INFO] [1793564481.181362]: MULTIMODAL_DECISION_V2 id=5f90699b8da3 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.499
+[INFO] [1793564481.540535]: MULTIMODAL_DECISION_V2 id=97961bd53084 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.369
+[INFO] [1793564481.916128]: MULTIMODAL_DECISION_V2 id=f91c6af2fd5e session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.536
+[INFO] [1793564482.262749]: MULTIMODAL_DECISION_V2 id=21737f3a492d session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.488
+[INFO] [1793564482.640466]: MULTIMODAL_DECISION_V2 id=e83025a9c4d4 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.516
+[INFO] [1793564482.991166]: MULTIMODAL_DECISION_V2 id=a375f721970d session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.498
+[INFO] [1793564483.348265]: MULTIMODAL_DECISION_V2 id=d9cbf3e3ed03 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.497
+[INFO] [1793564483.694576]: MULTIMODAL_DECISION_V2 id=21c8247a2329 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.488
+[INFO] [1793564484.041959]: MULTIMODAL_DECISION_V2 id=adff6d3a9585 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.356
+[INFO] [1793564484.378164]: MULTIMODAL_DECISION_V2 id=f03a703fffac session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.464
+[INFO] [1793564484.716235]: MULTIMODAL_DECISION_V2 id=7d50579661a3 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.483
+[INFO] [1793564485.056788]: MULTIMODAL_DECISION_V2 id=b55be7a6bea8 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.491
+[INFO] [1793564485.383087]: MULTIMODAL_DECISION_V2 id=311419e50fe1 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.460
+[INFO] [1793564485.715631]: MULTIMODAL_DECISION_V2 id=36a333aed7fe session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.475
+[INFO] [1793564486.034580]: MULTIMODAL_DECISION_V2 id=b5f3ed94a4c9 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.485
+[INFO] [1793564486.359653]: MULTIMODAL_DECISION_V2 id=4f3cf17d0204 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.322
+[INFO] [1793564486.679119]: MULTIMODAL_DECISION_V2 id=cfe6e340f290 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.456
+[INFO] [1793564486.997757]: MULTIMODAL_DECISION_V2 id=6bca75ce2dfa session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.455
+[INFO] [1793564487.305151]: MULTIMODAL_DECISION_V2 id=05695830a50b session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.446
+[INFO] [1793564487.617509]: MULTIMODAL_DECISION_V2 id=89a521fec7a6 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.448
+[INFO] [1793564487.925160]: MULTIMODAL_DECISION_V2 id=0d380b76e170 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.304
+[INFO] [1793564488.226575]: MULTIMODAL_DECISION_V2 id=53bbb508c97c session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.300
+[INFO] [1793564488.535859]: MULTIMODAL_DECISION_V2 id=a796ce74d946 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.439
+[INFO] [1793564488.858926]: MULTIMODAL_DECISION_V2 id=41cbbef67454 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.308
+[INFO] [1793564489.176633]: MULTIMODAL_DECISION_V2 id=efb18091616e session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.357
+[INFO] [1793564489.482738]: MULTIMODAL_DECISION_V2 id=c5cd93a6d626 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.432
+[INFO] [1793564489.799420]: MULTIMODAL_DECISION_V2 id=dceeef8fc7b5 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.436
+[INFO] [1793564490.119176]: MULTIMODAL_DECISION_V2 id=8528d1a1b0b5 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.459
+[INFO] [1793564490.449526]: MULTIMODAL_DECISION_V2 id=2d079798dbcf session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.327
+[INFO] [1793564490.766701]: MULTIMODAL_DECISION_V2 id=e128c81b58d7 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.483
+[INFO] [1793564491.083127]: MULTIMODAL_DECISION_V2 id=6f546398556b session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.457
+[INFO] [1793564491.403460]: MULTIMODAL_DECISION_V2 id=ecd2a44fc461 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.459
+[INFO] [1793564491.726731]: MULTIMODAL_DECISION_V2 id=11c00dc30cad session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.470
+[INFO] [1793564492.061755]: MULTIMODAL_DECISION_V2 id=9dfd68ae28cc session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.333
+[INFO] [1793564492.403278]: MULTIMODAL_DECISION_V2 id=0709b85ec764 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.491
+[INFO] [1793564492.744704]: MULTIMODAL_DECISION_V2 id=67dbee623386 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.400
+[INFO] [1793564493.077094]: MULTIMODAL_DECISION_V2 id=e17bc63eefd6 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.473
+[INFO] [1793564493.403909]: MULTIMODAL_DECISION_V2 id=37b16b751df2 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.332
+[INFO] [1793564493.753444]: MULTIMODAL_DECISION_V2 id=2b6cf5936324 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.491
+[INFO] [1793564494.086186]: MULTIMODAL_DECISION_V2 id=2373b03b4691 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.469
+[INFO] [1793564494.428339]: MULTIMODAL_DECISION_V2 id=38a57519819c session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.499
+[INFO] [1793564494.763235]: MULTIMODAL_DECISION_V2 id=a2f7c5df947c session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.384
+[INFO] [1793564495.097762]: MULTIMODAL_DECISION_V2 id=a1a80e017c96 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.485
+[INFO] [1793564495.439150]: MULTIMODAL_DECISION_V2 id=c3f35777f16b session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.478
+[INFO] [1793564495.802678]: MULTIMODAL_DECISION_V2 id=6adc8ac692d6 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.466
+[INFO] [1793564496.149281]: MULTIMODAL_DECISION_V2 id=cf292c94acb3 session=1793564446353761299_1 color=red mode=acquire bbox=None age=0.404
+[INFO] [1793564496.354651]: MULTIMODAL_GATE_V2 action=stop session=1793564446353761299_1 color=red
+Terminated

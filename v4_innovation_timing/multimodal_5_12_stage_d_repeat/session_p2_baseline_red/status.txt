@@ -1,0 +1,4 @@
+trial_rc=1
+gc_rc=0
+before_count=3
+trial_dir=/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261102T034003_red_A0

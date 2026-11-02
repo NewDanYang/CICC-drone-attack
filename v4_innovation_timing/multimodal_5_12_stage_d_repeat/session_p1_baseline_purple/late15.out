@@ -1,0 +1,1 @@
+{"wall_time": "2026-11-01T19:10:16.003722+00:00", "source": "ue_console_obj_list", "sim_pid": 837313, "log_path": "/home/ubuntu/PX4PSP/RflySimUE5/RflySim3D/Saved/Logs/RflySim3D.log", "log_inode": 131452, "log_byte_range": [207552, 209209], "actor_ids": ["BP_Balloon_C_2147481415", "BP_Balloon_C_2147481420"], "reported_count": 2, "phase": "late"}

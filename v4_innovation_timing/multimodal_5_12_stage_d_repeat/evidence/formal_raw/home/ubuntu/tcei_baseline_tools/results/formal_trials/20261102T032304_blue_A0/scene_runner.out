@@ -1,0 +1,24 @@
+readiness: roscore
+readiness: /mavros/state
+readiness: /rflysim/uav1/local/odom publisher
+readiness: MAVROS connected
+readiness: llm_mission_node
+readiness: /objects
+readiness: Ego-Planner nodes
+preflight: pgrep -af mission_once.py
+879716 xterm -en UTF-8 -u8 -lc -sl 10000 -bg black -fg white -fa 'Monospace' -fs 12 -T LLM Mission (mission_once) -e bash --login -c 'export LANG=en_US.UTF-8; export LC_ALL=en_US.UTF-8; export TERM=xterm-256color; export PYTHONIOENCODING=utf-8; unset PROMPT_COMMAND; source /home/ubuntu/catkin_ws/devel/setup.bash && cd /home/ubuntu/model && python3 mission_once.py 2>&1; echo "Press Enter to close"; read; exec bash'
+879720 bash --login -c export LANG=en_US.UTF-8; export LC_ALL=en_US.UTF-8; export TERM=xterm-256color; export PYTHONIOENCODING=utf-8; unset PROMPT_COMMAND; source /home/ubuntu/catkin_ws/devel/setup.bash && cd /home/ubuntu/model && python3 mission_once.py 2>&1; echo "Press Enter to close"; read; exec bash
+879741 python3 mission_once.py
+stale mission_once.py processes found; terminating before this trial:
+ 879716  879347 xterm           xterm -en UTF-8 -u8 -lc -sl 10000 -bg black -fg white -fa 'Monospace' -fs 12 -T LLM Mission (mission_once) -e bash --login -c 'export LANG=en_US.UTF-8; export LC_ALL=en_US.UTF-8; export TERM=xterm-256color; export PYTHONIOENCODING=utf-8; unset PROMPT_COMMAND; source /home/ubuntu/catkin_ws/devel/setup.bash && cd /home/ubuntu/model && python3 mission_once.py 2>&1; echo "Press Enter to close"; read; exec bash'
+ 879720  879716 bash            bash --login -c export LANG=en_US.UTF-8; export LC_ALL=en_US.UTF-8; export TERM=xterm-256color; export PYTHONIOENCODING=utf-8; unset PROMPT_COMMAND; source /home/ubuntu/catkin_ws/devel/setup.bash && cd /home/ubuntu/model && python3 mission_once.py 2>&1; echo "Press Enter to close"; read; exec bash
+ 879741  879720 pt_main_thread  python3 mission_once.py
+starting observer (pre_mission_timeout=900s, mission_timeout=300s)
+starting official mission_once.py with argv task
+command: python3 mission_once.py "飞机起飞，然后穿过框，再去识别二维码，然后再穿回框，接着去打击蓝色气球，完成后就回到起点并降落；"
+mission_once_cleanup=OK
+experiment_dir=/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261102T032304_blue_A0
+{
+  "mission_success": "false",
+csv=/home/ubuntu/tcei_baseline_tools/results/baseline_runs.csv
+raw_log=/home/ubuntu/tcei_baseline_tools/results/formal_trials/20261102T032304_blue_A0/logs/20261102T032308_146031_blue.jsonl
