@@ -1,0 +1,6 @@
+version,trial_dir,elapsed_s,bt_success,mission_success,failure_stage,v6_measure,max_published_area,notes
+v5-guard,20261102T105836_purple_A0,130.591,true,false,hit_balloon,,,78% publish without bbox; 20.0 s gap; z forced to 0
+v6.0,20261102T113123_purple_A0,133.022,true,false,hit_balloon,4,,all boxes dropped by C++ score>=0.8 gate
+v6.2,20261102T115004_purple_A0,138.190,true,false,hit_balloon,18,0.032,first Aligned; lost at 57.5 s; 8 safety recoveries
+v6.3,20261102T120801_purple_A0,137.307,true,false,hit_balloon,11,0.0091,aligned 43.99 s; lost 48.29 s; forward_velocity 0.30
+v6.4,20261102T123103_purple_A0,130.671,true,false,hit_balloon,35,0.0503,two Aligned; Sprint area ready but off-center
