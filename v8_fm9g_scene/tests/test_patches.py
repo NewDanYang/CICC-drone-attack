@@ -38,7 +38,8 @@ def test_mission_patch_on_live_bytes():
     assert changed == ['generate_commands', 'load_model']
     assert b'\r\n' in out and b'\r\r\n' not in out and out.count(b'\n') == out.count(b'\r\n')
     text = out.decode('utf-8')
-    assert text.count('sampling=False, stream=False') == 2 and 'sampling=True' not in text
+    assert text.count('sampling=False, stream=False, num_beams=1') == 2 and 'sampling=True' not in text
+    assert text.count('max_new_tokens=400') == 2
     assert 'stream=True' not in text
     tree = ast.parse(text)
     names = [n.name for n in tree.body if isinstance(n, ast.FunctionDef)]

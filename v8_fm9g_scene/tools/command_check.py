@@ -49,8 +49,10 @@ def main():
     src = a.mission.read_text(encoding='utf-8-sig')
     greedy = len(re.findall(r'sampling=False', src)) >= 2
     t0 = time.monotonic()
+    print('loading model + init prompt ...', flush=True)
     model, tok, base = mo.load_model()
     load_s = time.monotonic() - t0
+    print('loaded in %.1fs; init reply %d chars' % (load_s, len(base[-1]['content'][0])), flush=True)
     generate = getattr(mo, 'generate_validated_commands', None) or mo.generate_commands
     rows = []
     for color, task in TASKS:

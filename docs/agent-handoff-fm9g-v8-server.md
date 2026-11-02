@@ -11,6 +11,11 @@
 > - Your probes confirm depth works: messages alternate empty/full (150/150 per 15 s), ~5,100–5,800
 >   points per full message, hover median 3.15 m ahead. No code change needed for that.
 >
+> - **Update (18:20):** the first round-3 greedy check hung >10 min — `sampling=False` makes FM9G
+>   use 3-beam search with a long default length. The patch now passes `num_beams=1,
+>   repetition_penalty=1.05, max_new_tokens=400`; each command check is capped at 600 s. **Halt the
+>   running check, pull the new commit, restart R3.1.** Expect ~1–2 min per check (sampling took 70 s).
+>
 > **Round 3 tasks** (rules as below; stop and report at any failure):
 > - **R3.0** Fresh source at the new commit; Phase 0 MD5s only.
 > - **R3.1** `bash tools/server_check.sh` → Gate 1 (a: tests pass, skips allowed; b: both dry-runs;

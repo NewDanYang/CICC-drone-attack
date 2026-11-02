@@ -53,7 +53,12 @@ def patch(data: bytes, template: str, greedy=True) -> bytes:
         # found on the server in round 2), so greedy decoding must also turn
         # streaming off.  With stream=False chat() returns a str; the existing
         # `for t in result: reply += t` loops then rebuild the same string.
-        old, new = 'sampling=True, stream=True', 'sampling=False, stream=False'
+        # Round 3: sampling=False alone switches FM9G/MiniCPM-V chat() to beam
+        # search (num_beams=3) with a long default length; the check then ran
+        # >10 min. Force plain greedy (1 beam) and bound the reply length. A full
+        # 6-command reply with its explanation is ~150 tokens (observed replies).
+        old = 'sampling=True, stream=True'
+        new = 'sampling=False, stream=False, num_beams=1, repetition_penalty=1.05, max_new_tokens=400'
         if text.count(old) != 2 or text.count('sampling=True') != 2:
             raise SystemExit('expected exactly 2 "%s" calls, found %d' % (old, text.count(old)))
         text = text.replace(old, new)

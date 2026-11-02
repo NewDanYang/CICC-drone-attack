@@ -46,10 +46,10 @@ fi
 echo "== 3 command generation: original (sampling) vs v8 (greedy)"
 cp "$MODEL/mission_once.py" "$MODEL/.mission_once_orig_check_$TS.py"
 cp "$OUT/mission_once.v8.py" "$MODEL/.mission_once_v8_check_$TS.py" 2>/dev/null
-( cd "$MODEL" && "$PY" "$HERE/tools/command_check.py" --mission "$MODEL/.mission_once_orig_check_$TS.py" \
+( cd "$MODEL" && timeout 600 "$PY" "$HERE/tools/command_check.py" --mission "$MODEL/.mission_once_orig_check_$TS.py" \
     --repeats 2 --out "$OUT/command_original.json" ) 2>&1 | tail -15
 if [[ -f "$MODEL/.mission_once_v8_check_$TS.py" ]]; then
-  ( cd "$MODEL" && "$PY" "$HERE/tools/command_check.py" --mission "$MODEL/.mission_once_v8_check_$TS.py" \
+  ( cd "$MODEL" && timeout 600 "$PY" "$HERE/tools/command_check.py" --mission "$MODEL/.mission_once_v8_check_$TS.py" \
       --repeats 2 --out "$OUT/command_greedy.json" ) 2>&1 | tail -15
 fi
 rm -f "$MODEL/.mission_once_orig_check_$TS.py" "$MODEL/.mission_once_v8_check_$TS.py"
