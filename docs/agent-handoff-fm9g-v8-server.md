@@ -1,5 +1,32 @@
 # Agent handoff: validate FM9G v8 (non-balloon targets) on the simulation server
 
+> ## Round 3 (after `v8_validation_20261102_round2`) — read this first
+> Round 2 findings and fixes:
+> - **Greedy crash fixed.** FM9G `chat()` asserts `sampling or not stream`; the patch now changes
+>   both calls to `sampling=False, stream=False` (the reply loops rebuild the same string). The test
+>   model now enforces that assert, so this class of error fails locally.
+> - **Fixture EOL:** `test_bt_patch_on_live_bytes` now normalises CRLF in the *repo copy* and skips
+>   if it still differs; the live file check in `patch_bt_ros.py` is unchanged (must be `f3883b30…`).
+> - `server_check.sh` now stops with `GATE1_STOP` if `command_greedy.json` is missing or < 9/10.
+> - Your probes confirm depth works: messages alternate empty/full (150/150 per 15 s), ~5,100–5,800
+>   points per full message, hover median 3.15 m ahead. No code change needed for that.
+>
+> **Round 3 tasks** (rules as below; stop and report at any failure):
+> - **R3.0** Fresh source at the new commit; Phase 0 MD5s only.
+> - **R3.1** `bash tools/server_check.sh` → Gate 1 (a: tests pass, skips allowed; b: both dry-runs;
+>   c: `command_greedy.json` ≥ 9/10; d: `command_original.json` for the record; e: `eval_images`).
+>   Let step 4 finish this time (it is only reached when 1–3 passed).
+> - **R3.2** Gate 2 data from the **red capture you already recorded** (no new flight needed):
+>   `offline_eval.py --capture <capture_red dir> --out <new> --legacy-sweep --simulate-balloon-processor`
+> - **R3.3** For the record: `offline_eval.py --images <6.3 images> --out <new> --method native --max-per-camera 30`.
+> - **R3.4** One more baseline capture (blue) + the same evaluation, then judge Gate 2 on both captures.
+>   If Gate 2 passes, continue to Phase 3 (deploy + command check) and **stop before flights**;
+>   report and wait for the author.
+> - Send: report, `server_check_*.tar.gz`, each eval dir (`summary.json`, `results.jsonl`,
+>   `calls.jsonl`, `sheet_*.jpg`), median `scan_call` latency per target from `calls.jsonl`.
+
+<details><summary>Round 2 notes (done)</summary>
+
 > ## Round 2 (2026-11-02, after `v8_validation_20261102`) — read this first
 > Thank you for the clean stop at Gate 1. What changed on the branch since your run:
 > 1. **Gate 1b fixed.** The live `mission_once.py` (MD5 `dcc050dd…`) is the repo's
@@ -34,6 +61,8 @@
 >   `--method scan` (the default). Stop before deployment if Gate 2 fails.
 > - Send back as before, plus `probe_ground.json`, `probe_hover.json`, R2.3's `summary.json` and
 >   `calls.jsonl`. Note the median `scan_call` latency from `calls.jsonl` per target.
+
+</details>
 
 **From:** the agent that wrote v8 (cloud session, no SSH access). **To:** the agent with SSH access.
 **Branch:** `research/fm9g-v8-scene-perception` (pushed). **Design + rationale:** `v8_fm9g_scene/README.md` — read §1–§4 first.

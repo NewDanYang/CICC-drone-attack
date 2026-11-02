@@ -53,6 +53,9 @@ if [[ -f "$MODEL/.mission_once_v8_check_$TS.py" ]]; then
       --repeats 2 --out "$OUT/command_greedy.json" ) 2>&1 | tail -15
 fi
 rm -f "$MODEL/.mission_once_orig_check_$TS.py" "$MODEL/.mission_once_v8_check_$TS.py"
+if ! python3 -c "import json,sys; d=json.load(open(sys.argv[1])); sys.exit(0 if d['passed']>=9 else 1)" "$OUT/command_greedy.json" 2>/dev/null; then
+  echo "GATE1_STOP greedy command check missing or < 9/10"; tar -czf "$OUT.tar.gz" -C "$(dirname "$OUT")" "$(basename "$OUT")"; exit 4
+fi
 
 echo "== 4 FM9G recognition on real 6.3 frames"
 IMGS=${IMGS:-$(ls -d /home/ubuntu/tcei_baseline_tools/results/multimodal_frame_v1/*/images /root/gpufree-data/square-frame-flight/*/images /root/gpufree-data/square-frame-flight/*/*/images 2>/dev/null | tail -1)}

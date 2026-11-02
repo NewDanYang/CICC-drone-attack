@@ -27,6 +27,8 @@ class FakeModel:
         return self
 
     def chat(self, image=None, msgs=None, tokenizer=None, sampling=None, stream=None, **kw):
+        # same constraint as FM9G4B-V modeling_fm9gv.py:319 (found on the server)
+        assert sampling or not stream, "if use stream mode, make sure sampling=True"
         self.calls.append(sampling)
         text = "好的" if len(msgs) == 1 else "```command\n" + COMMANDS + "\n```"
         return iter([text]) if stream else text

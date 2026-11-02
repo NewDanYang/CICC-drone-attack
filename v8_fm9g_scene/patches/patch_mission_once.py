@@ -49,9 +49,14 @@ def patch(data: bytes, template: str, greedy=True) -> bytes:
         if name not in before:
             raise SystemExit('expected helper %s missing' % name)
     if greedy:
-        if text.count('sampling=True') != 2:
-            raise SystemExit('expected exactly 2 sampling=True, found %d' % text.count('sampling=True'))
-        text = text.replace('sampling=True', 'sampling=False')
+        # FM9G4B-V's chat() asserts `sampling or not stream` (modeling_fm9gv.py:319,
+        # found on the server in round 2), so greedy decoding must also turn
+        # streaming off.  With stream=False chat() returns a str; the existing
+        # `for t in result: reply += t` loops then rebuild the same string.
+        old, new = 'sampling=True, stream=True', 'sampling=False, stream=False'
+        if text.count(old) != 2 or text.count('sampling=True') != 2:
+            raise SystemExit('expected exactly 2 "%s" calls, found %d' % (old, text.count(old)))
+        text = text.replace(old, new)
     head = text[:text.index('def main():')]
     result = head + template.replace('\r\n', '\n')
     after = functions(result)
