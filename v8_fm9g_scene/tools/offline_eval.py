@@ -110,7 +110,8 @@ def summarize(rows):
         tp = [r for r in acc if r.get('iou') is not None and r['iou'] >= 0.5]
         mis = [r for r in acc if r.get('ref') is not None and (r.get('iou') or 0) < 0.5]
         fp = [r for r in acc if r.get('ref_known') and r.get('ref') is None]
-        worlds = np.array([r['world'] for r in acc]) if acc else np.zeros((0, 3))
+        wl = [r['world'] for r in acc if r.get('world') is not None]
+        worlds = np.array(wl) if wl else np.zeros((0, 3))
         out[tgt] = {
             'frames': len(rs), 'accepted': len(acc),
             'reference_present': len(has_ref),
@@ -184,9 +185,64 @@ def contact_sheet(rows, cap, out_path, target, n=48):
     cv2.imwrite(str(out_path), np.vstack([np.hstack(tiles[i:i + 6]) for i in range(0, len(tiles), 6)]))
 
 
+def images_only(a, sm, legacy, yolo):
+    """Recognition-only evaluation on saved front frames (no odom/depth needed)."""
+    paths = sorted(p for p in a.images.rglob('*') if p.suffix.lower() in ('.png', '.jpg', '.jpeg'))
+    paths = paths[::a.stride][:a.max_per_camera]
+    rows = []
+    for path in paths:
+        bgr = cv2.imread(str(path))
+        if bgr is None or bgr.shape[:2] != (480, 640):
+            continue
+        for tgt in ('square_frame', 'pillar'):
+            spec = TARGETS[tgt]
+            t0 = time.monotonic()
+            native = sm.native_boxes(bgr, spec, path.name)
+            boxes = [geo.native_to_pixels(b) for b in native]
+            probs = sm.verify(bgr, boxes, spec, path.name)
+            cands = [{'box': [round(v, 1) for v in b], 'score': round(p, 3), 'accepted': True}
+                     for b, p in select_candidates(spec, boxes, probs)]
+            for b, p in zip(boxes, probs):
+                if p < spec.verify_threshold:
+                    cands.append({'box': [round(v, 1) for v in b], 'score': round(p, 3), 'accepted': False,
+                                  'reject': 'verify'})
+            ref = yolo(bgr) if tgt == 'square_frame' else None
+            best = next((c for c in cands if c['accepted']), None)
+            row = {'image': str(path.relative_to(a.images)), 'target': tgt, 'native': native, 'probs': probs,
+                   'candidates': cands, 'latency_s': time.monotonic() - t0, 'accepted': best is not None,
+                   'world': None, 'ref_known': tgt == 'square_frame', 'ref': ref}
+            if best and ref:
+                row['iou'] = geo.iou(best['box'], ref)
+                row['center_err'] = float(np.hypot((best['box'][0] + best['box'][2] - ref[0] - ref[2]) / 2,
+                                                   (best['box'][1] + best['box'][3] - ref[1] - ref[3]) / 2))
+            if best and tgt == 'square_frame':   # what the depth gate would see, using size-depth only
+                row['size_depth'] = geo.size_depth(best['box'], spec.width_m, spec.height_m)
+            if legacy is not None and tgt == 'square_frame':
+                lb, p0 = legacy_sweep_box(legacy, bgr)
+                lrow = {'box': lb, 'p0': p0}
+                if lb and ref:
+                    lrow['iou'] = geo.iou(lb, ref)
+                    lrow['size_ratio'] = (lb[2] - lb[0]) / max(1.0, ref[2] - ref[0])
+                row['legacy'] = lrow
+            rows.append(row)
+            print(json.dumps({k: row.get(k) for k in ('image', 'target', 'accepted', 'iou', 'latency_s')},
+                             default=float), flush=True)
+    with (a.out / 'results.jsonl').open('w') as fh:
+        for r in rows:
+            fh.write(json.dumps(r, ensure_ascii=False, default=float) + '\n')
+    summary = summarize(rows)
+    summary['_mode'] = 'images_only: recognition + boxes; positions/depth gate NOT evaluated'
+    (a.out / 'summary.json').write_text(json.dumps(summary, indent=2, ensure_ascii=False, default=float))
+    for tgt in ('square_frame', 'pillar'):
+        contact_sheet(rows, a.images, a.out / ('sheet_%s.jpg' % tgt), tgt)
+    print(json.dumps(summary, indent=2, ensure_ascii=False, default=float))
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--capture', required=True, type=Path)
+    ap.add_argument('--capture', type=Path, help='capture_scene.py output (images + odom + depth)')
+    ap.add_argument('--images', type=Path, help='image-only mode: a folder of front-camera frames '
+                    '(e.g. the 6.3 frame audit images/). Scores recognition + boxes only; no positions.')
     ap.add_argument('--out', required=True, type=Path)
     ap.add_argument('--model-dir', default='/home/ubuntu/model/FM9G4B-V')
     ap.add_argument('--workspace', default='/home/ubuntu/catkin_ws')
@@ -197,6 +253,8 @@ def main():
     ap.add_argument('--simulate-balloon-processor', action='store_true',
                     help='set scale_resolution=224 first, as the balloon bridge does')
     a = ap.parse_args()
+    if bool(a.capture) == bool(a.images):
+        ap.error('give exactly one of --capture or --images')
     a.out.mkdir(parents=True, exist_ok=False)
 
     import torch
@@ -212,13 +270,19 @@ def main():
     sm = SceneModel(model, tok, proc, lock, audit, fp)
     legacy = (NativePresenceSweep(model, tok, proc, lock, audit, lambda e: True, res=224, n_initial=8)
               if a.legacy_sweep else None)
-    yolo = YoloRef(a.workspace)
+    try:
+        yolo = YoloRef(a.workspace)
+    except Exception as exc:          # reference only; evaluation still runs without it
+        print('YOLO reference unavailable (%r); square_frame scored by contact sheet only' % exc, flush=True)
+        yolo = lambda bgr: None       # noqa: E731
     labels = {}
     if a.labels:
         for line in a.labels.open():
             l = json.loads(line)
             labels[(l['image'], l['target'])] = l['box']
 
+    if a.images:
+        return images_only(a, sm, legacy, yolo)
     frames = [json.loads(l) for l in (a.capture / 'index.jsonl').open() if '"frame"' in l]
     rows = []
     for cam in ('front', 'down'):
