@@ -8,8 +8,9 @@ Control contract (the only way results enter the mission):
   Fm9gLocate collects N agreeing samples, writes the median to the blackboard,
   and the existing GoTo / PlanningControl nodes fly to it.
 
-Per decision:  native <box> proposal (448 px, greedy)  ->  contrastive presence
-verify on the crop (P(是) >= 0.7)  ->  metric position:
+Per decision:  FM9G proposal (default 'scan': coarse-to-fine window search scored
+by FM9G P(是); 'native': FM9G <box>)  ->  contrastive FM9G verify on the crop
+(P(是) >= 0.7)  ->  metric position:
   front targets: depth camera (ring depth for the hollow frame) + odom at the image stamp,
                  and for the frame the box size must agree with that depth;
   down targets:  ray / ground-plane intersection + odom at the image stamp,
@@ -79,7 +80,14 @@ class SceneBridge:
         self.odom = deque(maxlen=400)
         self.images = {'front': None, 'down': None}
         self.last_used = {}            # (camera, target) -> image stamp already processed
+        self.last_box = {}             # target -> (stamp, last accepted box), for fast re-measure
         self.cloud = None
+        self.empty_clouds = 0
+        self.full_clouds = 0
+        self.allow_size_depth = os.environ.get('FM9G_SCENE_SIZE_DEPTH_FALLBACK', '1') == '1'
+        # 'scan' (default): FM9G yes/no window search.  'native': FM9G <box> output,
+        # which returned placeholder coordinates on real frames (2026-11-02).
+        self.method = os.environ.get('FM9G_SCENE_METHOD', 'scan')
         self.request = None            # (target, id, start_stamp)
         self.balloon_phase = False
         self.result_seen = False
@@ -151,6 +159,10 @@ class SceneBridge:
             self.images[camera] = (self.header_of(msg), rospy.Time.now().to_sec(), msg)   # decode lazily
 
     def on_cloud(self, msg):
+        if msg.width * msg.height == 0:
+            self.empty_clouds += 1            # keep the last non-empty cloud instead
+            return
+        self.full_clouds += 1
         with self.lock:
             self.cloud = (self.header_of(msg), rospy.Time.now().to_sec(), msg)
 
@@ -245,8 +257,11 @@ class SceneBridge:
                    request=req[1] if req else None, stamp=stamp, header_stamp=header,
                    pose_clock=pose_clock, image=path.name, pose=pose[0].tolist())
 
-        native = self.sm.native_boxes(bgr, spec, decision)
-        boxes = [geo.native_to_pixels(b) for b in native]
+        prior = None
+        last = self.last_box.get(spec.name)
+        if last is not None and stamp - last[0] < 3.0:
+            prior = last[1]
+        boxes = self.sm.propose(bgr, spec, decision, self.method, prior)
         probs = self.sm.verify(bgr, boxes, spec, decision)
         results = []
         cloud_pts = None
@@ -258,9 +273,13 @@ class SceneBridge:
             if match is not None:
                 cloud_pts = decode_cloud(match[2])
         for box, p in select_candidates(spec, boxes, probs):
-            results.append(localise(spec, box, p, pose[0], pose[1], cloud_pts))
+            results.append(localise(spec, box, p, pose[0], pose[1], cloud_pts, self.allow_size_depth))
         self.audit(kind='decision', decision=decision, target=spec.name,
-                   n_native=len(native), probs=probs, results=results)
+                   clouds_full=self.full_clouds, clouds_empty=self.empty_clouds,
+                   method=self.method, n_proposals=len(boxes), probs=probs, results=results)
+        for r in results:
+            if r['accepted'] and not spec.multi:
+                self.last_box[spec.name] = (stamp, r['box'])
         for r in results:
             if r['accepted']:
                 self.publish(spec.name, r['world'], stamp)

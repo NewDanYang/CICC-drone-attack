@@ -1,5 +1,40 @@
 # Agent handoff: validate FM9G v8 (non-balloon targets) on the simulation server
 
+> ## Round 2 (2026-11-02, after `v8_validation_20261102`) — read this first
+> Thank you for the clean stop at Gate 1. What changed on the branch since your run:
+> 1. **Gate 1b fixed.** The live `mission_once.py` (MD5 `dcc050dd…`) is the repo's
+>    `v3_stability/hit_balloon_v2/deployed_source/mission_once.before_color_guard.py` saved with
+>    CRLF. The patcher, entry and `command_check.py` now use `generate_commands` when there is no
+>    colour guard. New tests patch and **execute** the patched file built from those exact bytes.
+> 2. **`server_check.sh` now stops** after failed tests or patch dry-runs (`GATE1_STOP …`) and prints
+>    a `GATE1_SUMMARY` line at the end. `.gitattributes` forces LF for `*.sh/*.py`, so a fresh
+>    `git archive`/clone no longer needs your CRLF fix (if you copy via Windows, check again).
+> 3. **Localiser changed.** Your partial run showed FM9G's native `<box>` reply is a placeholder
+>    (`400 400 600 600`, `500 500 600 600`, repeated `500 500 500 500`; 2–10 s/call). Default is now
+>    `scan`: FM9G yes/no answers over a coarse-to-fine window search (`fm9g_scene/scan.py`), then the
+>    same verify + metric gates. `--method native` is kept for comparison.
+> 4. **Empty depth cloud handled.** Empty `Depth_Cloud` messages are skipped (the last non-empty one
+>    is kept); if there is no usable depth, the frame falls back to size-based depth (width/height
+>    must agree), pillars are shown but not located. `tools/depth_probe.py` measures the topic.
+>
+> **Round 2 tasks, in order** (same rules as below; stop and report at any failure):
+> - **R2.0** Fresh source: `git clone -b research/fm9g-v8-scene-perception …` (or your archive
+>   method) — record `git log -1`. Re-run the Phase 0 MD5 check only.
+> - **R2.1 Depth probe** (sim running, drone on the ground):
+>   `python3 v8_fm9g_scene/tools/depth_probe.py --seconds 15 --out probe_ground.json`
+>   Then start one **baseline** `run_formal_trial.sh red` and, while the drone hovers at the frame
+>   observation point (~10–25 s after takeoff), run it again → `probe_hover.json`.
+>   (Run Phase 2's `capture_scene.py` during this same flight — it is now safe with empty clouds.)
+> - **R2.2** `bash tools/server_check.sh` → Gate 1 as below; for 1c/1d both JSONs must now exist.
+>   Step 4 runs the `scan` method on the 6.3 frame images with the legacy sweep as A/B.
+> - **R2.3 Method comparison** on the same images, 30 frames, for the record:
+>   `offline_eval.py --images <dir> --out <new> --method native --max-per-camera 30`
+>   (expect near-zero; this documents why `scan` is the default).
+> - **R2.4** If Gate 1 passes, continue with Phase 2 (one more capture, blue) and Gate 2, using
+>   `--method scan` (the default). Stop before deployment if Gate 2 fails.
+> - Send back as before, plus `probe_ground.json`, `probe_hover.json`, R2.3's `summary.json` and
+>   `calls.jsonl`. Note the median `scan_call` latency from `calls.jsonl` per target.
+
 **From:** the agent that wrote v8 (cloud session, no SSH access). **To:** the agent with SSH access.
 **Branch:** `research/fm9g-v8-scene-perception` (pushed). **Design + rationale:** `v8_fm9g_scene/README.md` — read §1–§4 first.
 **Also read:** `AGENTS.md` §3 (evidence rules), §6 (traps), §9 (shared server).

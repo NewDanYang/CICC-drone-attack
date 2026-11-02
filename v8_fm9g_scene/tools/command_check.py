@@ -51,16 +51,17 @@ def main():
     t0 = time.monotonic()
     model, tok, base = mo.load_model()
     load_s = time.monotonic() - t0
+    generate = getattr(mo, 'generate_validated_commands', None) or mo.generate_commands
     rows = []
     for color, task in TASKS:
         for i in range(a.repeats):
             s = time.monotonic()
-            cmds = mo.generate_validated_commands(model, tok, base, task)
+            cmds = generate(model, tok, base, task)
             got = parse(cmds)
             rows.append({'task': task, 'repeat': i, 'ok': got == expected(color), 'commands': got,
                          'latency_s': time.monotonic() - s})
             print(json.dumps(rows[-1], ensure_ascii=False), flush=True)
-    result = {'mission': str(a.mission), 'greedy': greedy, 'init_reply': base[-1]['content'][0][:300],
+    result = {'mission': str(a.mission), 'greedy': greedy, 'generator': generate.__name__, 'init_reply': base[-1]['content'][0][:300],
               'load_s': load_s, 'passed': sum(r['ok'] for r in rows), 'total': len(rows), 'rows': rows}
     a.out.parent.mkdir(parents=True, exist_ok=True)
     a.out.write_text(json.dumps(result, ensure_ascii=False, indent=1))

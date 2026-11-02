@@ -11,7 +11,7 @@ def select_candidates(spec, boxes, probs):
     return ranked if spec.multi else ranked[:1]
 
 
-def localise(spec, box, score, pos, R, cloud_points=None):
+def localise(spec, box, score, pos, R, cloud_points=None, allow_size_depth=True):
     """Metric localisation + gates for one verified box.
 
     pos, R: drone position (ENU) and body->world rotation at the image stamp.
@@ -24,15 +24,30 @@ def localise(spec, box, score, pos, R, cloud_points=None):
         if spec.name == 'square_frame' and geo.touches_border(box):
             r['reject'] = 'touches_border'
             return r
-        if cloud_points is None:
-            r['reject'] = 'no_synchronous_depth'
-            return r
-        u, v, z = geo.project_depth_points(cloud_points)
-        depth, n = geo.box_depth(u, v, z, box, mode=spec.depth_mode)
+        depth, n = None, 0
+        if cloud_points is not None and len(cloud_points):
+            u, v, z = geo.project_depth_points(cloud_points)
+            depth, n = geo.box_depth(u, v, z, box, mode=spec.depth_mode)
         r.update(depth=depth, depth_points=n)
         if depth is None:
-            r['reject'] = 'too_few_depth_points'
+            # No usable depth camera data (the 2026-11-02 preflight sampled an
+            # empty Depth_Cloud).  Only the frame has a known, fully visible
+            # physical size, so only it may fall back to size-based depth, and
+            # only when width- and height-derived depths agree (the same check
+            # TargetLocator applies).  Pillars are then shown but not located.
+            if not (allow_size_depth and spec.name == 'square_frame'):
+                r['reject'] = 'no_depth'
+                return r
+            dw, dh = geo.size_depth(box, spec.width_m, spec.height_m)
+            r['size_depth'] = [dw, dh]
+            if dw is None or not geo.depth_consistent(dw, dh, rel=0.12, abs_tol=0.2):
+                r['reject'] = 'size_depth_inconsistent'
+                return r
+            r['depth_source'] = 'size'
+            world = geo.front_pixel_to_world(cu, cv, (dw + dh) / 2, pos, R)
+            r.update(world=[round(float(c), 3) for c in world], accepted=True)
             return r
+        r['depth_source'] = 'camera'
         if spec.name == 'square_frame':
             dw, dh = geo.size_depth(box, spec.width_m, spec.height_m)
             r['size_depth'] = [dw, dh]

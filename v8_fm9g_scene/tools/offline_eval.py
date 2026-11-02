@@ -197,8 +197,7 @@ def images_only(a, sm, legacy, yolo):
         for tgt in ('square_frame', 'pillar'):
             spec = TARGETS[tgt]
             t0 = time.monotonic()
-            native = sm.native_boxes(bgr, spec, path.name)
-            boxes = [geo.native_to_pixels(b) for b in native]
+            boxes = sm.propose(bgr, spec, path.name, a.method)
             probs = sm.verify(bgr, boxes, spec, path.name)
             cands = [{'box': [round(v, 1) for v in b], 'score': round(p, 3), 'accepted': True}
                      for b, p in select_candidates(spec, boxes, probs)]
@@ -208,7 +207,7 @@ def images_only(a, sm, legacy, yolo):
                                   'reject': 'verify'})
             ref = yolo(bgr) if tgt == 'square_frame' else None
             best = next((c for c in cands if c['accepted']), None)
-            row = {'image': str(path.relative_to(a.images)), 'target': tgt, 'native': native, 'probs': probs,
+            row = {'image': str(path.relative_to(a.images)), 'target': tgt, 'proposals': boxes, 'method': a.method, 'probs': probs,
                    'candidates': cands, 'latency_s': time.monotonic() - t0, 'accepted': best is not None,
                    'world': None, 'ref_known': tgt == 'square_frame', 'ref': ref}
             if best and ref:
@@ -250,6 +249,8 @@ def main():
     ap.add_argument('--stride', type=int, default=1)
     ap.add_argument('--max-per-camera', type=int, default=150)
     ap.add_argument('--legacy-sweep', action='store_true')
+    ap.add_argument('--method', choices=('scan', 'native'), default='scan',
+                    help="proposal method; 'native' = FM9G <box> (placeholder output on 2026-11-02 frames)")
     ap.add_argument('--simulate-balloon-processor', action='store_true',
                     help='set scale_resolution=224 first, as the balloon bridge does')
     a = ap.parse_args()
@@ -294,8 +295,7 @@ def main():
             for tgt in CAMERA_TARGETS[cam]:
                 spec = TARGETS[tgt]
                 t0 = time.monotonic()
-                native = sm.native_boxes(bgr, spec, f['image'])
-                boxes = [geo.native_to_pixels(b) for b in native]
+                boxes = sm.propose(bgr, spec, f['image'], a.method)
                 probs = sm.verify(bgr, boxes, spec, f['image'])
                 cands = [localise(spec, b, p, pos, R, cloud) for b, p in select_candidates(spec, boxes, probs)]
                 latency = time.monotonic() - t0
@@ -308,7 +308,7 @@ def main():
                     ref_known, ref = True, labels[(f['image'], tgt)]
                 best = next((c for c in cands if c['accepted']), None)
                 row = {'image': f['image'], 'target': tgt, 'stamp': f['stamp'], 'pos': f['pos'],
-                       'native': native, 'probs': probs, 'candidates': cands, 'latency_s': latency,
+                       'proposals': boxes, 'method': a.method, 'probs': probs, 'candidates': cands, 'latency_s': latency,
                        'accepted': best is not None, 'world': best['world'] if best else None,
                        'ref_known': ref_known, 'ref': ref}
                 if best and ref:

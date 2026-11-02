@@ -28,7 +28,7 @@ GET_BOOL = r'''    auto getBool = [&](const std::string& key, bool def) -> bool 
 '''
 
 CROSS = r'''        if (fm9g) {
-            std::string t = std::to_string(getDbl("fm9g_scene/frame_timeout", 20.0));
+            std::string t = std::to_string(getDbl("fm9g_scene/frame_timeout", 45.0));
             return
                 "      <GoTo goal=\"" + observe + "\"/>\n"
                 "      <Delay delay_msec=\"" + delay + "\">\n"
@@ -44,7 +44,7 @@ CROSS = r'''        if (fm9g) {
 '''
 
 ARUCO = r'''        if (fm9g) {
-            std::string t = std::to_string(getDbl("fm9g_scene/aruco_timeout", 8.0));
+            std::string t = std::to_string(getDbl("fm9g_scene/aruco_timeout", 20.0));
             return
                 "      <GoTo goal=\"" + hover + "\"/>\n"
                 "      <!-- FM9G4B-V 下视定位二维码, 对准后由 OpenCV 解码 -->\n"
@@ -61,7 +61,7 @@ ARUCO = r'''        if (fm9g) {
 
 RETURN = r'''        std::string fm9g_return_obs = getStr("fm9g_scene/return_observe_pos", "4.6;-0.4;1.0");
         if (fm9g && !fm9g_return_obs.empty()) {
-            std::string t = std::to_string(getDbl("fm9g_scene/return_timeout", 10.0));
+            std::string t = std::to_string(getDbl("fm9g_scene/return_timeout", 25.0));
             return
                 "      <GoTo goal=\"" + turn_pos + "\" yaw=\"" + std::to_string(turn_yaw) + "\"/>\n"
                 "      <!-- FM9G4B-V 反向重新识别方框 (失败时沿用正向感知结果) -->\n"
@@ -77,7 +77,7 @@ RETURN = r'''        std::string fm9g_return_obs = getStr("fm9g_scene/return_obs
 '''
 
 LAND = r'''        if (fm9g) {
-            std::string t = std::to_string(getDbl("fm9g_scene/land_timeout", 8.0));
+            std::string t = std::to_string(getDbl("fm9g_scene/land_timeout", 20.0));
             std::string obs = withZ(ret_pos, getDbl("fm9g_scene/land_observe_z", 1.2));
             return
                 "      <GoTo goal=\"" + obs + "\" yaw=\"" + std::to_string(ret_yaw) + "\"/>\n"

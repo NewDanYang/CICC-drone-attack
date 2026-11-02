@@ -33,10 +33,15 @@ md5sum "$MODEL/mission_once.py" "$WS/src/mission_pkg/src/bt_ros.cpp" \
 echo "== 1 unit tests"
 "$PY" -m pip show pytest >/dev/null 2>&1 || "$PY" -m pip install -q pytest
 ( cd "$HERE/.." && "$PY" -m pytest v8_fm9g_scene/tests -q -p no:cacheprovider ) | tee "$OUT/tests.txt"
+[[ ${PIPESTATUS[0]} -eq 0 ]] || { echo "GATE1_STOP unit tests failed"; tar -czf "$OUT.tar.gz" -C "$(dirname "$OUT")" "$(basename "$OUT")"; exit 4; }
 
 echo "== 2 patch dry-run on live files"
 python3 "$HERE/patches/patch_mission_once.py" "$MODEL/mission_once.py" "$OUT/mission_once.v8.py" 2>&1 | tee "$OUT/patch_mission.txt"
 python3 "$HERE/patches/patch_bt_ros.py" "$WS/src/mission_pkg/src/bt_ros.cpp" "$OUT/bt_ros.v8.cpp" 2>&1 | tee "$OUT/patch_bt.txt"
+if [[ ! -s "$OUT/mission_once.v8.py" || ! -s "$OUT/bt_ros.v8.cpp" ]]; then
+  echo "GATE1_STOP patch dry-run failed"; tar -czf "$OUT.tar.gz" -C "$(dirname "$OUT")" "$(basename "$OUT")"; exit 4
+fi
+"$PY" -m py_compile "$OUT/mission_once.v8.py" || { echo "GATE1_STOP patched mission does not compile"; exit 4; }
 
 echo "== 3 command generation: original (sampling) vs v8 (greedy)"
 cp "$MODEL/mission_once.py" "$MODEL/.mission_once_orig_check_$TS.py"
@@ -61,4 +66,14 @@ else
 fi
 
 tar -czf "$OUT.tar.gz" -C "$(dirname "$OUT")" "$(basename "$OUT")"
+python3 - "$OUT" <<'PYEOF'
+import json, sys, pathlib
+o = pathlib.Path(sys.argv[1]); res = {}
+for k in ('command_original', 'command_greedy'):
+    f = o / (k + '.json')
+    res[k] = (json.loads(f.read_text())['passed'], json.loads(f.read_text())['total']) if f.exists() else 'missing'
+s = o / 'eval_images' / 'summary.json'
+res['eval_images'] = 'present' if s.exists() else 'missing'
+print('GATE1_SUMMARY', json.dumps(res))
+PYEOF
 echo "DONE -> $OUT.tar.gz  ($(du -h "$OUT.tar.gz" | cut -f1))"

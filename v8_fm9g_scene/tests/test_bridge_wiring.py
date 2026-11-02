@@ -99,6 +99,9 @@ class StubModel:
     def verify(self, bgr, boxes, spec, decision):
         return self.probs[:len(boxes)]
 
+    def propose(self, bgr, spec, decision, method='scan', prior=None):
+        return [g.native_to_pixels(b) for b in self.native]
+
 
 def image_msg(stamp):
     data = np.full((480, 640, 3), 90, np.uint8)
@@ -242,3 +245,30 @@ def test_camera_clock_in_another_domain_still_works(bridge):
     assert len(pubs) == 1
     assert pubs[0].header.stamp.to_sec() == _Time.current      # ROS receive time, not 5100
     assert np.allclose([pubs[0].point.x, pubs[0].point.y], pos[:2], atol=0.01)
+
+
+def test_empty_depth_clouds_are_skipped_and_frame_uses_size_fallback(bridge):
+    """Server preflight sampled Depth_Cloud with width=0.  Empty clouds must not
+    replace a good one; with no cloud at all the frame falls back to size depth."""
+    box, R = tg.frame_box_at(tg.OBSERVE)
+    bridge.sm = StubModel([to_native(box)], [0.9])
+    bridge.on_odom(odom_msg(tg.OBSERVE, 0.0, 0.0))
+    empty = cloud_msg(np.zeros((0, 3)), 0.0)
+    bridge.on_cloud(empty)
+    assert bridge.cloud is None and bridge.empty_clouds == 1
+    bridge.on_image(image_msg(0.0), 'front')
+    bridge.request = ('square_frame', 'f1', 99.0)
+    bridge.step(TARGETS['square_frame'], bridge.request)
+    pubs = [m for t, m in PUBLISHED if t == '/fm9g/target_world/square_frame']
+    assert len(pubs) == 1
+    p = np.array([pubs[0].point.x, pubs[0].point.y, pubs[0].point.z])
+    assert np.linalg.norm(p - tg.FRAME) < 0.15
+
+
+def test_size_fallback_rejects_non_square_box_and_pillars(bridge):
+    from fm9g_scene.pipeline import localise
+    R = np.eye(3)
+    r = localise(TARGETS['square_frame'], [250, 150, 390, 330], 0.9, tg.OBSERVE, R, None)
+    assert not r['accepted'] and r['reject'] == 'size_depth_inconsistent'
+    r = localise(TARGETS['pillar'], [100, 100, 160, 300], 0.9, tg.OBSERVE, R, None)
+    assert not r['accepted'] and r['reject'] == 'no_depth'

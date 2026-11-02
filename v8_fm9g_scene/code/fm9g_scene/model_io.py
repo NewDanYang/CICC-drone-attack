@@ -9,6 +9,8 @@ import time
 
 import numpy as np
 
+from . import scan as sc
+
 BOX_RE = re.compile(r'<box>\s*(\d{1,4})\s*[, ]\s*(\d{1,4})\s*[, ]\s*(\d{1,4})\s*[, ]\s*(\d{1,4})\s*</box>', re.I)
 NONE_RE = re.compile(r'<box>\s*(?:none|null|无|不可见)?\s*</box>', re.I)
 
@@ -68,26 +70,87 @@ class SceneModel:
                    resolution=self.NATIVE_RESOLUTION)
         return boxes
 
-    def verify(self, bgr, boxes_px, spec, decision, pad=1.15):
-        """P(是) for the contrastive question on each (padded) box crop."""
-        if not boxes_px:
-            return []
+    def _crops(self, bgr, boxes_px, pad=1.0):
         import torch
         import torch.nn.functional as F
         res = self.fp.res
         rgb = torch.from_numpy(bgr[:, :, ::-1].copy()).cuda()
         crops = []
         for box in boxes_px:
-            x1, y1, x2, y2 = [int(round(v)) for v in expand(box, pad)]
+            x1, y1, x2, y2 = [int(round(v)) for v in (expand(box, pad) if pad != 1.0 else box)]
             x2, y2 = max(x2, x1 + 2), max(y2, y1 + 2)
             c = rgb[y1:y2, x1:x2].permute(2, 0, 1)[None].float()
             c = F.interpolate(c, size=(res, res), mode='bilinear', align_corners=False)[0]
             crops.append(c.permute(1, 2, 0).round().clamp(0, 255).byte())
+        return torch.stack(crops)
+
+    def _score(self, bgr, windows, prompt, batch=64):
+        out = []
+        for i in range(0, len(windows), batch):
+            crops = self._crops(bgr, windows[i:i + batch])
+            with self.model_lock:
+                out.extend(float(p) for p in self.fp(crops, prompt))
+        return out
+
+    def scan_boxes(self, bgr, spec, decision, k=3, prior=None):
+        """Coarse-to-fine window search scored by FM9G P(是).
+
+        Returns candidate boxes in pixels (best first).  The caller then applies
+        the contrastive verify prompt and the metric gates, exactly as for
+        native boxes.
+        """
+        start = time.monotonic()
+        if prior is not None and not spec.multi:
+            # Re-measure around the last accepted box (static target, small drone
+            # motion): skip the full-image grid.  Falls back to it when the
+            # target is no longer there.
+            coarse = sc.refine_windows(prior, shift=0.35, scales=(0.75, 1.0, 1.3))
+            cs = self._score(bgr, coarse, spec.scan_prompt)
+            seeds = sc.top_seeds(coarse, cs, k=1, min_score=spec.scan_threshold)
+            if not seeds:
+                prior = None
+        if prior is None or spec.multi:
+            coarse = sc.coarse_windows(spec.scan_sides, spec.scan_aspect)
+            cs = self._score(bgr, coarse, spec.scan_prompt)
+            seeds = sc.top_seeds(coarse, cs, k=k if spec.multi else 2, min_score=spec.scan_threshold)
+        results = []
+        for i in seeds:
+            best = (coarse[i], cs[i])
+            # two refinement rounds: wide (sparse coarse grid), then tight
+            for shift, scales in ((0.25, (0.8, 1.0, 1.25)), (0.1, (0.9, 1.0, 1.1))):
+                fine = sc.refine_windows(best[0], shift=shift, scales=scales)
+                fs = self._score(bgr, fine, spec.scan_prompt)
+                j = int(np.argmax(fs))
+                if fs[j] >= best[1]:
+                    best = (fine[j], fs[j])
+            results.append(best)
+        results.sort(key=lambda bs: -bs[1])
+        if not spec.multi:
+            results = results[:1]
+        self.audit(kind='scan_call', decision=decision, target=spec.name,
+                   latency_s=time.monotonic() - start, n_coarse=len(coarse), used_prior=prior is not None,
+                   coarse_max=max(cs) if cs else None,
+                   seeds=[[list(coarse[i]), cs[i]] for i in seeds],
+                   results=[[list(b), s] for b, s in results])
+        return [list(b) for b, _ in results]
+
+    def verify(self, bgr, boxes_px, spec, decision, pad=1.15):
+        """P(是) for the contrastive question on each (padded) box crop."""
+        if not boxes_px:
+            return []
+        crops = self._crops(bgr, boxes_px, pad)
         start = time.monotonic()
         with self.model_lock:
-            probs = self.fp(torch.stack(crops), spec.verify)
+            probs = self.fp(crops, spec.verify)
         self.audit(kind='verify_call', decision=decision, target=spec.name,
                    latency_s=time.monotonic() - start, probabilities=probs,
                    boxes=[list(map(float, b)) for b in boxes_px])
         return [float(p) for p in probs]
+
+    def propose(self, bgr, spec, decision, method='scan', prior=None):
+        """Candidate boxes in pixels from the configured method."""
+        if method == 'native':
+            from .geometry import native_to_pixels
+            return [native_to_pixels(b) for b in self.native_boxes(bgr, spec, decision)]
+        return self.scan_boxes(bgr, spec, decision, prior=prior)
 

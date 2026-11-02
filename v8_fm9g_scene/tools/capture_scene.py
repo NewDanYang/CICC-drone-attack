@@ -52,6 +52,7 @@ class Capture:
         self.last = {'front': 0.0, 'down': 0.0}
         self.index = (self.out / 'index.jsonl').open('w', buffering=1)
         self.done = False
+        self.empty_clouds = 0
         rospy.Subscriber(a.odom, Odometry, self.on_odom, queue_size=50)
         rospy.Subscriber('/rflysim/sensor0/Depth_Cloud', PointCloud2, self.on_cloud,
                          queue_size=1, buff_size=16 << 20)
@@ -81,11 +82,15 @@ class Capture:
             self.odom.append((self.stamp(m), rospy.Time.now().to_sec(), [p.x, p.y, p.z], [q.x, q.y, q.z, q.w]))
 
     def on_cloud(self, m):
+        if m.width * m.height == 0:
+            self.empty_clouds += 1
+            return
         with self.lock:
             self.clouds.append((self.stamp(m), rospy.Time.now().to_sec(), m))
 
     def on_result(self, m):
-        self.index.write(json.dumps({'kind': 'mission_result', 'data': m.data[:500]}) + '\n')
+        self.index.write(json.dumps({'kind': 'mission_result', 'data': m.data[:500],
+                                     'empty_clouds_skipped': self.empty_clouds}) + '\n')
         self.done = True
 
     def on_image(self, msg, cam):

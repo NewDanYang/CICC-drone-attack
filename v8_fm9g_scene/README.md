@@ -6,6 +6,26 @@ inference has run on this code yet (this workspace has no GPU or model weights).
 claim about FM9G accuracy below is a hypothesis that `tools/offline_eval.py` must confirm on
 real frames before any flight.
 
+## 0. Server round 1 (2026-11-02) — what changed afterwards
+
+The SSH agent stopped correctly at Gate 1 (`docs/agent-handoff-fm9g-v8-server.md`, evidence
+`v8_validation_20261102.tar.gz`). Findings and fixes:
+
+| Finding (real server) | Fix on this branch |
+|---|---|
+| Live `mission_once.py` has no `generate_validated_commands` (it is `mission_once.before_color_guard.py`, CRLF) → mission patch refused, command check crashed | patcher/entry/checker use `generate_commands` when there is no colour guard; `test_patches.py` + `test_entry_runtime.py` patch and execute those exact bytes |
+| FM9G native `<box>` = placeholders (`400 400 600 600`, `500 500 600 600`, `500 500 500 500`×n), 2–10 s/call; verify rejected all (0.32–0.55) | default proposal method is now **`scan`**: FM9G yes/no over a coarse-to-fine window search (`scan.py`), re-measure around the last box (~1 s) once found |
+| `Depth_Cloud` sample had `width=0` (20 Hz topic, 1 ms gaps) | empty clouds skipped; frame falls back to size depth (w/h must agree); `tools/depth_probe.py` to measure |
+| `server_check.sh` kept going after failures; CRLF after Windows copy | fail-fast + `GATE1_SUMMARY`; `.gitattributes` forces LF |
+
+Estimated `scan` cost at ~15 ms per FM9G yes/no (team's 5.0 measurement; **unmeasured here**):
+frame ≈ 440 windows ≈ 6–7 s for the first sample, ≈ 1 s after; ArUco/pad ≈ 3–4 s. Stage
+timeouts were raised accordingly (frame 45 s, reverse 25 s, ArUco/landing 20 s).
+
+Caveat: with the size-depth fallback, a box that is too large **but square** still passes; it is
+then stopped only by `Fm9gLocate`'s expected-position check (as in the official TargetLocator).
+Box accuracy itself is what Gate 2 measures.
+
 ## 1. Why 6.3 failed (diagnosis from code + report numbers)
 
 | Evidence (6.3 REPORT) | Mechanism |

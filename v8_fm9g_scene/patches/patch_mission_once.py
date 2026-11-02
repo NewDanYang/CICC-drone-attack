@@ -43,7 +43,9 @@ def patch(data: bytes, template: str, greedy=True) -> bytes:
     if 'fm9g_scene' in text:
         raise SystemExit('already patched')
     before = functions(text)
-    for name in ('load_model', 'generate_commands', 'generate_validated_commands'):
+    # The live baseline (MD5 dcc050dd..., == v3_stability/hit_balloon_v2/deployed_source/
+    # mission_once.before_color_guard.py with CRLF) has only load_model/generate_commands/main.
+    for name in ('load_model', 'generate_commands'):
         if name not in before:
             raise SystemExit('expected helper %s missing' % name)
     if greedy:
