@@ -1,0 +1,101 @@
+{
+  "branch": "release/stable-rc1",
+  "base": "99096001661c8bcb45890792fe0126c044a8f91d",
+  "pr24_head": "29eec32c9262b13713114fc8e6162d75cd0793b1",
+  "candidate_committed": false,
+  "remote_updated": false,
+  "server_deployed": true,
+  "rc1_accepted": false,
+  "new_full_simulation_trials": 0,
+  "local_checkout": "verified sparse shallow checkout; independent ROS workspace materialized from verified main + selected PR24 files",
+  "counts": {
+    "passed": 158,
+    "failed": 2,
+    "skipped": 0
+  },
+  "failures": [
+    {
+      "name": "python_unittest_discover",
+      "cases": [
+        "test_actual_trial23b_partial_and_retry (test_sequential_timing.SequentialTimingTests)",
+        "test_actual_trial23c_ansi (test_sequential_timing.SequentialTimingTests)"
+      ],
+      "reason": "Missing original trial23b/c mission/model logs; unresolved historical evidence dependency."
+    }
+  ],
+  "patch_check_exit": 1,
+  "historical_pngs_not_retrieved": 2,
+  "diagnostic_trials_latest_candidate": 1,
+  "diagnostic_result": "HIT_TIMEOUT_CONTACT_ABSENCE_AND_DELAYED_WATCHDOG_LAND",
+  "formal_trials": 0,
+  "server_runtime_identity_verified": true,
+  "server_graph_stopped": true,
+  "underlay_main_comparison": {
+    "eol_only": 494,
+    "exact": 73,
+    "missing": 1
+  },
+  "diagnostic_trials_previous_candidate": 3,
+  "active_diagnostic": null,
+  "candidate": "stable-rc1-approach-alignment-gate",
+  "latest_diagnostic": "20261102T074039_blue_gate_diag06",
+  "recovery_release_validation": {
+    "catkin_build": true,
+    "plugin_preflight": true,
+    "isolated_ros_passed": 16,
+    "isolated_ros_failed": 0,
+    "offline_counts": {
+      "passed": 157,
+      "failed": 2,
+      "skipped": 0
+    }
+  },
+  "diagnostic_trials_previous_candidates_total": 5,
+  "physical_collision_review_complete": false,
+  "recovery_release_flight_exercised": false,
+  "formal_trials_passed": 0,
+  "new_full_simulation_trials_note": "Legacy field retained as formal-credited rounds; actual diagnostic count recorded separately.",
+  "live_diagnostic_attempts_total": 6,
+  "live_diagnostic_six_stage_completions_total": 2,
+  "live_diagnostic_six_stage_completions_latest_candidate": 0,
+  "latest_evidence": "server-evidence/diagnostics/20261102T074039_blue_gate_diag06/diagnostic-summary.reviewed.json",
+  "ssh_session_connected": true,
+  "raw_cleanup_remote_post_review_update_confirmed": false,
+  "next_requested_color": "blue",
+  "next_trial_status": "BLUE_NEAR_CONTACT_COMPLETION_OFFLINE_REVIEW",
+  "next_trial_preparation": "蓝色测试准备.json",
+  "latest_blue_attempt": "20261102T074039_blue_gate_diag06",
+  "blue_attempts_started": 3,
+  "blue_hit_stages_executed": 2,
+  "pending_candidate": null,
+  "candidate_used_latest_diagnostic": "stable-rc1-approach-alignment-gate",
+  "updated_at_beijing": "2026-11-02T16:55:09+08:00",
+  "work_log": "Stable_RC1对话与工作日志.md",
+  "latest_candidate_validation": {
+    "catkin_build": true,
+    "plugin_preflight": true,
+    "isolated_ros_passed": 16,
+    "isolated_ros_failed": 0,
+    "offline_counts": {
+      "passed": 158,
+      "failed": 2,
+      "skipped": 0
+    }
+  },
+  "diagnostic_counts_by_candidate": {
+    "initial_main_pr24_integration": 1,
+    "stable-rc1-deadzone-fix": 1,
+    "stable-rc1-deadzone-recovery-release-fix": 3,
+    "stable-rc1-approach-alignment-gate": 1
+  },
+  "latest_diagnostic_six_stage_bt_success": false,
+  "latest_normal_return_land_sent": false,
+  "latest_final_armed": false,
+  "latest_physical_burst": "CONTACT_AND_PERSISTENT_ABSENCE_PARTICLE_NOT_CAPTURED",
+  "latest_evidence_local_video_hash_verified": false,
+  "server_storage_last_observed": {
+    "used_percent_approx": 99,
+    "free_gb_less_than": 1,
+    "next_live_run_ready": false
+  }
+}

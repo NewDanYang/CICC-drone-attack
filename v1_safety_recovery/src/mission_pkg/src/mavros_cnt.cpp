@@ -179,6 +179,7 @@ void MavRosConnect::updateCommand(const mavros_msgs::PositionTarget &cmd)
 {
     std::lock_guard<std::mutex> lock(cmd_mtx);
     current_cmd = cmd;
+    ++command_revision_;
     has_init_cmd = true;
 }
 
@@ -226,6 +227,10 @@ void MavRosConnect::cmdPublishLoop(const ros::TimerEvent &event)
             recovery_enter_time_ = now;
             recovery_inside_since_ = ros::Time(0);
             safety_state_ = SafetyState::RECOVERING;
+            {
+                std::lock_guard<std::mutex> command_lock(cmd_mtx);
+                recovery_command_revision_ = command_revision_;
+            }
 
             ROS_ERROR("[SafetyRecovery] ENTER DRONE OUT OF BOUNDARY");
             ROS_ERROR("[SafetyRecovery] current position = (%.2f, %.2f, %.2f)",
@@ -247,11 +252,24 @@ void MavRosConnect::cmdPublishLoop(const ros::TimerEvent &event)
                 } else if ((now - recovery_inside_since_).toSec() >=
                            safety_boundary_.recovery_confirm_time) {
                     const double recovery_duration = (now - recovery_enter_time_).toSec();
+                    const auto release_hold = makeCurrentPositionHold(now);
+                    bool replaced_stale_command = false;
+                    {
+                        std::lock_guard<std::mutex> command_lock(cmd_mtx);
+                        // An idle stage must not resume its old target after recovery.
+                        // Preserve commands updated by an active node during recovery.
+                        if (command_revision_ == recovery_command_revision_) {
+                            current_cmd = release_hold;
+                            replaced_stale_command = true;
+                        }
+                    }
                     safety_state_ = SafetyState::NORMAL;
                     recovery_inside_since_ = ros::Time(0);
                     ROS_INFO("[SafetyRecovery] COMPLETE recovery duration = %.3f s; "
-                             "latest command control resumed; Drone returned to safe area.",
-                             recovery_duration);
+                             "stale_command_replaced=%d; "
+                             "Drone returned to safe area at (%.2f, %.2f, %.2f).",
+                             recovery_duration, replaced_stale_command, fcu_odom.pose.pose.position.x,
+                             fcu_odom.pose.pose.position.y, fcu_odom.pose.pose.position.z);
                 }
             } else if (!recovery_inside_since_.isZero()) {
                 recovery_inside_since_ = ros::Time(0);
@@ -316,6 +334,32 @@ mavros_msgs::PositionTarget MavRosConnect::makeRecoveryCommand(const ros::Time &
     recovery_cmd.position.z = recovery_pos_.z;
     recovery_cmd.yaw = recovery_yaw_ + M_PI / 2.0;
     return recovery_cmd;
+}
+
+mavros_msgs::PositionTarget MavRosConnect::makeCurrentPositionHold(const ros::Time &stamp) const
+{
+    mavros_msgs::PositionTarget hold;
+    hold.header.stamp = stamp;
+    hold.header.frame_id = "safety_recovery_release";
+    hold.coordinate_frame = mavros_msgs::PositionTarget::FRAME_LOCAL_NED;
+    hold.type_mask = mavros_msgs::PositionTarget::IGNORE_VX |
+                     mavros_msgs::PositionTarget::IGNORE_VY |
+                     mavros_msgs::PositionTarget::IGNORE_VZ |
+                     mavros_msgs::PositionTarget::IGNORE_YAW_RATE |
+                     mavros_msgs::PositionTarget::IGNORE_AFX |
+                     mavros_msgs::PositionTarget::IGNORE_AFY |
+                     mavros_msgs::PositionTarget::IGNORE_AFZ |
+                     mavros_msgs::PositionTarget::FORCE;
+    // fcu_odom is ENU; PositionTarget is published in LOCAL_NED.
+    hold.position.x = -fcu_odom.pose.pose.position.y;
+    hold.position.y = fcu_odom.pose.pose.position.x;
+    hold.position.z = fcu_odom.pose.pose.position.z;
+    tf2::Quaternion q;
+    tf2::fromMsg(fcu_odom.pose.pose.orientation, q);
+    double roll, pitch, yaw;
+    tf2::Matrix3x3(q).getRPY(roll, pitch, yaw);
+    hold.yaw = yaw + M_PI / 2.0;
+    return hold;
 }
 
 MavRosConnect::MavRosConnect(std::shared_ptr<ros::NodeHandle> nh)

@@ -1,0 +1,23 @@
+{
+  "checked_at_beijing": "2026-11-02T16:55:09+08:00",
+  "run_id": "20261102T074039_blue_gate_diag06",
+  "ulog_local_sha256_verified": true,
+  "ulog_sha256": "3b552e7c89479e2261f350cc4b427d497ab82c0559de7a435863ff964b0f2127",
+  "small_evidence_local": true,
+  "native_videos_local_verified": false,
+  "native_video_transfer_session": 93194,
+  "native_video_transfer_status": "NO_PROGRESS_CANCEL_REQUESTED_EXIT_UNCONFIRMED",
+  "native_video_transfer_last_observed": "outside-0 reached 100%; local destination reported Operation not supported on socket; outside-1 last reported 0%; destination listing inaccessible",
+  "native_video_server_decode": "Previously completed, exit 0 for both videos; no repeat decode performed",
+  "bag_local": false,
+  "bag_server_recorded": {
+    "bytes": 29618177467,
+    "sha256": "00b402275db656a507ae168e50ed037613d1721e38715da173bf8322a01a62dc"
+  },
+  "coverage_limits": [
+    "rosbag closed before emergency request due low space; do not claim complete coverage",
+    "observer ended at 1800s before explicit emergency confirmation",
+    "watchdog AUTO.LAND occurs during idle after hit failure; explicit emergency SUCCESS is not evidence of a new descent"
+  ],
+  "note": "No transfer completion or local video hash match is claimed. Ctrl-C was sent after no progress, but process exit is unconfirmed. Server copies and server-side decode records are unchanged."
+}

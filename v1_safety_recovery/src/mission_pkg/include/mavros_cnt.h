@@ -14,6 +14,7 @@
 #include <utils/common.hpp>
 #include <mutex>
 #include <memory>
+#include <cstdint>
 
 class MavRosConnect
 {
@@ -106,6 +107,8 @@ private:
   // 控制指令缓存与同步
   mavros_msgs::PositionTarget current_cmd;
   std::mutex                  cmd_mtx;
+  std::uint64_t command_revision_{0};
+  std::uint64_t recovery_command_revision_{0};
   ros::Timer                  cmd_timer;
   bool                        has_init_cmd;
 
@@ -121,6 +124,7 @@ private:
   ros::Time recovery_inside_since_;
 
   mavros_msgs::PositionTarget makeRecoveryCommand(const ros::Time &stamp) const;
+  mavros_msgs::PositionTarget makeCurrentPositionHold(const ros::Time &stamp) const;
 
   // 连接状态跟踪
   bool fcu_state_received_ = false;

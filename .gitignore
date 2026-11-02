@@ -6,3 +6,11 @@ aruco_v2.b64
 srv_src/
 srv_*.launch
 srv_start_sim.sh
+
+__pycache__/
+*.py[cod]
+.local-toolchain/
+
+# Local evidence copies, scratch transfers and rollback backups.
+/outputs/
+/work/
