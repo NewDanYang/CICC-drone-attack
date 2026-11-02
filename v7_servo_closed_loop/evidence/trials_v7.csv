@@ -1,0 +1,14 @@
+order,run_dir,csv_run_id,color,start_utc,elapsed_s,bt_success,mission_success,hit_balloon_status,failure_stage,audit_dir,measures,publish_coverage_pct,max_area_pct,verdict
+1,20261102T105836_purple_A0,20261102T105841_e27802,purple,02:59:05,130.591,true,false,,hit_balloon,20261102T025855_95944c,,19,,algorithm-fail
+2,20261102T113123_purple_A0,20261102T113128_ef3909,purple,03:32:00,133.022,true,false,,hit_balloon,20261102T033148_cdcb25,4,,,algorithm-fail
+3,20261102T115004_purple_A0,20261102T115008_f5de0f,purple,03:50:31,138.190,true,false,,hit_balloon,20261102T035020_b7d689,18,,3.2,algorithm-fail
+4,20261102T120801_purple_A0,20261102T120805_e0d9d1,purple,04:08:25,137.307,true,false,,hit_balloon,20261102T040817_2e1717,11,,0.91,algorithm-fail
+5,20261102T123103_purple_A0,20261102T123108_cdcaae,purple,04:31:30,130.671,true,false,,hit_balloon,,35,,5.03,algorithm-fail
+6,20261102T130108_purple_A0,20261102T130112_d51a7a,purple,05:01:35,131.229,true,false,,hit_balloon,20261102T050125_9afab5,15,,4.72,algorithm-fail
+7,20261102T131000_purple_A0,,purple,05:10:27,300.042,,false,,takeoff,,0,,,env-fail
+8,20261102T132246_purple_A0,20261102T132251_c58639,purple,05:23:18,133.125,true,false,,hit_balloon,20261102T052308_ed6e12,17,,6.07,algorithm-fail
+9,20261102T134349_purple_A0,20261102T134354_5b2a65,purple,05:44:11,128.287,true,false,,hit_balloon,20261102T054406_45fd61,13,22,8.99,algorithm-fail
+10,20261102T140523_purple_A0,20261102T140527_3e18b1,purple,06:05:46,300.002,,false,,takeoff,,0,,,env-fail
+11,20261102T141320_purple_A0,20261102T141325_2a21d8,purple,06:13:49,132.194,true,false,,hit_balloon,20261102T061338_729c64,19,46,2.93,algorithm-fail
+12,20261102T143511_purple_A0,20261102T143515_572ac9,purple,06:35:38,95.111,true,true,success,,20261102T063528_674fcc,2,,,timer-success-unverified-physical
+13,20261102T143747_purple_A0,20261102T143751_67070f,purple,06:38:23,114.042,true,true,success,,20261102T063811_82162e,,,timer-success-unverified-physical
