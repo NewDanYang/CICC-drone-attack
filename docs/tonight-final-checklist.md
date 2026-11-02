@@ -1,5 +1,12 @@
 # Final-night checklist (2026-11-02): freeze the YOLO baseline, verify, package
 
+> **Correction (20:40):** the 30811 server runs the **official demo** (`bt_ros.cpp` `f3883b30…`,
+> `visual_servo.cpp` `a97f5af2…`), not the team's sealed best build (`bt_ros.cpp` `9b1cefe9…`,
+> 8/9 target balloons). Follow **`docs/WINNING_PLAN_20261102.md` §2 Steps 1–3** first: identify
+> the build on the judged machine and, if time allows (≥ 2 h), deploy the sealed build with
+> rollback and 3 trials. The MD5s in step 1 below describe the *official demo*; only freeze them
+> if you decide to keep that build.
+
 Decision: **no FM9G perception deployment tonight.** The FM9G bonus needs every target class
 recognised by FM9G (FAQ "需要全部识别"); zero-shot FM9G localisation failed (round 3: frame 0/104,
 marker 0/11) and FM9G balloon hitting is 0/11. Mixing with YOLO earns no bonus. The baseline is
